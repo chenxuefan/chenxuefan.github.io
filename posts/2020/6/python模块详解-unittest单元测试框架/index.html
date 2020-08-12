@@ -189,11 +189,40 @@
       <nav id="TableOfContents">
   <ul>
     <li><a href="#why-unittest-"><strong>why unittest ?</strong></a></li>
-    <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念：</strong></a></li>
-    <li><a href="#加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></a></li>
+    <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</a></li>
+            <li><a href="#12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</a></li>
+            <li><a href="#13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</a></li>
+            <li><a href="#14测试执行器texttestrunner"><strong>1.4、测试执行器</strong>（TextTestRunner）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#21-unittestmain"><strong>2.1</strong> unittest.main()</a></li>
+            <li><a href="#22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</a></li>
+            <li><a href="#23-unittesttestloader"><strong>2.3</strong> unittest.TestLoader()</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#自动加载测试用例"><strong>自动加载测试用例</strong></a></li>
     <li><a href="#忽略测试和预期失败"><strong>忽略测试和预期失败</strong></a></li>
-    <li><a href="#html测试报告"><strong>html测试报告</strong></a></li>
+    <li><a href="#html测试报告"><strong>html测试报告</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#51配置htmltestrunner">5.1、配置HTMLTestRunner</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -267,8 +296,8 @@
 <li>批量执行测试用例</li>
 <li>最终可生成测试结果</li>
 </ul>
-<h2 id="unittest四个重要的概念"><strong>unittest四个重要的概念：</strong></h2>
-<p>　　#### <strong>1.1、测试用例</strong>（TestCase）</p>
+<h2 id="unittest四个重要的概念"><strong>unittest四个重要的概念</strong></h2>
+<h4 id="11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</h4>
 <ul>
 <li>
 <p>测试用例是单元测试中<strong>最基本的组成单元</strong></p>
@@ -304,7 +333,7 @@
     unittest<span style="color:#f92672">.</span>main()
 </code></pre></div></li>
 </ul>
-<p>　　#### <strong>1.2、测试固件</strong>（setUp、tearDown）</p>
+<h4 id="12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</h4>
 <ul>
 <li>
 <p>setUp()　</p>
@@ -390,7 +419,7 @@
     unittest<span style="color:#f92672">.</span>main()
 </code></pre></div></li>
 </ul>
-<p>　　#### <strong>1.3、测试套件</strong>（TestSuite）</p>
+<h4 id="13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</h4>
 <ul>
 <li>
 <p>完整的单元测试很少只执行一个测试用例，开发人员通常都需要编写多个测试用例才能对某一软件功能进行完整的测试</p>
@@ -415,7 +444,7 @@
     suite3<span style="color:#f92672">.</span>addTest(TestBaidu(<span style="color:#e6db74">&#39;test_2&#39;</span>))
 </code></pre></div></li>
 </ul>
-<p>　　#### <strong>1.4、测试执行器</strong>（TextTestRunner）</p>
+<h4 id="14测试执行器texttestrunner"><strong>1.4、测试执行器</strong>（TextTestRunner）</h4>
 <ul>
 <li>
 <p>测试执行器是一个组织安排测试脚本执行活动的组件，即用来加载测试用例并执行用例，且提供测试输出的一个组件</p>
@@ -437,7 +466,7 @@
 </code></pre></div></li>
 </ul>
 <h2 id="加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></h2>
-<p>　　#### <strong>2.1</strong> unittest.main()</p>
+<h4 id="21-unittestmain"><strong>2.1</strong> unittest.main()</h4>
 <ul>
 <li>两个参数（exit、verbosity）：　　</li>
 </ul>
@@ -466,7 +495,7 @@
     unittest<span style="color:#f92672">.</span>main()
 </code></pre></div></li>
 </ul>
-<p>　　#### <strong>2.2</strong> 测试套件(TestSuite)</p>
+<h4 id="22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</h4>
 <ul>
 <li>步骤：　　　　</li>
 </ul>
@@ -477,7 +506,7 @@
 <li>参考：<a href="https://www.cnblogs.com/billie52707/p/13069984.html#testSuite">测试套件
 </a></li>
 </ul>
-<p>　　#### <strong>2.3</strong> unittest.TestLoader()</p>
+<h4 id="23-unittesttestloader"><strong>2.3</strong> unittest.TestLoader()</h4>
 <ul>
 <li>步骤：　　</li>
 </ul>
@@ -637,7 +666,7 @@ runner<span style="color:#f92672">.</span>run(discover)
         <span style="color:#66d9ef">print</span>(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
         self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;TestSuite_百度搜索&#39;</span>)
 </code></pre></div><h2 id="html测试报告"><strong>html测试报告</strong></h2>
-<p>　#### 5.1、配置HTMLTestRunner</p>
+<h4 id="51配置htmltestrunner">5.1、配置HTMLTestRunner</h4>
 <ul>
 <li>工具：HTMLTestRunner　　</li>
 <li>下载：</li>
@@ -718,7 +747,7 @@ runner<span style="color:#f92672">.</span>run(discover)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3785 字
+          3776 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -770,11 +799,40 @@ runner<span style="color:#f92672">.</span>run(discover)
       <nav id="TableOfContents">
   <ul>
     <li><a href="#why-unittest-"><strong>why unittest ?</strong></a></li>
-    <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念：</strong></a></li>
-    <li><a href="#加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></a></li>
+    <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</a></li>
+            <li><a href="#12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</a></li>
+            <li><a href="#13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</a></li>
+            <li><a href="#14测试执行器texttestrunner"><strong>1.4、测试执行器</strong>（TextTestRunner）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#21-unittestmain"><strong>2.1</strong> unittest.main()</a></li>
+            <li><a href="#22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</a></li>
+            <li><a href="#23-unittesttestloader"><strong>2.3</strong> unittest.TestLoader()</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#自动加载测试用例"><strong>自动加载测试用例</strong></a></li>
     <li><a href="#忽略测试和预期失败"><strong>忽略测试和预期失败</strong></a></li>
-    <li><a href="#html测试报告"><strong>html测试报告</strong></a></li>
+    <li><a href="#html测试报告"><strong>html测试报告</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#51配置htmltestrunner">5.1、配置HTMLTestRunner</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
