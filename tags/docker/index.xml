@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 人人都爱小雀斑&#39;s blogs</title>
+    <link>https://billie52707.cn/tags/docker/</link>
+    <description>Recent content in docker on 人人都爱小雀斑&#39;s blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>billie</copyright>
+    <lastBuildDate>Tue, 09 Jun 2020 18:10:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://billie52707.cn/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker基本命令</title>
+      <link>https://billie52707.cn/posts/2020/6/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 09 Jun 2020 18:10:42 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/6/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
+      <description>Docker的三大核心概念：镜像、容器、仓库 镜像：类似虚拟机的镜像、用俗话说就是安装文件。 容器：类似一个轻量级的沙箱，容器是从镜像创建应用运</description>
+    </item>
+    
+  </channel>
+</rss>
