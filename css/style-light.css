@@ -604,8 +604,8 @@ body {
   border-radius: 5px;
   background-size: 50px 50px;
   background-repeat: no-repeat;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
+  /*filter: grayscale(100%);*/
+  /*-webkit-filter: grayscale(100%);*/
 }
 #header #nav {
   color: #d44375;
