@@ -209,8 +209,9 @@
       </ul>
     </li>
     <li><a href="#上传代码到github">上传代码到GitHub</a></li>
-    <li><a href="#为你的博客网站添加一个域名">为你的博客网站添加一个域名</a></li>
+    <li><a href="#为你的博客添加一个域名githubpages">为你的博客添加一个域名(GithubPages)</a></li>
     <li><a href="#添加字数统计">添加字数统计</a></li>
+    <li><a href="#终极优化部署博客到阿里云oss">终极优化，部署博客到阿里云oss</a></li>
   </ul>
 </nav>
     </div>
@@ -527,7 +528,7 @@ git pull origin master
 
 git push -u origin +master
 
-</code></pre></div><h2 id="为你的博客网站添加一个域名">为你的博客网站添加一个域名</h2>
+</code></pre></div><h2 id="为你的博客添加一个域名githubpages">为你的博客添加一个域名(GithubPages)</h2>
 <p>上传代码到GitHub之后，在GitHub项目下新建一个&rsquo;CNAME&rsquo;文件，打开并编辑，在第一行写入<code>你的域名</code>（所以你要先有一个域名，并备案），比如我的就是<code>billie52707.cn</code>，这一步目的是做一个域名的关联，当你访问你的域名的时候，就会关联到你的博客项目来。</p>
 <p>接着，以阿里云为例，在这之前，你的域名已经备案好了，登录阿里云，进入你的域名列表，在域名右侧点击<code>解析</code>，点击添加<code>安全组</code>,<code>新手引导</code>，在<code>记录值</code>输入你的博客项目GitHub pages的IP地址，IP地址可以通过终端输入<code>ping your_github_id.github.io</code>获取。</p>
 <h2 id="添加字数统计">添加字数统计</h2>
@@ -540,6 +541,68 @@ git push -u origin +master
 <p>参考用法，在html文件中任意位置添加:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ .FuzzyWordCount }} Words | Read in about {{ .ReadingTime }} Min
 </code></pre></div><p>更多与<strong>模板变量</strong>相关信息请参考：<a href="https://gohugo.io/variables/">Variables and Params</a></p>
+<h2 id="终极优化部署博客到阿里云oss">终极优化，部署博客到阿里云oss</h2>
+<p>部署博客有很多选择，国内外都有很多服务可以用，各有各的优缺点：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fpages.github.com%2F">GithubPages</a></th>
+<th><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgitee.com%2Fhelp%2Farticles%2F4136">码云Pages</a></th>
+<th><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.netlify.com%2F">Netlify</a></th>
+<th><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.heroku.com">Heroku</a></th>
+<th><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.aliyun.com%2Fproduct%2Foss">阿里云OSS</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>纯静态托管</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否👍</td>
+<td>是</td>
+</tr>
+<tr>
+<td>CDN加速</td>
+<td>否</td>
+<td>否</td>
+<td>是👍</td>
+<td>否</td>
+<td>是👍</td>
+</tr>
+<tr>
+<td>访问速度</td>
+<td>慢</td>
+<td>快👍</td>
+<td>一般</td>
+<td>一般</td>
+<td>很快👍</td>
+</tr>
+<tr>
+<td>支持404重定向</td>
+<td>否</td>
+<td>是👍</td>
+<td>是👍</td>
+<td>是👍</td>
+<td>是👍</td>
+</tr>
+<tr>
+<td>自定义重定向</td>
+<td>否</td>
+<td>否</td>
+<td>是👍</td>
+<td>是👍</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<p>具体选择哪个，根据个人对博客的诉求进行选择。</p>
+<ul>
+<li>访问速度快：优先选择阿里云(国内CDN加速)、其次是码云(国内服务器)</li>
+<li>功能最强：选择Heroku，支持Node.js、PHP等后端</li>
+</ul>
+<p>鉴于本人较追求响应速度，因此毫不犹豫选择了部署到阿里云，下面是一些关于部署的简单过程：</p>
 
     </div>
 
@@ -556,7 +619,7 @@ git push -u origin +master
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3564 字
+          3835 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -628,8 +691,9 @@ git push -u origin +master
       </ul>
     </li>
     <li><a href="#上传代码到github">上传代码到GitHub</a></li>
-    <li><a href="#为你的博客网站添加一个域名">为你的博客网站添加一个域名</a></li>
+    <li><a href="#为你的博客添加一个域名githubpages">为你的博客添加一个域名(GithubPages)</a></li>
     <li><a href="#添加字数统计">添加字数统计</a></li>
+    <li><a href="#终极优化部署博客到阿里云oss">终极优化，部署博客到阿里云oss</a></li>
   </ul>
 </nav>
     </div>
