@@ -214,7 +214,7 @@
     <li><a href="#终极优化部署博客到阿里云oss">终极优化，部署博客到阿里云oss</a>
       <ul>
         <li><a href="#部署思路">部署思路</a></li>
-        <li><a href="#开通阿里云oss创建bucket">开通阿里云oss，创建bucket</a>
+        <li><a href="#阿里云oss">阿里云oss</a>
           <ul>
             <li><a href="#1对象存储oss">1、对象存储oss</a></li>
             <li><a href="#2创建bucket">2、创建Bucket</a></li>
@@ -226,8 +226,15 @@
         <li><a href="#通过github-actions同步博客静态文件到阿里云oss">通过GitHub Actions同步博客静态文件到阿里云oss</a>
           <ul>
             <li><a href="#1githubworkflowsmainyml">1、.github/workflows/main.yml</a></li>
+            <li><a href="#2提交代码到github">2、提交代码到GitHub</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#picgo阿里云oss-图床搭建">PicGO+阿里云oss 图床搭建</a>
+      <ul>
+        <li><a href="#创建对象存储ossbucket">创建对象存储OSS、bucket</a></li>
+        <li><a href="#配置picgo">配置PicGo</a></li>
       </ul>
     </li>
   </ul>
@@ -556,6 +563,7 @@ git push -u origin +master
 <li><strong><code>.WordCount</code></strong>: 文章内容的单词数 (字数)</li>
 </ul>
 <p>我们可以看到 <strong><code>.FuzzyWordCount</code></strong> 提供的是一个大概的值 (整 100)，比如 1 个字算 100 字，2 个字还算 100 字，201 个字算 200 字。这样统计出来的字数可能会比实际情况更多一点，虽然更有牌面但全都是整数未免也太假了。所以我还是决定使用 <strong><code>.WordCount</code></strong>。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816082207539.png" alt="image-20200816082207539"></p>
 <p>参考用法，在html文件中任意位置添加:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ .FuzzyWordCount }} Words | Read in about {{ .ReadingTime }} Min
 </code></pre></div><p>更多与<strong>模板变量</strong>相关信息请参考：<a href="https://gohugo.io/variables/">Variables and Params</a></p>
@@ -627,7 +635,7 @@ git push -u origin +master
 <li>开通阿里云oss，创建bucket</li>
 <li>通过GitHub Actions同步博客静态文件到阿里云oss</li>
 </ol>
-<h3 id="开通阿里云oss创建bucket">开通阿里云oss，创建bucket</h3>
+<h3 id="阿里云oss">阿里云oss</h3>
 <h4 id="1对象存储oss">1、对象存储oss</h4>
 <ul>
 <li>登录到阿里云之后点击控制台，选择<a href="https://oss.console.aliyun.com/overview">对象存储oss</a>，</li>
@@ -641,7 +649,7 @@ git push -u origin +master
 <p>进入新建Bucket页面，并填写Bucket信息。</p>
 </li>
 <li>
-<p>填写<a href="http://docs.aliyun.com/#/oss/product-documentation/intruduction&amp;concepts">Bucket名称</a>，选择<a href="http://docs.aliyun.com/#/oss/product-documentation/domain-region">所属地域</a>，设置<a href="http://docs.aliyun.com/#/oss/product-documentation/acl">读写权限</a>为<code>公共可读</code>。 在填写完bucket信息后点击提交，创建bucket。</p>
+<p>填写<a href="http://docs.aliyun.com/#/oss/product-documentation/intruduction&amp;concepts">Bucket名称</a>，选择<a href="http://docs.aliyun.com/#/oss/product-documentation/domain-region">所属地域</a>，设置<a href="http://docs.aliyun.com/#/oss/product-documentation/acl">读写权限</a>为<code>公共读</code>。 在填写完bucket信息后点击提交，创建bucket。</p>
 </li>
 </ul>
 <h4 id="3绑定域名">3、绑定域名</h4>
@@ -667,7 +675,13 @@ git push -u origin +master
 <h3 id="通过github-actions同步博客静态文件到阿里云oss">通过GitHub Actions同步博客静态文件到阿里云oss</h3>
 <h4 id="1githubworkflowsmainyml">1、.github/workflows/main.yml</h4>
 <ul>
-<li>在本地博客项目下的public文件夹下新建文件：</li>
+<li>
+<p>将拿到的 AccessKeys配置到GitHub项目的 Secrets</p>
+<p>登录GitHub，进入博客项目，Setting，Secrets，new secret，新建两个secrets，命名Name分别为<code>ACCESS_KEY_ID</code>和<code>ACCESS_KEY_ID</code>,填入相对应的值Value，即为上一步获取的两个值</p>
+</li>
+<li>
+<p>在本地博客项目下的public文件夹下新建文件：</p>
+</li>
 </ul>
 <pre><code>mkdir .github/workflows &amp;&amp; cd .github/workflows
 touch main.yml
@@ -708,9 +722,32 @@ jobs:
         access-key-id: ${{ secrets.ACCESS_KEY_ID }}
         access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
     - name: Deply To OSS
-    	# oss的路径参考你的阿里云对象存储的用户名称
+    	# oss的路径参考你的阿里云对象存储的bucket名称
       run: ossutil cp ./ oss://billie-s-blog/ -rf
-</code></pre>
+</code></pre><h4 id="2提交代码到github">2、提交代码到GitHub</h4>
+<p>提交成功之后可进入项目下的Actions选项，查看任务日志，如果不出错，则已成功同步到阿里云oss
+<img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816082017220.png" alt="image-20200816082017220"></p>
+<h2 id="picgo阿里云oss-图床搭建">PicGO+阿里云oss 图床搭建</h2>
+<p>考虑到自己写博客的需要，以及方便管理等原因，需要寻找一个方便的图床用来存储图片</p>
+<h3 id="创建对象存储ossbucket">创建对象存储OSS、bucket</h3>
+<p>在阿里云里面开通对象存储只是表明你开通了对象存储的功能。而bucket （桶）才是真正用于存东西的容器</p>
+<ol>
+<li>创建对象存储OSS</li>
+<li>在<a href="https://www.cnblogs.com/Gentleaves/p/oss.console.aliyun.com">OSS控制台</a>创建bucket，注意：在读写权限那里选用“公共读”，这样才能使用链接直接访问我们所存储的图片。</li>
+</ol>
+<h3 id="配置picgo">配置PicGo</h3>
+<p><a href="https://github.com/Molunerfinn/PicGo/releases">PicGo下载</a></p>
+<ol>
+<li>
+<p>切换到阿里云图床的配置页面，填写配置信息，keyid和keysecret就是上节提到的accesskey与secret。存储空间名指你用来当作图床的bucket名。 存储区域按照你创建时候的区域来填写。存储路径可以写<code>img/</code>,后面一定要加斜杠。 最后两项不用填写。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816083128131.png" alt="image-20200816083128131"></p>
+</li>
+<li>
+<p>然后就可以使用picgo方便地上传图片了。上传完成之后会自动把格式化的图片链接放到你的粘贴板里~~这样就可以很快地向md里插入图片了</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816083200101.png" alt="image-20200816083200101"></p>
+</li>
+</ol>
+
     </div>
 
 
@@ -726,7 +763,7 @@ jobs:
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4635 字
+          5226 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -803,7 +840,7 @@ jobs:
     <li><a href="#终极优化部署博客到阿里云oss">终极优化，部署博客到阿里云oss</a>
       <ul>
         <li><a href="#部署思路">部署思路</a></li>
-        <li><a href="#开通阿里云oss创建bucket">开通阿里云oss，创建bucket</a>
+        <li><a href="#阿里云oss">阿里云oss</a>
           <ul>
             <li><a href="#1对象存储oss">1、对象存储oss</a></li>
             <li><a href="#2创建bucket">2、创建Bucket</a></li>
@@ -815,8 +852,15 @@ jobs:
         <li><a href="#通过github-actions同步博客静态文件到阿里云oss">通过GitHub Actions同步博客静态文件到阿里云oss</a>
           <ul>
             <li><a href="#1githubworkflowsmainyml">1、.github/workflows/main.yml</a></li>
+            <li><a href="#2提交代码到github">2、提交代码到GitHub</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#picgo阿里云oss-图床搭建">PicGO+阿里云oss 图床搭建</a>
+      <ul>
+        <li><a href="#创建对象存储ossbucket">创建对象存储OSS、bucket</a></li>
+        <li><a href="#配置picgo">配置PicGo</a></li>
       </ul>
     </li>
   </ul>
