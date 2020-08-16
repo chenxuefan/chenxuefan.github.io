@@ -14,10 +14,10 @@
     
     <item>
       <title>python&#43;hugo&#43;nginx | 实现博客主页每日一图</title>
-      <link>https://billie52707.cn/posts/2020/8/python&#43;hugo-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</link>
+      <link>https://billie52707.cn/posts/2020/8/python&#43;hugo&#43;nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/python&#43;hugo-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</guid>
+      <guid>https://billie52707.cn/posts/2020/8/python&#43;hugo&#43;nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</guid>
       <description>前言 在建博客之前，我现在的域名访问的对象，是使用nginx部署在服务器的一个页面，并且由于加入了python脚本，这个页面每天都会更新，每天</description>
     </item>
     
