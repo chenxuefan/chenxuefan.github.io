@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Tue, 04 Aug 2020 18:42:17 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>一次配置Nginx的踩坑填坑记录</title>
+      <link>https://billie52707.cn/posts/2020/8/%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AEnginx%E7%9A%84%E8%B8%A9%E5%9D%91%E5%A1%AB%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/8/%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AEnginx%E7%9A%84%E8%B8%A9%E5%9D%91%E5%A1%AB%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx.</description>
+    </item>
     
     <item>
       <title>hugo建站 | 我的第一个博客网站</title>
