@@ -64,7 +64,7 @@
   <div class="content index py4">
 
   <div align="center">
-  <img height="410" width="706"src="http://47.93.125.151:888/pic/page.png"><br>
+  <img height="410" width="706"src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/131597526616_.pic_hd.jpg"><br>
 </div>
 <div id="header-post">
 
@@ -254,7 +254,7 @@
 <h2 id="安装">安装</h2>
 <pre><code>pip3 install pyquery
 </code></pre><h2 id="初始化">初始化</h2>
-<p>🍑 字符串初始化</p>
+<p>🍑 <strong>字符串初始化</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
 </span><span style="color:#e6db74">&lt;div&gt;
 </span><span style="color:#e6db74">    &lt;ul&gt;
@@ -269,17 +269,17 @@
 <span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
 doc <span style="color:#f92672">=</span> pq(html)
 <span style="color:#66d9ef">print</span>(doc(<span style="color:#e6db74">&#39;li&#39;</span>))
-</code></pre></div><p>🥭 URL初始化</p>
+</code></pre></div><p>🥭 <strong>URL初始化</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
 doc <span style="color:#f92672">=</span> pq(url<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://baidu.com&#39;</span>)
 <span style="color:#66d9ef">print</span>(doc(<span style="color:#e6db74">&#39;title&#39;</span>))
-</code></pre></div><p>🍉 文件初始化</p>
+</code></pre></div><p>🍉 <strong>文件初始化</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
 doc <span style="color:#f92672">=</span> pq(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;demo.html&#39;</span>)
 <span style="color:#66d9ef">print</span>(doc(<span style="color:#e6db74">&#39;li&#39;</span>))
 </code></pre></div><h2 id="基本css选择器">基本CSS选择器</h2>
-<p>🍎 id选择器（#）</p>
-<p>🍊 class选择器（.）</p>
+<p>🍎 <strong>id选择器（#）</strong></p>
+<p>🍊 <strong>class选择器（.）</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
 </span><span style="color:#e6db74">&lt;div id=&#34;container&#34;&gt;
 </span><span style="color:#e6db74">    &lt;ul class=&#34;list&#34;&gt;
@@ -295,7 +295,7 @@ doc <span style="color:#f92672">=</span> pq(filename<span style="color:#f92672">
 doc <span style="color:#f92672">=</span> pq(html)
 <span style="color:#66d9ef">print</span>(doc(<span style="color:#e6db74">&#39;#container .list li&#39;</span>))
 </code></pre></div><h2 id="查找节点">查找节点</h2>
-<p>🍎 子节点</p>
+<p>🍎 <strong>子节点</strong></p>
 <ul>
 <li>find()</li>
 <li>children()</li>
@@ -311,21 +311,21 @@ lis <span style="color:#f92672">=</span> items<span style="color:#f92672">.</spa
 <span style="color:#75715e">#children()</span>
 lis <span style="color:#f92672">=</span> items<span style="color:#f92672">.</span>children()
 <span style="color:#66d9ef">print</span>(lis)
-</code></pre></div><p>🍊 父节点</p>
+</code></pre></div><p>🍊 <strong>父节点</strong></p>
 <ul>
 <li>parents()</li>
 </ul>
-<p>🥝 兄弟节点</p>
+<p>🥝 <strong>兄弟节点</strong></p>
 <ul>
 <li>siblings()</li>
 </ul>
 <p>ps:以上方法均可传入css选择器</p>
 <h2 id="遍历">遍历</h2>
-<p>🚴‍♀️ 单个节点</p>
+<p>🚴‍♀️ <strong>单个节点</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
 li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.active&#39;</span>)
 <span style="color:#66d9ef">print</span>(li)
-</code></pre></div><p>🚴 多个节点（遍历）</p>
+</code></pre></div><p>🚴 <strong>多个节点（遍历）</strong></p>
 <ul>
 <li>item()</li>
 </ul>
@@ -334,7 +334,7 @@ lis <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li
 <span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> lis:
     <span style="color:#66d9ef">print</span>(li, type(li))
 </code></pre></div><h2 id="获取信息">获取信息</h2>
-<p>🚗 属性</p>
+<p>🚗 <strong>属性</strong></p>
 <ul>
 <li>attr()</li>
 </ul>
@@ -343,7 +343,7 @@ a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#3
 <span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;href&#39;</span>))  <span style="color:#75715e">#href属性的值</span>
 <span style="color:#75715e">#或</span>
 <span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>attr<span style="color:#f92672">.</span>href) <span style="color:#75715e">#href属性的值</span>
-</code></pre></div><p>🚄 文本</p>
+</code></pre></div><p>🚄 <strong>文本</strong></p>
 <ul>
 <li>text()：返回标签内部纯文本内容</li>
 </ul>
