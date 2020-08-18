@@ -257,28 +257,28 @@
 </ul>
 <h2 id="前言">前言</h2>
 <p>北京时间23日凌晨1点，苹果WWDC2020大会开幕。在发布会上，苹果正式发布了新版macOS，并将其命名为“Big Sur”。</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/1.png" alt=""></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1.png" alt="1"></p>
 <p>相比于外界争议最大的UI界面，令我更为关注的是这次的系统动态壁纸，跟过去几年的版本更新一样，这次的macOS系统版本命名也取自自然景点的名字，即“Big Sur”，好像是在加州西海岸的一个景点，而且这一版动态壁纸依然支持根据时间变化进行明暗的切换，总之很好看就对了，超想要的！于是我开始在网上寻找最新的这一版本动态壁纸，幸运地，最后让我找到了这个神奇的网站：</p>
 <p>「<a href="https://dynamicwallpaper.club/">https://dynamicwallpaper.club</a>」</p>
 <p>需要注意的是，这个网站需要科*上网才能打开，并且需要登录才能查看网页包含的动态壁纸</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/2.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/2.png" alt="2"></p>
 <p>登录进去之后，在首页Gallery选项的位置，可以看到不仅有最新的Big Sur壁纸，还有许多macOS支持的动态壁纸，有很多还是5k级别的质量，点进去之后就可以找到下载壁纸的按钮</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/3.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3.png" alt="3"></p>
 <p>下载流程很简单，基本下载到本地就可以为我们所用了</p>
 <p>除了最新的这款壁纸，网站里很多精美的壁纸也很值得一试</p>
 <p>这个时候我又想，这么多壁纸要是一个个下载得多麻烦，要是有什么方法能够一下子把所有的壁纸下载下来就舒服了！</p>
 <h2 id="爬虫篇">爬虫篇</h2>
 <p>好久没有写爬虫程序了，练练手</p>
 <p>首先还是上一张图的位置，在点击下载按钮的同时，我通过浏览器的开发者工具捕获到这些请求：</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/4.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/4.png" alt="4"></p>
 <p>点开下面这一条请求，发现它是这样的</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/5.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/5.png" alt="5"></p>
 <p>接着复制这条请求的url，粘贴到浏览器地址栏，这个时候壁纸马上进行了下载，于是现在我们可以确定：</p>
 <p><strong>这条请求就是这张big sur壁纸的真实下载链接！</strong></p>
 <pre><code>https://firebasestorage.googleapis.com/v0/b/dynamic-wallpapers-6a7ab.appspot.com/o/wallpapers%2Fdgvrihxpu2h%2FBig%20Sur.heic?alt=media&amp;token=38f034ba-5ebb-4891-b483-35f0a82476cd
 </code></pre><p>按照以往的经验，一般同一网站下的同一格式的资源，其链接都会遵循<code>同一规则或方法</code>来进行命名</p>
 <p>也就是说</p>
-<p>我们可以通过这条链接，找到跟其他壁纸链接同样的命名规律，进而得到其他所有壁纸的真实下载链接！</p>
+<p>我们可以通过这条链接，找到跟其他壁纸链接同样的命名规律，进而得到其他所有壁纸的<code>真实下载链接</code>！</p>
 <p>说干就干</p>
 <p>现在让我们来分析一下这条请求</p>
 <p>首先从前到后，一直到wallpapers这里，都没有出现一些特殊的符号或字段，预估这些应该都是需要加上的字段，并且不是唯一的</p>
@@ -298,39 +298,39 @@
 </ul>
 <p>最后一个参数也是最难发现的，最后通过比对首页壁纸列表的网页源代码，我发现这个字段是存在在每个壁纸的跳转链接中的</p>
 <p>在此暂时称这个参数为壁纸的id</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/6.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/6.png" alt="6"></p>
 <p>ok，前两个参数（id，name）我们已经了解了来龙去脉，比较容易获取，最后比较麻烦的是这个token</p>
 <p>同样是在一开始big sur壁纸详情页面，复制真实链接中token的值，粘贴到开发者工具的搜索框，这个时候我发现可以匹配到几条包含token值的请求</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/7.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/7.png" alt="7"></p>
 <p>点进去第一个，在右侧的请求返回信息窗口，最后一行可以找到token值“38f034ba-5ebb-4891-b483-35f0a82476cd”</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/8.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/8.png" alt="8"></p>
 <p>好家伙，原来藏在这！</p>
 <p>现在我们可以得知，token值其实是通过访问这条请求，在返回的信息中获取到的，而且是“downloadTokens”键的值</p>
 <p>这样一来就简单多了，我们只需要通过访问这条请求就可以拿到token值！</p>
 <p>点开上面这条请求的headers选项，可以发现它的请求链接是这样的：</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/9.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/9.png" alt="9"></p>
 <p>emmmm，是不是有点眼熟? 没错，里面包含的两个特殊字段都是我们之前见过的，一个是壁纸的id，一个是壁纸的名字name</p>
 <p>获取三个参数（id,name,token）的相关代码：</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/10.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/10.png" alt=""></p>
 <p>到这里难点都基本解决了，后面就从首页的壁纸列表逐页爬取即可</p>
 <p>网络请求用的是requests模块，文本解析用的是etree和正则表达式re，都是python源码自带的</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/11.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/11.png" alt="11"></p>
 <p>开始爬取&hellip;</p>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/12.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/12.png" alt="12"></p>
 <p>牛逼，全部爬下来了！</p>
 <h2 id="壁纸使用篇">壁纸使用篇</h2>
 <p>现在已经获取到了动态壁纸，即macOS支持的文件heic动态壁纸文件</p>
-<p>所有的壁纸下载链接放到这里了：http://billie52707.cn/true_heic_urls.html（同样需要科*上网才能下载（手动doge</p>
+<p>所有的壁纸下载链接放到这里了：<a href="https://download.billie52707.cn/true_heic_urls.html">https://download.billie52707.cn/true_heic_urls.html</a>（同样需要科*上网才能下载（手动doge</p>
 <p>设置壁纸的方法如下：</p>
 <ul>
 <li>打开终端，输入「open /Library」，进入放置壁纸的文件夹：/Desktop Pictures</li>
 </ul>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/13.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/13.png" alt="13"></p>
 <ul>
 <li>将heic壁纸文件拖动到/Desktop Pictures文件夹下</li>
 <li>桌面右键，设置桌面背景，即可设置下载的壁纸，效果如下：</li>
 </ul>
-<p><img src="http://47.93.125.151:888/pic/blogs/bigsur/14.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/14.png" alt="14"></p>
 <p>awesome！</p>
 <h2 id="后记">后记</h2>
 <p>某hub地址在这：https://github.com/chenxuefan/Dynamicwallpaper</p>
@@ -355,7 +355,7 @@
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1942 字
+          1952 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
