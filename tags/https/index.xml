@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>https on 人人都爱小雀斑&#39;s blog</title>
+    <link>https://billie52707.cn/tags/https/</link>
+    <description>Recent content in https on 人人都爱小雀斑&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>billie</copyright>
+    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://billie52707.cn/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>从http到https</title>
+      <link>https://billie52707.cn/posts/2020/8/%E4%BB%8Ehttp%E5%88%B0https/</link>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/8/%E4%BB%8Ehttp%E5%88%B0https/</guid>
+      <description>前言 最近博客美化方面做的都差不多了，也没有太多东西好捣鼓了，这个时候我又注意到我的网站标头显示着一个不安全的字样，觉得又好奇又奇怪，因为在这</description>
+    </item>
+    
+  </channel>
+</rss>
