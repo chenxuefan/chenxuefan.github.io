@@ -1298,6 +1298,9 @@ article .content .caption {
     align-self: flex-start;
     margin-right: 20px;
   }
+  #footer .footer-center {
+    align-self: center;
+  }
   #footer .footer-right {
     align-self: flex-end;
   }
