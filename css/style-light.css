@@ -1286,20 +1286,25 @@ article .content .caption {
   line-height: 20px;
 }
 @media (min-width: 39rem) {
-  #footer {
+  #footer {/*
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px;*/
+    display: inline-block;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
   }
   #footer .footer-left {
     align-self: flex-start;
     margin-right: 20px;
+    /*margin-bottom: 20px;*/
   }
   #footer .footer-center {
-    align-self: center;
+    text-align: center;
   }
   #footer .footer-right {
     align-self: flex-end;
