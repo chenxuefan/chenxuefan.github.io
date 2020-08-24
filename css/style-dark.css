@@ -604,8 +604,8 @@ body {
   border-radius: 5px;
   background-size: 50px 50px;
   background-repeat: no-repeat;
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
+ /* filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);*/
 }
 #header #nav {
   color: #2bbc8a;
@@ -1286,17 +1286,25 @@ article .content .caption {
   line-height: 20px;
 }
 @media (min-width: 39rem) {
-  #footer {
+  #footer {/*
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px;*/
+    display: inline-block;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
   }
   #footer .footer-left {
     align-self: flex-start;
     margin-right: 20px;
+    /*margin-bottom: 20px;*/
+  }
+  #footer .footer-center {
+    text-align: center;
   }
   #footer .footer-right {
     align-self: flex-end;
@@ -1580,4 +1588,55 @@ code {
 }
 .highlight .line {
   height: 22px;
+}
+
+/*打赏*/
+.post-reward {
+    margin-top: 20px;
+    padding-top: 10px;
+    text-align: center;
+    /* border-top: 1px dashed #e6e6e6 */
+}
+
+.post-reward .reward-button {
+    margin: 15px 0;
+    padding: 3px 7px;
+    display: inline-block;
+    color: #c6cddb;
+    border: 2px solid #c6cddb;
+    border-radius: 20px;
+    cursor: pointer
+}
+
+.post-reward .reward-button:hover {
+    color: #494f5c;
+    background-color: #c6cddb;
+    -webkit-transition: .5s;
+    transition: .5s
+}
+
+.post-reward #reward:checked ~ .qr-code {
+    display: block
+}
+
+.post-reward #reward:checked ~ .reward-button, .post-reward .qr-code {
+    display: none
+}
+
+.post-reward .qr-code .qr-code-image {
+    display: inline-block;
+    min-width: 200px;
+    width: 40%;
+    margin-top: 15px
+}
+
+.post-reward .qr-code .qr-code-image span {
+    display: inline-block;
+    width: 100%;
+    margin: 8px 0
+}
+
+.post-reward .qr-code .image {
+    width: 200px;
+    height: 200px
 }

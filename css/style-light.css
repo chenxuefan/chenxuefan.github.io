@@ -1589,3 +1589,54 @@ code {
 .highlight .line {
   height: 22px;
 }
+
+/*打赏*/
+.post-reward {
+    margin-top: 20px;
+    padding-top: 10px;
+    text-align: center;
+    /* border-top: 1px dashed #e6e6e6 */
+}
+
+.post-reward .reward-button {
+    margin: 15px 0;
+    padding: 3px 7px;
+    display: inline-block;
+    color: #c6cddb;
+    border: 2px solid #c6cddb;
+    border-radius: 20px;
+    cursor: pointer
+}
+
+.post-reward .reward-button:hover {
+    color: #494f5c;
+    background-color: #c6cddb;
+    -webkit-transition: .5s;
+    transition: .5s
+}
+
+.post-reward #reward:checked ~ .qr-code {
+    display: block
+}
+
+.post-reward #reward:checked ~ .reward-button, .post-reward .qr-code {
+    display: none
+}
+
+.post-reward .qr-code .qr-code-image {
+    display: inline-block;
+    min-width: 200px;
+    width: 40%;
+    margin-top: 15px
+}
+
+.post-reward .qr-code .qr-code-image span {
+    display: inline-block;
+    width: 100%;
+    margin: 8px 0
+}
+
+.post-reward .qr-code .image {
+    width: 200px;
+    height: 200px
+}
