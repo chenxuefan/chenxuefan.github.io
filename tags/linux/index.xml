@@ -14,19 +14,19 @@
     
     <item>
       <title>一次配置Nginx的踩坑填坑记录</title>
-      <link>https://billie52707.cn/posts/2020/8/%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AEnginx%E7%9A%84%E8%B8%A9%E5%9D%91%E5%A1%AB%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
+      <link>https://billie52707.cn/2020/08/%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AEnginx%E7%9A%84%E8%B8%A9%E5%9D%91%E5%A1%AB%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AEnginx%E7%9A%84%E8%B8%A9%E5%9D%91%E5%A1%AB%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://billie52707.cn/2020/08/%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AEnginx%E7%9A%84%E8%B8%A9%E5%9D%91%E5%A1%AB%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
       <description>前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx.</description>
     </item>
     
     <item>
       <title>Docker基本命令</title>
-      <link>https://billie52707.cn/posts/2020/6/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
+      <link>https://billie52707.cn/2020/06/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Tue, 09 Jun 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/6/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://billie52707.cn/2020/06/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
       <description>Docker的三大核心概念：镜像、容器、仓库 镜像：类似虚拟机的镜像、用俗话说就是安装文件。 容器：类似一个轻量级的沙箱，容器是从镜像创建应用运</description>
     </item>
     

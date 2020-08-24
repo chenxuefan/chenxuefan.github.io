@@ -14,10 +14,10 @@
     
     <item>
       <title>Docker基本命令</title>
-      <link>https://billie52707.cn/posts/2020/6/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
+      <link>https://billie52707.cn/2020/06/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Tue, 09 Jun 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/6/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://billie52707.cn/2020/06/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
       <description>Docker的三大核心概念：镜像、容器、仓库 镜像：类似虚拟机的镜像、用俗话说就是安装文件。 容器：类似一个轻量级的沙箱，容器是从镜像创建应用运</description>
     </item>
     

@@ -14,19 +14,19 @@
     
     <item>
       <title>python&#43;hugo&#43;nginx | 实现博客主页每日一图</title>
-      <link>https://billie52707.cn/posts/2020/8/pythonhugonginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</link>
+      <link>https://billie52707.cn/2020/08/python-hugo-nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/pythonhugonginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</guid>
+      <guid>https://billie52707.cn/2020/08/python-hugo-nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</guid>
       <description>前言 在建博客之前，我现在的域名访问的对象，是使用nginx部署在服务器的一个页面，并且由于加入了python脚本，这个页面每天都会更新，每天</description>
     </item>
     
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
-      <link>https://billie52707.cn/posts/2020/8/hugo%E5%BB%BA%E7%AB%99%E5%85%A8%E6%8C%87%E5%8D%97-%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <link>https://billie52707.cn/2020/08/hugo%E5%BB%BA%E7%AB%99%E5%85%A8%E6%8C%87%E5%8D%97-%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
       <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/hugo%E5%BB%BA%E7%AB%99%E5%85%A8%E6%8C%87%E5%8D%97-%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <guid>https://billie52707.cn/2020/08/hugo%E5%BB%BA%E7%AB%99%E5%85%A8%E6%8C%87%E5%8D%97-%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
       <description>前言 建博客的初衷？ 2020那一年，八月的第一天，我还是像往常一样打开我的域名网站，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破</description>
     </item>
     
