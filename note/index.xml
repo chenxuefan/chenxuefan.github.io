@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on 人人都爱小雀斑&#39;s blog</title>
+    <link>https://billie52707.cn/note/</link>
+    <description>Recent content in Notes on 人人都爱小雀斑&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>billie</copyright>
+    
+	<atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>bt</title>
+      <link>https://billie52707.cn/note/bt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/bt/</guid>
+      <description>启动 sudo /etc/init.d/bt default 重启 sudo bt restart</description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://billie52707.cn/note/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/git/</guid>
+      <description>  git init
+  git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git
+  git add .
+  git commit -m&amp;quot;update&amp;rdquo;
+  git branch
+  git push -u origin master
+  </description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://billie52707.cn/note/nginx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/nginx/</guid>
+      <description>配置文件位置 /etc/nginx/conf/default.conf 启动/关闭/重启 service nginx start/stop/restart</description>
+    </item>
+    
+    <item>
+      <title>python虚拟环境</title>
+      <link>https://billie52707.cn/note/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
+      <description>库的安装 pip install vitualenv 新建虚拟环境 virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.txt 通过requirements.txt配置环境 pip3 install</description>
+    </item>
+    
+    <item>
+      <title>数据结构学习笔记</title>
+      <link>https://billie52707.cn/note/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>时间复杂度 降低时间复杂度的必要性 实际的在线环境中，用户的访问请求可以看作一个流式数据。假设这个数据流中，每个访问的平均时间间隔是 t。如果你的</description>
+    </item>
+    
+  </channel>
+</rss>
