@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Fri, 28 Aug 2020 18:10:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2020 18:10:42 +0800</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>docker</title>
       <link>https://billie52707.cn/tags/docker/</link>
-      <pubDate>Fri, 28 Aug 2020 18:10:42 +0800</pubDate>
+      <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
       <guid>https://billie52707.cn/tags/docker/</guid>
       <description></description>
@@ -24,9 +24,18 @@
     <item>
       <title>Linux</title>
       <link>https://billie52707.cn/tags/linux/</link>
-      <pubDate>Fri, 28 Aug 2020 18:10:42 +0800</pubDate>
+      <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
       <guid>https://billie52707.cn/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://billie52707.cn/tags/mac/</link>
+      <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/tags/mac/</guid>
       <description></description>
     </item>
     
@@ -81,15 +90,6 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/tags/poem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mac</title>
-      <link>https://billie52707.cn/tags/mac/</link>
-      <pubDate>Sat, 27 Jun 2020 22:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/tags/mac/</guid>
       <description></description>
     </item>
     
