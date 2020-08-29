@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>docker心路历程</title>
+      <link>https://billie52707.cn/note/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/docker/</guid>
+      <description>-bash: docker-machine: command not found（macOS） base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;amp;&amp;amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &amp;gt;/usr/local/bin/docker-machine &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-machine 拉取指定版本的镜像 Ubuntu：docker pull ubuntu:16.04 Centos：docker pull centos:centos6.8 mys</description>
+    </item>
+    
+    <item>
       <title>git</title>
       <link>https://billie52707.cn/note/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

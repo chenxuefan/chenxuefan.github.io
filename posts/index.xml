@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2020 18:10:42 +0800</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker基本命令</title>
+      <link>https://billie52707.cn/2020/08/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 28 Aug 2020 18:10:42 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/2020/08/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
+      <description>Docker的三大核心概念 镜像 类似虚拟机的镜像、用俗话说就是安装文件。 容器 类似一个轻量级的沙箱，容器是从镜像创建应用运行实例，可以将其启动、</description>
+    </item>
     
     <item>
       <title>从http到https</title>
@@ -109,15 +118,6 @@
       
       <guid>https://billie52707.cn/2020/06/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-unittest%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6/</guid>
       <description>目录： why unittest？ unittest的四个重要概念 加载测试用例的三个方法 自动加载测试用例 忽略测试和预期失败 生成html测试报告 why unittest ? 简</description>
-    </item>
-    
-    <item>
-      <title>Docker基本命令</title>
-      <link>https://billie52707.cn/2020/06/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Tue, 09 Jun 2020 18:10:42 +0800</pubDate>
-      
-      <guid>https://billie52707.cn/2020/06/docker%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
-      <description>Docker的三大核心概念：镜像、容器、仓库 镜像：类似虚拟机的镜像、用俗话说就是安装文件。 容器：类似一个轻量级的沙箱，容器是从镜像创建应用运</description>
     </item>
     
     <item>
