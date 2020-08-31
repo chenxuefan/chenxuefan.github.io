@@ -219,6 +219,8 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#网络管理">网络管理</a></li>
+    <li><a href="#实践在macos使用docker搭建ubuntu环境">实践：在macOS使用docker搭建ubuntu环境</a></li>
+    <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
     </div>
@@ -612,6 +614,47 @@ systemctl start/stop/restart docker
 <pre><code>docker port Name/ID 80
 </code></pre></li>
 </ul>
+<h2 id="实践在macos使用docker搭建ubuntu环境">实践：在macOS使用docker搭建ubuntu环境</h2>
+<ol>
+<li>
+<p>下载离线安装版本：docker for mac：<a href="https://hub.docker.com/editions/community/docker-ce-desktop-mac">官网</a> <a href="http://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/stable/">阿里云</a></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200831150033178.png" alt="image-20200831150033178"></p>
+</li>
+<li>
+<p>安装完成之后，在启动台打开它，之后就可以在状态栏找到它</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200831150324874.png" alt="image-20200831150324874"></p>
+</li>
+<li>
+<p>终端输入docker，检查安装是否成功</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200831151805174.png" alt="image-20200831151805174"></p>
+</li>
+<li>
+<p>拉取指定版本的ubuntu镜像，终端输入<code>docker pull ubuntu:16.04</code></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200831152933949.png" alt="image-20200831152933949"></p>
+</li>
+<li>
+<p>使用镜像新建容器，新容器命名为Ubuntu16，终端输入<code>docker run -it --name Ubuntu16 ubuntu:16.04</code></p>
+</li>
+<li>
+<p>查看目前本地的容器，终端输入<code>docker ps -a</code></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200831153311753.png" alt="image-20200831153311753"></p>
+</li>
+<li>
+<p>启动容器，<code>docker start ubuntu16</code></p>
+</li>
+<li>
+<p>进入容器，<code>docker exec -it ubuntu16 bash</code></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200831153559875.png" alt="image-20200831153559875"></p>
+</li>
+<li>
+<p>安装必须的Linux工具，如vim、net-tools、wget等，可使用apt-get安装。</p>
+</li>
+<li>
+<p>完结，撒花🎉</p>
+</li>
+</ol>
+<h2 id="后记">后记</h2>
+<p>updated by 2020-08-31</p>
 
     </div>
 
@@ -655,7 +698,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3091 字
+          3364 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -731,6 +774,8 @@ systemctl start/stop/restart docker
       </ul>
     </li>
     <li><a href="#网络管理">网络管理</a></li>
+    <li><a href="#实践在macos使用docker搭建ubuntu环境">实践：在macOS使用docker搭建ubuntu环境</a></li>
+    <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
     </div>
