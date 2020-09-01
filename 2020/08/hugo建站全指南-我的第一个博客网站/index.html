@@ -215,6 +215,7 @@ if (!doNotTrack) {
     <li><a href="#文章添加标签和分类">文章添加标签和分类</a></li>
     <li><a href="#页脚信息的编辑">页脚信息的编辑</a></li>
     <li><a href="#网站流量统计">网站流量统计</a></li>
+    <li><a href="#首页添加每日一图">首页添加每日一图</a></li>
     <li><a href="#添加评论系统valine">添加评论系统Valine</a>
       <ul>
         <li><a href="#特性">特性：</a></li>
@@ -296,6 +297,12 @@ if (!doNotTrack) {
             
             
             <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/https" rel="tag">https</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
             
              ,  
             <a class="tag-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91" rel="tag">阿里云</a>
@@ -406,7 +413,6 @@ tags:
 &lt;/<span style="color:#f92672">footer</span>&gt;
 </code></pre></div><h2 id="网站流量统计">网站流量统计</h2>
 <p>工具：<a href="http://busuanzi.ibruce.info/">不蒜子</a>，一个通过仅仅两行代码实现的网页流量计数器</p>
-<p>使用：</p>
 <p>1、在<code>/cactus/layouts/partials/head.html</code>文件中引入不蒜子js文件</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 不蒜子 --&gt;</span>
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
@@ -428,7 +434,9 @@ tags:
 </code></pre></div><p>具体显示效果可移步此文章页首标题处查看</p>
 <p>4、设置文章字数和阅读时间，在<code>/cactus/layouts/_default/single.html</code>中添加以下代码</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wc&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;font-size: 1rem;text-align: center;&#34;</span>&gt;{{ .FuzzyWordCount }} Words|Read in about {{ .ReadingTime }} Min|本文总阅读量&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次&lt;/<span style="color:#f92672">h5</span>&gt;
-</code></pre></div><h2 id="添加评论系统valine">添加评论系统Valine</h2>
+</code></pre></div><h2 id="首页添加每日一图">首页添加每日一图</h2>
+<p><a href="https://billie52707.cn/2020/08/python-hugo-nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/">python+hugo+nginx | 实现博客主页每日一图 </a></p>
+<h2 id="添加评论系统valine">添加评论系统Valine</h2>
 <blockquote>
 <p>Valine - 一款快速、简洁且高效的无后端评论系统。</p>
 <p>Valine 诞生于2017年8月7日，是一款基于Leancloud的快速、简洁且高效的无后端评论系统。</p>
@@ -785,7 +793,7 @@ jobs:
 <p>进入”资源提交”下的”普通收录”，再点“sitemap”，在这里可以提交hugo网站的sitemap文件。</p>
 <p>btw，百度不容许以子目录的方式提交子站点，和google不一样，只能在提交sitemap文件时，提交多个sitemap文件。这样也能勉强让百度收录。</p>
 <h2 id="后记">后记</h2>
-<p>updated by 2020-08-20 2:49</p>
+<p>updated by 2020-09-01 15:49</p>
 
     </div>
 
@@ -825,11 +833,17 @@ jobs:
             <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
             
              ,  
+            <a class="tag-link" href="/tags/https" rel="tag">https</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+             ,  
             <a class="tag-link" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91" rel="tag">阿里云</a>
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          5913 字
+          5930 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -895,6 +909,7 @@ jobs:
     <li><a href="#文章添加标签和分类">文章添加标签和分类</a></li>
     <li><a href="#页脚信息的编辑">页脚信息的编辑</a></li>
     <li><a href="#网站流量统计">网站流量统计</a></li>
+    <li><a href="#首页添加每日一图">首页添加每日一图</a></li>
     <li><a href="#添加评论系统valine">添加评论系统Valine</a>
       <ul>
         <li><a href="#特性">特性：</a></li>

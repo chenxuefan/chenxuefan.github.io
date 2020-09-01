@@ -18,7 +18,7 @@
       <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/diary/2020-08-31/</guid>
-      <description>第一周记 周计划 复习 数据结构 自动化测试 自动化运维 比赛所需环境部署 比赛相关知识的学习 生活小记 周一，下午核酸检测、上晚上的课（前端） 感想收获 明日计</description>
+      <description>第一周记 周计划 复习 数据结构 自动化测试 自动化运维 比赛所需环境部署 比赛相关知识的学习 生活小记 周一，下午核酸检测、上晚上的课（前端） 周二，下午上前</description>
     </item>
     
     <item>
@@ -490,6 +490,15 @@
     </item>
     
     <item>
+      <title>API</title>
+      <link>https://billie52707.cn/note/api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/api/</guid>
+      <description>2020豆瓣电影最新api](https://www.cnblogs.com/meijifu/p/13342196.html) 获取正在热映的</description>
+    </item>
+    
+    <item>
       <title>bt</title>
       <link>https://billie52707.cn/note/bt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -538,6 +547,15 @@
       
       <guid>https://billie52707.cn/note/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
       <description>库的安装 pip install vitualenv 新建虚拟环境 virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.txt 通过requirements.txt配置环境 pip3 install</description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://billie52707.cn/note/ubuntu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/ubuntu/</guid>
+      <description>必要工具 apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev apt-get install libgtk2.0-dev apt-get</description>
     </item>
     
     <item>
