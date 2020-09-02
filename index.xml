@@ -537,7 +537,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/html/</guid>
-      <description>size color face src height width title alt href target. target=&amp;rdquo;__blank&amp;rdquo; 列表 无序列表 属性： type circle disc square 例： 有序列表</description>
+      <description>font size color face img src height width title alt a href target. target=&amp;rdquo;__blank&amp;rdquo; 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border</description>
     </item>
     
     <item>
