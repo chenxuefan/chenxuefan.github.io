@@ -249,6 +249,7 @@ if (!doNotTrack) {
         <li><a href="#百度搜索资源平台">百度搜索资源平台</a></li>
       </ul>
     </li>
+    <li><a href="#让你的博客支持插入echarts图表">让你的博客支持插入echarts图表</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
@@ -792,8 +793,48 @@ jobs:
 <p>打开 <a href="https://ziyuan.baidu.com/">百度搜索资源平台</a> ，点击 <a href="https://ziyuan.baidu.com/linksubmit/index">链接提交</a>，然后点”添加站点”。同样可以用文件验证的方式来进行网站验证。</p>
 <p>进入”资源提交”下的”普通收录”，再点“sitemap”，在这里可以提交hugo网站的sitemap文件。</p>
 <p>btw，百度不容许以子目录的方式提交子站点，和google不一样，只能在提交sitemap文件时，提交多个sitemap文件。这样也能勉强让百度收录。</p>
+<h2 id="让你的博客支持插入echarts图表">让你的博客支持插入echarts图表</h2>
+<ol>
+<li>
+<p>在目录 <strong>./themes/cactus/layouts/shortcodes</strong>下创建文件<strong>echarts.html</strong>，并编辑</p>
+<pre><code>&lt;div id=&quot;echarts{{ .Get `height` }}&quot; style=&quot;width: 100%;height: {{.Get `height`}}px;margin: 0 auto&quot;&gt;&lt;/div&gt;
+    &lt;script src=&quot;https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts{{ .Get `height` }}'));
+        // 指定图表的配置项和数据
+        var option = JSON.parse({{ .Inner }})
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    &lt;/script&gt;
+</code></pre></li>
+<li>
+<p>在你的文章（md文件）任意处插入以下代码，注意echarts标签与左侧右侧的大括号之间没有空格</p>
+<pre><code><div id="echarts400" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+    
+    var myChart = echarts.init(document.getElementById('echarts400'));
+    
+    var option = JSON.parse("\n       {\"textStyle\":{\"color\":\"#fff\"},\"title\":{\"text\":\"2018年11月国内浏览器数据统计\",\"subtext\":\"浏览器数据分析\",\"x\":\"center\",\"textStyle\":{\"color\":\"#fff\"}},\"tooltip\":{\"trigger\":\"item\",\"formatter\":\"{a} \u003cbr/\u003e{b} : {c} ({d}%)\"},\"legend\":{\"type\":\"scroll\",\"orient\":\"vertical\",\"right\":10,\"top\":120,\"bottom\":20,\"data\":[\"Chrome\",\"IE 9.0\",\"IE 11.0\",\"QQ\",\"IE 8.0\",\"2345\",\"搜狗高速\",\"Firefox\",\"Safari\",\"其他\"],\"textStyle\":{\"color\":\"#fff\"}},\"series\":[{\"name\":\"浏览器用户比例\",\"type\":\"pie\",\"radius\":\"55%\",\"center\":[\"50%\",\"60%\"],\"data\":[{\"name\":\"Chrome\",\"value\":46.88},{\"name\":\"IE 9.0\",\"value\":7.4},{\"name\":\"IE 11.0\",\"value\":6.21},{\"name\":\"QQ\",\"value\":5.75},{\"name\":\"IE 8.0\",\"value\":5.74},{\"name\":\"2345\",\"value\":5.68},{\"name\":\"搜狗高速\",\"value\":4.74},{\"name\":\"Firefox\",\"value\":2.54},{\"name\":\"Safari\",\"value\":2.48},{\"name\":\"其他\",\"value\":12.59}],\"itemStyle\":{\"emphasis\":{\"shadowBlur\":10,\"shadowOffsetX\":0,\"shadowColor\":\"rgba(0, 0, 0, 0.5)\"}}}]}\n   ")
+    
+    myChart.setOption(option);
+</script>
+</code></pre></li>
+</ol>
+<p>效果如下：</p>
+<div id="echarts400" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+    
+    var myChart = echarts.init(document.getElementById('echarts400'));
+    
+    var option = JSON.parse("\n    {\"textStyle\":{\"color\":\"#fff\"},\"title\":{\"text\":\"2018年11月国内浏览器数据统计\",\"subtext\":\"浏览器数据分析\",\"x\":\"center\",\"textStyle\":{\"color\":\"#fff\"}},\"tooltip\":{\"trigger\":\"item\",\"formatter\":\"{a} \u003cbr/\u003e{b} : {c} ({d}%)\"},\"legend\":{\"type\":\"scroll\",\"orient\":\"vertical\",\"right\":10,\"top\":120,\"bottom\":20,\"data\":[\"Chrome\",\"IE 9.0\",\"IE 11.0\",\"QQ\",\"IE 8.0\",\"2345\",\"搜狗高速\",\"Firefox\",\"Safari\",\"其他\"],\"textStyle\":{\"color\":\"#fff\"}},\"series\":[{\"name\":\"浏览器用户比例\",\"type\":\"pie\",\"radius\":\"55%\",\"center\":[\"50%\",\"60%\"],\"data\":[{\"name\":\"Chrome\",\"value\":46.88},{\"name\":\"IE 9.0\",\"value\":7.4},{\"name\":\"IE 11.0\",\"value\":6.21},{\"name\":\"QQ\",\"value\":5.75},{\"name\":\"IE 8.0\",\"value\":5.74},{\"name\":\"2345\",\"value\":5.68},{\"name\":\"搜狗高速\",\"value\":4.74},{\"name\":\"Firefox\",\"value\":2.54},{\"name\":\"Safari\",\"value\":2.48},{\"name\":\"其他\",\"value\":12.59}],\"itemStyle\":{\"emphasis\":{\"shadowBlur\":10,\"shadowOffsetX\":0,\"shadowColor\":\"rgba(0, 0, 0, 0.5)\"}}}]}\n")
+    
+    myChart.setOption(option);
+</script>
 <h2 id="后记">后记</h2>
-<p>updated by 2020-09-01 15:49</p>
+<p>updated by 2020-09-02 17:00</p>
 
     </div>
 
@@ -843,7 +884,7 @@ jobs:
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          5930 字
+          7690 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -943,6 +984,7 @@ jobs:
         <li><a href="#百度搜索资源平台">百度搜索资源平台</a></li>
       </ul>
     </li>
+    <li><a href="#让你的博客支持插入echarts图表">让你的博客支持插入echarts图表</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
