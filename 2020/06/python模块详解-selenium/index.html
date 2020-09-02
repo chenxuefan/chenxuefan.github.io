@@ -392,42 +392,18 @@ if (!doNotTrack) {
 </ol>
 <h2 id="元素操作"><strong>元素操作</strong></h2>
 <ul>
-<li>
-<p>clear # 清除元素的内容</p>
-</li>
-<li>
-<p>send_keys # 模拟按键输入</p>
-</li>
-<li>
-<p>click # 点击元素</p>
-</li>
-<li>
-<p>submit # 提交表单</p>
-</li>
-<li>
-<p>size # 获取元素的尺寸，返回一个字典：{&lsquo;x&rsquo;: 000, &lsquo;y&rsquo;: 000}</p>
-</li>
-<li>
-<p>text # 获取元素的文本</p>
-</li>
-<li>
-<p>get_attribute(name) # 获取属性值</p>
-</li>
-<li>
-<p>location # 获取元素坐标，先找到要获取的元素，再调用该方法，返回一个字典：{&lsquo;height&rsquo;: 000, &lsquo;width&rsquo;: 000}</p>
-</li>
-<li>
-<p>is_displayed() # 设置该元素是否可见</p>
-</li>
-<li>
-<p>is_enabled() # 判断元素是否被使用</p>
-</li>
-<li>
-<p>is_selected() # 判断元素是否被选中</p>
-</li>
-<li>
-<p>tag_name # 返回元素的tagName</p>
-</li>
+<li>size # 获取元素的尺寸，返回一个字典：{&lsquo;x&rsquo;: 000, &lsquo;y&rsquo;: 000}</li>
+<li>text # 获取元素的文本</li>
+<li>location # 获取元素坐标，先找到要获取的元素，再调用该方法，返回一个字典：{&lsquo;height&rsquo;: 000, &lsquo;width&rsquo;: 000}</li>
+<li>tag_name # 返回元素的tagName</li>
+<li>clear()  # 清除元素的内容</li>
+<li>send_keys() # 模拟按键输入</li>
+<li>click() # 点击元素</li>
+<li>submit() # 提交表单</li>
+<li>get_attribute(name) # 获取属性值</li>
+<li>is_displayed() # 设置该元素是否可见</li>
+<li>is_enabled() # 判断元素是否被使用</li>
+<li>is_selected() # 判断元素是否被选中</li>
 </ul>
 <p>ps：如果需要输入中文，防止编码错误使用send_keys(u&quot;中文用户名&rdquo;)。</p>
 <h2 id="浏览器操作"><strong>浏览器操作</strong></h2>
@@ -435,7 +411,7 @@ if (!doNotTrack) {
 <li>title # 返回页面标题</li>
 <li>page_source # 返回页面源码</li>
 <li>current_url # 获取当前页面的URL</li>
-<li>refresh # 刷新浏览器</li>
+<li>refresh() # 刷新浏览器</li>
 <li>set_window_size() # 设置浏览器的大小</li>
 <li>set_window_position() # 设置浏览器的坐标</li>
 <li>set_window_rect() # 设置浏览器的矢量</li>
@@ -447,7 +423,7 @@ if (!doNotTrack) {
 <h2 id="鼠标事件"><strong>鼠标事件</strong></h2>
 <ul>
 <li>
-<p>ActonChains(driver) # 构造ActionChains对象</p>
+<p>ActionChains(driver) # 构造ActionChains对象</p>
 </li>
 <li>
 <p>click(on_element) # 左击</p>
@@ -488,16 +464,16 @@ if (!doNotTrack) {
 <li>
 <p>例：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains<span style="color:#75715e">#引⼊ ActionChains 类</span>
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox(<span style="color:#960050;background-color:#1e0010">）</span>
+<span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains <span style="color:#75715e">#引⼊ ActionChains 类</span>
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox()
 driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;https://www.baidu.com&#34;</span>)
-element<span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#34;设置&#34;</span>)<span style="color:#75715e">#定位元素</span>
-ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(element)<span style="color:#f92672">.</span>perform()<span style="color:#75715e">#3.对定位到的元素执⾏⿏标悬停操作</span>
+element<span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#34;设置&#34;</span>) <span style="color:#75715e">#定位元素</span>
+ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(element)<span style="color:#f92672">.</span>perform() <span style="color:#75715e">#对定位到的元素执⾏⿏标悬停操作</span>
 </code></pre></div></li>
 </ul>
 <h2 id="键盘事件"><strong>键盘事件</strong></h2>
-<p>参考：http://selenium-python.readthedocs.org/api.html
-提供键盘按键操作的类：webdriver.common.keys</p>
+<p>参考：<a href="http://selenium-python.readthedocs.org/api.html">http://selenium-python.readthedocs.org/api.html</a></p>
+<p>提供键盘按键操作的类：<code>webdriver.common.keys</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys
 </code></pre></div><ul>
 <li>send_keys(Keys.ENTER) # 按下回车键</li>
@@ -519,15 +495,15 @@ ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(element)
 <li>隐式等待</li>
 <li>显式等待</li>
 </ul>
-<p>参考链接：http://www.testclass.net/selenium_python/element-wait/</p>
+<p>参考链接：<a href="http://www.testclass.net/selenium_python/element-wait/">http://www.testclass.net/selenium_python/element-wait/</a></p>
 <h2 id="多表单切换"><strong>多表单切换</strong></h2>
-<p>在Web应⽤中经常会遇到frame/iframe表单嵌套⻚⾯的应⽤，WebDriver只能在⼀个⻚⾯上对元素识别与定位，对于frame/iframe表单内嵌⻚⾯上的元素⽆法直接定位。这时就需要通过switch_to.frame()⽅法将当前定位的主体切换为frame/iframe表单的内嵌⻚⾯中。</p>
+<p>在Web应⽤中经常会遇到<code>frame/iframe</code>表单嵌套⻚⾯的应⽤，WebDriver只能在⼀个⻚⾯上对元素识别与定位，对于frame/iframe表单内嵌⻚⾯上的元素⽆法直接定位。这时就需要通过<code>switch_to.frame()</code>⽅法将当前定位的主体切换为frame/iframe表单的内嵌⻚⾯中。</p>
 <ul>
-<li><strong>switch_to.frame()</strong></li>
+<li><strong>switch_to.frame()</strong> / <strong>switch_to_frame()</strong></li>
 </ul>
-<p>将当前定位的主体切换为frame/iframe表单的内嵌⻚⾯，默认可以直接取表单的 <strong>id</strong> 或<strong>name</strong>属性。如果iframe没有可⽤的id和name属性，则可以通过查找iframe标签，进⾏定位。</p>
+<p>将当前定位的主体切换为frame/iframe表单的内嵌⻚⾯，默认可以直接取表单的 <strong>id</strong> 或<strong>name</strong>属性。如果iframe没有可⽤的id和name属性，则可以通过查找<strong>iframe标签</strong>，进⾏定位。</p>
 <ul>
-<li><strong>switch_to.default_content()</strong></li>
+<li><strong>switch_to.default_content()</strong> / <strong>switch_to_default_content()</strong></li>
 </ul>
 <p>跳回最外层的⻚⾯</p>
 <ul>
@@ -544,27 +520,24 @@ driver<span style="color:#f92672">.</span>switch_to_default_content()
 <p>在⻚⾯操作过程中有时候点击某个链接会弹出新的窗⼝，这时就需要主机切换到新打开的窗⼝上进⾏操作。WebDriver提供了switch_to.window()⽅法，可以实现在不同的窗⼝之间切换。</p>
 <ul>
 <li>
-<p><strong>current_window_handle</strong> #获得当前窗⼝句柄</p>
+<p><strong>current_window_handle</strong> #返回当前窗⼝的句柄</p>
 </li>
 <li>
-<p><strong>window_handles</strong> #返回所有窗⼝的句柄到当前会话</p>
+<p><strong>window_handles</strong> #返回所有窗⼝的句柄，一个列表</p>
 </li>
 <li>
 <p><strong>switch_to.window</strong>() #⽤于切换到相应的窗⼝，与上⼀节的switch_to.frame()类似，前者⽤于不同窗⼝的切换，后者⽤于不同表单之间的切换</p>
 </li>
 <li>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c_win <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>current_driver<span style="color:#f92672">.</span>current_windle_handle
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c_win <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>current_window_handle
 driver<span style="color:#f92672">.</span>switch_to_window(c_win)
 </code></pre></div></li>
 </ul>
 <h2 id="对话框操作"><strong>对话框操作</strong></h2>
-<p>在WebDriver中处理JavaScript所⽣成的alert、confirm以及prompt⼗分简单，具体做法是使⽤ switch_to.alert 或switch_to_alert ()⽅法定位到 alert/confirm/prompt，然后使⽤text/accept/dismiss/send_keys 等⽅法进⾏操作。</p>
+<p>在WebDriver中处理JavaScript所⽣成的alert、confirm以及prompt⼗分简单，具体做法是使⽤ switch_to.alert() 或switch_to_alert()⽅法定位到 alert/confirm/prompt，然后使⽤text/accept/dismiss/send_keys 等⽅法进⾏操作。</p>
 <ul>
 <li>
-<p><strong>switch_to_alert()</strong> # 切入到警告框</p>
-</li>
-<li>
-<p><strong>switch_to.alert()</strong> # 切入到警告框</p>
+<p><strong>switch_to_alert()</strong>  / <strong>switch_to.alert()</strong> # 切入到警告框</p>
 </li>
 <li>
 <p><strong>text</strong> # 返回 alert/confirm/prompt 中的⽂字信息</p>
@@ -576,7 +549,7 @@ driver<span style="color:#f92672">.</span>switch_to_window(c_win)
 <p><strong>dismiss()</strong> # 解散现有警告框</p>
 </li>
 <li>
-<p><strong>send_keys</strong>(keysToSend) # 发送⽂本⾄警告框。keysToSend：将⽂本发送⾄警告框。</p>
+<p><strong>send_keys(keysToSend)</strong> # 发送⽂本⾄警告框。keysToSend：发送⾄警告框的⽂本。</p>
 </li>
 <li>
 <p>例：</p>
@@ -605,7 +578,7 @@ al<span style="color:#f92672">.</span>text
 <li>返回options信息的方法
 <ul>
 <li><strong>options</strong> # 返回所有的选项的列表，其中选项都是WebElement元素</li>
-<li><strong>all_selecetd_options</strong> # 返回所有被选中的选项的列表，其中选线均为WebElement元素，输出所有被选中的选项，适合于能多选的下拉框</li>
+<li><strong>all_selecetd_options</strong> # 返回所有被选中的选项的列表，其中选项均为WebElement元素，输出所有被选中的选项，适合于能多选的下拉框</li>
 <li><strong>first_selected_option</strong> # 返回第一个被选中的选项</li>
 </ul>
 </li>
@@ -622,7 +595,7 @@ al<span style="color:#f92672">.</span>text
 <h2 id="文件上传"><strong>文件上传</strong></h2>
 <p>selenium没有提供直接的文件上传功能，目前主要有以下几种解决方案：</p>
 <ul>
-<li>seng_keys()</li>
+<li>send_keys()</li>
 <li>AutoIT</li>
 <li>python pywin32 模块</li>
 </ul>
@@ -1002,7 +975,7 @@ driver<span style="color:#f92672">.</span>quit()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          6246 字
+          6160 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
