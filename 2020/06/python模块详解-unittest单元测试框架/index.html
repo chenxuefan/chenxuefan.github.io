@@ -207,19 +207,24 @@ if (!doNotTrack) {
     <li><a href="#why-unittest-"><strong>why unittest ?</strong></a></li>
     <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念</strong></a>
       <ul>
-        <li></li>
+        <li><a href="#11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</a></li>
+        <li><a href="#12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</a></li>
+        <li><a href="#13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</a></li>
       </ul>
     </li>
     <li><a href="#加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></a>
       <ul>
-        <li></li>
+        <li><a href="#21-unittestmain"><strong>2.1</strong> unittest.main()</a></li>
+        <li><a href="#22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</a></li>
+        <li><a href="#23-unittesttestloader"><strong>2.3</strong> unittest.TestLoader()</a></li>
       </ul>
     </li>
     <li><a href="#自动加载测试用例"><strong>自动加载测试用例</strong></a></li>
     <li><a href="#忽略测试和预期失败"><strong>忽略测试和预期失败</strong></a></li>
     <li><a href="#html测试报告"><strong>html测试报告</strong></a>
       <ul>
-        <li></li>
+        <li><a href="#51配置htmltestrunner">5.1、配置HTMLTestRunner</a></li>
+        <li><a href="#52生成测试报告">5.2、生成测试报告</a></li>
       </ul>
     </li>
   </ul>
@@ -276,7 +281,7 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <p>目录：</p>
+      <p><strong>目录</strong>：</p>
 <p>　　why unittest？</p>
 <ol>
 <li>unittest的四个重要概念</li>
@@ -297,7 +302,7 @@ if (!doNotTrack) {
 <li>最终可生成测试结果</li>
 </ul>
 <h2 id="unittest四个重要的概念"><strong>unittest四个重要的概念</strong></h2>
-<h4 id="11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</h4>
+<h3 id="11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</h3>
 <ul>
 <li>
 <p>测试用例是单元测试中<strong>最基本的组成单元</strong></p>
@@ -333,7 +338,7 @@ if (!doNotTrack) {
     unittest<span style="color:#f92672">.</span>main()
 </code></pre></div></li>
 </ul>
-<h4 id="12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</h4>
+<h3 id="12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</h3>
 <ul>
 <li>
 <p>setUp()　</p>
@@ -419,7 +424,7 @@ if (!doNotTrack) {
     unittest<span style="color:#f92672">.</span>main()
 </code></pre></div></li>
 </ul>
-<h4 id="13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</h4>
+<h3 id="13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</h3>
 <ul>
 <li>
 <p>完整的单元测试很少只执行一个测试用例，开发人员通常都需要编写多个测试用例才能对某一软件功能进行完整的测试</p>
@@ -466,7 +471,7 @@ if (!doNotTrack) {
 </code></pre></div></li>
 </ul>
 <h2 id="加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></h2>
-<h4 id="21-unittestmain"><strong>2.1</strong> unittest.main()</h4>
+<h3 id="21-unittestmain"><strong>2.1</strong> unittest.main()</h3>
 <ul>
 <li>两个参数（exit、verbosity）：　　</li>
 </ul>
@@ -495,7 +500,7 @@ if (!doNotTrack) {
     unittest<span style="color:#f92672">.</span>main()
 </code></pre></div></li>
 </ul>
-<h4 id="22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</h4>
+<h3 id="22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</h3>
 <ul>
 <li>步骤：　　　　</li>
 </ul>
@@ -506,7 +511,7 @@ if (!doNotTrack) {
 <li>参考：<a href="https://www.cnblogs.com/billie52707/p/13069984.html#testSuite">测试套件
 </a></li>
 </ul>
-<h4 id="23-unittesttestloader"><strong>2.3</strong> unittest.TestLoader()</h4>
+<h3 id="23-unittesttestloader"><strong>2.3</strong> unittest.TestLoader()</h3>
 <ul>
 <li>步骤：　　</li>
 </ul>
@@ -666,7 +671,7 @@ runner<span style="color:#f92672">.</span>run(discover)
         <span style="color:#66d9ef">print</span>(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
         self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;TestSuite_百度搜索&#39;</span>)
 </code></pre></div><h2 id="html测试报告"><strong>html测试报告</strong></h2>
-<h4 id="51配置htmltestrunner">5.1、配置HTMLTestRunner</h4>
+<h3 id="51配置htmltestrunner">5.1、配置HTMLTestRunner</h3>
 <ul>
 <li>工具：HTMLTestRunner　　</li>
 <li>下载：</li>
@@ -729,7 +734,7 @@ runner<span style="color:#f92672">.</span>run(discover)
 </tbody>
 </table>
 <p>　</p>
-<p>　　5.2、生成测试报告</p>
+<h3 id="52生成测试报告">5.2、生成测试报告</h3>
 <p>　　　　配置htmltestrunner成功后，在测试代码中导入HTMLTestRunner模块，并在测试文件中加入下述代码即可</p>
 
     </div>
@@ -826,19 +831,24 @@ runner<span style="color:#f92672">.</span>run(discover)
     <li><a href="#why-unittest-"><strong>why unittest ?</strong></a></li>
     <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念</strong></a>
       <ul>
-        <li></li>
+        <li><a href="#11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</a></li>
+        <li><a href="#12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</a></li>
+        <li><a href="#13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</a></li>
       </ul>
     </li>
     <li><a href="#加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></a>
       <ul>
-        <li></li>
+        <li><a href="#21-unittestmain"><strong>2.1</strong> unittest.main()</a></li>
+        <li><a href="#22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</a></li>
+        <li><a href="#23-unittesttestloader"><strong>2.3</strong> unittest.TestLoader()</a></li>
       </ul>
     </li>
     <li><a href="#自动加载测试用例"><strong>自动加载测试用例</strong></a></li>
     <li><a href="#忽略测试和预期失败"><strong>忽略测试和预期失败</strong></a></li>
     <li><a href="#html测试报告"><strong>html测试报告</strong></a>
       <ul>
-        <li></li>
+        <li><a href="#51配置htmltestrunner">5.1、配置HTMLTestRunner</a></li>
+        <li><a href="#52生成测试报告">5.2、生成测试报告</a></li>
       </ul>
     </li>
   </ul>
