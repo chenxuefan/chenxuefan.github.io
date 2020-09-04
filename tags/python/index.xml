@@ -81,7 +81,7 @@
       <pubDate>Thu, 30 Apr 2020 14:33:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/2020/04/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-filecmp/</guid>
-      <description>简介： filecmp是python内置的一个模块，用于比较文件及文件夹的内容，它是一个轻量级的工具，使用非常简单 两个主要的方法： filecmp.``cmp(f1, f2[, shallow]) 比较两</description>
+      <description>简介： filecmp是python内置的一个模块，用于比较文件及文件夹的内容，它是一个轻量级的工具，使用非常简单 两个主要的方法： filecmp.cmp(f1, f2[, shallow]) 比较两</description>
     </item>
     
     <item>
