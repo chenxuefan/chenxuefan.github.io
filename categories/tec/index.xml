@@ -153,7 +153,7 @@
       <pubDate>Sun, 15 Mar 2020 10:17:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-psutil/</guid>
-      <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取才做系统的信息，比如CPUs，内存，磁盘，网络等。此外，psu</description>
+      <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
     </item>
     
   </channel>
