@@ -207,9 +207,9 @@ if (!doNotTrack) {
     <li><a href="#why-unittest-"><strong>why unittest ?</strong></a></li>
     <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念</strong></a>
       <ul>
-        <li><a href="#11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</a></li>
-        <li><a href="#12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</a></li>
-        <li><a href="#13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</a></li>
+        <li><a href="#11-测试用例testcase"><strong>1.1 测试用例</strong>（TestCase）</a></li>
+        <li><a href="#12-测试固件setupteardown"><strong>1.2 测试固件</strong>（setUp、tearDown）</a></li>
+        <li><a href="#13-测试套件testsuite"><strong>1.3 测试套件</strong>（TestSuite）</a></li>
       </ul>
     </li>
     <li><a href="#加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></a>
@@ -223,8 +223,8 @@ if (!doNotTrack) {
     <li><a href="#忽略测试和预期失败"><strong>忽略测试和预期失败</strong></a></li>
     <li><a href="#html测试报告"><strong>html测试报告</strong></a>
       <ul>
-        <li><a href="#51配置htmltestrunner">5.1、配置HTMLTestRunner</a></li>
-        <li><a href="#52生成测试报告">5.2、生成测试报告</a></li>
+        <li><a href="#51-配置htmltestrunner">5.1 配置HTMLTestRunner</a></li>
+        <li><a href="#52-生成测试报告">5.2 生成测试报告</a></li>
       </ul>
     </li>
   </ul>
@@ -302,7 +302,7 @@ if (!doNotTrack) {
 <li>最终可生成测试结果</li>
 </ul>
 <h2 id="unittest四个重要的概念"><strong>unittest四个重要的概念</strong></h2>
-<h3 id="11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</h3>
+<h3 id="11-测试用例testcase"><strong>1.1 测试用例</strong>（TestCase）</h3>
 <ul>
 <li>
 <p>测试用例是单元测试中<strong>最基本的组成单元</strong></p>
@@ -338,7 +338,7 @@ if (!doNotTrack) {
     unittest<span style="color:#f92672">.</span>main()
 </code></pre></div></li>
 </ul>
-<h3 id="12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</h3>
+<h3 id="12-测试固件setupteardown"><strong>1.2 测试固件</strong>（setUp、tearDown）</h3>
 <ul>
 <li>
 <p>setUp()　</p>
@@ -424,7 +424,7 @@ if (!doNotTrack) {
     unittest<span style="color:#f92672">.</span>main()
 </code></pre></div></li>
 </ul>
-<h3 id="13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</h3>
+<h3 id="13-测试套件testsuite"><strong>1.3 测试套件</strong>（TestSuite）</h3>
 <ul>
 <li>
 <p>完整的单元测试很少只执行一个测试用例，开发人员通常都需要编写多个测试用例才能对某一软件功能进行完整的测试</p>
@@ -449,7 +449,7 @@ if (!doNotTrack) {
     suite3<span style="color:#f92672">.</span>addTest(TestBaidu(<span style="color:#e6db74">&#39;test_2&#39;</span>))
 </code></pre></div></li>
 </ul>
-<h4 id="14测试执行器texttestrunner"><strong>1.4、测试执行器</strong>（TextTestRunner）</h4>
+<h4 id="14-测试执行器texttestrunner"><strong>1.4 测试执行器</strong>（TextTestRunner）</h4>
 <ul>
 <li>
 <p>测试执行器是一个组织安排测试脚本执行活动的组件，即用来加载测试用例并执行用例，且提供测试输出的一个组件</p>
@@ -671,7 +671,7 @@ runner<span style="color:#f92672">.</span>run(discover)
         <span style="color:#66d9ef">print</span>(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
         self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;TestSuite_百度搜索&#39;</span>)
 </code></pre></div><h2 id="html测试报告"><strong>html测试报告</strong></h2>
-<h3 id="51配置htmltestrunner">5.1、配置HTMLTestRunner</h3>
+<h3 id="51-配置htmltestrunner">5.1 配置HTMLTestRunner</h3>
 <ul>
 <li>工具：HTMLTestRunner　　</li>
 <li>下载：</li>
@@ -734,7 +734,7 @@ runner<span style="color:#f92672">.</span>run(discover)
 </tbody>
 </table>
 <p>　</p>
-<h3 id="52生成测试报告">5.2、生成测试报告</h3>
+<h3 id="52-生成测试报告">5.2 生成测试报告</h3>
 <p>　　　　配置htmltestrunner成功后，在测试代码中导入HTMLTestRunner模块，并在测试文件中加入下述代码即可</p>
 
     </div>
@@ -773,7 +773,7 @@ runner<span style="color:#f92672">.</span>run(discover)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3776 字
+          3758 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -831,9 +831,9 @@ runner<span style="color:#f92672">.</span>run(discover)
     <li><a href="#why-unittest-"><strong>why unittest ?</strong></a></li>
     <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念</strong></a>
       <ul>
-        <li><a href="#11测试用例testcase"><strong>1.1、测试用例</strong>（TestCase）</a></li>
-        <li><a href="#12测试固件setupteardown"><strong>1.2、测试固件</strong>（setUp、tearDown）</a></li>
-        <li><a href="#13测试套件testsuite"><strong>1.3、测试套件</strong>（TestSuite）</a></li>
+        <li><a href="#11-测试用例testcase"><strong>1.1 测试用例</strong>（TestCase）</a></li>
+        <li><a href="#12-测试固件setupteardown"><strong>1.2 测试固件</strong>（setUp、tearDown）</a></li>
+        <li><a href="#13-测试套件testsuite"><strong>1.3 测试套件</strong>（TestSuite）</a></li>
       </ul>
     </li>
     <li><a href="#加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></a>
@@ -847,8 +847,8 @@ runner<span style="color:#f92672">.</span>run(discover)
     <li><a href="#忽略测试和预期失败"><strong>忽略测试和预期失败</strong></a></li>
     <li><a href="#html测试报告"><strong>html测试报告</strong></a>
       <ul>
-        <li><a href="#51配置htmltestrunner">5.1、配置HTMLTestRunner</a></li>
-        <li><a href="#52生成测试报告">5.2、生成测试报告</a></li>
+        <li><a href="#51-配置htmltestrunner">5.1 配置HTMLTestRunner</a></li>
+        <li><a href="#52-生成测试报告">5.2 生成测试报告</a></li>
       </ul>
     </li>
   </ul>
