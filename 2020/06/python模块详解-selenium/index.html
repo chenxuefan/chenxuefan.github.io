@@ -263,7 +263,7 @@ if (!doNotTrack) {
         <div class="article-tag">
             <i class="fas fa-tag"></i>
             
-            
+             
             <a class="tag-link" href="/tags/python" rel="tag">python</a>
             
         </div> 
@@ -560,13 +560,13 @@ al<span style="color:#f92672">.</span>text
 </ul>
 <h2 id="复选框操作"><strong>复选框操作</strong></h2>
 <ul>
-<li>is_selected() #返回布尔值，判断是否被选中</li>
+<li><strong>is_selected()</strong> #返回布尔值，判断是否被选中</li>
 </ul>
 <p><strong>1、单选框（radio）</strong></p>
 <p><strong>2、复选框（checkbox）</strong></p>
 <p><strong>3、下拉框（select）</strong></p>
 <p>导⼊选择下拉框Select类，使⽤该类处理下拉框操作：</p>
-<pre><code class="language-python " data-lang="python ">from selenium.webdriver.support.select import Select
+<pre><code class="language-python " data-lang="python ">from selenium.webdriver.support.ui import Select
 </code></pre><ul>
 <li>选择下拉框选项的⽅法
 <ul>
@@ -800,7 +800,7 @@ browser<span style="color:#f92672">.</span>close()
 <p>&ldquo;window.moveBy(width,height);” # 相对方法，在当前位置上增加所指定的参数值</p>
 </li>
 <li>
-<p>&ldquo;history.forword();“ # 控制浏览器前进</p>
+<p>&ldquo;history.forward();“ # 控制浏览器前进</p>
 </li>
 <li>
 <p>&ldquo;history.back();” # 控制浏览器后退</p>
@@ -947,7 +947,7 @@ driver<span style="color:#f92672">.</span>quit()
 
   <br>
 
-  
+    
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
     <label class="reward-button" for="reward">打赏作者</label>

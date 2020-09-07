@@ -208,7 +208,13 @@ if (!doNotTrack) {
     <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念</strong></a>
       <ul>
         <li><a href="#11-测试用例testcase"><strong>1.1 测试用例</strong>（TestCase）</a></li>
-        <li><a href="#12-测试固件setupteardown"><strong>1.2 测试固件</strong>（setUp、tearDown）</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
         <li><a href="#13-测试套件testsuite"><strong>1.3 测试套件</strong>（TestSuite）</a></li>
       </ul>
     </li>
@@ -269,7 +275,7 @@ if (!doNotTrack) {
         <div class="article-tag">
             <i class="fas fa-tag"></i>
             
-            
+             
             <a class="tag-link" href="/tags/python" rel="tag">python</a>
             
         </div> 
@@ -321,72 +327,68 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unittest
-<span style="color:#75715e"># 自定义一个测试实例类，传入unittest的测试实例类TestCase</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestBaidu</span>(unittest<span style="color:#f92672">.</span>TestCase):
-    driver<span style="color:#f92672">=</span>webdriver<span style="color:#f92672">.</span>Chrome()
-    driver<span style="color:#f92672">.</span>get(bd_url)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_1</span>(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#ae81ff">1</span>)
-        <span style="color:#75715e"># 断言等于</span>
-        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;百度一下，你就知道&#39;</span>)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_2</span>(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#ae81ff">2</span>)
-        <span style="color:#75715e"># 断言为真</span>
-        self<span style="color:#f92672">.</span>assertTrue(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>is_enabled())
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    unittest<span style="color:#f92672">.</span>main()
-</code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"></code></pre></div></li>
 </ul>
-<h3 id="12-测试固件setupteardown"><strong>1.2 测试固件</strong>（setUp、tearDown）</h3>
+<p>import unittest</p>
+<h1 id="自定义一个测试实例类传入unittest的测试实例类testcase">自定义一个测试实例类，传入unittest的测试实例类TestCase</h1>
+<p>class TestBaidu(unittest.TestCase):
+driver=webdriver.Chrome()
+driver.get(bd_url)
+def test_1(self):
+print(1)
+# 断言等于
+self.assertEqual(self.driver.title,u&rsquo;百度一下，你就知道&rsquo;)
+def test_2(self):
+print(2)
+# 断言为真
+self.assertTrue(self.driver.find_element_by_id(&lsquo;kw&rsquo;).is_enabled())
+if <strong>name</strong> == &lsquo;<strong>main</strong>':
+unittest.main()</p>
+<pre><code>
+
+
+### **1.2 测试固件**（setUp、tearDown、setUpClass、tearDownClass）
+
+- **setUp()　**
+- 在每个**测试用例运行前**运行，该方法用于进行测试前的**初始化**工作　　
+- 一条用例执行一次，若N次用例就执行N次，根据用例的数量来定　　
+- **tearDown()**
+- 在每个**测试用例运行后**运行，该方法用于执行测试后的**清除**工作（不管是否执行成功）　　
+- 例：
+
+```python
+import unittest
+# 自定义一个测试实例类，传入unittest的测试实例类TestCase
+class TestBaidu(unittest.TestCase):
+  def setUp(self):
+      print('一个测试用例前的初始化工作...')
+      self.driver = webdriver.Chrome()
+      self.driver.get(bd_url)
+  def tearDown(self):
+      print('一个测试用例前的清除工作...')
+      self.driver.quit()
+  def test_1(self):
+      print(1)
+      # 断言等于
+      self.assertEqual(self.driver.title,u'百度一下，你就知道')
+  def test_2(self):
+      print(2)
+      # 断言为真
+      self.assertTrue(self.driver.find_element_by_id('kw').is_enabled())
+</code></pre><p>ps：</p>
+<ol>
+<li>如果setUp()执行成功（没有异常），那么无论测试方法是否通过，tearDown()都会被执行；</li>
+<li>setUp()和tearDown()方法存在弊端，例如每次执行用例是都会重新打开，导致时间浪费，因此可以使用下面两种方法；</li>
+</ol>
 <ul>
 <li>
-<p>setUp()　</p>
-<ul>
-<li>在每个<strong>测试用例运行前</strong>运行，该方法用于进行测试前的<strong>初始化</strong>工作　　</li>
-<li>一条用例执行一次，若N次用例就执行N次，根据用例的数量来定　　</li>
-</ul>
-</li>
-<li>
-<p>tearDown()</p>
-<ul>
-<li>在每个<strong>测试用例运行后</strong>运行，该方法用于执行测试后的<strong>清除</strong>工作（不管是否执行成功）　　</li>
-</ul>
-</li>
-<li>
-<p>例：</p>
-</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unittest
-<span style="color:#75715e"># 自定义一个测试实例类，传入unittest的测试实例类TestCase</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestBaidu</span>(unittest<span style="color:#f92672">.</span>TestCase):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUp</span>(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;一个测试用例前的初始化工作...&#39;</span>)
-        self<span style="color:#f92672">.</span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>get(bd_url)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tearDown</span>(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;一个测试用例前的清除工作...&#39;</span>)
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>quit()
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_1</span>(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#ae81ff">1</span>)
-        <span style="color:#75715e"># 断言等于</span>
-        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;百度一下，你就知道&#39;</span>)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_2</span>(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#ae81ff">2</span>)
-        <span style="color:#75715e"># 断言为真</span>
-        self<span style="color:#f92672">.</span>assertTrue(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>is_enabled())
-</code></pre></div><p>ps：</p>
-<p>1、如果setUp()执行成功（没有异常），那么无论测试方法是否通过，tearDown()都会被执行；</p>
-<p>2、setUp()和tearDown()方法存在弊端，例如每次执行用例是都会重新打开，导致时间浪费，因此可以使用下面两种方法；</p>
-<ul>
-<li>
-<p>setUpClass()</p>
+<p><strong>setUpClass()</strong></p>
 <ul>
 <li>所有用例执行前只运行一次，在所有用例执行之前准备一次环境</li>
 </ul>
 </li>
 <li>
-<p>tearDownClass()</p>
+<p><strong>tearDownClass()</strong></p>
 <ul>
 <li>所有用例执行完后只运行一次，在所有用例执行结束后再清理环境</li>
 </ul>
@@ -502,23 +504,26 @@ if (!doNotTrack) {
 </ul>
 <h3 id="22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</h3>
 <ul>
-<li>步骤：　　　　</li>
-</ul>
-<p>1、创建测试套件</p>
-<p>2、构建测试套件　　　　</p>
-<p>3、使用<strong>测试执行器</strong>运行测试套件</p>
-<ul>
-<li>参考：<a href="https://www.cnblogs.com/billie52707/p/13069984.html#testSuite">测试套件
-</a></li>
+<li>
+<p>步骤：　　　</p>
+<ol>
+<li>创建测试套件</li>
+<li>构建测试套件</li>
+<li>使用<strong>测试执行器</strong>运行测试套件</li>
+</ol>
+</li>
+<li>
+<p>参考：<a href="https://www.cnblogs.com/billie52707/p/13069984.html#testSuite">测试套件
+</a></p>
+</li>
 </ul>
 <h3 id="23-unittesttestloader"><strong>2.3</strong> unittest.TestLoader()</h3>
 <ul>
-<li>步骤：　　</li>
-</ul>
+<li>步骤：　　
 <ol>
-<li>加载测试用例：unittest.Loader()</li>
+<li>加载测试用例：<strong>unittest.Loader()</strong></li>
 <li>添加<strong>测试用例</strong>到<strong>测试套件</strong></li>
-<li>使用测试执行器运行测试套件　　
+<li>使用测试执行器(unittest.TextTestRunner())运行测试套件　　
 <ul>
 <li>实例化runner类：runner=unittest.TextTestRunner()　　</li>
 <li>运行测试：runner.run(suite)</li>
@@ -526,6 +531,8 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ol>
+</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -567,7 +574,7 @@ runner<span style="color:#f92672">.</span>run(suite)
 <p>简介：</p>
 <p>　　unittest的TestLoader类提供了一个discover方法，以递归的方式，实现从指定顶层目录、模块找到<strong>指定目录里的测试用例文件</strong>，并将查找到的测试用例文件组装到测试套件中，然后运行。</p>
 <ul>
-<li>discover(start_dir,pattern,top_level_dirt)：</li>
+<li><strong>discover(start_dir,pattern,top_level_dirt)</strong></li>
 </ul>
 <table>
 <thead>
@@ -592,14 +599,16 @@ runner<span style="color:#f92672">.</span>run(suite)
 </tbody>
 </table>
 <ul>
-<li>步骤：　　</li>
-</ul>
+<li>
+<p>步骤：　　</p>
 <ol>
 <li>获取目录下满足条件的所有包含测试用例的py文件，构造测试集　　</li>
-<li>实例化测试执行器，运行测试用例　　</li>
+<li>实例化测试执行器，运行测试用例　</li>
 </ol>
-<ul>
-<li>例：　　</li>
+</li>
+<li>
+<p>例：　　</p>
+</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#discover()方法加载所有测试用例进行测试</span>
 discover <span style="color:#f92672">=</span> unittest<span style="color:#f92672">.</span>TestLoader<span style="color:#f92672">.</span>discover(start_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./&#39;</span>,
@@ -750,7 +759,7 @@ runner<span style="color:#f92672">.</span>run(discover)
 
   <br>
 
-  
+    
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
     <label class="reward-button" for="reward">打赏作者</label>
@@ -778,7 +787,7 @@ runner<span style="color:#f92672">.</span>run(discover)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3809 字
+          3815 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -837,7 +846,13 @@ runner<span style="color:#f92672">.</span>run(discover)
     <li><a href="#unittest四个重要的概念"><strong>unittest四个重要的概念</strong></a>
       <ul>
         <li><a href="#11-测试用例testcase"><strong>1.1 测试用例</strong>（TestCase）</a></li>
-        <li><a href="#12-测试固件setupteardown"><strong>1.2 测试固件</strong>（setUp、tearDown）</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
         <li><a href="#13-测试套件testsuite"><strong>1.3 测试套件</strong>（TestSuite）</a></li>
       </ul>
     </li>
