@@ -473,14 +473,22 @@ if (!doNotTrack) {
 </ul>
 <p>**返回值：**struct_time类型的时间。
 **注：**ormat参数使用的指令与strftime()使用的指令相同;它默认为“%a %b %d %H:%M:%S %Y”，与ctime()返回的格式匹配。如果字符串不能按照格式进行解析，或者解析后有多余的数据，则会引发ValueError。当无法推断出更精确的值时，用于填充任何缺失数据的默认值是(1900、1、1、0、0、0、0、0、1、-1)。字符串和格式都必须是字符串。</p>
-<p><em><strong>time.time()&ndash;&gt;float</strong></em>
-**作用：**以秒为单位以浮点数返回历元之后的时间。</p>
-<p><em><strong>time.thread_time()&ndash;&gt;float</strong></em>
-**作用：**返回当前线程的系统和用户CPU时间之和(以小数秒为单位)。它不包括睡眠时间。它的定义是特定于线程的。返回值的引用点未定义，因此只有同一线程中连续调用的结果之间的差异是有效的。</p>
-<p><em><strong>time.thread_time_ns()&ndash;&gt;int</strong></em>
-**作用：**和time.thread_time()类似，但是返回值是纳秒。</p>
-<p><em><strong>time.time_ns()&ndash;&gt;int</strong></em>
-**作用：**和time.time()类似，但返回值是纳秒。</p>
+<p><em><strong>time.time()&ndash;&gt;float</strong></em></p>
+<ul>
+<li>**作用：**以秒为单位以浮点数返回历元之后的时间。</li>
+</ul>
+<p><em><strong>time.thread_time()&ndash;&gt;float</strong></em></p>
+<ul>
+<li>**作用：**返回当前线程的系统和用户CPU时间之和(以小数秒为单位)。它不包括睡眠时间。它的定义是特定于线程的。返回值的引用点未定义，因此只有同一线程中连续调用的结果之间的差异是有效的。</li>
+</ul>
+<p><em><strong>time.thread_time_ns()&ndash;&gt;int</strong></em></p>
+<ul>
+<li>**作用：**和time.thread_time()类似，但是返回值是纳秒。</li>
+</ul>
+<p><em><strong>time.time_ns()&ndash;&gt;int</strong></em></p>
+<ul>
+<li>**作用：**和time.time()类似，但返回值是纳秒。</li>
+</ul>
 
     </div>
 
