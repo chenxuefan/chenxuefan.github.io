@@ -204,12 +204,14 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#time">time</a></li>
+    <li><a href="#时间类型的格式">时间类型的格式</a>
       <ul>
         <li></li>
         <li><a href="#时间类型之间的相互转换">时间类型之间的相互转换</a></li>
       </ul>
     </li>
+    <li><a href="#函数">函数</a></li>
   </ul>
 </nav>
     </div>
@@ -264,7 +266,7 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h1 id="time">time</h1>
+      <h2 id="time">time</h2>
 <p>这个模块提供各种与时间相关的函数。</p>
 <p><strong>以下是对一些术语和惯例的解释</strong></p>
 <ul>
@@ -275,7 +277,7 @@ if (!doNotTrack) {
 <li>DST是夏令时，在一年中的某些时候，时区通常会调整一个小时。DST规则是神奇的(由当地法律决定)，每年都在变化。</li>
 <li>各种实时函数的精度可能低于表示其值或参数的单位所建议的精度。</li>
 </ul>
-<h1 id="时间类型的格式">时间类型的格式</h1>
+<h2 id="时间类型的格式">时间类型的格式</h2>
 <h4 id="struct_time类型">struct_time类型</h4>
 <p>它是一个具有命名元组接口的对象：可以通过索引和属性名访问值。存在以下值：</p>
 <ul>
@@ -300,7 +302,7 @@ if (!doNotTrack) {
 例如，time.time()得到的float类型的秒数，</p>
 <h3 id="时间类型之间的相互转换">时间类型之间的相互转换</h3>
 <p><img src="https://img2018.cnblogs.com/blog/1392476/201903/1392476-20190321225857661-583237638.png" alt="img"></p>
-<h1 id="函数">函数</h1>
+<h2 id="函数">函数</h2>
 <p><em><strong>time.asctime([t])</strong></em>
 **作用：**将struct_time类型的时间转换为如下形式：&lsquo;Sun Jun 20 23:21:05 1993&rsquo;
 **参数：**struct_time类型或tuple类型的时间，不填参数的话默认为time.localtime()得到的时间。
@@ -516,12 +518,14 @@ if (!doNotTrack) {
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#time">time</a></li>
+    <li><a href="#时间类型的格式">时间类型的格式</a>
       <ul>
         <li></li>
         <li><a href="#时间类型之间的相互转换">时间类型之间的相互转换</a></li>
       </ul>
     </li>
+    <li><a href="#函数">函数</a></li>
   </ul>
 </nav>
     </div>
