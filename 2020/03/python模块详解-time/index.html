@@ -320,39 +320,39 @@ if (!doNotTrack) {
 </ul>
 <p><em><strong>time.clock_getres(clk_id)&ndash;&gt;float</strong></em></p>
 <ul>
-<li>**作用：**返回指定时钟clk_id的分辨率(精度)。有关clk_id的可接受值列表，请参考时钟ID常量。</li>
-<li>**注意：**只用Unix可用</li>
+<li><strong>作用：</strong> 返回指定时钟clk_id的分辨率(精度)。有关clk_id的可接受值列表，请参考时钟ID常量。</li>
+<li><strong>注意：</strong> 只用Unix可用</li>
 </ul>
 <p><em><strong>time.clock_gettime_ns(clk_id)&ndash;&gt;int</strong></em></p>
 <ul>
-<li>**作用：**与clock_gettime()类似，但是返回的时间是纳秒。</li>
-<li>**注意：**只用Unix可用</li>
+<li><strong>作用：</strong> 与clock_gettime()类似，但是返回的时间是纳秒。</li>
+<li><strong>注意：</strong> 只用Unix可用</li>
 </ul>
 <p><em><strong>time.clock_settime(clk_id,time:float)</strong></em></p>
 <ul>
-<li>**作用：**设置指定时钟clk_id的时间。目前，CLOCK_REALTIME是clk_id惟一接受的值。</li>
-<li>**注意：**只用Unix可用</li>
+<li><strong>作用：</strong> 设置指定时钟clk_id的时间。目前，CLOCK_REALTIME是clk_id惟一接受的值。</li>
+<li><strong>注意：</strong> 只用Unix可用</li>
 </ul>
 <p><em><strong>time.clock_settime_ns(clk_id,time:int)</strong></em></p>
 <ul>
-<li>**作用：**与clock_settime()类似，但是使用纳秒设置时间。</li>
-<li>**注意：**只用Unix可用</li>
+<li><strong>作用：</strong> 与clock_settime()类似，但是使用纳秒设置时间。</li>
+<li><strong>注意：</strong> 只用Unix可用</li>
 </ul>
 <p><em><strong>time.ctime([secs])</strong></em></p>
 <ul>
-<li>**作用：**将时间戳的时间转换为表示本地时间的字符串。如果没有提供secs或没有提供secs，则使用time()返回的当前时间。</li>
-<li>**参数：**时间戳类型的时间，如果不填默认为当前时间的时间戳。</li>
-<li>**返回值：**格式化类型的时间，例如&rsquo;Mon Mar 18 23:56:35 2019&rsquo;。</li>
+<li><strong>作用：</strong> 将时间戳的时间转换为表示本地时间的字符串。如果没有提供secs或没有提供secs，则使用time()返回的当前时间。</li>
+<li><strong>参数：</strong> 时间戳类型的时间，如果不填默认为当前时间的时间戳。</li>
+<li><strong>返回值：</strong> 格式化类型的时间，例如&rsquo;Mon Mar 18 23:56:35 2019&rsquo;。</li>
 </ul>
 <p><em><strong>time.get_clock_info(name)</strong></em></p>
 <ul>
 <li>
-<p>**作用：**以命名空间对象的形式获取指定时钟的信息。</p>
+<p><strong>作用：</strong> 以命名空间对象的形式获取指定时钟的信息。</p>
 </li>
 <li>
 <p><strong>参数：</strong></p>
 <ul>
-<li>&lsquo;clock&rsquo;:time.clock()</li>
+<li>' clock &lsquo;:time.clock()</li>
 <li>&lsquo;monotonic&rsquo;:time.monotonic()</li>
 <li>&lsquo;perf_counter&rsquo;:time.perf_counter()</li>
 <li>&lsquo;process_time&rsquo;:time.process_time()</li>
@@ -526,7 +526,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4012 字
+          3966 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
