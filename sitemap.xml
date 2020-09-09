@@ -4,12 +4,17 @@
   
   <url>
     <loc>https://billie52707.cn/diary/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/diary/2020-09-07/</loc>
+    <lastmod>2020-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -338,6 +343,11 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-time/</loc>
+    <lastmod>2020-03-15T20:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-psutil/</loc>
     <lastmod>2020-03-15T10:17:00+00:00</lastmod>
   </url>
@@ -359,6 +369,10 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/note/flask/</loc>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/note/git/</loc>
   </url>
   
@@ -372,6 +386,10 @@
   
   <url>
     <loc>https://billie52707.cn/note/</loc>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/other/</loc>
   </url>
   
   <url>

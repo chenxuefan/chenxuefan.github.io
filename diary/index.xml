@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/diary/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>大三上学期周记2</title>
+      <link>https://billie52707.cn/diary/2020-09-07/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/diary/2020-09-07/</guid>
+      <description>第二周记 本周计划 flask、机器学习 生活小记 感想收获 下周计划</description>
+    </item>
     
     <item>
       <title>大三上学期周记1</title>
@@ -306,7 +315,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/diary/template/</guid>
-      <description>2020-08-日结 今日计划 生活小记 感想收获 明日计划</description>
+      <description>2020-08-日结 今日计划 生活小记 感想收获 明日计划 title: 大三上学期周记2 date: 2020-08-31 type: diary draft: false 第二周记 本周计划 生活小记 感想收获 下周计划</description>
     </item>
     
   </channel>

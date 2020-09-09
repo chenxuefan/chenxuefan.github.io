@@ -148,6 +148,15 @@
     </item>
     
     <item>
+      <title>python模块详解 | time</title>
+      <link>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-time/</link>
+      <pubDate>Sun, 15 Mar 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-time/</guid>
+      <description>time 这个模块提供各种与时间相关的函数。 以下是对一些术语和惯例的解释 初始时间因平台而异。对于Unix平台，初始时间是1970,01,01,00:</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | psutil</title>
       <link>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-psutil/</link>
       <pubDate>Sun, 15 Mar 2020 10:17:00 +0000</pubDate>

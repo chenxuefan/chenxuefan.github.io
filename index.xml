@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>大三上学期周记2</title>
+      <link>https://billie52707.cn/diary/2020-09-07/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/diary/2020-09-07/</guid>
+      <description>第二周记 本周计划 flask、机器学习 生活小记 感想收获 下周计划</description>
+    </item>
     
     <item>
       <title>大三上学期周记1</title>
@@ -288,7 +297,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/about/</guid>
-      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 About me billie City：深圳 Mail：2380540710@qq.com Github: chenxuefan 博客园：billie52707 About blogs</description>
+      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 About me 👨‍💻billie City：深圳 Mail：2380540710@qq.com Github: chenxuefan 博客园：billi</description>
     </item>
     
     <item>
@@ -472,6 +481,15 @@
     </item>
     
     <item>
+      <title>python模块详解 | time</title>
+      <link>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-time/</link>
+      <pubDate>Sun, 15 Mar 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-time/</guid>
+      <description>time 这个模块提供各种与时间相关的函数。 以下是对一些术语和惯例的解释 初始时间因平台而异。对于Unix平台，初始时间是1970,01,01,00:</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | psutil</title>
       <link>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-psutil/</link>
       <pubDate>Sun, 15 Mar 2020 10:17:00 +0000</pubDate>
@@ -486,7 +504,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/diary/template/</guid>
-      <description>2020-08-日结 今日计划 生活小记 感想收获 明日计划</description>
+      <description>2020-08-日结 今日计划 生活小记 感想收获 明日计划 title: 大三上学期周记2 date: 2020-08-31 type: diary draft: false 第二周记 本周计划 生活小记 感想收获 下周计划</description>
     </item>
     
     <item>
@@ -514,6 +532,15 @@
       
       <guid>https://billie52707.cn/note/docker/</guid>
       <description>-bash: docker-machine: command not found（macOS） base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;amp;&amp;amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &amp;gt;/usr/local/bin/docker-machine &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-machine 拉取指定版本的镜像 Ubuntu：docker pull ubuntu:16.04 Centos：docker pull centos:centos6.8 mys</description>
+    </item>
+    
+    <item>
+      <title>docker心路历程</title>
+      <link>https://billie52707.cn/note/flask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/flask/</guid>
+      <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&#39;server.py&#39; flask run ps：等号两边无空格</description>
     </item>
     
     <item>
@@ -550,12 +577,21 @@
     </item>
     
     <item>
+      <title>other</title>
+      <link>https://billie52707.cn/note/other/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/other/</guid>
+      <description>VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的</description>
+    </item>
+    
+    <item>
       <title>python虚拟环境</title>
       <link>https://billie52707.cn/note/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
-      <description>库的安装 pip install vitualenv 新建虚拟环境 virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.txt 通过requirements.txt配置环境 pip3 install</description>
+      <description>库的安装 pip install vitualenv 新建虚拟环境 python3 -m venv venv virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.txt 通过requirements.txt配置</description>
     </item>
     
     <item>
