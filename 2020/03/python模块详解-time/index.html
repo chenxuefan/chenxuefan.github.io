@@ -380,13 +380,13 @@ if (!doNotTrack) {
 <p><em><strong>time.localtime([sec])</strong></em></p>
 <ul>
 <li><strong>作用：</strong> 就像time.gmtime()，但是转换为本地时间。当dst应用于给定的时间时，dst标志被设置为1。</li>
-<li>**参数： ** 时间戳类型的时间，如果没有提供secs或没有提供secs，则使用time()返回的当前时间。</li>
+<li><strong>参数：</strong> 时间戳类型的时间，如果没有提供secs或没有提供secs，则使用time()返回的当前时间。</li>
 <li><strong>返回值：</strong> struct_time类型的时间</li>
 </ul>
 <p><em><strong>time.mktime(t)</strong></em></p>
 <ul>
 <li><strong>作用：</strong> 将struct_time类型的时间转换为时间戳类型。</li>
-<li>**参数： ** struct_time类型的时间。</li>
+<li><strong>参数：</strong> struct_time类型的时间。</li>
 <li><strong>返回值：</strong> 时间戳类型。</li>
 </ul>
 <p><em><strong>time.monotonic()&ndash;&gt;float</strong></em></p>
@@ -474,8 +474,8 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p><strong>返回值：</strong> struct_time类型的时间。
-**注：**ormat参数使用的指令与strftime()使用的指令相同;它默认为“%a %b %d %H:%M:%S %Y”，与ctime()返回的格式匹配。如果字符串不能按照格式进行解析，或者解析后有多余的数据，则会引发ValueError。当无法推断出更精确的值时，用于填充任何缺失数据的默认值是(1900、1、1、0、0、0、0、0、1、-1)。字符串和格式都必须是字符串。</p>
+<p><strong>返回值：</strong> struct_time类型的时间。</p>
+<p>**注：**ormat参数使用的指令与strftime()使用的指令相同;它默认为“%a %b %d %H:%M:%S %Y”，与ctime()返回的格式匹配。如果字符串不能按照格式进行解析，或者解析后有多余的数据，则会引发ValueError。当无法推断出更精确的值时，用于填充任何缺失数据的默认值是(1900、1、1、0、0、0、0、0、1、-1)。字符串和格式都必须是字符串。</p>
 </li>
 </ul>
 <p><em><strong>time.time()&ndash;&gt;float</strong></em></p>
@@ -531,7 +531,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3876 字
+          3870 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
