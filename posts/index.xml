@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sat, 29 Aug 2020 18:10:42 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 01:54:00 +0800</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>大三上第一、二周学习心得</title>
+      <link>https://billie52707.cn/2020/09/%E5%A4%A7%E4%B8%89%E4%B8%8A%E7%AC%AC%E4%B8%80%E4%BA%8C%E5%91%A8%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Thu, 10 Sep 2020 01:54:00 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/2020/09/%E5%A4%A7%E4%B8%89%E4%B8%8A%E7%AC%AC%E4%B8%80%E4%BA%8C%E5%91%A8%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</guid>
+      <description>关于课堂 新奇、奇妙、神奇、灵异（编不下去了 上课感觉没啥压力的，因为实话说一直都没有全程上课认真听讲，但还是能感觉到老师在用心营造氛围，想要拉</description>
+    </item>
     
     <item>
       <title>Docker学习笔记</title>

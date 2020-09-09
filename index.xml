@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 01:54:00 +0800</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>大三上第一、二周学习心得</title>
+      <link>https://billie52707.cn/2020/09/%E5%A4%A7%E4%B8%89%E4%B8%8A%E7%AC%AC%E4%B8%80%E4%BA%8C%E5%91%A8%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Thu, 10 Sep 2020 01:54:00 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/2020/09/%E5%A4%A7%E4%B8%89%E4%B8%8A%E7%AC%AC%E4%B8%80%E4%BA%8C%E5%91%A8%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/</guid>
+      <description>关于课堂 新奇、奇妙、神奇、灵异（编不下去了 上课感觉没啥压力的，因为实话说一直都没有全程上课认真听讲，但还是能感觉到老师在用心营造氛围，想要拉</description>
+    </item>
     
     <item>
       <title>大三上学期周记2</title>
@@ -18,7 +27,7 @@
       <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/diary/2020-09-07/</guid>
-      <description>第二周记 本周计划 flask、机器学习 生活小记 感想收获 下周计划</description>
+      <description>第二周记 本周计划 flask、机器学习 生活小记 剁手上瘾 买了键盘想买键帽、客制化 买了耳机想买鼠标 买了鼠标想给笔记本换电池 感想收获 下周计划</description>
     </item>
     
     <item>
@@ -526,6 +535,15 @@
     </item>
     
     <item>
+      <title>css提高</title>
+      <link>https://billie52707.cn/note/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/css/</guid>
+      <description>渐变 线性渐变 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一</description>
+    </item>
+    
+    <item>
       <title>docker心路历程</title>
       <link>https://billie52707.cn/note/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -535,7 +553,7 @@
     </item>
     
     <item>
-      <title>docker心路历程</title>
+      <title>flask</title>
       <link>https://billie52707.cn/note/flask/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -564,7 +582,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/html/</guid>
-      <description>font size color face img src height width title alt a href target. target=&amp;rdquo;__blank&amp;rdquo; 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border</description>
+      <description>font size color face img src height width title alt 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border cellspacing cellpadding width height</description>
     </item>
     
     <item>
