@@ -207,7 +207,10 @@ if (!doNotTrack) {
     <li><a href="#time">time</a></li>
     <li><a href="#时间类型的格式">时间类型的格式</a>
       <ul>
-        <li></li>
+        <li><a href="#struct_time类型">struct_time类型</a></li>
+        <li><a href="#格式化时间类型">格式化时间类型</a></li>
+        <li><a href="#时间戳类型">时间戳类型</a></li>
+        <li><a href="#时间类型之间的相互转换">时间类型之间的相互转换</a></li>
       </ul>
     </li>
     <li><a href="#函数">函数</a></li>
@@ -277,7 +280,7 @@ if (!doNotTrack) {
 <li>各种实时函数的精度可能低于表示其值或参数的单位所建议的精度。</li>
 </ul>
 <h2 id="时间类型的格式">时间类型的格式</h2>
-<h4 id="struct_time类型">struct_time类型</h4>
+<h3 id="struct_time类型">struct_time类型</h3>
 <p>它是一个具有命名元组接口的对象：可以通过索引和属性名访问值。存在以下值：</p>
 <ul>
 <li>index&mdash;attribute&mdash;values</li>
@@ -294,42 +297,42 @@ if (!doNotTrack) {
 <li>N/A&mdash;tm_gmtoff&mdash;协调世界时以东偏移，以秒为单位.</li>
 </ul>
 <p>例如，time.struct_time(tm_year=2019, tm_mon=3, tm_mday=20, tm_hour=23, tm_min=11, tm_sec=33, tm_wday=2, tm_yday=79, tm_isdst=0)</p>
-<h4 id="格式化时间类型">格式化时间类型</h4>
+<h3 id="格式化时间类型">格式化时间类型</h3>
 <p>例如，&lsquo;Wed Mar 20 23:12:26 2019&rsquo;</p>
-<h4 id="时间戳类型">时间戳类型</h4>
+<h3 id="时间戳类型">时间戳类型</h3>
 <p>从初始时间到指定时间的秒数。
 例如，time.time()得到的float类型的秒数</p>
-<h4 id="时间类型之间的相互转换">时间类型之间的相互转换</h4>
+<h3 id="时间类型之间的相互转换">时间类型之间的相互转换</h3>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1392476-20190321225857661-583237638.png" alt=""></p>
 <h2 id="函数">函数</h2>
-<p><em><strong>time.asctime([t])</strong></em>
-**作用：**将struct_time类型的时间转换为如下形式：&lsquo;Sun Jun 20 23:21:05 1993&rsquo;
+<p><em><strong>time.asctime([t])</strong></em></p>
+<p>**作用：**将struct_time类型的时间转换为如下形式：&lsquo;Sun Jun 20 23:21:05 1993&rsquo;
 **参数：**struct_time类型或tuple类型的时间，不填参数的话默认为time.localtime()得到的时间。
 <strong>返回值：</strong>&lsquo;Sun Jun 20 23:21:05 1993&rsquo;类型的时间。</p>
-<p><em><strong>time.pthread_getcpuclockid(thread_id)</strong></em>
-**作用：**返回指定线程id的线程特定CPU时间时钟的clk_id。
+<p><em><strong>time.pthread_getcpuclockid(thread_id)</strong></em></p>
+<p>**作用：**返回指定线程id的线程特定CPU时间时钟的clk_id。
 **参数：**线程的id，可以使用threading.get_ident()或线程的ident属性得到线程id。
 **返回值：**clk_id
 **注意：**只有Unix可用</p>
-<p><em><strong>time.clock_getres(clk_id)&ndash;&gt;float</strong></em>
-**作用：**返回指定时钟clk_id的分辨率(精度)。有关clk_id的可接受值列表，请参考时钟ID常量。
+<p><em><strong>time.clock_getres(clk_id)&ndash;&gt;float</strong></em></p>
+<p>**作用：**返回指定时钟clk_id的分辨率(精度)。有关clk_id的可接受值列表，请参考时钟ID常量。
 **注意：**只用Unix可用</p>
-<p><em><strong>time.clock_gettime_ns(clk_id)&ndash;&gt;int</strong></em>
-**作用：**与clock_gettime()类似，但是返回的时间是纳秒。
+<p><em><strong>time.clock_gettime_ns(clk_id)&ndash;&gt;int</strong></em></p>
+<p>**作用：**与clock_gettime()类似，但是返回的时间是纳秒。
 **注意：**只用Unix可用</p>
-<p><em><strong>time.clock_settime(clk_id,time:float)</strong></em>
-**作用：**设置指定时钟clk_id的时间。目前，CLOCK_REALTIME是clk_id惟一接受的值。
+<p><em><strong>time.clock_settime(clk_id,time:float)</strong></em></p>
+<p>**作用：**设置指定时钟clk_id的时间。目前，CLOCK_REALTIME是clk_id惟一接受的值。
 **注意：**只用Unix可用</p>
-<p><em><strong>time.clock_settime_ns(clk_id,time:int)</strong></em>
-**作用：**与clock_settime()类似，但是使用纳秒设置时间。
+<p><em><strong>time.clock_settime_ns(clk_id,time:int)</strong></em></p>
+<p>**作用：**与clock_settime()类似，但是使用纳秒设置时间。
 **注意：**只用Unix可用</p>
-<p><em><strong>time.ctime([secs])</strong></em>
-**作用：**将时间戳的时间转换为表示本地时间的字符串。如果没有提供secs或没有提供secs，则使用time()返回的当前时间。
-**参数：**时间戳类型的时间，如果不填默认为当前时间的时间戳。
-**返回值：**格式化类型的时间，例如&rsquo;Mon Mar 18 23:56:35 2019&rsquo;。</p>
-<p><em><strong>time.get_clock_info(name)</strong></em>
-**作用：**以命名空间对象的形式获取指定时钟的信息。
-<strong>参数：</strong></p>
+<p><em><strong>time.ctime([secs])</strong></em></p>
+<p>​	**作用：**将时间戳的时间转换为表示本地时间的字符串。如果没有提供secs或没有提供secs，则使用time()返回的当前时间。</p>
+<p>​	**参数：**时间戳类型的时间，如果不填默认为当前时间的时间戳。</p>
+<p>​	**返回值：**格式化类型的时间，例如&rsquo;Mon Mar 18 23:56:35 2019&rsquo;。</p>
+<p><em><strong>time.get_clock_info(name)</strong></em></p>
+<p>**作用：**以命名空间对象的形式获取指定时钟的信息。</p>
+<p><strong>参数：</strong></p>
 <ul>
 <li>&lsquo;clock&rsquo;:time.clock()</li>
 <li>&lsquo;monotonic&rsquo;:time.monotonic()</li>
@@ -462,7 +465,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4038 字
+          4041 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -520,7 +523,10 @@ if (!doNotTrack) {
     <li><a href="#time">time</a></li>
     <li><a href="#时间类型的格式">时间类型的格式</a>
       <ul>
-        <li></li>
+        <li><a href="#struct_time类型">struct_time类型</a></li>
+        <li><a href="#格式化时间类型">格式化时间类型</a></li>
+        <li><a href="#时间戳类型">时间戳类型</a></li>
+        <li><a href="#时间类型之间的相互转换">时间类型之间的相互转换</a></li>
       </ul>
     </li>
     <li><a href="#函数">函数</a></li>
