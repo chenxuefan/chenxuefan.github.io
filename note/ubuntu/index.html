@@ -118,18 +118,12 @@ if (!doNotTrack) {
 
   <div class="content" itemprop="articleBody">
   
-    <ul>
-<li>
-<p>必要工具</p>
+    <h2 id="必要工具">必要工具</h2>
 <pre><code>apt-get install vim net-tools 
-</code></pre></li>
-<li>
-<p>openssl</p>
+</code></pre><h2 id="openssl">openssl</h2>
 <pre><code>问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 
 解决：apt-get install libssl-dev
-</code></pre></li>
-<li>
-<p>opencv</p>
+</code></pre><h2 id="opencv">opencv</h2>
 <ol>
 <li>
 <p>安装依赖</p>
@@ -154,8 +148,23 @@ apt-get install pkg-config
 <p>make &amp;&amp; make install</p>
 </li>
 </ol>
-</li>
-</ul>
+<h2 id="设置环境变量">设置环境变量</h2>
+<ol>
+<li>
+<p>临时设置</p>
+<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+</code></pre></li>
+<li>
+<p>全局设置（当前用户）</p>
+<p>打开<code>~/.bashrc</code>，编辑一下</p>
+<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+</code></pre></li>
+<li>
+<p>全局设置（所有用户）</p>
+<p>打开<code>/etc/profile</code>，编辑一下</p>
+<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+</code></pre></li>
+</ol>
 
   
   </div>

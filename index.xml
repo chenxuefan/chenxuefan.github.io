@@ -306,7 +306,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/about/</guid>
-      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 About me 👨‍💻billie City：深圳 Mail：2380540710@qq.com Github: chenxuefan 博客园：billi</description>
+      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 About me 👨‍💻 billie City：深圳 Mail：2380540710@qq.com Github: chenxuefan 博客园：billie5270</description>
     </item>
     
     <item>
@@ -628,6 +628,15 @@
       
       <guid>https://billie52707.cn/note/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>时间复杂度 降低时间复杂度的必要性 实际的在线环境中，用户的访问请求可以看作一个流式数据。假设这个数据流中，每个访问的平均时间间隔是 t。如果你的</description>
+    </item>
+    
+    <item>
+      <title>机器学习笔记</title>
+      <link>https://billie52707.cn/note/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>数据理解 数据导入 numpy np.load pandas 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数据属性和类型：df.dt</description>
     </item>
     
   </channel>
