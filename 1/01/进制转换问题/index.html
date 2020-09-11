@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hello billie |  进制转换问题 </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="进制转换问题" />
+<meta property="og:description" content="前言 今天有同学来问我关于二级python计算机考试中关于进制间的转换问题，才想起来好久没有复习这方面的知识了，大都已经忘却，于是花了两个小时" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/1/01/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="进制转换问题"/>
+<meta name="twitter:description" content="前言 今天有同学来问我关于二级python计算机考试中关于进制间的转换问题，才想起来好久没有复习这方面的知识了，大都已经忘却，于是花了两个小时"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-dark.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null 
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  <img height="410" width="706"src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/131597526616_.pic_hd.jpg"><br>
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/tags">Tag</a></li>
+         
+        <li><a href="/categories">Category</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/note/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&text=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&is_video=false&description=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98&body=Check out this article: https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&name=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98&description=%e5%89%8d%e8%a8%80%20%e4%bb%8a%e5%a4%a9%e6%9c%89%e5%90%8c%e5%ad%a6%e6%9d%a5%e9%97%ae%e6%88%91%e5%85%b3%e4%ba%8e%e4%ba%8c%e7%ba%a7python%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%80%83%e8%af%95%e4%b8%ad%e5%85%b3%e4%ba%8e%e8%bf%9b%e5%88%b6%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98%ef%bc%8c%e6%89%8d%e6%83%b3%e8%b5%b7%e6%9d%a5%e5%a5%bd%e4%b9%85%e6%b2%a1%e6%9c%89%e5%a4%8d%e4%b9%a0%e8%bf%99%e6%96%b9%e9%9d%a2%e7%9a%84%e7%9f%a5%e8%af%86%e4%ba%86%ef%bc%8c%e5%a4%a7%e9%83%bd%e5%b7%b2%e7%bb%8f%e5%bf%98%e5%8d%b4%ef%bc%8c%e4%ba%8e%e6%98%af%e8%8a%b1%e4%ba%86%e4%b8%a4%e4%b8%aa%e5%b0%8f%e6%97%b6">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&t=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#关于进制">关于进制</a></li>
+    <li><a href="#使用传统方法计算进制">使用传统方法计算进制</a></li>
+    <li><a href="#使用python内置函数转换">使用python内置函数转换</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        进制转换问题
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="前言">前言</h2>
+<p>今天有同学来问我关于二级python计算机考试中关于进制间的转换问题，才想起来好久没有复习这方面的知识了，大都已经忘却，于是花了两个小时梳理了下脉络，这一篇就写来记录一下。</p>
+<h2 id="关于进制">关于进制</h2>
+<p>这是我的一本二级python教程书籍上关于进制的介绍，</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/161599827873_.pic.jpg" alt="161599827873_.pic"></p>
+<p>总结下来进制分四种：</p>
+<ul>
+<li>十进制</li>
+<li>二进制（0b或0B）</li>
+<li>八进制（0o或0O）</li>
+<li>十六进制（0x或0X）</li>
+</ul>
+<h2 id="使用传统方法计算进制">使用传统方法计算进制</h2>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/171599827874_.pic.jpg" alt="171599827874_.pic">/<em>略显粗糙</em>/</p>
+<h2 id="使用python内置函数转换">使用python内置函数转换</h2>
+<p>这里涉及到几个函数</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int(a,b)</td>
+<td>转换为十进制，这个函数有a、b两个参数，a为<strong>待转换的对象</strong>，数据类型为<strong>字符串</strong>；b为<strong>a的进制类型</strong>；可以进行多种进制转换成十进制，如二转十、八转十、十六转十</td>
+</tr>
+<tr>
+<td>bin(a)</td>
+<td>转换为二进制，参数a为<strong>待转换的对象</strong>，数据类型为<strong>整数类型</strong>；返回对象是<strong>字符串类型</strong></td>
+</tr>
+<tr>
+<td>oct(a)</td>
+<td>转换为八进制，参数a为<strong>待转换的对象</strong>，数据类型为<strong>整数类型</strong>；返回对象是<strong>字符串类型</strong></td>
+</tr>
+<tr>
+<td>hex(a)</td>
+<td>转换为十六进制，参数a为<strong>待转换的对象</strong>，数据类型为<strong>整数类型</strong>；返回对象是<strong>字符串类型</strong></td>
+</tr>
+</tbody>
+</table>
+<p>方法就这几个，使用起来会稍显混乱，总结一下技巧和转换思路，其实就三种套路：</p>
+<ul>
+<li>如果是<strong>十进制</strong>转换成<strong>其他进制</strong>，则直接使用相对应的函数，如bin()、oct()即可</li>
+<li>如果是<strong>其他进制</strong>转换成<strong>十进制</strong>，则使用oct(a,b)，使用方法参考上方表格</li>
+<li>如果是<strong>其他进制</strong>转换成<strong>除十进制外的进制</strong>，则需把转换对象先转为<strong>十进制</strong>，再使用相对应的函数进行转换</li>
+</ul>
+<p>总结一下：</p>
+<table>
+<thead>
+<tr>
+<th>↓</th>
+<th>2进制</th>
+<th>8进制</th>
+<th>10进制</th>
+<th>16进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2进制</td>
+<td>-</td>
+<td>bin(int(x, 8))</td>
+<td>bin(int(x, 10))</td>
+<td>bin(int(x, 16))</td>
+</tr>
+<tr>
+<td>8进制</td>
+<td>oct(int(x, 2))</td>
+<td>-</td>
+<td>oct(int(x, 10))</td>
+<td>oct(int(x, 16))</td>
+</tr>
+<tr>
+<td>10进制</td>
+<td>int(x, 2)</td>
+<td>int(x, 8)</td>
+<td>-</td>
+<td>int(x, 16)</td>
+</tr>
+<tr>
+<td>16进制</td>
+<td>hex(int(x, 2))</td>
+<td>hex(int(x, 8))</td>
+<td>hex(int(x, 10))</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>ps：</p>
+<p>注意这几个函数的参数的数据类型，如oct()、bin()、hex()的参数为整数类型，int()的第一个参数为字符串类型</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200911230853323.png" alt=""></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/181599827875_.pic.jpg" alt="181599827875_.pic">/<em>略显粗糙</em>/</p>
+<p>完结，撒花🎉</p>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          692 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/1/01/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="进制转换问题">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/tags">Tag</a></li>
+         
+          <li><a href="/categories">Category</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#关于进制">关于进制</a></li>
+    <li><a href="#使用传统方法计算进制">使用传统方法计算进制</a></li>
+    <li><a href="#使用python内置函数转换">使用python内置函数转换</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&text=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&is_video=false&description=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98&body=Check out this article: https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&title=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&name=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98&description=%e5%89%8d%e8%a8%80%20%e4%bb%8a%e5%a4%a9%e6%9c%89%e5%90%8c%e5%ad%a6%e6%9d%a5%e9%97%ae%e6%88%91%e5%85%b3%e4%ba%8e%e4%ba%8c%e7%ba%a7python%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%80%83%e8%af%95%e4%b8%ad%e5%85%b3%e4%ba%8e%e8%bf%9b%e5%88%b6%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98%ef%bc%8c%e6%89%8d%e6%83%b3%e8%b5%b7%e6%9d%a5%e5%a5%bd%e4%b9%85%e6%b2%a1%e6%9c%89%e5%a4%8d%e4%b9%a0%e8%bf%99%e6%96%b9%e9%9d%a2%e7%9a%84%e7%9f%a5%e8%af%86%e4%ba%86%ef%bc%8c%e5%a4%a7%e9%83%bd%e5%b7%b2%e7%bb%8f%e5%bf%98%e5%8d%b4%ef%bc%8c%e4%ba%8e%e6%98%af%e8%8a%b1%e4%ba%86%e4%b8%a4%e4%b8%aa%e5%b0%8f%e6%97%b6">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2f1%2f01%2f%25E8%25BF%259B%25E5%2588%25B6%25E8%25BD%25AC%25E6%258D%25A2%25E9%2597%25AE%25E9%25A2%2598%2f&t=%e8%bf%9b%e5%88%b6%e8%bd%ac%e6%8d%a2%e9%97%ae%e9%a2%98">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020 
+    <span>❤️ billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By Hugo | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
