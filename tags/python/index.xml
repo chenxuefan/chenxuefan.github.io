@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Fri, 11 Sep 2020 01:54:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2020 12:54:00 +0800</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>进制转换问题</title>
       <link>https://billie52707.cn/2020/09/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Fri, 11 Sep 2020 01:54:00 +0800</pubDate>
+      <pubDate>Fri, 11 Sep 2020 12:54:00 +0800</pubDate>
       
       <guid>https://billie52707.cn/2020/09/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/</guid>
       <description>前言 今天有同学来问我关于二级python计算机考试中关于进制间的转换问题，才想起来好久没有复习这方面的知识了，大都已经忘却，于是花了两个小时</description>
