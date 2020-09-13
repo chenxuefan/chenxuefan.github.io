@@ -614,10 +614,10 @@
     
     <item>
       <title>python虚拟环境</title>
-      <link>https://billie52707.cn/note/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
+      <link>https://billie52707.cn/note/python-venv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
+      <guid>https://billie52707.cn/note/python-venv/</guid>
       <description>库的安装 pip install vitualenv 新建虚拟环境 python3 -m venv venv virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.txt 通过requirements.txt配置</description>
     </item>
     
@@ -632,20 +632,20 @@
     
     <item>
       <title>数据结构学习笔记</title>
-      <link>https://billie52707.cn/note/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://billie52707.cn/note/data-structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://billie52707.cn/note/data-structure/</guid>
       <description>时间复杂度 降低时间复杂度的必要性 实际的在线环境中，用户的访问请求可以看作一个流式数据。假设这个数据流中，每个访问的平均时间间隔是 t。如果你的</description>
     </item>
     
     <item>
       <title>机器学习笔记</title>
-      <link>https://billie52707.cn/note/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://billie52707.cn/note/machine-learn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>数据理解 数据导入 numpy np.load pandas 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数据属性和类型：df.dt</description>
+      <guid>https://billie52707.cn/note/machine-learn/</guid>
+      <description>相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1.数据导入 numpy np.loadtxt() pandas pd.read_csv() 2.数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shap</description>
     </item>
     
   </channel>
