@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hello billie |  python模块详解 | time </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="python模块详解 | time" />
+<meta property="og:description" content="time 这个模块提供各种与时间相关的函数。 以下是对一些术语和惯例的解释 初始时间因平台而异。对于Unix平台，初始时间是1970,01,01,00:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/3/python-time/" />
+<meta property="article:published_time" content="2020-03-15T20:54:00+00:00" />
+<meta property="article:modified_time" content="2020-03-15T20:54:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python模块详解 | time"/>
+<meta name="twitter:description" content="time 这个模块提供各种与时间相关的函数。 以下是对一些术语和惯例的解释 初始时间因平台而异。对于Unix平台，初始时间是1970,01,01,00:"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null 
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  <img height="410" width="706"src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/131597526616_.pic_hd.jpg"><br>
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/tags">Tag</a></li>
+         
+        <li><a href="/categories">Category</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/posts/2020/3/python-psutil/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/posts/2020/3/python-pycharm/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time&description=time%20%e8%bf%99%e4%b8%aa%e6%a8%a1%e5%9d%97%e6%8f%90%e4%be%9b%e5%90%84%e7%a7%8d%e4%b8%8e%e6%97%b6%e9%97%b4%e7%9b%b8%e5%85%b3%e7%9a%84%e5%87%bd%e6%95%b0%e3%80%82%20%e4%bb%a5%e4%b8%8b%e6%98%af%e5%af%b9%e4%b8%80%e4%ba%9b%e6%9c%af%e8%af%ad%e5%92%8c%e6%83%af%e4%be%8b%e7%9a%84%e8%a7%a3%e9%87%8a%20%e5%88%9d%e5%a7%8b%e6%97%b6%e9%97%b4%e5%9b%a0%e5%b9%b3%e5%8f%b0%e8%80%8c%e5%bc%82%e3%80%82%e5%af%b9%e4%ba%8eUnix%e5%b9%b3%e5%8f%b0%ef%bc%8c%e5%88%9d%e5%a7%8b%e6%97%b6%e9%97%b4%e6%98%af1970%2c01%2c01%2c00%3a">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#time">time</a></li>
+    <li><a href="#时间类型的格式">时间类型的格式</a>
+      <ul>
+        <li><a href="#struct_time类型">struct_time类型</a></li>
+        <li><a href="#格式化时间类型">格式化时间类型</a></li>
+        <li><a href="#时间戳类型">时间戳类型</a></li>
+        <li><a href="#时间类型之间的相互转换">时间类型之间的相互转换</a></li>
+      </ul>
+    </li>
+    <li><a href="#函数">函数</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        python模块详解 | time
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          <time datetime="2020-03-15 20:54:00 &#43;0000 UTC" itemprop="datePublished">2020-03-15</time>
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="time">time</h2>
+<p>这个模块提供各种与时间相关的函数。</p>
+<p><strong>以下是对一些术语和惯例的解释</strong></p>
+<ul>
+<li>初始时间因平台而异。对于Unix平台，初始时间是1970,01,01,00:00:00（UTC）。查看每个操作平台的初始时间可以使用time.gmtime(0)函数。</li>
+<li>在所有POSIX平台上，从初始时间以来的秒数都不包括闰秒</li>
+<li>该模块中的函数可能不处理初始时间以前和遥远未来的日期和时间，未来的分界点对于32位操作系统是2038年。</li>
+<li>UTC是协调世界时(以前称为格林尼治标准时间，GMT)。缩写UTC不是一个错误，而是英语和法语之间的妥协。</li>
+<li>DST是夏令时，在一年中的某些时候，时区通常会调整一个小时。DST规则是神奇的(由当地法律决定)，每年都在变化。</li>
+<li>各种实时函数的精度可能低于表示其值或参数的单位所建议的精度。</li>
+</ul>
+<h2 id="时间类型的格式">时间类型的格式</h2>
+<h3 id="struct_time类型">struct_time类型</h3>
+<p>它是一个具有命名元组接口的对象：可以通过索引和属性名访问值。存在以下值：</p>
+<ul>
+<li>index&mdash;attribute&mdash;values</li>
+<li>0&mdash;tm_year&mdash;年份</li>
+<li>1&mdash;tm_mon&mdash;月份range[1,12]</li>
+<li>2&mdash;tm_mday&mdash;天数range[1,31]</li>
+<li>3&mdash;tm_hour&mdash;小时range[0,23]</li>
+<li>4&mdash;tm_min&mdash;分钟range[0,59]</li>
+<li>5&mdash;tm_sec&mdash;秒数range[0,61]</li>
+<li>6&mdash;tm_wday&mdash;星期range[0,6],0是星期日</li>
+<li>7&mdash;tm_yday&mdash;一年中的一天range[1,366]</li>
+<li>8&mdash;tm_isdst&mdash;tm_isdst可以在夏令时生效时设置为1，而在夏令时不生效时设置为0。值-1表示这是未知的。</li>
+<li>N/A&mdash;tm_zone&mdash;时区名称的缩写</li>
+<li>N/A&mdash;tm_gmtoff&mdash;协调世界时以东偏移，以秒为单位.</li>
+</ul>
+<p>例如，time.struct_time(tm_year=2019, tm_mon=3, tm_mday=20, tm_hour=23, tm_min=11, tm_sec=33, tm_wday=2, tm_yday=79, tm_isdst=0)</p>
+<h3 id="格式化时间类型">格式化时间类型</h3>
+<p>例如，&lsquo;Wed Mar 20 23:12:26 2019&rsquo;</p>
+<h3 id="时间戳类型">时间戳类型</h3>
+<p>从初始时间到指定时间的秒数。
+例如，time.time()得到的float类型的秒数</p>
+<h3 id="时间类型之间的相互转换">时间类型之间的相互转换</h3>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1392476-20190321225857661-583237638.png" alt=""></p>
+<h2 id="函数">函数</h2>
+<p><em><strong>time.asctime([t])</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 将struct_time类型的时间转换为如下形式：&lsquo;Sun Jun 20 23:21:05 1993&rsquo;</li>
+<li><strong>参数：</strong> struct_time类型或tuple类型的时间，不填参数的话默认为time.localtime()得到的时间。</li>
+<li><strong>返回值：</strong>&lsquo;Sun Jun 20 23:21:05 1993&rsquo;类型的时间。</li>
+</ul>
+<p><em><strong>time.pthread_getcpuclockid(thread_id)</strong></em></p>
+<ul>
+<li><strong>作用：</strong>  返回指定线程id的线程特定CPU时间时钟的clk_id。</li>
+<li>**参数： **  线程的id，可以使用threading.get_ident()或线程的ident属性得到线程id。</li>
+<li><strong>返回值：</strong> clk_id</li>
+<li><strong>注意：</strong> 只有Unix可用</li>
+</ul>
+<p><em><strong>time.clock_getres(clk_id)&ndash;&gt;float</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 返回指定时钟clk_id的分辨率(精度)。有关clk_id的可接受值列表，请参考时钟ID常量。</li>
+<li><strong>注意：</strong> 只用Unix可用</li>
+</ul>
+<p><em><strong>time.clock_gettime_ns(clk_id)&ndash;&gt;int</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 与clock_gettime()类似，但是返回的时间是纳秒。</li>
+<li><strong>注意：</strong> 只用Unix可用</li>
+</ul>
+<p><em><strong>time.clock_settime(clk_id,time:float)</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 设置指定时钟clk_id的时间。目前，CLOCK_REALTIME是clk_id惟一接受的值。</li>
+<li><strong>注意：</strong> 只用Unix可用</li>
+</ul>
+<p><em><strong>time.clock_settime_ns(clk_id,time:int)</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 与clock_settime()类似，但是使用纳秒设置时间。</li>
+<li><strong>注意：</strong> 只用Unix可用</li>
+</ul>
+<p><em><strong>time.ctime([secs])</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 将时间戳的时间转换为表示本地时间的字符串。如果没有提供secs或没有提供secs，则使用time()返回的当前时间。</li>
+<li><strong>参数：</strong> 时间戳类型的时间，如果不填默认为当前时间的时间戳。</li>
+<li><strong>返回值：</strong> 格式化类型的时间，例如&rsquo;Mon Mar 18 23:56:35 2019&rsquo;。</li>
+</ul>
+<p><em><strong>time.get_clock_info(name)</strong></em></p>
+<ul>
+<li>
+<p><strong>作用：</strong> 以命名空间对象的形式获取指定时钟的信息。</p>
+</li>
+<li>
+<p><strong>参数：</strong></p>
+<ul>
+<li>clock: time.clock()</li>
+<li>monotonic: time.monotonic()</li>
+<li>perf_counter: time.perf_counter()</li>
+<li>process_time: time.process_time()</li>
+<li>tread_time: time.tread_time()</li>
+<li>time: time.time()</li>
+</ul>
+</li>
+<li>
+<p><strong>返回值：</strong></p>
+<ul>
+<li>adjustable:如果时钟可以自动更改(例如由NTP守护进程)或由系统管理员手动更改，则为True，否则为False。</li>
+<li>implementation:用于获取时钟值的底层C函数的名称。有关可能的值，请参考时钟ID常量。</li>
+<li>monotonic:如果时钟不能倒转，则为真，反之为假。</li>
+<li>resolution:时钟的分辨率(以秒为单位)(浮点数)。</li>
+<li>例如，namespace(adjustable=False, implementation='QueryPerformanceCounter()&rsquo;, monotonic=True, resolution=3.775811922277177e-07)</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>time.gmtime([sec])</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 将时间戳类型的时间转换为UTC中的struct_time，其中dst标志始终为零。</li>
+<li><strong>参数：</strong> 时间戳类型的时间，如果没有提供secs或没有提供secs，则使用time()返回的当前时间。</li>
+<li><strong>返回值：</strong> struct_time类型的时间</li>
+</ul>
+<p><em><strong>time.localtime([sec])</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 就像time.gmtime()，但是转换为本地时间。当dst应用于给定的时间时，dst标志被设置为1。</li>
+<li><strong>参数：</strong> 时间戳类型的时间，如果没有提供secs或没有提供secs，则使用time()返回的当前时间。</li>
+<li><strong>返回值：</strong> struct_time类型的时间</li>
+</ul>
+<p><em><strong>time.mktime(t)</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 将struct_time类型的时间转换为时间戳类型。</li>
+<li><strong>参数：</strong> struct_time类型的时间。</li>
+<li><strong>返回值：</strong> 时间戳类型。</li>
+</ul>
+<p><em><strong>time.monotonic()&ndash;&gt;float</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 返回一个单调时钟的值(以分数秒为单位)，即一个不能倒退的时钟。时钟不受系统时钟更新的影响。返回值的引用点是未定义的，因此只有连续调用的结果之间的差异是有效的。</li>
+</ul>
+<p><em><strong>time.monotonic_ns()&ndash;&gt;int</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 和time.monotonic()类似，但返回值为纳秒。</li>
+</ul>
+<p><em><strong>time.perf_counter()&ndash;&gt;float</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 返回性能计数器的值(以小数秒为单位)，即具有最高可用分辨率来测量短时间的时钟。它确实包括在睡眠期间所花费的时间，并且是全系统的。返回值的引用点是未定义的，因此只有连续调用的结果之间的差异是有效的。</li>
+</ul>
+<p><em><strong>time.perf_counter_ns()&ndash;&gt;int</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 和time.perf_counter()类似，但返回值为纳秒。</li>
+</ul>
+<p><em><strong>time.process_time()&ndash;&gt;float</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 返回当前进程的系统和用户CPU时间之和(以小数秒为单位)。它不包括睡眠时间。根据定义，它是过程范围的。返回值的引用点是未定义的，因此只有连续调用的结果之间的差异是有效的。</li>
+</ul>
+<p><em><strong>time.process_time_ns()&ndash;&gt;int</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 和time.process_time()类似，但返回值为纳秒。</li>
+</ul>
+<p><em><strong>time.sleep(secs)</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 在给定的秒数内挂起调用线程的执行。</li>
+<li><strong>参数：</strong> 秒数，参数可以是一个浮点数，表示更精确的睡眠时间。</li>
+</ul>
+<p><em><strong>time.strftime(format[,t])</strong></em></p>
+<ul>
+<li>
+<p><strong>作用：</strong> 将struct_time类型的时间转换为format参数指定格式的字符串。</p>
+</li>
+<li>
+<p><strong>参数：</strong></p>
+<ul>
+<li>format:指定转换时间的字符串格式。</li>
+<li>t:struct_time类型的时间，如果不填默认为当前时间（即time.localtime()返回的时间）</li>
+</ul>
+</li>
+<li>
+<p><strong>返回值：</strong> 指定格式的字符串。</p>
+<p><strong>注：</strong>
+以下指令可以嵌入格式字符串中。它们显示时没有可选的字段宽度和精度规范。</p>
+<ul>
+<li>%a&ndash;&gt;星期的缩写</li>
+<li>%A&ndash;&gt;完整的星期的名称</li>
+<li>%b&ndash;&gt;月份的缩写</li>
+<li>%B&ndash;&gt;完整的月份名称</li>
+<li>%c&ndash;&gt;'Wed Mar 20 21:40:19 2019&rsquo;格式</li>
+<li>%d&ndash;&gt;十进制数格式的日期[01,31]</li>
+<li>%H&ndash;&gt;小时（24小时制） 十进制数[00,23]</li>
+<li>%I&ndash;&gt;小时（12小时制） 十进制数[01,12]</li>
+<li>%j&ndash;&gt;一年中的一天（十进制数）[001,366]</li>
+<li>%m&ndash;&gt;月份（十进制数）[01,12]</li>
+<li>%M&ndash;&gt;分钟数（十进制数）[00,59]</li>
+<li>%p&ndash;&gt;AM或PM</li>
+<li>%S&ndash;&gt;秒数[00,59]</li>
+<li>%U&ndash;&gt;一年中的周数（星期日作为一周的第一天）十进制数[00,53],第一个星期日之前的所有日子被认为是第0周。</li>
+<li>%w&ndash;&gt;星期数（十进制数）[0,6]</li>
+<li>%W&ndash;&gt;一年中的周数（星期一作为一周的第一天）十进制数[00,53],第一个星期一之前的所有日子被认为是第0周。</li>
+<li>%x&ndash;&gt;日期表示（月/日/不带世纪的年份）例如'03/20/19&rsquo;</li>
+<li>%X&ndash;&gt;时间表示（时:分:秒）例如'21:56:34&rsquo;</li>
+<li>%y&ndash;&gt;不带世纪的年份(十进制数)[00,99]</li>
+<li>%Y&ndash;&gt;带世纪的年份(十进制数)</li>
+<li>%z&ndash;&gt;时区偏移指示与格式+ HHMM或-HHMM形式的UTC / GMT的正或负时差，其中H表示十进制小时数字，M表示小数分钟数字[-23：59，+ 23：59]。</li>
+<li>%Z&ndash;&gt;时区名称，例如&rsquo;中国标准时间&rsquo;</li>
+<li>%%&ndash;&gt;&rsquo;%&lsquo;字符。</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>time.strptime(string[,format])</strong></em></p>
+<ul>
+<li>
+<p><strong>作用：</strong> 根据格式解析表示时间的字符串。</p>
+</li>
+<li>
+<p><strong>参数：</strong></p>
+<ul>
+<li>string:字符串类型的时间。</li>
+<li>format:提供字符串类型的时间的格式。</li>
+</ul>
+</li>
+<li>
+<p><strong>返回值：</strong> struct_time类型的时间。</p>
+<p>**注：**ormat参数使用的指令与strftime()使用的指令相同;它默认为“%a %b %d %H:%M:%S %Y”，与ctime()返回的格式匹配。如果字符串不能按照格式进行解析，或者解析后有多余的数据，则会引发ValueError。当无法推断出更精确的值时，用于填充任何缺失数据的默认值是(1900、1、1、0、0、0、0、0、1、-1)。字符串和格式都必须是字符串。</p>
+</li>
+</ul>
+<p><em><strong>time.time()&ndash;&gt;float</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 以秒为单位以浮点数返回历元之后的时间。</li>
+</ul>
+<p><em><strong>time.thread_time()&ndash;&gt;float</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 返回当前线程的系统和用户CPU时间之和(以小数秒为单位)。它不包括睡眠时间。它的定义是特定于线程的。返回值的引用点未定义，因此只有同一线程中连续调用的结果之间的差异是有效的。</li>
+</ul>
+<p><em><strong>time.thread_time_ns()&ndash;&gt;int</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 和time.thread_time()类似，但是返回值是纳秒。</li>
+</ul>
+<p><em><strong>time.time_ns()&ndash;&gt;int</strong></em></p>
+<ul>
+<li><strong>作用：</strong> 和time.time()类似，但返回值是纳秒。</li>
+</ul>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          3870 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2020-03-15 20:54:00 &#43;0000 UTC" itemprop="datePublished">2020-03-15</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2020/3/python-time/" class="leancloud_visitors" data-flag-title="python模块详解 | time">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/tags">Tag</a></li>
+         
+          <li><a href="/categories">Category</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#time">time</a></li>
+    <li><a href="#时间类型的格式">时间类型的格式</a>
+      <ul>
+        <li><a href="#struct_time类型">struct_time类型</a></li>
+        <li><a href="#格式化时间类型">格式化时间类型</a></li>
+        <li><a href="#时间戳类型">时间戳类型</a></li>
+        <li><a href="#时间类型之间的相互转换">时间类型之间的相互转换</a></li>
+      </ul>
+    </li>
+    <li><a href="#函数">函数</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time&description=time%20%e8%bf%99%e4%b8%aa%e6%a8%a1%e5%9d%97%e6%8f%90%e4%be%9b%e5%90%84%e7%a7%8d%e4%b8%8e%e6%97%b6%e9%97%b4%e7%9b%b8%e5%85%b3%e7%9a%84%e5%87%bd%e6%95%b0%e3%80%82%20%e4%bb%a5%e4%b8%8b%e6%98%af%e5%af%b9%e4%b8%80%e4%ba%9b%e6%9c%af%e8%af%ad%e5%92%8c%e6%83%af%e4%be%8b%e7%9a%84%e8%a7%a3%e9%87%8a%20%e5%88%9d%e5%a7%8b%e6%97%b6%e9%97%b4%e5%9b%a0%e5%b9%b3%e5%8f%b0%e8%80%8c%e5%bc%82%e3%80%82%e5%af%b9%e4%ba%8eUnix%e5%b9%b3%e5%8f%b0%ef%bc%8c%e5%88%9d%e5%a7%8b%e6%97%b6%e9%97%b4%e6%98%af1970%2c01%2c01%2c00%3a">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f3%2fpython-time%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20time">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020 
+    <span>❤️ billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By Hugo | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

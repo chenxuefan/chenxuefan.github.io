@@ -14,136 +14,136 @@
     
     <item>
       <title>进制转换问题</title>
-      <link>https://billie52707.cn/2020/09/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/</link>
+      <link>https://billie52707.cn/posts/2020/9/scale-question/</link>
       <pubDate>Fri, 11 Sep 2020 01:00:00 +0800</pubDate>
       
-      <guid>https://billie52707.cn/2020/09/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://billie52707.cn/posts/2020/9/scale-question/</guid>
       <description>前言 今天有同学来问我关于二级python计算机考试中进制间的转换问题，才想起来好久没有复习这方面的知识了，大都已经忘却，于是花了两个小时梳理</description>
     </item>
     
     <item>
       <title>python&#43;hugo&#43;nginx | 实现博客主页每日一图</title>
-      <link>https://billie52707.cn/2020/08/python-hugo-nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</link>
+      <link>https://billie52707.cn/posts/2020/8/python-hugo-nginx-daily-picture/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/08/python-hugo-nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/</guid>
+      <guid>https://billie52707.cn/posts/2020/8/python-hugo-nginx-daily-picture/</guid>
       <description>前言 在建博客之前，我现在的域名访问的对象，是使用nginx部署在服务器的一个页面，并且由于加入了python脚本，这个页面每天都会更新，每天</description>
     </item>
     
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
-      <link>https://billie52707.cn/2020/08/hugo%E5%BB%BA%E7%AB%99%E5%85%A8%E6%8C%87%E5%8D%97-%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <link>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</link>
       <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
-      <guid>https://billie52707.cn/2020/08/hugo%E5%BB%BA%E7%AB%99%E5%85%A8%E6%8C%87%E5%8D%97-%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <guid>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
     </item>
     
     <item>
       <title>python模块详解 | pyquery</title>
-      <link>https://billie52707.cn/2020/07/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-pyquery/</link>
+      <link>https://billie52707.cn/posts/2020/7/python-pyquery/</link>
       <pubDate>Fri, 31 Jul 2020 00:46:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/07/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-pyquery/</guid>
+      <guid>https://billie52707.cn/posts/2020/7/python-pyquery/</guid>
       <description>简介 pyquery是一个强大的 HTML 解析库，利用它，我们可以直接解析 DOM 节点的结构，并通过 DOM 节点的一些属性快速进行内容提取。 官方文档：http:/</description>
     </item>
     
     <item>
       <title>python学习笔记 | 国内常用源镜像地址</title>
-      <link>https://billie52707.cn/2020/07/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%BD%E5%86%85%E5%B8%B8%E7%94%A8%E6%BA%90%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80/</link>
+      <link>https://billie52707.cn/posts/2020/7/python-mirrors/</link>
       <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/07/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%BD%E5%86%85%E5%B8%B8%E7%94%A8%E6%BA%90%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80/</guid>
+      <guid>https://billie52707.cn/posts/2020/7/python-mirrors/</guid>
       <description>各镜像列表 清华：https://pypi.tuna.tsinghua.edu.cn/simple 阿里云：http://mirrors.ali</description>
     </item>
     
     <item>
       <title>python学习笔记 | macOS Big Sur动态壁纸食用指南</title>
-      <link>https://billie52707.cn/2020/06/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-macos-big-sur%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <link>https://billie52707.cn/posts/2020/6/python-macos-big-sur/</link>
       <pubDate>Sat, 27 Jun 2020 22:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/06/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-macos-big-sur%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <guid>https://billie52707.cn/posts/2020/6/python-macos-big-sur/</guid>
       <description>目录 前言 爬虫篇 壁纸使用篇 后记 前言 北京时间23日凌晨1点，苹果WWDC2020大会开幕。在发布会上，苹果正式发布了新版macOS，并将其命名为</description>
     </item>
     
     <item>
       <title>python模块详解 | unittest（单元测试框架）</title>
-      <link>https://billie52707.cn/2020/06/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-unittest%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6/</link>
+      <link>https://billie52707.cn/posts/2020/6/python-unittest/</link>
       <pubDate>Mon, 15 Jun 2020 14:12:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/06/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-unittest%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://billie52707.cn/posts/2020/6/python-unittest/</guid>
       <description>目录： why unittest？ unittest的四个重要概念 加载测试用例的三个方法 自动加载测试用例 忽略测试和预期失败 生成html测试报告 why unittest ? 简</description>
     </item>
     
     <item>
       <title>python模块详解 | selenium</title>
-      <link>https://billie52707.cn/2020/06/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-selenium/</link>
+      <link>https://billie52707.cn/posts/2020/6/python-selenium/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/06/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-selenium/</guid>
+      <guid>https://billie52707.cn/posts/2020/6/python-selenium/</guid>
       <description>关于Selenium Selenium是⼀个⽤于测试⽹站的⾃动化测试⼯具，⽀持各种浏览器包括Chrome、Firefox、Safari等主流界</description>
     </item>
     
     <item>
       <title>python模块详解 | filecmp</title>
-      <link>https://billie52707.cn/2020/04/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-filecmp/</link>
+      <link>https://billie52707.cn/posts/2020/4/python-filecmp/</link>
       <pubDate>Thu, 30 Apr 2020 14:33:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/04/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-filecmp/</guid>
+      <guid>https://billie52707.cn/posts/2020/4/python-filecmp/</guid>
       <description>简介： filecmp是python内置的一个模块，用于比较文件及文件夹的内容，它是一个轻量级的工具，使用非常简单 两个主要的方法： filecmp.cmp(f1, f2[, shallow]) 比较两</description>
     </item>
     
     <item>
       <title>python模块详解 | shutil</title>
-      <link>https://billie52707.cn/2020/04/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-shutil/</link>
+      <link>https://billie52707.cn/posts/2020/4/python-shutil/</link>
       <pubDate>Thu, 30 Apr 2020 14:28:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/04/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-shutil/</guid>
+      <guid>https://billie52707.cn/posts/2020/4/python-shutil/</guid>
       <description>简介 shutil是python的一个内置模块，提供了许多关于文件和文件集合的高级操作，特别提供文件夹与文件操作、归档操作了支持文件复制和删除</description>
     </item>
     
     <item>
       <title>python学习笔记 | strftime()格式化输出时间</title>
-      <link>https://billie52707.cn/2020/04/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-strftime%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E6%97%B6%E9%97%B4/</link>
+      <link>https://billie52707.cn/posts/2020/4/python-strftime/</link>
       <pubDate>Tue, 07 Apr 2020 11:01:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/04/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-strftime%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E6%97%B6%E9%97%B4/</guid>
+      <guid>https://billie52707.cn/posts/2020/4/python-strftime/</guid>
       <description>time模块 import time t = time.strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;) print(t) datetime模块 import datetime t = datetime.datetime.now().strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;) print(t) 格式化输出之后，就得到了我们常见的格式了👇 2020-04-07 10:59:36 附：strftime参数 strftime(format[, tuple]) -&amp;gt; string 将</description>
     </item>
     
     <item>
       <title>python模块详解 | progressbar</title>
-      <link>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-progressbar/</link>
+      <link>https://billie52707.cn/posts/2020/3/python-progressbar/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-progressbar/</guid>
+      <guid>https://billie52707.cn/posts/2020/3/python-progressbar/</guid>
       <description>参考官方文档：https://pypi.org/project/progressbar/#description progressbar 安装 pip install progressbar progressbar.ProgressBar() 可选参数 maxval = None</description>
     </item>
     
     <item>
       <title>python学习笔记 | PyCharm创建文件时自动添加头文件</title>
-      <link>https://billie52707.cn/2020/03/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-pycharm%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E6%97%B6%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%A4%B4%E6%96%87%E4%BB%B6/</link>
+      <link>https://billie52707.cn/posts/2020/3/python-pycharm/</link>
       <pubDate>Mon, 16 Mar 2020 20:45:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/03/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-pycharm%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E6%97%B6%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%A4%B4%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://billie52707.cn/posts/2020/3/python-pycharm/</guid>
       <description>File 👉 Settings 👉 Editor 👉 File and Code Templates 👉 Python Script 然后在右边的框中写入信息就可以啦： # -*- coding: utf-8 -*- &amp;quot;&amp;quot;&amp;quot; @Author ${USER} @Date ${DATE} ${TIME} @Describe &amp;quot;&amp;quot;&amp;quot; 相关的写法及含义： ${DATE} 当前系统日期 ${TIME} 当前系统时间 ${YEAR} 当年 ${MONTH}</description>
     </item>
     
     <item>
       <title>python模块详解 | time</title>
-      <link>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-time/</link>
+      <link>https://billie52707.cn/posts/2020/3/python-time/</link>
       <pubDate>Sun, 15 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-time/</guid>
+      <guid>https://billie52707.cn/posts/2020/3/python-time/</guid>
       <description>time 这个模块提供各种与时间相关的函数。 以下是对一些术语和惯例的解释 初始时间因平台而异。对于Unix平台，初始时间是1970,01,01,00:</description>
     </item>
     
     <item>
       <title>python模块详解 | psutil</title>
-      <link>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-psutil/</link>
+      <link>https://billie52707.cn/posts/2020/3/python-psutil/</link>
       <pubDate>Sun, 15 Mar 2020 10:17:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/2020/03/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-psutil/</guid>
+      <guid>https://billie52707.cn/posts/2020/3/python-psutil/</guid>
       <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
     </item>
     
