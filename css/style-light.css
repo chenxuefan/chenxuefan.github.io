@@ -1635,8 +1635,9 @@ code {
     width: 100%;
     margin: 8px 0
 }
-
 .post-reward .qr-code .image {
     width: 200px;
     height: 200px
 }
+  /*主页图片移动端适应*/
+  img{max-width:100%;height:auto} 
