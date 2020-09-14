@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hello billie |  python模块详解 | selenium </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="python模块详解 | selenium" />
+<meta property="og:description" content="关于Selenium Selenium是⼀个⽤于测试⽹站的⾃动化测试⼯具，⽀持各种浏览器包括Chrome、Firefox、Safari等主流界" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/2020/06/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-selenium/" />
+<meta property="article:published_time" content="2020-06-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-08T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python模块详解 | selenium"/>
+<meta name="twitter:description" content="关于Selenium Selenium是⼀个⽤于测试⽹站的⾃动化测试⼯具，⽀持各种浏览器包括Chrome、Firefox、Safari等主流界"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null 
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  <img height="410" width="706"src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/131597526616_.pic_hd.jpg"><br>
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/tags">Tag</a></li>
+         
+        <li><a href="/categories">Category</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/2020/04/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-filecmp/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/2020/06/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-unittest%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium&body=Check out this article: https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium&description=%e5%85%b3%e4%ba%8eSelenium%20Selenium%e6%98%af%e2%bc%80%e4%b8%aa%e2%bd%a4%e4%ba%8e%e6%b5%8b%e8%af%95%e2%bd%b9%e7%ab%99%e7%9a%84%e2%be%83%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e2%bc%af%e5%85%b7%ef%bc%8c%e2%bd%80%e6%8c%81%e5%90%84%e7%a7%8d%e6%b5%8f%e8%a7%88%e5%99%a8%e5%8c%85%e6%8b%acChrome%e3%80%81Firefox%e3%80%81Safari%e7%ad%89%e4%b8%bb%e6%b5%81%e7%95%8c">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#关于selenium">关于Selenium</a></li>
+    <li><a href="#定位元素"><strong>定位元素</strong></a></li>
+    <li><a href="#元素操作"><strong>元素操作</strong></a></li>
+    <li><a href="#浏览器操作"><strong>浏览器操作</strong></a></li>
+    <li><a href="#鼠标事件"><strong>鼠标事件</strong></a></li>
+    <li><a href="#键盘事件"><strong>键盘事件</strong></a></li>
+    <li><a href="#设置元素等待"><strong>设置元素等待</strong></a></li>
+    <li><a href="#多表单切换"><strong>多表单切换</strong></a></li>
+    <li><a href="#多窗切换"><strong>多窗⼝切换</strong></a></li>
+    <li><a href="#对话框操作"><strong>对话框操作</strong></a></li>
+    <li><a href="#复选框操作"><strong>复选框操作</strong></a></li>
+    <li><a href="#文件上传"><strong>文件上传</strong></a></li>
+    <li><a href="#文件下载"><strong>文件下载</strong></a></li>
+    <li><a href="#cookie操作"><strong>cookie操作</strong></a></li>
+    <li><a href="#登录操作"><strong>登录操作</strong></a></li>
+    <li><a href="#javascript操作"><strong>JavaScript操作</strong></a></li>
+    <li><a href="#窗截图"><strong>窗⼝截图</strong></a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        python模块详解 | selenium
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          <time datetime="2020-06-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-08</time>
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="关于selenium">关于Selenium</h2>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/selenium_logo_large.png" alt="selenium_logo_large"></p>
+<p><strong>Selenium</strong>是⼀个⽤于测试⽹站的⾃动化测试⼯具，⽀持各种浏览器包括Chrome、Firefox、Safari等主流界⾯浏览器，同时也⽀持phantomJS⽆界⾯浏览器。另外，selenium用来爬虫也是杠杠的，可以应对大多数的反爬。</p>
+<ul>
+<li><strong>安装Selenium</strong></li>
+</ul>
+<pre><code>pip install selenium
+</code></pre><ul>
+<li><strong>安装浏览器驱动</strong></li>
+</ul>
+<p>Selenium3.x调⽤浏览器必须有⼀个webdriver驱动⽂件
+驱动下载 👉 <a href="https://www.cnblogs.com/billie52707/p/12552726.html">selenium各浏览器驱动下载地址</a></p>
+<ul>
+<li><strong>配置环境变量</strong></li>
+</ul>
+<p>将下载的exe驱动文件，移动到python安装目录下的Scripts文件夹下</p>
+<p>更多配置方法 👉 <a href="http://www.testclass.net/selenium_python/selenium3-browser-driver/">参考浏览器驱动环境配置</a></p>
+<p>⼊门参考⽂献 👉 <a href="http://www.testclass.net/selenium_python/">Selenium⼊门</a></p>
+<h2 id="定位元素"><strong>定位元素</strong></h2>
+<ul>
+<li><strong>8种常规定位方法</strong>：id，name，class_name，tag_name，link_text，partial_link_text，xpath，css_selector</li>
+<li><strong>参考官网</strong> 👉 <a href="http://selenium-python.readthedocs.org/locating-elements.html">selenium元素定位</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>定位⼀个元素</th>
+<th>定位多个元素（返回一个列表）</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>find_element_by_id</td>
+<td>find_elements_by_id</td>
+<td>id</td>
+</tr>
+<tr>
+<td>find_element_by_name</td>
+<td>find_elements_by_name</td>
+<td>name</td>
+</tr>
+<tr>
+<td>find_element_by_xpath</td>
+<td>find_elements_by_xpath</td>
+<td>xpath表达式</td>
+</tr>
+<tr>
+<td>find_element_by_link_text</td>
+<td>find_elements_by_link_text</td>
+<td>完整超链接文本</td>
+</tr>
+<tr>
+<td>find_element_by_partial_link_text</td>
+<td>find_elements_by_partial_link_text</td>
+<td>部分超链接文本</td>
+</tr>
+<tr>
+<td>find_element_by_tag_name</td>
+<td>find_elements_by_tag_name</td>
+<td>标签名</td>
+</tr>
+<tr>
+<td>find_element_by_class_name</td>
+<td>find_elements_by_class_name</td>
+<td>类名</td>
+</tr>
+<tr>
+<td>find_element_by_css_selector</td>
+<td>find_elements_by_css_selector</td>
+<td>css选择器</td>
+</tr>
+</tbody>
+</table>
+<p>ps：除了上面的公共方法，也有两个在页面对象定位器的私有方法: find_element、find_elements</p>
+<ul>
+<li><strong>xpath定位的N种写法</strong></li>
+</ul>
+<ol>
+<li>dr.find_element_by_xpath(&quot;//*[@id='kw&rsquo;]&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;//*[@name='wd&rsquo;]&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;//input[@class='s_ipt&rsquo;]&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;/html/body/form/span/input&rdquo;)</li>
+<li>dr.find_element_by_xpath(&quot;//span[@class='soutu-btn&rsquo;]/input&rdquo;)</li>
+<li>dr.find_element_by_xpath(&quot;//form[@id='form&rsquo;]/span/input&rdquo;)</li>
+<li>dr.find_element_by_xpath(&quot;//input[@id='kw&rsquo; and @name='wd&rsquo;]&quot;)</li>
+</ol>
+<ul>
+<li><strong>css定位的N种写法</strong></li>
+</ul>
+<ol>
+<li>dr.find_element_by_css_selector(&quot;#kw&rdquo;)</li>
+<li>dr.find_element_by_css_selector(&quot;[name=wd]&quot;)</li>
+<li>dr.find_element_by_css_selector(&quot;.s_ipt&rdquo;)</li>
+<li>dr.find_element_by_css_selector(&ldquo;html &gt; body &gt; form &gt; span &gt; input&rdquo;)</li>
+<li>dr.find_element_by_css_selector(&ldquo;span.soutu-btn&gt; input#kw&rdquo;)</li>
+<li>dr.find_element_by_css_selector(&ldquo;form#form &gt; span &gt; input&rdquo;)</li>
+</ol>
+<ul>
+<li><strong>link_text定位的写法（实例）</strong></li>
+</ul>
+<p>　　假如⻚⾯上有⼀组⽂本链接（link_text）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">　　&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mnav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://news.baidu.com&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tj_trnews&#34;</span>&gt;新闻&lt;/<span style="color:#f92672">a</span>&gt;
+　　&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mnav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.hao123.com&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tj_trhao123&#34;</span>&gt;hao123&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>　　通过<strong>link_text</strong>定位:</p>
+<ol>
+<li>dr.find_element_by_link_text(&ldquo;新闻&rdquo;)</li>
+<li>dr.find_element_by_link_text(&ldquo;hao123&rdquo;)</li>
+</ol>
+<p>　　通过<strong>partial_link_text</strong>定位:</p>
+<ol>
+<li>dr.find_element_by_partial_link_text(&ldquo;新&rdquo;)</li>
+<li>dr.find_element_by_partial_link_text(&ldquo;hao&rdquo;)</li>
+<li>dr.find_element_by_partial_link_text(&ldquo;123&rdquo;)</li>
+</ol>
+<h2 id="元素操作"><strong>元素操作</strong></h2>
+<ul>
+<li>size # 获取元素的尺寸，返回一个字典：{&lsquo;x&rsquo;: 000, &lsquo;y&rsquo;: 000}</li>
+<li>text # 获取元素的文本</li>
+<li>location # 获取元素坐标，先找到要获取的元素，再调用该方法，返回一个字典：{&lsquo;height&rsquo;: 000, &lsquo;width&rsquo;: 000}</li>
+<li>tag_name # 返回元素的tagName</li>
+<li>clear()  # 清除元素的内容</li>
+<li>send_keys() # 模拟按键输入</li>
+<li>click() # 点击元素</li>
+<li>submit() # 提交表单</li>
+<li>get_attribute(name) # 获取属性值</li>
+<li>is_displayed() # 设置该元素是否可见</li>
+<li>is_enabled() # 判断元素是否被使用</li>
+<li>is_selected() # 判断元素是否被选中</li>
+</ul>
+<p>ps：如果需要输入中文，防止编码错误使用send_keys(u&quot;中文用户名&rdquo;)。</p>
+<h2 id="浏览器操作"><strong>浏览器操作</strong></h2>
+<ul>
+<li>title # 返回页面标题</li>
+<li>page_source # 返回页面源码</li>
+<li>current_url # 获取当前页面的URL</li>
+<li>refresh() # 刷新浏览器</li>
+<li>set_window_size() # 设置浏览器的大小</li>
+<li>set_window_position() # 设置浏览器的坐标</li>
+<li>set_window_rect() # 设置浏览器的矢量</li>
+<li>maximize_window() # 最大化窗口</li>
+<li>minimize_window() # 最小化窗口</li>
+<li>close() # 关闭页面</li>
+<li>quit() # 关闭窗口</li>
+</ul>
+<h2 id="鼠标事件"><strong>鼠标事件</strong></h2>
+<ul>
+<li>
+<p>ActionChains(driver) # 构造ActionChains对象</p>
+</li>
+<li>
+<p>click(on_element) # 左击</p>
+</li>
+<li>
+<p>context_click(on_element) # 右键，另存为等行为</p>
+</li>
+<li>
+<p>double_click(on_element) # 左键双击，地图web可实现放大功能</p>
+</li>
+<li>
+<p>drag_and_drop(source,target) # 左键拖动，源元素按下左键移动至目标元素释放</p>
+</li>
+<li>
+<p>drag_and_drop_by_offset(source, xoffset, yoffset) # 拖拽到某个坐标然后松开</p>
+</li>
+<li>
+<p>key_down(value, element=None) # 按下某个键盘上的键</p>
+</li>
+<li>
+<p>key_up(value, element=None) # 松开某个键</p>
+</li>
+<li>
+<p>move_by_offset(xoffset, yoffset) # 鼠标从当前位置移动到某个坐标</p>
+</li>
+<li>
+<p>move_to_element(on_element) # 鼠标悬停</p>
+</li>
+<li>
+<p>move_to_element_with_offset(to_element, xoffset, yoffset) # 移动到距某个元素（左上角坐标）多少距离的位置</p>
+</li>
+<li>
+<p>click_and_hold(on_element) #左键点击不松开</p>
+</li>
+<li>
+<p>perform() # 在通过调用该函数执行ActionChains中存储行为</p>
+</li>
+<li>
+<p>例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+<span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains <span style="color:#75715e">#引⼊ ActionChains 类</span>
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox()
+driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;https://www.baidu.com&#34;</span>)
+element<span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#34;设置&#34;</span>) <span style="color:#75715e">#定位元素</span>
+ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(element)<span style="color:#f92672">.</span>perform() <span style="color:#75715e">#对定位到的元素执⾏⿏标悬停操作</span>
+</code></pre></div></li>
+</ul>
+<h2 id="键盘事件"><strong>键盘事件</strong></h2>
+<p>参考：<a href="http://selenium-python.readthedocs.org/api.html">http://selenium-python.readthedocs.org/api.html</a></p>
+<p>提供键盘按键操作的类：<code>webdriver.common.keys</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys
+</code></pre></div><ul>
+<li>send_keys(Keys.ENTER) # 按下回车键</li>
+<li>send_keys(Keys.TAB) # 按下Tab制表键</li>
+<li>send_keys(Keys.SPACE) # 按下空格键space</li>
+<li>send_keys(Kyes.ESCAPE) # 按下回退键Esc</li>
+<li>send_keys(Keys.BACK_SPACE) # 按下删除键BackSpace</li>
+<li>send_keys(Keys.SHIFT) # 按下shift键</li>
+<li>send_keys(Keys.CONTROL) # 按下Ctrl键</li>
+<li>send_keys(Keys.ARROW_DOWN) # 按下鼠标光标向下按键</li>
+<li>send_keys(Keys.CONTROL,&lsquo;a&rsquo;) # 组合键全选Ctrl+A</li>
+<li>send_keys(Keys.CONTROL,&lsquo;c&rsquo;) # 组合键复制Ctrl+C</li>
+<li>send_keys(Keys.CONTROL,&lsquo;x&rsquo;) # 组合键剪切Ctrl+X</li>
+<li>send_keys(Keys.F1…Fn) # 键盘 F1…Fn</li>
+</ul>
+<h2 id="设置元素等待"><strong>设置元素等待</strong></h2>
+<ul>
+<li>强制等待</li>
+<li>隐式等待</li>
+<li>显式等待</li>
+</ul>
+<p>参考链接：<a href="http://www.testclass.net/selenium_python/element-wait/">http://www.testclass.net/selenium_python/element-wait/</a></p>
+<h2 id="多表单切换"><strong>多表单切换</strong></h2>
+<p>在Web应⽤中经常会遇到<code>frame/iframe</code>表单嵌套⻚⾯的应⽤，WebDriver只能在⼀个⻚⾯上对元素识别与定位，对于frame/iframe表单内嵌⻚⾯上的元素⽆法直接定位。这时就需要通过<code>switch_to.frame()</code>⽅法将当前定位的主体切换为frame/iframe表单的内嵌⻚⾯中。</p>
+<ul>
+<li><strong>switch_to.frame()</strong> / <strong>switch_to_frame()</strong></li>
+</ul>
+<p>将当前定位的主体切换为frame/iframe表单的内嵌⻚⾯，默认可以直接取表单的 <strong>id</strong> 或<strong>name</strong>属性。如果iframe没有可⽤的id和name属性，则可以通过查找<strong>iframe标签</strong>，进⾏定位。</p>
+<ul>
+<li><strong>switch_to.default_content()</strong> / <strong>switch_to_default_content()</strong></li>
+</ul>
+<p>跳回最外层的⻚⾯</p>
+<ul>
+<li>
+<p>例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#先通过 xpth 定位到 iframe</span>
+xf <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@class=&#34;if&#34;]&#39;</span>)
+<span style="color:#75715e">#再将定位对象传给 switch_to_frame()方法</span>
+driver<span style="color:#f92672">.</span>switch_to_frame(xf)
+driver<span style="color:#f92672">.</span>switch_to_default_content() 
+</code></pre></div></li>
+</ul>
+<h2 id="多窗切换"><strong>多窗⼝切换</strong></h2>
+<p>在⻚⾯操作过程中有时候点击某个链接会弹出新的窗⼝，这时就需要主机切换到新打开的窗⼝上进⾏操作。WebDriver提供了switch_to.window()⽅法，可以实现在不同的窗⼝之间切换。</p>
+<ul>
+<li>
+<p><strong>current_window_handle</strong> #返回当前窗⼝的句柄</p>
+</li>
+<li>
+<p><strong>window_handles</strong> #返回所有窗⼝的句柄，一个列表</p>
+</li>
+<li>
+<p><strong>switch_to.window</strong>() #⽤于切换到相应的窗⼝，与上⼀节的switch_to.frame()类似，前者⽤于不同窗⼝的切换，后者⽤于不同表单之间的切换</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c_win <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>current_window_handle
+driver<span style="color:#f92672">.</span>switch_to_window(c_win)
+</code></pre></div></li>
+</ul>
+<h2 id="对话框操作"><strong>对话框操作</strong></h2>
+<p>在WebDriver中处理JavaScript所⽣成的alert、confirm以及prompt⼗分简单，具体做法是使⽤ switch_to.alert() 或switch_to_alert()⽅法定位到 alert/confirm/prompt，然后使⽤text/accept/dismiss/send_keys 等⽅法进⾏操作。</p>
+<ul>
+<li>
+<p><strong>switch_to_alert()</strong>  / <strong>switch_to.alert()</strong> # 切入到警告框</p>
+</li>
+<li>
+<p><strong>text</strong> # 返回 alert/confirm/prompt 中的⽂字信息</p>
+</li>
+<li>
+<p><strong>accept()</strong> # 接受现有警告框</p>
+</li>
+<li>
+<p><strong>dismiss()</strong> # 解散现有警告框</p>
+</li>
+<li>
+<p><strong>send_keys(keysToSend)</strong> # 发送⽂本⾄警告框。keysToSend：发送⾄警告框的⽂本。</p>
+</li>
+<li>
+<p>例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">al <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>switch_to_alert()
+al<span style="color:#f92672">.</span>accept()
+al<span style="color:#f92672">.</span>text
+</code></pre></div></li>
+</ul>
+<h2 id="复选框操作"><strong>复选框操作</strong></h2>
+<ul>
+<li><strong>is_selected()</strong> #返回布尔值，判断是否被选中</li>
+</ul>
+<p><strong>1、单选框（radio）</strong></p>
+<p><strong>2、复选框（checkbox）</strong></p>
+<p><strong>3、下拉框（select）</strong></p>
+<p>导⼊选择下拉框Select类，使⽤该类处理下拉框操作：</p>
+<pre><code class="language-python " data-lang="python ">from selenium.webdriver.support.ui import Select
+</code></pre><ul>
+<li>选择下拉框选项的⽅法
+<ul>
+<li><strong>select_by_value</strong>(“选择值”) # 相当于我们使⽤⿏标选择下拉框的值</li>
+<li><strong>select_by_index</strong>(“索引值”) # 以传入的index值来查找匹配的元素并选择对应选项（索引从0开始计数）</li>
+<li><strong>select_by_visible_text</strong>(“文本”) # 选择所有文本显示的option元素，</li>
+</ul>
+</li>
+<li>返回options信息的方法
+<ul>
+<li><strong>options</strong> # 返回所有的选项的列表，其中选项都是WebElement元素</li>
+<li><strong>all_selecetd_options</strong> # 返回所有被选中的选项的列表，其中选项均为WebElement元素，输出所有被选中的选项，适合于能多选的下拉框</li>
+<li><strong>first_selected_option</strong> # 返回第一个被选中的选项</li>
+</ul>
+</li>
+<li>取消下拉框选择的方法
+<ul>
+<li><strong>deselect_by_index</strong>() #以传入的索引值来查找匹配的元素并取消选择</li>
+<li><strong>deselect_by_value</strong>() #以传入的value属性值来查找匹配的元素并取消选择</li>
+<li><strong>deselect_by_visible_text</strong>() #以传入的文本内容来查找匹配的元素并取消选择</li>
+<li><strong>deselect_all</strong>() #将所有的选项清除</li>
+</ul>
+</li>
+</ul>
+<p>ps：上述四种方法仅用于多选下拉框，即设置了multiple=“multiple”属性的select标签，这种下拉框可以多选。</p>
+<h2 id="文件上传"><strong>文件上传</strong></h2>
+<p>selenium没有提供直接的文件上传功能，目前主要有以下几种解决方案：</p>
+<ul>
+<li>send_keys()</li>
+<li>AutoIT</li>
+<li>python pywin32 模块</li>
+</ul>
+<p><strong>1、send_keys()</strong></p>
+<p>对于通过input标签实现的上传功能，可以将其看作是⼀个输⼊框，定位到用于上传的input标签，接着通过send_keys()指定本地⽂件路径的⽅式，实现⽂件上传。
+例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+<span style="color:#f92672">import</span> os
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox()
+file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;file:///&#39;</span> <span style="color:#f92672">+</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(<span style="color:#e6db74">&#39;upfile.html&#39;</span>)
+driver<span style="color:#f92672">.</span>get(file_path)
+<span style="color:#75715e"># 定位上传按钮，添加本地⽂件</span>
+driver<span style="color:#f92672">.</span>find_element_by_name(<span style="color:#e6db74">&#34;file&#34;</span>)<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#39;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">upload_file.txt&#39;</span>)
+driver<span style="color:#f92672">.</span>quit()
+</code></pre></div><p><strong>2、AutoIT</strong></p>
+<p>AutoIT通过操作Windows窗口控件来实现自动化任务。selenium通过AutoIT来操作Windows窗口，实质是通过python代码来调用AutoIT生成的脚本.exe文件，即利用AutoIT编写适合的脚本，然后将脚本编译成可执行文件，在自动化测试实现时，直接调用此脚本实现文件上传。</p>
+<p>ps：编写脚本和编译需要借助AutoIT提供的工具，但是脚本编译成可执行文件后，可直接使用，不需要安装AutiIT。</p>
+<ul>
+<li>AutoIT下载：https://www.autoitscript.com/site/</li>
+<li>AutoIT的使用：</li>
+</ul>
+<ol>
+<li>探测控件（AutoIt Window Info工具）</li>
+<li>编写脚本（Autoit Window Info编辑器）</li>
+<li>验证脚本（Autoit Window Info 👉 Tool 👉 go）</li>
+<li>编译成可执行文件（Compile Script to.exe）</li>
+<li>调用可执行文件</li>
+<li>参数化（在python程序中向可执行文件传入参数）</li>
+<li>多个参数化（实现多文件上传）</li>
+</ol>
+<p><strong>3、pywin32</strong></p>
+<p>pywin32式用于访问Windows系统API的python模块，最核心的方法是：</p>
+<ul>
+<li>win32api #用python对win32的本地API库进行封装</li>
+<li>win32con #win32的常量定义</li>
+<li>win32gui #</li>
+</ul>
+<h2 id="文件下载"><strong>文件下载</strong></h2>
+<p>文件下载（另存为），跟文件上传类似，可以使用AutoIt、win32api解决</p>
+<p><strong>1、win32api</strong></p>
+<ul>
+<li>
+<p>例：下载搜狗图片</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> win32api<span style="color:#f92672">,</span>win32con
+driver<span style="color:#f92672">.</span>get(sg_url)
+ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#39;图片&#39;</span>))<span style="color:#f92672">.</span>click()<span style="color:#f92672">.</span>perform()<span style="color:#75715e">#点击跳转到图片</span>
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@id=&#34;feed_list&#34;]/div[1]/ul/li[1]/a/img&#39;</span>))<span style="color:#f92672">.</span>context_click()<span style="color:#f92672">.</span>perform()
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)<span style="color:#75715e">#40对应的是向下键，由于’另存为‘在菜单的顺序为7，所以需操作7次</span>
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</code></pre></div></li>
+</ul>
+<h2 id="cookie操作"><strong>cookie操作</strong></h2>
+<p>简介：</p>
+<p>有时候我们需要验证浏览器中cookie是否正确，因为基于真实cookie的测试是⽆法通过⽩盒和集成测试进⾏的。WebDriver提供了操作Cookie的相关⽅法，可以读取、添加和删除cookie信息。</p>
+<p>WebDriver操作cookie的⽅法:</p>
+<ul>
+<li>
+<p><strong>get_cookies</strong>() #获得所有cookie信息</p>
+</li>
+<li>
+<p><strong>get_cookie</strong>(name) #返回字典的key为“name”的cookie信息</p>
+</li>
+<li>
+<p><strong>add_cookie</strong>(cookie_dict) #添加cookie。</p>
+<p>“cookie_dict”指字典对象，必须有‘name’和‘value’两个key，可选的key是‘path’，‘domin’，‘secure’，‘expiry’，‘httponly‘</p>
+<p>-name：cookie的名称</p>
+<p>-value：cookie对应的值，动态生成</p>
+<p>-domain：服务器域名</p>
+<p>-expiry：cookie有效终止日期</p>
+<p>-path：path属性定义了web服务器上哪些路径下的页面可获取服务器设置的cookie-httpOnly：防脚本攻击</p>
+<p>-secure：在cookies中标记该变量，表明只有当浏览器和web server之间的通信协议为加密认证协议时</p>
+</li>
+<li>
+<p><strong>delete_cookie</strong>(name,optionsString) #删除cookie信息</p>
+<p>“name”是要删除的cookie的名称，“optionsString”是该cookie的选项，⽬前⽀持的选项包括“路径”，“域”</p>
+</li>
+<li>
+<p><strong>delete_all_cookies</strong>() #删除所有cookie信息</p>
+</li>
+<li>
+<p>例：</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+<span style="color:#f92672">import</span> time
+browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(<span style="color:#e6db74">&#34;F:\Chrome\ChromeDriver\chromedriver&#34;</span>)
+browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;http://www.youdao.com&#34;</span>)
+<span style="color:#75715e">#1.打印cookie信息</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;打印cookie信息为：&#34;</span>)
+<span style="color:#66d9ef">print</span>(browser<span style="color:#f92672">.</span>get_cookies)
+<span style="color:#75715e">#2.添加cookie信息</span>
+dict<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;name&#39;</span>:<span style="color:#e6db74">&#34;name&#34;</span>,<span style="color:#e6db74">&#39;value&#39;</span>:<span style="color:#e6db74">&#39;Kaina&#39;</span>}
+browser<span style="color:#f92672">.</span>add_cookie(dict)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;添加cookie信息为：&#39;</span>)
+<span style="color:#75715e">#3.遍历打印cookie信息</span>
+<span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
+<span style="color:#75715e">#4.删除⼀个cookie</span>
+browser<span style="color:#f92672">.</span>delete_cookie(<span style="color:#e6db74">&#39;name&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;删除⼀个cookie&#39;</span>)
+<span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;删除所有cookie后：&#39;</span>)
+<span style="color:#75715e">#5.删除所有cookie,⽆需传递参数</span>
+browser<span style="color:#f92672">.</span>delete_all_cookies()
+<span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
+time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">3</span>)
+browser<span style="color:#f92672">.</span>close()
+</code></pre></div><h2 id="登录操作"><strong>登录操作</strong></h2>
+<p>简介：</p>
+<p>在实际的web应用中，用户登录时通常要求用户输入验证码，验证码大多分为四类：识图验证码、计算验证码、滑块验证码以及语音验证码，这里介绍识图验证码。</p>
+<p>两种解决方案：</p>
+<p><strong>1、通过cookies绕过登录</strong></p>
+<ul>
+<li>原理：先通过一次手动的登录，登录成功后可以获取到对应的cookies，之后，在下一次的访问中，只需要向driver对象添加cookies，即可绕过登录和验证码过程，直接登录。</li>
+<li>实例：<a href="https://www.cnblogs.com/billie52707/p/12870478.html">selenium自动化 | 通过获取cookies登录</a></li>
+<li>更多关于cookies的操作：<strong>十三、<a href="https://www.cnblogs.com/billie52707/p/12553269.html#shisan">cookie操作</a></strong></li>
+</ul>
+<p><strong>2、借助识别工具识别验证码</strong></p>
+<p>百度AI开放平台：http://ai.baidu.com/</p>
+<ul>
+<li><strong>操作方法简介</strong>
+<ol>
+<li>使用百度账号登录百度AI开放平台，进入控制台，选择文字识别，点击创建应用</li>
+<li>点击管理应用，获取访问百度服务所需的验证信息AppID、API Key、Secret Key</li>
+<li>安装使用python SDK：pip install baidu-aip</li>
+</ol>
+</li>
+<li><strong>识别过程简介</strong>
+<ol>
+<li>截取当前显式验证码的网页图片</li>
+<li>裁剪网页图片得到验证码大图</li>
+<li>调用百度AI平台识别验证码</li>
+</ol>
+</li>
+<li><strong>实例</strong>：<a href="https://www.cnblogs.com/billie52707/p/12906540.html">selenium自动化 | 借助百度AI开放平台识别验证码登录职教云</a></li>
+</ul>
+<h2 id="javascript操作"><strong>JavaScript操作</strong></h2>
+<p>简介：</p>
+<p>虽然WebDriver提供了操作浏览器的前进和后退⽅法，但对于浏览器滚动条并没有提供相应的操作⽅法。在这种情况下，就可以借助JavaScript来控制浏览器的滚动条。</p>
+<p>WebDriver提供了此方法执⾏JavaScript代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">execute_script</span>() 
+</code></pre></div><p>js代码的相关操作：</p>
+<ul>
+<li>
+<p>输入操作</p>
+<ul>
+<li>&ldquo;document.getElementById(&rsquo; &lsquo;).value=&rsquo; &lsquo;; &quot; #</li>
+</ul>
+</li>
+<li>
+<p>单击操作</p>
+<ul>
+<li>&ldquo;document.getElementById(&rsquo; &lsquo;).click(); &quot; #</li>
+</ul>
+</li>
+<li>
+<p>焦点操作</p>
+<ul>
+<li>e=driver.find_element_by_id(&ldquo;su&rdquo;)</li>
+<li>driver.execute_script(&ldquo;arguments[0].blur();&rdquo; , e) # 移除焦点操作</li>
+<li>driver.execute_script(&ldquo;arguments[0].blur();&rdquo; , e) # 赋予焦点操作</li>
+</ul>
+</li>
+<li>
+<p>浏览器操作</p>
+<ul>
+<li>
+<p>&ldquo;window.open(url);&rdquo; # 打开浏览器</p>
+</li>
+<li>
+<p>&ldquo;window.resizeTo(width,height);&rdquo; # 绝对方法，设置浏览器窗口的实际大小，即“变化到多少”</p>
+</li>
+<li>
+<p>&ldquo;window.resizeBy(width,height);&rdquo; # 相对方法，在当前大小上增加所指定的参数值，即“变化了多少”</p>
+</li>
+<li>
+<p>&ldquo;window.moveTo(width,height);&rdquo; # 绝对方法，设置窗口新的绝对位置</p>
+</li>
+<li>
+<p>&ldquo;window.moveBy(width,height);” # 相对方法，在当前位置上增加所指定的参数值</p>
+</li>
+<li>
+<p>&ldquo;history.forward();“ # 控制浏览器前进</p>
+</li>
+<li>
+<p>&ldquo;history.back();” # 控制浏览器后退</p>
+</li>
+<li>
+<p>“history.go(number | url);&rdquo;</p>
+<ul>
+<li>参数可以是数字number，即要访问的url在history的url列表中的相对位置。（-1表示上一个页面，1表示前进一个页面，0则是刷新页面）</li>
+<li>参数可以是一个字符串，字符串必须是局部或完整的url，该函数会去匹配包含字符串的第一个url</li>
+</ul>
+</li>
+<li>
+<p>“history.go(0);” , &ldquo;location.reload();&rdquo; , &ldquo;location=location;&rdquo; , &ldquo;location.assign(location);&rdquo; , &ldquo;location.replace(location);&rdquo; # 刷新浏览器</p>
+</li>
+<li>
+<p>“window.close();” # 关闭浏览器</p>
+</li>
+</ul>
+</li>
+<li>
+<p>鼠标操作</p>
+<ul>
+<li>
+<p>创建事件</p>
+<ul>
+<li>document.createEvent(&lsquo;MouseEvents&rsquo;);</li>
+</ul>
+</li>
+<li>
+<p>初始化返回的的时间对象</p>
+<ul>
+<li>event.initMouseEvent(type,canBuble,cancelable,view,detail,screenX,screenY,clientY,ctrlKey,altKey,metaKey,button,relatedTarget);</li>
+<li>type：click(单击)，dbclick(双击)，mouseover(鼠标悬停)</li>
+</ul>
+</li>
+<li>
+<p>触发事件</p>
+<ul>
+<li>arguments[0].dispatchEvent()</li>
+</ul>
+</li>
+<li>
+<p>例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_name(<span style="color:#e6db74">&#34;name&#34;</span>)
+js <span style="color:#f92672">=</span> 
+<span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    var event = document.createEvent(&#39;MouseEvents&#39;);
+</span><span style="color:#e6db74">    event.initMouseEvent(&#39;click&#39;,true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
+</span><span style="color:#e6db74">    arguments[0].dispatchEvent(event);
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span> 
+driver<span style="color:#f92672">.</span>execute_script(js,e)
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>滚动条操作</p>
+<ul>
+<li>水平滚动
+<ul>
+<li>&ldquo;document.documentElement.scrollLeft = 100&rdquo; # scrollLeft的初始值为0，最初显示页面最左边的内容，随数值变大，向右滑动</li>
+</ul>
+</li>
+<li>垂直滚动
+<ul>
+<li>&ldquo;document.documentElement.scrollTop = 100&rdquo; # scrollTop的初始值为0，随数值变大，向下滑动</li>
+</ul>
+</li>
+<li>滚动到指定坐标
+<ul>
+<li>&ldquo;window.scrollTo(x,y)&rdquo;</li>
+<li>&ldquo;document.documentElement.scrollTo(x,y)&rdquo;</li>
+</ul>
+</li>
+<li>滚动到指定的像素数
+<ul>
+<li>&ldquo;window.scrollBy(x,y)&rdquo;</li>
+<li>&ldquo;document.documentElement.scrollBy(x,y)&rdquo;</li>
+</ul>
+</li>
+<li>滚动页面元素到可视区域
+<ul>
+<li>&ldquo;documents[0].scrollIntoView()&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>HTML视频操作</p>
+<ul>
+<li>
+<p>加载</p>
+<ul>
+<li>driver.execute_script(&ldquo;return arguments[0].load()&quot;,video)</li>
+</ul>
+</li>
+<li>
+<p>播放</p>
+<ul>
+<li>driver.execute_script(&ldquo;return arguments[0].play()&quot;,video)</li>
+</ul>
+</li>
+<li>
+<p>暂停</p>
+<ul>
+<li>driver.execute_script(&ldquo;return arguments[0].pause()&quot;,video)</li>
+</ul>
+</li>
+<li>
+<p>例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://www.w3school.com.cn/tiy/t.asp?f=html_video&#39;</span>)
+driver<span style="color:#f92672">.</span>switch_to_frame(<span style="color:#e6db74">&#39;iframeResult&#39;</span>)
+video<span style="color:#f92672">=</span>driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;/html/body/video&#39;</span>)
+video<span style="color:#f92672">.</span>click()
+driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].load()&#39;</span>,video)
+driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].play()&#39;</span>,video)
+driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].pause()&#39;</span>,video)
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="窗截图"><strong>窗⼝截图</strong></h2>
+<p>简介:</p>
+<p>⾃动化⽤例是由程序去执⾏的，因此有时候打印的错误信息并不⼗分明确。如果在脚本执⾏出错的时候能对当前窗⼝截图保存，那么通过图⽚就可以⾮常直观地看出出错的原因。
+WebDriver提供了截图函数get_screenshot_as_file()来截取当前窗⼝：</p>
+<ul>
+<li><strong>get_screenshot_as_file(self, filename)</strong> #⽤于截取当前窗⼝，并把图⽚保存到本地</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+<span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> sleep
+driver <span style="color:#f92672">=</span>webdriver<span style="color:#f92672">.</span>Firefox(executable_path <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;F:\GeckoDriver\geckodriver&#34;</span>)
+driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://www.baidu.com&#39;</span>)
+driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#39;selenium&#39;</span>)
+driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;su&#39;</span>)<span style="color:#f92672">.</span>click()
+sleep(<span style="color:#ae81ff">2</span>)
+<span style="color:#75715e">#1.截取当前窗⼝，并指定截图图⽚的保存位置</span>
+driver<span style="color:#f92672">.</span>get_screenshot_as_file(<span style="color:#e6db74">&#34;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">baidu_img.jpg&#34;</span>)
+driver<span style="color:#f92672">.</span>quit()
+</code></pre></div>
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          6160 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2020-06-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-08</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/2020/06/python%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3-selenium/" class="leancloud_visitors" data-flag-title="python模块详解 | selenium">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/tags">Tag</a></li>
+         
+          <li><a href="/categories">Category</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#关于selenium">关于Selenium</a></li>
+    <li><a href="#定位元素"><strong>定位元素</strong></a></li>
+    <li><a href="#元素操作"><strong>元素操作</strong></a></li>
+    <li><a href="#浏览器操作"><strong>浏览器操作</strong></a></li>
+    <li><a href="#鼠标事件"><strong>鼠标事件</strong></a></li>
+    <li><a href="#键盘事件"><strong>键盘事件</strong></a></li>
+    <li><a href="#设置元素等待"><strong>设置元素等待</strong></a></li>
+    <li><a href="#多表单切换"><strong>多表单切换</strong></a></li>
+    <li><a href="#多窗切换"><strong>多窗⼝切换</strong></a></li>
+    <li><a href="#对话框操作"><strong>对话框操作</strong></a></li>
+    <li><a href="#复选框操作"><strong>复选框操作</strong></a></li>
+    <li><a href="#文件上传"><strong>文件上传</strong></a></li>
+    <li><a href="#文件下载"><strong>文件下载</strong></a></li>
+    <li><a href="#cookie操作"><strong>cookie操作</strong></a></li>
+    <li><a href="#登录操作"><strong>登录操作</strong></a></li>
+    <li><a href="#javascript操作"><strong>JavaScript操作</strong></a></li>
+    <li><a href="#窗截图"><strong>窗⼝截图</strong></a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium&body=Check out this article: https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium&description=%e5%85%b3%e4%ba%8eSelenium%20Selenium%e6%98%af%e2%bc%80%e4%b8%aa%e2%bd%a4%e4%ba%8e%e6%b5%8b%e8%af%95%e2%bd%b9%e7%ab%99%e7%9a%84%e2%be%83%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e2%bc%af%e5%85%b7%ef%bc%8c%e2%bd%80%e6%8c%81%e5%90%84%e7%a7%8d%e6%b5%8f%e8%a7%88%e5%99%a8%e5%8c%85%e6%8b%acChrome%e3%80%81Firefox%e3%80%81Safari%e7%ad%89%e4%b8%bb%e6%b5%81%e7%95%8c">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2f2020%2f06%2fpython%25E6%25A8%25A1%25E5%259D%2597%25E8%25AF%25A6%25E8%25A7%25A3-selenium%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20selenium">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020 
+    <span>❤️ billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By Hugo | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
