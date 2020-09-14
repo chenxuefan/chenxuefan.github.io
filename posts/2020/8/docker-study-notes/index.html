@@ -223,6 +223,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#容器的基本操作">容器的基本操作</a></li>
         <li><a href="#详细参数解析">详细参数解析</a></li>
+        <li><a href="#导出导入容器">导出导入容器</a></li>
       </ul>
     </li>
     <li><a href="#网络管理">网络管理</a></li>
@@ -414,6 +415,10 @@ systemctl start/stop/restart docker
 </tr>
 <tr>
 <td>新建一个容器</td>
+<td>docker create Name</td>
+</tr>
+<tr>
+<td>新建一个容器(运行模式)</td>
 <td>docker run &ndash;name Name ubuntu</td>
 </tr>
 <tr>
@@ -452,8 +457,32 @@ systemctl start/stop/restart docker
 <td>检查容器里文件结构的更改</td>
 <td>docker diff Name/ID</td>
 </tr>
+<tr>
+<td>导出容器到文件</td>
+<td>docker export Name/ID</td>
+</tr>
+<tr>
+<td>导入容器</td>
+<td>docker import Name/ID</td>
+</tr>
 </tbody>
 </table>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200915015741572.png" alt="image-20200915015337406">/<em>关系图</em>/</p>
+<p>通过<code>docker create</code>命令生成的容器状态为初建状态，初建状态通过<code>docker start</code>命令可以转化为运行状态，运行状态的容器可以通过<code>docker stop</code>命令转化为停止状态，处于停止状态的容器可以通过<code>docker start</code>转化为运行状态，运行状态的容器也可以通过<code>docker pause</code>命令转化为暂停状态，处于暂停状态的容器可以通过<code>docker unpause</code>转化为运行状态 。处于初建状态、运行状态、停止状态、暂停状态的容器都可以直接删除.</p>
+<p>容器启动有两种方式：</p>
+<ol>
+<li>使用<code>docker start</code>命令基于已经创建好的容器直接启动</li>
+<li>使用<code>docker run</code>命令直接基于镜像新建一个容器并启动，相当于先执行docker create命令从镜像创建容器，然后再执行docker start命令启动容器</li>
+</ol>
+<p>ps：</p>
+<ul>
+<li>
+<p>ctrl+d 退出容器且关闭</p>
+</li>
+<li>
+<p>ctrl+p+q 退出容器但不关闭</p>
+</li>
+</ul>
 <h3 id="详细参数解析">详细参数解析</h3>
 <table>
 <thead>
@@ -606,15 +635,25 @@ systemctl start/stop/restart docker
 <li><code>-t</code>：分配一个伪终端</li>
 <li><code>-d</code>：分离模式（在后台运行）</li>
 </ul>
-<p>ps：</p>
-<ul>
-<li>
-<p>ctrl+d 退出容器且关闭</p>
-</li>
-<li>
-<p>ctrl+p+q 退出容器但不关闭</p>
-</li>
-</ul>
+<h3 id="导出导入容器">导出导入容器</h3>
+<p><strong>导出容器</strong></p>
+<p>我们可以使用<code>docker export CONTAINER</code>命令导出一个容器到文件，不管此时该容器是否处于运行中的状态。导出容器前我们先进入容器，创建一个文件，过程如下。</p>
+<p>首先进入容器创建文件</p>
+<pre><code>docker exec -it busybox sh
+cd /tmp &amp;&amp; touch test
+</code></pre><p>然后执行导出命令</p>
+<pre><code>docker export busybox &gt; busybox.tar
+</code></pre><p>执行以上命令后会在当前文件夹下生成 busybox.tar 文件，我们可以将该文件拷贝到其他机器上，通过导入命令实现容器的迁移。</p>
+<p><strong>导入容器</strong></p>
+<p>通过<code>docker export</code>命令导出的文件，可以使用<code>docker import</code>命令导入，执行完<code>docker import</code>后会变为本地镜像，最后再使用<code>docker run</code>命令启动该镜像，这样我们就实现了容器的迁移。</p>
+<p>导入容器的命令格式为 <code>docker import [OPTIONS] file|URL [REPOSITORY[:TAG]]</code>。接下来我们一步步将上一步导出的镜像文件导入到其他机器的 Docker 中并启动它。</p>
+<p>首先，使用<code>docker import</code>命令导入上一步导出的容器</p>
+<pre><code>docker import busybox.tar busybox:test
+</code></pre><p>此时，busybox.tar 被导入成为新的镜像，镜像名称为 busybox:test 。下面，我们使用<code>docker run</code>命令启动并进入容器，查看上一步创建的临时文件</p>
+<pre><code>docker run -it busybox:test sh
+/ # ls /tmp/
+test
+</code></pre><p>可以看到我们之前在 /tmp 目录下创建的 test 文件也被迁移过来了。这样我们就通过<code>docker export</code>和<code>docker import</code>命令配合实现了容器的迁移。</p>
 <h2 id="网络管理">网络管理</h2>
 <ul>
 <li>
@@ -710,7 +749,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3680 字
+          4585 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -784,6 +823,7 @@ systemctl start/stop/restart docker
       <ul>
         <li><a href="#容器的基本操作">容器的基本操作</a></li>
         <li><a href="#详细参数解析">详细参数解析</a></li>
+        <li><a href="#导出导入容器">导出导入容器</a></li>
       </ul>
     </li>
     <li><a href="#网络管理">网络管理</a></li>
