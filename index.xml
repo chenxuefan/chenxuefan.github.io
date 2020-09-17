@@ -324,7 +324,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/about/</guid>
-      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) $(function () { var html = &#34; About me Billie City：深圳 E-mail： 2380540710@qq.com Github: chenxuefan 博客园： billie52707 𝗠𝘆 𝗧𝗲𝗰𝗸 𝗦𝘁𝗮𝗰𝗸</description>
+      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\u003c!-- about me --\u003e\n\n\u003ch1\u003eAbout me\u003c\/h1\u003e\n\u003cp align=\u0022left\u0022 float=\u0022left\u0022\u003e\n \u003cimg src=\u0022https:\/\/camo.githubusercontent.com\/992babdffd8c74a1502de375fbdf7e4d54773242\/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f53576f536b4e36447854737a71494b4571762f67697068792e676966\u0022 align=\u0022right\u0022\/\u003e\n \u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\n \u003cfont size=\u00225\u0022\u003e\u003cb\u003e Billie \u003c\/b\u003e\u003c\/font\u003e\n\n \u003cul\u003e\n \u003cli\u003eCity：深圳\u003c\/</description>
     </item>
     
     <item>
