@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Fri, 11 Sep 2020 01:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2020 01:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在macOS使用docker搭建ubuntu环境</title>
+      <link>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</link>
+      <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</guid>
+      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器用</description>
+    </item>
     
     <item>
       <title>进制转换问题</title>

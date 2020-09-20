@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>在macOS使用docker搭建ubuntu环境</title>
+      <link>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</link>
+      <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</guid>
+      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器用</description>
+    </item>
+    
+    <item>
       <title>进制转换问题</title>
       <link>https://billie52707.cn/posts/2020/9/scale-question/</link>
       <pubDate>Fri, 11 Sep 2020 01:00:00 +0800</pubDate>
@@ -324,7 +333,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/about/</guid>
-      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\u003c!-- about me --\u003e\n\n\u003ch1\u003eAbout me\u003c\/h1\u003e\n\u003cp align=\u0022left\u0022 float=\u0022left\u0022\u003e\n \u003cimg src=\u0022https:\/\/camo.githubusercontent.com\/992babdffd8c74a1502de375fbdf7e4d54773242\/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f53576f536b4e36447854737a71494b4571762f67697068792e676966\u0022 align=\u0022right\u0022\/\u003e\n \u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\n \u003cfont size=\u00225\u0022\u003e\u003cb\u003e Billie \u003c\/b\u003e\u003c\/font\u003e\n\n \u003cul\u003e\n \u003cli\u003e\u003cb\u003eCi</description>
+      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\u003c!-- about me --\u003e\n\u003ch1\u003eAbout me\u003c\/h1\u003e\n\u003cp align=\u0022left\u0022 float=\u0022left\u0022\u003e\n \u003cdiv class=\u0022\u0022 \u003e\n \u003cimg src=\u0022https:\/\/camo.githubusercontent.com\/992babdffd8c74a1502de375fbdf7e4d54773242\/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f53576f536b4e36447854737a71494b4571762f67697068792e676966\u0022 align=\u0022right\u0022\/\u003e\n \u003c\/div\u003e\n \u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\n \u003cfont size=\u00225\u0022\u003e\u003cb\u003e Billie \u003c\/b\u003e\u003c\/font\u003e\n\n \u003cul\u003e\n \u003cli\u003e\u003cb\u00</description>
     </item>
     
     <item>
