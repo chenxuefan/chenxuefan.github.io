@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>大三上学期周记4</title>
+      <link>https://billie52707.cn/diary/2020-09-23/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/diary/2020-09-23/</guid>
+      <description>第四周记 本周计划 python二级考试 比赛 生活小记 周日,夜宵档,潮汕牛肉火锅 周一,晚上跑步 周二,衡量物色了一下午加晚上,下单iPad2018 周</description>
+    </item>
     
     <item>
       <title>大三上学期周记3</title>
@@ -508,6 +517,15 @@
     </item>
     
     <item>
+      <title>ubuntu</title>
+      <link>https://billie52707.cn/note/ubuntu/</link>
+      <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/ubuntu/</guid>
+      <description>必要工具 apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev apt-get install libgtk2.0-dev apt-get</description>
+    </item>
+    
+    <item>
       <title>python学习笔记 | PyCharm创建文件时自动添加头文件</title>
       <link>https://billie52707.cn/posts/2020/3/python-pycharm/</link>
       <pubDate>Mon, 16 Mar 2020 20:45:00 +0000</pubDate>
@@ -549,7 +567,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/api/</guid>
-      <description>2020豆瓣电影最新api](https://www.cnblogs.com/meijifu/p/13342196.html) 获取正在热映的</description>
+      <description>2020豆瓣电影最新api 获取正在热映的电影：http://api.douban.com/v2/movie/in_theaters?apik</description>
+    </item>
+    
+    <item>
+      <title>bootstrap</title>
+      <link>https://billie52707.cn/note/bootstrap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/bootstrap/</guid>
+      <description> </description>
     </item>
     
     <item>
@@ -640,12 +667,12 @@
     </item>
     
     <item>
-      <title>ubuntu</title>
-      <link>https://billie52707.cn/note/ubuntu/</link>
+      <title>vue</title>
+      <link>https://billie52707.cn/note/vue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/ubuntu/</guid>
-      <description>必要工具 apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev apt-get install libgtk2.0-dev apt-get</description>
+      <guid>https://billie52707.cn/note/vue/</guid>
+      <description>简介 javascript框架 简化Dom操作 响应式数据驱动 实例 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;!-- 导入方法1 --&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- 导入方法2 --&amp;gt; &amp;lt;script src=&amp;#34;./vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; {{ about.name }} &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 导入vue</description>
     </item>
     
     <item>
