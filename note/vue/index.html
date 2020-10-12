@@ -92,6 +92,8 @@ if (!doNotTrack) {
         <li><a href="/posts">Article</a></li>
          
         <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
         
       </ul>
     </span>
@@ -205,10 +207,9 @@ if (!doNotTrack) {
         <li><a href="#v-text">v-text</a></li>
         <li><a href="#v-html">v-html</a></li>
         <li><a href="#v-on">v-on</a></li>
-      </ul>
-    </li>
-    <li><a href="#标签">标签</a>
-      <ul>
+        <li><a href="#v-show">v-show</a></li>
+        <li><a href="#v-if">v-if</a></li>
+        <li><a href="#v-bind">v-bind</a></li>
         <li><a href="#按钮">按钮</a></li>
       </ul>
     </li>
@@ -276,7 +277,7 @@ if (!doNotTrack) {
 </code></pre></div><ul>
 <li>导入vue的两种方法:
 <ul>
-<li>在线导入'<!-- raw HTML omitted --><!-- raw HTML omitted -->	'</li>
+<li>在线入<code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</code></li>
 <li>本地导入<code>&lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;</code></li>
 </ul>
 </li>
@@ -288,7 +289,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>		<span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {		
 			   <span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Hello Vue!&#39;</span>
 		},	<span style="color:#75715e">//数据对象
-</span><span style="color:#75715e"></span>    	<span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{},	<span style="color:#75715e">//事件
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{},	<span style="color:#75715e">//事件
 </span><span style="color:#75715e"></span>    
   	});
 &lt;/<span style="color:#f92672">script</span>&gt;
@@ -308,6 +309,7 @@ if (!doNotTrack) {
 <li>渲染复杂类型数据时,遵守js的语法即可</li>
 </ul>
 </li>
+<li>methods:事件</li>
 </ul>
 <h2 id="常用指令">常用指令</h2>
 <h3 id="v-text">v-text</h3>
@@ -331,7 +333,29 @@ if (!doNotTrack) {
 <li>绑定的方法定义在<code>methods</code>属性中</li>
 <li>方法内部通过<code>this</code>关键字,访问定义在<code>data</code>中的数据</li>
 </ul>
-<h2 id="标签">标签</h2>
+<h3 id="v-show">v-show</h3>
+<ul>
+<li>作用:根据真假切换元素的现实状态</li>
+<li>原理:修改原始的display,实现显示隐藏</li>
+<li>指令后面的内容,最终都会解析为布尔值</li>
+<li>值为true,元素显示;值为false,元素隐藏</li>
+<li>数据改变之后,对应元素的显示状态会同步更新</li>
+</ul>
+<h3 id="v-if">v-if</h3>
+<ul>
+<li>作用:根据表达式的真假切换元素的显示状态</li>
+<li>本质:通过操纵dom元素来切换显示状态</li>
+<li>表达式的值为true,元素存在于dom树中,为false,从dom树中移除</li>
+<li>频繁的切换用v-show,反之用v-if,前者的切换消耗小</li>
+<li>标签</li>
+</ul>
+<h3 id="v-bind">v-bind</h3>
+<ul>
+<li>作用:为元素绑定<strong>属性</strong></li>
+<li>完整写法: <strong>v-bind:属性名</strong></li>
+<li>简写写法: 忽略<strong>v-bind</strong>,只保留**:属性名**</li>
+<li>需要动态的增删class建议使用对象的方式</li>
+</ul>
 <h3 id="按钮">按钮</h3>
 <table>
 <thead>
@@ -439,7 +463,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          604 字
+          902 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -483,6 +507,8 @@ if (!doNotTrack) {
           <li><a href="/posts">Article</a></li>
          
           <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
         
       </ul>
     </div>
@@ -497,10 +523,9 @@ if (!doNotTrack) {
         <li><a href="#v-text">v-text</a></li>
         <li><a href="#v-html">v-html</a></li>
         <li><a href="#v-on">v-on</a></li>
-      </ul>
-    </li>
-    <li><a href="#标签">标签</a>
-      <ul>
+        <li><a href="#v-show">v-show</a></li>
+        <li><a href="#v-if">v-if</a></li>
+        <li><a href="#v-bind">v-bind</a></li>
         <li><a href="#按钮">按钮</a></li>
       </ul>
     </li>
