@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> css提高 | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="css提高" />
+<meta property="og:description" content="渐变 线性渐变 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;style&gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/note/css/" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="css提高"/>
+<meta name="twitter:description" content="渐变 线性渐变 &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;style&gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null 
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/note/docker/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/note/bt/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&text=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&is_video=false&description=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=css%e6%8f%90%e9%ab%98&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&name=css%e6%8f%90%e9%ab%98&description=%e6%b8%90%e5%8f%98%20%e7%ba%bf%e6%80%a7%e6%b8%90%e5%8f%98%20%26lt%3b%21DOCTYPE%20html%26gt%3b%20%26lt%3bhtml%20lang%3d%26%2334%3ben%26%2334%3b%26gt%3b%20%26lt%3bhead%26gt%3b%20%26lt%3bstyle%26gt%3b%20%2f%2a%20%e6%a0%87%e5%87%86%e5%86%99%e6%b3%95%20%2a%2f%20section%7b%20width%3a%20300px%3b%20height%3a%20300px%3b%20background%3a%20linear-gradient%28to%20right%20bottom%2cred%205%25%2cgreen%2010%25%2cblue%29%20%2f%2a%20linear-gradient%28%e5%8f%82%e6%95%b0%29%20%e5%8f%82%e6%95%b0%ef%bc%9a%e6%96%b9%e5%90%91%e3%80%81%e9%a2%9c%e8%89%b2%201.%e6%96%b9%e5%90%91%20-%20%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%be%b9%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%80">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&t=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#渐变">渐变</a>
+      <ul>
+        <li><a href="#线性渐变">线性渐变</a></li>
+        <li><a href="#径向渐变">径向渐变</a></li>
+        <li><a href="#重复渐变">重复渐变</a></li>
+      </ul>
+    </li>
+    <li><a href="#过渡">过渡</a>
+      <ul>
+        <li><a href="#过渡属性">过渡属性</a></li>
+        <li><a href="#过渡的运动方式">过渡的运动方式</a></li>
+        <li><a href="#过渡实现百叶窗效果">过渡实现百叶窗效果</a></li>
+      </ul>
+    </li>
+    <li><a href="#2d">2d</a>
+      <ul>
+        <li><a href="#位移属性">位移属性</a></li>
+        <li><a href="#缩放属性">缩放属性</a></li>
+        <li><a href="#旋转倾斜属性">旋转倾斜属性</a></li>
+        <li><a href="#景深">景深</a></li>
+      </ul>
+    </li>
+    <li><a href="#3d">3d</a>
+      <ul>
+        <li><a href="#常见属性">常见属性</a></li>
+        <li><a href="#正方体的实现">正方体的实现</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        css提高
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="渐变">渐变</h2>
+<h3 id="线性渐变">线性渐变</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#75715e">/* 标准写法 */</span>
+        <span style="color:#f92672">section</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#66d9ef">to</span> <span style="color:#66d9ef">right</span> <span style="color:#66d9ef">bottom</span>,<span style="color:#66d9ef">red</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">%</span>,<span style="color:#66d9ef">green</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>,<span style="color:#66d9ef">blue</span>)
+            <span style="color:#75715e">/* 
+</span><span style="color:#75715e">                linear-gradient(参数)
+</span><span style="color:#75715e">                参数：方向、颜色
+</span><span style="color:#75715e">                1.方向
+</span><span style="color:#75715e">                    - 从一个边到另外一个边 to+结束方向
+</span><span style="color:#75715e">                    - 从一个角到另一个角(对角)
+</span><span style="color:#75715e">                    - 角度值 deg
+</span><span style="color:#75715e">                2.颜色
+</span><span style="color:#75715e">                    - 颜色值 可以添加任意个
+</span><span style="color:#75715e">                    - 在颜色值后面添加百分比 占比的意思
+</span><span style="color:#75715e">            */</span>
+            <span style="color:#75715e">/* 
+</span><span style="color:#75715e">                由于线性渐变是css3中的属性，css3是有兼容性问题的
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">             */</span>
+        }
+        <span style="color:#75715e">/* 兼容模式的写法 - 需要在属性值前面加浏览器前缀 */</span>
+        <span style="color:#75715e">/* 
+</span><span style="color:#75715e">            兼容模式和标准模式之间的区别：
+</span><span style="color:#75715e">                1.颜色值没区别
+</span><span style="color:#75715e">                2.设置方向的时候，方向值都是相反的
+</span><span style="color:#75715e">                3.角度值需要用90deg减去标准模式的角度值
+</span><span style="color:#75715e">                4.不能加to
+</span><span style="color:#75715e">         */</span>
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">-webkit-</span>linear-gradient(<span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,<span style="color:#66d9ef">red</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">%</span>,<span style="color:#66d9ef">green</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>,<span style="color:#66d9ef">blue</span>)
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    <span style="color:#75715e">&lt;!-- div+css section是h5里面新增的标签，和div一样可以作为盒子用来网页布局，没有实际含义 --&gt;</span>
+    &lt;<span style="color:#f92672">section</span>&gt;&lt;/<span style="color:#f92672">section</span>&gt; &lt;<span style="color:#f92672">br</span>&gt;  <span style="color:#75715e">&lt;!-- 强制性的换行 --&gt;</span>
+    &lt;<span style="color:#f92672">div</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+<span style="color:#75715e">&lt;!-- 
+</span><span style="color:#75715e">    线性渐变的基础使用：不使用方向，只使用颜色值即可
+</span><span style="color:#75715e">
+</span><span style="color:#75715e"> --&gt;</span>
+</code></pre></div><h3 id="径向渐变">径向渐变</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: radial-gradient(<span style="color:#66d9ef">red</span>,<span style="color:#66d9ef">yellow</span>,<span style="color:#66d9ef">green</span>);
+            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span> <span style="color:#75715e">/* 设置容器变成圆形 */</span>
+            <span style="color:#75715e">/* 
+</span><span style="color:#75715e">                基础用法：径向渐变后面的参数使用 颜色值即可
+</span><span style="color:#75715e">            */</span>
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+<span style="color:#75715e">&lt;!-- 
+</span><span style="color:#75715e">    qq空间里面有没有见过这样的一张图？ 压力图？
+</span><span style="color:#75715e"> --&gt;</span>
+</code></pre></div><h3 id="重复渐变">重复渐变</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+            <span style="color:#75715e">/* 压力图 - 多种颜色进行重复显示的 */</span>
+            <span style="color:#66d9ef">background</span>: repeating-radial-gradient(<span style="color:#66d9ef">pink</span> <span style="color:#ae81ff">5</span><span style="color:#66d9ef">%</span>,<span style="color:#66d9ef">green</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>,<span style="color:#66d9ef">red</span> <span style="color:#ae81ff">15</span><span style="color:#66d9ef">%</span>);
+            <span style="color:#75715e">/* 过渡时间 */</span>
+            <span style="color:#66d9ef">transition</span>:<span style="color:#ae81ff">3</span><span style="color:#66d9ef">s</span>
+        }
+        <span style="color:#75715e">/* 鼠标移入 让图能动起来 - 2d 变形属性 */</span>
+        <span style="color:#f92672">div</span>:<span style="color:#a6e22e">hover</span>{
+            <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">360</span><span style="color:#66d9ef">deg</span>)
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span>&gt;
+        你有压力吗
+    &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+<span style="color:#75715e">&lt;!-- 
+</span><span style="color:#75715e">    backgroud-repeat 背景图片是否进行平铺
+</span><span style="color:#75715e"> --&gt;</span>
+</code></pre></div><h2 id="过渡">过渡</h2>
+<h3 id="过渡属性">过渡属性</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">body</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">green</span>;
+            <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+            <span style="color:#75715e">/* 变化过程加一个过渡的时间 */</span>
+            <span style="color:#75715e">/* 参加过渡的属性 */</span>
+            <span style="color:#75715e">/* transition-property: all */</span>
+            <span style="color:#75715e">/* 参加过渡属性的时间 ms s*/</span>
+            <span style="color:#75715e">/* transition-duration: 3s; */</span>
+            <span style="color:#75715e">/* 过渡延迟时间 */</span>
+            <span style="color:#75715e">/* transition-delay: 3s; */</span>
+            <span style="color:#75715e">/* 过渡的运动方式 */</span>
+            <span style="color:#75715e">/* transition-timing-function:  */</span>
+            <span style="color:#75715e">/* 简写方法 */</span>
+            <span style="color:#66d9ef">transition</span>:<span style="color:#ae81ff">3</span><span style="color:#66d9ef">s</span>       
+        }
+        <span style="color:#f92672">body</span>:<span style="color:#a6e22e">hover</span>{
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+            <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#000</span>
+        }
+<span style="color:#f92672">&lt;/</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><h3 id="过渡的运动方式">过渡的运动方式</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#000</span>;
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">s</span> cubic-bezier(<span style="color:#ae81ff">.19</span>,<span style="color:#ae81ff">.59</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">-0.65</span>)
+            <span style="color:#75715e">/* 
+</span><span style="color:#75715e">                linear  匀速
+</span><span style="color:#75715e">                ease 逐渐慢下来
+</span><span style="color:#75715e">                ease-in 加速
+</span><span style="color:#75715e">                ease-out 减速
+</span><span style="color:#75715e">                https://cubic-bezier.com/#.19,.59,0,-0.65
+</span><span style="color:#75715e">             */</span>
+        }
+        <span style="color:#f92672">div</span>:<span style="color:#a6e22e">hover</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">1000</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">pink</span>
+        }
+<span style="color:#f92672">&lt;/</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><h3 id="过渡实现百叶窗效果">过渡实现百叶窗效果</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">section</span>{
+            <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">800</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">320</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#000</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+            <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+        }
+        <span style="color:#75715e">/* 让所有的图片盒子在一行内进行显示 */</span>
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">160</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>:<span style="color:#ae81ff">320</span><span style="color:#66d9ef">px</span>; 
+            <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">left</span>;
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">s</span>
+        }
+        <span style="color:#75715e">/* 大盒子鼠标移入的时候 控制所有小盒子变小 */</span>
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">40</span><span style="color:#66d9ef">px</span>;
+        }
+        <span style="color:#f92672">section</span> <span style="color:#f92672">div</span>:<span style="color:#a6e22e">hover</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">640</span><span style="color:#66d9ef">px</span>
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">section</span>&gt;
+        <span style="color:#75715e">&lt;!-- &lt;div&gt;&lt;img src=&#34;images/img1.jpg&#34; alt=&#34;&#34;&gt;&lt;/div&gt; --&gt;</span>
+        <span style="color:#75715e">&lt;!-- (div&gt;img[src=&#34;images/img$.jpg&#34;])*5 --&gt;</span>
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;images/img1.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt; <span style="color:#75715e">&lt;!-- 640 --&gt;</span>
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;images/img2.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt; <span style="color:#75715e">&lt;!-- 40 --&gt;</span>
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;center&#39;</span>&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;images/img3.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;images/img4.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;images/img5.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h2 id="2d">2d</h2>
+<h3 id="位移属性">位移属性</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">section</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ccc</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+        }
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">green</span>;
+            <span style="color:#75715e">/* 过渡属性 */</span>
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">s</span>
+        }
+        <span style="color:#75715e">/* 需求：当鼠标移入大盒子的时候，小盒子往右侧移动200px */</span>
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">div</span>{
+            <span style="color:#75715e">/* transform:translateX(200px) translateY(200px)  */</span>
+            <span style="color:#66d9ef">transform</span>: translate(<span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>,<span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>)
+
+            <span style="color:#75715e">/* 
+</span><span style="color:#75715e">                位移属性：transform：属性值
+</span><span style="color:#75715e">                参数:
+</span><span style="color:#75715e">            */</span>
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">section</span>&gt;
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+<span style="color:#75715e">&lt;!-- 
+</span><span style="color:#75715e">    hover使用的时候需要注意：
+</span><span style="color:#75715e">        1.hover效果可以给自己添加      当前元素:hover{}
+</span><span style="color:#75715e">        2.hover不能改变父级元素的状态   父级元素:hover 子级元素{}
+</span><span style="color:#75715e">        3.hover可以改变兄弟元素(同级元素) - 需要一些选择器支持
+</span><span style="color:#75715e"> --&gt;</span>
+</code></pre></div><h3 id="缩放属性">缩放属性</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">section</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ccc</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+        }
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">green</span>;
+            <span style="color:#75715e">/* 过渡属性 */</span>
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">s</span>
+        }
+        <span style="color:#75715e">/* 需求：当鼠标移入大盒子的时候，小盒子可以进行缩放 */</span>
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">div</span>{
+           <span style="color:#66d9ef">transform</span>:scale(<span style="color:#ae81ff">2</span>) <span style="color:#75715e">/* 如果x=y 可以简写成一个 */</span>
+           <span style="color:#75715e">/* 
+</span><span style="color:#75715e">             参数
+</span><span style="color:#75715e">                - 参数为1的时候，默认没有变化
+</span><span style="color:#75715e">                - 参数为0表示隐藏消失
+</span><span style="color:#75715e">                - 参数如果小于1，大于0,缩小
+</span><span style="color:#75715e">                - 参数大于1的时候，表示放大
+</span><span style="color:#75715e">           */</span>
+        }
+
+
+
+        <span style="color:#75715e">/* 案例代码 */</span>
+        <span style="color:#f92672">p</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">729</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;
+            <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+        }
+        <span style="color:#f92672">img</span>{
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">s</span>
+        }
+        <span style="color:#f92672">p</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">img</span>{
+            <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">2</span>)
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">section</span>&gt;
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
+
+    &lt;<span style="color:#f92672">p</span>&gt;
+        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;images/1.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h3 id="旋转倾斜属性">旋转倾斜属性</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">section</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ccc</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+        }
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">green</span>;
+            <span style="color:#75715e">/* 过渡属性 */</span>
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">s</span>
+        }
+        <span style="color:#75715e">/* 需求：当鼠标移入大盒子的时候，小盒子进行旋转 */</span>
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">div</span>{
+           <span style="color:#66d9ef">transform</span>: skewY(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">deg</span>)
+           <span style="color:#75715e">/* 参数常用度数表示
+</span><span style="color:#75715e">                - rotateX:单杠运动
+</span><span style="color:#75715e">                - rotateY:钢管舞
+</span><span style="color:#75715e">                - rotate() 不能接两个值 正值-顺时针  负值-逆时针
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">                倾斜
+</span><span style="color:#75715e">                    - skew(参数)
+</span><span style="color:#75715e">                参数
+</span><span style="color:#75715e">                    - x
+</span><span style="color:#75715e">                    - y
+</span><span style="color:#75715e">                    - skew() 如果只有一个参数表示x轴，两个就表示x和y
+</span><span style="color:#75715e">          */</span>
+        }
+        <span style="color:#75715e">/* 
+</span><span style="color:#75715e">            旋转和倾斜
+</span><span style="color:#75715e">                属性:transform
+</span><span style="color:#75715e">         */</span>
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">section</span>&gt;
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h3 id="景深">景深</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">section</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ccc</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+            <span style="color:#66d9ef">perspective</span>: <span style="color:#ae81ff">1200</span><span style="color:#66d9ef">px</span>;<span style="color:#75715e">/* 当前section区域形成景深的效果 */</span>
+        }
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">green</span>;
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">s</span>
+        }
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">transform</span>: rotateY(<span style="color:#ae81ff">60</span><span style="color:#66d9ef">deg</span>)
+            <span style="color:#75715e">/* x轴是向内进行翻转的，y轴是向右进行翻转 */</span>
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">section</span>&gt;
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+<span style="color:#75715e">&lt;!-- 
+</span><span style="color:#75715e">    在2d空间中，无法判定一些属性在浏览器中是如何进行变换的
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">    景深:近大远小
+</span><span style="color:#75715e">    1.可以加在父级元素
+</span><span style="color:#75715e">        perspective:1200px 
+</span><span style="color:#75715e">    2.可以添加在子级元素上
+</span><span style="color:#75715e">        transform:perspective(1200px)
+</span><span style="color:#75715e"> --&gt;</span>
+</code></pre></div><h2 id="3d">3d</h2>
+<h3 id="常见属性">常见属性</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">section</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">500</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#000</span>;
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+            <span style="color:#66d9ef">transform-style</span>: <span style="color:#66d9ef">preserve-3d</span>;
+            <span style="color:#66d9ef">transform</span>:rotateY(<span style="color:#ae81ff">86</span><span style="color:#66d9ef">deg</span>) 
+        }
+        <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">green</span>;
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">s</span>
+        }
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">transform</span>: translateZ(<span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>)
+
+        }
+        <span style="color:#75715e">/* 直接设置当前这个容器盒子在z轴上进行一些操作 */</span>
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">section</span>&gt;
+        &lt;<span style="color:#f92672">div</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+<span style="color:#75715e">&lt;!-- 
+</span><span style="color:#75715e">    2d 3d - 浏览器 2d
+</span><span style="color:#75715e">    3d是一个立体的空间，而浏览器默认情况下是一个平面(2d),在浏览器默认情况下是无法实现3d空间的,所以我们需要设置一个属性让浏览器能实现3d的效果
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">    属性:transform-style
+</span><span style="color:#75715e">    属性值:flat 2d  / preserve-3d 浏览器支持3d空间 父级元素上添加
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">    2d常见属性:位移、旋转、缩放、倾斜 - x、y
+</span><span style="color:#75715e">    3d常见属性:位移、旋转、缩放、倾斜 - x、y、z
+</span></code></pre></div><h3 id="正方体的实现">正方体的实现</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+        <span style="color:#f92672">section</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">400</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">400</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#75715e">/* border: 1px solid #000; */</span>
+            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+            <span style="color:#66d9ef">transform-style</span>: <span style="color:#66d9ef">preserve-3d</span>;
+            <span style="color:#66d9ef">transform</span>: rotateX(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">deg</span>) rotateY(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">deg</span>)
+        }
+        <span style="color:#f92672">section</span> <span style="color:#f92672">div</span>{
+            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">400</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">400</span><span style="color:#66d9ef">px</span>;
+            <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+            <span style="color:#66d9ef">transition</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">s</span>;
+            <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0.5</span>;
+        }
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> .<span style="color:#a6e22e">box1</span>{
+            <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>) rotateY(<span style="color:#ae81ff">90</span><span style="color:#66d9ef">deg</span>);
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+        }
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> .<span style="color:#a6e22e">box2</span>{
+            <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">-200</span><span style="color:#66d9ef">px</span>) rotateY(<span style="color:#ae81ff">-90</span><span style="color:#66d9ef">deg</span>);
+
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">green</span>;
+        }
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> .<span style="color:#a6e22e">box3</span>{
+            <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>) rotateX(<span style="color:#ae81ff">90</span><span style="color:#66d9ef">deg</span>);
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">blue</span>;
+        }
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> .<span style="color:#a6e22e">box4</span>{
+            <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-200</span><span style="color:#66d9ef">px</span>) rotateX(<span style="color:#ae81ff">-90</span><span style="color:#66d9ef">deg</span>);
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">pink</span>;
+        }
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> .<span style="color:#a6e22e">box5</span>{
+            <span style="color:#66d9ef">transform</span>: translateZ(<span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>);
+            <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#000</span>;
+        }
+        <span style="color:#f92672">section</span>:<span style="color:#a6e22e">hover</span> .<span style="color:#a6e22e">box6</span>{
+            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">orange</span>;
+            <span style="color:#66d9ef">transform</span>: translateZ(<span style="color:#ae81ff">-200</span><span style="color:#66d9ef">px</span>);
+        }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">section</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box1&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box2&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box3&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box4&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box5&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box6&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">section</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+<span style="color:#75715e">&lt;!-- 
+</span><span style="color:#75715e">    https://www.jq22.com/
+</span><span style="color:#75715e"> --&gt;</span>
+</code></pre></div>
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          1907 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/note/css/" class="leancloud_visitors" data-flag-title="css提高">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#渐变">渐变</a>
+      <ul>
+        <li><a href="#线性渐变">线性渐变</a></li>
+        <li><a href="#径向渐变">径向渐变</a></li>
+        <li><a href="#重复渐变">重复渐变</a></li>
+      </ul>
+    </li>
+    <li><a href="#过渡">过渡</a>
+      <ul>
+        <li><a href="#过渡属性">过渡属性</a></li>
+        <li><a href="#过渡的运动方式">过渡的运动方式</a></li>
+        <li><a href="#过渡实现百叶窗效果">过渡实现百叶窗效果</a></li>
+      </ul>
+    </li>
+    <li><a href="#2d">2d</a>
+      <ul>
+        <li><a href="#位移属性">位移属性</a></li>
+        <li><a href="#缩放属性">缩放属性</a></li>
+        <li><a href="#旋转倾斜属性">旋转倾斜属性</a></li>
+        <li><a href="#景深">景深</a></li>
+      </ul>
+    </li>
+    <li><a href="#3d">3d</a>
+      <ul>
+        <li><a href="#常见属性">常见属性</a></li>
+        <li><a href="#正方体的实现">正方体的实现</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&text=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&is_video=false&description=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=css%e6%8f%90%e9%ab%98&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&title=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&name=css%e6%8f%90%e9%ab%98&description=%e6%b8%90%e5%8f%98%20%e7%ba%bf%e6%80%a7%e6%b8%90%e5%8f%98%20%26lt%3b%21DOCTYPE%20html%26gt%3b%20%26lt%3bhtml%20lang%3d%26%2334%3ben%26%2334%3b%26gt%3b%20%26lt%3bhead%26gt%3b%20%26lt%3bstyle%26gt%3b%20%2f%2a%20%e6%a0%87%e5%87%86%e5%86%99%e6%b3%95%20%2a%2f%20section%7b%20width%3a%20300px%3b%20height%3a%20300px%3b%20background%3a%20linear-gradient%28to%20right%20bottom%2cred%205%25%2cgreen%2010%25%2cblue%29%20%2f%2a%20linear-gradient%28%e5%8f%82%e6%95%b0%29%20%e5%8f%82%e6%95%b0%ef%bc%9a%e6%96%b9%e5%90%91%e3%80%81%e9%a2%9c%e8%89%b2%201.%e6%96%b9%e5%90%91%20-%20%e4%bb%8e%e4%b8%80%e4%b8%aa%e8%be%b9%e5%88%b0%e5%8f%a6%e5%a4%96%e4%b8%80">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fcss%2f&t=css%e6%8f%90%e9%ab%98">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020 
+    <span>❤ billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

@@ -13,8 +13,23 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/diary/2020-09-23-2/</loc>
+    <lastmod>2020-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/diary/2020-09-23/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/</loc>
+    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/vue/</loc>
+    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -358,12 +373,12 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/</loc>
+    <loc>https://billie52707.cn/posts/2020/3/python-progressbar/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/2020/3/python-progressbar/</loc>
+    <loc>https://billie52707.cn/note/php/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
   
@@ -433,10 +448,6 @@
   
   <url>
     <loc>https://billie52707.cn/note/python-venv/</loc>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/vue/</loc>
   </url>
   
   <url>

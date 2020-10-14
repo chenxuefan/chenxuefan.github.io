@@ -14,11 +14,29 @@
     
     <item>
       <title>大三上学期周记4</title>
+      <link>https://billie52707.cn/diary/2020-09-23-2/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/diary/2020-09-23-2/</guid>
+      <description>第四周记 本周计划 python二级考试 比赛 生活小记 周日,夜宵档,潮汕牛肉火锅 周一,晚上跑步 周二,衡量物色了一下午加晚上,下单iPad2018 周</description>
+    </item>
+    
+    <item>
+      <title>大三上学期周记4</title>
       <link>https://billie52707.cn/diary/2020-09-23/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/diary/2020-09-23/</guid>
       <description>第四周记 本周计划 python二级考试 比赛 生活小记 周日,夜宵档,潮汕牛肉火锅 周一,晚上跑步 周二,衡量物色了一下午加晚上,下单iPad2018 周</description>
+    </item>
+    
+    <item>
+      <title>vue</title>
+      <link>https://billie52707.cn/note/vue/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/vue/</guid>
+      <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
     </item>
     
     <item>
@@ -518,6 +536,15 @@
     
     <item>
       <title>ubuntu</title>
+      <link>https://billie52707.cn/note/php/</link>
+      <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/php/</guid>
+      <description>默认路径 在Mac上搭建了PHP服务器以后，默认的路径为/Library/WebServer/Documents下面 关闭Apache服务：su</description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
       <link>https://billie52707.cn/note/ubuntu/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
@@ -663,16 +690,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python-venv/</guid>
-      <description>库的安装 pip install vitualenv 新建虚拟环境 python3 -m venv venv virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.txt 通过requirements.txt配置</description>
-    </item>
-    
-    <item>
-      <title>vue</title>
-      <link>https://billie52707.cn/note/vue/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/vue/</guid>
-      <description>简介 javascript框架 简化Dom操作 响应式数据驱动 实例 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;!-- 导入方法1 --&amp;gt; &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;!-- 导入方法2 --&amp;gt; &amp;lt;script src=&amp;#34;./vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; {{ about.name }} &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 导入vue</description>
+      <description>库的安装 pip install vitualenv 新建虚拟环境 python3 -m venv venv 或 virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.tx 通过requirements.txt配</description>
     </item>
     
     <item>
