@@ -336,7 +336,37 @@ lis <span style="color:#f92672">=</span> items<span style="color:#f92672">.</spa
 <li>siblings()</li>
 </ul>
 <p>ps:以上方法均可传入css选择器</p>
-<h2 id="遍历">遍历</h2>
+<p>🐂 <strong>同时根据标签和属性识别</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">&lt;body&gt;
+</span><span style="color:#e6db74">    &lt;h&gt;标题&lt;/h&gt;
+</span><span style="color:#e6db74">    &lt;p id=&#39;p1&#39;&gt;段落1&lt;/p&gt;
+</span><span style="color:#e6db74">    &lt;p id=&#39;p2&#39;&gt;段落2&lt;/p&gt;
+</span><span style="color:#e6db74">    &lt;p class=&#39;p3&#39;&gt;段落3&lt;/p&gt;
+</span><span style="color:#e6db74">    &lt;p class=&#39;p3&#39; id=&#39;pp&#39;&gt;段落4&lt;/p&gt;
+</span><span style="color:#e6db74">&lt;/body&gt;
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+
+doc <span style="color:#f92672">=</span> pq(a)
+doc(<span style="color:#e6db74">&#39;p#p1&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># &#39;段落1&#39;</span>
+doc(<span style="color:#e6db74">&#39;p.p3[id]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 含有id属性</span>
+doc(<span style="color:#e6db74">&#39;p.p3#pp&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 使用多个属性筛选</span>
+doc(<span style="color:#e6db74">&#39;p[class=p3][id=pp]&#39;</span>)<span style="color:#f92672">.</span>text()
+doc(<span style="color:#e6db74">&#39;p[class=p3], p[id=p1]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 或的关系</span>
+doc(<span style="color:#e6db74">&#39;p[class=p3],[id=p1]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 或者只用,隔开</span>
+doc(<span style="color:#e6db74">&#39;*#p1&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 不指定标签名</span>
+
+<span style="color:#75715e"># 否定</span>
+doc(<span style="color:#e6db74">&#39;p:not([id])&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 不含有id属性</span>
+doc(<span style="color:#e6db74">&#39;body :not(p)&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 选出不是p的子节点  &#39;标题&#39;</span>
+doc(<span style="color:#e6db74">&#39;p:not(.p3)&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 选出class不是p3的</span>
+doc(<span style="color:#e6db74">&#39;p[id][id!=p2]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 也可以用!=，这里选择有id且id不是p2的</span>
+
+<span style="color:#75715e"># 类似正则表达式</span>
+doc(<span style="color:#e6db74">&#39;p[id^=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 首端匹配</span>
+doc(<span style="color:#e6db74">&#39;p[id$=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 尾端匹配</span>
+doc(<span style="color:#e6db74">&#39;p[id*=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 包含</span>
+</code></pre></div><h2 id="遍历">遍历</h2>
 <p>🚴‍♀️ <strong>单个节点</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
 li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.active&#39;</span>)
@@ -409,7 +439,7 @@ li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          446 字
+          780 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -563,7 +593,7 @@ li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&
     2020 
     <span>❤ billie  </span>  
     <span>粤ICP备20025795号-1 </span><br>
-    <span>Powered By Hugo | </span>
+    <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">
         访客 <span id="busuanzi_value_site_uv"></span> 
