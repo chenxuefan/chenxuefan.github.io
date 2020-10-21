@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2020 20:54:00 +0000</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>php</title>
+      <link>https://billie52707.cn/note/php/</link>
+      <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/php/</guid>
+      <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
+    </item>
     
     <item>
       <title>大三上学期周记4</title>
@@ -523,15 +532,6 @@
       
       <guid>https://billie52707.cn/posts/2020/3/python-progressbar/</guid>
       <description>参考官方文档：https://pypi.org/project/progressbar/#description progressbar 安装 pip install progressbar progressbar.ProgressBar() 可选参数 maxval = None</description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://billie52707.cn/note/php/</link>
-      <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/php/</guid>
-      <description>默认路径 在Mac上搭建了PHP服务器以后，默认的路径为/Library/WebServer/Documents下面 关闭Apache服务：su</description>
     </item>
     
     <item>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2020 20:54:00 +0000</lastBuildDate>
     
 	<atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>php</title>
+      <link>https://billie52707.cn/note/php/</link>
+      <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/php/</guid>
+      <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
+    </item>
     
     <item>
       <title>vue</title>
@@ -19,15 +28,6 @@
       
       <guid>https://billie52707.cn/note/vue/</guid>
       <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://billie52707.cn/note/php/</link>
-      <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/php/</guid>
-      <description>默认路径 在Mac上搭建了PHP服务器以后，默认的路径为/Library/WebServer/Documents下面 关闭Apache服务：su</description>
     </item>
     
     <item>
