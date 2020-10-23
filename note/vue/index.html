@@ -360,18 +360,18 @@ if (!doNotTrack) {
 <h2 id="vue指令">Vue指令</h2>
 <h3 id="什么是指令">什么是指令?</h3>
 <p>是一种特殊的自定义行间属性（也就是在html标签内写）；指令的职责就是当其表达式的值改变时相应地将某些行为应用到DOM上，在Vue中，指令以“v-”开头, <strong>Vue中的内置指令：</strong><a href="https://link.jianshu.com/?t=http://cn.vuejs.org/v2/api/#%E6%8C%87%E4%BB%A4">点击查看更多</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">v-bind<span style="color:#960050;background-color:#1e0010">：动态绑定数据。简写为“</span>:<span style="color:#960050;background-color:#1e0010">”</span> <span style="color:#960050;background-color:#1e0010">。</span>=&gt; <span style="color:#960050;background-color:#1e0010">以后的</span>:class=<span style="color:#e6db74">&#34;{red:boolean}&#34;</span>
-v-<span style="color:#66d9ef">on</span> <span style="color:#960050;background-color:#1e0010">：绑定时间监听器。简写为“@”，例：</span>@click=<span style="color:#e6db74">&#34;xxx&#34;</span><span style="color:#960050;background-color:#1e0010">；</span>
-v-text <span style="color:#960050;background-color:#1e0010">：更新数据，会覆盖已有结构。类似</span>{{ msg }} <span style="color:#960050;background-color:#1e0010">；</span>
-v-show <span style="color:#960050;background-color:#1e0010">：根据值的真假，切换元素的</span>display属性<span style="color:#960050;background-color:#1e0010">；</span>
-v-<span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">：根据值的真假，切换元素会被销毁、重建；</span> =&gt; <span style="color:#960050;background-color:#1e0010">在</span>dom中已消失
-v-<span style="color:#66d9ef">else</span>-<span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">：多条件判断，为真则渲染；</span>
-v-<span style="color:#66d9ef">else</span> <span style="color:#960050;background-color:#1e0010">：条件都不符合时渲染；</span>
-v-<span style="color:#66d9ef">for</span> <span style="color:#960050;background-color:#1e0010">：基于源数据多次渲染元素或模块；</span>
-v-model <span style="color:#960050;background-color:#1e0010">：在表单控件元素（</span>input等<span style="color:#960050;background-color:#1e0010">）上创建双向数据绑定（数据源）；</span>
-v-pre <span style="color:#960050;background-color:#1e0010">：跳过元素和子元素的编译过程；</span>
-v-once <span style="color:#960050;background-color:#1e0010">：只渲染一次，随后数据更新也不重新渲染；</span>
-v-cloak <span style="color:#960050;background-color:#1e0010">：隐藏未编译的</span>Mustache语法<span style="color:#960050;background-color:#1e0010">，在</span>css中设置[v-cloak]{display:none;}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bind</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">动态绑定数据</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">简写为</span><span style="color:#960050;background-color:#1e0010">“</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">”</span> <span style="color:#960050;background-color:#1e0010">。</span>=&gt; <span style="color:#a6e22e">以后的</span><span style="color:#f92672">:</span><span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{red:boolean}&#34;</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">on</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">绑定时间监听器</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">简写为</span><span style="color:#960050;background-color:#1e0010">“@”，</span><span style="color:#a6e22e">例</span><span style="color:#960050;background-color:#1e0010">：@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxx&#34;</span><span style="color:#960050;background-color:#1e0010">；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">text</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">更新数据</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">会覆盖已有结构</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">类似</span>{{ <span style="color:#a6e22e">msg</span> }} <span style="color:#960050;background-color:#1e0010">；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">show</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">根据值的真假</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">切换元素的display属性</span><span style="color:#960050;background-color:#1e0010">；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">根据值的真假</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">切换元素会被销毁</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">重建</span><span style="color:#960050;background-color:#1e0010">；</span> =&gt; <span style="color:#a6e22e">在dom中已消失</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">else</span><span style="color:#f92672">-</span><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">多条件判断</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">为真则渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">else</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">条件都不符合时渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">for</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">基于源数据多次渲染元素或模块</span><span style="color:#960050;background-color:#1e0010">；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">model</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">在表单控件元素</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">input等</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#a6e22e">上创建双向数据绑定</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">数据源</span><span style="color:#960050;background-color:#1e0010">）；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">pre</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">跳过元素和子元素的编译过程</span><span style="color:#960050;background-color:#1e0010">；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">once</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">只渲染一次</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">随后数据更新也不重新渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
+<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cloak</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">隐藏未编译的Mustache语法</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">在css中设置</span>[<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cloak</span>]{<span style="color:#a6e22e">display</span><span style="color:#f92672">:</span><span style="color:#a6e22e">none</span>;}
 </code></pre></div><h3 id="v-text">v-text</h3>
 <ul>
 <li>作用:设置标签的<strong>文本内容</strong></li>
@@ -463,7 +463,7 @@ v-cloak <span style="color:#960050;background-color:#1e0010">：隐藏未编译�
 <li>通过回调函数的形参可以<strong>获取响应内容</strong>,或<strong>错误信息</strong></li>
 <li>axios回调函数中的<code>this</code>已经改变,无法访问到<code>data</code>中的数据</li>
 <li>调用变量的时候,把<code>this</code>保存起来,回调函数中直接使用保存的<code>this</code>即可</li>
-<li>和本地应用的最大区别就是改变了**数据来源</li>
+<li>和本地应用的最大区别就是改变了<strong>数据来源</strong></li>
 </ul>
 <h3 id="按钮">按钮</h3>
 <table>
@@ -535,8 +535,6 @@ v-cloak <span style="color:#960050;background-color:#1e0010">：隐藏未编译�
 </tr>
 </tbody>
 </table>
-<blockquote>
-</blockquote>
 <p>​</p>
 
     </div>
@@ -575,7 +573,7 @@ v-cloak <span style="color:#960050;background-color:#1e0010">：隐藏未编译�
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2220 字
+          2218 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
