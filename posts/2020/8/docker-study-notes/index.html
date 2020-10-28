@@ -224,6 +224,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#网络管理">网络管理</a></li>
+    <li><a href="#docker容器和本机互传文件">docker容器和本机互传文件</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
@@ -616,6 +617,19 @@ systemctl start/stop/restart docker
 </tr>
 </tbody>
 </table>
+<p>例:   <strong>创建Ubuntu容器</strong>:<code>docker create -it --name=ubuntu16 ubuntu:16.04</code></p>
+<ul>
+<li>
+<p>创建之前需确认使用的Ubuntu镜像版本,使用命令<code>docker images -a</code>或<code>docker ps -a</code></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201028135035471.png" alt="image-20201028135035471"></p>
+</li>
+<li>
+<p><code>ubuntu:16.04</code>:这是使用到的镜像,需指定版本号,如不指定版本号,则默认选取latest版本的镜像</p>
+</li>
+<li>
+<p><code>--name=ubuntu16</code>:为创建的容器命名为ubuntu16,注意是两个<code>--</code></p>
+</li>
+</ul>
 <p>例：<strong>运行nginx容器</strong>：<code>docker run --name mynginx -p 8080:80 -d nginx</code></p>
 <ul>
 <li><code>-name</code>：容器名称，自主命名</li>
@@ -659,8 +673,22 @@ test
 <pre><code>docker port Name/ID 80
 </code></pre></li>
 </ul>
+<h2 id="docker容器和本机互传文件">docker容器和本机互传文件</h2>
+<p>首先确定docker容器的<strong>container_id</strong>或<strong>容器命名</strong>,可以使用<code>docker ps -a </code>或<code>docker images -a</code>查看</p>
+<ul>
+<li>
+<p>docker容器向本机传送文件</p>
+<p><code>docker cp container_id:docker容器内的文件全路径  本机保存文件的全路径</code></p>
+<p>例如：<code>docker cp 4a2f08d2c1f8:/data1/configure.txt E:\PHP\configure.txt</code></p>
+</li>
+<li>
+<p>本机向docker容器传送文件</p>
+<p><code>docker cp   本机保存文件的全路径 container_id:docker容器内的文件全路径</code></p>
+<p>例如：<code>docker cp E:\PHP\configure.txt 4a2f08d2c1f8:/data1/configure.txt</code></p>
+</li>
+</ul>
 <h2 id="后记">后记</h2>
-<p>updated by 2020-09-14 9:00</p>
+<p>updated by 2020-10-28 9:00</p>
 
     </div>
 
@@ -704,7 +732,7 @@ test
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4319 字
+          4683 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -780,6 +808,7 @@ test
       </ul>
     </li>
     <li><a href="#网络管理">网络管理</a></li>
+    <li><a href="#docker容器和本机互传文件">docker容器和本机互传文件</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
