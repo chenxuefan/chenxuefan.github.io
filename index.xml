@@ -7,10 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sat, 17 Oct 2020 20:54:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 04 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac初始化设置指南</title>
+      <link>https://billie52707.cn/note/mac/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/mac/</guid>
+      <description>前言 有时候可能会遇到重置系统或系统故障必须重装系统的情况，安装完新的系统之后，可以进行一些很有用的初始化设置 三指拖移 系统偏好设置&amp;gt;辅助</description>
+    </item>
     
     <item>
       <title>php</title>
@@ -54,7 +59,7 @@
       <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</guid>
-      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器用</description>
+      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习,安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器</description>
     </item>
     
     <item>
@@ -360,7 +365,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/about/</guid>
-      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\u003c!-- about me --\u003e\n\u003ch1\u003eAbout me\u003c\/h1\u003e\n\u003cp align=\u0022left\u0022 float=\u0022left\u0022\u003e\n \u003cdiv class=\u0022\u0022 \u003e\n \u003cimg src=\u0022https:\/\/camo.githubusercontent.com\/992babdffd8c74a1502de375fbdf7e4d54773242\/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f53576f536b4e36447854737a71494b4571762f67697068792e676966\u0022 align=\u0022right\u0022\/\u003e\n \u003c\/div\u003e\n \u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\n \u003cfont size=\u00225\u0022\u003e\u003cb\u003e Billie \u003c\/b\u003e\u003c\/font\u003e\n\n \u003cul\u003e\n \u003cli\u003e\u003cb\u00</description>
+      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\u003c!-- about me --\u003e\n\u003ch1\u003eAbout me\u003c\/h1\u003e\n\u003cp align=\u0022left\u0022 float=\u0022left\u0022\u003e\n \u003cdiv class=\u0022\u0022 \u003e\n \u003cimg src=\u0022https:\/\/billie-s-album.oss-cn-beijing.aliyuncs.com\/img\/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f53576f536b4e36447854737a71494b4571762f67697068792e676966.gif\u0022 align=\u0022right\u0022\/\u003e\n \u003c\/div\u003e\n \u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\n \u003cfont size=\u00225\u0022\u003e\u003cb\u003e Billie \u003c\/b\u003e\u003c\/font\u003e\n\n \u003cul\u003e\n \u003cli\u003e\u003cb\u00</description>
     </item>
     
     <item>
@@ -369,7 +374,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/8/yellow/</guid>
-      <description>:-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们为你绽放着 闪烁不息 And everything you do 而你的一颦一举 Yeah&amp;rsquo; they were all Yellow 却满含胆怯和羞意 I came along 我追随着你的气息 I wrote a song</description>
+      <description>:-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们为你绽放着 闪烁不息 And everything you do 而你的一颦一举 Yeah&#39; they were all Yellow 却满含胆怯和羞意 I came along 我追随着你的气息 I wrote a song</description>
     </item>
     
     <item>
@@ -642,7 +647,7 @@
       <description>  git init
   git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git
   git add .
-  git commit -m&amp;quot;update&amp;rdquo;
+  git commit -m&amp;quot;update&amp;quot;
   git branch
   git push -u origin master
   </description>
@@ -681,7 +686,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python-venv/</guid>
-      <description>库的安装 pip install vitualenv 新建虚拟环境 python3 -m venv venv 或 virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.tx 通过requirements.txt配</description>
+      <description>库的安装 pip install vitualenv 新建虚拟环境 python3 -m venv venv 或 virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.txt 通过requirements.txt配</description>
     </item>
     
     <item>

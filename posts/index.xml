@@ -7,18 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Mon, 14 Sep 2020 01:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Sep 2020 01:00:00 +0800</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在macOS使用docker搭建ubuntu环境</title>
       <link>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</link>
       <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</guid>
-      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器用</description>
+      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习,安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器</description>
     </item>
     
     <item>
@@ -81,7 +77,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/8/yellow/</guid>
-      <description>:-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们为你绽放着 闪烁不息 And everything you do 而你的一颦一举 Yeah&amp;rsquo; they were all Yellow 却满含胆怯和羞意 I came along 我追随着你的气息 I wrote a song</description>
+      <description>:-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们为你绽放着 闪烁不息 And everything you do 而你的一颦一举 Yeah&#39; they were all Yellow 却满含胆怯和羞意 I came along 我追随着你的气息 I wrote a song</description>
     </item>
     
     <item>

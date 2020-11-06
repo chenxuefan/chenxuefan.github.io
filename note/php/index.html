@@ -110,6 +110,12 @@ if (!doNotTrack) {
         
         
         <li>
+          <a class="icon" href="https://billie52707.cn/note/mac/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
             <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
           </a>
@@ -360,11 +366,11 @@ if (!doNotTrack) {
 <li><code>include_once</code></li>
 <li><code>require_once</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">include &#39;./xx.php&#39;; //引入其他脚本
-</code></pre></div><h3 id="单引号和双引号">单引号和双引号</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">include</span> <span style="color:#e6db74">&#39;./xx.php&#39;</span>; <span style="color:#75715e">//引入其他脚本
+</span></code></pre></div><h3 id="单引号和双引号">单引号和双引号</h3>
 <ul>
-<li>'&rsquo; : 纯字符串</li>
-<li>&quot;&rdquo; : 可解析字符串中的变量</li>
+<li>'' : 纯字符串</li>
+<li>&quot;&quot; : 可解析字符串中的变量</li>
 </ul>
 <h3 id="数据类型">数据类型</h3>
 <ol>
@@ -405,11 +411,11 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>遍历关联数组</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$age=array(&#34;Peter&#34;=&gt;&#34;35&#34;,&#34;Ben&#34;=&gt;&#34;37&#34;,&#34;Joe&#34;=&gt;&#34;43&#34;);
-foreach($age as $x=&gt;$x_value)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$age<span style="color:#f92672">=</span><span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;Peter&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;35&#34;</span>,<span style="color:#e6db74">&#34;Ben&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;37&#34;</span>,<span style="color:#e6db74">&#34;Joe&#34;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#34;43&#34;</span>);
+<span style="color:#66d9ef">foreach</span>($age <span style="color:#66d9ef">as</span> $x<span style="color:#f92672">=&gt;</span>$x_value)
 {
-    echo &#34;Key=&#34; . $x . &#34;, Value=&#34; . $x_value;
-    echo &#34;&lt;<span style="color:#f92672">br</span>&gt;&#34;;
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Key=&#34;</span> <span style="color:#f92672">.</span> $x <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;, Value=&#34;</span> <span style="color:#f92672">.</span> $x_value;
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;br&gt;&#34;</span>;
 }
 </code></pre></div></li>
 <li>
@@ -449,10 +455,10 @@ foreach($age as $x=&gt;$x_value)
 </ul>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$val = (int)$value1; //转化成整型
-$val = (string)$value1; //转化成字符串
-$val = (bool)$value1; //转化成布尔值
-</code></pre></div><h3 id="常量">常量</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$val <span style="color:#f92672">=</span> (<span style="color:#a6e22e">int</span>)$value1; <span style="color:#75715e">//转化成整型
+</span><span style="color:#75715e"></span>$val <span style="color:#f92672">=</span> (<span style="color:#a6e22e">string</span>)$value1; <span style="color:#75715e">//转化成字符串
+</span><span style="color:#75715e"></span>$val <span style="color:#f92672">=</span> (<span style="color:#a6e22e">bool</span>)$value1; <span style="color:#75715e">//转化成布尔值
+</span></code></pre></div><h3 id="常量">常量</h3>
 <p>常量是一个简单值的<strong>标识符</strong>,该值在脚本中<strong>不能改变</strong></p>
 <p>声明常量:</p>
 <ol>
@@ -471,7 +477,7 @@ $val = (bool)$value1; //转化成布尔值
 </ol>
 <p>预定义常量: M_PI等</p>
 <h3 id="运算符">运算符</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#75715e">//四则运算符 +-*/
 </span><span style="color:#75715e">//逻辑运算符 !(非) &amp;&amp;(与) ||(或) and(与) or(或) xor(异或)
 </span><span style="color:#75715e">//数组运算符 +(合并) ==(比较) != === !==
@@ -492,8 +498,8 @@ $z <span style="color:#f92672">=</span> $x <span style="color:#f92672">+</span> 
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $a<span style="color:#f92672">===</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?</span><span style="color:#e6db74">&#39;是1&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;不是1&#39;</span>;
 <span style="color:#75715e">//错误控制运算符
 </span><span style="color:#75715e"></span>$e<span style="color:#f92672">=@</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">0</span>);
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div><h3 id="注释">注释</h3>
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h3 id="注释">注释</h3>
 <ul>
 <li>单行: <code>//</code></li>
 <li>多行: <code>/**/</code></li>
@@ -512,52 +518,52 @@ $z <span style="color:#f92672">=</span> $x <span style="color:#f92672">+</span> 
 </li>
 <li>
 <p>switch分支:<code>switch(){}</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">//switch
-$d = 3;
-switch($d){
-  case &#39;1&#39;:
-    echo &#39;out&#39;;
-    break;
-  case &#39;2&#39;:
-    echo &#39;yes&#39;;
-    break;
-  case &#39;3&#39;:
-    echo &#39;out&#39;;
-    break;
-  default:
-    echo &#39;you deserve it&#39;;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//switch
+</span><span style="color:#75715e"></span>$d <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+<span style="color:#66d9ef">switch</span>($d){
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;out&#39;</span>;
+    <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;yes&#39;</span>;
+    <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;3&#39;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;out&#39;</span>;
+    <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;you deserve it&#39;</span>;
 }
 </code></pre></div></li>
 <li>
 <p>for循环:<code>for(){}</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">for($i=0;$i&lt;<span style="color:#f92672">5</span><span style="color:#960050;background-color:#1e0010">;$</span><span style="color:#a6e22e">i</span><span style="color:#960050;background-color:#1e0010">++){</span>
-  <span style="color:#a6e22e">echo</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">i</span>
-<span style="color:#960050;background-color:#1e0010">}</span>
-<span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">九九乘法表</span>
-<span style="color:#a6e22e">for</span><span style="color:#960050;background-color:#1e0010">($</span><span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#e6db74">1;$1&lt;10;$i++){</span>
-  <span style="color:#a6e22e">for</span><span style="color:#960050;background-color:#1e0010">($</span><span style="color:#a6e22e">o</span><span style="color:#f92672">=</span><span style="color:#e6db74">1;$o&lt;$i+1;$o++){</span>
-    <span style="color:#a6e22e">echo</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">o</span><span style="color:#960050;background-color:#1e0010">.&#39;</span><span style="color:#a6e22e">x</span><span style="color:#960050;background-color:#1e0010">&#39;.$</span><span style="color:#a6e22e">i</span><span style="color:#960050;background-color:#1e0010">.&#39;=&#39;.$</span><span style="color:#a6e22e">i</span><span style="color:#960050;background-color:#1e0010">*$</span><span style="color:#a6e22e">o</span><span style="color:#960050;background-color:#1e0010">.&#39;&amp;</span><span style="color:#a6e22e">nbsp</span><span style="color:#960050;background-color:#1e0010">;&#39;;</span>
-  <span style="color:#960050;background-color:#1e0010">}</span>
-  <span style="color:#a6e22e">echo</span> <span style="color:#960050;background-color:#1e0010">&#39;&lt;</span><span style="color:#a6e22e">br</span>&gt;&#39;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">for</span>($i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;$i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">5</span>;$i<span style="color:#f92672">++</span>){
+  <span style="color:#66d9ef">echo</span> $i
+}
+<span style="color:#75715e">//九九乘法表
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>($i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span>;$i<span style="color:#f92672">++</span>){
+  <span style="color:#66d9ef">for</span>($o<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;$o<span style="color:#f92672">&lt;</span>$i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;$o<span style="color:#f92672">++</span>){
+    <span style="color:#66d9ef">echo</span> $o<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;x&#39;</span><span style="color:#f92672">.</span>$i<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;=&#39;</span><span style="color:#f92672">.</span>$i<span style="color:#f92672">*</span>$o<span style="color:#f92672">.</span><span style="color:#e6db74">&#39;&amp;nbsp;&#39;</span>;
+  }
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;&lt;br&gt;&#39;</span>
 }
 </code></pre></div></li>
 <li>
 <p>while循环:<code>while(){}</code> <code>do{}while()</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$j=0;
-while($j&lt;<span style="color:#f92672">5</span><span style="color:#960050;background-color:#1e0010">){</span>
-  <span style="color:#a6e22e">echo</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">small</span><span style="color:#960050;background-color:#1e0010">&#39;;</span>
-  <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">j</span><span style="color:#960050;background-color:#1e0010">++;</span>
-<span style="color:#960050;background-color:#1e0010">};</span>
-<span style="color:#a6e22e">do</span><span style="color:#960050;background-color:#1e0010">{</span>
-  <span style="color:#a6e22e">echo</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">small</span><span style="color:#960050;background-color:#1e0010">&#39;;</span>
-  <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">j</span><span style="color:#960050;background-color:#1e0010">++;</span>
-<span style="color:#960050;background-color:#1e0010">}</span><span style="color:#a6e22e">while</span><span style="color:#960050;background-color:#1e0010">($</span><span style="color:#a6e22e">j</span><span style="color:#960050;background-color:#1e0010">&lt;</span><span style="color:#a6e22e">5</span><span style="color:#960050;background-color:#1e0010">);</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">while</span>($j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">5</span>){
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;small&#39;</span>;
+  $j<span style="color:#f92672">++</span>;
+};
+<span style="color:#66d9ef">do</span>{
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;small&#39;</span>;
+  $j<span style="color:#f92672">++</span>;
+}<span style="color:#66d9ef">while</span>($j<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">5</span>);
 </code></pre></div></li>
 <li>
 <p>数组循环:<code>foreach(){}</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$m=array(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;);
-foreach($m as $value){
-  echo $value;	
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$m<span style="color:#f92672">=</span><span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>);
+<span style="color:#66d9ef">foreach</span>($m <span style="color:#66d9ef">as</span> $value){
+  <span style="color:#66d9ef">echo</span> $value;	
 }
 </code></pre></div></li>
 </ul>
@@ -567,8 +573,8 @@ foreach($m as $value){
 <li>$GLOBALS - 是一个包含了全部变量的全局组合数组。变量的名字就是数组的键。</li>
 <li>$_SERVER - 是一个包含了诸如头信息(header)、路径(path)、以及脚本位置(script locations)等等信息的数组。这个数组中的项目由 Web 服务器创建。不能保证每个服务器都提供全部项目</li>
 <li>$_REQUEST - 用于收集HTML表单提交的数据。</li>
-<li>$_POST - 被广泛应用于收集表单数据，在HTML form标签的指定该属性：&ldquo;method=&quot;post&rdquo;</li>
-<li>$_GET - 被广泛应用于收集表单数据，在HTML form标签的指定该属性：&ldquo;method=&quot;get&rdquo;;也可以收集URL中发送的数据</li>
+<li>$_POST - 被广泛应用于收集表单数据，在HTML form标签的指定该属性：&ldquo;method=&ldquo;post&rdquo;</li>
+<li>$_GET - 被广泛应用于收集表单数据，在HTML form标签的指定该属性：&ldquo;method=&ldquo;get&rdquo;;也可以收集URL中发送的数据</li>
 <li>$_COOKIE</li>
 <li>$_FILES</li>
 <li>$_ENV</li>
@@ -578,32 +584,32 @@ foreach($m as $value){
 <p>PHP 的真正威力源自于它的函数。</p>
 <p>在 PHP 中，提供了超过 1000 个内建的函数。</p>
 <p>锚点: <code>goto</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">//goto anchor;
-//...
-//anchor:
-//...	
-
-$number = 1;
-switch($number){
-    case 1:
-        goto one;                 //使用goto跳到one标记处
-        echo &#34;第一名&#34;;            //goto已经跳转，这条语句不执行
-    case 2:
-        goto two;
-        echo &#34;第二名&#34;;
-    case 3:
-        goto three;
-        echo &#34;第三名&#34;;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//goto anchor;
+</span><span style="color:#75715e">//...
+</span><span style="color:#75715e">//anchor:
+</span><span style="color:#75715e">//...	
+</span><span style="color:#75715e"></span>
+$number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">switch</span>($number){
+    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+        <span style="color:#a6e22e">goto</span> <span style="color:#a6e22e">one</span>;                 <span style="color:#75715e">//使用goto跳到one标记处
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;第一名&#34;</span>;            <span style="color:#75715e">//goto已经跳转，这条语句不执行
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
+        <span style="color:#a6e22e">goto</span> <span style="color:#a6e22e">two</span>;
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;第二名&#34;</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
+        <span style="color:#a6e22e">goto</span> <span style="color:#a6e22e">three</span>;
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;第三名&#34;</span>;
 }
 
-one:
-echo &#34; 武林第一!&#34;;
-//exit;
-two:
-echo &#34; 武林第二!&#34;;
-//exit;
-three:
-echo &#34; 武林第三!&#34;;
+<span style="color:#a6e22e">one</span><span style="color:#f92672">:</span>
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34; 武林第一!&#34;</span>;
+<span style="color:#75715e">//exit;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">two</span><span style="color:#f92672">:</span>
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34; 武林第二!&#34;</span>;
+<span style="color:#75715e">//exit;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">three</span><span style="color:#f92672">:</span>
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34; 武林第三!&#34;</span>;
 </code></pre></div>
     </div>
 
@@ -641,7 +647,7 @@ echo &#34; 武林第三!&#34;;
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2724 字
+          2730 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

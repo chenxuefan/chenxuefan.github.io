@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/tags/mac/</loc>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/mac/</loc>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/note/</loc>
-    <lastmod>2020-10-17T20:54:00+00:00</lastmod>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/</loc>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,16 +34,6 @@
   
   <url>
     <loc>https://billie52707.cn/note/php/</loc>
-    <lastmod>2020-10-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2020-10-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/</loc>
     <lastmod>2020-10-17T20:54:00+00:00</lastmod>
   </url>
   
@@ -64,11 +74,6 @@
   
   <url>
     <loc>https://billie52707.cn/tags/linux/</loc>
-    <lastmod>2020-09-14T01:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/mac/</loc>
     <lastmod>2020-09-14T01:00:00+08:00</lastmod>
   </url>
   
@@ -429,6 +434,10 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/tags/css/</loc>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/note/css/</loc>
   </url>
   
@@ -446,6 +455,10 @@
   
   <url>
     <loc>https://billie52707.cn/note/git/</loc>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/html/</loc>
   </url>
   
   <url>

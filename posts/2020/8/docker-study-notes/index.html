@@ -500,7 +500,7 @@ systemctl start/stop/restart docker
 <td>分配tty设备，该可以支持终端登录，默认为false</td>
 </tr>
 <tr>
-<td>-u, &ndash;user=&rdquo;&rdquo;</td>
+<td>-u, &ndash;user=&quot;&quot;</td>
 <td>指定容器的用户</td>
 </tr>
 <tr>
@@ -508,7 +508,7 @@ systemctl start/stop/restart docker
 <td>标准输入输出流和错误信息（必须是以非docker run -d启动的容器）</td>
 </tr>
 <tr>
-<td>-w, &ndash;workdir=&rdquo;&rdquo;</td>
+<td>-w, &ndash;workdir=&quot;&quot;</td>
 <td>指定容器的工作目录</td>
 </tr>
 <tr>
@@ -520,7 +520,7 @@ systemctl start/stop/restart docker
 <td>指定环境变量，容器中可以使用该环境变量</td>
 </tr>
 <tr>
-<td>-m, &ndash;memory=&rdquo;&rdquo;</td>
+<td>-m, &ndash;memory=&quot;&quot;</td>
 <td>指定容器的内存上限</td>
 </tr>
 <tr>
@@ -532,7 +532,7 @@ systemctl start/stop/restart docker
 <td>指定容器暴露的端口</td>
 </tr>
 <tr>
-<td>-h, &ndash;hostname=&rdquo;&rdquo;</td>
+<td>-h, &ndash;hostname=&quot;&quot;</td>
 <td>指定容器的主机名</td>
 </tr>
 <tr>
@@ -552,11 +552,11 @@ systemctl start/stop/restart docker
 <td>删除权限，权限清单详见：http://linux.die.net/man/7/capabilities</td>
 </tr>
 <tr>
-<td>&ndash;cidfile=&rdquo;&rdquo;</td>
+<td>&ndash;cidfile=&quot;&quot;</td>
 <td>运行容器后，在指定文件中写入容器PID值，一种典型的监控系统用法</td>
 </tr>
 <tr>
-<td>&ndash;cpuset=&rdquo;&rdquo;</td>
+<td>&ndash;cpuset=&quot;&quot;</td>
 <td>设置容器可以使用哪些CPU，此参数可以用来容器独占CPU</td>
 </tr>
 <tr>
@@ -572,7 +572,7 @@ systemctl start/stop/restart docker
 <td>指定容器的dns搜索域名，写入到容器的/etc/resolv.conf文件</td>
 </tr>
 <tr>
-<td>&ndash;entrypoint=&rdquo;&rdquo;</td>
+<td>&ndash;entrypoint=&quot;&quot;</td>
 <td>覆盖image的入口点</td>
 </tr>
 <tr>
@@ -592,11 +592,11 @@ systemctl start/stop/restart docker
 <td>指定容器的配置文件，只有在指定&ndash;exec-driver=lxc时使用</td>
 </tr>
 <tr>
-<td>&ndash;name=&rdquo;&rdquo;</td>
+<td>&ndash;name=&quot;&quot;</td>
 <td>指定容器名字，后续可以通过名字进行容器管理，links特性需要使用名字</td>
 </tr>
 <tr>
-<td>&ndash;net=&quot;bridge&rdquo;</td>
+<td>&ndash;net=&ldquo;bridge&rdquo;</td>
 <td>容器网络设置:bridge //使用docker daemon指定的网桥;host  //容器使用主机的网络;  container:NAME_or_ID  //使用其他容器的网路，共享IP和PORT等网络资源;none //容器使用自己的网络（类似&ndash;net=bridge），但是不进行配置;</td>
 </tr>
 <tr>
@@ -604,7 +604,7 @@ systemctl start/stop/restart docker
 <td>指定容器是否为特权容器，特权容器拥有所有的capabilities</td>
 </tr>
 <tr>
-<td>&ndash;restart=&quot;no&rdquo;</td>
+<td>&ndash;restart=&ldquo;no&rdquo;</td>
 <td>指定容器停止后的重启策略:no：容器退出时不重启; on-failure：容器故障退出（返回值非零）时重启; always：容器退出时总是重启</td>
 </tr>
 <tr>

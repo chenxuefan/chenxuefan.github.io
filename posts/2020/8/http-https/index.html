@@ -322,8 +322,8 @@ if (!doNotTrack) {
 </table>
 <h4 id="http特点">http特点：</h4>
 <ol>
-<li>无状态：协议对客户端没有状态存储，对事物处理没有“记忆”能力，比如访问一个网站需要反复进行登录操作</li>
-<li>无连接：HTTP/1.1之前，由于无状态特点，每次请求需要通过TCP三次握手四次挥手，和服务器重新建立连接。比如某个客户机在短时间多次请求同一个资源，服务器并不能区别是否已经响应过用户的请求，所以每次需要重新响应请求，需要耗费不必要的时间和流量。</li>
+<li><strong>无状态</strong>：协议对客户端没有状态存储，对事物处理没有“记忆”能力，比如访问一个网站需要反复进行登录操作</li>
+<li><strong>无连接</strong>：HTTP/1.1之前，由于无状态特点，每次请求需要通过TCP三次握手四次挥手，和服务器重新建立连接。比如某个客户机在短时间多次请求同一个资源，服务器并不能区别是否已经响应过用户的请求，所以每次需要重新响应请求，需要耗费不必要的时间和流量。</li>
 <li>基于请求和响应：基本的特性，由客户端发起请求，服务端响应</li>
 <li>简单快速、灵活</li>
 <li>通信使用明文、请求和响应不会对通信方进行确认、无法保护数据的完整性</li>
@@ -366,7 +366,7 @@ if (!doNotTrack) {
 <li><a href="https://www.zhihu.com/question/34074946">HTTP/2相比1.0有哪些重大改进？</a></li>
 </ul>
 <h2 id="申请二级域名">申请二级域名</h2>
-<p>如果想要访问服务器上的文件，申请二级域名是一个不错的方案，如果你的域名是在阿里云上申请的，二级域名的申请也不是很难</p>
+<p>如果想要通过域名来访问服务器上的文件，申请二级域名是一个不错的方案，如果你的域名是在阿里云上申请的，二级域名的申请可以如下操作：</p>
 <p>首先登录阿里云，进入控制台，找到你的域名列表，在你的域名右侧有这几个功能</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200819165217117.png" alt="image-20200819165217117"></p>
 <p>点进去解析，添加记录</p>
@@ -444,7 +444,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2360 字
+          2367 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

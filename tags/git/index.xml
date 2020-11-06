@@ -6,11 +6,7 @@
     <description>Recent content in git on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>billie</copyright>
-    
-	<atom:link href="https://billie52707.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>billie</copyright><atom:link href="https://billie52707.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git</title>
       <link>https://billie52707.cn/note/git/</link>
@@ -20,7 +16,7 @@
       <description>  git init
   git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git
   git add .
-  git commit -m&amp;quot;update&amp;rdquo;
+  git commit -m&amp;quot;update&amp;quot;
   git branch
   git push -u origin master
   </description>

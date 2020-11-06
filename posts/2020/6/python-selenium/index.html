@@ -290,7 +290,7 @@ if (!doNotTrack) {
 <li><strong>配置环境变量</strong></li>
 </ul>
 <p>Windows:将下载的exe驱动文件，移动到python安装目录下的Scripts文件夹下</p>
-<p>MacOS:打开「访达」按下快捷键shift+command+G（或前往文件夹），输入<code>open usr/local/bin</code>回车。在新打开的文件夹中，把浏览器驱动复制进去即可</p>
+<p>MacOS:打开「访达」按下快捷键shift+command+G（或前往文件夹），输入<code>open /usr/local/bin</code>回车。在新打开的文件夹中，把浏览器驱动复制进去即可</p>
 <p>更多配置方法 👉 <a href="http://www.testclass.net/selenium_python/selenium3-browser-driver/">参考浏览器驱动环境配置</a></p>
 <p>⼊门参考⽂献 👉 <a href="http://www.testclass.net/selenium_python/">Selenium⼊门</a></p>
 <h2 id="定位元素"><strong>定位元素</strong></h2>
@@ -354,21 +354,21 @@ if (!doNotTrack) {
 <li><strong>xpath定位的N种写法</strong></li>
 </ul>
 <ol>
-<li>dr.find_element_by_xpath(&quot;//*[@id='kw&rsquo;]&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;//*[@name='wd&rsquo;]&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;//input[@class='s_ipt&rsquo;]&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;/html/body/form/span/input&rdquo;)</li>
-<li>dr.find_element_by_xpath(&quot;//span[@class='soutu-btn&rsquo;]/input&rdquo;)</li>
-<li>dr.find_element_by_xpath(&quot;//form[@id='form&rsquo;]/span/input&rdquo;)</li>
-<li>dr.find_element_by_xpath(&quot;//input[@id='kw&rsquo; and @name='wd&rsquo;]&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;//*[@id=&lsquo;kw&rsquo;]&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;//*[@name=&lsquo;wd&rsquo;]&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;//input[@class=&rsquo;s_ipt']&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;/html/body/form/span/input&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;//span[@class=&lsquo;soutu-btn&rsquo;]/input&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;//form[@id=&lsquo;form&rsquo;]/span/input&quot;)</li>
+<li>dr.find_element_by_xpath(&quot;//input[@id=&lsquo;kw&rsquo; and @name=&lsquo;wd&rsquo;]&quot;)</li>
 </ol>
 <ul>
 <li><strong>css定位的N种写法</strong></li>
 </ul>
 <ol>
-<li>dr.find_element_by_css_selector(&quot;#kw&rdquo;)</li>
+<li>dr.find_element_by_css_selector(&quot;#kw&quot;)</li>
 <li>dr.find_element_by_css_selector(&quot;[name=wd]&quot;)</li>
-<li>dr.find_element_by_css_selector(&quot;.s_ipt&rdquo;)</li>
+<li>dr.find_element_by_css_selector(&quot;.s_ipt&quot;)</li>
 <li>dr.find_element_by_css_selector(&ldquo;html &gt; body &gt; form &gt; span &gt; input&rdquo;)</li>
 <li>dr.find_element_by_css_selector(&ldquo;span.soutu-btn&gt; input#kw&rdquo;)</li>
 <li>dr.find_element_by_css_selector(&ldquo;form#form &gt; span &gt; input&rdquo;)</li>
@@ -405,7 +405,7 @@ if (!doNotTrack) {
 <li>is_enabled() # 判断元素是否被使用</li>
 <li>is_selected() # 判断元素是否被选中</li>
 </ul>
-<p>ps：如果需要输入中文，防止编码错误使用send_keys(u&quot;中文用户名&rdquo;)。</p>
+<p>ps：如果需要输入中文，防止编码错误使用send_keys(u&quot;中文用户名&quot;)。</p>
 <h2 id="浏览器操作"><strong>浏览器操作</strong></h2>
 <ul>
 <li>title # 返回页面标题</li>
@@ -764,7 +764,7 @@ browser<span style="color:#f92672">.</span>close()
 <li>
 <p>输入操作</p>
 <ul>
-<li>&ldquo;document.getElementById(&rsquo; &lsquo;).value=&rsquo; &lsquo;; &quot; #</li>
+<li>&ldquo;document.getElementById(' &lsquo;).value=&rsquo; &lsquo;; &quot; #</li>
 </ul>
 </li>
 <li>
