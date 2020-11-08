@@ -14,7 +14,7 @@
       <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
       
       <guid>https://billie52707.cn/ncp/</guid>
-      <description>最新疫情动态 .container{ height: 100px; width: 80%; border:10px; margin: 40px; } .container .label{ float: left; width: 33%; height: 100px; text-align: center; line-height: 100px; } 累计确诊 死亡 治愈 lastUpdateTime&amp;nbsp var data={ msg: &#34;NCP疫情最新动态&#34;, confirm:&#39;&#39;, confirmAdd:&#39;&#39;, nowConfirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, lastUpdateTime:&#39;&#39; } var vm = new Vue({ el:&#34;#NCP&#34;, data: data, methods:{}, }); axios</description>
+      <description>.container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 新冠疫情动态-国内 确诊 死亡 治愈 新冠疫情动态-海外 累计确诊 死亡 治</description>
     </item>
     
     <item>
