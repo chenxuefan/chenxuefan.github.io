@@ -28,28 +28,28 @@
     
     <item>
       <title>Mac初始化设置指南</title>
-      <link>https://billie52707.cn/posts/2020/11/mac/</link>
+      <link>https://billie52707.cn/posts/2020/11/mac-initial/</link>
       <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/mac/</guid>
+      <guid>https://billie52707.cn/posts/2020/11/mac-initial/</guid>
       <description>前言 有时候可能会遇到重置系统或系统故障必须重装系统的情况，安装完新的系统之后，可以进行一些很有用的初始化设置 设置 三指拖移 系统偏好设置&amp;gt;</description>
     </item>
     
     <item>
       <title>php学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/10/php/</link>
+      <link>https://billie52707.cn/posts/2020/10/php-study-note/</link>
       <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/10/php/</guid>
+      <guid>https://billie52707.cn/posts/2020/10/php-study-note/</guid>
       <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
     </item>
     
     <item>
       <title>vue学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/9/vue/</link>
+      <link>https://billie52707.cn/posts/2020/9/vue-study-note/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/9/vue/</guid>
+      <guid>https://billie52707.cn/posts/2020/9/vue-study-note/</guid>
       <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
     </item>
     
@@ -82,10 +82,10 @@
     
     <item>
       <title>Docker学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/8/docker-study-notes/</link>
+      <link>https://billie52707.cn/posts/2020/8/docker-study-note/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/docker-study-notes/</guid>
+      <guid>https://billie52707.cn/posts/2020/8/docker-study-note/</guid>
       <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
     </item>
     

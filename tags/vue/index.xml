@@ -7,14 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Nov 2020 15:15:02 +0800</lastBuildDate><atom:link href="https://billie52707.cn/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>vue学习</title>
-      <link>https://billie52707.cn/note/vue/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      <title>NCP疫情最新动态</title>
+      <link>https://billie52707.cn/ncp/</link>
+      <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
       
-      <guid>https://billie52707.cn/note/vue/</guid>
-      <description>why Vue? 什么是Vue? *Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
+      <guid>https://billie52707.cn/ncp/</guid>
+      <description>最新疫情动态 .container{ height: 100px; width: 550px; border:10px; margin: 40px; } .container .label{ float: left; width: 33%; height: 100px; text-align: center; line-height: 100px; } 累计确诊 死亡 治愈 *lastUpdateTime: var data={ msg: &#34;NCP疫情最新动态&#34;, confirm:&#39;&#39;, confirmAdd:&#39;&#39;, nowConfirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, lastUpdateTime:&#39;&#39; } var vm = new Vue({ el:&#34;#NCP&#34;, data: data, methods:{}, }); axios</description>
     </item>
     
   </channel>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sun, 08 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Nov 2020 15:15:02 +0800</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NCP疫情最新动态</title>
+      <link>https://billie52707.cn/ncp/</link>
+      <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/ncp/</guid>
+      <description>最新疫情动态 .container{ height: 100px; width: 550px; border:10px; margin: 40px; } .container .label{ float: left; width: 33%; height: 100px; text-align: center; line-height: 100px; } 累计确诊 死亡 治愈 *lastUpdateTime: var data={ msg: &#34;NCP疫情最新动态&#34;, confirm:&#39;&#39;, confirmAdd:&#39;&#39;, nowConfirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, lastUpdateTime:&#39;&#39; } var vm = new Vue({ el:&#34;#NCP&#34;, data: data, methods:{}, }); axios</description>
+    </item>
+    
     <item>
       <title>python虚拟环境</title>
       <link>https://billie52707.cn/posts/2020/11/python-venv/</link>
@@ -28,19 +37,19 @@
     
     <item>
       <title>Mac初始化设置指南</title>
-      <link>https://billie52707.cn/posts/2020/11/mac/</link>
+      <link>https://billie52707.cn/posts/2020/11/mac-initial/</link>
       <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/mac/</guid>
+      <guid>https://billie52707.cn/posts/2020/11/mac-initial/</guid>
       <description>前言 有时候可能会遇到重置系统或系统故障必须重装系统的情况，安装完新的系统之后，可以进行一些很有用的初始化设置 设置 三指拖移 系统偏好设置&amp;gt;</description>
     </item>
     
     <item>
       <title>php学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/10/php/</link>
+      <link>https://billie52707.cn/posts/2020/10/php-study-note/</link>
       <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/10/php/</guid>
+      <guid>https://billie52707.cn/posts/2020/10/php-study-note/</guid>
       <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
     </item>
     
@@ -55,10 +64,10 @@
     
     <item>
       <title>vue学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/9/vue/</link>
+      <link>https://billie52707.cn/posts/2020/9/vue-study-note/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/9/vue/</guid>
+      <guid>https://billie52707.cn/posts/2020/9/vue-study-note/</guid>
       <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
     </item>
     
@@ -118,10 +127,10 @@
     
     <item>
       <title>Docker学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/8/docker-study-notes/</link>
+      <link>https://billie52707.cn/posts/2020/8/docker-study-note/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/docker-study-notes/</guid>
+      <guid>https://billie52707.cn/posts/2020/8/docker-study-note/</guid>
       <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
     </item>
     
@@ -383,7 +392,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/about/</guid>
-      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\u003c!-- about me --\u003e\n\u003ch1\u003eAbout me\u003c\/h1\u003e\n\u003cp align=\u0022left\u0022 float=\u0022left\u0022\u003e\n \u003cdiv class=\u0022\u0022 \u003e\n \u003cimg src=\u0022https:\/\/billie-s-album.oss-cn-beijing.aliyuncs.com\/img\/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f53576f536b4e36447854737a71494b4571762f67697068792e676966.gif\u0022 align=\u0022right\u0022\/\u003e\n \u003c\/div\u003e\n \u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\n \u003cfont size=\u00225\u0022\u003e\u003cb\u003e Billie \u003c\/b\u003e\u003c\/font\u003e\n\n \u003cul\u003e\n \u003cli\u003e\u003cb\u00</description>
+      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\u003c!-- about me --\u003e\n\n\u003ch1\u003eAbout me\u003c\/h1\u003e\n\u003cp align=\u0022left\u0022 float=\u0022left\u0022\u003e\n \u003cdiv class=\u0022\u0022 \u003e\n \u003cimg src=\u0022https:\/\/billie-s-album.oss-cn-beijing.aliyuncs.com\/img\/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f53576f536b4e36447854737a71494b4571762f67697068792e676966.gif\u0022 align=\u0022right\u0022\/\u003e\n \u003c\/div\u003e\n \u003cbr\u003e\u003cbr\u003e\u003cbr\u003e\n \u003cfont size=\u00225\u0022\u003e\u003cb\u003e Billie \u003c\/b\u003e\u003c\/font\u003e\n\n \u003cul\u003e\n \u003cli\u003e\u003cb\u00</description>
     </item>
     
     <item>
@@ -563,7 +572,7 @@
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/ubuntu/</guid>
-      <description>必要工具的安装 apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev apt-get</description>
+      <description>必要工具的安装 vim/net-tools apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev</description>
     </item>
     
     <item>
