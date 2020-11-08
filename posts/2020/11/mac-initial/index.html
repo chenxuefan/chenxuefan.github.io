@@ -321,6 +321,13 @@ trusted-host=mirrors.aliyun.com
 </code></pre><p>mac安装了conda后，前面会有一个(base)，原因是：安装conda后，每次启动终端，都会自动启动conda的base环境，conda的环境可以用<code>conda env list</code>查看</p>
 <p>只要设置conda不要自动启动base环境</p>
 </li>
+<li>
+<p>终端日志信息</p>
+<p>终端的默认显示是：计算机名称 ~ 用户名 $，如需修改，则如下：</p>
+<pre><code>sudo vim /etc/bashrc
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-PS1=&#39;\h:\W \u\$ &#39;
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+PS1=&#39;\$ &#39;
+</span></code></pre></div></li>
 </ul>
 
     </div>
@@ -359,7 +366,7 @@ trusted-host=mirrors.aliyun.com
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          502 字
+          545 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
