@@ -3,27 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/categories/</loc>
+    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/</loc>
+    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/python/</loc>
+    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2020/11/python-venv/</loc>
+    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/</loc>
+    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2020/11/jupyter-notebooks/</loc>
+    <lastmod>2020-11-05T02:30:10+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/tags/mac/</loc>
     <lastmod>2020-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/mac/</loc>
-    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/</loc>
-    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/</loc>
+    <loc>https://billie52707.cn/posts/2020/11/mac/</loc>
     <lastmod>2020-11-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,7 +58,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/php/</loc>
+    <loc>https://billie52707.cn/posts/2020/10/php/</loc>
     <lastmod>2020-10-17T20:54:00+00:00</lastmod>
   </url>
   
@@ -48,23 +73,18 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/tags/vue/</loc>
+    <loc>https://billie52707.cn/tags/vue.js/</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/vue/</loc>
+    <loc>https://billie52707.cn/posts/2020/9/vue/</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/diary/2020-09-13/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2020-09-14T01:00:00+08:00</lastmod>
   </url>
   
   <url>
@@ -78,23 +98,8 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2020-09-14T01:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
-    <lastmod>2020-09-14T01:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</loc>
     <lastmod>2020-09-14T01:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/python/</loc>
-    <lastmod>2020-09-11T01:00:00+08:00</lastmod>
   </url>
   
   <url>
@@ -388,6 +393,11 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/note/</loc>
+    <lastmod>2020-03-17T20:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/posts/2020/3/python-progressbar/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
@@ -471,10 +481,6 @@
   
   <url>
     <loc>https://billie52707.cn/note/other/</loc>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/python-venv/</loc>
   </url>
   
   <url>

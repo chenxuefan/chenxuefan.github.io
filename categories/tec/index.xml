@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Mon, 14 Sep 2020 01:00:00 +0800</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python虚拟环境</title>
+      <link>https://billie52707.cn/posts/2020/11/python-venv/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/python-venv/</guid>
+      <description>前言 python虚拟环境是非常实用且必备的小技能。面对多个项目分别需要不同依赖库环境，或者跨平台部署的场景，都非常实用且优雅。 跨平台部署时，</description>
+    </item>
+    
+    <item>
+      <title>Jupyter Notebooks学习笔记</title>
+      <link>https://billie52707.cn/posts/2020/11/jupyter-notebooks/</link>
+      <pubDate>Thu, 05 Nov 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/jupyter-notebooks/</guid>
+      <description>Jupyter Notebooks 入门 通过 Jupyter 使用实时代码、方程式和可视化及文本创建交互式的共享笔记本。 自从有了纸莎草纸以来，出版人们一直在努力以吸引读者的方式来格式化数据</description>
+    </item>
+    
+    <item>
+      <title>Mac初始化设置指南</title>
+      <link>https://billie52707.cn/posts/2020/11/mac/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/mac/</guid>
+      <description>前言 有时候可能会遇到重置系统或系统故障必须重装系统的情况，安装完新的系统之后，可以进行一些很有用的初始化设置 设置 三指拖移 系统偏好设置&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>php学习笔记</title>
+      <link>https://billie52707.cn/posts/2020/10/php/</link>
+      <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/10/php/</guid>
+      <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
+    </item>
+    
+    <item>
+      <title>vue学习笔记</title>
+      <link>https://billie52707.cn/posts/2020/9/vue/</link>
+      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/9/vue/</guid>
+      <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
+    </item>
+    
     <item>
       <title>在macOS使用docker搭建ubuntu环境</title>
       <link>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</link>

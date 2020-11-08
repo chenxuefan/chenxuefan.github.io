@@ -247,7 +247,12 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#支持插入echarts图表">支持插入echarts图表</a></li>
-    <li><a href="#定制文章页的访问链接">定制文章页的访问链接</a></li>
+    <li><a href="#定制文章页的访问链接">定制文章页的访问链接</a>
+      <ul>
+        <li><a href="#方法1编辑configtoml">方法1:编辑config.toml</a></li>
+        <li><a href="#方法2slug">方法2:slug</a></li>
+      </ul>
+    </li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
@@ -852,8 +857,9 @@ jobs:
 </script>
 
 <h2 id="定制文章页的访问链接">定制文章页的访问链接</h2>
+<h3 id="方法1编辑configtoml">方法1:编辑config.toml</h3>
 <p>参考官方文档:<a href="https://www.gohugo.org/doc/extras/permalinks/">https://www.gohugo.org/doc/extras/permalinks/</a></p>
-<p>在config.toml文件中编辑以下代码,如不编辑,则访问链接默认为,文件路径+文章命名</p>
+<p>在config.toml文件中编辑以下代码,如不编辑,则访问链接默认为<strong>文件路径+文章命名</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">permalinks</span>:
   <span style="color:#f92672">post</span>: <span style="color:#ae81ff">/:year/:month/:title/</span>
 </code></pre></div><ul>
@@ -869,8 +875,12 @@ jobs:
 <li><strong>:slug</strong> the content’s slug (or title if no slug)</li>
 <li><strong>:filename</strong> the content’s filename (without extension)</li>
 </ul>
+<h3 id="方法2slug">方法2:slug</h3>
+<p>还有一个办法是编辑文章头信息时加上<code>slug: 路由</code></p>
+<p>如下：<img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201106211630640.png" alt="image-20201106211630640"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201106211904637.png" alt="image-20201106211904637"></p>
 <h2 id="后记">后记</h2>
-<p>updated by 2020-09-14 19:00</p>
+<p>updated by 2020-11-6 19:00</p>
 
     </div>
 
@@ -920,7 +930,7 @@ jobs:
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          8041 字
+          8092 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1019,7 +1029,12 @@ jobs:
       </ul>
     </li>
     <li><a href="#支持插入echarts图表">支持插入echarts图表</a></li>
-    <li><a href="#定制文章页的访问链接">定制文章页的访问链接</a></li>
+    <li><a href="#定制文章页的访问链接">定制文章页的访问链接</a>
+      <ul>
+        <li><a href="#方法1编辑configtoml">方法1:编辑config.toml</a></li>
+        <li><a href="#方法2slug">方法2:slug</a></li>
+      </ul>
+    </li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>

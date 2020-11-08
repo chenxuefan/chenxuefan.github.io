@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Fri, 11 Sep 2020 01:00:00 +0800</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python虚拟环境</title>
+      <link>https://billie52707.cn/posts/2020/11/python-venv/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/python-venv/</guid>
+      <description>前言 python虚拟环境是非常实用且必备的小技能。面对多个项目分别需要不同依赖库环境，或者跨平台部署的场景，都非常实用且优雅。 跨平台部署时，</description>
+    </item>
+    
+    <item>
+      <title>Jupyter Notebooks学习笔记</title>
+      <link>https://billie52707.cn/posts/2020/11/jupyter-notebooks/</link>
+      <pubDate>Thu, 05 Nov 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/jupyter-notebooks/</guid>
+      <description>Jupyter Notebooks 入门 通过 Jupyter 使用实时代码、方程式和可视化及文本创建交互式的共享笔记本。 自从有了纸莎草纸以来，出版人们一直在努力以吸引读者的方式来格式化数据</description>
+    </item>
+    
     <item>
       <title>进制转换问题</title>
       <link>https://billie52707.cn/posts/2020/9/scale-question/</link>
@@ -141,15 +159,6 @@
       
       <guid>https://billie52707.cn/posts/2020/3/python-psutil/</guid>
       <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
-    </item>
-    
-    <item>
-      <title>python虚拟环境</title>
-      <link>https://billie52707.cn/note/python-venv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-venv/</guid>
-      <description>库的安装 pip install vitualenv 新建虚拟环境 python3 -m venv venv 或 virtualenv &amp;ndash;python=python3.7 env 启动虚拟环境 source ./env/bin/activate 生成requirements.txt pip3 freeze &amp;gt; requirements.txt 通过requirements.txt配</description>
     </item>
     
   </channel>
