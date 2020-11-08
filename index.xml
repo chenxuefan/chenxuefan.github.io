@@ -563,7 +563,7 @@
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/ubuntu/</guid>
-      <description>必要工具 apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev apt-get install libgtk2.0-dev apt-get</description>
+      <description>必要工具的安装 apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev apt-get</description>
     </item>
     
     <item>
