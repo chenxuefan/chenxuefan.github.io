@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sun, 08 Nov 2020 15:15:02 +0800</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1&#43;X|js</title>
+      <link>https://billie52707.cn/note/1&#43;x-js/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/1&#43;x-js/</guid>
+      <description>前言 网景公司（netscape）开发，是一个操作DOM的语言，在JS中，一切皆对象。 标识符 以字母、下划线或$开头，后可以跟字母、数字 数据类型</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X|css</title>
+      <link>https://billie52707.cn/note/1&#43;x-css/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/1&#43;x-css/</guid>
+      <description>注释 只有一种注释：/**/ 选择器 类别选择器 div.box{} div .box{} 标签选择器 ID选择器：值必须是唯一的 后代选择器 p code{} 子选择器 p&amp;gt;code{} 伪类选择器 p:first-child{} p:nth-child(2){} 通用选择器（项目开</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X|HTML标签</title>
+      <link>https://billie52707.cn/note/1&#43;x-html/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/1&#43;x-html/</guid>
+      <description>知识点总结 基本结构 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--如果不加，则以怪异模式加载；声明了以下代码将以html5的标准去解析--&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt;&amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; 块级标签</description>
+    </item>
+    
     <item>
       <title>NCP疫情最新动态</title>
       <link>https://billie52707.cn/ncp/</link>
@@ -63,7 +90,7 @@
     </item>
     
     <item>
-      <title>vue学习笔记</title>
+      <title>vue.js学习笔记</title>
       <link>https://billie52707.cn/posts/2020/9/vue-study-note/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
@@ -581,7 +608,7 @@
       <pubDate>Mon, 16 Mar 2020 20:45:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/3/python-pycharm/</guid>
-      <description>File 👉 Settings 👉 Editor 👉 File and Code Templates 👉 Python Script 然后在右边的框中写入信息就可以啦： # -*- coding: utf-8 -*- &amp;quot;&amp;quot;&amp;quot; @Author ${USER} @Date ${DATE} ${TIME} @Describe &amp;quot;&amp;quot;&amp;quot; 相关的写法及含义： ${DATE} 当前系统日期 ${TIME} 当前系统时间 ${YEAR} 当年 ${MONTH}</description>
+      <description>Windows：File 👉 Settings 👉 Editor 👉 File and Code Templates 👉 Python Script macOS：PyCharm &amp;gt; Preferences &amp;hellip; 然后在右边的框中写入信息就可以啦： # -*- coding: utf-8 -*- &amp;quot;&amp;quot;&amp;quot; @Author ${USER} @Date ${DATE} ${TIME} @Describe &amp;quot;&amp;quot;&amp;quot;</description>
     </item>
     
     <item>
@@ -705,6 +732,15 @@
       
       <guid>https://billie52707.cn/note/other/</guid>
       <description>VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的</description>
+    </item>
+    
+    <item>
+      <title>pyqt5</title>
+      <link>https://billie52707.cn/note/pyqt5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/pyqt5/</guid>
+      <description>PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较大的</description>
     </item>
     
     <item>

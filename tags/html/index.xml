@@ -6,7 +6,17 @@
     <description>Recent content in html on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>billie</copyright><atom:link href="https://billie52707.cn/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>billie</copyright>
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1&#43;X|HTML标签</title>
+      <link>https://billie52707.cn/note/1&#43;x-html/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/1&#43;x-html/</guid>
+      <description>知识点总结 基本结构 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--如果不加，则以怪异模式加载；声明了以下代码将以html5的标准去解析--&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt;&amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; 块级标签</description>
+    </item>
+    
     <item>
       <title>HTML标签总结</title>
       <link>https://billie52707.cn/note/html/</link>

@@ -140,7 +140,7 @@
       <pubDate>Mon, 16 Mar 2020 20:45:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/3/python-pycharm/</guid>
-      <description>File 👉 Settings 👉 Editor 👉 File and Code Templates 👉 Python Script 然后在右边的框中写入信息就可以啦： # -*- coding: utf-8 -*- &amp;quot;&amp;quot;&amp;quot; @Author ${USER} @Date ${DATE} ${TIME} @Describe &amp;quot;&amp;quot;&amp;quot; 相关的写法及含义： ${DATE} 当前系统日期 ${TIME} 当前系统时间 ${YEAR} 当年 ${MONTH}</description>
+      <description>Windows：File 👉 Settings 👉 Editor 👉 File and Code Templates 👉 Python Script macOS：PyCharm &amp;gt; Preferences &amp;hellip; 然后在右边的框中写入信息就可以啦： # -*- coding: utf-8 -*- &amp;quot;&amp;quot;&amp;quot; @Author ${USER} @Date ${DATE} ${TIME} @Describe &amp;quot;&amp;quot;&amp;quot;</description>
     </item>
     
     <item>

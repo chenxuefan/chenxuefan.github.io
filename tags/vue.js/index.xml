@@ -7,9 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Nov 2020 15:15:02 +0800</lastBuildDate><atom:link href="https://billie52707.cn/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>vue学习笔记</title>
+      <title>NCP疫情最新动态</title>
+      <link>https://billie52707.cn/ncp/</link>
+      <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/ncp/</guid>
+      <description>.container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 新冠疫情动态-国内 确诊 死亡 治愈 新冠疫情动态-海外 累计确诊 死亡 治</description>
+    </item>
+    
+    <item>
+      <title>vue.js学习笔记</title>
       <link>https://billie52707.cn/posts/2020/9/vue-study-note/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
