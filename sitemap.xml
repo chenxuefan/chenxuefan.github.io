@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://billie52707.cn/note/1&#43;x-js/</loc>
+    <loc>https://billie52707.cn/posts/2020/11/1&#43;x-js/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,7 +13,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/</loc>
+    <loc>https://billie52707.cn/posts/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,12 +28,12 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/1&#43;x-css/</loc>
+    <loc>https://billie52707.cn/posts/2020/11/1&#43;x-css/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/1&#43;x-html/</loc>
+    <loc>https://billie52707.cn/posts/2020/11/1&#43;x-html/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -65,11 +65,6 @@
   <url>
     <loc>https://billie52707.cn/tags/vue.js/</loc>
     <lastmod>2020-11-08T15:15:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2020-11-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -430,6 +425,11 @@
   <url>
     <loc>https://billie52707.cn/posts/2020/4/python-strftime/</loc>
     <lastmod>2020-04-07T11:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/</loc>
+    <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
   
   <url>

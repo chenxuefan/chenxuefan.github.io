@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1&#43;X|JavaScript</title>
-      <link>https://billie52707.cn/note/1&#43;x-js/</link>
+      <link>https://billie52707.cn/posts/2020/11/1&#43;x-js/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/1&#43;x-js/</guid>
+      <guid>https://billie52707.cn/posts/2020/11/1&#43;x-js/</guid>
       <description>前言 网景公司（netscape）开发，是一个操作DOM的语言，在JS中，一切皆对象。 标识符 以字母、下划线或$开头，后可以跟字母、数字 数据类型</description>
     </item>
     
