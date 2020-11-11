@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1&#43;X|jQuery</title>
+      <link>https://billie52707.cn/posts/2020/11/1&#43;x-jquery/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/1&#43;x-jquery/</guid>
+      <description>什么是jquery？ 一个js库，（库就是函数的封装）,API学习网站：jquery.cuishifeng.cn 使用 引用 本地引用 CDN加速器引</description>
+    </item>
+    
     <item>
       <title>1&#43;X|JavaScript</title>
       <link>https://billie52707.cn/posts/2020/11/1&#43;x-js/</link>
