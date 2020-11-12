@@ -81,6 +81,15 @@
     </item>
     
     <item>
+      <title>Mac初始化设置指南</title>
+      <link>https://billie52707.cn/posts/2020/11/mac-initial/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/mac-initial/</guid>
+      <description>前言 有时候可能会遇到重置系统或系统故障必须重装系统的情况，安装完新的系统之后，可以进行一些很有用的初始化设置 设置 三指拖移 系统偏好设置&amp;gt;</description>
+    </item>
+    
+    <item>
       <title>php学习笔记</title>
       <link>https://billie52707.cn/posts/2020/10/php-study-note/</link>
       <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
@@ -303,15 +312,6 @@
       
       <guid>https://billie52707.cn/posts/2020/3/python-psutil/</guid>
       <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://billie52707.cn/posts/2020/11/mac-initial/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/posts/2020/11/mac-initial/</guid>
-      <description>title: Mac初始化设置指南 date: 2020-11-04 tags: [Mac] type: posts draft: false categories: [tec] 前言 有时候可能会遇到重置系统或系统故障必须重装系统的情况，安装完新的系统之后，可以进行一些很有用的</description>
     </item>
     
   </channel>
