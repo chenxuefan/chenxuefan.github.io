@@ -113,16 +113,6 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/tags/mac/</loc>
-    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/posts/2020/11/mac-initial/</loc>
-    <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billie52707.cn/tags/php/</loc>
     <lastmod>2020-10-17T20:54:00+00:00</lastmod>
   </url>
@@ -159,6 +149,11 @@
   
   <url>
     <loc>https://billie52707.cn/tags/linux/</loc>
+    <lastmod>2020-09-14T01:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/mac/</loc>
     <lastmod>2020-09-14T01:00:00+08:00</lastmod>
   </url>
   
@@ -490,6 +485,10 @@
   <url>
     <loc>https://billie52707.cn/posts/2020/3/python-psutil/</loc>
     <lastmod>2020-03-15T10:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2020/11/mac-initial/</loc>
   </url>
   
   <url>

@@ -236,32 +236,39 @@ if (!doNotTrack) {
     });
 
     
-    axios
-    .get("https://lab.isaaclin.cn/nCoV/api/overall")
-    .then(
-      function(response){
-        console.log(response.data.results['0']);
-        d=response.data.results['0'];
-        ChinaData.confirm=d.confirmedCount;
-        ChinaData.dead=d.deadCount;
-        ChinaData.heal=d.curedCount;
+    function getChinaData(){
+      axios
+      .get("https://lab.isaaclin.cn/nCoV/api/overall")
+      .then(
+        function(response){
+          console.log(response.data.results['0']);
+          d=response.data.results['0'];
+          ChinaData.confirm=d.confirmedCount;
+          ChinaData.dead=d.deadCount;
+          ChinaData.heal=d.curedCount;
 
-        
-        axios
-        .get("https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=FAutoGlobalStatis")
-        .then(
-          function(response){
-            console.log(response.data.data.FAutoGlobalStatis);
-            d=response.data.data.FAutoGlobalStatis;
+          
+          axios
+          .get("https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=FAutoGlobalStatis")
+          .then(
+            function(response){
+              console.log(response.data.data.FAutoGlobalStatis);
+              d=response.data.data.FAutoGlobalStatis;
 
-            AbroadData.confirm=d.confirm;
-            AbroadData.dead=d.nowConfirm;
-            AbroadData.heal=d.heal;
-            AbroadData.lastUpdateTime=d.lastUpdateTime;
+              AbroadData.confirm=d.confirm;
+              AbroadData.dead=d.nowConfirm;
+              AbroadData.heal=d.heal;
+              AbroadData.lastUpdateTime=d.lastUpdateTime;
 
-          });
-        
-    });
+            });
+          
+      },function(err){
+          getChinaData;
+      })
+    };
+
+    getChinaData();
+    
 
     
 </script>
