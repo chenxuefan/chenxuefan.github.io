@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1&#43;X|css</title>
-      <link>https://billie52707.cn/posts/2020/11/1&#43;x-css/</link>
+      <link>https://billie52707.cn/posts/2020/11/1-x-css/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1&#43;x-css/</guid>
+      <guid>https://billie52707.cn/posts/2020/11/1-x-css/</guid>
       <description>注释 只有一种注释：/**/ 选择器 类别选择器 div.box{} div .box{} 标签选择器 ID选择器：值必须是唯一的 后代选择器 p code{} 子选择器 p&amp;gt;code{} 伪类选择器 p:first-child{} p:nth-child(2){} 通用选择器（项目开</description>
     </item>
     
