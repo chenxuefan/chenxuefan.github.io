@@ -317,36 +317,36 @@ if (!doNotTrack) {
 </ul>
 <ol>
 <li>
-<p>打开文件<code>httpd.conf</code></p>
-<p>将这行代码前面的<code>#</code>去掉</p>
-</li>
-</ol>
+<p>打开php服务</p>
+<p>打开文件``/etc/apache2/httpd.conf<code>，将这行代码前面的</code>#`去掉</p>
 <pre><code>LoadModule php7_module libexec/apache2/libphp7.so
-</code></pre><ol start="3">
+</code></pre></li>
+<li>
+<p>修改项目路径（可选）</p>
+<ol>
 <li>修改<code>httpd.conf</code>文件中的<code>DocumentRoot</code>改为想要的路径：</li>
 </ol>
 <pre><code>DocumentRoot &quot;/Users/billie/Desktop/php/Documents&quot;
 &lt;Directory &quot;/Users/billie/Desktop/php/Documents&quot;&gt;
-</code></pre><ol start="4">
-<li>
-<p>创建文件<code>/etc/apache2/users/MuyunLee.conf</code></p>
-<p>并在文件中输入以下代码</p>
-</li>
+</code></pre><ol start="2">
+<li>创建文件<code>/etc/apache2/users/MuyunLee.conf</code>，并在文件中输入以下代码</li>
 </ol>
 <pre><code>&lt;Directory &quot;/Users/MuyunLee/PHPWorkSpace&quot;&gt;
  Options Indexes MultiViews AllowOverride All Require all granted # OSX 10.10 / Apache 2.4 
 &lt;/Directory&gt;
-</code></pre><ol start="5">
+</code></pre><ol start="3">
 <li>找到<code>/etc/apache2/httpd.conf</code>文件中</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-Options FollowSymLinks Multiviews
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+Options FollowSymLinks Multiviews Indexes
-</span></code></pre></div><ol start="6">
-<li>重启apache服务器</li>
+</span></code></pre></div></li>
+<li>
+<p>启动apache服务器</p>
+</li>
 </ol>
-<pre><code>sudo apachectl restart
-</code></pre><ol start="7">
-<li>在PHPEclipse中写PHP代码，网页直接输入  http://localhost/项目名/PHP代码页面，完成！</li>
+<pre><code>sudo apachectl start
+</code></pre><ol start="4">
+<li>在编辑器中写PHP代码，网页直接输入  http://localhost/项目名/PHP代码页面，完成！</li>
 </ol>
 <h2 id="语法篇">语法篇</h2>
 <h3 id="变量">变量</h3>
@@ -656,7 +656,7 @@ $number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2726 字
+          2754 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

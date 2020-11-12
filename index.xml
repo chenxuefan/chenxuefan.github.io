@@ -7,14 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BootStrap</title>
+      <link>https://billie52707.cn/posts/2020/11/1-x-boostrap/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/1-x-boostrap/</guid>
+      <description>认识bootstrap框架 bootstrap是一个开源的UI（界面设计）框架，没有UI图且需要做响应式网站开发时，可以使用它。 官网 - https://www.bootcss.com/ 理论 -</description>
+    </item>
+    
     <item>
       <title>1&#43;X|jQuery</title>
       <link>https://billie52707.cn/posts/2020/11/1&#43;x-jquery/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/11/1&#43;x-jquery/</guid>
-      <description>什么是jquery？ 一个js库，（库就是函数的封装）,API学习网站：jquery.cuishifeng.cn 使用 引用 本地引用 CDN加速器引</description>
+      <description>什么是jquery？ 一个js库，（库就是函数的封装）,API学习网站：jquery.cuishifeng.cn 使用 引用 本地引用 CDN加速器（</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X|MySQL</title>
+      <link>https://billie52707.cn/posts/2020/11/mysql/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/mysql/</guid>
+      <description>why MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。 基本操作 创建数据库 create database 库名</description>
     </item>
     
     <item>

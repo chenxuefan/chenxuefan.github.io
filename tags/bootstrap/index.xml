@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BootStrap on 人人都爱小雀斑&#39;s blog</title>
+    <link>https://billie52707.cn/tags/bootstrap/</link>
+    <description>Recent content in BootStrap on 人人都爱小雀斑&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>billie</copyright>
+    <lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/bootstrap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BootStrap</title>
+      <link>https://billie52707.cn/posts/2020/11/1-x-boostrap/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/1-x-boostrap/</guid>
+      <description>认识bootstrap框架 bootstrap是一个开源的UI（界面设计）框架，没有UI图且需要做响应式网站开发时，可以使用它。 官网 - https://www.bootcss.com/ 理论 -</description>
+    </item>
+    
+  </channel>
+</rss>

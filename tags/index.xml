@@ -7,13 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BootStrap</title>
+      <link>https://billie52707.cn/tags/bootstrap/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/tags/bootstrap/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>jQuery</title>
       <link>https://billie52707.cn/tags/jquery/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://billie52707.cn/tags/mysql/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/tags/mysql/</guid>
       <description></description>
     </item>
     
