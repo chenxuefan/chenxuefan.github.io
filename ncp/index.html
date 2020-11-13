@@ -24,7 +24,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="NCP疫情最新动态" />
-<meta property="og:description" content=".container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 新冠疫情动态-国内 确诊 死亡 治愈 新冠疫情动态-海外 累计确诊 死亡 治" />
+<meta property="og:description" content=".container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 确诊 死亡 治愈 累计确诊 死亡 治愈 *lastUpdateTime&nbsp var ChinaData={ msg: &#34;新冠疫情动态-国内&#34;, confirm:&#39;&#39;," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/ncp/" />
 <meta property="article:published_time" content="2020-11-08T15:15:02+08:00" />
@@ -32,7 +32,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="NCP疫情最新动态"/>
-<meta name="twitter:description" content=".container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 新冠疫情动态-国内 确诊 死亡 治愈 新冠疫情动态-海外 累计确诊 死亡 治"/>
+<meta name="twitter:description" content=".container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 确诊 死亡 治愈 累计确诊 死亡 治愈 *lastUpdateTime&nbsp var ChinaData={ msg: &#34;新冠疫情动态-国内&#34;, confirm:&#39;&#39;,"/>
 
   
   
@@ -159,7 +159,7 @@ if (!doNotTrack) {
   </div>
 
 
-<h2>新冠疫情动态-国内</h2>
+<h2 v-text="ChinaData.msg"></h2>
 
   <div class="container" align="center">
     <div class="label">
@@ -180,7 +180,7 @@ if (!doNotTrack) {
   </div>
 
 
-<h2>新冠疫情动态-海外</h2>
+<h2 v-text="AbroadData.msg"></h2>
 
   <div class="container" align="center">
     <div class="label">
@@ -212,13 +212,14 @@ if (!doNotTrack) {
 
     
     var ChinaData={
-      msg: "NCP疫情最新动态",
+      msg: "新冠疫情动态-国内",
       confirm:'',
       dead:'',
       heal:'',
            
     };
     var AbroadData={
+      msg:'新冠疫情动态-海外',
       lastUpdateTime:'',
       confirm:'',
       dead:'',
@@ -237,17 +238,26 @@ if (!doNotTrack) {
 
     
     function getChinaData(){
-      axios
-      .get("https://lab.isaaclin.cn/nCoV/api/overall")
-      .then(
-        function(response){
-          console.log(response.data.results['0']);
-          d=response.data.results['0'];
-          ChinaData.confirm=d.confirmedCount;
-          ChinaData.dead=d.deadCount;
-          ChinaData.heal=d.curedCount;
+          axios
+          .get("https://lab.isaaclin.cn/nCoV/api/overall")
+          .then(
+            function(response){
+              console.log(response.data.results['0']);
+              d=response.data.results['0'];
 
-          
+              ChinaData.confirm=d.confirmedCount;
+              ChinaData.dead=d.deadCount;
+              ChinaData.heal=d.curedCount;
+
+          getAbroadData();    
+              
+          },function(err){
+              getChinaData;
+          })
+    };
+
+    
+    function getAbroadData(){
           axios
           .get("https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=FAutoGlobalStatis")
           .then(
@@ -260,11 +270,7 @@ if (!doNotTrack) {
               AbroadData.heal=d.heal;
               AbroadData.lastUpdateTime=d.lastUpdateTime;
 
-            });
-          
-      },function(err){
-          getChinaData;
-      })
+            })
     };
 
     getChinaData();

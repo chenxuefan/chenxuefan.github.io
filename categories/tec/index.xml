@@ -28,10 +28,10 @@
     
     <item>
       <title>1&#43;X|MySQL</title>
-      <link>https://billie52707.cn/posts/2020/11/mysql/</link>
+      <link>https://billie52707.cn/posts/2020/11/1-x-mysql/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/mysql/</guid>
+      <guid>https://billie52707.cn/posts/2020/11/1-x-mysql/</guid>
       <description>why MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。 基本操作 创建数据库 create database 库名</description>
     </item>
     
@@ -68,7 +68,7 @@
       <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
       
       <guid>https://billie52707.cn/ncp/</guid>
-      <description>.container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 新冠疫情动态-国内 确诊 死亡 治愈 新冠疫情动态-海外 累计确诊 死亡 治</description>
+      <description>.container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 确诊 死亡 治愈 累计确诊 死亡 治愈 *lastUpdateTime&amp;nbsp var ChinaData={ msg: &#34;新冠疫情动态-国内&#34;, confirm:&#39;&#39;,</description>
     </item>
     
     <item>
