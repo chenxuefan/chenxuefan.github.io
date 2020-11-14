@@ -92,9 +92,9 @@ if (!doNotTrack) {
          
         <li><a href="/posts">Article</a></li>
          
-        <li><a href="/about">About</a></li>
-         
         <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
          
         <li><a href="https://github.com/chenxuefan">Github</a></li>
         
@@ -112,7 +112,7 @@ if (!doNotTrack) {
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/posts/2020/11/mac-initial/">
+          <a class="icon" href="https://billie52707.cn/posts/2020/11/wuhan-memory/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -233,6 +233,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#面向对象">面向对象</a></li>
     <li><a href="#laravel框架">Laravel框架</a></li>
+    <li><a href="#考点小结">考点小结</a></li>
   </ul>
 </nav>
     </div>
@@ -310,12 +311,9 @@ if (!doNotTrack) {
 </ul>
 <h3 id="修改网页目录">修改网页目录</h3>
 <ul>
-<li>
-<p>配置文件：<code>/etc/apache2/httpd.conf</code></p>
-</li>
-<li>
-<p>网页目录：<code>/Library/WebServer/Documents</code></p>
-</li>
+<li>php配置文件：<code>php.ini</code></li>
+<li>apache配置文件：<code>/etc/apache2/httpd.conf</code></li>
+<li>网页目录：<code>/Library/WebServer/Documents</code></li>
 </ul>
 <ol>
 <li>
@@ -366,11 +364,14 @@ if (!doNotTrack) {
 </ul>
 <h3 id="输出">输出</h3>
 <ul>
-<li><code>echo</code>: 可以输出一项或多项,每一项用<code>.</code>分隔开</li>
-<li><code>print</code>: 只允许输出一项，返回值总为 1</li>
+<li><code>echo</code> - 可以输出一项或多项,每一项用<code>.</code>分隔开</li>
+<li><code>print</code> - 只允许输出一项，返回值总为 1</li>
+<li><code>print_r(变量)</code> - 用于打印变量，以更容易理解的形式展示</li>
+<li><code>var_dump(变量)</code> - 返回变量的数据类型和值</li>
 </ul>
 <p>ps: echo输出的速度比print快,echo没有返回值,print有返回值1,两者使用时,括号可加可不加</p>
 <h3 id="引入">引入</h3>
+<p>require在引入不存文件时产生一个警告且脚本还会继续执行，而include则会导致一个致命性错误且脚本停止执行</p>
 <ul>
 <li><code>include</code></li>
 <li><code>require</code></li>
@@ -386,7 +387,7 @@ if (!doNotTrack) {
 <h3 id="数据类型">数据类型</h3>
 <ol>
 <li>
-<p><strong>string字符串</strong></p>
+<p><strong>string - 字符串</strong></p>
 <ul>
 <li>字符串连接运算符<code>.</code></li>
 <li><code>strlen()</code>- 获取字符串长度</li>
@@ -400,16 +401,16 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p><strong>integer整型</strong></p>
+<p><strong>integer - 整型</strong></p>
 </li>
 <li>
-<p><strong>float浮点型</strong></p>
+<p><strong>float - 浮点型</strong></p>
 </li>
 <li>
-<p><strong>boolean布尔型</strong></p>
+<p><strong>boolean - 布尔型</strong></p>
 </li>
 <li>
-<p><strong>array数组</strong></p>
+<p><strong>array - 数组</strong></p>
 <ul>
 <li>
 <p>创建一个数组:<code>$arr=array('','');</code></p>
@@ -449,7 +450,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p><strong>object对象</strong></p>
+<p><strong>object - 对象</strong></p>
 <p>声明一个对象:</p>
 <ol>
 <li>使用class关键字声明类对象</li>
@@ -458,11 +459,10 @@ if (!doNotTrack) {
 </ol>
 </li>
 <li>
-<p><strong>null空值</strong></p>
+<p><strong>null - 空值</strong></p>
 <p>NULL 值表示变量没有值。NULL 是数据类型为 NULL 的值。</p>
 <ul>
 <li><code>unset(变量)</code>可以把变量变成null</li>
-<li><code>var_dump(变量)</code>返回变量的数据类型和值</li>
 </ul>
 </li>
 </ol>
@@ -491,7 +491,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#75715e">//四则运算符 +-*/
 </span><span style="color:#75715e">//逻辑运算符 !(非) &amp;&amp;(与) ||(或) and(与) or(或) xor(异或)
-</span><span style="color:#75715e">//数组运算符 +(合并) ==(比较) != === !==
+</span><span style="color:#75715e">//数组运算符 +(合并) ==(比较) !=(不等) ===(全等，值和数据类型) !==(全不等)
 </span><span style="color:#75715e"></span>$x <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;red&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;green&#34;</span>); 
 $y <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;blue&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;yellow&#34;</span>); 
 $z <span style="color:#f92672">=</span> $x <span style="color:#f92672">+</span> $y; <span style="color:#75715e">// $x 和 $y 数组合并
@@ -505,7 +505,7 @@ $z <span style="color:#f92672">=</span> $x <span style="color:#f92672">+</span> 
 </span><span style="color:#75715e">//比较运算符 &gt; &lt; &gt;= &lt;= &lt;=&gt;(左边小返回-1,左右相等返回0,右边大返回1)
 </span><span style="color:#75715e">//空合并符 ??
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">var_dump</span>(<span style="color:#66d9ef">null</span><span style="color:#f92672">??</span><span style="color:#ae81ff">2</span><span style="color:#f92672">??</span><span style="color:#ae81ff">3</span>); <span style="color:#75715e">//返回从左到右数第一个不是null的值
-</span><span style="color:#75715e">//条件运算符
+</span><span style="color:#75715e">//三目运算符
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $a<span style="color:#f92672">===</span><span style="color:#ae81ff">1</span><span style="color:#f92672">?</span><span style="color:#e6db74">&#39;是1&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;不是1&#39;</span>;
 <span style="color:#75715e">//错误控制运算符
 </span><span style="color:#75715e"></span>$e<span style="color:#f92672">=@</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">0</span>);
@@ -628,6 +628,10 @@ $number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span
 <li>高阶操作</li>
 </ul>
 <h2 id="laravel框架">Laravel框架</h2>
+<h2 id="考点小结">考点小结</h2>
+<ul>
+<li></li>
+</ul>
 
     </div>
 
@@ -665,7 +669,7 @@ $number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2770 字
+          2884 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -708,9 +712,9 @@ $number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span
          
           <li><a href="/posts">Article</a></li>
          
-          <li><a href="/about">About</a></li>
-         
           <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
          
           <li><a href="https://github.com/chenxuefan">Github</a></li>
         
@@ -750,6 +754,7 @@ $number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span
     </li>
     <li><a href="#面向对象">面向对象</a></li>
     <li><a href="#laravel框架">Laravel框架</a></li>
+    <li><a href="#考点小结">考点小结</a></li>
   </ul>
 </nav>
     </div>
