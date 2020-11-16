@@ -18,7 +18,7 @@
     </item>
     
     <item>
-      <title>1&#43;X|BootStrap</title>
+      <title>1&#43;X|Bootstrap</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-boostrap/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -32,7 +32,7 @@
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/11/1-x-jquery/</guid>
-      <description>什么是jquery？ 一个js库，（库就是函数的封装）,API学习网站：jquery.cuishifeng.cn 使用 引用 本地引用 CDN加速器（</description>
+      <description>什么是jquery？ 一个js库，（库就是函数的封装）,API学习网站：jquery.cuishifeng.cn 使用 引入 本地引入 CDN加速器(</description>
     </item>
     
     <item>
@@ -77,11 +77,11 @@
       <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
       
       <guid>https://billie52707.cn/ncp/</guid>
-      <description>.container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 确诊 死亡 治愈 累计确诊 死亡 治愈 *lastUpdateTime&amp;nbsp var ChinaData={ msg: &#34;新冠疫情动态-国内&#34;, confirm:&#39;&#39;,</description>
+      <description>*{ background-color: #E2E0DE!important; } h2{ margin: 50px; } .container{ margin: 2px; height: 100px; text-align: center; } 确诊 正在获取... 死亡 治愈 LastUpdateTime - var ChinaData={ msg: &#34;新冠疫情动态 - 国内&#34;, confirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, }; var AbroadData={ msg:&#39;新冠疫情动态 - 海外&#39;, confirm:&#39;&#39;, dead:&#39;&#39;,</description>
     </item>
     
     <item>
-      <title>浅谈python虚拟环境</title>
+      <title>python学习笔记|浅谈python虚拟环境</title>
       <link>https://billie52707.cn/posts/2020/11/python-venv/</link>
       <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -113,7 +113,7 @@
       <pubDate>Sun, 01 Nov 2020 17:32:35 +0800</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/11/wuhan-memory/</guid>
-      <description>设备 - Sony RX100M3 日期 - 2020-11-01 /酒店阳台夜景 - 来武汉第一天，窗外的马路灯光真的很明亮，隐约还能看到远处的大桥/ /珞珈山脚下 - 建筑陈旧，生活安逸，很有年代</description>
+      <description>设备 - Sony RX100M3 日期 - 2020-11-01 /酒店阳台夜景 - 来武汉第一天，窗外的大马路灯火通明，隐约还能看到远处的大桥/ /珞珈山脚下 - 建筑陈旧，生活安逸，很有年代感的</description>
     </item>
     
     <item>
@@ -558,7 +558,7 @@
     </item>
     
     <item>
-      <title>一人行 | 梧桐山印象</title>
+      <title>一人行|梧桐山印象</title>
       <link>https://billie52707.cn/posts/2020/7/travel-wutong/</link>
       <pubDate>Wed, 22 Jul 2020 21:28:17 +0800</pubDate>
       

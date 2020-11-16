@@ -24,7 +24,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="NCP疫情最新动态" />
-<meta property="og:description" content=".container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 确诊 死亡 治愈 累计确诊 死亡 治愈 *lastUpdateTime&nbsp var ChinaData={ msg: &#34;新冠疫情动态-国内&#34;, confirm:&#39;&#39;," />
+<meta property="og:description" content="*{ background-color: #E2E0DE!important; } h2{ margin: 50px; } .container{ margin: 2px; height: 100px; text-align: center; } 确诊 正在获取... 死亡 治愈 LastUpdateTime - var ChinaData={ msg: &#34;新冠疫情动态 - 国内&#34;, confirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, }; var AbroadData={ msg:&#39;新冠疫情动态 - 海外&#39;, confirm:&#39;&#39;, dead:&#39;&#39;," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/ncp/" />
 <meta property="article:published_time" content="2020-11-08T15:15:02+08:00" />
@@ -32,7 +32,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="NCP疫情最新动态"/>
-<meta name="twitter:description" content=".container{ height: 80px; width: 90%; border:10px; margin: 40px; } .container .label{ margin: 2px; float: left; width: 32%; height: 100px; text-align: center; } 新冠疫情动态-全球 累计确诊 死亡 治愈 确诊 死亡 治愈 累计确诊 死亡 治愈 *lastUpdateTime&nbsp var ChinaData={ msg: &#34;新冠疫情动态-国内&#34;, confirm:&#39;&#39;,"/>
+<meta name="twitter:description" content="*{ background-color: #E2E0DE!important; } h2{ margin: 50px; } .container{ margin: 2px; height: 100px; text-align: center; } 确诊 正在获取... 死亡 治愈 LastUpdateTime - var ChinaData={ msg: &#34;新冠疫情动态 - 国内&#34;, confirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, }; var AbroadData={ msg:&#39;新冠疫情动态 - 海外&#39;, confirm:&#39;&#39;, dead:&#39;&#39;,"/>
 
   
   
@@ -118,162 +118,146 @@ if (!doNotTrack) {
 
   <div class="content" itemprop="articleBody">
   
-    <style>
-  .container{
-
-    height: 80px;
-    width: 90%;
-    border:10px;
-     
-    margin: 40px;
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.css" rel="stylesheet">
+<style>
+  *{
+    background-color: #E2E0DE!important;
   }
-  .container .label{
+
+  h2{
+	  margin: 50px;
+  }
+  .container{
     margin: 2px;
-    float: left;
-    width: 32%;
     height: 100px;
+     
     text-align: center;
-     
-     
   }
 </style>
 
-<h2>新冠疫情动态-全球</h2>
 <div id="NCP">
-  <div class="container" align="center">
-    <div class="label">
-      <span style="color: red;font-size: 20px" v-text="ChinaData.confirm+AbroadData.confirm"></span>
-      
-      累计确诊
-    </div>
-    <div class="label">
-      <span style="font-size: 20px" v-text="ChinaData.dead+AbroadData.dead"></span>
-      
-      死亡
-    </div>
-    <div class="label">
-      <span style="color: green;font-size: 20px" v-text="ChinaData.heal+AbroadData.heal"></span>
-      
-      治愈
-    </div>
-  </div>
+<div v-for="item in allData">
 
+	<h2 v-text="item.msg"></h2>
+	<div class="container">
+	  
+		<div class="row">
 
-<h2 v-text="ChinaData.msg"></h2>
+		  <div class="col-xs-12 col-md-4">
+			<span style="color: red;font-size: 20px" v-text="item.confirm"></span>
+			<span style="font-size: 12px" v-text="">确诊</span>
+		  </div>
+		  <div class="col-xs-12 col-md-4">
+			<span style="font-size: 20px" v-text="item.dead">正在获取...</span>
+			<span style="font-size: 12px" v-text="">死亡</span>
+		  </div>
+		  <div class="col-xs-12 col-md-4">
+			<span style="color: green;font-size: 20px" v-text="item.heal"></span>
+			<span style="font-size: 12px" v-text="">治愈</span>
+		  </div>
 
-  <div class="container" align="center">
-    <div class="label">
-      <span style="color: red;font-size: 20px" v-text="ChinaData.confirm"></span>
-      
-      确诊
-    </div>
-    <div class="label">
-      <span style="font-size: 20px" v-text="ChinaData.dead"></span>
-      
-      死亡
-    </div>
-    <div class="label">
-      <span style="color: green;font-size: 20px" v-text="ChinaData.heal"></span>
-      
-      治愈
-    </div>
-  </div>
-
-
-<h2 v-text="AbroadData.msg"></h2>
-
-  <div class="container" align="center">
-    <div class="label">
-      <span style="color: red;font-size: 20px" v-text="AbroadData.confirm"></span>
-      
-      累计确诊
-    </div>
-    <div class="label">
-      <span style="font-size: 20px" v-text="AbroadData.dead"></span>
-      
-      死亡
-    </div>
-    <div class="label">
-      <span style="color: green;font-size: 20px" v-text="AbroadData.heal"></span>
-      
-      治愈
-    </div>
-  </div>
-
-
-  <i>*lastUpdateTime&nbsp<span v-text="AbroadData.lastUpdateTime"></span></i>
-
+		</div>
+	</div>
+	
 </div>
+
+<i>LastUpdateTime - <span v-text="lastUpdateTime"></span></i>
+</div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.js"></script>
 <script type="text/javascript">
 
     
     var ChinaData={
-      msg: "新冠疫情动态-国内",
+      msg: "新冠疫情动态 - 国内",
       confirm:'',
       dead:'',
-      heal:'',
-           
+      heal:'',   
     };
     var AbroadData={
-      msg:'新冠疫情动态-海外',
-      lastUpdateTime:'',
+      msg:'新冠疫情动态 - 海外',
       confirm:'',
       dead:'',
       heal:'',
     };
-
+	var GlobalData={
+	  msg:'新冠疫情动态 - 全球',
+	  confirm:'',
+	  dead:'',
+	  heal:'',
+	};
+	
     
     var vm = new Vue({
       el:"#NCP", 
       data: {
-        ChinaData:ChinaData,
-        AbroadData:AbroadData
+		  lastUpdateTime:'',
+		  allData:[
+			ChinaData,
+			AbroadData,
+			GlobalData
+		  ]
       },  
-      methods:{},  
+      methods:{
+		  
+		  getChinaData(){
+			    var that = this;
+		        axios
+		        .get("https://lab.isaaclin.cn/nCoV/api/overall")
+		        .then(
+		          function(response){
+		            console.log(response.data.results['0']);
+		            d=response.data.results['0'];
+		            ChinaData.confirm=d.confirmedCount;
+		            ChinaData.dead=d.deadCount;
+		            ChinaData.heal=d.curedCount;
+					that.getGlobalData();
+		        },function(err){
+		            that.getChinaData();
+		        })
+		  },
+		  
+		  getAbroadData(){
+				var that =this;
+		        axios
+		        .get("https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=FAutoGlobalStatis")
+		        .then(
+		          function(response){
+		            console.log(response.data.data.FAutoGlobalStatis);
+		            d=response.data.data.FAutoGlobalStatis;
+		  
+		            AbroadData.confirm=d.confirm;
+		            AbroadData.dead=d.nowConfirm;
+		            AbroadData.heal=d.heal;
+		            that.lastUpdateTime=d.lastUpdateTime;
+					that.getGlobalData();
+
+		          },function(){
+					  that.getAbroadData();
+				  })
+		  },
+		  
+		  getGlobalData(){
+			  console.log(ChinaData.confirm)
+			  GlobalData.confirm=ChinaData.confirm+AbroadData.confirm;
+			  GlobalData.dead=ChinaData.dead+AbroadData.dead;
+			  GlobalData.heal=ChinaData.heal+AbroadData.heal;
+		  }
+	  },  
+	  mounted(){
+		this.getChinaData();
+		this.getAbroadData();
+	  }
     });
 
-    
-    function getChinaData(){
-          axios
-          .get("https://lab.isaaclin.cn/nCoV/api/overall")
-          .then(
-            function(response){
-              console.log(response.data.results['0']);
-              d=response.data.results['0'];
+   
 
-              ChinaData.confirm=d.confirmedCount;
-              ChinaData.dead=d.deadCount;
-              ChinaData.heal=d.curedCount;
 
-          getAbroadData();    
-              
-          },function(err){
-              getChinaData;
-          })
-    };
-
-    
-    function getAbroadData(){
-          axios
-          .get("https://api.inews.qq.com/newsqa/v1/automation/modules/list?modules=FAutoGlobalStatis")
-          .then(
-            function(response){
-              console.log(response.data.data.FAutoGlobalStatis);
-              d=response.data.data.FAutoGlobalStatis;
-
-              AbroadData.confirm=d.confirm;
-              AbroadData.dead=d.nowConfirm;
-              AbroadData.heal=d.heal;
-              AbroadData.lastUpdateTime=d.lastUpdateTime;
-
-            })
-    };
-
-    getChinaData();
     
 
     
