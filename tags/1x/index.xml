@@ -71,5 +71,14 @@
       <description>知识点总结 基本结构 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--如果不加，则以怪异模式加载；声明了以下代码将以html5的标准去解析--&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt;&amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; 块级标签</description>
     </item>
     
+    <item>
+      <title>php学习笔记</title>
+      <link>https://billie52707.cn/posts/2020/10/php-study-note/</link>
+      <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/10/php-study-note/</guid>
+      <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
+    </item>
+    
   </channel>
 </rss>

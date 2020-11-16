@@ -243,7 +243,6 @@ if (!doNotTrack) {
 		  },
 		  
 		  getGlobalData(){
-			  console.log(ChinaData.confirm)
 			  GlobalData.confirm=ChinaData.confirm+AbroadData.confirm;
 			  GlobalData.dead=ChinaData.dead+AbroadData.dead;
 			  GlobalData.heal=ChinaData.heal+AbroadData.heal;
@@ -252,7 +251,7 @@ if (!doNotTrack) {
 	  mounted(){
 		this.getChinaData();
 		this.getAbroadData();
-	  }
+	  }	
     });
 
    
