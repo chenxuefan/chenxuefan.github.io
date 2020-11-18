@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> python学习笔记|浅谈python虚拟环境 | 人人都爱小雀斑&#39;s blog </title>
+  <title> python学习笔记 | 浅谈python虚拟环境 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -24,7 +24,7 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="python学习笔记|浅谈python虚拟环境" />
+  <meta property="og:title" content="python学习笔记 | 浅谈python虚拟环境" />
 <meta property="og:description" content="前言 python虚拟环境是非常实用且必备的小技能。面对多个项目分别需要不同依赖库环境，或者跨平台部署的场景，都非常实用且优雅。 跨平台部署时，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2020/11/python-venv/" />
@@ -32,7 +32,7 @@ if (!doNotTrack) {
 <meta property="article:modified_time" content="2020-11-08T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python学习笔记|浅谈python虚拟环境"/>
+<meta name="twitter:title" content="python学习笔记 | 浅谈python虚拟环境"/>
 <meta name="twitter:description" content="前言 python虚拟环境是非常实用且必备的小技能。面对多个项目分别需要不同依赖库环境，或者跨平台部署的场景，都非常实用且优雅。 跨平台部署时，"/>
 
   
@@ -148,52 +148,52 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&text=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&text=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&is_video=false&description=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&is_video=false&description=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f">
+    <a class="icon" href="mailto:?subject=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&description=%e5%89%8d%e8%a8%80%20python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e6%98%af%e9%9d%9e%e5%b8%b8%e5%ae%9e%e7%94%a8%e4%b8%94%e5%bf%85%e5%a4%87%e7%9a%84%e5%b0%8f%e6%8a%80%e8%83%bd%e3%80%82%e9%9d%a2%e5%af%b9%e5%a4%9a%e4%b8%aa%e9%a1%b9%e7%9b%ae%e5%88%86%e5%88%ab%e9%9c%80%e8%a6%81%e4%b8%8d%e5%90%8c%e4%be%9d%e8%b5%96%e5%ba%93%e7%8e%af%e5%a2%83%ef%bc%8c%e6%88%96%e8%80%85%e8%b7%a8%e5%b9%b3%e5%8f%b0%e9%83%a8%e7%bd%b2%e7%9a%84%e5%9c%ba%e6%99%af%ef%bc%8c%e9%83%bd%e9%9d%9e%e5%b8%b8%e5%ae%9e%e7%94%a8%e4%b8%94%e4%bc%98%e9%9b%85%e3%80%82%20%e8%b7%a8%e5%b9%b3%e5%8f%b0%e9%83%a8%e7%bd%b2%e6%97%b6%ef%bc%8c">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&description=%e5%89%8d%e8%a8%80%20python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e6%98%af%e9%9d%9e%e5%b8%b8%e5%ae%9e%e7%94%a8%e4%b8%94%e5%bf%85%e5%a4%87%e7%9a%84%e5%b0%8f%e6%8a%80%e8%83%bd%e3%80%82%e9%9d%a2%e5%af%b9%e5%a4%9a%e4%b8%aa%e9%a1%b9%e7%9b%ae%e5%88%86%e5%88%ab%e9%9c%80%e8%a6%81%e4%b8%8d%e5%90%8c%e4%be%9d%e8%b5%96%e5%ba%93%e7%8e%af%e5%a2%83%ef%bc%8c%e6%88%96%e8%80%85%e8%b7%a8%e5%b9%b3%e5%8f%b0%e9%83%a8%e7%bd%b2%e7%9a%84%e5%9c%ba%e6%99%af%ef%bc%8c%e9%83%bd%e9%9d%9e%e5%b8%b8%e5%ae%9e%e7%94%a8%e4%b8%94%e4%bc%98%e9%9b%85%e3%80%82%20%e8%b7%a8%e5%b9%b3%e5%8f%b0%e9%83%a8%e7%bd%b2%e6%97%b6%ef%bc%8c">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&t=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&t=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -216,7 +216,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        python学习笔记|浅谈python虚拟环境
+        python学习笔记 | 浅谈python虚拟环境
       </h1>
       <div class="meta">
         
@@ -339,7 +339,7 @@ virtualenv --python=python3.7 venv
 
   
 
-<span id="/posts/2020/11/python-venv/" class="leancloud_visitors" data-flag-title="python学习笔记|浅谈python虚拟环境">
+<span id="/posts/2020/11/python-venv/" class="leancloud_visitors" data-flag-title="python学习笔记 | 浅谈python虚拟环境">
 
   
 
@@ -402,52 +402,52 @@ virtualenv --python=python3.7 venv
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&text=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&text=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&is_video=false&description=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&is_video=false&description=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f">
+    <a class="icon" href="mailto:?subject=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&description=%e5%89%8d%e8%a8%80%20python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e6%98%af%e9%9d%9e%e5%b8%b8%e5%ae%9e%e7%94%a8%e4%b8%94%e5%bf%85%e5%a4%87%e7%9a%84%e5%b0%8f%e6%8a%80%e8%83%bd%e3%80%82%e9%9d%a2%e5%af%b9%e5%a4%9a%e4%b8%aa%e9%a1%b9%e7%9b%ae%e5%88%86%e5%88%ab%e9%9c%80%e8%a6%81%e4%b8%8d%e5%90%8c%e4%be%9d%e8%b5%96%e5%ba%93%e7%8e%af%e5%a2%83%ef%bc%8c%e6%88%96%e8%80%85%e8%b7%a8%e5%b9%b3%e5%8f%b0%e9%83%a8%e7%bd%b2%e7%9a%84%e5%9c%ba%e6%99%af%ef%bc%8c%e9%83%bd%e9%9d%9e%e5%b8%b8%e5%ae%9e%e7%94%a8%e4%b8%94%e4%bc%98%e9%9b%85%e3%80%82%20%e8%b7%a8%e5%b9%b3%e5%8f%b0%e9%83%a8%e7%bd%b2%e6%97%b6%ef%bc%8c">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83&description=%e5%89%8d%e8%a8%80%20python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83%e6%98%af%e9%9d%9e%e5%b8%b8%e5%ae%9e%e7%94%a8%e4%b8%94%e5%bf%85%e5%a4%87%e7%9a%84%e5%b0%8f%e6%8a%80%e8%83%bd%e3%80%82%e9%9d%a2%e5%af%b9%e5%a4%9a%e4%b8%aa%e9%a1%b9%e7%9b%ae%e5%88%86%e5%88%ab%e9%9c%80%e8%a6%81%e4%b8%8d%e5%90%8c%e4%be%9d%e8%b5%96%e5%ba%93%e7%8e%af%e5%a2%83%ef%bc%8c%e6%88%96%e8%80%85%e8%b7%a8%e5%b9%b3%e5%8f%b0%e9%83%a8%e7%bd%b2%e7%9a%84%e5%9c%ba%e6%99%af%ef%bc%8c%e9%83%bd%e9%9d%9e%e5%b8%b8%e5%ae%9e%e7%94%a8%e4%b8%94%e4%bc%98%e9%9b%85%e3%80%82%20%e8%b7%a8%e5%b9%b3%e5%8f%b0%e9%83%a8%e7%bd%b2%e6%97%b6%ef%bc%8c">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&t=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%7c%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fpython-venv%2f&t=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e6%b5%85%e8%b0%88python%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

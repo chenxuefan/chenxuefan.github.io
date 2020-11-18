@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nginx学习笔记 | 解决跨域问题</title>
+      <link>https://billie52707.cn/posts/2020/11/nginx-cross-domain/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/nginx-cross-domain/</guid>
+      <description>什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以认为</description>
+    </item>
+    
     <item>
       <title>从http到https</title>
       <link>https://billie52707.cn/posts/2020/8/http-https/</link>
@@ -27,7 +36,7 @@
     </item>
     
     <item>
-      <title>一次配置Nginx的踩坑填坑记录</title>
+      <title>nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</title>
       <link>https://billie52707.cn/posts/2020/8/nginx-record/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
@@ -42,6 +51,15 @@
       
       <guid>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://billie52707.cn/note/nginx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/nginx/</guid>
+      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop service nginx start/stop nginx start/stop</description>
     </item>
     
   </channel>

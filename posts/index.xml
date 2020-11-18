@@ -7,9 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sat, 14 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1&#43;X|考点小结</title>
+      <title>nginx学习笔记 | 解决跨域问题</title>
+      <link>https://billie52707.cn/posts/2020/11/nginx-cross-domain/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/nginx-cross-domain/</guid>
+      <description>什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以认为</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | 考点小结</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-examination/</link>
       <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -18,7 +27,7 @@
     </item>
     
     <item>
-      <title>1&#43;X|Bootstrap</title>
+      <title>1&#43;X | Bootstrap</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-boostrap/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -27,7 +36,7 @@
     </item>
     
     <item>
-      <title>1&#43;X|jQuery</title>
+      <title>1&#43;X | jQuery</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-jquery/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -36,7 +45,7 @@
     </item>
     
     <item>
-      <title>1&#43;X|MySQL</title>
+      <title>1&#43;X | MySQL</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-mysql/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -45,7 +54,7 @@
     </item>
     
     <item>
-      <title>1&#43;X|JavaScript</title>
+      <title>1&#43;X | JavaScript</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-js/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -54,7 +63,7 @@
     </item>
     
     <item>
-      <title>1&#43;X|css</title>
+      <title>1&#43;X | css</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-css/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -63,7 +72,7 @@
     </item>
     
     <item>
-      <title>1&#43;X|html</title>
+      <title>1&#43;X | html</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-html/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -72,7 +81,7 @@
     </item>
     
     <item>
-      <title>python学习笔记|浅谈python虚拟环境</title>
+      <title>python学习笔记 | 浅谈python虚拟环境</title>
       <link>https://billie52707.cn/posts/2020/11/python-venv/</link>
       <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -99,7 +108,7 @@
     </item>
     
     <item>
-      <title> 枫枫枫!|武汉印象</title>
+      <title> 枫枫枫! | 武汉印象</title>
       <link>https://billie52707.cn/posts/2020/11/wuhan-memory/</link>
       <pubDate>Sun, 01 Nov 2020 17:32:35 +0800</pubDate>
       
@@ -108,7 +117,7 @@
     </item>
     
     <item>
-      <title>php学习笔记</title>
+      <title>1&#43;X | php</title>
       <link>https://billie52707.cn/posts/2020/10/php-study-note/</link>
       <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
       
@@ -135,7 +144,7 @@
     </item>
     
     <item>
-      <title>进制转换问题</title>
+      <title>python学习笔记 | 进制转换问题</title>
       <link>https://billie52707.cn/posts/2020/9/scale-question/</link>
       <pubDate>Fri, 11 Sep 2020 01:00:00 +0800</pubDate>
       
@@ -180,7 +189,7 @@
     </item>
     
     <item>
-      <title>一次配置Nginx的踩坑填坑记录</title>
+      <title>nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</title>
       <link>https://billie52707.cn/posts/2020/8/nginx-record/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
@@ -225,7 +234,7 @@
     </item>
     
     <item>
-      <title>一人行|梧桐山印象</title>
+      <title>一人行 | 梧桐山印象</title>
       <link>https://billie52707.cn/posts/2020/7/travel-wutong/</link>
       <pubDate>Wed, 22 Jul 2020 21:28:17 +0800</pubDate>
       

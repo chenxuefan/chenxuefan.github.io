@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 一次配置Nginx的踩坑填坑记录 | 人人都爱小雀斑&#39;s blog </title>
+  <title> nginx学习笔记 | 一次配置Nginx的踩坑填坑记录 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -24,7 +24,7 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="一次配置Nginx的踩坑填坑记录" />
+  <meta property="og:title" content="nginx学习笔记 | 一次配置Nginx的踩坑填坑记录" />
 <meta property="og:description" content="前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2020/8/nginx-record/" />
@@ -32,7 +32,7 @@ if (!doNotTrack) {
 <meta property="article:modified_time" content="2020-08-14T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="一次配置Nginx的踩坑填坑记录"/>
+<meta name="twitter:title" content="nginx学习笔记 | 一次配置Nginx的踩坑填坑记录"/>
 <meta name="twitter:description" content="前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx."/>
 
   
@@ -148,52 +148,52 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&text=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&text=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&is_video=false&description=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&is_video=false&description=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f">
+    <a class="icon" href="mailto:?subject=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&name=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95&description=%e5%89%8d%e8%a8%80%20%e8%bf%99%e4%ba%9b%e5%a4%a9%e5%8f%91%e7%8e%b0%e8%87%aa%e5%b7%b1%e5%9c%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e9%83%a8%e7%bd%b2%e7%9a%84nginx%e6%9c%8d%e5%8a%a1%e5%b8%b8%e5%b8%b8%e9%9c%80%e8%a6%81%e6%b8%85%e9%99%a4%e6%b5%8f%e8%a7%88%e5%99%a8%e5%8e%86%e5%8f%b2%e8%ae%b0%e5%bd%95%e4%b9%8b%e5%90%8e%e6%89%8d%e4%bc%9a%e5%88%b7%e6%96%b0%e4%bf%a1%e6%81%af%ef%bc%8c%e6%90%9c%e7%b4%a2%e4%b8%80%e7%95%aa%e5%8f%91%e7%8e%b0%e6%9c%89%e7%bd%91%e5%8f%8b%e8%af%b4%e8%a6%81%e6%8a%8a%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e4%b8%ad%e7%9a%84nginx.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&name=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95&description=%e5%89%8d%e8%a8%80%20%e8%bf%99%e4%ba%9b%e5%a4%a9%e5%8f%91%e7%8e%b0%e8%87%aa%e5%b7%b1%e5%9c%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e9%83%a8%e7%bd%b2%e7%9a%84nginx%e6%9c%8d%e5%8a%a1%e5%b8%b8%e5%b8%b8%e9%9c%80%e8%a6%81%e6%b8%85%e9%99%a4%e6%b5%8f%e8%a7%88%e5%99%a8%e5%8e%86%e5%8f%b2%e8%ae%b0%e5%bd%95%e4%b9%8b%e5%90%8e%e6%89%8d%e4%bc%9a%e5%88%b7%e6%96%b0%e4%bf%a1%e6%81%af%ef%bc%8c%e6%90%9c%e7%b4%a2%e4%b8%80%e7%95%aa%e5%8f%91%e7%8e%b0%e6%9c%89%e7%bd%91%e5%8f%8b%e8%af%b4%e8%a6%81%e6%8a%8a%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e4%b8%ad%e7%9a%84nginx.">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&t=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&t=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -222,7 +222,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        一次配置Nginx的踩坑填坑记录
+        nginx学习笔记 | 一次配置Nginx的踩坑填坑记录
       </h1>
       <div class="meta">
         
@@ -426,7 +426,7 @@ esac
 
   
 
-<span id="/posts/2020/8/nginx-record/" class="leancloud_visitors" data-flag-title="一次配置Nginx的踩坑填坑记录">
+<span id="/posts/2020/8/nginx-record/" class="leancloud_visitors" data-flag-title="nginx学习笔记 | 一次配置Nginx的踩坑填坑记录">
 
   
 
@@ -495,52 +495,52 @@ esac
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&text=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&text=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&is_video=false&description=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&is_video=false&description=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f">
+    <a class="icon" href="mailto:?subject=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&name=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95&description=%e5%89%8d%e8%a8%80%20%e8%bf%99%e4%ba%9b%e5%a4%a9%e5%8f%91%e7%8e%b0%e8%87%aa%e5%b7%b1%e5%9c%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e9%83%a8%e7%bd%b2%e7%9a%84nginx%e6%9c%8d%e5%8a%a1%e5%b8%b8%e5%b8%b8%e9%9c%80%e8%a6%81%e6%b8%85%e9%99%a4%e6%b5%8f%e8%a7%88%e5%99%a8%e5%8e%86%e5%8f%b2%e8%ae%b0%e5%bd%95%e4%b9%8b%e5%90%8e%e6%89%8d%e4%bc%9a%e5%88%b7%e6%96%b0%e4%bf%a1%e6%81%af%ef%bc%8c%e6%90%9c%e7%b4%a2%e4%b8%80%e7%95%aa%e5%8f%91%e7%8e%b0%e6%9c%89%e7%bd%91%e5%8f%8b%e8%af%b4%e8%a6%81%e6%8a%8a%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e4%b8%ad%e7%9a%84nginx.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&name=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95&description=%e5%89%8d%e8%a8%80%20%e8%bf%99%e4%ba%9b%e5%a4%a9%e5%8f%91%e7%8e%b0%e8%87%aa%e5%b7%b1%e5%9c%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e9%83%a8%e7%bd%b2%e7%9a%84nginx%e6%9c%8d%e5%8a%a1%e5%b8%b8%e5%b8%b8%e9%9c%80%e8%a6%81%e6%b8%85%e9%99%a4%e6%b5%8f%e8%a7%88%e5%99%a8%e5%8e%86%e5%8f%b2%e8%ae%b0%e5%bd%95%e4%b9%8b%e5%90%8e%e6%89%8d%e4%bc%9a%e5%88%b7%e6%96%b0%e4%bf%a1%e6%81%af%ef%bc%8c%e6%90%9c%e7%b4%a2%e4%b8%80%e7%95%aa%e5%8f%91%e7%8e%b0%e6%9c%89%e7%bd%91%e5%8f%8b%e8%af%b4%e8%a6%81%e6%8a%8a%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e4%b8%ad%e7%9a%84nginx.">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&t=%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f8%2fnginx-record%2f&t=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e4%b8%80%e6%ac%a1%e9%85%8d%e7%bd%aeNginx%e7%9a%84%e8%b8%a9%e5%9d%91%e5%a1%ab%e5%9d%91%e8%ae%b0%e5%bd%95">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

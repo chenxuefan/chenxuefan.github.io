@@ -135,6 +135,8 @@ if (!doNotTrack) {
   }
 </style>
 
+<br>
+<div id="chart"></div>
 <div id="NCP">
 <div v-for="item in allData">
 
@@ -166,6 +168,7 @@ if (!doNotTrack) {
 
 
 
+<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
@@ -198,9 +201,10 @@ if (!doNotTrack) {
       data: {
 		  lastUpdateTime:'',
 		  allData:[
+			GlobalData,
 			ChinaData,
 			AbroadData,
-			GlobalData
+			
 		  ]
       },  
       methods:{
@@ -254,7 +258,17 @@ if (!doNotTrack) {
 	  }	
     });
 
-   
+
+	var dom = "";
+	$.get("https://download.billie52707.cn/NCP/global.html",function(data){
+		dom = data.split('<body>')[1];
+		dom = dom.split('</body>')[0];
+		
+		console.log(dom);
+		
+		$("#chart").html(dom);
+		
+	})
 
 
     
