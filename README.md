@@ -1,4 +1,5 @@
 ## 人人都爱小雀斑's blog - [billie52707.cn](https://billie52707.cn)
+## 建站全指南 - [https://billie52707.cn/posts/2020/8/hugo-my-first-web/](https://billie52707.cn/posts/2020/8/hugo-my-first-web/)
 ## 更新日志
 + 2020-11-07 🏃
   + 加入一个全新的模块：NCP
