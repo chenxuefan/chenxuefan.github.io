@@ -24,7 +24,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="NCP疫情最新动态" />
-<meta property="og:description" content="*{ background-color: #E2E0DE!important; } h2{ margin: 50px; } .container{ margin: 2px; height: 100px; text-align: center; } 确诊 正在获取... 死亡 治愈 LastUpdateTime - var ChinaData={ msg: &#34;新冠疫情动态 - 国内&#34;, confirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, }; var AbroadData={ msg:&#39;新冠疫情动态 - 海外&#39;, confirm:&#39;&#39;, dead:&#39;&#39;," />
+<meta property="og:description" content="@media screen and (max-width: 500px) { #chart{ display: none!important; } } *{ background-color: #E2E0DE!important; } h2{ margin: 50px; } .container{ margin: 2px; height: 100px; text-align: center; } #4d493bfbcc7142e088b07fb73056b5a9{ width: 100%; height: auto; } 确诊 正在获取... 死亡 治愈 LastUpdateTime - var ChinaData={ msg: &#34;新冠疫情动态 - 国内&#34;, confirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, }; var AbroadData={ m" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/ncp/" />
 <meta property="article:published_time" content="2020-11-08T15:15:02+08:00" />
@@ -32,7 +32,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="NCP疫情最新动态"/>
-<meta name="twitter:description" content="*{ background-color: #E2E0DE!important; } h2{ margin: 50px; } .container{ margin: 2px; height: 100px; text-align: center; } 确诊 正在获取... 死亡 治愈 LastUpdateTime - var ChinaData={ msg: &#34;新冠疫情动态 - 国内&#34;, confirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, }; var AbroadData={ msg:&#39;新冠疫情动态 - 海外&#39;, confirm:&#39;&#39;, dead:&#39;&#39;,"/>
+<meta name="twitter:description" content="@media screen and (max-width: 500px) { #chart{ display: none!important; } } *{ background-color: #E2E0DE!important; } h2{ margin: 50px; } .container{ margin: 2px; height: 100px; text-align: center; } #4d493bfbcc7142e088b07fb73056b5a9{ width: 100%; height: auto; } 确诊 正在获取... 死亡 治愈 LastUpdateTime - var ChinaData={ msg: &#34;新冠疫情动态 - 国内&#34;, confirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, }; var AbroadData={ m"/>
 
   
   
@@ -120,6 +120,11 @@ if (!doNotTrack) {
   
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.css" rel="stylesheet">
 <style>
+@media screen and (max-width: 500px) {
+    #chart{
+		display: none!important;
+	}
+}
   *{
     background-color: #E2E0DE!important;
   }
@@ -133,10 +138,17 @@ if (!doNotTrack) {
      
     text-align: center;
   }
+  #4d493bfbcc7142e088b07fb73056b5a9{
+	  width: 100%;
+	  height: auto;
+	  
+  }
 </style>
 
 <br>
-<div id="chart"></div>
+<div id="chart" >
+	
+</div>
 <div id="NCP">
 <div v-for="item in allData">
 
@@ -267,7 +279,6 @@ if (!doNotTrack) {
 		console.log(dom);
 		
 		$("#chart").html(dom);
-		
 	})
 
 

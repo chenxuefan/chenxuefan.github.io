@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> nginx学习笔记 | 解决跨域问题 | 人人都爱小雀斑&#39;s blog </title>
+  <title> 使用@media（媒体查询）展示及隐藏div | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -24,16 +24,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="nginx学习笔记 | 解决跨域问题" />
-<meta property="og:description" content="什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以认为" />
+  <meta property="og:title" content="使用@media（媒体查询）展示及隐藏div" />
+<meta property="og:description" content="目标 当分辨率低了就隐藏，达到某个分辨率后就显示 关键代码 @media (max-height: 600px) { #chart{display: none!important;} } @media (max-width: 300px) { #chart{display: none!important;} } 当max-height，即设备屏幕宽度，小于500px时，" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/11/nginx-cross-domain/" />
-<meta property="article:published_time" content="2020-11-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-11-17T00:00:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/11/web-media/" />
+<meta property="article:published_time" content="2020-11-19T02:30:10+00:00" />
+<meta property="article:modified_time" content="2020-11-19T02:30:10+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="nginx学习笔记 | 解决跨域问题"/>
-<meta name="twitter:description" content="什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以认为"/>
+<meta name="twitter:title" content="使用@media（媒体查询）展示及隐藏div"/>
+<meta name="twitter:description" content="目标 当分辨率低了就隐藏，达到某个分辨率后就显示 关键代码 @media (max-height: 600px) { #chart{display: none!important;} } @media (max-width: 300px) { #chart{display: none!important;} } 当max-height，即设备屏幕宽度，小于500px时，"/>
 
   
   
@@ -105,17 +105,11 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2020/11/1-x-examination/">
+          <a class="icon" href=" https://billie52707.cn/posts/2020/11/nginx-cross-domain/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
-        
-        <li>
-          <a class="icon" href="https://billie52707.cn/posts/2020/11/web-media/">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -143,57 +137,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&text=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&text=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&is_video=false&description=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&is_video=false&description=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f">
+    <a class="icon" href="mailto:?subject=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&name=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98&description=%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%a8%e5%9f%9f%3f%20%e5%bd%93%e4%b8%a4%e4%b8%aa%e5%9f%9f%e5%85%b7%e6%9c%89%e7%9b%b8%e5%90%8c%e7%9a%84%e5%8d%8f%e8%ae%ae%28%e5%a6%82http%29%2c%20%e7%9b%b8%e5%90%8c%e7%9a%84%e7%ab%af%e5%8f%a3%28%e5%a6%8280%29%ef%bc%8c%e7%9b%b8%e5%90%8c%e7%9a%84host%ef%bc%88%e5%a6%82www.google.com%29%ef%bc%8c%e9%82%a3%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e5%8f%af%e4%bb%a5%e8%ae%a4%e4%b8%ba">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&name=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv&description=%e7%9b%ae%e6%a0%87%20%e5%bd%93%e5%88%86%e8%be%a8%e7%8e%87%e4%bd%8e%e4%ba%86%e5%b0%b1%e9%9a%90%e8%97%8f%ef%bc%8c%e8%be%be%e5%88%b0%e6%9f%90%e4%b8%aa%e5%88%86%e8%be%a8%e7%8e%87%e5%90%8e%e5%b0%b1%e6%98%be%e7%a4%ba%20%e5%85%b3%e9%94%ae%e4%bb%a3%e7%a0%81%20%40media%20%28max-height%3a%20600px%29%20%7b%20%23chart%7bdisplay%3a%20none%21important%3b%7d%20%7d%20%40media%20%28max-width%3a%20300px%29%20%7b%20%23chart%7bdisplay%3a%20none%21important%3b%7d%20%7d%20%e5%bd%93max-height%ef%bc%8c%e5%8d%b3%e8%ae%be%e5%a4%87%e5%b1%8f%e5%b9%95%e5%ae%bd%e5%ba%a6%ef%bc%8c%e5%b0%8f%e4%ba%8e500px%e6%97%b6%ef%bc%8c">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&t=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&t=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -203,8 +197,9 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#什么是跨域">什么是跨域?</a></li>
-    <li><a href="#解决方式">解决方式</a></li>
+    <li><a href="#目标">目标</a></li>
+    <li><a href="#关键代码">关键代码</a></li>
+    <li><a href="#更多关于媒体查询的用法">更多关于媒体查询的用法</a></li>
   </ul>
 </nav>
     </div>
@@ -216,7 +211,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        nginx学习笔记 | 解决跨域问题
+        使用@media（媒体查询）展示及隐藏div
       </h1>
       <div class="meta">
         
@@ -226,7 +221,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2020-11-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-17</time>
+          <time datetime="2020-11-19 02:30:10 &#43;0000 UTC" itemprop="datePublished">2020-11-19</time>
           
           
         </div>
@@ -250,10 +245,7 @@ if (!doNotTrack) {
             <i class="fas fa-tag"></i>
             
              
-            <a class="tag-link" href="/tags/linux" rel="tag">Linux</a>
-            
-             
-            <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
             
         </div> 
         
@@ -264,23 +256,22 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="什么是跨域">什么是跨域?</h2>
-<p>当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如<a href="http://www.google.com/">www.google.com</a>)，那么我们就可以认为它们是相同的域（协议，域名，端口都必须相同）。</p>
-<p>跨域就指协议、域名、端口不一致，出于安全考虑，跨域的资源之间是无法交互的。</p>
-<p>因此向服务器发送请求会返回<code>No 'Access-Control-Allow-Origin' header is present on the requested resource</code>的错误。</p>
-<p>如下图，我想使用jQuery中的get方法访问自己服务器上的文件</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117222936787.png" alt="image-20201117222936787"></p>
-<p>结果返回如下bug</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117222802863.png" alt="image-20201117222802863"></p>
-<h2 id="解决方式">解决方式</h2>
-<p>nginx配置文件<code>nginx.conf</code>中加上这几句</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#e6db74">&#34;</span>$http_origin&#34; <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Credentials&#39;</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span> <span style="color:#e6db74">&#39;GET,</span> <span style="color:#e6db74">OPTIONS&#39;</span> <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span> <span style="color:#e6db74">&#39;Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-</span>  <span style="color:#e6db74">Since,Keep-Alive,Origin,User-Agent,X-Requested-With&#39;</span> <span style="color:#e6db74">always</span>;
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117220901079.png" alt="image-20201117220901079"></p>
-<p>以上，重新启动nginx，再向服务器发送请求，即可成功获取响应数据</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117223517556.png" alt="image-20201117223517556"></p>
+      <h2 id="目标">目标</h2>
+<p>当分辨率低了就隐藏，达到某个分辨率后就显示</p>
+<h2 id="关键代码">关键代码</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-height</span><span style="color:#f92672">:</span> <span style="color:#f92672">600px</span><span style="color:#f92672">)</span> {
+  #chart{<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span><span style="color:#75715e">!important</span>;}
+}
+ 
+@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">300px</span><span style="color:#f92672">)</span> {
+  #chart{<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span><span style="color:#75715e">!important</span>;}
+}
+</code></pre></div><p>当max-height，即设备屏幕宽度，小于500px时，id为chart的标签的display值为none，即隐藏该标签，即可达到在手机端隐藏该标签的效果。</p>
+<h2 id="更多关于媒体查询的用法">更多关于媒体查询的用法</h2>
+<ul>
+<li><a href="https://www.runoob.com/cssref/css3-pr-mediaquery.html">https://www.runoob.com/cssref/css3-pr-mediaquery.html</a></li>
+<li></li>
+</ul>
 
     </div>
 
@@ -314,18 +305,15 @@ if (!doNotTrack) {
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
             
-            <a class="tag-link" href="/tags/linux" rel="tag">Linux</a>
-            
-            
-            <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          285 字
+          132 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2020-11-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-17</time>
+          <time datetime="2020-11-19 02:30:10 &#43;0000 UTC" itemprop="datePublished">2020-11-19</time>
           
 
   </p>
@@ -333,7 +321,7 @@ if (!doNotTrack) {
 
   
 
-<span id="/posts/2020/11/nginx-cross-domain/" class="leancloud_visitors" data-flag-title="nginx学习笔记 | 解决跨域问题">
+<span id="/posts/2020/11/web-media/" class="leancloud_visitors" data-flag-title="使用@media（媒体查询）展示及隐藏div">
 
   
 
@@ -376,8 +364,9 @@ if (!doNotTrack) {
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#什么是跨域">什么是跨域?</a></li>
-    <li><a href="#解决方式">解决方式</a></li>
+    <li><a href="#目标">目标</a></li>
+    <li><a href="#关键代码">关键代码</a></li>
+    <li><a href="#更多关于媒体查询的用法">更多关于媒体查询的用法</a></li>
   </ul>
 </nav>
     </div>
@@ -391,57 +380,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&text=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&text=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&is_video=false&description=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&is_video=false&description=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f">
+    <a class="icon" href="mailto:?subject=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&title=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&name=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98&description=%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%a8%e5%9f%9f%3f%20%e5%bd%93%e4%b8%a4%e4%b8%aa%e5%9f%9f%e5%85%b7%e6%9c%89%e7%9b%b8%e5%90%8c%e7%9a%84%e5%8d%8f%e8%ae%ae%28%e5%a6%82http%29%2c%20%e7%9b%b8%e5%90%8c%e7%9a%84%e7%ab%af%e5%8f%a3%28%e5%a6%8280%29%ef%bc%8c%e7%9b%b8%e5%90%8c%e7%9a%84host%ef%bc%88%e5%a6%82www.google.com%29%ef%bc%8c%e9%82%a3%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e5%8f%af%e4%bb%a5%e8%ae%a4%e4%b8%ba">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&name=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv&description=%e7%9b%ae%e6%a0%87%20%e5%bd%93%e5%88%86%e8%be%a8%e7%8e%87%e4%bd%8e%e4%ba%86%e5%b0%b1%e9%9a%90%e8%97%8f%ef%bc%8c%e8%be%be%e5%88%b0%e6%9f%90%e4%b8%aa%e5%88%86%e8%be%a8%e7%8e%87%e5%90%8e%e5%b0%b1%e6%98%be%e7%a4%ba%20%e5%85%b3%e9%94%ae%e4%bb%a3%e7%a0%81%20%40media%20%28max-height%3a%20600px%29%20%7b%20%23chart%7bdisplay%3a%20none%21important%3b%7d%20%7d%20%40media%20%28max-width%3a%20300px%29%20%7b%20%23chart%7bdisplay%3a%20none%21important%3b%7d%20%7d%20%e5%bd%93max-height%ef%bc%8c%e5%8d%b3%e8%ae%be%e5%a4%87%e5%b1%8f%e5%b9%95%e5%ae%bd%e5%ba%a6%ef%bc%8c%e5%b0%8f%e4%ba%8e500px%e6%97%b6%ef%bc%8c">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&t=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fweb-media%2f&t=%e4%bd%bf%e7%94%a8%40media%ef%bc%88%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%ef%bc%89%e5%b1%95%e7%a4%ba%e5%8f%8a%e9%9a%90%e8%97%8fdiv">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
