@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Nov 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用@media（媒体查询）展示及隐藏div</title>
+      <link>https://billie52707.cn/posts/2020/11/web-media/</link>
+      <pubDate>Thu, 19 Nov 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/web-media/</guid>
+      <description>目标 当分辨率低了就隐藏，达到某个分辨率后就显示 关键代码 @media (max-height: 600px) { #chart{display: none!important;} } @media (max-width: 300px) { #chart{display: none!important;} } 当max-height，即设备屏幕宽度，小于500px时，</description>
+    </item>
+    
     <item>
       <title>1&#43;X | css</title>
       <link>https://billie52707.cn/posts/2020/11/1-x-css/</link>
