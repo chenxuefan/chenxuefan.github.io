@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Tue, 17 Mar 2020 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>c语言学习笔记</title>
+      <link>https://billie52707.cn/note/c/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/c/</guid>
+      <description>前言 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以</description>
+    </item>
+    
     <item>
       <title>ubuntu</title>
       <link>https://billie52707.cn/note/ubuntu/</link>
@@ -15,6 +24,15 @@
       
       <guid>https://billie52707.cn/note/ubuntu/</guid>
       <description>必要工具/常用软件的安装 vim/net-tools apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/note/pyqt-style-transform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/pyqt-style-transform/</guid>
+      <description>风格迁移 - GUI设计文档 布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHBo</description>
     </item>
     
     <item>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Thu, 19 Nov 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>c语言学习笔记</title>
+      <link>https://billie52707.cn/note/c/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/c/</guid>
+      <description>前言 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以</description>
+    </item>
+    
     <item>
       <title>使用媒体查询展示及隐藏标签</title>
       <link>https://billie52707.cn/posts/2020/11/web-media/</link>
@@ -141,6 +150,15 @@
       
       <guid>https://billie52707.cn/posts/2020/10/php-study-note/</guid>
       <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
+    </item>
+    
+    <item>
+      <title>九月摄影集</title>
+      <link>https://billie52707.cn/posts/2020/9/september-shoot/</link>
+      <pubDate>Wed, 30 Sep 2020 01:54:00 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/9/september-shoot/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -690,6 +708,15 @@
       
       <guid>https://billie52707.cn/posts/2020/3/python-psutil/</guid>
       <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/note/pyqt-style-transform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/pyqt-style-transform/</guid>
+      <description>风格迁移 - GUI设计文档 布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHBo</description>
     </item>
     
     <item>

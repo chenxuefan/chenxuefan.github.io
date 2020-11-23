@@ -4,7 +4,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 1&#43;X | 人人都爱小雀斑&#39;s blog </title>
+  <title> c语言学习笔记 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -23,15 +23,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="1&#43;X" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://billie52707.cn/tags/1&#43;x/" />
-<meta property="og:updated_time" content="2020-11-12T00:00:00+00:00" />
+  <meta property="og:title" content="c语言学习笔记" />
+<meta property="og:description" content="前言 语法篇 程序框架 #include &lt;stdio.h&gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/note/c/" />
+<meta property="article:published_time" content="2020-11-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-23T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="1&#43;X"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="c语言学习笔记"/>
+<meta name="twitter:description" content="前言 语法篇 程序框架 #include &lt;stdio.h&gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以"/>
 
   
   
@@ -50,8 +51,6 @@ if (!doNotTrack) {
 <link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
 
   
-  
-  <link href="https://billie52707.cn/tags/1+x/index.xml" rel="alternate" type="application/rss+xml" title="人人都爱小雀斑's blog" />
   
   
   
@@ -97,10 +96,10 @@ if (!doNotTrack) {
       <li><a href="/posts">Article</a></li>
 
        
-      <li><a href="/about">About</a></li>
+      <li><a href="/ncp">NCP</a></li>
 
        
-      <li><a href="/ncp">NCP</a></li>
+      <li><a href="/about">About</a></li>
 
        
       <li><a href="https://github.com/chenxuefan">Github</a></li>
@@ -108,6 +107,18 @@ if (!doNotTrack) {
       
     </ul>
   </div>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ebc745cc17a0c227917fd2ad04abe4f1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </header>
 
     
@@ -115,61 +126,65 @@ if (!doNotTrack) {
   
 
     
-<div id="archive">
-  <ul class="post-list">
-  
-    
-    
-    
-    <h2>2020</h2>
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="2020-11-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-12</time>
-      </div>
-      <span>    
-        <a class="" href="https://billie52707.cn/posts/2020/11/1-x-boostrap/"> 1&#43;X|BootStrap </a>
-      </span>
-    </li>
-    
-    
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="2020-11-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-11</time>
-      </div>
-      <span>    
-        <a class="" href="https://billie52707.cn/posts/2020/11/1-x-jquery/"> 1&#43;X|jQuery </a>
-      </span>
-    </li>
-    
-    
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="2020-11-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-10</time>
-      </div>
-      <span>    
-        <a class="" href="https://billie52707.cn/posts/2020/11/1-x-js/"> 1&#43;X|JavaScript </a>
-      </span>
-    </li>
-    
-    
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="2020-11-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-09</time>
-      </div>
-      <span>    
-        <a class="" href="https://billie52707.cn/posts/2020/11/1-x-css/"> 1&#43;X|css </a>
-      </span>
-    </li>
-    
-  </ul>
-  
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  <div class="content" itemprop="articleBody">
+  
+    <h2 id="前言">前言</h2>
+<h2 id="语法篇">语法篇</h2>
+<h3 id="程序框架">程序框架</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="常量与变量">常量与变量</h3>
+<ol>
+<li>
+<p>常量</p>
+<ul>
+<li>
+<p>整型常量 - 如1，123，0，-7</p>
+</li>
+<li>
+<p>实型变量</p>
+<ol>
+<li>十进制小数形式 - 由数字和小数点组成，如1.2</li>
+<li>指数形式 - 以字母e或E为底，如12.345e2（代表12.345乘10的二次方），12.345e-2（代表12.345乘10的负二次方）</li>
+</ol>
+</li>
+<li>
+<p>字符变量</p>
+<ol>
+<li>普通字符</li>
+<li>转义字符</li>
+</ol>
+</li>
+<li>
+<p>字符串常量 - 用<strong>双引号</strong>括起来的若干字符，「单引号只能包含一个字符，双引号可以包含一个字符串」</p>
+</li>
+<li>
+<p>符号常量 - 用<code>#define</code>指令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#define PI 3.1416
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>变量</p>
+<ul>
+<li>先定义，后使用</li>
+</ul>
+</li>
+<li>
+<p>常变量 - 关键字<code>const</code></p>
+</li>
+<li>
+<p>标识符</p>
+</li>
+</ol>
 
-</div>
+  
+  </div>
+</article>
 
 
     <footer id="footer">

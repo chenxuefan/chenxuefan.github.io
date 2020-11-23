@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/tags/c/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2020-11-19T02:30:10+00:00</lastmod>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/c/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2020-11-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,21 +44,6 @@
   
   <url>
     <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2020-11-19T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2020-11-19T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
-    <lastmod>2020-11-19T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/</loc>
     <lastmod>2020-11-19T02:30:10+00:00</lastmod>
   </url>
   
@@ -163,6 +178,11 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/tags/%E6%91%84%E5%BD%B1%E9%9B%86/</loc>
+    <lastmod>2020-11-01T17:32:35+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/posts/2020/10/php-study-note/</loc>
     <lastmod>2020-10-17T20:54:00+00:00</lastmod>
   </url>
@@ -170,6 +190,11 @@
   <url>
     <loc>https://billie52707.cn/tags/php/</loc>
     <lastmod>2020-10-17T20:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2020/9/september-shoot/</loc>
+    <lastmod>2020-09-30T01:54:00+08:00</lastmod>
   </url>
   
   <url>
@@ -483,11 +508,6 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/</loc>
-    <lastmod>2020-03-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billie52707.cn/posts/2020/3/python-progressbar/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
@@ -515,6 +535,10 @@
   <url>
     <loc>https://billie52707.cn/posts/2020/3/python-psutil/</loc>
     <lastmod>2020-03-15T10:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/pyqt-style-transform/</loc>
   </url>
   
   <url>

@@ -282,11 +282,12 @@ if (!doNotTrack) {
 </code></pre><p>而我需要的每日一图的URL链接则是存储在<code>fenxiang_img</code>这个对象里面的，因此很简单就可以获取到每日一图，编写代码：</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816184656737.png" alt="image-20200816184656737"></p>
 <p>在这里我把图片保存了两次，一个是以<code>日期</code>命名，用于保留记录，一个命名为<code>main.png</code>，用于后续链接访问；接着的代码，我用了python的schedule模块，设定为<strong>每日零点</strong>执行任务。</p>
-<p>写好代码之后，放在<strong>服务器</strong>里面运行，并且使用<code>nohup</code>设置运行不受窗口关闭影响，将运行日志输出到<code>nohup.out</code></p>
-<pre><code>nohup python3 main.py &amp;
-</code></pre><p>运行之后，查看python相关进程：</p>
-<pre><code>ps -ef|grep python
-</code></pre><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816185547872.png" alt="image-20200816185547872"></p>
+<p>写好代码之后，放在<strong>服务器</strong>里面运行，并且使用<code>nohup</code>设置运行不受窗口关闭影响，将运行日志输出到<code>nohup.out</code>, &lsquo;&amp;&rsquo; 号表示在后台运行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nohup python3 main.py &amp;
+exit
+</code></pre></div><p>运行之后，查看python相关进程：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ps -ef|grep python
+</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816185547872.png" alt="image-20200816185547872"></p>
 <p>图片搞定之后，就可以用nginx部署web服务了</p>
 <h2 id="nginx部署">Nginx部署</h2>
 <p>在上一步骤中，我的图片保存的路径是：<code>/home/chenxuefan/html/pic/main.png</code></p>
@@ -348,7 +349,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          810 字
+          822 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
