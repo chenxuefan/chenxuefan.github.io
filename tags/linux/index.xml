@@ -28,19 +28,19 @@
     
     <item>
       <title>Docker学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/8/docker-study-note/</link>
+      <link>https://billie52707.cn/posts/2020/6/8/docker-study-note/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/docker-study-note/</guid>
+      <guid>https://billie52707.cn/posts/2020/6/8/docker-study-note/</guid>
       <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
     </item>
     
     <item>
       <title>nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</title>
-      <link>https://billie52707.cn/posts/2020/8/nginx-record/</link>
+      <link>https://billie52707.cn/posts/2020/6/8/nginx-record/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/nginx-record/</guid>
+      <guid>https://billie52707.cn/posts/2020/6/8/nginx-record/</guid>
       <description>前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx.</description>
     </item>
     

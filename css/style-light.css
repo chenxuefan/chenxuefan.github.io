@@ -1589,7 +1589,19 @@ code {
 .highlight .line {
   height: 22px;
 }
+/*嵌入 BiliBili 视频*/
+#bilibili {
+  width: 100%;
+  height: 550px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  #bilibili {
+    width: 100%;
+    height: 250px;
+  }
+}
 
+/*词云*/
 .tagcloud-wrap{
     overflow: hidden;
 }
