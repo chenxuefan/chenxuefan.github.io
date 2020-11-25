@@ -134,6 +134,12 @@ var _hmt = _hmt || [];
 <p>再说下QT。Qt库是世界上最强大的GUI库之一，跨平台，开发语言为C++。官方网站：https://www.qt.io</p>
 <p>再说下GUI。GUI就是图像用户界面。Python的GUI库很多，除了PyQt，还有Tkinter，wxPython，PyGTK等等。不过，其中PyQt是最好用，最专业的。</p>
 <p>所以一句话，学Python的GUI，用PyQt5就对了。</p>
+<h2 id="安装">安装</h2>
+<p>采用传统的pip在线安装「比较慢」且「容易超时报错」，因此建议先下载whl文件，再使用命令本地安装</p>
+<ol>
+<li>下载离线安装包 - <a href="https://pypi.org/project/PyQt5/">https://pypi.org/project/PyQt5/</a></li>
+<li>本地安装 - <code>pip install PyQt5-5.15.1-5.15.1-cp35.cp36.cp37.cp38.cp39-abi3-macosx_10_13_intel.whl</code></li>
+</ol>
 <h2 id="基本布局管理">基本布局管理</h2>
 <blockquote>
 <p>GUI的布局管理是GUI开发中非常重要的一个环节，一个设计良好的GUI界面，其对应的布局排布也是非常必须的。其中布局管理就是要管理窗口中部件的放置。常用两种方式来实现布局：绝对位置 布局（Absolute Layout）实现，布局类（QLayout）实现。</p>
@@ -141,10 +147,21 @@ var _hmt = _hmt || [];
 <p>绝对位置 布局（Absolute Layout）主要是在程序中通过指定每一个组件显示的坐标和大小。由于影响绝对布局显示的因素很多（平台的差异，窗口大小的差异，显示字体大小等因素），所以在本文中主要以QLayout的基本布局进行说明.</p>
 <p>常用到的布局类：</p>
 <ul>
-<li>QHBoxLayout - 水平（horizontal）排列布局，把添加的控件以水平的顺序依次排开</li>
-<li>QVBoxLayout - 垂直（vertical）排列布局，把添加的控件以垂直的顺序依次排开</li>
-<li>QGridLayout - 表格排列布局，以网格的形式，把添加的控件以一定矩阵排列</li>
-<li>QFormLayout - 窗体排列布局，以两列的形式排列所添加的控件</li>
+<li>
+<p>QHBoxLayout - 水平（horizontal）排列布局，把添加的控件以水平的顺序依次排开</p>
+</li>
+<li>
+<p>QVBoxLayout - 垂直（vertical）排列布局，把添加的控件以垂直的顺序依次排开</p>
+</li>
+<li>
+<p>QFormLayout - 窗体排列布局，以两列的形式排列所添加的控件</p>
+</li>
+<li>
+<p>QGridLayout - 表格排列布局，以网格的形式，把添加的控件以一定矩阵排列</p>
+<ul>
+<li>QGridLayout(a,b,c,d)</li>
+</ul>
+</li>
 </ul>
 
   
