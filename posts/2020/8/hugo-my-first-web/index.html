@@ -257,6 +257,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#全新板块ncp新冠疫情实时数据">全新板块：NCP(新冠疫情实时数据)</a></li>
     <li><a href="#文章页添加标签词云">文章页添加标签词云</a></li>
+    <li><a href="#插入b站视频">插入B站视频</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
@@ -933,14 +934,11 @@ jobs:
     {{ end }}
     {{ end }}
 &lt;/<span style="color:#f92672">div</span>&gt;
-   
-</code></pre></div></li>
-<li>
-<p>在<code>themes\cactus\static\css\style-light.css</code>目录下，为词云添加css样式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">tagcloud-wrap</span>{
+&lt;<span style="color:#f92672">style</span>&gt;
+ .<span style="color:#a6e22e">tagcloud-wrap</span>{
     <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
 }
-.<span style="color:#a6e22e">tagcloud-wrap</span> <span style="color:#f92672">a</span><span style="color:#f92672">,</span>.<span style="color:#a6e22e">tagcloud-wrap</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
+ .<span style="color:#a6e22e">tagcloud-wrap</span> <span style="color:#f92672">a</span><span style="color:#f92672">,</span>.<span style="color:#a6e22e">tagcloud-wrap</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
     <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">none</span>;
     <span style="color:#66d9ef">-webkit-</span>text-size-adjust:<span style="color:#66d9ef">none</span>; 
     <span style="color:#66d9ef">white-space</span>:<span style="color:#66d9ef">nowrap</span>;
@@ -949,6 +947,7 @@ jobs:
     <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>;
     <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">left</span>;  
 }
+&lt;/<span style="color:#f92672">style</span>&gt;
 </code></pre></div></li>
 <li>
 <p>在<code>themes\cactus\layouts\_default\list.html</code>文件中添加词云模块</p>
@@ -959,8 +958,63 @@ jobs:
 <p>完事！上线🌹</p>
 </li>
 </ol>
+<h2 id="插入b站视频">插入B站视频</h2>
+<p>众所周知，B 站允许使用 <code>&lt;iframe&gt;</code> 标签将视频嵌入到别的网站上， Hugo 允许自定义 Shortcodes，我们可以利用 Shortcodes 将插入 B 站视频标准化，在保证安全的同时方便用户使用。</p>
+<ol>
+<li>
+<p>在<code>themes\cactus\layouts\partials</code>目录下新建文件<code>bilibili.html</code>，编辑如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+ <span style="color:#75715e">/*// 嵌入 BiliBili 视频*/</span>
+ #bilibili {
+   <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+   <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">550</span><span style="color:#66d9ef">px</span>;
+ }
+ @<span style="color:#66d9ef">media</span> <span style="color:#f92672">only</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-device-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">320px</span><span style="color:#f92672">)</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-device-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">480px</span><span style="color:#f92672">)</span> {
+   #bilibili {
+     <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+     <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">250</span><span style="color:#66d9ef">px</span>;
+   }
+ }
+&lt;/<span style="color:#f92672">style</span>&gt;
+   
+{{ $videoID := index .Params 0 }}
+{{ $pageNum := index .Params 1 | default 1}}
+   
+{{ if (findRE &#34;^[bB][vV][0-9a-zA-Z]+$&#34; $videoID) }}
+&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bilibili&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//player.bilibili.com/player.html?bvid={{ $videoID }}&amp;page={{ $pageNum }}&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span> &gt; &lt;/<span style="color:#f92672">iframe</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+{{ else }}
+&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bilibili&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//player.bilibili.com/player.html?aid={{ $videoID }}&amp;page={{ $pageNum }}&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span> &gt; &lt;/<span style="color:#f92672">iframe</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+{{ end }}
+   
+</code></pre></div></li>
+<li>
+<p>用法</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201123193959533.png" alt="image-20201123193959533"></p>
+<style>
+	 
+	#bilibili {
+	  width: 100%;
+	  height: 550px;
+	}
+	@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	  #bilibili {
+	    width: 100%;
+	    height: 250px;
+	  }
+	}
+</style>
+
+
+
+
+
+<div><iframe id="bilibili" src="//player.bilibili.com/player.html?aid=2271112&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy" > </iframe></div>
+
+
+</li>
+</ol>
 <h2 id="后记">后记</h2>
-<p>updated by 2020-11-21 19:00</p>
+<p>updated by 2020-11-23 19:00</p>
 
     </div>
 
@@ -1010,7 +1064,7 @@ jobs:
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          8476 字
+          8681 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1119,6 +1173,7 @@ jobs:
     </li>
     <li><a href="#全新板块ncp新冠疫情实时数据">全新板块：NCP(新冠疫情实时数据)</a></li>
     <li><a href="#文章页添加标签词云">文章页添加标签词云</a></li>
+    <li><a href="#插入b站视频">插入B站视频</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
