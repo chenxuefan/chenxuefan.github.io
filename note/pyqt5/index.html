@@ -163,6 +163,23 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 </ul>
+<h3 id="文件操作">文件操作</h3>
+<p>引入模块 <code>from PyQt5.QtWidgets import *</code></p>
+<ul>
+<li>
+<p>文件打开 - <code>getOpenFileName</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">file_name <span style="color:#f92672">=</span> QFileDialog<span style="color:#f92672">.</span>getOpenFileName(self,<span style="color:#e6db74">&#34;open file dialog&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span>,<span style="color:#e6db74">&#34;Txt files(*.txt)&#34;</span>)
+<span style="color:#75715e">#&#34;open file Dialog &#34;为文件对话框的标题，第三个是打开的默认路径，第四个是文件类型过滤器</span>
+</code></pre></div></li>
+<li>
+<p>文件保存 - <code>getSaveFileName</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">file_path <span style="color:#f92672">=</span>  QFileDialog<span style="color:#f92672">.</span>getSaveFileName(self,<span style="color:#e6db74">&#34;save file&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span> ,<span style="color:#e6db74">&#34;xj3dp files (*.xj3dp);;all files(*.*)&#34;</span>) 
+</code></pre></div></li>
+<li>
+<p>选择文件夹 - <code>getExistingDirectory</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dir_path<span style="color:#f92672">=</span>QFileDialog<span style="color:#f92672">.</span>getExistingDirectory(self,<span style="color:#e6db74">&#34;choose directory&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span>)
+</code></pre></div></li>
+</ul>
 
   
   </div>

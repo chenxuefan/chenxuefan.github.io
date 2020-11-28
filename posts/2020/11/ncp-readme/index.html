@@ -218,7 +218,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#3-开发过程-">3. 开发过程 💻</a></li>
-    <li><a href="#4-issue截图">4. issue截图</a></li>
+    <li><a href="#4-issue截图-">4. issue截图 🐰</a></li>
     <li><a href="#5-后记-">5. 后记 📝</a></li>
   </ul>
 </nav>
@@ -278,17 +278,17 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="1-前言-">1. 前言 🇨🇳</h2>
 <h3 id="11-项目阐述">1.1 项目阐述</h3>
-<p>👨🏻‍💻 2020，注定是不平凡的一年，新冠疫情如晴天霹雳将沉浸在2020年春节气氛中的人们骤然推进人人自危的疫情防控中，新冠疫情的肆虐，使得我们每一个人都无法独善其身。</p>
-<p>​	在国内疫情最严重的二月春节期间，我每天都在关注着最新的疫情动态，看着日趋增长的确诊人数，以及**「每日一千两千甚至是三千的新增确诊人数」**，我总是在想，**「到底什么时候才能挺过去啊？这一场艰难的抗疫，到底什么时候才能迎来转机？」**很快，国家政府和全国的医护人员用最实际的行动，给了我们最肯定的答案。</p>
-<p>​	面对这一场突如其来的危机，幸亏有强大的国家和政府，使我们大部分人平稳度过疫情的爆发期，在从一月初疫情爆发到二月底不到两个月的时间里，实施了最有效的措施，<strong>「并在三月将新增确诊的数目减到了两位数」</strong>。与此同时，面对海外疫情泛滥的波涛汹涌之势，面对海外民众的束手无策和听天由命之悲，生活在中国的人都暗暗庆幸自己不在海外。那一刻，真为自己身为国人而自豪。</p>
-<p>​	数据是冷冰冰的，但是，借由数据，我们可以看到背后透露出来的国力雄厚、英雄气概，也只有亲身经历过这一场战役的我们，才深深懂得这一条**「逐渐归于直线的确诊曲线」**，来的有多么不容易。</p>
+<p>👨🏻‍💻 2020，<strong>注定是不平凡的一年</strong>，新冠疫情如晴天霹雳将沉浸在2020年春节气氛中的人们骤然推进人人自危的疫情防控中，新冠疫情的肆虐，使得我们每一个人都无法独善其身。</p>
+<p>​	在国内疫情最严重的二月春节期间，我每天都在关注着最新的疫情动态，看着日趋增长的确诊人数，以及「<strong>每日一千两千甚至是三千的新增确诊人数</strong>」，我总是在想，「<strong>到底什么时候才能挺过去啊？这一场艰难的抗疫，到底什么时候才能迎来转机？</strong>」很快，国家政府和全国的医护人员用最实际的行动，给了我们最肯定的答案。</p>
+<p>​	面对这一场突如其来的危机，幸亏有强大的国家和政府，使我们大部分人平稳度过疫情的爆发期，在从「<strong>一月初疫情爆发到二月底不到两个月</strong>」的时间里，实施了最有效的措施，「<strong>并在三月将新增确诊的数目减到了两位数</strong>」。与此同时，面对海外疫情泛滥的波涛汹涌之势，面对海外民众的束手无策和听天由命之悲，生活在中国的人都暗暗庆幸自己不在海外。那一刻，真为自己身为国人而自豪。</p>
+<p>​	「<strong>数据是冷冰冰的，但是，借由数据，我们可以看到这场战疫背后透露出来的温暖人情、英雄气概</strong>」，也只有亲身经历过这一场战役的我们，才深深懂得这一条「<strong>逐渐归于直线的确诊曲线</strong>」，来的有多么不容易。</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/chart_plt.png" alt="chart_plt"></p>
 <p>本项目围绕疫情的几个关键特征（如确诊、治愈、死亡），绘制折线图，并在GUI图形页面进行交互与显示图表。</p>
 <h3 id="12-使用方式">1.2 使用方式</h3>
 <ol>
 <li>使用命令<code>source ./venv/bin/activate</code>激活项目下的虚拟环境，即可运行</li>
 <li>使用命令<code>pip install -r requirements.txt</code>安装依赖库</li>
-<li>配置<a href="https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=chinaDayList,chinaDayAddList,cityStatis,nowConfirmStatis,provinceCompare">chromedriver</a></li>
+<li>配置chromedriver - <a href="https://www.cnblogs.com/billie52707/p/12552726.html">selenium各浏览器驱动下载地址</a></li>
 <li>运行项目下的<code>main.py</code>文件</li>
 </ol>
 <h3 id="13-技术栈">1.3 技术栈</h3>
@@ -306,10 +306,10 @@ if (!doNotTrack) {
 <p>📈 <strong>制作图表</strong> - echarts、matplotlib，提供两种不同风格的图表，并生成网页图表（echarts）。</p>
 <p>📃 <strong>图形页面</strong> - PyQt5，极简风格，没有修饰。</p>
 <h3 id="23-api需求分析来源腾讯">2.3 API需求分析（来源：腾讯）</h3>
-<p>​	<strong>数据来源</strong>这一块其实花了蛮多功夫去寻找，一开始看到**「腾讯」**做的还不错，问题是国内和国外的数据是不同的API，没办法一条API通吃，后来又看到**「丁香园」**的也很多开发者在用，再后来觉得还是正规的官方网站的数据比较靠谱，于是又去爬了**「国家卫生健康委员会」**的网站，而后发现与其他网站的数据出现了出入，不知道该信哪个&hellip;</p>
-<p>​	再到后面国外疫情开始放飞自我，便开始萌生爬取国外疫情的想法，心里的想法觉得最官方的是**「世界卫生组织」**，于是也去爬了，可是得到的世卫组织的疫情信息是pdf文件的，就此作罢。这时又发现很多平台的数据来源都来自**「霍普金斯大学」**，去看了一番，，，算了，懒得爬。</p>
-<p>​	另外，在GitHub也发现了**「一个开发者提供的API」**，使用体验一样很顺滑，只是没有国内疫情的历史数据 - <a href="https://lab.isaaclin.cn/nCoV/zh">https://lab.isaaclin.cn/nCoV/zh</a></p>
-<p>​	<strong>综合下来</strong>，我选择了**「<a href="https://news.qq.com/zt2020/page/feiyan.htm#/?nojump=1">腾讯</a>」**提供的API，API的获取方式大同小异，通过开发者工具即可，以腾讯为例：</p>
+<p>​	<strong>数据来源</strong>这一块其实花了蛮多功夫去寻找，一开始看到「<strong>腾讯</strong>」做的还不错，问题是国内和国外的数据是不同的API，没办法一条API通吃，后来又看到「<strong>丁香园</strong>」的也很多开发者在用，再后来觉得还是正规的官方网站的数据比较靠谱，于是又去爬了「<strong>国家卫生健康委员会</strong>」的网站，而后发现与其他网站的数据出现了出入，不知道该信哪个&hellip;</p>
+<p>​	再到后面国外疫情开始放飞自我，便开始萌生爬取国外疫情的想法，心里的想法觉得最官方的是「<strong>世界卫生组织</strong>」，于是也去爬了，可是得到的世卫组织的疫情信息是pdf文件的，就此作罢。这时又发现很多平台的数据来源都来自「<strong>霍普金斯大学</strong>」，去看了一番，，，算了，懒得爬。</p>
+<p>​	另外，在GitHub也发现了「<strong>一个开发者提供的API</strong>」，使用体验一样很顺滑，只是没有国内疫情的历史数据 - <a href="https://lab.isaaclin.cn/nCoV/zh">https://lab.isaaclin.cn/nCoV/zh</a></p>
+<p>​	<strong>综合下来</strong>，我选择了「<strong><a href="https://news.qq.com/zt2020/page/feiyan.htm#/?nojump=1">腾讯</a></strong>」提供的API，API的获取方式大同小异，通过开发者工具即可，以腾讯为例：</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201125222840931.png" alt="image-20201125222840931">/<em>右键检查或F12进入到开发者界面，刷新一下</em>/</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201125223000447.png" alt="image-20201125223000447">/<em>点击右边窗口的搜索图标，在输入框输入93004（左图中的数据），回车</em>/</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201125223156560.png" alt="image-20201125223156560">/<em>即可得到这样一条请求，点开它，这就是我们想要的</em>/</p>
@@ -331,14 +331,16 @@ if (!doNotTrack) {
 </li>
 </ul>
 <h2 id="3-开发过程-">3. 开发过程 💻</h2>
-<p>其实在很早之前就在做疫情这个项目了，那时候还是二三月份国内形势最严峻的时候，在这个过程中，爬过很多平台的疫情数据，也因此触类旁通到很多爬取方法和思路，有了数据之后开始制作图表，各个模块之间存在比较分散的问题。一直到最近，加入了GUI图形页面，进一步提高了交互效率，也将各个功能模块、各个不同地区的爬取模块，整合到一个系统的解决方案当中，以一个个的py文件分布其职责，加上开发文档的编写，才终于算填了一个大坑，了了一桩心事。算了一下，开发周期长达大半年，中间被很多事情耽搁过，近日才重新拾起，随着此篇文档的编写终于大功告成。后面会考虑加入更多丰富的echarts图表，如果还有这个精力和时间的话。</p>
+<p>​	其实在很早之前就在做疫情这个项目了，那时候还是二三月份国内形势最严峻的时候，在这个过程中，爬过很多平台的疫情数据，也因此触类旁通到很多爬取方法和思路，有了数据之后开始制作图表，各个模块之间存在比较分散的问题。</p>
+<p>​	一直到最近，加入了GUI图形界面，进一步提高了交互效率，也将各个功能模块、各个不同地区的爬取模块，整合到一个系统的解决方案当中，以一个个的py文件分布其职责，加上开发文档的编写，才终于算填了一个大坑，了了一桩心事。</p>
+<p>​	算了一下，整个开发周期长达大半年，功能架构早已完成，中间被很多事情耽搁过，近日才重新拾起，随着此篇文档的编写终于大功告成。后面会考虑加入更多丰富的echarts图表，如果还有这个精力和时间的话。</p>
 <p>🐛 <strong>数据爬取</strong> - 一开始爬的方法很笨拙，从页面的的网页文件中提取数据，也因此写了很多很多代码去详细设计其过程，效率较低，但锻炼了动手能力；而后善用了浏览器的开发者工具，通过分析得到其数据的API，进行数据的爬取。</p>
 <p>🔍 <strong>数据分析</strong> - DataFrame真的是太好用了！！！</p>
 <p>📈 <strong>制作图表</strong> - 老师傅matplotlib是一开始的制作图表不二选，后来觉得差点意思，不够灵动，就接触到了echarts这个神奇的库，可以制作很多效果极度炫酷的图表，后面会加入更多丰富种类的echarts图表。</p>
 <p>📃 <strong>图形页面</strong> - 很久开始五六月份的时候就开始有做GUI的想法了，那时使用过的图形界面相关模块如wxpython和tkinter，都不是特别满意，加上学业繁忙最终没能实现，近日帮同学做项目接触到了pyqt，让我吃一斤的是这个模块的控件竟然支持css样式进行美化，便边学边用做了个，顺便给自己这个项目加上了图形界面，才有了现在这个，不追求太多花哨的样式，但求直观简单明了，一眼就能对功能一目了然，图表的显示也符合自己的预期。</p>
-<h2 id="4-issue截图">4. issue截图</h2>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201127032644420.png" alt="image-20201127032644420">/<em>初始界面</em>/</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201127032727640.png" alt="image-20201127032727640">/<em>查询结果页面</em>/</p>
+<h2 id="4-issue截图-">4. issue截图 🐰</h2>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201127044751593.png" alt="image-20201127044751593">/<em>初始界面</em>/</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201127032727640.png" alt="image-20201127032727640">/<em>查询结果界面</em>/</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201127032537683.png" alt="image-20201127032537683">/<em>项目目录</em>/</p>
 <h2 id="5-后记-">5. 后记 📝</h2>
 <p>在线图表（每日更新）</p>
@@ -385,7 +387,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2396 字
+          2398 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -455,7 +457,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#3-开发过程-">3. 开发过程 💻</a></li>
-    <li><a href="#4-issue截图">4. issue截图</a></li>
+    <li><a href="#4-issue截图-">4. issue截图 🐰</a></li>
     <li><a href="#5-后记-">5. 后记 📝</a></li>
   </ul>
 </nav>
