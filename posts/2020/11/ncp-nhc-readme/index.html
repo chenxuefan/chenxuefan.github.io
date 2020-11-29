@@ -269,7 +269,7 @@ if (!doNotTrack) {
       <h2 id="1-前言-">1. 前言 🇨🇳</h2>
 <h3 id="11-目标网站">1.1 目标网站</h3>
 <p>「<a href="http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml">http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml</a>」</p>
-<p>​	做疫情这个项目的时候，第一个要解决的就是数据来源的问题，想到的最权威的网站就是国家卫生健康委员会的网站了，一开始用requests尝试，失败了，接着用上了selenium模拟网页访问，顺利拿到了数据。</p>
+<p>​	做疫情这个项目的时候，第一个要解决的就是「<strong>数据来源</strong>」的问题，想到的最权威的网站就是国家卫生健康委员会的网站了，一开始用requests尝试，失败了，接着用上了selenium模拟网页访问，顺利拿到了数据。</p>
 <h3 id="12-技术栈">1.2 技术栈</h3>
 <p>python - selenium、pandas、re、echarts、matplotlib</p>
 <h2 id="2-项目流程-">2. 项目流程 🚗</h2>
@@ -277,7 +277,7 @@ if (!doNotTrack) {
 <p>使用谷歌浏览器时挂了，火狐就可以；爬取思路是访问每一天的详情页，接着用元素定位的方法，去获得页面中包含疫情数据的文本。</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201129141538448.png" alt="image-20201129141538448"></p>
 <h3 id="-文本解析---re">🌲 文本解析 - re</h3>
-<p>爬取到的数据是文本形式的，因此我用了效率比较高的正则表达式，去从文本中提取数据</p>
+<p>爬取到的数据是文本形式的，因此我用了效率比较高的正则表达式，去从文本中提取数据，提取四个特征：确诊、治愈、死亡、新增确诊</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201129141228670.png" alt="image-20201129141228670"></p>
 <h3 id="-图表制作---echartsmatplotlib">📈 图表制作 - echarts、matplotlib</h3>
 <p>趋势图的制作分两种风格，尽力做到最好看。</p>
@@ -320,7 +320,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          389 字
+          412 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
