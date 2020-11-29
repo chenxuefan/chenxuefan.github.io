@@ -7,9 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Wed, 25 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 14:34:18 +0800</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>新冠疫情（NCP）的监测与趋势分析</title>
+      <title>NCP | 爬取国家卫健委网站</title>
+      <link>https://billie52707.cn/posts/2020/11/ncp-nhc-readme/</link>
+      <pubDate>Sun, 29 Nov 2020 14:34:18 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/11/ncp-nhc-readme/</guid>
+      <description>1. 前言 🇨🇳 1.1 目标网站 「http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml」 ​ 做疫情这个项目的时候，</description>
+    </item>
+    
+    <item>
+      <title>NCP | 新冠疫情的监测与趋势分析</title>
       <link>https://billie52707.cn/posts/2020/11/ncp-readme/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
