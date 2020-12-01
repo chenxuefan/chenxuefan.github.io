@@ -214,7 +214,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#21-功能需求分析">2.1 功能需求分析</a></li>
         <li><a href="#22-技术需求分析">2.2 技术需求分析</a></li>
-        <li><a href="#23-api需求分析来源腾讯">2.3 API需求分析（来源：腾讯）</a></li>
+        <li><a href="#23-api需求分析">2.3 API需求分析</a></li>
       </ul>
     </li>
     <li><a href="#3-开发过程-">3. 开发过程 💻</a></li>
@@ -305,7 +305,7 @@ if (!doNotTrack) {
 <p>🔍 <strong>数据分析</strong> - numpy、pandas，请求返回的数据为json格式，采用<code>pd.DataFrame()</code>将其处理并保存至csv文件。</p>
 <p>📈 <strong>制作图表</strong> - echarts、matplotlib，提供两种不同风格的图表，并生成网页图表（echarts）。</p>
 <p>📃 <strong>图形页面</strong> - PyQt5，极简风格，没有修饰。</p>
-<h3 id="23-api需求分析来源腾讯">2.3 API需求分析（来源：腾讯）</h3>
+<h3 id="23-api需求分析">2.3 API需求分析</h3>
 <p>​	<strong>数据来源</strong>这一块其实花了蛮多功夫去寻找，一开始看到「<strong>腾讯</strong>」做的还不错，问题是国内和国外的数据是不同的API，没办法一条API通吃，后来又看到「<strong>丁香园</strong>」的也很多开发者在用，再后来觉得还是正规的官方网站的数据比较靠谱，于是又去爬了「<strong>国家卫生健康委员会</strong>」的网站，而后发现与其他网站的数据出现了出入，不知道该信哪个&hellip;</p>
 <p>​	再到后面国外疫情开始放飞自我，便开始萌生爬取国外疫情的想法，心里的想法觉得最官方的是「<strong>世界卫生组织</strong>」，于是也去爬了，可是得到的世卫组织的疫情信息是pdf文件的，就此作罢。这时又发现很多平台的数据来源都来自「<strong>霍普金斯大学</strong>」，去看了一番，，，算了，懒得爬。</p>
 <p>​	另外，在GitHub也发现了「<strong>一个开发者提供的API</strong>」，使用体验一样很顺滑，只是没有国内疫情的历史数据 - <a href="https://lab.isaaclin.cn/nCoV/zh">https://lab.isaaclin.cn/nCoV/zh</a></p>
@@ -319,6 +319,7 @@ if (!doNotTrack) {
 <li>国内数据
 <ul>
 <li>国内全局 - <code>https://api.inews.qq.com/newsqa/v1/query/inner/publish/modules/list?modules=chinaDayList,chinaDayAddList,cityStatis,nowConfirmStatis,provinceCompare</code></li>
+<li>国内实时 - <code>https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5</code></li>
 <li>国内全局 - <code>https://view.inews.qq.com/g2/getOnsInfo?name=disease_other</code></li>
 <li>国内省份及城市 - <code>https://api.inews.qq.com/newsqa/v1/query/pubished/daily/list?province={}&amp;city={}&amp;</code></li>
 </ul>
@@ -387,7 +388,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2398 字
+          2397 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -453,7 +454,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#21-功能需求分析">2.1 功能需求分析</a></li>
         <li><a href="#22-技术需求分析">2.2 技术需求分析</a></li>
-        <li><a href="#23-api需求分析来源腾讯">2.3 API需求分析（来源：腾讯）</a></li>
+        <li><a href="#23-api需求分析">2.3 API需求分析</a></li>
       </ul>
     </li>
     <li><a href="#3-开发过程-">3. 开发过程 💻</a></li>
