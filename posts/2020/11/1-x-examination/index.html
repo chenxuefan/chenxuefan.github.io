@@ -25,7 +25,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="1&#43;X | 考点小结" />
-<meta property="og:description" content="html、css、js 使用媒体查询时，媒体类型取值为screen代表 - 用于所有设备 range输入类型定义滑块控件 border-col php 不是PHP魔术方法 - __autoload() P" />
+<meta property="og:description" content="html、css、js 使用媒体查询时，媒体类型取值为screen代表 - 用于所有设备 range输入类型定义滑块控件 border-spacing - 设置相邻单元格的边框间的" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2020/11/1-x-examination/" />
 <meta property="article:published_time" content="2020-11-14T00:00:00+00:00" />
@@ -33,7 +33,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1&#43;X | 考点小结"/>
-<meta name="twitter:description" content="html、css、js 使用媒体查询时，媒体类型取值为screen代表 - 用于所有设备 range输入类型定义滑块控件 border-col php 不是PHP魔术方法 - __autoload() P"/>
+<meta name="twitter:description" content="html、css、js 使用媒体查询时，媒体类型取值为screen代表 - 用于所有设备 range输入类型定义滑块控件 border-spacing - 设置相邻单元格的边框间的"/>
 
   
   
@@ -188,7 +188,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1-x-examination%2f&name=1%2bX%20%7c%20%e8%80%83%e7%82%b9%e5%b0%8f%e7%bb%93&description=html%e3%80%81css%e3%80%81js%20%e4%bd%bf%e7%94%a8%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%e6%97%b6%ef%bc%8c%e5%aa%92%e4%bd%93%e7%b1%bb%e5%9e%8b%e5%8f%96%e5%80%bc%e4%b8%bascreen%e4%bb%a3%e8%a1%a8%20-%20%e7%94%a8%e4%ba%8e%e6%89%80%e6%9c%89%e8%ae%be%e5%a4%87%20range%e8%be%93%e5%85%a5%e7%b1%bb%e5%9e%8b%e5%ae%9a%e4%b9%89%e6%bb%91%e5%9d%97%e6%8e%a7%e4%bb%b6%20border-col%20php%20%e4%b8%8d%e6%98%afPHP%e9%ad%94%e6%9c%af%e6%96%b9%e6%b3%95%20-%20__autoload%28%29%20P">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1-x-examination%2f&name=1%2bX%20%7c%20%e8%80%83%e7%82%b9%e5%b0%8f%e7%bb%93&description=html%e3%80%81css%e3%80%81js%20%e4%bd%bf%e7%94%a8%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%e6%97%b6%ef%bc%8c%e5%aa%92%e4%bd%93%e7%b1%bb%e5%9e%8b%e5%8f%96%e5%80%bc%e4%b8%bascreen%e4%bb%a3%e8%a1%a8%20-%20%e7%94%a8%e4%ba%8e%e6%89%80%e6%9c%89%e8%ae%be%e5%a4%87%20range%e8%be%93%e5%85%a5%e7%b1%bb%e5%9e%8b%e5%ae%9a%e4%b9%89%e6%bb%91%e5%9d%97%e6%8e%a7%e4%bb%b6%20border-spacing%20-%20%e8%ae%be%e7%bd%ae%e7%9b%b8%e9%82%bb%e5%8d%95%e5%85%83%e6%a0%bc%e7%9a%84%e8%be%b9%e6%a1%86%e9%97%b4%e7%9a%84">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -268,7 +268,8 @@ if (!doNotTrack) {
 <ul>
 <li>使用媒体查询时，媒体类型取值为screen代表 - 用于所有设备</li>
 <li><code>range</code>输入类型定义滑块控件</li>
-<li><code>border-col</code></li>
+<li><code>border-spacing</code> - 设置相邻单元格的边框间的<strong>距离</strong>（仅用于“边框分离”模式）</li>
+<li><code>border-collapse</code> - 设置表格的边框是否被<strong>合并</strong>为一个单一的边框</li>
 </ul>
 <h2 id="php">php</h2>
 <ul>
@@ -292,10 +293,10 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>PHP代码都会嵌入到HTML文档中使用的间隔符有</p>
-<pre><code>&lt;?php ?&gt;   
-&lt;script language=＂php＂&gt;&lt;/script&gt;   
-&lt;%  %&gt;  
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> <span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">   
+</span><span style="color:#960050;background-color:#1e0010">&lt;script language=＂php＂&gt;&lt;/script&gt;   
+</span><span style="color:#960050;background-color:#1e0010">&lt;%  %&gt;  
+</span></code></pre></div></li>
 </ul>
 <h2 id="mysql">mysql</h2>
 <ul>
@@ -352,7 +353,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          378 字
+          427 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -470,7 +471,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1-x-examination%2f&name=1%2bX%20%7c%20%e8%80%83%e7%82%b9%e5%b0%8f%e7%bb%93&description=html%e3%80%81css%e3%80%81js%20%e4%bd%bf%e7%94%a8%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%e6%97%b6%ef%bc%8c%e5%aa%92%e4%bd%93%e7%b1%bb%e5%9e%8b%e5%8f%96%e5%80%bc%e4%b8%bascreen%e4%bb%a3%e8%a1%a8%20-%20%e7%94%a8%e4%ba%8e%e6%89%80%e6%9c%89%e8%ae%be%e5%a4%87%20range%e8%be%93%e5%85%a5%e7%b1%bb%e5%9e%8b%e5%ae%9a%e4%b9%89%e6%bb%91%e5%9d%97%e6%8e%a7%e4%bb%b6%20border-col%20php%20%e4%b8%8d%e6%98%afPHP%e9%ad%94%e6%9c%af%e6%96%b9%e6%b3%95%20-%20__autoload%28%29%20P">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1-x-examination%2f&name=1%2bX%20%7c%20%e8%80%83%e7%82%b9%e5%b0%8f%e7%bb%93&description=html%e3%80%81css%e3%80%81js%20%e4%bd%bf%e7%94%a8%e5%aa%92%e4%bd%93%e6%9f%a5%e8%af%a2%e6%97%b6%ef%bc%8c%e5%aa%92%e4%bd%93%e7%b1%bb%e5%9e%8b%e5%8f%96%e5%80%bc%e4%b8%bascreen%e4%bb%a3%e8%a1%a8%20-%20%e7%94%a8%e4%ba%8e%e6%89%80%e6%9c%89%e8%ae%be%e5%a4%87%20range%e8%be%93%e5%85%a5%e7%b1%bb%e5%9e%8b%e5%ae%9a%e4%b9%89%e6%bb%91%e5%9d%97%e6%8e%a7%e4%bb%b6%20border-spacing%20-%20%e8%ae%be%e7%bd%ae%e7%9b%b8%e9%82%bb%e5%8d%95%e5%85%83%e6%a0%bc%e7%9a%84%e8%be%b9%e6%a1%86%e9%97%b4%e7%9a%84">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
