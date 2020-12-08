@@ -9,21 +9,21 @@
     <copyright>billie</copyright>
     <lastBuildDate>Tue, 08 Dec 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>使用selenium登录雨课堂获取课程信息</title>
-      <link>https://billie52707.cn/posts/2020/12/yuketang-login/</link>
-      <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/posts/2020/12/yuketang-login/</guid>
-      <description>登录 ⌛️ 运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录 class Yuketang: def __init__(self): self.login_url = &amp;#34;https://sziit.yuketang.cn/pro/portal/home/&amp;#34; self.dataDic = dict() self.bar=ProgressBar(widgets=[Percentage(),Bar(&amp;#39;#&amp;#39;), &amp;#39; &amp;#39;, Timer(), &amp;#39; &amp;#39;, ETA(), &amp;#39; &amp;#39;])#,term_width=12,FileTransferSpeed(), def Explicit_Waits(self,driver, way, path</description>
-    </item>
-    
-    <item>
       <title>深信息学生信息查询系统</title>
       <link>https://billie52707.cn/posts/2020/12/scores.search/</link>
       <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/12/scores.search/</guid>
       <description>技术栈 🀄️ Django requests rsa nginx 项目简介 ➖ 此项目旨在「方便同学查询学科成绩」，以往查询成绩的方式主要为 登录教务系统，查看成绩，需要连接学校内网，过程较为繁</description>
+    </item>
+    
+    <item>
+      <title>使用selenium登录雨课堂获取课程信息</title>
+      <link>https://billie52707.cn/posts/2020/12/yuketang-login/</link>
+      <pubDate>Sat, 05 Dec 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/12/yuketang-login/</guid>
+      <description>登录 ⌛️ 运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录 class Yuketang: def __init__(self): self.login_url = &amp;#34;https://sziit.yuketang.cn/pro/portal/home/&amp;#34; self.dataDic = dict() self.bar=ProgressBar(widgets=[Percentage(),Bar(&amp;#39;#&amp;#39;), &amp;#39; &amp;#39;, Timer(), &amp;#39; &amp;#39;, ETA(), &amp;#39; &amp;#39;])#,term_width=12,FileTransferSpeed(), def Explicit_Waits(self,driver, way, path</description>
     </item>
     
     <item>
