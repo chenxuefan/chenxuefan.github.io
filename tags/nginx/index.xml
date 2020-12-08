@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Dec 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>深信息学生信息查询系统</title>
+      <link>https://billie52707.cn/posts/2020/12/scores.search/</link>
+      <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/12/scores.search/</guid>
+      <description>技术栈 🀄️ Django requests rsa nginx 项目简介 ➖ 此项目旨在「方便同学查询学科成绩」，以往查询成绩的方式主要为 登录教务系统，查看成绩，需要连接学校内网，过程较为繁</description>
+    </item>
+    
     <item>
       <title>nginx学习笔记 | 解决跨域问题</title>
       <link>https://billie52707.cn/posts/2020/11/nginx-cross-domain/</link>
@@ -59,7 +68,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/nginx/</guid>
-      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop service nginx start/stop nginx start/stop</description>
+      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop service nginx start/stop nginx start/stop killall nginx</description>
     </item>
     
   </channel>

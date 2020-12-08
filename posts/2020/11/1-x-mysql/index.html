@@ -369,10 +369,19 @@ sno <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">3</sp
 <p>查询</p>
 <ul>
 <li>
-<p>like通配符：_,%,[],[^]</p>
+<p>通配符 - <code>_、%、[]、[^]</code></p>
 </li>
 <li>
-<p>分组：<code>group by</code>；排序：<code>order by</code>；分组条件：<code>having</code>；分页：<code>limit 起始下标（如果缺省，默认从0开始），条数</code></p>
+<p>分组 - <code>group by</code>；</p>
+</li>
+<li>
+<p>排序 - <code>order by</code>；</p>
+</li>
+<li>
+<p>分组条件 - <code>having</code>；</p>
+</li>
+<li>
+<p>分页 - <code>limit 起始下标（如果缺省，默认从0开始），条数</code></p>
 <pre><code>--查询2-5条
 select * from student limit 1，4
 --前三条
@@ -387,8 +396,8 @@ select * from student limit 3
 <li>create trigger - 触发器</li>
 <li>create procedure - 存储过程
 <ul>
-<li>调用：call 存储过程名</li>
-<li>定义存储过程时的约束：in,out,inout</li>
+<li>调用 - call 存储过程名</li>
+<li>定义存储过程时的约束 - in,out,inout</li>
 </ul>
 </li>
 <li>create index - 索引（主键索引、唯一索引、全文索引、组合索引）</li>
@@ -397,7 +406,7 @@ select * from student limit 3
 </li>
 <li>
 <p>事物</p>
-<p>特征：原子性、一致性、隔离性、持久性</p>
+<p>特征 - 原子性、一致性、隔离性、持久性</p>
 </li>
 </ol>
 <ul>
@@ -462,7 +471,7 @@ select * from student limit 3
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          841 字
+          811 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> HTTP状态码 1xx，2xx，3xx，4xx 啥意思 | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="HTTP状态码 1xx，2xx，3xx，4xx 啥意思" />
+<meta property="og:description" content="$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=508917206\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言： 经常忘记网络请求返回状态码的意思，所以" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/12/http-statuscode/" />
+<meta property="article:published_time" content="2020-12-02T02:30:10+00:00" />
+<meta property="article:modified_time" content="2020-12-02T02:30:10+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTTP状态码 1xx，2xx，3xx，4xx 啥意思"/>
+<meta name="twitter:description" content="$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=508917206\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言： 经常忘记网络请求返回状态码的意思，所以"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/posts/2020/11/november-shoot/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/posts/2020/12/scores.search/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&text=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&is_video=false&description=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&name=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d&description=%24%28function%20%28%29%20%7b%20var%20html%20%3d%20%22%5cn%5cn%5cu003ciframe%20frameborder%3d%5cu0022no%5cu0022%20border%3d%5cu00220%5cu0022%20marginwidth%3d%5cu00220%5cu0022%20marginheight%3d%5cu00220%5cu0022%20width%3d100%25%20height%3d86%20src%3d%5cu0022%5c%2f%5c%2fmusic.163.com%5c%2foutchain%5c%2fplayer%3ftype%3d2%5cu0026id%3d508917206%5cu0026auto%3d1%5cu0026height%3d66%5cu0022%5cu003e%5cu003c%5c%2fiframe%5cu003e%5cn%5cn%22%20html%20%3d%20html.replace%28%2f%22%7b%2fg%2c%20%22%7b%22%29%20html%20%3d%20html.replace%28%2f%7b%22%2fg%2c%20%22%7b%22%29%20html%20%3d%20html.replace%28%2f%22%7d%2fg%2c%20%22%7d%22%29%20html%20%3d%20html.replace%28%2f%7d%22%2fg%2c%20%22%7d%22%29%20%24%28%27%23raw%27%29.html%28html%29%3b%20let%20postTitle%20%3d%20%24%28%27.posttitle%27%29.text%28%29%20let%20postContentTitle%20%3d%20%24%28%27%23raw%20h1%27%29.text%28%29%20if%28postTitle%20%3d%3d%3d%20postContentTitle%29%7b%20%24%28%27%23raw%20h1%27%29.hide%28%29%20%7d%20%24%28%27button.preview%27%29.hide%28%29%20%7d%29%20%e5%89%8d%e8%a8%80%ef%bc%9a%20%e7%bb%8f%e5%b8%b8%e5%bf%98%e8%ae%b0%e7%bd%91%e7%bb%9c%e8%af%b7%e6%b1%82%e8%bf%94%e5%9b%9e%e7%8a%b6%e6%80%81%e7%a0%81%e7%9a%84%e6%84%8f%e6%80%9d%ef%bc%8c%e6%89%80%e4%bb%a5">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&t=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言：</a></li>
+    <li><a href="#1xx">1xx</a></li>
+    <li><a href="#2xx">2xx</a></li>
+    <li><a href="#3xx">3xx</a></li>
+    <li><a href="#4xx">4xx</a></li>
+    <li><a href="#5xx">5xx</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        HTTP状态码 1xx，2xx，3xx，4xx 啥意思
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2020-12-02 02:30:10 &#43;0000 UTC" itemprop="datePublished">2020-12-02</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/http" rel="tag">http</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <div id='raw'>
+<p style="opacity: 0;">
+
+
+</p>
+
+    <script>
+        $(function () {
+            var html = "\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=508917206\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n"
+            html = html.replace(/"{/g, "{")
+            html = html.replace(/{"/g, "{")
+            html = html.replace(/"}/g, "}")
+            html = html.replace(/}"/g, "}")
+            $('#raw').html(html);
+
+            let postTitle =  $('.posttitle').text()
+            let postContentTitle =  $('#raw > h1').text()
+            if(postTitle === postContentTitle){
+                $('#raw > h1').hide()
+            }
+            $('button.preview').hide()
+        })
+
+    </script>
+</div>
+<h2 id="前言">前言：</h2>
+<p>经常忘记网络请求返回状态码的意思，所以做个记录，以备后需查看，背是不可能背的，只能忘了来看一看这样子。</p>
+<h2 id="1xx">1xx</h2>
+<p>100 （继续） 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。</p>
+<p>101 （切换协议） 请求者已要求服务器切换协议，服务器已确认并准备切换。</p>
+<h2 id="2xx">2xx</h2>
+<p>200 （成功） 服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。</p>
+<p>201 （已创建） 请求成功并且服务器创建了新的资源。</p>
+<p>202 （已接受） 服务器已接受请求，但尚未处理。</p>
+<p>203 （非授权信息） 服务器已成功处理了请求，但返回的信息可能来自另一来源。</p>
+<p>204 （无内容） 服务器成功处理了请求，但没有返回任何内容。</p>
+<p>205 （重置内容） 服务器成功处理了请求，但没有返回任何内容。</p>
+<p>206 （部分内容） 服务器成功处理了部分 GET 请求。</p>
+<h2 id="3xx">3xx</h2>
+<p>300 （多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。</p>
+<p>301 （永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。</p>
+<p>302 （临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<p>303 （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。</p>
+<p>304 （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。</p>
+<p>305 （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。</p>
+<p>307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<h2 id="4xx">4xx</h2>
+<p>400 （错误请求） 服务器不理解请求的语法。（解决办法传参格式不正确）</p>
+<p>401 （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。</p>
+<p>403 （禁止） 服务器拒绝请求。</p>
+<p>404 （未找到） 服务器找不到请求的网页。</p>
+<p>405 （方法禁用） 禁用请求中指定的方法。</p>
+<p>406 （不接受） 无法使用请求的内容特性响应请求的网页。</p>
+<p>407 （需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。</p>
+<p>408 （请求超时） 服务器等候请求时发生超时。</p>
+<p>409 （冲突） 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。</p>
+<p>410 （已删除） 如果请求的资源已永久删除，服务器就会返回此响应。</p>
+<p>411 （需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。</p>
+<p>412 （未满足前提条件） 服务器未满足请求者在请求中设置的其中一个前提条件。</p>
+<p>413 （请求实体过大） 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。</p>
+<p>414 （请求的 URI 过长） 请求的 URI（通常为网址）过长，服务器无法处理。</p>
+<p>415 （不支持的媒体类型） 请求的格式不受请求页面的支持。</p>
+<p>416 （请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。</p>
+<p>417 （未满足期望值） 服务器未满足&quot;期望&quot;请求标头字段的要求。</p>
+<h2 id="5xx">5xx</h2>
+<p>500 （服务器内部错误） 服务器遇到错误，无法完成请求。（解决办法传参数不正确）</p>
+<p>501 （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。</p>
+<p>502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。</p>
+<p>503 （服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。</p>
+<p>504 （网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。</p>
+<p>505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</p>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/http" rel="tag">http</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          1449 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2020-12-02 02:30:10 &#43;0000 UTC" itemprop="datePublished">2020-12-02</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2020/12/http-statuscode/" class="leancloud_visitors" data-flag-title="HTTP状态码 1xx，2xx，3xx，4xx 啥意思">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言：</a></li>
+    <li><a href="#1xx">1xx</a></li>
+    <li><a href="#2xx">2xx</a></li>
+    <li><a href="#3xx">3xx</a></li>
+    <li><a href="#4xx">4xx</a></li>
+    <li><a href="#5xx">5xx</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&text=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&is_video=false&description=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&title=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&name=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d&description=%24%28function%20%28%29%20%7b%20var%20html%20%3d%20%22%5cn%5cn%5cu003ciframe%20frameborder%3d%5cu0022no%5cu0022%20border%3d%5cu00220%5cu0022%20marginwidth%3d%5cu00220%5cu0022%20marginheight%3d%5cu00220%5cu0022%20width%3d100%25%20height%3d86%20src%3d%5cu0022%5c%2f%5c%2fmusic.163.com%5c%2foutchain%5c%2fplayer%3ftype%3d2%5cu0026id%3d508917206%5cu0026auto%3d1%5cu0026height%3d66%5cu0022%5cu003e%5cu003c%5c%2fiframe%5cu003e%5cn%5cn%22%20html%20%3d%20html.replace%28%2f%22%7b%2fg%2c%20%22%7b%22%29%20html%20%3d%20html.replace%28%2f%7b%22%2fg%2c%20%22%7b%22%29%20html%20%3d%20html.replace%28%2f%22%7d%2fg%2c%20%22%7d%22%29%20html%20%3d%20html.replace%28%2f%7d%22%2fg%2c%20%22%7d%22%29%20%24%28%27%23raw%27%29.html%28html%29%3b%20let%20postTitle%20%3d%20%24%28%27.posttitle%27%29.text%28%29%20let%20postContentTitle%20%3d%20%24%28%27%23raw%20h1%27%29.text%28%29%20if%28postTitle%20%3d%3d%3d%20postContentTitle%29%7b%20%24%28%27%23raw%20h1%27%29.hide%28%29%20%7d%20%24%28%27button.preview%27%29.hide%28%29%20%7d%29%20%e5%89%8d%e8%a8%80%ef%bc%9a%20%e7%bb%8f%e5%b8%b8%e5%bf%98%e8%ae%b0%e7%bd%91%e7%bb%9c%e8%af%b7%e6%b1%82%e8%bf%94%e5%9b%9e%e7%8a%b6%e6%80%81%e7%a0%81%e7%9a%84%e6%84%8f%e6%80%9d%ef%bc%8c%e6%89%80%e4%bb%a5">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f12%2fhttp-statuscode%2f&t=HTTP%e7%8a%b6%e6%80%81%e7%a0%81%201xx%ef%bc%8c2xx%ef%bc%8c3xx%ef%bc%8c4xx%20%e5%95%a5%e6%84%8f%e6%80%9d">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020 
+    <span>❤ billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

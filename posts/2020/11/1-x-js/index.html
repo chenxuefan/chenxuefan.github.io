@@ -684,27 +684,39 @@ document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#
 </ul>
 <h3 id="ajax异步请求">AJAX（异步请求）</h3>
 <ul>
-<li>工作原理</li>
-<li>状态码
+<li>
+<p>工作原理</p>
+</li>
+<li>
+<p>HTTP状态码</p>
 <ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
+<li>1 - 继续提出请求</li>
+<li>2 - 请求成功</li>
+<li>3 - 重定向</li>
+<li>4 - 请求错误或者无法被执行</li>
+<li>5 - 服务器错误</li>
 </ul>
 </li>
-<li>写法</li>
-<li>缺点
+<li>
+<p>写法</p>
+<p><code>xmlhttp.open(&quot;GET&quot;,&quot;ajax_test.html&quot;,true)</code> - 最后一个参数 true 表示发送异步请求</p>
+</li>
+<li>
+<p>缺点</p>
 <ol>
 <li>破坏了前进后退</li>
 </ol>
 </li>
-<li>优点
+<li>
+<p>优点</p>
 <ol>
-<li>无刷新</li>
+<li>页面无需刷新，用户体验好</li>
+<li>异步方式通信，响应快</li>
+<li>基于标准化，不需要下载插件</li>
 </ol>
 </li>
-<li>可使用ajax技术
+<li>
+<p>应用于ajax的技术</p>
 <ul>
 <li>css，DOM，XML，JSON等</li>
 </ul>
@@ -775,7 +787,7 @@ getMilliseconds() 返回 Date 对象的毫秒(0 ~ 999)</p>
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1951 字
+          2040 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

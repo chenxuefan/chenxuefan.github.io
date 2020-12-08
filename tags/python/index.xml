@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Sun, 29 Nov 2020 14:34:18 +0800</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Dec 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>深信息学生信息查询系统</title>
+      <link>https://billie52707.cn/posts/2020/12/scores.search/</link>
+      <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/12/scores.search/</guid>
+      <description>技术栈 🀄️ Django requests rsa nginx 项目简介 ➖ 此项目旨在「方便同学查询学科成绩」，以往查询成绩的方式主要为 登录教务系统，查看成绩，需要连接学校内网，过程较为繁</description>
+    </item>
+    
     <item>
       <title>NCP | 爬取国家卫健委网站</title>
       <link>https://billie52707.cn/posts/2020/11/ncp-nhc-readme/</link>
