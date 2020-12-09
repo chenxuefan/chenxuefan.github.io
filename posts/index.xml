@@ -18,12 +18,12 @@
     </item>
     
     <item>
-      <title>使用selenium登录雨课堂获取课程信息</title>
+      <title>使用selenium登录雨课堂并获取课程信息</title>
       <link>https://billie52707.cn/posts/2020/12/yuketang-login/</link>
       <pubDate>Sat, 05 Dec 2020 02:30:10 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/12/yuketang-login/</guid>
-      <description>登录 ⌛️ 运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录 class Yuketang: def __init__(self): self.login_url = &amp;#34;https://sziit.yuketang.cn/pro/portal/home/&amp;#34; self.dataDic = dict() self.bar=ProgressBar(widgets=[Percentage(),Bar(&amp;#39;#&amp;#39;), &amp;#39; &amp;#39;, Timer(), &amp;#39; &amp;#39;, ETA(), &amp;#39; &amp;#39;])#,term_width=12,FileTransferSpeed(), def Explicit_Waits(self,driver, way, path</description>
+      <description>登录 ⌛️ 操作逻辑：运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录 class Yuketang: def __init__(self): self.login_url = &amp;#34;https://sziit.yuketang.cn/pro/portal/home/&amp;#34; self.dataDic = dict() self.bar=ProgressBar(widgets=[Percentage(),Bar(&amp;#39;#&amp;#39;), &amp;#39; &amp;#39;, Timer(), &amp;#39; &amp;#39;, ETA(), &amp;#39; &amp;#39;])#,term_width=12,FileTransferSpeed(), def Explicit_Waits(self,driver,</description>
     </item>
     
     <item>
