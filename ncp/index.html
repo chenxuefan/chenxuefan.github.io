@@ -164,11 +164,9 @@ var _hmt = _hmt || [];
 <div id="NCP">
 <div v-for="item in allData">
 
-	<h2 v-text="item.msg"></h2>
+	<h2 v-html="item.msg"></h2>
 	<div class="container">
-	  
 		<div class="row">
-
 		  <div class="col-xs-12 col-md-4">
 			<span style="color: red;font-size: 20px" v-text="item.confirm"></span>
 			<span style="font-size: 12px" v-text="">确诊</span>
@@ -181,7 +179,6 @@ var _hmt = _hmt || [];
 			<span style="color: green;font-size: 20px" v-text="item.heal"></span>
 			<span style="font-size: 12px" v-text="">治愈</span>
 		  </div>
-
 		</div>
 	</div>
 	
@@ -201,19 +198,19 @@ var _hmt = _hmt || [];
 
     
     var ChinaData={
-      msg: "新冠疫情动态 - 国内",
+      msg: "<a href='https://download.billie52707.cn/NCP/china.html'>新冠疫情动态 - 国内</a>",
       confirm:'',
       dead:'',
       heal:'',   
     };
     var AbroadData={
-      msg:'新冠疫情动态 - 海外',
+      msg:"<a href='https://download.billie52707.cn/NCP/abroad.html'>新冠疫情动态 - 海外</a>",
       confirm:'',
       dead:'',
       heal:'',
     };
 	var GlobalData={
-	  msg:'新冠疫情动态 - 全球',
+	  msg:"<a href='https://download.billie52707.cn/NCP/global.html'>新冠疫情动态 - 全球</a>",
 	  confirm:'',
 	  dead:'',
 	  heal:'',
@@ -282,7 +279,7 @@ var _hmt = _hmt || [];
 	  }	
     });
 
-
+    
 	var dom = "";
 	$.get("https://download.billie52707.cn/NCP/global.html",function(data){
 		dom = data.split('<body>')[1];
