@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Tue, 08 Dec 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jan 2021 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>世界地图 | 国家名称表中英文的映射</title>
+      <link>https://billie52707.cn/posts/2021/echarts-country/</link>
+      <pubDate>Mon, 04 Jan 2021 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/echarts-country/</guid>
+      <description>nameMap = { &amp;lsquo;Singapore Rep.&#39;:&amp;lsquo;新加坡&amp;rsquo;, &amp;lsquo;Dominican Rep.&#39;:&amp;lsquo;多米尼加&amp;rsquo;, &amp;lsquo;Palestine</description>
+    </item>
+    
     <item>
       <title>深信息学生信息查询系统</title>
       <link>https://billie52707.cn/posts/2020/12/scores.search/</link>
@@ -180,12 +189,12 @@
     </item>
     
     <item>
-      <title>Jupyter Notebooks学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/11/jupyter-notebooks/</link>
+      <title>Jupyter Notebook学习笔记</title>
+      <link>https://billie52707.cn/posts/2020/11/jupyter-notebook/</link>
       <pubDate>Thu, 05 Nov 2020 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/jupyter-notebooks/</guid>
-      <description>Jupyter Notebooks 入门 通过 Jupyter 使用实时代码、方程式和可视化及文本创建交互式的共享笔记本。 自从有了纸莎草纸以来，出版人们一直在努力以吸引读者的方式来格式化数据</description>
+      <guid>https://billie52707.cn/posts/2020/11/jupyter-notebook/</guid>
+      <description>Jupyter Notebook 入门 通过 Jupyter 使用实时代码、方程式和可视化及文本创建交互式的共享笔记本。 自从有了纸莎草纸以来，出版人们一直在努力以吸引读者的方式来格式化数据</description>
     </item>
     
     <item>
