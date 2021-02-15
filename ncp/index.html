@@ -158,7 +158,7 @@ var _hmt = _hmt || [];
 </style>
 
 <br>
-
+<div id="chart" ></div>
 
 <div id="NCP">
 <div v-for="item in allData">
@@ -280,7 +280,7 @@ var _hmt = _hmt || [];
 
     
 	var dom = "";
-	$.get("https://download.billie52707.cn/NCP/global.html",function(data){
+	$.get("https://download.billie52707.cn/NCP/html/global.html",function(data){
 		dom = data.split('<body>')[1];
 		dom = dom.split('</body>')[0];
 		

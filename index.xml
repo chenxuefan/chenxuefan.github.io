@@ -801,6 +801,15 @@
     </item>
     
     <item>
+      <title></title>
+      <link>https://billie52707.cn/note/untitled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/untitled/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>2020--日结</title>
       <link>https://billie52707.cn/diary/template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -930,6 +939,15 @@
       
       <guid>https://billie52707.cn/note/machine-learn/</guid>
       <description>相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1.数据导入 numpy np.loadtxt() pandas pd.read_csv() 2.数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shap</description>
+    </item>
+    
+    <item>
+      <title>马士基项目开发文档</title>
+      <link>https://billie52707.cn/note/data-grand/maersk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/data-grand/maersk/</guid>
+      <description>开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名规则下载文件 二、RPA 打开应用</description>
     </item>
     
   </channel>

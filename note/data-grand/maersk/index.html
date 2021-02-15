@@ -4,7 +4,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Tags | 人人都爱小雀斑&#39;s blog </title>
+  <title> 马士基项目开发文档 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -23,15 +23,15 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://billie52707.cn/tags/" />
-<meta property="og:updated_time" content="2020-12-08T02:30:10+00:00" />
+  <meta property="og:title" content="马士基项目开发文档" />
+<meta property="og:description" content="开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名规则下载文件 二、RPA 打开应用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/note/data-grand/maersk/" />
+
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="马士基项目开发文档"/>
+<meta name="twitter:description" content="开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名规则下载文件 二、RPA 打开应用"/>
 
   
   
@@ -50,8 +50,6 @@ if (!doNotTrack) {
 <link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
 
   
-  
-  <link href="https://billie52707.cn/tags/index.xml" rel="alternate" type="application/rss+xml" title="人人都爱小雀斑's blog" />
   
   
   
@@ -128,60 +126,55 @@ var _hmt = _hmt || [];
 
     
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
   <div class="content" itemprop="articleBody">
-    
-    <div id="tag-cloud">
-      
-      <div class="tag-cloud-tags">
-        
-        
-        <a style="font-size: 1.953846153846154rem;" href="https://billie52707.cn/tags/1x/">1X</a>
-        
-        <a style="font-size: 0.9442307692307693rem;" href="https://billie52707.cn/tags/bootstrap/">BootStrap</a>
-        
-        <a style="font-size: 0.9442307692307693rem;" href="https://billie52707.cn/tags/c/">C</a>
-        
-        <a style="font-size: 1.2326923076923078rem;" href="https://billie52707.cn/tags/css/">css</a>
-        
-        <a style="font-size: 1.2326923076923078rem;" href="https://billie52707.cn/tags/docker/">docker</a>
-        
-        <a style="font-size: 0.9442307692307693rem;" href="https://billie52707.cn/tags/git/">git</a>
-        
-        <a style="font-size: 1.0884615384615386rem;" href="https://billie52707.cn/tags/html/">html</a>
-        
-        <a style="font-size: 1.521153846153846rem;" href="https://billie52707.cn/tags/http/">http</a>
-        
-        <a style="font-size: 1.0884615384615386rem;" href="https://billie52707.cn/tags/hugo/">hugo</a>
-        
-        <a style="font-size: 0.9442307692307693rem;" href="https://billie52707.cn/tags/javascript/">JavaScript</a>
-        
-        <a style="font-size: 0.9442307692307693rem;" href="https://billie52707.cn/tags/jquery/">jQuery</a>
-        
-        <a style="font-size: 1.376923076923077rem;" href="https://billie52707.cn/tags/linux/">Linux</a>
-        
-        <a style="font-size: 1.376923076923077rem;" href="https://billie52707.cn/tags/mac/">Mac</a>
-        
-        <a style="font-size: 0.9442307692307693rem;" href="https://billie52707.cn/tags/mysql/">MySQL</a>
-        
-        <a style="font-size: 1.8096153846153846rem;" href="https://billie52707.cn/tags/nginx/">nginx</a>
-        
-        <a style="font-size: 0.9442307692307693rem;" href="https://billie52707.cn/tags/php/">php</a>
-        
-        <a style="font-size: 1.0884615384615386rem;" href="https://billie52707.cn/tags/poem/">poem</a>
-        
-        <a style="font-size: 3.973076923076923rem;" href="https://billie52707.cn/tags/python/">python</a>
-        
-        <a style="font-size: 0.9442307692307693rem;" href="https://billie52707.cn/tags/ubuntu/">ubuntu</a>
-        
-        <a style="font-size: 1.0884615384615386rem;" href="https://billie52707.cn/tags/vue.js/">vue.js</a>
-        
-        <a style="font-size: 1.521153846153846rem;" href="https://billie52707.cn/tags/%E6%91%84%E5%BD%B1%E9%9B%86/">摄影集</a>
-        
-        <a style="font-size: 1.0884615384615386rem;" href="https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
-        
-      </div>
-    </div>
-    
+  
+    <h2 id="heading"></h2>
+<h2 id="开发流程">开发流程</h2>
+<h3 id="一文件下载">一、文件下载</h3>
+<ol>
+<li>登录系统，获取cookie值，用于后面的下载请求</li>
+<li>使用js代码</li>
+<li>获取文件下载链接</li>
+<li>按照指定的命名规则下载文件</li>
+</ol>
+<h3 id="二rpa">二、RPA</h3>
+<ol>
+<li>打开应用「MODS.bch」</li>
+<li>打开Excel表「Macro.WX-Update and Login」</li>
+<li>操作「Receipt」页
+<ol>
+<li>清空历史数据(5,100)</li>
+<li>B列（PO）写入数据</li>
+<li>操作宏按钮「Get Data」
+<ol>
+<li>光标移到最左，确保视图正确</li>
+<li>点击「Get Data」按钮</li>
+<li>点击弹窗上的「START」按钮</li>
+</ol>
+</li>
+<li>T、C、 D列写入数据</li>
+</ol>
+</li>
+<li>操作「Settled Doc Code」页
+<ol>
+<li>清空历史数据(2,7)</li>
+<li>2到6行写入数据</li>
+</ol>
+</li>
+<li>操作「Receipt」页
+<ol>
+<li>操作宏按钮「Update Doc」
+<ol>
+<li>点击「Update Doc」按钮</li>
+<li>点击弹窗上的「START」按钮</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+  
   </div>
 </article>
 
