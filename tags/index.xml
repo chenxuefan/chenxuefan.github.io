@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Tue, 08 Dec 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python</title>
+      <link>https://billie52707.cn/tags/python/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RPA</title>
+      <link>https://billie52707.cn/tags/rpa/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/tags/rpa/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>http</title>
       <link>https://billie52707.cn/tags/http/</link>
@@ -23,15 +41,6 @@
       <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
       
       <guid>https://billie52707.cn/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://billie52707.cn/tags/python/</link>
-      <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/tags/python/</guid>
       <description></description>
     </item>
     

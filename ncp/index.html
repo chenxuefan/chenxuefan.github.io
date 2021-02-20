@@ -161,29 +161,29 @@ var _hmt = _hmt || [];
 <div id="chart" ></div>
 
 <div id="NCP">
-<div v-for="item in allData">
+	<div v-for="item in allData">
 
-	<h2 v-html="item.msg"></h2>
-	<div class="container">
-		<div class="row">
-		  <div class="col-xs-12 col-md-4">
-			<span style="color: red;font-size: 20px" v-text="item.confirm"></span>
-			<span style="font-size: 12px" v-text="">确诊</span>
-		  </div>
-		  <div class="col-xs-12 col-md-4">
-			<span style="font-size: 20px" v-text="item.dead">正在获取...</span>
-			<span style="font-size: 12px" v-text="">死亡</span>
-		  </div>
-		  <div class="col-xs-12 col-md-4">
-			<span style="color: green;font-size: 20px" v-text="item.heal"></span>
-			<span style="font-size: 12px" v-text="">治愈</span>
-		  </div>
+		<h2 v-html="item.msg"></h2>
+		<div class="container">
+			<div class="row">
+			  <div class="col-xs-12 col-md-4">
+				<span style="color: red;font-size: 20px" v-text="item.confirm"></span>
+				<span style="font-size: 12px" v-text="">确诊</span>
+			  </div>
+			  <div class="col-xs-12 col-md-4">
+				<span style="font-size: 20px" v-text="item.dead">正在获取...</span>
+				<span style="font-size: 12px" v-text="">死亡</span>
+			  </div>
+			  <div class="col-xs-12 col-md-4">
+				<span style="color: green;font-size: 20px" v-text="item.heal"></span>
+				<span style="font-size: 12px" v-text="">治愈</span>
+			  </div>
+			</div>
 		</div>
+		
 	</div>
-	
-</div>
 
-<i>LastUpdateTime - <span v-text="lastUpdateTime"></span></i>
+	<i>LastUpdateTime - <span v-text="lastUpdateTime"></span></i>
 </div>
 
 
@@ -197,19 +197,19 @@ var _hmt = _hmt || [];
 
     
     var ChinaData={
-      msg: "<a href='https://download.billie52707.cn/NCP/china.html'>新冠疫情动态 - 国内</a>",
+      msg: "<a href='https://download.billie52707.cn/NCP/html/china.html'>新冠疫情动态 - 国内</a>",
       confirm:'',
       dead:'',
       heal:'',   
     };
     var AbroadData={
-      msg:"<a href='https://download.billie52707.cn/NCP/abroad.html'>新冠疫情动态 - 海外</a>",
+      msg:"<a href='https://download.billie52707.cn/NCP/html/abroad.html'>新冠疫情动态 - 海外</a>",
       confirm:'',
       dead:'',
       heal:'',
     };
 	var GlobalData={
-	  msg:"<a href='https://download.billie52707.cn/NCP/global.html'>新冠疫情动态 - 全球</a>",
+	  msg:"<a href='https://download.billie52707.cn/NCP/html/global.html'>新冠疫情动态 - 全球</a>",
 	  confirm:'',
 	  dead:'',
 	  heal:'',
@@ -270,11 +270,15 @@ var _hmt = _hmt || [];
 			  GlobalData.confirm=ChinaData.confirm+AbroadData.confirm;
 			  GlobalData.dead=ChinaData.dead+AbroadData.dead;
 			  GlobalData.heal=ChinaData.heal+AbroadData.heal;
-		  }
+		  },
+		  
+			 
+		  
 	  },  
 	  mounted(){
 		this.getChinaData();
 		this.getAbroadData();
+		
 	  }	
     });
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 
   <meta charset="utf-8">
@@ -27,7 +28,8 @@ if (!doNotTrack) {
 <meta property="og:description" content="开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名规则下载文件 二、RPA 打开应用" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/note/data-grand/maersk/" />
-
+<meta property="article:published_time" content="2021-01-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-25T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="马士基项目开发文档"/>
@@ -74,63 +76,186 @@ if (!doNotTrack) {
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
 
-    <header id="header">
-  <a href="https://billie52707.cn">
+  <div align="center">
   
-    <div id="logo" style="background-image: url(https://billie52707.cn/images/logo.png)"></div>
-  
-  <div id="title">
-    <h1>人人都爱小雀斑&#39;s blog</h1>
-  </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
-       
-      <li><a href="/">Home</a></li>
+</div>
+<div id="header-post">
 
-       
-      <li><a href="/posts">Article</a></li>
-
-       
-      <li><a href="/ncp">NCP</a></li>
-
-       
-      <li><a href="/about">About</a></li>
-
-       
-      <li><a href="https://github.com/chenxuefan">Github</a></li>
-
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/posts/2021/echarts-country/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
       
-    </ul>
-  </div>
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?ebc745cc17a0c227917fd2ad04abe4f1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-</header>
-
+      <ul>
+  
+  
     
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&text=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&is_video=false&description=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&name=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%20%e4%b8%80%e3%80%81%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%20%e7%99%bb%e5%bd%95%e7%b3%bb%e7%bb%9f%ef%bc%8c%e8%8e%b7%e5%8f%96cookie%e5%80%bc%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%90%8e%e9%9d%a2%e7%9a%84%e4%b8%8b%e8%bd%bd%e8%af%b7%e6%b1%82%20%e4%bd%bf%e7%94%a8js%e4%bb%a3%e7%a0%81%20%e8%8e%b7%e5%8f%96%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5%20%e6%8c%89%e7%85%a7%e6%8c%87%e5%ae%9a%e7%9a%84%e5%91%bd%e5%90%8d%e8%a7%84%e5%88%99%e4%b8%8b%e8%bd%bd%e6%96%87%e4%bb%b6%20%e4%ba%8c%e3%80%81RPA%20%e6%89%93%e5%bc%80%e5%ba%94%e7%94%a8">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&t=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#开发流程">开发流程</a>
+      <ul>
+        <li><a href="#一文件下载">一、文件下载</a></li>
+        <li><a href="#二rpa">二、RPA</a></li>
+      </ul>
+    </li>
+    <li><a href="#开发日志">开发日志</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        马士基项目开发文档
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2021-01-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-01-25</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+             
+            <a class="tag-link" href="/tags/rpa" rel="tag">RPA</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
 
   
-
-    
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="content" itemprop="articleBody">
-  
-    <h2 id="heading"></h2>
-<h2 id="开发流程">开发流程</h2>
+    <div class="content" itemprop="articleBody">
+      <h2 id="开发流程">开发流程</h2>
 <h3 id="一文件下载">一、文件下载</h3>
 <ol>
 <li>登录系统，获取cookie值，用于后面的下载请求</li>
@@ -173,13 +298,315 @@ var _hmt = _hmt || [];
 </ol>
 </li>
 </ol>
+<h2 id="开发日志">开发日志</h2>
+<ul>
+<li>
+<p>年前已完成的工作</p>
+<ul>
+<li>
+<p>开发部分</p>
+<ol>
+<li>登录网站与文件下载</li>
+<li>RPA操作Excel</li>
+</ol>
+</li>
+<li>
+<p>测试部分</p>
+<ol>
+<li>测试全局代码的稳定性和异常情况</li>
+<li>操作流程的录屏</li>
+</ol>
+</li>
+<li>
+<p>文档部分</p>
+<ol>
+<li>用户使用手册</li>
+</ol>
+</li>
+<li>
+<p>部署部分</p>
+<ol>
+<li>
+<p>为用户部署「达观开发平台」与「所需的python环境」</p>
+</li>
+<li>
+<p>部署达观机器人以及上传「license」</p>
+<ol>
+<li>
+<p>打开桌面的达观机器人</p>
+</li>
+<li>
+<p>点击左侧的设置（setting）</p>
+</li>
+<li>
+<p>点击中间的许可证（license）</p>
+</li>
+<li>
+<p>点击上传许可证（click to upload license），上传的文件名称为“license.txt”，文件的保存路径在下方。</p>
+</li>
+<li>
+<p>点击上传证书（click to upload Certificate），上传的文件名称为“Certificate.crt”，文件的保存路径在下方。</p>
+</li>
+<li>
+<p>点击激活（activate）,出现“激活成功”字样，则为激活成功</p>
+</li>
+</ol>
+<p>说明：下方目录下的文件夹命名为用户名称，需要找到对应自己名字的文件夹
+路径：H:\GSC\IN\BOM\Commercial\GSC_SCM\SCM\SCM\Walmart and Syngenta\WALMART NEW\CSO LOADINGS\Document\安装文档\license<br>
+（即本说明文档所在路径下的license文件夹）</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>2.19</p>
+<ul>
+<li>
+<p>今日任务</p>
+<ol>
+<li>
+<p>完善「系统用户操作手册」与「RPA流程图」</p>
+</li>
+<li>
+<p>统计「各阶段耗时」</p>
+</li>
+</ol>
+</li>
+<li>
+<p>感想与收获</p>
+<ol>
+<li>开年的第一天已经出现了工作上的疲态</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>2.20</p>
+<ul>
+<li>
+<p>今日任务：</p>
+<ol>
+<li>
+<p>测试最新版的业务代码</p>
+</li>
+<li>
+<p>测试下载文件是否「被转化为了PDF」</p>
+</li>
+<li>
+<p>测试MODS软件的异常状况</p>
+</li>
+<li>
+<p>编写自定义脚本（开发平台），使用户可以直接通过开发平台「自定义配置用户信息」</p>
+</li>
+</ol>
+</li>
+<li>
+<p>问题与挑战</p>
+<ol>
+<li>Macro表格中的「Get Data」点击之后 出现**「no response」的问题**，排查了很久，自认为是偶然事件（计算机软硬件或py导致），导致上午都被困惑在其中，最后寻找Vinger帮助才知道是「账号密码（nameis has been revoked）的问题」。**解决措施**是反馈到客户方的专业人员进行解决。</li>
+<li></li>
+</ol>
+</li>
+<li>
+<p>感想与收获</p>
+<ol>
+<li>遇到很难解决的问题，寻求专业人士解决，不要过于依赖自己的尝试（前提是也要自己尝试找到问题的诱因，以及通过重启或重新运行等措施来排查是否是偶然情况）。提出问题的时候尽量遵循「出现了xxx的问题，我觉得是xxx的原因」</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+            
+            <a class="tag-link" href="/tags/rpa" rel="tag">RPA</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          1176 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2021-01-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-01-25</time>
+          
+
+  </p>
+
 
   
+
+<span id="/note/data-grand/maersk/" class="leancloud_visitors" data-flag-title="马士基项目开发文档">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#开发流程">开发流程</a>
+      <ul>
+        <li><a href="#一文件下载">一、文件下载</a></li>
+        <li><a href="#二rpa">二、RPA</a></li>
+      </ul>
+    </li>
+    <li><a href="#开发日志">开发日志</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&text=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&is_video=false&description=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&title=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&name=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%20%e4%b8%80%e3%80%81%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%20%e7%99%bb%e5%bd%95%e7%b3%bb%e7%bb%9f%ef%bc%8c%e8%8e%b7%e5%8f%96cookie%e5%80%bc%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%90%8e%e9%9d%a2%e7%9a%84%e4%b8%8b%e8%bd%bd%e8%af%b7%e6%b1%82%20%e4%bd%bf%e7%94%a8js%e4%bb%a3%e7%a0%81%20%e8%8e%b7%e5%8f%96%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5%20%e6%8c%89%e7%85%a7%e6%8c%87%e5%ae%9a%e7%9a%84%e5%91%bd%e5%90%8d%e8%a7%84%e5%88%99%e4%b8%8b%e8%bd%bd%e6%96%87%e4%bb%b6%20%e4%ba%8c%e3%80%81RPA%20%e6%89%93%e5%bc%80%e5%ba%94%e7%94%a8">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&t=%e9%a9%ac%e5%a3%ab%e5%9f%ba%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
   </div>
-</article>
+</div>
 
 
-    <footer id="footer">
+  <footer id="footer">
   <div class="footer-center">
     Copyright  
     &copy; 
@@ -202,27 +629,29 @@ var _hmt = _hmt || [];
 
 
   </div>
-  
-    
-      
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-176148291-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
-    
-  
 </body>
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 <script src="/lib/jquery/jquery.min.js"></script>
 <script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 </html>

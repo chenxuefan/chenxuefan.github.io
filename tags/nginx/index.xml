@@ -68,7 +68,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/nginx/</guid>
-      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop service nginx start/stop nginx start/stop killall nginx</description>
+      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx</description>
     </item>
     
   </channel>
