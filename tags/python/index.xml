@@ -9,12 +9,12 @@
     <copyright>billie</copyright>
     <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>马士基项目开发文档</title>
+      <title>「马士基」项目开发文档</title>
       <link>https://billie52707.cn/note/data-grand/maersk/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/data-grand/maersk/</guid>
-      <description>开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名规则下载文件 二、RPA 打开应用</description>
+      <description>收获与感悟 一、技术与代码素养 config.py 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名</description>
     </item>
     
     <item>

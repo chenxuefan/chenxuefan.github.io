@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/categories/</loc>
+    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/note/</loc>
     <lastmod>2021-01-25T00:00:00+00:00</lastmod>
   </url>
@@ -23,7 +28,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/</loc>
+    <loc>https://billie52707.cn/categories/tec/</loc>
     <lastmod>2021-01-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,8 +38,8 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-01-04T02:30:10+00:00</lastmod>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-01-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,12 +48,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
-    <lastmod>2021-01-04T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/posts/2021/echarts-country/</loc>
+    <loc>https://billie52707.cn/posts/2021/1/echarts-country/</loc>
     <lastmod>2021-01-04T02:30:10+00:00</lastmod>
   </url>
   
