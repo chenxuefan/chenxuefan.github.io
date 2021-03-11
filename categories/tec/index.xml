@@ -7,16 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>「马士基」项目开发文档</title>
-      <link>https://billie52707.cn/note/data-grand/maersk/</link>
-      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/data-grand/maersk/</guid>
-      <description>收获与感悟 一、技术与代码素养 config.py 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名</description>
-    </item>
-    
+    <lastBuildDate>Mon, 04 Jan 2021 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>世界地图 | 国家名称表中英文的映射</title>
       <link>https://billie52707.cn/posts/2021/1/echarts-country/</link>
