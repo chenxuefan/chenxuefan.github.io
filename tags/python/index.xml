@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>billie</copyright>
-    <lastBuildDate>Tue, 08 Dec 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python</title>
+      <link>https://billie52707.cn/note/python/</link>
+      <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/python/</guid>
+      <description>那些年遇过的坑儿们 RuntimeError: dictionary changed size during iteration 出错描述：RuntimeError: dictionary changed size during iteration 原因：遍历时不能修改字典元素 解决：将遍历条件改为列表 骚操作 字典排</description>
+    </item>
+    
     <item>
       <title>深信息学生信息查询系统</title>
       <link>https://billie52707.cn/posts/2020/12/scores.search/</link>
