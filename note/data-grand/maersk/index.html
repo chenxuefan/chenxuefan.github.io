@@ -915,9 +915,41 @@ if (!doNotTrack) {
 </ul>
 <h3 id="20210329">2021.03.29</h3>
 <ul>
-<li>今日任务
+<li>
+<p>今日任务</p>
 <ol>
-<li>开发学习</li>
+<li>
+<p>logging库学习</p>
+</li>
+<li>
+<p>现场解决程序运行的问题</p>
+<p>问题一</p>
+<ul>
+<li>
+<p><strong>报错描述</strong>：“未找到swb noXXXXXX对应的上传文件”</p>
+</li>
+<li>
+<p><strong>原因</strong>（代码因素）：“待上传文件”的命名判断规则未完善</p>
+<p>（只完善了单个文件上传的流程，未更新到批量上传的流程）</p>
+</li>
+<li>
+<p><strong>措施</strong>：更新&quot;命名判断规则&quot;的相关代码</p>
+</li>
+</ul>
+<p>问题二</p>
+<ul>
+<li>
+<p><strong>报错描述</strong>：RPA流程进行到选择文件类型，未输入SWB NO，就关闭了浏览器</p>
+</li>
+<li>
+<p><strong>原因</strong>（人为因素）：程序未找到“FOB”号码</p>
+<p>（人为填入的信息不规范，程序规则判定若“FOB”为“USWALMARTHQ”，则正确，而填入的信息为“USWALMART”）</p>
+</li>
+<li>
+<p><strong>措施</strong>：无需更新代码</p>
+</li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>
@@ -955,7 +987,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3752 字
+          4012 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
