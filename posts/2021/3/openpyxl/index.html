@@ -25,7 +25,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="python模块详解 | openpyxl" />
-<meta property="og:description" content="前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作布的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&#39;filename&#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list 2. 工作表的使用 ## 设置工作表对" />
+<meta property="og:description" content="前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&#39;filename&#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list 2. 工作表的使用 ## 设置工作表对" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2021/3/openpyxl/" />
 <meta property="article:published_time" content="2021-03-28T01:54:00+00:00" />
@@ -33,7 +33,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | openpyxl"/>
-<meta name="twitter:description" content="前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作布的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&#39;filename&#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list 2. 工作表的使用 ## 设置工作表对"/>
+<meta name="twitter:description" content="前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&#39;filename&#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list 2. 工作表的使用 ## 设置工作表对"/>
 
   
   
@@ -188,7 +188,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f3%2fopenpyxl%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20openpyxl&description=%e5%89%8d%e8%a8%80%20%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20https%3a%2f%2fpypi.org%2fproject%2fopenpyxl%2f%20%e5%b8%b8%e8%a7%84%e4%bd%bf%e7%94%a8%201.%20%e5%b7%a5%e4%bd%9c%e5%b8%83%e7%9a%84%e4%bd%bf%e7%94%a8%20wb%20%3d%20openpyxl.Workbook%28%29%20%23%20%e6%96%b0%e5%bb%ba%20wb%20%3d%20openpyxl.load_workbook%28%26%2339%3bfilename%26%2339%3b%29%20%23%20%e5%8a%a0%e8%bd%bd%e6%9c%ac%e5%9c%b0%e7%9a%84%e6%96%87%e4%bb%b6%20all_sheet%20%3d%20wb.sheetnames%20%23%20%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89%e7%9a%84sheet%ef%bc%8c%e8%bf%94%e5%9b%9elist%202.%20%e5%b7%a5%e4%bd%9c%e8%a1%a8%e7%9a%84%e4%bd%bf%e7%94%a8%20%23%23%20%e8%ae%be%e7%bd%ae%e5%b7%a5%e4%bd%9c%e8%a1%a8%e5%af%b9">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f3%2fopenpyxl%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20openpyxl&description=%e5%89%8d%e8%a8%80%20%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20https%3a%2f%2fpypi.org%2fproject%2fopenpyxl%2f%20%e5%b8%b8%e8%a7%84%e4%bd%bf%e7%94%a8%201.%20%e5%b7%a5%e4%bd%9c%e7%b0%bf%e7%9a%84%e4%bd%bf%e7%94%a8%20wb%20%3d%20openpyxl.Workbook%28%29%20%23%20%e6%96%b0%e5%bb%ba%20wb%20%3d%20openpyxl.load_workbook%28%26%2339%3bfilename%26%2339%3b%29%20%23%20%e5%8a%a0%e8%bd%bd%e6%9c%ac%e5%9c%b0%e7%9a%84%e6%96%87%e4%bb%b6%20all_sheet%20%3d%20wb.sheetnames%20%23%20%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89%e7%9a%84sheet%ef%bc%8c%e8%bf%94%e5%9b%9elist%202.%20%e5%b7%a5%e4%bd%9c%e8%a1%a8%e7%9a%84%e4%bd%bf%e7%94%a8%20%23%23%20%e8%ae%be%e7%bd%ae%e5%b7%a5%e4%bd%9c%e8%a1%a8%e5%af%b9">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -206,7 +206,7 @@ if (!doNotTrack) {
     <li><a href="#前言">前言</a></li>
     <li><a href="#常规使用">常规使用</a>
       <ul>
-        <li><a href="#1-工作布的使用">1. 工作布的使用</a></li>
+        <li><a href="#1-工作簿的使用">1. 工作簿的使用</a></li>
         <li><a href="#2-工作表的使用">2. 工作表的使用</a></li>
         <li><a href="#3-单元格的使用">3. 单元格的使用</a></li>
       </ul>
@@ -214,7 +214,7 @@ if (!doNotTrack) {
     <li><a href="#方法大全">方法大全</a>
       <ul>
         <li><a href="#openpyxl对象">「openpyxl对象」</a></li>
-        <li><a href="#工作布workbook对象">「工作布（workbook）对象」</a></li>
+        <li><a href="#工作簿workbook对象">「工作簿（workbook）对象」</a></li>
         <li><a href="#工作表worksheet对象">「工作表（worksheet）对象」</a></li>
         <li><a href="#单元格cell对象">「单元格（cell）对象」</a></li>
       </ul>
@@ -283,7 +283,7 @@ if (!doNotTrack) {
 </li>
 </ul>
 <h2 id="常规使用">常规使用</h2>
-<h3 id="1-工作布的使用">1. 工作布的使用</h3>
+<h3 id="1-工作簿的使用">1. 工作簿的使用</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>Workbook() <span style="color:#75715e"># 新建</span>
 wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>load_workbook(<span style="color:#e6db74">&#39;filename&#39;</span>) <span style="color:#75715e"># 加载本地的文件</span>
 all_sheet <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>sheetnames <span style="color:#75715e"># 获取所有的sheet，返回list</span>
@@ -318,7 +318,7 @@ ws[<span style="color:#e6db74">&#39;A1&#39;</span>]<span style="color:#f92672">.
 </code></pre></div><h2 id="方法大全">方法大全</h2>
 <h3 id="openpyxl对象">「openpyxl对象」</h3>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210328162332508.png" alt="image-20210328162332508"></p>
-<h3 id="工作布workbook对象">「工作布（workbook）对象」</h3>
+<h3 id="工作簿workbook对象">「工作簿（workbook）对象」</h3>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210328162451361.png" alt="image-20210328162451361"></p>
 <h3 id="工作表worksheet对象">「工作表（worksheet）对象」</h3>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210328162702732.png" alt="image-20210328162702732"></p>
@@ -419,7 +419,7 @@ ws[<span style="color:#e6db74">&#39;A1&#39;</span>]<span style="color:#f92672">.
     <li><a href="#前言">前言</a></li>
     <li><a href="#常规使用">常规使用</a>
       <ul>
-        <li><a href="#1-工作布的使用">1. 工作布的使用</a></li>
+        <li><a href="#1-工作簿的使用">1. 工作簿的使用</a></li>
         <li><a href="#2-工作表的使用">2. 工作表的使用</a></li>
         <li><a href="#3-单元格的使用">3. 单元格的使用</a></li>
       </ul>
@@ -427,7 +427,7 @@ ws[<span style="color:#e6db74">&#39;A1&#39;</span>]<span style="color:#f92672">.
     <li><a href="#方法大全">方法大全</a>
       <ul>
         <li><a href="#openpyxl对象">「openpyxl对象」</a></li>
-        <li><a href="#工作布workbook对象">「工作布（workbook）对象」</a></li>
+        <li><a href="#工作簿workbook对象">「工作簿（workbook）对象」</a></li>
         <li><a href="#工作表worksheet对象">「工作表（worksheet）对象」</a></li>
         <li><a href="#单元格cell对象">「单元格（cell）对象」</a></li>
       </ul>
@@ -490,7 +490,7 @@ ws[<span style="color:#e6db74">&#39;A1&#39;</span>]<span style="color:#f92672">.
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f3%2fopenpyxl%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20openpyxl&description=%e5%89%8d%e8%a8%80%20%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20https%3a%2f%2fpypi.org%2fproject%2fopenpyxl%2f%20%e5%b8%b8%e8%a7%84%e4%bd%bf%e7%94%a8%201.%20%e5%b7%a5%e4%bd%9c%e5%b8%83%e7%9a%84%e4%bd%bf%e7%94%a8%20wb%20%3d%20openpyxl.Workbook%28%29%20%23%20%e6%96%b0%e5%bb%ba%20wb%20%3d%20openpyxl.load_workbook%28%26%2339%3bfilename%26%2339%3b%29%20%23%20%e5%8a%a0%e8%bd%bd%e6%9c%ac%e5%9c%b0%e7%9a%84%e6%96%87%e4%bb%b6%20all_sheet%20%3d%20wb.sheetnames%20%23%20%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89%e7%9a%84sheet%ef%bc%8c%e8%bf%94%e5%9b%9elist%202.%20%e5%b7%a5%e4%bd%9c%e8%a1%a8%e7%9a%84%e4%bd%bf%e7%94%a8%20%23%23%20%e8%ae%be%e7%bd%ae%e5%b7%a5%e4%bd%9c%e8%a1%a8%e5%af%b9">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f3%2fopenpyxl%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20openpyxl&description=%e5%89%8d%e8%a8%80%20%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20https%3a%2f%2fpypi.org%2fproject%2fopenpyxl%2f%20%e5%b8%b8%e8%a7%84%e4%bd%bf%e7%94%a8%201.%20%e5%b7%a5%e4%bd%9c%e7%b0%bf%e7%9a%84%e4%bd%bf%e7%94%a8%20wb%20%3d%20openpyxl.Workbook%28%29%20%23%20%e6%96%b0%e5%bb%ba%20wb%20%3d%20openpyxl.load_workbook%28%26%2339%3bfilename%26%2339%3b%29%20%23%20%e5%8a%a0%e8%bd%bd%e6%9c%ac%e5%9c%b0%e7%9a%84%e6%96%87%e4%bb%b6%20all_sheet%20%3d%20wb.sheetnames%20%23%20%e8%8e%b7%e5%8f%96%e6%89%80%e6%9c%89%e7%9a%84sheet%ef%bc%8c%e8%bf%94%e5%9b%9elist%202.%20%e5%b7%a5%e4%bd%9c%e8%a1%a8%e7%9a%84%e4%bd%bf%e7%94%a8%20%23%23%20%e8%ae%be%e7%bd%ae%e5%b7%a5%e4%bd%9c%e8%a1%a8%e5%af%b9">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
