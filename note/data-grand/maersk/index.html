@@ -25,7 +25,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="「马士基」项目开发文档" />
-<meta property="og:description" content="收获与感悟 一、技术与代码素养 config.py 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名" />
+<meta property="og:description" content="收获与感悟 一、技术与代码素养 config.py 代码调试 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/note/data-grand/maersk/" />
 <meta property="article:published_time" content="2021-01-25T00:00:00+00:00" />
@@ -33,7 +33,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「马士基」项目开发文档"/>
-<meta name="twitter:description" content="收获与感悟 一、技术与代码素养 config.py 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指定的命名"/>
+<meta name="twitter:description" content="收获与感悟 一、技术与代码素养 config.py 代码调试 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指"/>
 
   
   
@@ -188,7 +188,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&name=%e3%80%8c%e9%a9%ac%e5%a3%ab%e5%9f%ba%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e6%94%b6%e8%8e%b7%e4%b8%8e%e6%84%9f%e6%82%9f%20%e4%b8%80%e3%80%81%e6%8a%80%e6%9c%af%e4%b8%8e%e4%bb%a3%e7%a0%81%e7%b4%a0%e5%85%bb%20config.py%20%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%20%e4%b8%80%e3%80%81%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%20%e7%99%bb%e5%bd%95%e7%b3%bb%e7%bb%9f%ef%bc%8c%e8%8e%b7%e5%8f%96cookie%e5%80%bc%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%90%8e%e9%9d%a2%e7%9a%84%e4%b8%8b%e8%bd%bd%e8%af%b7%e6%b1%82%20%e4%bd%bf%e7%94%a8js%e4%bb%a3%e7%a0%81%20%e8%8e%b7%e5%8f%96%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5%20%e6%8c%89%e7%85%a7%e6%8c%87%e5%ae%9a%e7%9a%84%e5%91%bd%e5%90%8d">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&name=%e3%80%8c%e9%a9%ac%e5%a3%ab%e5%9f%ba%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e6%94%b6%e8%8e%b7%e4%b8%8e%e6%84%9f%e6%82%9f%20%e4%b8%80%e3%80%81%e6%8a%80%e6%9c%af%e4%b8%8e%e4%bb%a3%e7%a0%81%e7%b4%a0%e5%85%bb%20config.py%20%e4%bb%a3%e7%a0%81%e8%b0%83%e8%af%95%20%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%20%e4%b8%80%e3%80%81%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%20%e7%99%bb%e5%bd%95%e7%b3%bb%e7%bb%9f%ef%bc%8c%e8%8e%b7%e5%8f%96cookie%e5%80%bc%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%90%8e%e9%9d%a2%e7%9a%84%e4%b8%8b%e8%bd%bd%e8%af%b7%e6%b1%82%20%e4%bd%bf%e7%94%a8js%e4%bb%a3%e7%a0%81%20%e8%8e%b7%e5%8f%96%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5%20%e6%8c%89%e7%85%a7%e6%8c%87">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -247,6 +247,7 @@ if (!doNotTrack) {
         <li><a href="#20210330">2021.03.30</a></li>
         <li><a href="#20210331">2021.03.31</a></li>
         <li><a href="#20210401">2021.04.01</a></li>
+        <li><a href="#20210402">2021.04.02</a></li>
       </ul>
     </li>
   </ul>
@@ -293,6 +294,7 @@ if (!doNotTrack) {
 <h3 id="一技术与代码素养">一、技术与代码素养</h3>
 <ol>
 <li>config.py</li>
+<li>代码调试</li>
 </ol>
 <h2 id="开发流程">开发流程</h2>
 <h3 id="一文件下载">一、文件下载</h3>
@@ -1010,6 +1012,55 @@ if (!doNotTrack) {
 </li>
 </ul>
 <h3 id="20210401">2021.04.01</h3>
+<ul>
+<li>
+<p>今日任务</p>
+<ol>
+<li>
+<p>前往盐田公司解决程序运行问题（SWB文件上传流程）</p>
+<p>问题1</p>
+<ul>
+<li>逻辑描述：一对多单号的上传规则</li>
+<li>逻辑设计：loading中的单号不去重；填写完（10个不去重的单号）点击搜索；来到单号列表页，将程序内存中的十个单号进行去重，遍历单号列表（已去重），网站中对应的单号进行上传文件的操作</li>
+<li>结果：已解决，测试已通过，待后续运行检查稳定性。</li>
+</ul>
+</li>
+<li>
+<p>文件审核报告的编写（欧阳，在盐田没啥时间弄，回罗湖再弄吧）</p>
+</li>
+</ol>
+</li>
+<li>
+<p>感想与收获</p>
+<ol>
+<li>不能懈怠，争分夺秒，只要是路上，就要风雨兼程。</li>
+<li>在实际的业务场景中解决程序运行的问题，也是作为开发者成长的一部分。充分证明了开发场景和实际生产场景之间存在巨大出入。</li>
+</ol>
+</li>
+</ul>
+<h3 id="20210402">2021.04.02</h3>
+<ul>
+<li>
+<p>今日任务</p>
+<ol>
+<li>
+<p>前往盐田公司解决程序运行问题（SWB文件上传流程）</p>
+<p>问题1</p>
+<ul>
+<li>出错描述：”Consignee code“字段获取错误</li>
+<li>原因（人为因素）：loading表表头中的“Consignee code”写成“Consigneecode”</li>
+<li>解决：提供一份统一的模版，用户后续复制数据的时候，表头不用动，只复制数据就好。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>感想与收获</p>
+<ol>
+<li>遇到的大多数不明所以的报错场景，百分之八十重启解决，剩下的百分之二十不用解决，这个世界上哪有什么事情是百分之百解决的？</li>
+</ol>
+</li>
+</ul>
 
     </div>
 
@@ -1044,7 +1095,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4446 字
+          4943 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1143,6 +1194,7 @@ if (!doNotTrack) {
         <li><a href="#20210330">2021.03.30</a></li>
         <li><a href="#20210331">2021.03.31</a></li>
         <li><a href="#20210401">2021.04.01</a></li>
+        <li><a href="#20210402">2021.04.02</a></li>
       </ul>
     </li>
   </ul>
@@ -1203,7 +1255,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&name=%e3%80%8c%e9%a9%ac%e5%a3%ab%e5%9f%ba%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e6%94%b6%e8%8e%b7%e4%b8%8e%e6%84%9f%e6%82%9f%20%e4%b8%80%e3%80%81%e6%8a%80%e6%9c%af%e4%b8%8e%e4%bb%a3%e7%a0%81%e7%b4%a0%e5%85%bb%20config.py%20%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%20%e4%b8%80%e3%80%81%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%20%e7%99%bb%e5%bd%95%e7%b3%bb%e7%bb%9f%ef%bc%8c%e8%8e%b7%e5%8f%96cookie%e5%80%bc%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%90%8e%e9%9d%a2%e7%9a%84%e4%b8%8b%e8%bd%bd%e8%af%b7%e6%b1%82%20%e4%bd%bf%e7%94%a8js%e4%bb%a3%e7%a0%81%20%e8%8e%b7%e5%8f%96%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5%20%e6%8c%89%e7%85%a7%e6%8c%87%e5%ae%9a%e7%9a%84%e5%91%bd%e5%90%8d">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2f&name=%e3%80%8c%e9%a9%ac%e5%a3%ab%e5%9f%ba%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e6%94%b6%e8%8e%b7%e4%b8%8e%e6%84%9f%e6%82%9f%20%e4%b8%80%e3%80%81%e6%8a%80%e6%9c%af%e4%b8%8e%e4%bb%a3%e7%a0%81%e7%b4%a0%e5%85%bb%20config.py%20%e4%bb%a3%e7%a0%81%e8%b0%83%e8%af%95%20%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%20%e4%b8%80%e3%80%81%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%20%e7%99%bb%e5%bd%95%e7%b3%bb%e7%bb%9f%ef%bc%8c%e8%8e%b7%e5%8f%96cookie%e5%80%bc%ef%bc%8c%e7%94%a8%e4%ba%8e%e5%90%8e%e9%9d%a2%e7%9a%84%e4%b8%8b%e8%bd%bd%e8%af%b7%e6%b1%82%20%e4%bd%bf%e7%94%a8js%e4%bb%a3%e7%a0%81%20%e8%8e%b7%e5%8f%96%e6%96%87%e4%bb%b6%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5%20%e6%8c%89%e7%85%a7%e6%8c%87">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
