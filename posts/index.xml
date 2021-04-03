@@ -6,8 +6,17 @@
     <description>Recent content in Posts on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>billie</copyright>
-    <lastBuildDate>Sun, 28 Mar 2021 01:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Billie</copyright>
+    <lastBuildDate>Sun, 28 Mar 2021 02:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python学习笔记 | 装饰器</title>
+      <link>https://billie52707.cn/posts/2021/3/python-decorator/</link>
+      <pubDate>Sun, 28 Mar 2021 02:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/3/python-decorator/</guid>
+      <description>前言 1. 如何理解Python装饰器？ 装饰器本质上是一个「Python函数」，它可以让其他函数在不需要做任何代码变动的前提下增加额外的扩展功能，</description>
+    </item>
+    
     <item>
       <title>python模块详解 | openpyxl</title>
       <link>https://billie52707.cn/posts/2021/3/openpyxl/</link>
