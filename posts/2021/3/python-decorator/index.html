@@ -210,7 +210,8 @@ if (!doNotTrack) {
         <li><a href="#1-最基本的装饰器---高阶函数嵌套函数">1. 最基本的装饰器 - 高阶函数+嵌套函数</a></li>
         <li><a href="#2-带语法糖的装饰器">2. 带语法糖的装饰器</a></li>
         <li><a href="#3-可传参的装饰器">3. 可传参的装饰器</a></li>
-        <li><a href="#4-类装饰器">4. 类装饰器</a></li>
+        <li><a href="#4-带参数的装饰器">4. 带参数的装饰器</a></li>
+        <li><a href="#5-类装饰器">5. 类装饰器</a></li>
       </ul>
     </li>
   </ul>
@@ -403,7 +404,23 @@ fun()
 
 fun(<span style="color:#e6db74">&#39;Billie&#39;</span>,lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;python&#39;</span>)
 </code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210404113530144.png" alt="image-20210404113530144"></p>
-<h3 id="4-类装饰器">4. 类装饰器</h3>
+<h3 id="4-带参数的装饰器">4. 带参数的装饰器</h3>
+<p>使用时给装饰器函数进行传参。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(flag):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(func): <span style="color:#75715e">#</span>
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs): <span style="color:#75715e">#</span>
+            <span style="color:#66d9ef">if</span> flag:
+                <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;正在执行函数 - {func.__name__}&#34;</span>)
+                func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs) <span style="color:#75715e">#</span>
+                <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;结束运行函数 - {func.__name__}&#34;</span>)
+        <span style="color:#66d9ef">return</span> inner
+    <span style="color:#66d9ef">return</span> wrapper
+<span style="color:#a6e22e">@logger</span>(False)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
+fun()
+</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210406113440255.png" alt="image-20210406113440255"></p>
+<h3 id="5-类装饰器">5. 类装饰器</h3>
 
     </div>
 
@@ -441,7 +458,7 @@ fun(<span style="color:#e6db74">&#39;Billie&#39;</span>,lang<span style="color:#
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1549 字
+          1635 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -509,7 +526,8 @@ fun(<span style="color:#e6db74">&#39;Billie&#39;</span>,lang<span style="color:#
         <li><a href="#1-最基本的装饰器---高阶函数嵌套函数">1. 最基本的装饰器 - 高阶函数+嵌套函数</a></li>
         <li><a href="#2-带语法糖的装饰器">2. 带语法糖的装饰器</a></li>
         <li><a href="#3-可传参的装饰器">3. 可传参的装饰器</a></li>
-        <li><a href="#4-类装饰器">4. 类装饰器</a></li>
+        <li><a href="#4-带参数的装饰器">4. 带参数的装饰器</a></li>
+        <li><a href="#5-类装饰器">5. 类装饰器</a></li>
       </ul>
     </li>
   </ul>

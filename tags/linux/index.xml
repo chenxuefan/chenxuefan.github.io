@@ -44,5 +44,14 @@
       <description>前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx.</description>
     </item>
     
+    <item>
+      <title>Linux学习笔记 | nginx</title>
+      <link>https://billie52707.cn/posts/2020/4/nginx/</link>
+      <pubDate>Wed, 22 Apr 2020 14:33:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/4/nginx/</guid>
+      <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
+    </item>
+    
   </channel>
 </rss>

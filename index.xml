@@ -41,7 +41,7 @@
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/data-structure/</guid>
-      <description>模块一：代码效率优化方法论 复杂度是衡量代码运行效率的重要度量因素 复杂度通常包括「时间复杂度」与「空间复杂度」 时间复杂度与「代码的结构设计」高</description>
+      <description>模块一：代码效率优化方法论 复杂度是衡量代码运行效率的重要度量因素 复杂度通常包括「时间复杂度」与「空间复杂度」，其中 时间复杂度与「代码的结构设</description>
     </item>
     
     <item>
@@ -257,7 +257,7 @@
       <pubDate>Sun, 01 Nov 2020 17:32:35 +0800</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/11/wuhan-memory/</guid>
-      <description>设备 - Sony RX100M3 日期 - 2020-11-01 /酒店阳台夜景 - 来武汉第一天，窗外的大马路灯火通明，隐约还能看到远处的大桥/ /珞珈山脚下 - 建筑陈旧，生活安逸，很有年代感的</description>
+      <description>设备 - Sony RX100M3 / iphone7 日期 - 2020-11-01 /酒店阳台夜景 - 来武汉第一天，窗外的大马路灯火通明，隐约还能看到远处的大桥/ /珞珈山脚下 - 建筑陈旧，生活安逸，很有年代</description>
     </item>
     
     <item>
@@ -780,6 +780,15 @@
       
       <guid>https://billie52707.cn/posts/2020/4/python-shutil/</guid>
       <description>简介 shutil是python的一个内置模块，提供了许多关于文件和文件集合的高级操作，特别提供文件夹与文件操作、归档操作了支持文件复制和删除</description>
+    </item>
+    
+    <item>
+      <title>Linux学习笔记 | nginx</title>
+      <link>https://billie52707.cn/posts/2020/4/nginx/</link>
+      <pubDate>Wed, 22 Apr 2020 14:33:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/4/nginx/</guid>
+      <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
     </item>
     
     <item>

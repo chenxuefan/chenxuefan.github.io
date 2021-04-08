@@ -189,6 +189,55 @@ var _hmt = _hmt || [];
 <li>指针</li>
 <li>自定义类型</li>
 </ul>
+<h3 id="存储类---定义变量函数的范围可见性和生命周期">存储类 - 定义变量/函数的范围（可见性）和生命周期</h3>
+<ul>
+<li>auto - 所有局部变量默认的存储类</li>
+<li>register - 用于定义存储在寄存器中而不是 RAM 中的局部变量</li>
+<li>static - 指示编译器在程序的生命周期内保持局部变量的存在，而不需要在每次它进入和离开作用域时进行创建和销毁</li>
+<li>extern - 用于提供一个全局变量的引用，全局变量对所有的程序文件都是可见的</li>
+</ul>
+<h3 id="运算符">运算符</h3>
+<h4 id="算术运算符">算术运算符</h4>
+<ul>
+<li><code>+ - * / % ++ --</code></li>
+</ul>
+<h4 id="关系运算符">关系运算符</h4>
+<ul>
+<li><code>== != &gt; &lt; &gt;= &lt;=</code></li>
+</ul>
+<h4 id="逻辑运算符">逻辑运算符</h4>
+<ul>
+<li><code>&amp;&amp; || ! （与或非）</code></li>
+</ul>
+<h4 id="位运算符">位运算符</h4>
+<h4 id="赋值运算符">赋值运算符</h4>
+<ul>
+<li><code>= += -= *= /= %= &lt;&lt;= &gt;&gt;= &amp;= ^= |=</code></li>
+</ul>
+<h4 id="杂项运算符">杂项运算符</h4>
+<ul>
+<li>sizeof() - 返回变量的大小</li>
+<li>&amp; - 返回变量的地址</li>
+<li><code>*</code> - 指向一个变量</li>
+<li><code>？:</code> - 条件表达式</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+	<span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">double</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.12</span>;
+	
+  printf(<span style="color:#e6db74">&#34;变量a的值是：%d&#34;</span>,a); 
+  printf(<span style="color:#e6db74">&#34;变量b的值是：%f&#34;</span>,b);
+  printf(<span style="color:#e6db74">&#34;变量a的大小是：%lu&#34;</span>,<span style="color:#66d9ef">sizeof</span>(a));
+  printf(<span style="color:#e6db74">&#34;变量b的地址是：%d&#34;</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#f92672">&amp;</span>b);
+}
+</code></pre></div><h4 id="printf">printf()</h4>
+<ul>
+<li>
+<p>格式符</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210408105152534.png" alt="image-20210408105152534"></p>
+</li>
+</ul>
 
   
   </div>
