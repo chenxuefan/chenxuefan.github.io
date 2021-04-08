@@ -45,6 +45,15 @@
     </item>
     
     <item>
+      <title>c语言学习笔记</title>
+      <link>https://billie52707.cn/note/c/</link>
+      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/c/</guid>
+      <description>前言 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以</description>
+    </item>
+    
+    <item>
       <title>ubuntu</title>
       <link>https://billie52707.cn/note/ubuntu/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
@@ -59,7 +68,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/pyqt-style-transform/</guid>
-      <description>风格迁移 - GUI设计文档 布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHBo</description>
+      <description>5风格迁移 - GUI设计文档 布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHB</description>
     </item>
     
     <item>
@@ -96,15 +105,6 @@
       
       <guid>https://billie52707.cn/note/css/</guid>
       <description>渐变 线性渐变 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一</description>
-    </item>
-    
-    <item>
-      <title>c语言学习笔记</title>
-      <link>https://billie52707.cn/note/c/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/c/</guid>
-      <description>前言 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以</description>
     </item>
     
     <item>

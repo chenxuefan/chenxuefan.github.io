@@ -27,7 +27,8 @@ if (!doNotTrack) {
 <meta property="og:description" content="前言 语法篇 程序框架 #include &lt;stdio.h&gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/note/c/" />
-
+<meta property="article:published_time" content="2020-11-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-23T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="c语言学习笔记"/>
@@ -223,13 +224,132 @@ var _hmt = _hmt || [];
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-	<span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-	<span style="color:#66d9ef">double</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.12</span>;
-	
-  printf(<span style="color:#e6db74">&#34;变量a的值是：%d&#34;</span>,a); 
-  printf(<span style="color:#e6db74">&#34;变量b的值是：%f&#34;</span>,b);
-  printf(<span style="color:#e6db74">&#34;变量a的大小是：%lu&#34;</span>,<span style="color:#66d9ef">sizeof</span>(a));
-  printf(<span style="color:#e6db74">&#34;变量b的地址是：%d&#34;</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#f92672">&amp;</span>b);
+    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">double</span> b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.12</span>;
+    <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> ptr;
+
+    ptr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>a;
+    printf(<span style="color:#e6db74">&#34;变量a的值是：%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,a);
+    printf(<span style="color:#e6db74">&#34;变量b的值是：%f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,b);
+    printf(<span style="color:#e6db74">&#34;变量a的大小是：%lu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#66d9ef">sizeof</span>(a));
+    printf(<span style="color:#e6db74">&#34;变量b的地址是：%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">*</span>ptr);
+}
+</code></pre></div><h3 id="判断">判断</h3>
+<ul>
+<li>if 语句 <code>if(){}</code></li>
+<li>if&hellip;else 语句 <code>if(){}else{}</code></li>
+<li>嵌套if语句</li>
+<li>switch 语句 <code>switch(){case...case...default:...}</code></li>
+<li>嵌套switch语句</li>
+<li>三元运算符 <code> ? :</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  	<span style="color:#75715e">// if...else...
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+    <span style="color:#66d9ef">if</span>(a<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">20</span>){
+        printf(<span style="color:#e6db74">&#34;a小于20 - %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,a);
+    }<span style="color:#66d9ef">else</span>{
+        printf(<span style="color:#e6db74">&#34;a大于20 - %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,a);
+    }
+		<span style="color:#75715e">// switch
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> grade <span style="color:#f92672">=</span> <span style="color:#ae81ff">80</span>;
+    <span style="color:#66d9ef">switch</span>(grade){
+        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
+            printf(<span style="color:#e6db74">&#34;牛逼，90分！</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+            <span style="color:#66d9ef">break</span>;
+        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">80</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">70</span><span style="color:#f92672">:</span>
+            printf(<span style="color:#e6db74">&#34;不行啊，还要加油！</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+            <span style="color:#66d9ef">break</span>;
+        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">60</span><span style="color:#f92672">:</span>
+            printf(<span style="color:#e6db74">&#34;不能再摸鱼了，得支棱起来啊！</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+            <span style="color:#66d9ef">break</span>;
+        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+            printf(<span style="color:#e6db74">&#34;无效的成绩</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+  	<span style="color:#75715e">// ? = 
+</span><span style="color:#75715e"></span>  	<span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+  	(num<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">?</span>printf(<span style="color:#e6db74">&#34;这个数大于10</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">:</span>printf(<span style="color:#e6db74">&#34;这个数小于10</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+  	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="循环">循环</h3>
+<ul>
+<li>循环类型
+<ul>
+<li>while循环 <code>while(condition){}</code></li>
+<li>for循环 <code>for(init;condition;increment){}</code></li>
+<li>do&hellip;while循环 <code>do{}while()</code></li>
+<li>嵌套循环</li>
+<li>无限循环 <code>for( ; ; ){}</code></li>
+</ul>
+</li>
+<li>循环控制语句
+<ul>
+<li>break - 终止循环或switch语句</li>
+<li>continue - 立即停止本次循环迭代，开始下次循环迭代</li>
+<li>goto - 将控制转移到被标记的语句</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#75715e">// while
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span>(a<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">5</span>){
+    printf(<span style="color:#e6db74">&#34;a的值：%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,a);
+    a<span style="color:#f92672">++</span>;
+  }
+  <span style="color:#75715e">// for
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span>(a;a<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">5</span>;a<span style="color:#f92672">++</span>){
+    printf(<span style="color:#e6db74">&#34;a的值：%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,a);
+  }
+  <span style="color:#75715e">//do while
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">do</span>{
+    printf(<span style="color:#e6db74">&#34;a的值：%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,a);
+    a<span style="color:#f92672">++</span>;
+  }<span style="color:#66d9ef">while</span>(a<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">5</span>);
+  <span style="color:#75715e">// 无限循环
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span>( ; ; ){
+      printf(<span style="color:#e6db74">&#34;该循环会永远执行下去！</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+  }
+  
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="函数">函数</h3>
+<ul>
+<li>
+<p>每个c程序都至少有一个函数，即主函数main()</p>
+</li>
+<li>
+<p>c语言的函数定义一般形式</p>
+<pre><code>return_type function_name(parameter list){
+  body of the function
+}
+</code></pre></li>
+<li>
+<p>函数的组成部分</p>
+<ul>
+<li>返回类型 - return_type是函数返回值的数据类型，如不返回值，则为void</li>
+<li>函数名称</li>
+<li>参数 - 参数可选，可不填入</li>
+<li>函数主体 - 函数主体包含一组定义函数执行任务的语句</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/*函数声明*/</span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef">int</span> num1,<span style="color:#66d9ef">int</span> num2){
+  <span style="color:#66d9ef">if</span>(num1<span style="color:#f92672">&gt;</span>num2){
+    <span style="color:#66d9ef">return</span> num1;
+  }<span style="color:#66d9ef">else</span>{
+    <span style="color:#66d9ef">return</span> num2;
+  }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  <span style="color:#66d9ef">int</span> 
 }
 </code></pre></div><h4 id="printf">printf()</h4>
 <ul>
