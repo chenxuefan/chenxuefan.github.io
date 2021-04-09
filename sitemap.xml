@@ -98,6 +98,11 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/note/pyqt5/</loc>
+    <lastmod>2020-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/posts/2020/12/yuketang-login/</loc>
     <lastmod>2020-12-05T02:30:10+00:00</lastmod>
   </url>
@@ -293,7 +298,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/2020/9/vue-study-note/</loc>
+    <loc>https://billie52707.cn/note/vue-study-note/</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -333,7 +338,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/2020/8/docker-study-note/</loc>
+    <loc>https://billie52707.cn/note/docker-study-note/</loc>
     <lastmod>2020-08-29T18:10:42+08:00</lastmod>
   </url>
   
@@ -359,6 +364,11 @@
   
   <url>
     <loc>https://billie52707.cn/diary/2020-08-25/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/machine-learn/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -603,7 +613,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/ubuntu/</loc>
+    <loc>https://billie52707.cn/note/linux/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
   
@@ -620,10 +630,6 @@
   <url>
     <loc>https://billie52707.cn/posts/2020/3/python-psutil/</loc>
     <lastmod>2020-03-15T10:17:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/pyqt-style-transform/</loc>
   </url>
   
   <url>
@@ -675,11 +681,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/pyqt5/</loc>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/machine-learn/</loc>
+    <loc>https://billie52707.cn/note/pyqt-style-transform/</loc>
   </url>
   
 </urlset>

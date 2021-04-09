@@ -72,12 +72,12 @@
     </item>
     
     <item>
-      <title>c语言学习笔记</title>
+      <title>「c语言」学习笔记</title>
       <link>https://billie52707.cn/note/c/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/c/</guid>
-      <description>前言 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以</description>
+      <description>前言 c语言是万物之源 🤪 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如</description>
     </item>
     
     <item>
@@ -207,11 +207,11 @@
     </item>
     
     <item>
-      <title>vue.js学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/9/vue-study-note/</link>
+      <title>「vue.js」学习笔记</title>
+      <link>https://billie52707.cn/note/vue-study-note/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/9/vue-study-note/</guid>
+      <guid>https://billie52707.cn/note/vue-study-note/</guid>
       <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
     </item>
     
@@ -234,11 +234,11 @@
     </item>
     
     <item>
-      <title>Docker学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/8/docker-study-note/</link>
+      <title>「Docker」学习笔记</title>
+      <link>https://billie52707.cn/note/docker-study-note/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/docker-study-note/</guid>
+      <guid>https://billie52707.cn/note/docker-study-note/</guid>
       <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
     </item>
     

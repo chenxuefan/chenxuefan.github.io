@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> nginx学习笔记 | 解决跨域问题 | 人人都爱小雀斑&#39;s blog </title>
+  <title> 「Linux」学习笔记 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -24,16 +24,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="nginx学习笔记 | 解决跨域问题" />
-<meta property="og:description" content="什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以认为" />
+  <meta property="og:title" content="「Linux」学习笔记" />
+<meta property="og:description" content="VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/11/nginx-cross-domain/" />
-<meta property="article:published_time" content="2020-11-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-11-17T00:00:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/note/linux/" />
+<meta property="article:published_time" content="2020-03-17T20:54:00+00:00" />
+<meta property="article:modified_time" content="2020-03-17T20:54:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="nginx学习笔记 | 解决跨域问题"/>
-<meta name="twitter:description" content="什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以认为"/>
+<meta name="twitter:title" content="「Linux」学习笔记"/>
+<meta name="twitter:description" content="VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的"/>
 
   
   
@@ -107,14 +107,14 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2020/11/1-x-examination/">
+          <a class="icon" href=" https://billie52707.cn/posts/2020/3/python-pycharm/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/posts/2020/11/web-media/">
+          <a class="icon" href="https://billie52707.cn/posts/2020/3/python-progressbar/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -145,57 +145,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&text=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&text=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&is_video=false&description=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&is_video=false&description=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f">
+    <a class="icon" href="mailto:?subject=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&name=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98&description=%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%a8%e5%9f%9f%3f%20%e5%bd%93%e4%b8%a4%e4%b8%aa%e5%9f%9f%e5%85%b7%e6%9c%89%e7%9b%b8%e5%90%8c%e7%9a%84%e5%8d%8f%e8%ae%ae%28%e5%a6%82http%29%2c%20%e7%9b%b8%e5%90%8c%e7%9a%84%e7%ab%af%e5%8f%a3%28%e5%a6%8280%29%ef%bc%8c%e7%9b%b8%e5%90%8c%e7%9a%84host%ef%bc%88%e5%a6%82www.google.com%29%ef%bc%8c%e9%82%a3%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e5%8f%af%e4%bb%a5%e8%ae%a4%e4%b8%ba">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&name=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=VMWare%e8%99%9a%e6%8b%9f%e6%9c%ba%e6%8f%90%e7%a4%ba%ef%bc%9a%e9%94%81%e5%ae%9a%e6%96%87%e4%bb%b6%e5%a4%b1%e8%b4%a5%ef%bc%8c%e6%89%93%e4%b8%8d%e5%bc%80%e7%a3%81%e7%9b%98%20%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%9c%a8%e8%bf%90%e8%a1%8c%e7%9a%84%e6%97%b6%e5%80%99%ef%bc%8c%e4%bc%9a%e9%94%81%e5%ae%9a%e6%96%87%e4%bb%b6%ef%bc%8c%e9%98%b2%e6%ad%a2%e8%a2%ab%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e5%a6%82%e6%9e%9c%e7%aa%81%e7%84%b6%e7%b3%bb%e7%bb%9f%e5%b4%a9%e6%ba%83%e4%ba%86%ef%bc%8c%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%b0%b1%e6%9d%a5%e4%b8%8d%e6%80%a5%e6%8a%8a%e5%b7%b2%e7%bb%8f%e9%94%81%e5%ae%9a%e7%9a%84">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&t=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&t=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -205,9 +205,16 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#什么是跨域">什么是跨域?</a></li>
-    <li><a href="#解决方式">解决方式</a></li>
-    <li><a href="#后记">后记</a></li>
+    <li><a href="#vmware虚拟机提示锁定文件失败打不开磁盘">VMWare虚拟机提示：锁定文件失败，打不开磁盘</a></li>
+    <li><a href="#必要工具常用软件的安装">必要工具/常用软件的安装</a>
+      <ul>
+        <li><a href="#vimnet-tools">vim/net-tools</a></li>
+        <li><a href="#openssl">openssl</a></li>
+        <li><a href="#opencv">opencv</a></li>
+        <li><a href="#anaconda">Anaconda</a></li>
+      </ul>
+    </li>
+    <li><a href="#设置环境变量">设置环境变量</a></li>
   </ul>
 </nav>
     </div>
@@ -219,7 +226,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        nginx学习笔记 | 解决跨域问题
+        「Linux」学习笔记
       </h1>
       <div class="meta">
         
@@ -229,7 +236,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2020-11-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-17</time>
+          <time datetime="2020-03-17 20:54:00 &#43;0000 UTC" itemprop="datePublished">2020-03-17</time>
           
           
         </div>
@@ -240,23 +247,12 @@ if (!doNotTrack) {
             </span>
         </div>
         
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/tec">tec</a>
-            
-        </div>
-        
         
         <div class="article-tag">
             <i class="fas fa-tag"></i>
             
              
-            <a class="tag-link" href="/tags/linux" rel="tag">Linux</a>
-            
-             
-            <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
+            <a class="tag-link" href="/tags/ubuntu" rel="tag">ubuntu</a>
             
         </div> 
         
@@ -267,27 +263,87 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="什么是跨域">什么是跨域?</h2>
-<p>当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如<a href="http://www.google.com/">www.google.com</a>)，那么我们就可以认为它们是相同的域（协议，域名，端口都必须相同）。</p>
-<p>跨域就指协议、域名、端口不一致，出于安全考虑，跨域的资源之间是无法交互的。</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/640.png" alt="640"></p>
-<p>请求的目标URL和所在网页的URL的协议、域名、端口有一个不同，就算是跨域了。</p>
-<p>因此向服务器发送请求会返回<code>No 'Access-Control-Allow-Origin' header is present on the requested resource</code>的错误。</p>
-<p>如下图，我想使用jQuery中的get方法访问自己服务器上的文件</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117222936787.png" alt="image-20201117222936787"></p>
-<p>结果返回如下bug</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117222802863.png" alt="image-20201117222802863"></p>
-<h2 id="解决方式">解决方式</h2>
-<p>nginx配置文件<code>nginx.conf</code>中加上这几句</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#e6db74">&#34;</span>$http_origin&#34; <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Credentials&#39;</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span> <span style="color:#e6db74">&#39;GET,</span> <span style="color:#e6db74">OPTIONS&#39;</span> <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span> <span style="color:#e6db74">&#39;Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-</span>  <span style="color:#e6db74">Since,Keep-Alive,Origin,User-Agent,X-Requested-With&#39;</span> <span style="color:#e6db74">always</span>;
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117220901079.png" alt="image-20201117220901079"></p>
-<p>以上，重新启动nginx，再向服务器发送请求，即可成功获取响应数据</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117223517556.png" alt="image-20201117223517556"></p>
-<h2 id="后记">后记</h2>
-<p>推荐阅读 - <a href="https://ningyu1.github.io/site/post/92-cors-ajax/#ajax-compatibility">跨域踩坑经验总结（内涵：跨域知识科普）</a></p>
+      <h2 id="vmware虚拟机提示锁定文件失败打不开磁盘">VMWare虚拟机提示：锁定文件失败，打不开磁盘</h2>
+<p>虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的文件解锁，所以你在启动的时候，就会提示无法锁定文件。解决方法如下：</p>
+<p>在你的虚拟机的安装目录下，搜索 <code>.lck</code>
+删除搜索到的三个文件 即可！</p>
+<h2 id="必要工具常用软件的安装">必要工具/常用软件的安装</h2>
+<h3 id="vimnet-tools">vim/net-tools</h3>
+<pre><code>apt-get install vim net-tools 
+</code></pre><h3 id="openssl">openssl</h3>
+<pre><code>问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 
+解决：apt-get install libssl-dev
+</code></pre><h3 id="opencv">opencv</h3>
+<ol>
+<li>
+<p>安装依赖</p>
+<pre><code>apt-get install cma
+apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev
+apt-get install libgtk2.0-dev
+apt-get install pkg-config
+</code></pre></li>
+<li>
+<p>下载opencv：<a href="https://opencv.org/releases/">https://opencv.org/releases/</a></p>
+</li>
+<li>
+<p>tar -zvxf &hellip;</p>
+</li>
+<li>
+<p>cd opencv &amp;&amp; mkdir build &amp;&amp; cd build</p>
+</li>
+<li>
+<p>cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..</p>
+</li>
+<li>
+<p>make &amp;&amp; make install</p>
+</li>
+</ol>
+<h3 id="anaconda">Anaconda</h3>
+<ol>
+<li>
+<p>在线下载安装包</p>
+<pre><code>wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
+</code></pre></li>
+<li>
+<p>赋予可读权限</p>
+<pre><code>chmod 777 Anaconda3-2020.07-Linux-x86_64.sh
+</code></pre></li>
+<li>
+<p>安装</p>
+<pre><code>./Anaconda3-2020.07-Linux-x86_64.sh
+</code></pre></li>
+<li>
+<p>添加到环境变量</p>
+<p>先查一下安装路径在哪：<code>sudo find / -name anaconda</code></p>
+<p>将安装路径添加环境变量：<code>export PATH=/root/anaconda3/bin/:$PATH</code></p>
+</li>
+<li>
+<p>测试一下</p>
+<pre><code>conda
+</code></pre><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201108140821264.png" alt="image-20201108140821264"></p>
+</li>
+</ol>
+<h2 id="设置环境变量">设置环境变量</h2>
+<ol>
+<li>
+<p>临时设置</p>
+<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+</code></pre></li>
+<li>
+<p>全局设置（当前用户）</p>
+<p>打开<code>~/.bashrc</code>，编辑一下</p>
+<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+</code></pre></li>
+<li>
+<p>全局设置（所有用户）</p>
+<p>打开<code>/etc/profile</code>，编辑一下</p>
+<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+</code></pre></li>
+<li>
+<p>一步到位设置</p>
+<pre><code>echo &quot;export PATH=/home/cqh:$PATH&quot; &gt;&gt; /etc/profile
+</code></pre></li>
+</ol>
 
     </div>
 
@@ -321,18 +377,15 @@ if (!doNotTrack) {
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
             
-            <a class="tag-link" href="/tags/linux" rel="tag">Linux</a>
-            
-            
-            <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
+            <a class="tag-link" href="/tags/ubuntu" rel="tag">ubuntu</a>
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          350 字
+          425 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2020-11-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-17</time>
+          <time datetime="2020-03-17 20:54:00 &#43;0000 UTC" itemprop="datePublished">2020-03-17</time>
           
 
   </p>
@@ -340,7 +393,7 @@ if (!doNotTrack) {
 
   
 
-<span id="/posts/2020/11/nginx-cross-domain/" class="leancloud_visitors" data-flag-title="nginx学习笔记 | 解决跨域问题">
+<span id="/note/linux/" class="leancloud_visitors" data-flag-title="「Linux」学习笔记">
 
   
 
@@ -385,9 +438,16 @@ if (!doNotTrack) {
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#什么是跨域">什么是跨域?</a></li>
-    <li><a href="#解决方式">解决方式</a></li>
-    <li><a href="#后记">后记</a></li>
+    <li><a href="#vmware虚拟机提示锁定文件失败打不开磁盘">VMWare虚拟机提示：锁定文件失败，打不开磁盘</a></li>
+    <li><a href="#必要工具常用软件的安装">必要工具/常用软件的安装</a>
+      <ul>
+        <li><a href="#vimnet-tools">vim/net-tools</a></li>
+        <li><a href="#openssl">openssl</a></li>
+        <li><a href="#opencv">opencv</a></li>
+        <li><a href="#anaconda">Anaconda</a></li>
+      </ul>
+    </li>
+    <li><a href="#设置环境变量">设置环境变量</a></li>
   </ul>
 </nav>
     </div>
@@ -401,57 +461,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&text=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&text=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&is_video=false&description=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&is_video=false&description=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f">
+    <a class="icon" href="mailto:?subject=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&title=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&title=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&name=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98&description=%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%a8%e5%9f%9f%3f%20%e5%bd%93%e4%b8%a4%e4%b8%aa%e5%9f%9f%e5%85%b7%e6%9c%89%e7%9b%b8%e5%90%8c%e7%9a%84%e5%8d%8f%e8%ae%ae%28%e5%a6%82http%29%2c%20%e7%9b%b8%e5%90%8c%e7%9a%84%e7%ab%af%e5%8f%a3%28%e5%a6%8280%29%ef%bc%8c%e7%9b%b8%e5%90%8c%e7%9a%84host%ef%bc%88%e5%a6%82www.google.com%29%ef%bc%8c%e9%82%a3%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e5%8f%af%e4%bb%a5%e8%ae%a4%e4%b8%ba">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&name=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=VMWare%e8%99%9a%e6%8b%9f%e6%9c%ba%e6%8f%90%e7%a4%ba%ef%bc%9a%e9%94%81%e5%ae%9a%e6%96%87%e4%bb%b6%e5%a4%b1%e8%b4%a5%ef%bc%8c%e6%89%93%e4%b8%8d%e5%bc%80%e7%a3%81%e7%9b%98%20%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%9c%a8%e8%bf%90%e8%a1%8c%e7%9a%84%e6%97%b6%e5%80%99%ef%bc%8c%e4%bc%9a%e9%94%81%e5%ae%9a%e6%96%87%e4%bb%b6%ef%bc%8c%e9%98%b2%e6%ad%a2%e8%a2%ab%e4%bf%ae%e6%94%b9%ef%bc%8c%e8%80%8c%e5%a6%82%e6%9e%9c%e7%aa%81%e7%84%b6%e7%b3%bb%e7%bb%9f%e5%b4%a9%e6%ba%83%e4%ba%86%ef%bc%8c%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%b0%b1%e6%9d%a5%e4%b8%8d%e6%80%a5%e6%8a%8a%e5%b7%b2%e7%bb%8f%e9%94%81%e5%ae%9a%e7%9a%84">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fnginx-cross-domain%2f&t=nginx%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e8%a7%a3%e5%86%b3%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&t=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

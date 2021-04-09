@@ -27,7 +27,7 @@
     </item>
     
     <item>
-      <title>python学习笔记</title>
+      <title>「python」学习笔记</title>
       <link>https://billie52707.cn/note/python/</link>
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
@@ -36,7 +36,7 @@
     </item>
     
     <item>
-      <title>数据结构学习笔记</title>
+      <title>「数据结构」学习笔记</title>
       <link>https://billie52707.cn/note/data-structure/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
@@ -78,6 +78,15 @@
       
       <guid>https://billie52707.cn/posts/2020/12/scores.search/</guid>
       <description>技术栈 🀄️ Django requests rsa nginx 项目简介 ➖ 此项目旨在「方便同学查询学科成绩」，以往查询成绩的方式主要为 登录教务系统，查看成绩，需要连接学校内网，过程较为繁</description>
+    </item>
+    
+    <item>
+      <title>「pyqt5」学习笔记</title>
+      <link>https://billie52707.cn/note/pyqt5/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/pyqt5/</guid>
+      <description>前言 PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较</description>
     </item>
     
     <item>
@@ -135,12 +144,12 @@
     </item>
     
     <item>
-      <title>c语言学习笔记</title>
+      <title>「c语言」学习笔记</title>
       <link>https://billie52707.cn/note/c/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/c/</guid>
-      <description>前言 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如1.2 指数形式 - 以</description>
+      <description>前言 c语言是万物之源 🤪 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt;int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，如</description>
     </item>
     
     <item>
@@ -306,11 +315,11 @@
     </item>
     
     <item>
-      <title>vue.js学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/9/vue-study-note/</link>
+      <title>「vue.js」学习笔记</title>
+      <link>https://billie52707.cn/note/vue-study-note/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/9/vue-study-note/</guid>
+      <guid>https://billie52707.cn/note/vue-study-note/</guid>
       <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
     </item>
     
@@ -369,11 +378,11 @@
     </item>
     
     <item>
-      <title>Docker学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/8/docker-study-note/</link>
+      <title>「Docker」学习笔记</title>
+      <link>https://billie52707.cn/note/docker-study-note/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/docker-study-note/</guid>
+      <guid>https://billie52707.cn/note/docker-study-note/</guid>
       <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
     </item>
     
@@ -420,6 +429,15 @@
       
       <guid>https://billie52707.cn/diary/2020-08-25/</guid>
       <description>2020-08-25日结 今日计划 看完数据结构基础 生活小记 七点睡两点起 感想收获 明日计划</description>
+    </item>
+    
+    <item>
+      <title>「机器学习」学习笔记</title>
+      <link>https://billie52707.cn/note/machine-learn/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/machine-learn/</guid>
+      <description>相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1. 数据导入 numpy np.loadtxt() pandas pd.read_csv() 2. 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数</description>
     </item>
     
     <item>
@@ -644,7 +662,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/8/yellow/</guid>
-      <description>:-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们为你绽放着 闪烁不息 And everything you do 而你的一颦一举 Yeah&#39; they were all Yellow 却满含胆怯和羞意 I came along 我追随着你的气息 I wrote a song</description>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=5162474\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) :-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们</description>
     </item>
     
     <item>
@@ -653,7 +671,7 @@
       <pubDate>Tue, 04 Aug 2020 19:19:46 +0800</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</guid>
-      <description>(Dylan Thomas, 1914 - 1953) Do not go gentle into that good night, 不要温和地走进那个良夜， Old age should burn and rave at close of day; 老年应当在日暮时燃烧咆哮； Rage,rage against the dying of the light. 怒斥，怒斥光明的消逝。 Though wise men at</description>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1470877170\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) (Dylan Thomas, 1914 - 1953) Do not go gentle into that good night, 不要温和地走进那个</description>
     </item>
     
     <item>
@@ -819,12 +837,12 @@
     </item>
     
     <item>
-      <title>ubuntu</title>
-      <link>https://billie52707.cn/note/ubuntu/</link>
+      <title>「Linux」学习笔记</title>
+      <link>https://billie52707.cn/note/linux/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/ubuntu/</guid>
-      <description>必要工具/常用软件的安装 vim/net-tools apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev</description>
+      <guid>https://billie52707.cn/note/linux/</guid>
+      <description>VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的</description>
     </item>
     
     <item>
@@ -852,15 +870,6 @@
       
       <guid>https://billie52707.cn/posts/2020/3/python-psutil/</guid>
       <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://billie52707.cn/note/pyqt-style-transform/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/pyqt-style-transform/</guid>
-      <description>5风格迁移 - GUI设计文档 布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHB</description>
     </item>
     
     <item>
@@ -965,25 +974,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/other/</guid>
-      <description>VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的</description>
+      <description>注册香港apple id及充值教程</description>
     </item>
     
     <item>
-      <title>pyqt5</title>
-      <link>https://billie52707.cn/note/pyqt5/</link>
+      <title>风格迁移 - GUI设计文档</title>
+      <link>https://billie52707.cn/note/pyqt-style-transform/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/pyqt5/</guid>
-      <description>PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较大的</description>
-    </item>
-    
-    <item>
-      <title>「机器学习」学习笔记</title>
-      <link>https://billie52707.cn/note/machine-learn/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/machine-learn/</guid>
-      <description>相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1. 数据导入 numpy np.loadtxt() pandas pd.read_csv() 2. 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数</description>
+      <guid>https://billie52707.cn/note/pyqt-style-transform/</guid>
+      <description>布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHBoxLayout、QGri</description>
     </item>
     
   </channel>

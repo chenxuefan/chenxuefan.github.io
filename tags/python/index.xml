@@ -27,7 +27,7 @@
     </item>
     
     <item>
-      <title>python学习笔记</title>
+      <title>「python」学习笔记</title>
       <link>https://billie52707.cn/note/python/</link>
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
@@ -42,6 +42,15 @@
       
       <guid>https://billie52707.cn/posts/2020/12/scores.search/</guid>
       <description>技术栈 🀄️ Django requests rsa nginx 项目简介 ➖ 此项目旨在「方便同学查询学科成绩」，以往查询成绩的方式主要为 登录教务系统，查看成绩，需要连接学校内网，过程较为繁</description>
+    </item>
+    
+    <item>
+      <title>「pyqt5」学习笔记</title>
+      <link>https://billie52707.cn/note/pyqt5/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/pyqt5/</guid>
+      <description>前言 PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较</description>
     </item>
     
     <item>

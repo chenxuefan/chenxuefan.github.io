@@ -14,7 +14,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/8/yellow/</guid>
-      <description>:-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们为你绽放着 闪烁不息 And everything you do 而你的一颦一举 Yeah&#39; they were all Yellow 却满含胆怯和羞意 I came along 我追随着你的气息 I wrote a song</description>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=5162474\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) :-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@
       <pubDate>Tue, 04 Aug 2020 19:19:46 +0800</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</guid>
-      <description>(Dylan Thomas, 1914 - 1953) Do not go gentle into that good night, 不要温和地走进那个良夜， Old age should burn and rave at close of day; 老年应当在日暮时燃烧咆哮； Rage,rage against the dying of the light. 怒斥，怒斥光明的消逝。 Though wise men at</description>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1470877170\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) (Dylan Thomas, 1914 - 1953) Do not go gentle into that good night, 不要温和地走进那个</description>
     </item>
     
   </channel>
