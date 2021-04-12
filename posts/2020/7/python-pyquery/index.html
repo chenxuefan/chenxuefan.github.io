@@ -212,6 +212,7 @@ if (!doNotTrack) {
     <li><a href="#查找节点">查找节点</a></li>
     <li><a href="#遍历">遍历</a></li>
     <li><a href="#获取信息">获取信息</a></li>
+    <li><a href="#dom操作">dom操作</a></li>
   </ul>
 </nav>
     </div>
@@ -270,7 +271,7 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="简介">简介</h2>
 <p>pyquery是一个强大的 HTML 解析库，利用它，我们可以直接解析 DOM 节点的结构，并通过 DOM 节点的一些属性快速进行内容提取。</p>
-<p>官方文档：http://pyquery.readthedocs.io/</p>
+<p>官方文档：<a href="https://pyquery.readthedocs.io/en/latest/">http://pyquery.readthedocs.io/</a></p>
 <h2 id="安装">安装</h2>
 <pre><code>pip3 install pyquery
 </code></pre><h2 id="初始化">初始化</h2>
@@ -377,7 +378,7 @@ li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.ac
 <span style="color:#66d9ef">print</span>(li)
 </code></pre></div><p>🚴 <strong>多个节点（遍历）</strong></p>
 <ul>
-<li>item()</li>
+<li>items()</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
 lis <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&#39;</span>)<span style="color:#f92672">.</span>items()
@@ -406,7 +407,11 @@ a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#3
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
 li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&#39;</span>)
 <span style="color:#66d9ef">print</span>(li<span style="color:#f92672">.</span>html())
-</code></pre></div>
+</code></pre></div><h2 id="dom操作">dom操作</h2>
+<ul>
+<li><a href="https://www.jb51.net/article/182279.htm">https://www.jb51.net/article/182279.htm</a></li>
+</ul>
+
     </div>
 
 
@@ -443,7 +448,7 @@ li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          780 字
+          786 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -507,6 +512,7 @@ li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&
     <li><a href="#查找节点">查找节点</a></li>
     <li><a href="#遍历">遍历</a></li>
     <li><a href="#获取信息">获取信息</a></li>
+    <li><a href="#dom操作">dom操作</a></li>
   </ul>
 </nav>
     </div>
