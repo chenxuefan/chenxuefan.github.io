@@ -19,20 +19,11 @@
     
     <item>
       <title>「Docker」学习笔记</title>
-      <link>https://billie52707.cn/note/docker-study-note/</link>
+      <link>https://billie52707.cn/note/docker/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/note/docker-study-note/</guid>
-      <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
-    </item>
-    
-    <item>
-      <title>docker心路历程</title>
-      <link>https://billie52707.cn/note/docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://billie52707.cn/note/docker/</guid>
-      <description>-bash: docker-machine: command not found（macOS） base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;amp;&amp;amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &amp;gt;/usr/local/bin/docker-machine &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-machine ​</description>
+      <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
     </item>
     
   </channel>
