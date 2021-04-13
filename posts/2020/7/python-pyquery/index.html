@@ -318,8 +318,8 @@ doc <span style="color:#f92672">=</span> pq(html)
 </code></pre></div><h2 id="查找节点">查找节点</h2>
 <p>🍎 <strong>子节点</strong></p>
 <ul>
-<li>find()</li>
-<li>children()</li>
+<li><code>find()</code></li>
+<li><code>children()</code></li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
 doc <span style="color:#f92672">=</span> pq(html)
@@ -334,11 +334,11 @@ lis <span style="color:#f92672">=</span> items<span style="color:#f92672">.</spa
 <span style="color:#66d9ef">print</span>(lis)
 </code></pre></div><p>🍊 <strong>父节点</strong></p>
 <ul>
-<li>parents()</li>
+<li><code>parents()</code></li>
 </ul>
 <p>🥝 <strong>兄弟节点</strong></p>
 <ul>
-<li>siblings()</li>
+<li><code>siblings()</code></li>
 </ul>
 <p>ps:以上方法均可传入css选择器</p>
 <p>🐂 <strong>同时根据标签和属性识别</strong></p>
@@ -378,7 +378,7 @@ li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.ac
 <span style="color:#66d9ef">print</span>(li)
 </code></pre></div><p>🚴 <strong>多个节点（遍历）</strong></p>
 <ul>
-<li>items()</li>
+<li><code>items()</code></li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
 lis <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&#39;</span>)<span style="color:#f92672">.</span>items()
@@ -387,7 +387,7 @@ lis <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li
 </code></pre></div><h2 id="获取信息">获取信息</h2>
 <p>🚗 <strong>属性</strong></p>
 <ul>
-<li>attr()</li>
+<li><code>attr() </code></li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
 a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#39;</span>)
@@ -396,13 +396,13 @@ a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#3
 <span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>attr<span style="color:#f92672">.</span>href) <span style="color:#75715e">#href属性的值</span>
 </code></pre></div><p>🚄 <strong>文本</strong></p>
 <ul>
-<li>text()：返回标签内部纯文本内容</li>
+<li><code>text()</code> 返回标签内部纯文本内容</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
 a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#39;</span>)
 <span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>text())
 </code></pre></div><ul>
-<li>html()：返回标签内部html文本内容</li>
+<li><code>html()</code> 返回标签内部html文本内容</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
 li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&#39;</span>)
@@ -410,8 +410,49 @@ li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&
 </code></pre></div><h2 id="dom操作">dom操作</h2>
 <ul>
 <li><a href="https://www.jb51.net/article/182279.htm">https://www.jb51.net/article/182279.htm</a></li>
+<li><code>addClass('class_name')</code></li>
+<li><code>removeClass('class_name')</code></li>
+<li><code>attr()</code></li>
+<li><code>css()</code></li>
+<li><code>remove()</code></li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">&lt;head&gt;
+</span><span style="color:#e6db74">  &lt;meta charset=&#34;utf-8&#34;/&gt;
+</span><span style="color:#e6db74">  &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;/&gt;
+</span><span style="color:#e6db74">  &lt;title&gt; Notes | 人人都爱小雀斑&#39;s blog &lt;/title&gt;
+</span><span style="color:#e6db74">&lt;/head&gt;
+</span><span style="color:#e6db74">&lt;body class=&#34;max-width mx-auto px3 ltr&#34;&gt;
+</span><span style="color:#e6db74">    &lt;h1&gt;人人都爱小雀斑&#39;s blog&lt;/h1&gt;
+</span><span style="color:#e6db74">&lt;footer id=&#34;footer&#34;&gt;
+</span><span style="color:#e6db74">  &lt;div class=&#34;footer-center&#34;&gt;
+</span><span style="color:#e6db74">    Copyright  
+</span><span style="color:#e6db74">    © 
+</span><span style="color:#e6db74">    2020-2021 
+</span><span style="color:#e6db74">    &lt;span&gt;❤ Billie  &lt;/span&gt;  
+</span><span style="color:#e6db74">    &lt;span&gt;粤ICP备20025795号-1 &lt;/span&gt;&lt;br/&gt;
+</span><span style="color:#e6db74">    &lt;span&gt;Powered By HUGO | &lt;/span&gt;
+</span><span style="color:#e6db74">    &lt;span id=&#34;busuanzi_container_site_uv&#34;&gt;
+</span><span style="color:#e6db74">        访客 &lt;span id=&#34;busuanzi_value_site_uv&#34;/&gt; 
+</span><span style="color:#e6db74">    &lt;/span&gt;
+</span><span style="color:#e6db74">  &lt;/div&gt;
+</span><span style="color:#e6db74">&lt;/footer&gt;
+</span><span style="color:#e6db74">&lt;/body&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+<span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+doc <span style="color:#f92672">=</span> pq(html)
+<span style="color:#75715e"># 添加class</span>
+doc(<span style="color:#e6db74">&#39;footer&#39;</span>)<span style="color:#f92672">.</span>addClass(<span style="color:#e6db74">&#39;footer&#39;</span>)
+<span style="color:#75715e"># 删除class</span>
+doc(<span style="color:#e6db74">&#39;.max-width&#39;</span>)<span style="color:#f92672">.</span>removeClass(<span style="color:#e6db74">&#39;max-width&#39;</span>)
+<span style="color:#75715e"># 修改某个属性的值、添加自定义属性</span>
+doc(<span style="color:#e6db74">&#39;#footer&#39;</span>)<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;id&#39;</span>,<span style="color:#e6db74">&#39;footer_new&#39;</span>)
+doc(<span style="color:#e6db74">&#39;#footer&#39;</span>)<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;tab&#39;</span>,<span style="color:#e6db74">&#39;burn_them_all&#39;</span>)
+<span style="color:#75715e"># 删除某个节点</span>
+doc(<span style="color:#e6db74">&#39;#busuanzi_container_site_uv&#39;</span>)<span style="color:#f92672">.</span>remove()
+<span style="color:#66d9ef">print</span>(doc)
+</code></pre></div>
     </div>
 
 
@@ -448,7 +489,7 @@ li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          786 字
+          958 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

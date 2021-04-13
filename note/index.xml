@@ -7,14 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Fri, 26 Mar 2021 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大厂求索记</title>
+      <link>https://billie52707.cn/note/burn_them_all/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/burn_them_all/</guid>
+      <description>前言 平凡的一个周一的晚上，朝哥通过了微信的面试，即将进入大厂行列，踏上了逆袭的第一步。恭喜！ LeeCode，我吃定你了</description>
+    </item>
+    
+    <item>
+      <title>os</title>
+      <link>https://billie52707.cn/note/os/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/os/</guid>
+      <description>       </description>
+    </item>
+    
     <item>
       <title>「python」学习笔记</title>
       <link>https://billie52707.cn/note/python/</link>
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python/</guid>
-      <description>那些年遇过的坑儿们 RuntimeError: dictionary changed size during iteration 出错描述：RuntimeError: dictionary changed size during iteration 原因：遍历时不能修改字典元素 解决：将遍历条件改为列表 骚操作 字典排</description>
+      <description>那些年遇过的坑儿们 RuntimeError: dictionary changed size during iteration 出错描述：RuntimeError: dictionary changed size during iteration 原因：遍历时不能修改字典元素 解决：将遍历条件改为列表 内置函数 repr() -</description>
     </item>
     
     <item>
