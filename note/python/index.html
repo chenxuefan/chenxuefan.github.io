@@ -114,7 +114,7 @@ if (!doNotTrack) {
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/posts/2021/3/openpyxl/">
+          <a class="icon" href="https://billie52707.cn/posts/2021/3/python-openpyxl/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -214,6 +214,7 @@ if (!doNotTrack) {
         <li><a href="#带颜色的字符串输出">带颜色的字符串输出</a></li>
         <li><a href="#删除文件文件夹">删除文件、文件夹</a></li>
         <li><a href="#异常">异常</a></li>
+        <li><a href="#生成二维码">生成二维码</a></li>
       </ul>
     </li>
   </ul>
@@ -276,7 +277,21 @@ if (!doNotTrack) {
 </ul>
 <h2 id="内置函数">内置函数</h2>
 <ul>
-<li>repr() - 将对象转化为供解释器读取的形式</li>
+<li>
+<p><code>repr()</code> - 将对象转化为供解释器读取的形式</p>
+</li>
+<li>
+<p><code>all(iterable)</code> - 参数iterable为元组或列表，如果参数的所有元素不为0、''、False、None或者iterable为空，all(iterable)返回True，否则返回False；</p>
+</li>
+<li>
+<p><code>@staticmethod</code> - 声明某个类中的函数为静态方法，可以实现实例化使用，也可不实例化调用该方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExcelOperator</span>():
+    <span style="color:#a6e22e">@staticmethod</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>(): <span style="color:#75715e"># 这里没有self参数</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">6</span>
+ExcelOperator<span style="color:#f92672">.</span>test()
+ExcelOperator()<span style="color:#f92672">.</span>test()
+</code></pre></div></li>
 </ul>
 <h2 id="骚操作">骚操作</h2>
 <h3 id="字典排序">字典排序</h3>
@@ -314,7 +329,33 @@ if (!doNotTrack) {
 </ul>
 <h3 id="异常">异常</h3>
 <ul>
-<li><a href="https://www.cnblogs.com/mingmingming/p/11254596.html">https://www.cnblogs.com/mingmingming/p/11254596.html</a></li>
+<li>
+<p><a href="https://www.cnblogs.com/mingmingming/p/11254596.html">https://www.cnblogs.com/mingmingming/p/11254596.html</a></p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">try</span>:
+    a <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;请输入一个数字：&#39;</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a<span style="color:#f92672">.</span>isdigit():
+        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(f<span style="color:#e6db74">&#39;输入异常({a}非数字)&#39;</span>)
+<span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> e:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;程序出错，报错提示：&#39;</span>,repr(e))
+</code></pre></div></li>
+</ul>
+<h3 id="生成二维码">生成二维码</h3>
+<ul>
+<li>安装：pip install myqr</li>
+<li>使用：myqr 网址</li>
+<li>参数：
+<ul>
+<li>v(尺寸)</li>
+<li>n(命名生成的二维码)</li>
+<li>d(生成二维码保存位置)</li>
+<li>p(传入图片地址)</li>
+<li>c(彩色,留空)</li>
+<li>con(对比度，例1.0)</li>
+<li>bri(亮度，例1.0)</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -353,7 +394,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          362 字
+          709 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -419,6 +460,7 @@ if (!doNotTrack) {
         <li><a href="#带颜色的字符串输出">带颜色的字符串输出</a></li>
         <li><a href="#删除文件文件夹">删除文件、文件夹</a></li>
         <li><a href="#异常">异常</a></li>
+        <li><a href="#生成二维码">生成二维码</a></li>
       </ul>
     </li>
   </ul>

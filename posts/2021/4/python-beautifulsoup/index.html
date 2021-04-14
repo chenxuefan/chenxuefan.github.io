@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> python学习笔记 | strftime()格式化输出时间 | 人人都爱小雀斑&#39;s blog </title>
+  <title> python模块详解 | BeautifulSoup | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -24,16 +24,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="python学习笔记 | strftime()格式化输出时间" />
-<meta property="og:description" content="time模块 import time t = time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;) print(t) datetime模块 import datetime t = datetime.datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;) print(t) 格式化输出之后，就得到了我们常见的格式了👇 2020-04-07 10:59:36 附：strftime参数 strftime(format[, tuple]) -&gt; string 将" />
+  <meta property="og:title" content="python模块详解 | BeautifulSoup" />
+<meta property="og:description" content="Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&#39;https://www.baidu.com&#39;) r.encoding = &#39;utf-8&#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/4/python-strftime/" />
-<meta property="article:published_time" content="2020-04-07T11:01:00+00:00" />
-<meta property="article:modified_time" content="2020-04-07T11:01:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/4/python-beautifulsoup/" />
+<meta property="article:published_time" content="2021-04-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-14T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python学习笔记 | strftime()格式化输出时间"/>
-<meta name="twitter:description" content="time模块 import time t = time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;) print(t) datetime模块 import datetime t = datetime.datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;) print(t) 格式化输出之后，就得到了我们常见的格式了👇 2020-04-07 10:59:36 附：strftime参数 strftime(format[, tuple]) -&gt; string 将"/>
+<meta name="twitter:title" content="python模块详解 | BeautifulSoup"/>
+<meta name="twitter:description" content="Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&#39;https://www.baidu.com&#39;) r.encoding = &#39;utf-8&#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改"/>
 
   
   
@@ -107,17 +107,11 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2020/3/python-progressbar/">
+          <a class="icon" href=" https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
-        
-        <li>
-          <a class="icon" href="https://billie52707.cn/note/logging/">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -145,57 +139,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&text=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&is_video=false&description=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f">
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4&description=time%e6%a8%a1%e5%9d%97%20import%20time%20t%20%3d%20time.strftime%28%26quot%3b%25Y-%25m-%25d%20%25H%3a%25M%3a%25S%26quot%3b%29%20print%28t%29%20datetime%e6%a8%a1%e5%9d%97%20import%20datetime%20t%20%3d%20datetime.datetime.now%28%29.strftime%28%26quot%3b%25Y-%25m-%25d%20%25H%3a%25M%3a%25S%26quot%3b%29%20print%28t%29%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e4%b9%8b%e5%90%8e%ef%bc%8c%e5%b0%b1%e5%be%97%e5%88%b0%e4%ba%86%e6%88%91%e4%bb%ac%e5%b8%b8%e8%a7%81%e7%9a%84%e6%a0%bc%e5%bc%8f%e4%ba%86%f0%9f%91%87%202020-04-07%2010%3a59%3a36%20%e9%99%84%ef%bc%9astrftime%e5%8f%82%e6%95%b0%20strftime%28format%5b%2c%20tuple%5d%29%20-%26gt%3b%20string%20%e5%b0%86">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup&description=Why%20BeautifulSoup%3f%20%e4%bd%bf%e7%94%a8%20from%20bs4%20import%20BeautifulSoup%20%e5%88%9b%e5%bb%baBeautifulSoup%e5%af%b9%e8%b1%a1%20%e5%ad%97%e7%ac%a6%e4%b8%b2%20-%20soup%20%3d%20BeatifulSoup%28str%29%20%e5%af%bc%e5%85%a5%e6%96%87%e4%bb%b6%20-%20soup%20%3d%20BeautifulSoup%28open%28%27index.html%27%29%29%20%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd%20import%20requests%20r%20%3d%20requests.get%28%26%2339%3bhttps%3a%2f%2fwww.baidu.com%26%2339%3b%29%20r.encoding%20%3d%20%26%2339%3butf-8%26%2339%3b%20soup%20%3d%20BeautifulSoup%28r.text%29%20print%28soup.prettify%28%29%29%20%23%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201.%20%e6%9f%a5%202.%20%e5%88%a0%203.%20%e5%a2%9e%204.%20%e6%94%b9">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&t=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -203,7 +197,20 @@ if (!doNotTrack) {
 
     </div>
     <div id="toc">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-beautifulsoup">Why BeautifulSoup?</a></li>
+    <li><a href="#使用">使用</a>
+      <ul>
+        <li><a href="#创建beautifulsoup对象">创建BeautifulSoup对象</a></li>
+        <li><a href="#1-查">1. 查</a></li>
+        <li><a href="#2-删">2. 删</a></li>
+        <li><a href="#3-增">3. 增</a></li>
+        <li><a href="#4-改">4. 改</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
     
   </span>
@@ -213,7 +220,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        python学习笔记 | strftime()格式化输出时间
+        python模块详解 | BeautifulSoup
       </h1>
       <div class="meta">
         
@@ -223,7 +230,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2020-04-07 11:01:00 &#43;0000 UTC" itemprop="datePublished">2020-04-07</time>
+          <time datetime="2021-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-14</time>
           
           
         </div>
@@ -258,42 +265,30 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <pre><code>time模块
-import time
-t =  time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;) 
-print(t)
-datetime模块
-import datetime
-t = datetime.datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;) 
-print(t)
-</code></pre><p>格式化输出之后，就得到了我们常见的格式了👇</p>
-<pre><code>2020-04-07 10:59:36
-</code></pre><p><strong>附：strftime参数</strong></p>
-<p>strftime(format[, tuple]) -&gt; string</p>
-<p>将指定的struct_time(默认为当前时间)，根据指定的格式化字符串输出</p>
-<p>python中时间日期格式化符号：</p>
-<p>%y 两位数的年份表示（00-99）</p>
-<p>%Y 四位数的年份表示（000-9999）</p>
-<p>%m 月份（01-12）</p>
-<p>%d 月内中的一天（0-31）</p>
-<p>%H 24小时制小时数（0-23）</p>
-<p>%I 12小时制小时数（01-12）</p>
-<p>%M 分钟数（00=59）</p>
-<p>%S 秒（00-59）</p>
-<p>%a 本地简化星期名称</p>
-<p>%A 本地完整星期名称</p>
-<p>%b 本地简化的月份名称</p>
-<p>%B 本地完整的月份名称</p>
-<p>%c 本地相应的日期表示和时间表示</p>
-<p>%j 年内的一天（001-366）</p>
-<p>%p 本地A.M.或P.M.的等价符</p>
-<p>%U 一年中的星期数（00-53）星期天为星期的开始</p>
-<p>%w 星期（0-6），星期天为星期的开始</p>
-<p>%W 一年中的星期数（00-53）星期一为星期的开始</p>
-<p>%x 本地相应的日期表示</p>
-<p>%X 本地相应的时间表示</p>
-<p>%Z 当前时区的名称</p>
-<p>%% %号本身</p>
+      <h2 id="why-beautifulsoup">Why BeautifulSoup?</h2>
+<h2 id="使用">使用</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+</code></pre></div><h3 id="创建beautifulsoup对象">创建BeautifulSoup对象</h3>
+<ol>
+<li>
+<p>字符串 - <code>soup = BeatifulSoup(str)</code></p>
+</li>
+<li>
+<p>导入文件 - <code>soup = BeautifulSoup(open('index.html'))</code></p>
+</li>
+<li>
+<p>网络加载</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://www.baidu.com&#39;</span>)
+r<span style="color:#f92672">.</span>encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf-8&#39;</span>
+soup <span style="color:#f92672">=</span> BeautifulSoup(r<span style="color:#f92672">.</span>text)
+<span style="color:#66d9ef">print</span>(soup<span style="color:#f92672">.</span>prettify()) <span style="color:#75715e"># 格式化输出</span>
+</code></pre></div></li>
+</ol>
+<h3 id="1-查">1. 查</h3>
+<h3 id="2-删">2. 删</h3>
+<h3 id="3-增">3. 增</h3>
+<h3 id="4-改">4. 改</h3>
 
     </div>
 
@@ -331,11 +326,11 @@ print(t)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          416 字
+          70 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2020-04-07 11:01:00 &#43;0000 UTC" itemprop="datePublished">2020-04-07</time>
+          <time datetime="2021-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-14</time>
           
 
   </p>
@@ -343,7 +338,7 @@ print(t)
 
   
 
-<span id="/posts/2020/4/python-strftime/" class="leancloud_visitors" data-flag-title="python学习笔记 | strftime()格式化输出时间">
+<span id="/posts/2021/4/python-beautifulsoup/" class="leancloud_visitors" data-flag-title="python模块详解 | BeautifulSoup">
 
   
 
@@ -386,7 +381,20 @@ print(t)
     </div>
 
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-beautifulsoup">Why BeautifulSoup?</a></li>
+    <li><a href="#使用">使用</a>
+      <ul>
+        <li><a href="#创建beautifulsoup对象">创建BeautifulSoup对象</a></li>
+        <li><a href="#1-查">1. 查</a></li>
+        <li><a href="#2-删">2. 删</a></li>
+        <li><a href="#3-增">3. 增</a></li>
+        <li><a href="#4-改">4. 改</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -398,57 +406,57 @@ print(t)
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&text=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&is_video=false&description=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f">
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4&description=time%e6%a8%a1%e5%9d%97%20import%20time%20t%20%3d%20time.strftime%28%26quot%3b%25Y-%25m-%25d%20%25H%3a%25M%3a%25S%26quot%3b%29%20print%28t%29%20datetime%e6%a8%a1%e5%9d%97%20import%20datetime%20t%20%3d%20datetime.datetime.now%28%29.strftime%28%26quot%3b%25Y-%25m-%25d%20%25H%3a%25M%3a%25S%26quot%3b%29%20print%28t%29%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e4%b9%8b%e5%90%8e%ef%bc%8c%e5%b0%b1%e5%be%97%e5%88%b0%e4%ba%86%e6%88%91%e4%bb%ac%e5%b8%b8%e8%a7%81%e7%9a%84%e6%a0%bc%e5%bc%8f%e4%ba%86%f0%9f%91%87%202020-04-07%2010%3a59%3a36%20%e9%99%84%ef%bc%9astrftime%e5%8f%82%e6%95%b0%20strftime%28format%5b%2c%20tuple%5d%29%20-%26gt%3b%20string%20%e5%b0%86">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup&description=Why%20BeautifulSoup%3f%20%e4%bd%bf%e7%94%a8%20from%20bs4%20import%20BeautifulSoup%20%e5%88%9b%e5%bb%baBeautifulSoup%e5%af%b9%e8%b1%a1%20%e5%ad%97%e7%ac%a6%e4%b8%b2%20-%20soup%20%3d%20BeatifulSoup%28str%29%20%e5%af%bc%e5%85%a5%e6%96%87%e4%bb%b6%20-%20soup%20%3d%20BeautifulSoup%28open%28%27index.html%27%29%29%20%e7%bd%91%e7%bb%9c%e5%8a%a0%e8%bd%bd%20import%20requests%20r%20%3d%20requests.get%28%26%2339%3bhttps%3a%2f%2fwww.baidu.com%26%2339%3b%29%20r.encoding%20%3d%20%26%2339%3butf-8%26%2339%3b%20soup%20%3d%20BeautifulSoup%28r.text%29%20print%28soup.prettify%28%29%29%20%23%20%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%201.%20%e6%9f%a5%202.%20%e5%88%a0%203.%20%e5%a2%9e%204.%20%e6%94%b9">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f4%2fpython-strftime%2f&t=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20strftime%28%29%e6%a0%bc%e5%bc%8f%e5%8c%96%e8%be%93%e5%87%ba%e6%97%b6%e9%97%b4">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-beautifulsoup%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20BeautifulSoup">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

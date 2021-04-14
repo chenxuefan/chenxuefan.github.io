@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sun, 28 Mar 2021 01:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | BeautifulSoup</title>
+      <link>https://billie52707.cn/posts/2021/4/python-beautifulsoup/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/python-beautifulsoup/</guid>
+      <description>Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改</description>
+    </item>
+    
     <item>
       <title>python模块详解 | openpyxl</title>
-      <link>https://billie52707.cn/posts/2021/3/openpyxl/</link>
+      <link>https://billie52707.cn/posts/2021/3/python-openpyxl/</link>
       <pubDate>Sun, 28 Mar 2021 01:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/3/openpyxl/</guid>
+      <guid>https://billie52707.cn/posts/2021/3/python-openpyxl/</guid>
       <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list 2. 工作表的使用 ## 设置工作表对</description>
     </item>
     

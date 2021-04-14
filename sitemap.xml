@@ -3,32 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/categories/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/note/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/tags/python/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/2021/3/python-decorator-return/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
+    <loc>https://billie52707.cn/posts/2021/4/python-beautifulsoup/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2021/4/python-decorator-return/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,22 +63,12 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/2021/3/python-decorator/</loc>
+    <loc>https://billie52707.cn/posts/2021/4/python-decorator/</loc>
     <lastmod>2021-04-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-03-28T01:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/posts/2021/3/openpyxl/</loc>
-    <lastmod>2021-03-28T01:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
+    <loc>https://billie52707.cn/posts/2021/3/python-openpyxl/</loc>
     <lastmod>2021-03-28T01:54:00+00:00</lastmod>
   </url>
   
@@ -73,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/data-grand/maersk/</loc>
+    <loc>https://billie52707.cn/note/data-grand/maersk/maersk/</loc>
     <lastmod>2021-01-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -383,6 +393,11 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/note/markdown/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/note/machine-learn/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url>
@@ -610,6 +625,11 @@
   <url>
     <loc>https://billie52707.cn/posts/2020/4/nginx/</loc>
     <lastmod>2020-04-22T14:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/logging/</loc>
+    <lastmod>2020-04-14T20:54:00+00:00</lastmod>
   </url>
   
   <url>

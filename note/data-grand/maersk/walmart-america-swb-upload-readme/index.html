@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 「机器学习」学习笔记 | 人人都爱小雀斑&#39;s blog </title>
+  <title> 「沃尔玛-美洲文件批量上传」项目开发文档 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -24,16 +24,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="「机器学习」学习笔记" />
-<meta property="og:description" content="相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1. 数据导入 numpy np.loadtxt() pandas pd.read_csv() 2. 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数" />
+  <meta property="og:title" content="「沃尔玛-美洲文件批量上传」项目开发文档" />
+<meta property="og:description" content="开发流程 1. 读取Excel 2. RPA上传文件 3. 规则审查" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/note/machine-learn/" />
-<meta property="article:published_time" content="2020-08-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-08-25T00:00:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/" />
+<meta property="article:published_time" content="2021-04-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-14T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="「机器学习」学习笔记"/>
-<meta name="twitter:description" content="相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1. 数据导入 numpy np.loadtxt() pandas pd.read_csv() 2. 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数"/>
+<meta name="twitter:title" content="「沃尔玛-美洲文件批量上传」项目开发文档"/>
+<meta name="twitter:description" content="开发流程 1. 读取Excel 2. RPA上传文件 3. 规则审查"/>
 
   
   
@@ -107,14 +107,14 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/diary/2020-08-24/">
+          <a class="icon" href=" https://billie52707.cn/posts/2021/4/python-decorator-return/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/note/markdown/">
+          <a class="icon" href="https://billie52707.cn/posts/2021/4/python-beautifulsoup/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -145,57 +145,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&text=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&text=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&is_video=false&description=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&is_video=false&description=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f">
+    <a class="icon" href="mailto:?subject=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&name=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e7%9b%b8%e5%85%b3%e5%b7%a5%e5%85%b7%20pandas%20numpy%20matplotlib%20flask%20scikit_learn%20%e6%95%b0%e6%8d%ae%e7%90%86%e8%a7%a3%201.%20%e6%95%b0%e6%8d%ae%e5%af%bc%e5%85%a5%20numpy%20np.loadtxt%28%29%20pandas%20pd.read_csv%28%29%202.%20%e6%95%b0%e6%8d%ae%e7%90%86%e8%a7%a3%20Viewing%20data%20%e6%9f%a5%e7%9c%8b%e6%95%b0%e6%8d%ae%ef%bc%9adf.head%28int%29%5ctail%28int%29%20%e6%95%b0%e6%8d%ae%e7%bb%b4%e5%ba%a6%ef%bc%9adf.shape%20%e6%95%b0">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&name=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%201.%20%e8%af%bb%e5%8f%96Excel%202.%20RPA%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%203.%20%e8%a7%84%e5%88%99%e5%ae%a1%e6%9f%a5">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&t=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&t=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -205,17 +205,11 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#相关工具">相关工具</a></li>
-    <li><a href="#数据理解">数据理解</a>
+    <li><a href="#开发流程">开发流程</a>
       <ul>
-        <li><a href="#1-数据导入">1. 数据导入</a></li>
-        <li><a href="#2-数据理解">2. 数据理解</a></li>
-        <li><a href="#3数据可视化matplotlib">3.数据可视化（matplotlib）</a></li>
-      </ul>
-    </li>
-    <li><a href="#数据准备">数据准备</a>
-      <ul>
-        <li><a href="#1数据预处理">1.数据预处理</a></li>
+        <li><a href="#1-读取excel">1. 读取Excel</a></li>
+        <li><a href="#2-rpa上传文件">2. RPA上传文件</a></li>
+        <li><a href="#3-规则审查">3. 规则审查</a></li>
       </ul>
     </li>
   </ul>
@@ -229,7 +223,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        「机器学习」学习笔记
+        「沃尔玛-美洲文件批量上传」项目开发文档
       </h1>
       <div class="meta">
         
@@ -239,7 +233,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2020-08-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-08-25</time>
+          <time datetime="2021-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-14</time>
           
           
         </div>
@@ -258,117 +252,10 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="相关工具">相关工具</h2>
-<ul>
-<li><a href="https://www.pypandas.cn/intro/">pandas</a></li>
-<li>numpy</li>
-<li>matplotlib</li>
-<li>flask</li>
-<li>scikit_learn</li>
-</ul>
-<h2 id="数据理解">数据理解</h2>
-<h3 id="1-数据导入">1. 数据导入</h3>
-<ol>
-<li>
-<p>numpy <code>np.loadtxt()</code></p>
-</li>
-<li>
-<p>pandas <code>pd.read_csv()</code></p>
-</li>
-</ol>
-<h3 id="2-数据理解">2. 数据理解</h3>
-<h4 id="viewing-data">Viewing data</h4>
-<ul>
-<li>
-<p>查看数据：<code>df.head(int)\tail(int)</code></p>
-</li>
-<li>
-<p>数据维度：<code>df.shape</code></p>
-</li>
-<li>
-<p>数据属性和类型：<code>df.dtypes</code></p>
-</li>
-<li>
-<p>描述性统计：<code>df.describe() </code></p>
-<p>数据记录数、平均值、标准方差、最小值、下四分位数、中位数、上四分位数、最大值</p>
-</li>
-<li>
-<p>行列翻转：<code>df.T</code></p>
-</li>
-<li>
-<p>根据axis排序：<code>df.sort_index(axis= ,ascending=False)</code></p>
-</li>
-<li>
-<p>根据数值大小排序：<code>df.sort_values(by='',ascending=False)</code></p>
-</li>
-<li>
-<p>数据分组分布（适用于分类算法）：<a href="https://www.pypandas.cn/docs/getting_started/comparison.html#%E4%B8%8Esas%E7%9A%84%E6%AF%94%E8%BE%83">groupby()</a></p>
-<ul>
-<li>
-<p><code>groupby('').sum()</code></p>
-</li>
-<li>
-<p><code>groupby('').size()</code></p>
-</li>
-<li>
-<p><code>groupby('')[''].sum()</code></p>
-</li>
-</ul>
-</li>
-<li>
-<p>属性之间的关联关系矩阵：<code>df.corr()</code></p>
-<p><strong>皮尔逊相关系数</strong>，是度量两个变量间相关程度的方法，它是一个介于1和-1之间的值</p>
-<ul>
-<li>1 表示变量完全正相关</li>
-<li>0 表示无关</li>
-<li>-1 表示变量完全负相关</li>
-</ul>
-</li>
-<li>
-<p>数据的高斯分布（正态分布）偏离情况：<code>df.skew()</code></p>
-<p><strong>高斯分布</strong>的曲线呈钟形，两头低，中间高，左右对称</p>
-<ul>
-<li>数据接近于0时，表示数据偏差非常少</li>
-</ul>
-</li>
-</ul>
-<h3 id="3数据可视化matplotlib">3.数据可视化（matplotlib）</h3>
-<ul>
-<li>直方图：<code>df.hist()</code></li>
-<li>密度图：<code>df.plot(kind='density',subplots=True,layout=(3,3),sharex=False)</code></li>
-<li>箱线图：<code>df.plot(kind='box',subplots=True,layout=(3,3),sharex=False)</code></li>
-<li>相关矩阵图：<code>df.corr()</code></li>
-<li>散点矩阵图：<code>scatter_matrix(df)</code></li>
-</ul>
-<h2 id="数据准备">数据准备</h2>
-<h3 id="1数据预处理">1.数据预处理</h3>
-<ul>
-<li>处理缺失值：
-<ul>
-<li>忽略该条记录：<code>df.dropna()</code></li>
-<li>手工填补</li>
-<li>利用默认值填补：<code>df.replace()</code></li>
-<li>利用均值填补</li>
-<li>利用同类别均值填补</li>
-<li>利用最可能的值填补</li>
-</ul>
-</li>
-<li>处理噪声值：
-<ul>
-<li>分箱 -回归 -聚类</li>
-</ul>
-</li>
-<li>处理异常值：
-<ul>
-<li>识别异常值：箱线图</li>
-<li>处理：删除、替换</li>
-</ul>
-</li>
-<li>调整数据尺度：<code>from sklearn.preprocessing import MinMaxScaler</code></li>
-<li>正态化数据：<code>from sklearn.preprocessing import StandardScaler</code></li>
-<li>标准化数据：<code>from sklearn.preprocessing import Normalizer</code></li>
-<li>二值数据：<code>from sklearn.preprocessing import Binarizer</code></li>
-</ul>
+      <h2 id="开发流程">开发流程</h2>
+<h3 id="1-读取excel">1. 读取Excel</h3>
+<h3 id="2-rpa上传文件">2. RPA上传文件</h3>
+<h3 id="3-规则审查">3. 规则审查</h3>
 
     </div>
 
@@ -403,11 +290,11 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          780 字
+          25 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2020-08-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-08-25</time>
+          <time datetime="2021-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-14</time>
           
 
   </p>
@@ -415,7 +302,7 @@ if (!doNotTrack) {
 
   
 
-<span id="/note/machine-learn/" class="leancloud_visitors" data-flag-title="「机器学习」学习笔记">
+<span id="/note/data-grand/maersk/walmart-america-swb-upload-readme/" class="leancloud_visitors" data-flag-title="「沃尔玛-美洲文件批量上传」项目开发文档">
 
   
 
@@ -460,17 +347,11 @@ if (!doNotTrack) {
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#相关工具">相关工具</a></li>
-    <li><a href="#数据理解">数据理解</a>
+    <li><a href="#开发流程">开发流程</a>
       <ul>
-        <li><a href="#1-数据导入">1. 数据导入</a></li>
-        <li><a href="#2-数据理解">2. 数据理解</a></li>
-        <li><a href="#3数据可视化matplotlib">3.数据可视化（matplotlib）</a></li>
-      </ul>
-    </li>
-    <li><a href="#数据准备">数据准备</a>
-      <ul>
-        <li><a href="#1数据预处理">1.数据预处理</a></li>
+        <li><a href="#1-读取excel">1. 读取Excel</a></li>
+        <li><a href="#2-rpa上传文件">2. RPA上传文件</a></li>
+        <li><a href="#3-规则审查">3. 规则审查</a></li>
       </ul>
     </li>
   </ul>
@@ -486,57 +367,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&text=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&text=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&is_video=false&description=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&is_video=false&description=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f">
+    <a class="icon" href="mailto:?subject=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&title=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&name=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e7%9b%b8%e5%85%b3%e5%b7%a5%e5%85%b7%20pandas%20numpy%20matplotlib%20flask%20scikit_learn%20%e6%95%b0%e6%8d%ae%e7%90%86%e8%a7%a3%201.%20%e6%95%b0%e6%8d%ae%e5%af%bc%e5%85%a5%20numpy%20np.loadtxt%28%29%20pandas%20pd.read_csv%28%29%202.%20%e6%95%b0%e6%8d%ae%e7%90%86%e8%a7%a3%20Viewing%20data%20%e6%9f%a5%e7%9c%8b%e6%95%b0%e6%8d%ae%ef%bc%9adf.head%28int%29%5ctail%28int%29%20%e6%95%b0%e6%8d%ae%e7%bb%b4%e5%ba%a6%ef%bc%9adf.shape%20%e6%95%b0">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&name=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%201.%20%e8%af%bb%e5%8f%96Excel%202.%20RPA%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%203.%20%e8%a7%84%e5%88%99%e5%ae%a1%e6%9f%a5">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fmachine-learn%2f&t=%e3%80%8c%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&t=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -7,13 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | BeautifulSoup</title>
+      <link>https://billie52707.cn/posts/2021/4/python-beautifulsoup/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/python-beautifulsoup/</guid>
+      <description>Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改</description>
+    </item>
+    
+    <item>
+      <title>「沃尔玛-美洲文件批量上传」项目开发文档</title>
+      <link>https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/</guid>
+      <description>开发流程 1. 读取Excel 2. RPA上传文件 3. 规则审查</description>
+    </item>
+    
     <item>
       <title>python学习笔记 | 一次使用装饰器时引发的思考</title>
-      <link>https://billie52707.cn/posts/2021/3/python-decorator-return/</link>
+      <link>https://billie52707.cn/posts/2021/4/python-decorator-return/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/3/python-decorator-return/</guid>
+      <guid>https://billie52707.cn/posts/2021/4/python-decorator-return/</guid>
       <description>前言 今天使用装饰器时，遇到这样一个错误： 根据报错提示，大意是指不能打包一个空值。而我写的装饰器是这样的： def catch_error(func): def wrapper(*args,**kwargs): try: print(f&amp;#39;正</description>
     </item>
     
@@ -37,19 +55,19 @@
     
     <item>
       <title>python学习笔记 | 装饰器</title>
-      <link>https://billie52707.cn/posts/2021/3/python-decorator/</link>
+      <link>https://billie52707.cn/posts/2021/4/python-decorator/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/3/python-decorator/</guid>
+      <guid>https://billie52707.cn/posts/2021/4/python-decorator/</guid>
       <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 id=\u0022\nneteasemusic\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1832613147\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言 1. 如何理解Python装饰器？ 装饰器本</description>
     </item>
     
     <item>
       <title>python模块详解 | openpyxl</title>
-      <link>https://billie52707.cn/posts/2021/3/openpyxl/</link>
+      <link>https://billie52707.cn/posts/2021/3/python-openpyxl/</link>
       <pubDate>Sun, 28 Mar 2021 01:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/3/openpyxl/</guid>
+      <guid>https://billie52707.cn/posts/2021/3/python-openpyxl/</guid>
       <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list 2. 工作表的使用 ## 设置工作表对</description>
     </item>
     
@@ -73,10 +91,10 @@
     
     <item>
       <title>「马士基」项目开发文档</title>
-      <link>https://billie52707.cn/note/data-grand/maersk/</link>
+      <link>https://billie52707.cn/note/data-grand/maersk/maersk/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/data-grand/maersk/</guid>
+      <guid>https://billie52707.cn/note/data-grand/maersk/maersk/</guid>
       <description>收获与感悟 一、技术与代码素养 config.py 代码调试 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指</description>
     </item>
     
@@ -456,6 +474,15 @@
       
       <guid>https://billie52707.cn/diary/2020-08-25/</guid>
       <description>2020-08-25日结 今日计划 看完数据结构基础 生活小记 七点睡两点起 感想收获 明日计划</description>
+    </item>
+    
+    <item>
+      <title>「markdown」学习笔记</title>
+      <link>https://billie52707.cn/note/markdown/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/markdown/</guid>
+      <description>代码增删对比效果 - old man + new guy</description>
     </item>
     
     <item>
@@ -843,6 +870,15 @@
       
       <guid>https://billie52707.cn/posts/2020/4/nginx/</guid>
       <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | logging</title>
+      <link>https://billie52707.cn/note/logging/</link>
+      <pubDate>Tue, 14 Apr 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/logging/</guid>
+      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial</description>
     </item>
     
     <item>

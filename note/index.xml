@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「沃尔玛-美洲文件批量上传」项目开发文档</title>
+      <link>https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/</guid>
+      <description>开发流程 1. 读取Excel 2. RPA上传文件 3. 规则审查</description>
+    </item>
+    
     <item>
       <title>大厂求索记</title>
       <link>https://billie52707.cn/note/burn_them_all/</link>
@@ -46,10 +55,10 @@
     
     <item>
       <title>「马士基」项目开发文档</title>
-      <link>https://billie52707.cn/note/data-grand/maersk/</link>
+      <link>https://billie52707.cn/note/data-grand/maersk/maersk/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/data-grand/maersk/</guid>
+      <guid>https://billie52707.cn/note/data-grand/maersk/maersk/</guid>
       <description>收获与感悟 一、技术与代码素养 config.py 代码调试 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指</description>
     </item>
     
@@ -99,12 +108,30 @@
     </item>
     
     <item>
+      <title>「markdown」学习笔记</title>
+      <link>https://billie52707.cn/note/markdown/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/markdown/</guid>
+      <description>代码增删对比效果 - old man + new guy</description>
+    </item>
+    
+    <item>
       <title>「机器学习」学习笔记</title>
       <link>https://billie52707.cn/note/machine-learn/</link>
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/machine-learn/</guid>
       <description>相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1. 数据导入 numpy np.loadtxt() pandas pd.read_csv() 2. 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | logging</title>
+      <link>https://billie52707.cn/note/logging/</link>
+      <pubDate>Tue, 14 Apr 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/logging/</guid>
+      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial</description>
     </item>
     
     <item>
