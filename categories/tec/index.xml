@@ -10,10 +10,10 @@
     <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python模块详解 | BeautifulSoup</title>
-      <link>https://billie52707.cn/posts/2021/4/python-beautifulsoup/</link>
+      <link>https://billie52707.cn/note/python-beautifulsoup/</link>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-beautifulsoup/</guid>
+      <guid>https://billie52707.cn/note/python-beautifulsoup/</guid>
       <description>Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改</description>
     </item>
     

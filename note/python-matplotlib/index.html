@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 「沃尔玛-美洲文件批量上传」项目开发文档 | 人人都爱小雀斑&#39;s blog </title>
+  <title> matplotlib | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -24,16 +24,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="「沃尔玛-美洲文件批量上传」项目开发文档" />
-<meta property="og:description" content="注意点 稳定性 细节逻辑的处理 开发流程 1. 读取Excel 2. RPA上传文件 3. 上传错误情况的审查" />
+  <meta property="og:title" content="matplotlib" />
+<meta property="og:description" content="一、图表的保存 ##保存图片 直接输入文件路径，新建文件名字 ##dpi图片分辨率 越高越清晰。bbox_inches = &#39;tight&#39;,去掉空白部分" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/" />
-<meta property="article:published_time" content="2021-04-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-04-14T00:00:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/note/python-matplotlib/" />
+<meta property="article:published_time" content="2020-11-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-25T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="「沃尔玛-美洲文件批量上传」项目开发文档"/>
-<meta name="twitter:description" content="注意点 稳定性 细节逻辑的处理 开发流程 1. 读取Excel 2. RPA上传文件 3. 上传错误情况的审查"/>
+<meta name="twitter:title" content="matplotlib"/>
+<meta name="twitter:description" content="一、图表的保存 ##保存图片 直接输入文件路径，新建文件名字 ##dpi图片分辨率 越高越清晰。bbox_inches = &#39;tight&#39;,去掉空白部分"/>
 
   
   
@@ -107,14 +107,14 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2021/4/python-decorator-return/">
+          <a class="icon" href=" https://billie52707.cn/posts/2020/11/ncp-readme/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/note/python-beautifulsoup/">
+          <a class="icon" href="https://billie52707.cn/posts/2020/11/ncp-nhc-readme/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -145,57 +145,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&text=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&text=matplotlib">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&is_video=false&description=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&is_video=false&description=matplotlib">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f">
+    <a class="icon" href="mailto:?subject=matplotlib&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&name=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e6%b3%a8%e6%84%8f%e7%82%b9%20%e7%a8%b3%e5%ae%9a%e6%80%a7%20%e7%bb%86%e8%8a%82%e9%80%bb%e8%be%91%e7%9a%84%e5%a4%84%e7%90%86%20%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%201.%20%e8%af%bb%e5%8f%96Excel%202.%20RPA%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%203.%20%e4%b8%8a%e4%bc%a0%e9%94%99%e8%af%af%e6%83%85%e5%86%b5%e7%9a%84%e5%ae%a1%e6%9f%a5">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&name=matplotlib&description=%e4%b8%80%e3%80%81%e5%9b%be%e8%a1%a8%e7%9a%84%e4%bf%9d%e5%ad%98%20%23%23%e4%bf%9d%e5%ad%98%e5%9b%be%e7%89%87%20%e7%9b%b4%e6%8e%a5%e8%be%93%e5%85%a5%e6%96%87%e4%bb%b6%e8%b7%af%e5%be%84%ef%bc%8c%e6%96%b0%e5%bb%ba%e6%96%87%e4%bb%b6%e5%90%8d%e5%ad%97%20%23%23dpi%e5%9b%be%e7%89%87%e5%88%86%e8%be%a8%e7%8e%87%20%e8%b6%8a%e9%ab%98%e8%b6%8a%e6%b8%85%e6%99%b0%e3%80%82bbox_inches%20%3d%20%27tight%27%2c%e5%8e%bb%e6%8e%89%e7%a9%ba%e7%99%bd%e9%83%a8%e5%88%86">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&t=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&t=matplotlib">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -203,18 +203,7 @@ if (!doNotTrack) {
 
     </div>
     <div id="toc">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#注意点">注意点</a></li>
-    <li><a href="#开发流程">开发流程</a>
-      <ul>
-        <li><a href="#1-读取excel">1. 读取Excel</a></li>
-        <li><a href="#2-rpa上传文件">2. RPA上传文件</a></li>
-        <li><a href="#3-上传错误情况的审查">3. 上传错误情况的审查</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </div>
     
   </span>
@@ -224,7 +213,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        「沃尔玛-美洲文件批量上传」项目开发文档
+        matplotlib
       </h1>
       <div class="meta">
         
@@ -234,7 +223,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2021-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-14</time>
+          <time datetime="2020-11-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-25</time>
           
           
         </div>
@@ -246,6 +235,14 @@ if (!doNotTrack) {
         </div>
         
         
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
         
 
       </div>
@@ -253,15 +250,13 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="注意点">注意点</h2>
-<ul>
-<li>稳定性</li>
-<li>细节逻辑的处理</li>
-</ul>
-<h2 id="开发流程">开发流程</h2>
-<h3 id="1-读取excel">1. 读取Excel</h3>
-<h3 id="2-rpa上传文件">2. RPA上传文件</h3>
-<h3 id="3-上传错误情况的审查">3. 上传错误情况的审查</h3>
+      <p>一、图表的保存</p>
+<pre><code>##保存图片 直接输入文件路径，新建文件名字 
+##dpi图片分辨率 越高越清晰。bbox_inches = 'tight',去掉空白部分
+plt.savefig(r'C:\Users\admin\Pictures\Camera Roll\exam_annotate1.jpg',
+            dpi=400,bbox_inches = 'tight')
+plt.show()
+</code></pre><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1552230-20200720175200073-483292366.png" alt="img"></p>
 
     </div>
 
@@ -294,13 +289,16 @@ if (!doNotTrack) {
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          43 字
+          76 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2021-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-14</time>
+          <time datetime="2020-11-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-25</time>
           
 
   </p>
@@ -308,7 +306,7 @@ if (!doNotTrack) {
 
   
 
-<span id="/note/data-grand/maersk/walmart-america-swb-upload-readme/" class="leancloud_visitors" data-flag-title="「沃尔玛-美洲文件批量上传」项目开发文档">
+<span id="/note/python-matplotlib/" class="leancloud_visitors" data-flag-title="matplotlib">
 
   
 
@@ -351,18 +349,7 @@ if (!doNotTrack) {
     </div>
 
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#注意点">注意点</a></li>
-    <li><a href="#开发流程">开发流程</a>
-      <ul>
-        <li><a href="#1-读取excel">1. 读取Excel</a></li>
-        <li><a href="#2-rpa上传文件">2. RPA上传文件</a></li>
-        <li><a href="#3-上传错误情况的审查">3. 上传错误情况的审查</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -374,57 +361,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&text=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&text=matplotlib">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&is_video=false&description=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&is_video=false&description=matplotlib">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f">
+    <a class="icon" href="mailto:?subject=matplotlib&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&title=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&title=matplotlib">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&name=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e6%b3%a8%e6%84%8f%e7%82%b9%20%e7%a8%b3%e5%ae%9a%e6%80%a7%20%e7%bb%86%e8%8a%82%e9%80%bb%e8%be%91%e7%9a%84%e5%a4%84%e7%90%86%20%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%201.%20%e8%af%bb%e5%8f%96Excel%202.%20RPA%e4%b8%8a%e4%bc%a0%e6%96%87%e4%bb%b6%203.%20%e4%b8%8a%e4%bc%a0%e9%94%99%e8%af%af%e6%83%85%e5%86%b5%e7%9a%84%e5%ae%a1%e6%9f%a5">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&name=matplotlib&description=%e4%b8%80%e3%80%81%e5%9b%be%e8%a1%a8%e7%9a%84%e4%bf%9d%e5%ad%98%20%23%23%e4%bf%9d%e5%ad%98%e5%9b%be%e7%89%87%20%e7%9b%b4%e6%8e%a5%e8%be%93%e5%85%a5%e6%96%87%e4%bb%b6%e8%b7%af%e5%be%84%ef%bc%8c%e6%96%b0%e5%bb%ba%e6%96%87%e4%bb%b6%e5%90%8d%e5%ad%97%20%23%23dpi%e5%9b%be%e7%89%87%e5%88%86%e8%be%a8%e7%8e%87%20%e8%b6%8a%e9%ab%98%e8%b6%8a%e6%b8%85%e6%99%b0%e3%80%82bbox_inches%20%3d%20%27tight%27%2c%e5%8e%bb%e6%8e%89%e7%a9%ba%e7%99%bd%e9%83%a8%e5%88%86">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdata-grand%2fmaersk%2fwalmart-america-swb-upload-readme%2f&t=%e3%80%8c%e6%b2%83%e5%b0%94%e7%8e%9b-%e7%be%8e%e6%b4%b2%e6%96%87%e4%bb%b6%e6%89%b9%e9%87%8f%e4%b8%8a%e4%bc%a0%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fpython-matplotlib%2f&t=matplotlib">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
