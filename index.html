@@ -128,8 +128,40 @@ var _hmt = _hmt || [];
   
 
     
+
+<div id="app">
+	<img :src="main_url" >
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>	
+<script src="https://billie-s-blog.oss-cn-beijing.aliyuncs.com/js/axios.min.js"></script>
+<script>	
+	var vm = new Vue({
+		el:"#app", 
+		data: {msg:'pass me',main_url:'',about_url:''},  
+		methods:{
+			getimg(){
+				var that = this;
+				axios.jsonp('http://open.iciba.com/dsapi/')
+				  .then(function (response) {
+					  that.main_url = response.fenxiang_img;
+					  that.about_url=response.picture4;
+				    console.log(response);
+				  })
+				  .catch(function (error) {
+				    console.log(error);
+				  });
+			}	
+		},
+		mounted(){
+			this.getimg();
+		}
+	})
+</script>
+
+	
   
-  <img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3051618410704_.pic.jpg" />
+  
  
   <section id="about">
   
@@ -179,51 +211,51 @@ var _hmt = _hmt || [];
     <div class="tag-cloud-tags" >
       
       
-      <a style="font-size: 0.8418803418803419rem;" href="https://billie52707.cn/tags/1x/">1X</a>
+      <a style="font-size: 0.8389830508474576rem;" href="https://billie52707.cn/tags/1x/">1X</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/bootstrap/">BootStrap</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/bootstrap/">BootStrap</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/c/">C</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/c/">C</a>
       
-      <a style="font-size: 0.6282051282051282rem;" href="https://billie52707.cn/tags/css/">css</a>
+      <a style="font-size: 0.6271186440677966rem;" href="https://billie52707.cn/tags/css/">css</a>
       
-      <a style="font-size: 0.5854700854700855rem;" href="https://billie52707.cn/tags/docker/">docker</a>
+      <a style="font-size: 0.5847457627118644rem;" href="https://billie52707.cn/tags/docker/">docker</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/git/">git</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/git/">git</a>
       
-      <a style="font-size: 0.5854700854700855rem;" href="https://billie52707.cn/tags/html/">html</a>
+      <a style="font-size: 0.5847457627118644rem;" href="https://billie52707.cn/tags/html/">html</a>
       
-      <a style="font-size: 0.7136752136752137rem;" href="https://billie52707.cn/tags/http/">http</a>
+      <a style="font-size: 0.711864406779661rem;" href="https://billie52707.cn/tags/http/">http</a>
       
-      <a style="font-size: 0.5854700854700855rem;" href="https://billie52707.cn/tags/hugo/">hugo</a>
+      <a style="font-size: 0.5847457627118644rem;" href="https://billie52707.cn/tags/hugo/">hugo</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/javascript/">JavaScript</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/javascript/">JavaScript</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/jquery/">jQuery</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/jquery/">jQuery</a>
       
-      <a style="font-size: 0.7136752136752137rem;" href="https://billie52707.cn/tags/linux/">Linux</a>
+      <a style="font-size: 0.711864406779661rem;" href="https://billie52707.cn/tags/linux/">Linux</a>
       
-      <a style="font-size: 0.670940170940171rem;" href="https://billie52707.cn/tags/mac/">Mac</a>
+      <a style="font-size: 0.6694915254237288rem;" href="https://billie52707.cn/tags/mac/">Mac</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/mysql/">MySQL</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/mysql/">MySQL</a>
       
-      <a style="font-size: 0.7991452991452992rem;" href="https://billie52707.cn/tags/nginx/">nginx</a>
+      <a style="font-size: 0.7966101694915254rem;" href="https://billie52707.cn/tags/nginx/">nginx</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/php/">php</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/php/">php</a>
       
-      <a style="font-size: 0.5854700854700855rem;" href="https://billie52707.cn/tags/poem/">poem</a>
+      <a style="font-size: 0.5847457627118644rem;" href="https://billie52707.cn/tags/poem/">poem</a>
       
-      <a style="font-size: 1.8247863247863247rem;" href="https://billie52707.cn/tags/python/">python</a>
+      <a style="font-size: 1.8135593220338984rem;" href="https://billie52707.cn/tags/python/">python</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/ubuntu/">ubuntu</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/ubuntu/">ubuntu</a>
       
-      <a style="font-size: 0.5854700854700855rem;" href="https://billie52707.cn/tags/vue.js/">vue.js</a>
+      <a style="font-size: 0.5847457627118644rem;" href="https://billie52707.cn/tags/vue.js/">vue.js</a>
       
-      <a style="font-size: 0.5427350427350427rem;" href="https://billie52707.cn/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">年终总结</a>
+      <a style="font-size: 0.5423728813559322rem;" href="https://billie52707.cn/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/">年终总结</a>
       
-      <a style="font-size: 0.7136752136752137rem;" href="https://billie52707.cn/tags/%E6%91%84%E5%BD%B1%E9%9B%86/">摄影集</a>
+      <a style="font-size: 0.711864406779661rem;" href="https://billie52707.cn/tags/%E6%91%84%E5%BD%B1%E9%9B%86/">摄影集</a>
       
-      <a style="font-size: 0.5854700854700855rem;" href="https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
+      <a style="font-size: 0.5847457627118644rem;" href="https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
       
     </div>
 
