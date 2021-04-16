@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Wed, 14 Apr 2021 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「xpath」学习笔记</title>
+      <link>https://billie52707.cn/note/python-xpath/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/python-xpath/</guid>
+      <description>xpath 用法总结整理 1. starts-with函数 获取以xxx开头的元素 例子：xpath(‘//div[stars-with(@class,”tes</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | keyboard</title>
+      <link>https://billie52707.cn/note/python-keyboard/</link>
+      <pubDate>Thu, 15 Apr 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/python-keyboard/</guid>
+      <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
+    </item>
+    
     <item>
       <title>python模块详解 | logging</title>
       <link>https://billie52707.cn/note/python-logging/</link>
@@ -99,21 +117,21 @@
     </item>
     
     <item>
-      <title>matplotlib</title>
-      <link>https://billie52707.cn/note/python-matplotlib/</link>
-      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-matplotlib/</guid>
-      <description>一、图表的保存 ##保存图片 直接输入文件路径，新建文件名字 ##dpi图片分辨率 越高越清晰。bbox_inches = &#39;tight&#39;,去掉空白部分</description>
-    </item>
-    
-    <item>
       <title>NCP | 新冠疫情的监测与趋势分析</title>
       <link>https://billie52707.cn/posts/2020/11/ncp-readme/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/11/ncp-readme/</guid>
       <description>1. 前言 🇨🇳 1.1 项目阐述 👨🏻‍💻 2020，注定是不平凡的一年，新冠疫情如晴天霹雳将沉浸在2020年春节气氛中的人们骤然推进人人自危的疫情防控中，</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | matplotlib</title>
+      <link>https://billie52707.cn/note/python-matplotlib/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/python-matplotlib/</guid>
+      <description>一、图表的保存 ##保存图片 直接输入文件路径，新建文件名字 ##dpi图片分辨率 越高越清晰。bbox_inches = &#39;tight&#39;,去掉空白部分</description>
     </item>
     
     <item>

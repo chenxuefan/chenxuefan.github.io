@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Wed, 14 Apr 2021 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rpa</title>
+      <link>https://billie52707.cn/note/rpa/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/rpa/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>「xpath」学习笔记</title>
+      <link>https://billie52707.cn/note/python-xpath/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/python-xpath/</guid>
+      <description>xpath 用法总结整理 1. starts-with函数 获取以xxx开头的元素 例子：xpath(‘//div[stars-with(@class,”tes</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | keyboard</title>
+      <link>https://billie52707.cn/note/python-keyboard/</link>
+      <pubDate>Thu, 15 Apr 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/python-keyboard/</guid>
+      <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
+    </item>
+    
     <item>
       <title>python模块详解 | logging</title>
       <link>https://billie52707.cn/note/python-logging/</link>
@@ -90,7 +117,7 @@
     </item>
     
     <item>
-      <title>matplotlib</title>
+      <title>python模块详解 | matplotlib</title>
       <link>https://billie52707.cn/note/python-matplotlib/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
@@ -117,7 +144,7 @@
     </item>
     
     <item>
-      <title>「Docker」学习笔记</title>
+      <title>「docker」学习笔记</title>
       <link>https://billie52707.cn/note/docker/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       

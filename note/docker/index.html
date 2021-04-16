@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 「Docker」学习笔记 | 人人都爱小雀斑&#39;s blog </title>
+  <title> 「docker」学习笔记 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -23,7 +24,7 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="「Docker」学习笔记" />
+  <meta property="og:title" content="「docker」学习笔记" />
 <meta property="og:description" content="关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/note/docker/" />
@@ -31,7 +32,7 @@ if (!doNotTrack) {
 <meta property="article:modified_time" content="2020-08-29T18:10:42+08:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="「Docker」学习笔记"/>
+<meta name="twitter:title" content="「docker」学习笔记"/>
 <meta name="twitter:description" content="关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任"/>
 
   
@@ -75,65 +76,228 @@ if (!doNotTrack) {
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
 
-    <header id="header">
-  <a href="https://billie52707.cn">
+  <div align="center">
   
-    <div id="logo" style="background-image: url(https://billie52707.cn/images/logo.png)"></div>
-  
-  <div id="title">
-    <h1>人人都爱小雀斑&#39;s blog</h1>
-  </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
-       
-      <li><a href="/">Home</a></li>
+</div>
+<div id="header-post">
 
-       
-      <li><a href="/posts">Article</a></li>
-
-       
-      <li><a href="/note">Note</a></li>
-
-       
-      <li><a href="/ncp">NCP</a></li>
-
-       
-      <li><a href="/about">About</a></li>
-
-       
-      <li><a href="https://github.com/chenxuefan">Github</a></li>
-
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/diary/2020-08-29/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/diary/2020-08-31/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
       
-    </ul>
-  </div>
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?ebc745cc17a0c227917fd2ad04abe4f1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-</header>
-
+      <ul>
+  
+  
     
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&text=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&is_video=false&description=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&name=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e5%85%b3%e4%ba%8edocker%20why%20docker%ef%bc%9f%20Docker%e6%98%af%e4%b8%80%e4%b8%aa%e5%bc%80%e6%ba%90%e7%9a%84%e5%ba%94%e7%94%a8%e5%ae%b9%e5%99%a8%e5%bc%95%e6%93%8e%ef%bc%8c%e8%ae%a9%e5%bc%80%e5%8f%91%e8%80%85%e5%8f%af%e4%bb%a5%e6%89%93%e5%8c%85%e4%bb%96%e4%bb%ac%e7%9a%84%e5%ba%94%e7%94%a8%e4%bb%a5%e5%8f%8a%e4%be%9d%e8%b5%96%e5%8c%85%e5%88%b0%e4%b8%80%e4%b8%aa%e5%8f%af%e7%a7%bb%e6%a4%8d%e7%9a%84%e9%95%9c%e5%83%8f%e4%b8%ad%ef%bc%8c%e7%84%b6%e5%90%8e%e5%8f%91%e5%b8%83%e5%88%b0%e4%bb%bb">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&t=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#关于docker">关于docker</a>
+      <ul>
+        <li><a href="#why-docker">why docker？</a></li>
+        <li><a href="#几个核心概念">几个核心概念</a></li>
+        <li><a href="#开发人员和生产环境为什么要使用-docker">开发人员和生产环境为什么要使用 Docker?</a></li>
+        <li><a href="#感言">感言</a></li>
+        <li><a href="#docker的安装">docker的安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#镜像images管理">镜像（images）管理</a>
+      <ul>
+        <li><a href="#镜像的基本操作">镜像的基本操作</a></li>
+        <li><a href="#hello-world">hello-world</a></li>
+      </ul>
+    </li>
+    <li><a href="#容器container管理">容器（container）管理</a>
+      <ul>
+        <li><a href="#容器的基本操作">容器的基本操作</a></li>
+        <li><a href="#详细参数解析">详细参数解析</a></li>
+        <li><a href="#导出导入容器">导出导入容器</a></li>
+      </ul>
+    </li>
+    <li><a href="#网络管理">网络管理</a></li>
+    <li><a href="#docker容器和本机互传文件">docker容器和本机互传文件</a></li>
+    <li><a href="#坑儿们">坑儿们</a></li>
+    <li><a href="#后记">后记</a>
+      <ul>
+        <li><a href="#推荐阅读">推荐阅读</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        「docker」学习笔记
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2020-08-29 18:10:42 &#43;0800 CST" itemprop="datePublished">2020-08-29</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/docker" rel="tag">docker</a>
+            
+             
+            <a class="tag-link" href="/tags/linux" rel="tag">Linux</a>
+            
+               
+            <a class="tag-link" href="/tags/mac" rel="tag">Mac</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
 
   
-
-    
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="content" itemprop="articleBody">
-  
-    <h2 id="关于docker">关于docker</h2>
+    <div class="content" itemprop="articleBody">
+      <h2 id="关于docker">关于docker</h2>
 <h3 id="why-docker">why docker？</h3>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1_JUOITpaBdlrMP9D__-K5Fw.png" alt="1_JUOITpaBdlrMP9D__-K5Fw"></p>
 <p>Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的Linux或Windows机器上，从而实现虚拟化应用，docker这扇窗打开后就相当于另一个github。容器是完全使用沙箱机制，容器之间不会有任何接口。
@@ -546,12 +710,223 @@ test
 </ul>
 <p>updated by 2020-10-28 9:00</p>
 
-  
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
   </div>
-</article>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/docker" rel="tag">docker</a>
+            
+            
+            <a class="tag-link" href="/tags/linux" rel="tag">Linux</a>
+            
+              
+            <a class="tag-link" href="/tags/mac" rel="tag">Mac</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          4740 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2020-08-29 18:10:42 &#43;0800 CST" itemprop="datePublished">2020-08-29</time>
+          
+
+  </p>
 
 
-    <footer id="footer">
+  
+
+<span id="/note/docker/" class="leancloud_visitors" data-flag-title="「docker」学习笔记">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#关于docker">关于docker</a>
+      <ul>
+        <li><a href="#why-docker">why docker？</a></li>
+        <li><a href="#几个核心概念">几个核心概念</a></li>
+        <li><a href="#开发人员和生产环境为什么要使用-docker">开发人员和生产环境为什么要使用 Docker?</a></li>
+        <li><a href="#感言">感言</a></li>
+        <li><a href="#docker的安装">docker的安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#镜像images管理">镜像（images）管理</a>
+      <ul>
+        <li><a href="#镜像的基本操作">镜像的基本操作</a></li>
+        <li><a href="#hello-world">hello-world</a></li>
+      </ul>
+    </li>
+    <li><a href="#容器container管理">容器（container）管理</a>
+      <ul>
+        <li><a href="#容器的基本操作">容器的基本操作</a></li>
+        <li><a href="#详细参数解析">详细参数解析</a></li>
+        <li><a href="#导出导入容器">导出导入容器</a></li>
+      </ul>
+    </li>
+    <li><a href="#网络管理">网络管理</a></li>
+    <li><a href="#docker容器和本机互传文件">docker容器和本机互传文件</a></li>
+    <li><a href="#坑儿们">坑儿们</a></li>
+    <li><a href="#后记">后记</a>
+      <ul>
+        <li><a href="#推荐阅读">推荐阅读</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&text=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&is_video=false&description=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&name=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e5%85%b3%e4%ba%8edocker%20why%20docker%ef%bc%9f%20Docker%e6%98%af%e4%b8%80%e4%b8%aa%e5%bc%80%e6%ba%90%e7%9a%84%e5%ba%94%e7%94%a8%e5%ae%b9%e5%99%a8%e5%bc%95%e6%93%8e%ef%bc%8c%e8%ae%a9%e5%bc%80%e5%8f%91%e8%80%85%e5%8f%af%e4%bb%a5%e6%89%93%e5%8c%85%e4%bb%96%e4%bb%ac%e7%9a%84%e5%ba%94%e7%94%a8%e4%bb%a5%e5%8f%8a%e4%be%9d%e8%b5%96%e5%8c%85%e5%88%b0%e4%b8%80%e4%b8%aa%e5%8f%af%e7%a7%bb%e6%a4%8d%e7%9a%84%e9%95%9c%e5%83%8f%e4%b8%ad%ef%bc%8c%e7%84%b6%e5%90%8e%e5%8f%91%e5%b8%83%e5%88%b0%e4%bb%bb">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker%2f&t=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
   <div class="footer-center">
     Copyright  
     &copy; 
@@ -574,27 +949,29 @@ test
 
 
   </div>
-  
-    
-      
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-176148291-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
 
-    
-  
 </body>
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 <script src="/lib/jquery/jquery.min.js"></script>
 <script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 </html>

@@ -518,7 +518,7 @@ ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672"
 </li>
 <li>
 <p>显式等待</p>
-<p><code>ele = WebDriverWait(driver, 150).until(EC.presence_of_element_located((way, path)))</code></p>
+<p><code>ele = WebDriverWait(driver, timeout).until(method,message)</code></p>
 <p>明确地等到某个元素出现或某个元素的可点击等条件，等不到，就一直等，在规定的时间内没有找到，则抛出异常</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#显式等待</span>
 <span style="color:#f92672">from</span> selenium.webdriver.common.by <span style="color:#f92672">import</span> By
@@ -528,13 +528,36 @@ ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672"
 <span style="color:#75715e">#显式等待的函数</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Explicit_Waits</span>(driver, way, path):
      <span style="color:#66d9ef">try</span>:
-        ele <span style="color:#f92672">=</span> WebDriverWait(driver, <span style="color:#ae81ff">150</span>)<span style="color:#f92672">.</span>until(EC<span style="color:#f92672">.</span>presence_of_element_located((way, path)))
+        ele <span style="color:#f92672">=</span> WebDriverWait(driver, <span style="color:#ae81ff">150</span>)<span style="color:#f92672">.</span>until(
+          EC<span style="color:#f92672">.</span>presence_of_element_located((way, path)),
+          message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
+        )
         <span style="color:#66d9ef">return</span> ele
      <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;元素寻找失败： &#39;</span> <span style="color:#f92672">+</span> str(e))
         <span style="color:#66d9ef">return</span> False
         
 ele <span style="color:#f92672">=</span> Explicit_Waits(driver, By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#39;//div[@class=&#34;pagination_index&#34;]&#39;</span>)<span style="color:#75715e">#显式等待在DOM中找到目标元素</span>
+</code></pre></div><p><code>until()</code>方法de源码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ef until(self, method, message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>):
+        <span style="color:#e6db74">&#34;&#34;&#34;Calls the method provided with the driver as an argument until the </span><span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#e6db74">        return value is not False.&#34;&#34;&#34;</span>
+        screen <span style="color:#f92672">=</span> None
+        stacktrace <span style="color:#f92672">=</span> None
+  
+        end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_timeout
+        <span style="color:#66d9ef">while</span> True:
+            <span style="color:#66d9ef">try</span>:
+                value <span style="color:#f92672">=</span> method(self<span style="color:#f92672">.</span>_driver)
+                <span style="color:#66d9ef">if</span> value:
+                    <span style="color:#66d9ef">return</span> value
+            <span style="color:#66d9ef">except</span> self<span style="color:#f92672">.</span>_ignored_exceptions <span style="color:#66d9ef">as</span> exc:
+                screen <span style="color:#f92672">=</span> getattr(exc, <span style="color:#e6db74">&#39;screen&#39;</span>, None)
+                stacktrace <span style="color:#f92672">=</span> getattr(exc, <span style="color:#e6db74">&#39;stacktrace&#39;</span>, None)
+            time<span style="color:#f92672">.</span>sleep(self<span style="color:#f92672">.</span>_poll)
+            <span style="color:#66d9ef">if</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">&gt;</span> end_time:
+                <span style="color:#66d9ef">break</span>
+        <span style="color:#66d9ef">raise</span> TimeoutException(message, screen, stacktrace)
 </code></pre></div></li>
 </ul>
 <p>参考链接：<a href="http://www.testclass.net/selenium_python/element-wait/">http://www.testclass.net/selenium_python/element-wait/</a></p>
@@ -552,9 +575,9 @@ ele <span style="color:#f92672">=</span> Explicit_Waits(driver, By<span style="c
 <li>
 <p>例</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#先通过 xpth 定位到 iframe</span>
-xf <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@class=&#34;if&#34;]&#39;</span>)
+ele_iframe <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@class=&#34;if&#34;]&#39;</span>)
 <span style="color:#75715e">#再将定位对象传给 switch_to_frame()方法</span>
-driver<span style="color:#f92672">.</span>switch_to_frame(xf)
+driver<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>frame(ele_iframe)
 driver<span style="color:#f92672">.</span>switch_to_default_content() 
 </code></pre></div></li>
 </ul>
@@ -609,7 +632,8 @@ al<span style="color:#f92672">.</span>text
 <p><strong>3、下拉框（select）</strong></p>
 <p>导⼊选择下拉框Select类，使⽤该类处理下拉框操作：</p>
 <pre><code class="language-python " data-lang="python ">from selenium.webdriver.support.ui import Select
-</code></pre><ul>
+</code></pre><p><code>&lt;select&gt;类型的下拉框</code></p>
+<ul>
 <li>选择下拉框选项的⽅法
 <ul>
 <li><strong>select_by_value</strong>(“选择值”) # 相当于我们使⽤⿏标选择下拉框的值</li>
@@ -633,8 +657,12 @@ al<span style="color:#f92672">.</span>text
 </ul>
 </li>
 </ul>
-<p>ps：上述四种方法仅用于多选下拉框，即设置了multiple=“multiple”属性的select标签，这种下拉框可以多选。</p>
-<h2 id="文件上传"><strong>文件上传</strong></h2>
+<p>ps：上述方法仅用于多选下拉框，即设置了multiple=“multiple”属性的「<strong>select标签</strong>」，这种下拉框可以多选。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.support.ui <span style="color:#f92672">import</span> Select
+ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_<span style="color:#f92672">...</span>
+all_options <span style="color:#f92672">=</span> Select(ele)<span style="color:#f92672">.</span>options
+Select(ele)<span style="color:#f92672">.</span>select_by_value(<span style="color:#e6db74">&#39;选项A&#39;</span>) <span style="color:#75715e"># 按值xu，无返回值</span>
+</code></pre></div><h2 id="文件上传"><strong>文件上传</strong></h2>
 <p>selenium没有提供直接的文件上传功能，目前主要有以下几种解决方案：</p>
 <ul>
 <li>send_keys()</li>
@@ -1017,7 +1045,7 @@ driver<span style="color:#f92672">.</span>quit()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          6524 字
+          6688 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
