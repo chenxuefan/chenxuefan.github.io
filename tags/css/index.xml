@@ -28,10 +28,10 @@
     
     <item>
       <title>css提高</title>
-      <link>https://billie52707.cn/note/css/</link>
+      <link>https://billie52707.cn/draft/css/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/css/</guid>
+      <guid>https://billie52707.cn/draft/css/</guid>
       <description>渐变 线性渐变 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一</description>
     </item>
     

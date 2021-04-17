@@ -19,10 +19,10 @@
     
     <item>
       <title>HTML标签总结</title>
-      <link>https://billie52707.cn/note/html/</link>
+      <link>https://billie52707.cn/draft/html/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/html/</guid>
+      <guid>https://billie52707.cn/draft/html/</guid>
       <description>font size color face img src height width title alt 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border cellspacing cellpadding width height</description>
     </item>
     

@@ -9,38 +9,47 @@
     <copyright>Billie</copyright>
     <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>「xpath」学习笔记</title>
-      <link>https://billie52707.cn/note/python-xpath/</link>
+      <title>「rpa」学习笔记</title>
+      <link>https://billie52707.cn/note/rpa/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/python-xpath/</guid>
-      <description>xpath 用法总结整理 1. starts-with函数 获取以xxx开头的元素 例子：xpath(‘//div[stars-with(@class,”tes</description>
+      <guid>https://billie52707.cn/note/rpa/</guid>
+      <description>前言 达观人，达观魂 😎 使用手册 浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的</description>
+    </item>
+    
+    <item>
+      <title>「xpath」学习笔记</title>
+      <link>https://billie52707.cn/draft/python-xpath/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-xpath/</guid>
+      <description>导入 from lxml import etree page = etree.HTML(html.lower().decode(&amp;#39;utf-8&amp;#39;)) xpath 用法总结整理 starts-with 获取以xxx开头的元素 例子：xpath(‘//div[stars-with(@class,”test”)]</description>
     </item>
     
     <item>
       <title>python模块详解 | keyboard</title>
-      <link>https://billie52707.cn/note/python-keyboard/</link>
+      <link>https://billie52707.cn/draft/python-keyboard/</link>
       <pubDate>Thu, 15 Apr 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/python-keyboard/</guid>
+      <guid>https://billie52707.cn/draft/python-keyboard/</guid>
       <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
     </item>
     
     <item>
       <title>python模块详解 | logging</title>
-      <link>https://billie52707.cn/note/python-logging/</link>
+      <link>https://billie52707.cn/draft/python-logging/</link>
       <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/python-logging/</guid>
+      <guid>https://billie52707.cn/draft/python-logging/</guid>
       <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 import logging logging.basicConfig( filename = &amp;#39;document.log&amp;#39;, level = logging.INFO, format = &amp;#34;%(asctime)s-%(levelname)s-%(message)s&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;)</description>
     </item>
     
     <item>
       <title>python模块详解 | BeautifulSoup</title>
-      <link>https://billie52707.cn/note/python-beautifulsoup/</link>
+      <link>https://billie52707.cn/draft/python-beautifulsoup/</link>
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/python-beautifulsoup/</guid>
+      <guid>https://billie52707.cn/draft/python-beautifulsoup/</guid>
       <description>Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改</description>
     </item>
     
@@ -90,11 +99,11 @@
     </item>
     
     <item>
-      <title>「pyqt5」学习笔记</title>
-      <link>https://billie52707.cn/note/python-pyqt5/</link>
+      <title>python模块详解 | pyqt5</title>
+      <link>https://billie52707.cn/draft/python-pyqt5/</link>
       <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/python-pyqt5/</guid>
+      <guid>https://billie52707.cn/draft/python-pyqt5/</guid>
       <description>前言 PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较</description>
     </item>
     
@@ -126,15 +135,6 @@
     </item>
     
     <item>
-      <title>python模块详解 | matplotlib</title>
-      <link>https://billie52707.cn/note/python-matplotlib/</link>
-      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-matplotlib/</guid>
-      <description>一、图表的保存 ##保存图片 直接输入文件路径，新建文件名字 ##dpi图片分辨率 越高越清晰。bbox_inches = &#39;tight&#39;,去掉空白部分</description>
-    </item>
-    
-    <item>
       <title>python学习笔记 | 浅谈python虚拟环境</title>
       <link>https://billie52707.cn/posts/2020/11/python-venv/</link>
       <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
@@ -159,6 +159,15 @@
       
       <guid>https://billie52707.cn/posts/2020/9/scale-question/</guid>
       <description>前言 今天有同学来问我关于二级python计算机考试中进制间的转换问题，才想起来好久没有复习这方面的知识了，大都已经忘却，于是花了两个小时梳理</description>
+    </item>
+    
+    <item>
+      <title>「机器学习」学习笔记</title>
+      <link>https://billie52707.cn/note/machine-learn/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/machine-learn/</guid>
+      <description>相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1. 数据导入 numpy np.loadtxt() pandas pd.read_csv() 2. 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数</description>
     </item>
     
     <item>

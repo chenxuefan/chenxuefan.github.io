@@ -9,75 +9,12 @@
     <copyright>Billie</copyright>
     <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>rpa</title>
+      <title>「rpa」学习笔记</title>
       <link>https://billie52707.cn/note/rpa/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/rpa/</guid>
-      <description>   </description>
-    </item>
-    
-    <item>
-      <title>「xpath」学习笔记</title>
-      <link>https://billie52707.cn/note/python-xpath/</link>
-      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-xpath/</guid>
-      <description>xpath 用法总结整理 1. starts-with函数 获取以xxx开头的元素 例子：xpath(‘//div[stars-with(@class,”tes</description>
-    </item>
-    
-    <item>
-      <title>python模块详解 | keyboard</title>
-      <link>https://billie52707.cn/note/python-keyboard/</link>
-      <pubDate>Thu, 15 Apr 2021 20:54:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-keyboard/</guid>
-      <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
-    </item>
-    
-    <item>
-      <title>python模块详解 | logging</title>
-      <link>https://billie52707.cn/note/python-logging/</link>
-      <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-logging/</guid>
-      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 import logging logging.basicConfig( filename = &amp;#39;document.log&amp;#39;, level = logging.INFO, format = &amp;#34;%(asctime)s-%(levelname)s-%(message)s&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;)</description>
-    </item>
-    
-    <item>
-      <title>python模块详解 | BeautifulSoup</title>
-      <link>https://billie52707.cn/note/python-beautifulsoup/</link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-beautifulsoup/</guid>
-      <description>Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改</description>
-    </item>
-    
-    <item>
-      <title>「沃尔玛-美洲文件批量上传」项目开发文档</title>
-      <link>https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/</link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/</guid>
-      <description>注意点 稳定性 细节逻辑的处理 开发流程 1. 读取Excel 2. RPA上传文件 3. 上传错误情况的审查</description>
-    </item>
-    
-    <item>
-      <title>大厂求索记</title>
-      <link>https://billie52707.cn/note/burn_them_all/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/burn_them_all/</guid>
-      <description>前言 平凡的一个周一的晚上，朝哥通过了微信的面试，即将进入大厂行列，踏上了逆袭的第一步。恭喜！ LeeCode，我吃定你了</description>
-    </item>
-    
-    <item>
-      <title>os</title>
-      <link>https://billie52707.cn/note/pytohn-os/</link>
-      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/pytohn-os/</guid>
-      <description></description>
+      <description>前言 达观人，达观魂 😎 使用手册 浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的</description>
     </item>
     
     <item>
@@ -96,33 +33,6 @@
       
       <guid>https://billie52707.cn/note/data-structure/</guid>
       <description>模块一：代码效率优化方法论 复杂度是衡量代码运行效率的重要度量因素 复杂度通常包括「时间复杂度」与「空间复杂度」，其中 时间复杂度与「代码的结构设</description>
-    </item>
-    
-    <item>
-      <title>「马士基」项目开发文档</title>
-      <link>https://billie52707.cn/note/data-grand/maersk/maersk/</link>
-      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/data-grand/maersk/maersk/</guid>
-      <description>收获与感悟 一、技术与代码素养 config.py 代码调试 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指</description>
-    </item>
-    
-    <item>
-      <title>「pyqt5」学习笔记</title>
-      <link>https://billie52707.cn/note/python-pyqt5/</link>
-      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-pyqt5/</guid>
-      <description>前言 PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较</description>
-    </item>
-    
-    <item>
-      <title>python模块详解 | matplotlib</title>
-      <link>https://billie52707.cn/note/python-matplotlib/</link>
-      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-matplotlib/</guid>
-      <description>一、图表的保存 ##保存图片 直接输入文件路径，新建文件名字 ##dpi图片分辨率 越高越清晰。bbox_inches = &#39;tight&#39;,去掉空白部分</description>
     </item>
     
     <item>
@@ -153,15 +63,6 @@
     </item>
     
     <item>
-      <title>「markdown」学习笔记</title>
-      <link>https://billie52707.cn/note/markdown/</link>
-      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/markdown/</guid>
-      <description>代码增删对比效果 - old man + new guy</description>
-    </item>
-    
-    <item>
       <title>「机器学习」学习笔记</title>
       <link>https://billie52707.cn/note/machine-learn/</link>
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
@@ -177,102 +78,6 @@
       
       <guid>https://billie52707.cn/note/linux/</guid>
       <description>VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的</description>
-    </item>
-    
-    <item>
-      <title>API</title>
-      <link>https://billie52707.cn/note/api/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/api/</guid>
-      <description>2020豆瓣电影最新api 获取正在热映的电影：http://api.douban.com/v2/movie/in_theaters?apik</description>
-    </item>
-    
-    <item>
-      <title>bootstrap</title>
-      <link>https://billie52707.cn/note/bootstrap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/bootstrap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bt</title>
-      <link>https://billie52707.cn/note/bt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/bt/</guid>
-      <description>启动 sudo /etc/init.d/bt default 重启 sudo bt restart</description>
-    </item>
-    
-    <item>
-      <title>css提高</title>
-      <link>https://billie52707.cn/note/css/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/css/</guid>
-      <description>渐变 线性渐变 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一</description>
-    </item>
-    
-    <item>
-      <title>flask</title>
-      <link>https://billie52707.cn/note/python-flask/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/python-flask/</guid>
-      <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&#39;server.py&#39; flask run ps：等号两边无空格</description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://billie52707.cn/note/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/git/</guid>
-      <description>  git init
-  git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git
-  git add .
-  git commit -m&amp;quot;update&amp;quot;
-  git branch
-  git push -u origin master
-  </description>
-    </item>
-    
-    <item>
-      <title>HTML标签总结</title>
-      <link>https://billie52707.cn/note/html/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/html/</guid>
-      <description>font size color face img src height width title alt 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border cellspacing cellpadding width height</description>
-    </item>
-    
-    <item>
-      <title>nginx</title>
-      <link>https://billie52707.cn/note/nginx/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/nginx/</guid>
-      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx</description>
-    </item>
-    
-    <item>
-      <title>other</title>
-      <link>https://billie52707.cn/note/other/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/other/</guid>
-      <description>注册香港apple id及充值教程</description>
-    </item>
-    
-    <item>
-      <title>风格迁移 - GUI设计文档</title>
-      <link>https://billie52707.cn/note/pyqt-style-transform/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/pyqt-style-transform/</guid>
-      <description>布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHBoxLayout、QGri</description>
     </item>
     
   </channel>

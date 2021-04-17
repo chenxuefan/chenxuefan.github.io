@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/categories/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/draft/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/note/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url>
@@ -18,17 +28,22 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/rpa/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billie52707.cn/tags/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/python-xpath/</loc>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/rpa/</loc>
+    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/draft/python-xpath/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,32 +58,22 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/python-keyboard/</loc>
+    <loc>https://billie52707.cn/draft/python-keyboard/</loc>
     <lastmod>2021-04-15T20:54:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/python-logging/</loc>
+    <loc>https://billie52707.cn/draft/python-logging/</loc>
     <lastmod>2021-04-14T20:54:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/categories/</loc>
+    <loc>https://billie52707.cn/draft/python-beautifulsoup/</loc>
     <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/python-beautifulsoup/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/data-grand/maersk/walmart-america-swb-upload-readme/</loc>
+    <loc>https://billie52707.cn/draft/data-grand/maersk/walmart-america-swb-upload-readme/</loc>
     <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,12 +83,12 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/burn_them_all/</loc>
+    <loc>https://billie52707.cn/draft/burn_them_all/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/pytohn-os/</loc>
+    <loc>https://billie52707.cn/draft/pytohn-os/</loc>
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -108,7 +113,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/data-grand/maersk/maersk/</loc>
+    <loc>https://billie52707.cn/draft/data-grand/maersk/maersk/</loc>
     <lastmod>2021-01-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -148,7 +153,12 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/python-pyqt5/</loc>
+    <loc>https://billie52707.cn/draft/python-pyqt5/</loc>
+    <lastmod>2020-12-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/draft/pyqt-style-transform/</loc>
     <lastmod>2020-12-08T00:00:00+00:00</lastmod>
   </url>
   
@@ -183,7 +193,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/python-matplotlib/</loc>
+    <loc>https://billie52707.cn/draft/python-matplotlib/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -418,7 +428,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/markdown/</loc>
+    <loc>https://billie52707.cn/draft/markdown/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -692,23 +702,23 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/api/</loc>
+    <loc>https://billie52707.cn/draft/api/</loc>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/bootstrap/</loc>
+    <loc>https://billie52707.cn/draft/bootstrap/</loc>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/bt/</loc>
+    <loc>https://billie52707.cn/draft/bt/</loc>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/css/</loc>
+    <loc>https://billie52707.cn/draft/css/</loc>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/python-flask/</loc>
+    <loc>https://billie52707.cn/draft/python-flask/</loc>
   </url>
   
   <url>
@@ -716,23 +726,19 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/git/</loc>
+    <loc>https://billie52707.cn/draft/git/</loc>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/html/</loc>
+    <loc>https://billie52707.cn/draft/html/</loc>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/nginx/</loc>
+    <loc>https://billie52707.cn/draft/nginx/</loc>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/other/</loc>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/pyqt-style-transform/</loc>
+    <loc>https://billie52707.cn/draft/other/</loc>
   </url>
   
 </urlset>
