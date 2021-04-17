@@ -146,7 +146,7 @@ var _hmt = _hmt || [];
 		methods:{
 			getimg(){
 				var that = this;
-				axios.jsonp('//open.iciba.com/dsapi/')
+				axios.jsonp('http://open.iciba.com/dsapi/')
 				  .then(function (response) {
 					  that.main_url = response.fenxiang_img;
 					  that.about_url=response.picture4;
