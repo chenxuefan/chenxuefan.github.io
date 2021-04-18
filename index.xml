@@ -770,7 +770,7 @@
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/about/</guid>
-      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\n\u003cimg id=\u0022app\u0022 :src=\u0022about_url\u0022\u003e\n\u003cbr\u003e\n\u003cscript\u003e\t\n\tvar vm = new Vue({\n\t\tel:\u0022#app\u0022, \/\/挂载点\n\t\tdata: {msg:\u0027pass me\u0027,main_url:\u0027\u0027,about_url:\u0027\u0027}, \/\/数据对象\n\t\tmeth</description>
+      <description>岁月不饶人，我亦何曾饶过岁月！—— 木心 $(function () { var html = &#34;\n\n\u003cimg id=\u0022app\u0022 src=\u0022https:\/\/download.billie52707.cn\/pic\/images\/main.png\u0022\u003e\n\u003cbr\u003e\n\u003c!-- \u003cscript\u003e\t\n\tvar vm = new Vue({\n\t\tel:\u0022#app\u0022, \/\/挂载点\n\t\tdata: {msg:\u0027pass me\u0027,main_url:\u0027\u0027,about_url:\u0027\u0027}, \/\/数据对象\n\t\tmet</description>
     </item>
     
     <item>
