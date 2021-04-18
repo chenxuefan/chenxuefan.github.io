@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记一次迁移服务器的经历</title>
+      <link>https://billie52707.cn/draft/aliyun-server-initialization/</link>
+      <pubDate>Sun, 18 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/aliyun-server-initialization/</guid>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1366216050\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言 故事的起源，要从前几个星期说起，我在阿里</description>
+    </item>
+    
     <item>
       <title>「rpa」学习笔记</title>
       <link>https://billie52707.cn/note/rpa/</link>
@@ -28,10 +37,10 @@
     
     <item>
       <title>新的里程碑 | 一万访客达成！</title>
-      <link>https://billie52707.cn/posts/2021/4/ten-thousand-watch/</link>
+      <link>https://billie52707.cn/draft/ten-thousand-watch/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/ten-thousand-watch/</guid>
+      <guid>https://billie52707.cn/draft/ten-thousand-watch/</guid>
       <description></description>
     </item>
     
@@ -261,12 +270,12 @@
     </item>
     
     <item>
-      <title>nginx学习笔记 | 解决跨域问题</title>
-      <link>https://billie52707.cn/posts/2020/11/nginx-cross-domain/</link>
+      <title>关于跨域问题的思考和解决思路</title>
+      <link>https://billie52707.cn/posts/2020/11/cross-domain/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/nginx-cross-domain/</guid>
-      <description>什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以认为</description>
+      <guid>https://billie52707.cn/posts/2020/11/cross-domain/</guid>
+      <description>前言 什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以</description>
     </item>
     
     <item>
@@ -999,15 +1008,6 @@
     </item>
     
     <item>
-      <title>bootstrap</title>
-      <link>https://billie52707.cn/draft/bootstrap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/bootstrap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bt</title>
       <link>https://billie52707.cn/draft/bt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1064,7 +1064,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/nginx/</guid>
-      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx</description>
+      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx # 杀死所有nginx进程 安装 yum install ng nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</description>
     </item>
     
     <item>
