@@ -32,7 +32,7 @@
       <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/4/python-logging/</guid>
-      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 import logging logging.basicConfig( filename = &amp;#39;document.log&amp;#39;, level = logging.INFO, format = &amp;#34;%(asctime)s-%(levelname)s-%(message)s&amp;#34;, datefmt = &amp;#34;%m-%d-%Y %H:%M:%S %p&amp;#34; ) logging.warning(&amp;#39;记录到日志&amp;#39;) 下面结合四个参数展开</description>
+      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 - logging.basicConfig() import logging logging.basicConfig( filename=&amp;#39;document.log&amp;#39;, level=logging.INFO, format=&amp;#34;%(asctime)s%(pathname)s[%(lineno)s]%(levelname)s:%(message)s&amp;#34;, datefmt=&amp;#34;%Y-%m-%d%H:%M:%S %p&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;) 下面结合四个参数展开来聊一下， 1. filename 可选。</description>
     </item>
     
     <item>
@@ -446,7 +446,7 @@
       <pubDate>Tue, 07 Apr 2020 11:01:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/4/python-strftime/</guid>
-      <description>time模块 import time t = time.strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;) print(t) datetime模块 import datetime t = datetime.datetime.now().strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;) print(t) 格式化输出之后，就得到了我们常见的格式了👇 2020-04-07 10:59:36 附：strftime参数 strftime(format[, tuple]) -&amp;gt; string 将</description>
+      <description>示例 # time模块 import time t = time.strftime(&amp;#34;%Y-%m-%d%H:%M:%S&amp;#34;) print(t) # datetime模块 import datetime t = datetime.datetime.now().strftime(&amp;#34;%Y-%m-%d%H:%M:%S&amp;#34;) print(t) 格式化输出之后，就得到了我们常见的格式了👇 2020-04-07 10:59:36 format参数 格式 描述 %y 两位</description>
     </item>
     
     <item>

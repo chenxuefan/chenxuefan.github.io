@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="python模块详解 | logging" />
-<meta property="og:description" content="官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 import logging logging.basicConfig( filename = &#39;document.log&#39;, level = logging.INFO, format = &#34;%(asctime)s-%(levelname)s-%(message)s&#34;, datefmt = &#34;%m-%d-%Y %H:%M:%S %p&#34; ) logging.warning(&#39;记录到日志&#39;) 下面结合四个参数展开" />
+<meta property="og:description" content="官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 - logging.basicConfig() import logging logging.basicConfig( filename=&#39;document.log&#39;, level=logging.INFO, format=&#34;%(asctime)s%(pathname)s[%(lineno)s]%(levelname)s:%(message)s&#34;, datefmt=&#34;%Y-%m-%d%H:%M:%S %p&#34; ) logging.info(&#39;记录到日志&#39;) 下面结合四个参数展开来聊一下， 1. filename 可选。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2021/4/python-logging/" />
 <meta property="article:published_time" content="2021-04-14T20:54:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | logging"/>
-<meta name="twitter:description" content="官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 import logging logging.basicConfig( filename = &#39;document.log&#39;, level = logging.INFO, format = &#34;%(asctime)s-%(levelname)s-%(message)s&#34;, datefmt = &#34;%m-%d-%Y %H:%M:%S %p&#34; ) logging.warning(&#39;记录到日志&#39;) 下面结合四个参数展开"/>
+<meta name="twitter:description" content="官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 - logging.basicConfig() import logging logging.basicConfig( filename=&#39;document.log&#39;, level=logging.INFO, format=&#34;%(asctime)s%(pathname)s[%(lineno)s]%(levelname)s:%(message)s&#34;, datefmt=&#34;%Y-%m-%d%H:%M:%S %p&#34; ) logging.info(&#39;记录到日志&#39;) 下面结合四个参数展开来聊一下， 1. filename 可选。"/>
 
   
   
@@ -191,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-logging%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20logging&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3.8%2fhowto%2flogging.html%23logging-basic-tutorial%20%e5%9f%ba%e7%a1%80%e6%97%a5%e5%bf%97%20import%20logging%20logging.basicConfig%28%20filename%20%3d%20%26%2339%3bdocument.log%26%2339%3b%2c%20level%20%3d%20logging.INFO%2c%20format%20%3d%20%26%2334%3b%25%28asctime%29s-%25%28levelname%29s-%25%28message%29s%26%2334%3b%2c%20datefmt%20%3d%20%26%2334%3b%25m-%25d-%25Y%20%25H%3a%25M%3a%25S%20%25p%26%2334%3b%20%29%20logging.warning%28%26%2339%3b%e8%ae%b0%e5%bd%95%e5%88%b0%e6%97%a5%e5%bf%97%26%2339%3b%29%20%e4%b8%8b%e9%9d%a2%e7%bb%93%e5%90%88%e5%9b%9b%e4%b8%aa%e5%8f%82%e6%95%b0%e5%b1%95%e5%bc%80">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-logging%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20logging&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3.8%2fhowto%2flogging.html%23logging-basic-tutorial%20%e5%9f%ba%e7%a1%80%e6%97%a5%e5%bf%97%20-%20logging.basicConfig%28%29%20import%20logging%20logging.basicConfig%28%20filename%3d%26%2339%3bdocument.log%26%2339%3b%2c%20level%3dlogging.INFO%2c%20format%3d%26%2334%3b%25%28asctime%29s%25%28pathname%29s%5b%25%28lineno%29s%5d%25%28levelname%29s%3a%25%28message%29s%26%2334%3b%2c%20datefmt%3d%26%2334%3b%25Y-%25m-%25d%25H%3a%25M%3a%25S%20%25p%26%2334%3b%20%29%20logging.info%28%26%2339%3b%e8%ae%b0%e5%bd%95%e5%88%b0%e6%97%a5%e5%bf%97%26%2339%3b%29%20%e4%b8%8b%e9%9d%a2%e7%bb%93%e5%90%88%e5%9b%9b%e4%b8%aa%e5%8f%82%e6%95%b0%e5%b1%95%e5%bc%80%e6%9d%a5%e8%81%8a%e4%b8%80%e4%b8%8b%ef%bc%8c%201.%20filename%20%e5%8f%af%e9%80%89%e3%80%82">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -206,12 +206,18 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#基础日志">基础日志</a>
+    <li><a href="#基础日志---loggingbasicconfig">基础日志 - <code>logging.basicConfig()</code></a>
       <ul>
         <li><a href="#1-filename">1. filename</a></li>
         <li><a href="#2-level">2. level</a></li>
         <li><a href="#3-format">3. format</a></li>
         <li><a href="#4-datefmt">4. datefmt</a></li>
+      </ul>
+    </li>
+    <li><a href="#进阶日志">进阶日志</a>
+      <ul>
+        <li><a href="#logger记录器">Logger（记录器）</a></li>
+        <li><a href="#handler处理程序">Handler（处理程序）</a></li>
       </ul>
     </li>
   </ul>
@@ -273,22 +279,258 @@ if (!doNotTrack) {
       <ul>
 <li>官方文档 - <a href="https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial">https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial</a></li>
 </ul>
-<h2 id="基础日志">基础日志</h2>
+<h2 id="基础日志---loggingbasicconfig">基础日志 - <code>logging.basicConfig()</code></h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> logging
 
 logging<span style="color:#f92672">.</span>basicConfig(
-  filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;document.log&#39;</span>,
-  level <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>INFO,
-  format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74">-</span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74">-</span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#34;</span>,
-  datefmt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">-%Y %H:%M:%S %p&#34;</span>
+        filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;document.log&#39;</span>,
+        level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>INFO,
+        format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(pathname)s</span><span style="color:#e6db74">[</span><span style="color:#e6db74">%(lineno)s</span><span style="color:#e6db74">]</span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74">:</span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#34;</span>,
+        datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S %p&#34;</span>
 )
 
-logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&#39;记录到日志&#39;</span>)
+logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;记录到日志&#39;</span>)
 </code></pre></div><p>下面结合四个参数展开来聊一下，</p>
 <h3 id="1-filename">1. filename</h3>
+<p>可选。保存到本地日志文件的文件名。</p>
 <h3 id="2-level">2. level</h3>
+<p>日志级别，各级别适用性如下（以严重性递增，DEBUG最低）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">级别</th>
+<th style="text-align:left">优先级数值</th>
+<th style="text-align:left">何时使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>DEBUG</code></td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">细节信息，仅当诊断问题时适用。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>INFO</code></td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">确认程序按预期运行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>WARNING</code></td>
+<td style="text-align:left">30</td>
+<td style="text-align:left">表明有已经或即将发生的意外（例如：磁盘空间不足）。程序仍按预期进行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ERROR</code></td>
+<td style="text-align:left">40</td>
+<td style="text-align:left">由于严重的问题，程序的某些功能已经不能正常执行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CRITICAL</code></td>
+<td style="text-align:left">50</td>
+<td style="text-align:left">严重的错误，表明程序已不能继续执行</td>
+</tr>
+</tbody>
+</table>
+<p>例：如果把日志记录级别设置为INFO，那么只有比日志是INFO或比INFO级别更高的日志，才会被记录到文件中</p>
 <h3 id="3-format">3. format</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">格式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>%(name)s</code></td>
+<td>用于记录调用的日志记录器名称。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(asctime)s</code></td>
+<td>字符串形式的当前时间。 默认形式为 &lsquo;2003-07-08 16:49:45,896&rsquo; (逗号之后的数字为时间的毫秒部分)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(created)f</code></td>
+<td>当前时间（即 <a href="https://docs.python.org/zh-cn/3.8/library/time.html#time.time"><code>time.time()</code></a> 的返回值）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(pathname)s</code></td>
+<td>发出日志记录调用的「源文件的完整路径名」（如果可用）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(filename)s</code></td>
+<td>发出日志记录调用的「源文件的文件名」</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(funcName)s</code></td>
+<td>调用日志输出函数的「函数名」</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(levelname)s</code></td>
+<td>消息文本记录级别 (<code>'DEBUG'</code>, <code>'INFO'</code>, <code>'WARNING'</code>, <code>'ERROR'</code>, <code>'CRITICAL'</code>).</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(levelno)s</code></td>
+<td>消息数字记录级别 (<code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>).</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(lineno)d</code></td>
+<td>发出日志记录调用所在的源代码「行号」（如果可用）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(message)s</code></td>
+<td>记入日志的消息</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(module)s</code></td>
+<td>调用日志输出函数的模块名</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(process)d</code></td>
+<td>进程ID，可能没有</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>%(thread)d</code></td>
+<td>线程ID，可能没有</td>
+</tr>
+</tbody>
+</table>
+<p>例：&quot;%(asctime)s %(pathname)s[%(lineno)s]%(levelname)s:%(message)s&quot;</p>
 <h3 id="4-datefmt">4. datefmt</h3>
+<ul>
+<li>
+<p>作用：格式化当前时间（<code>%(asctime)s</code>）</p>
+</li>
+<li>
+<p>使用：用法参考<code>time.strftime(format)</code>中format参数的写法</p>
+<p><a href="https://billie52707.cn/posts/2020/4/python-strftime/">python学习笔记 | strftime()格式化输出时间</a></p>
+</li>
+<li>
+<p>例：<code>&quot;%m-%d-%Y %H:%M:%S&quot;</code></p>
+</li>
+</ul>
+<h2 id="进阶日志">进阶日志</h2>
+<h3 id="logger记录器">Logger（记录器）</h3>
+<p>创建记录器对象</p>
+<ul>
+<li><code>logger = logging.getLogger()</code></li>
+</ul>
+<p>每个程序在输出信息之前都要获得一个logger，logger通常对应了程序的模块名。</p>
+<p>记录器常见的配置方法：</p>
+<ul>
+<li><a href="https://docs.python.org/zh-cn/3.8/library/logging.html#logging.Logger.setLevel"><code>Logger.setLevel()</code></a> 指定记录器将处理的最低严重性日志消息</li>
+<li><a href="https://docs.python.org/zh-cn/3.8/library/logging.html#logging.Logger.addHandler"><code>Logger.addHandler()</code></a> 和 <a href="https://docs.python.org/zh-cn/3.8/library/logging.html#logging.Logger.removeHandler"><code>Logger.removeHandler()</code></a> 从记录器对象中添加和删除处理程序对象</li>
+<li><a href="https://docs.python.org/zh-cn/3.8/library/logging.html#logging.Logger.addFilter"><code>Logger.addFilter()</code></a> 和 <a href="https://docs.python.org/zh-cn/3.8/library/logging.html#logging.Logger.removeFilter"><code>Logger.removeFilter()</code></a> 可以添加或移除记录器对象中的过滤器</li>
+</ul>
+<h3 id="handler处理程序">Handler（处理程序）</h3>
+<p><a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#watchedfilehandler">https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#watchedfilehandler</a></p>
+<h4 id="创建处理程序对象以下是一些常见的handler">创建处理程序对象，以下是一些常见的handler：</h4>
+<ul>
+<li><code>handler = logging.StreamHandler()</code></li>
+</ul>
+<p><em>class</em> <code>logging.``StreamHandler</code>(<em>stream=None</em>)</p>
+<p><a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 类位于核心 <a href="https://docs.python.org/zh-cn/3.8/library/logging.html#module-logging"><code>logging</code></a> 包，它可将日志记录输出发送到数据流例如 <em>sys.stdout</em>, <em>sys.stderr</em> 或任何文件类对象（或者更精确地说，任何支持 <code>write()</code> 和 <code>flush()</code> 方法的对象）</p>
+<ul>
+<li>
+<p><code>handler = logging.FileHandler()</code></p>
+<p><em>class</em> <code>logging.``FileHandler</code>(<em>filename</em>, <em>mode=&lsquo;a&rsquo;</em>, <em>encoding=None</em>, <em>delay=False</em>)</p>
+<p><a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a> 类位于核心 <a href="https://docs.python.org/zh-cn/3.8/library/logging.html#module-logging"><code>logging</code></a> 包，它可将日志记录输出到磁盘文件中。 它从 <a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 继承了输出功能。</p>
+</li>
+<li>
+<p><code>handler = logging.NullHandler()</code></p>
+<p><a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.NullHandler"><code>NullHandler</code></a> 类位于核心 <a href="https://docs.python.org/zh-cn/3.8/library/logging.html#module-logging"><code>logging</code></a> 包，它不执行任何格式化或输出。 它实际上是一个供库开发者使用的‘无操作’处理程序。</p>
+</li>
+<li>
+<p><code>handler = logging.handlers.WatchedFileHandler()</code></p>
+<p><a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.handlers.WatchedFileHandler"><code>WatchedFileHandler</code></a> 类位于 <a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#module-logging.handlers"><code>logging.handlers</code></a> 模块，这个 <code>FileHandler</code> 用于监视它所写入日志记录的文件。 如果文件发生变化，它会被关闭并使用文件名重新打开。</p>
+</li>
+<li>
+<p><code>handler = logging.handlers.BaseRotatingHandler()</code></p>
+<p><a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.handlers.BaseRotatingHandler"><code>BaseRotatingHandler</code></a> 类位于 <a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#module-logging.handlers"><code>logging.handlers</code></a> 模块中，它是轮换文件处理程序类 <a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.handlers.RotatingFileHandler"><code>RotatingFileHandler</code></a> 和 <a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.handlers.TimedRotatingFileHandler"><code>TimedRotatingFileHandler</code></a> 的基类。 你不需要实例化此类，但它具有你可能需要重载的属性和方法。</p>
+</li>
+<li>
+<p><code>handler = logging.handlers.RotatingFileHandler()</code></p>
+<p><a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.handlers.RotatingFileHandler"><code>RotatingFileHandler</code></a> 类位于 <a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#module-logging.handlers"><code>logging.handlers</code></a> 模块，它支持磁盘日志文件的轮换。可以管理文件大小，当文件达到一定大小之后，它会自动将当前日志文件改名，让后创建一个新的同名日志文件继续输出。</p>
+</li>
+<li>
+<p><code>handler = logging.handlers.TimedRotatingFileHandler()</code></p>
+<p><a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#logging.handlers.TimedRotatingFileHandler"><code>TimedRotatingFileHandler</code></a> 类位于 <a href="https://docs.python.org/zh-cn/3.8/library/logging.handlers.html#module-logging.handlers"><code>logging.handlers</code></a> 模块，它支持基于「特定时间间隔」的磁盘日志文件轮换。</p>
+<p><em>class</em> <code>logging.handlers.``TimedRotatingFileHandler</code>(<em>filename</em>, <em>when=&lsquo;h&rsquo;</em>, <em>interval=1</em>, <em>backupCount=0</em>, <em>encoding=None</em>, <em>delay=False</em>, <em>utc=False</em>, <em>atTime=None</em>)</p>
+<ul>
+<li>
+<p><em>filename</em> - 日志文件的保存路径</p>
+</li>
+<li>
+<p><em>interval</em> - 时间间隔</p>
+</li>
+<li>
+<p><em>when</em> - 时间间隔的单位</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">间隔类型</th>
+<th style="text-align:left">如果/如何使用 <em>atTime</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>'S'</code></td>
+<td style="text-align:left">秒</td>
+<td style="text-align:left">忽略</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>'M'</code></td>
+<td style="text-align:left">分钟</td>
+<td style="text-align:left">忽略</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>'H'</code></td>
+<td style="text-align:left">小时</td>
+<td style="text-align:left">忽略</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>'D'</code></td>
+<td style="text-align:left">天</td>
+<td style="text-align:left">忽略</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>'W0'-'W6'</code></td>
+<td style="text-align:left">工作日(0=星期一)</td>
+<td style="text-align:left">用于计算初始轮换时间</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>'midnight'</code></td>
+<td style="text-align:left">如果未指定 <em>atTime</em> 则在午夜执行轮换，否则将使用 <em>atTime</em>。</td>
+<td style="text-align:left">用于计算初始轮换时间</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>&hellip;&hellip;</p>
+</li>
+</ul>
+<h4 id="handler常见的配置方法">handler常见的配置方法：</h4>
+<ul>
+<li><code>handler.setLevel(level)</code> 指定被处理信息的信息等级
+<ul>
+<li><em>level</em> - <code>level = logging.INFO</code></li>
+</ul>
+</li>
+<li><code>handler.setFormatter(formatter)</code> 设置format格式
+<ul>
+<li><em>formatter</em> - <code>formatter = logging.Formatter(fmt,datefmt)</code> fmt参数的使用请参考：<a href="https://billie52707.cn/posts/2021/4/python-logging/#3-format">format</a></li>
+</ul>
+</li>
+<li><code>handler.addFilter(filter)/removeFilter(filter)</code> 新增或删除一个filter对象
+<ul>
+<li><em>filter</em></li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -326,7 +568,7 @@ logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          83 字
+          1413 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -383,12 +625,18 @@ logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#基础日志">基础日志</a>
+    <li><a href="#基础日志---loggingbasicconfig">基础日志 - <code>logging.basicConfig()</code></a>
       <ul>
         <li><a href="#1-filename">1. filename</a></li>
         <li><a href="#2-level">2. level</a></li>
         <li><a href="#3-format">3. format</a></li>
         <li><a href="#4-datefmt">4. datefmt</a></li>
+      </ul>
+    </li>
+    <li><a href="#进阶日志">进阶日志</a>
+      <ul>
+        <li><a href="#logger记录器">Logger（记录器）</a></li>
+        <li><a href="#handler处理程序">Handler（处理程序）</a></li>
       </ul>
     </li>
   </ul>
@@ -449,7 +697,7 @@ logging<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-logging%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20logging&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3.8%2fhowto%2flogging.html%23logging-basic-tutorial%20%e5%9f%ba%e7%a1%80%e6%97%a5%e5%bf%97%20import%20logging%20logging.basicConfig%28%20filename%20%3d%20%26%2339%3bdocument.log%26%2339%3b%2c%20level%20%3d%20logging.INFO%2c%20format%20%3d%20%26%2334%3b%25%28asctime%29s-%25%28levelname%29s-%25%28message%29s%26%2334%3b%2c%20datefmt%20%3d%20%26%2334%3b%25m-%25d-%25Y%20%25H%3a%25M%3a%25S%20%25p%26%2334%3b%20%29%20logging.warning%28%26%2339%3b%e8%ae%b0%e5%bd%95%e5%88%b0%e6%97%a5%e5%bf%97%26%2339%3b%29%20%e4%b8%8b%e9%9d%a2%e7%bb%93%e5%90%88%e5%9b%9b%e4%b8%aa%e5%8f%82%e6%95%b0%e5%b1%95%e5%bc%80">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-logging%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20logging&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3.8%2fhowto%2flogging.html%23logging-basic-tutorial%20%e5%9f%ba%e7%a1%80%e6%97%a5%e5%bf%97%20-%20logging.basicConfig%28%29%20import%20logging%20logging.basicConfig%28%20filename%3d%26%2339%3bdocument.log%26%2339%3b%2c%20level%3dlogging.INFO%2c%20format%3d%26%2334%3b%25%28asctime%29s%25%28pathname%29s%5b%25%28lineno%29s%5d%25%28levelname%29s%3a%25%28message%29s%26%2334%3b%2c%20datefmt%3d%26%2334%3b%25Y-%25m-%25d%25H%3a%25M%3a%25S%20%25p%26%2334%3b%20%29%20logging.info%28%26%2339%3b%e8%ae%b0%e5%bd%95%e5%88%b0%e6%97%a5%e5%bf%97%26%2339%3b%29%20%e4%b8%8b%e9%9d%a2%e7%bb%93%e5%90%88%e5%9b%9b%e4%b8%aa%e5%8f%82%e6%95%b0%e5%b1%95%e5%bc%80%e6%9d%a5%e8%81%8a%e4%b8%80%e4%b8%8b%ef%bc%8c%201.%20filename%20%e5%8f%af%e9%80%89%e3%80%82">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
