@@ -18,6 +18,24 @@
     </item>
     
     <item>
+      <title>python模块详解 | xpath</title>
+      <link>https://billie52707.cn/posts/2021/4/python-xpath/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/python-xpath/</guid>
+      <description>导入 from lxml import etree page = etree.HTML(html.lower().decode(&amp;#39;utf-8&amp;#39;)) xpath 用法总结整理 starts-with 获取以xxx开头的元素 例子：xpath(‘//div[stars-with(@class,”test”)]</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | logging</title>
+      <link>https://billie52707.cn/posts/2021/4/python-logging/</link>
+      <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/python-logging/</guid>
+      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 import logging logging.basicConfig( filename = &amp;#39;document.log&amp;#39;, level = logging.INFO, format = &amp;#34;%(asctime)s-%(levelname)s-%(message)s&amp;#34;, datefmt = &amp;#34;%m-%d-%Y %H:%M:%S %p&amp;#34; ) logging.warning(&amp;#39;记录到日志&amp;#39;) 下面结合四个参数展开</description>
+    </item>
+    
+    <item>
       <title>python学习笔记 | 一次使用装饰器时引发的思考</title>
       <link>https://billie52707.cn/posts/2021/4/python-decorator-return/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
@@ -41,7 +59,7 @@
       <pubDate>Sun, 28 Mar 2021 01:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/3/python-openpyxl/</guid>
-      <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list 2. 工作表的使用 ## 设置工作表对</description>
+      <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list wb.remove(sheetname) 2. 工作表的使用 ## 设置工作表</description>
     </item>
     
     <item>

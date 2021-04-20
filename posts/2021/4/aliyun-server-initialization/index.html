@@ -108,7 +108,7 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/note/rpa/">
+          <a class="icon" href=" https://billie52707.cn/posts/2021/4/python-xpath/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
@@ -303,7 +303,9 @@ if (!doNotTrack) {
 </div>
 <h2 id="前言">前言</h2>
 <p>​		故事的起源，要从前几个星期说起，我在阿里云购入的为期一年的云服务器正式到期，本来在几个月之前，如果我选择续费的话，还可以享受优惠，只需一百出头就可以再续一年。而天真且极度拖延的我以为到期再续费也是OK的，于是拖着拖着，等到到期时我才得知，我已经错过了续费优惠，我懊悔，我悔恨，我决定不再续费了，贫穷。</p>
-<p>而此前我服务器最重要的一项工作，就是跑一份脚本，程序设定每天准点运行，进而我每天都会得到一份图片文件，接着我在网站上就可以通过域名的形式访问到这张图片 - <a href="https://download.billie52707.cn/pic/main.png">https://download.billie52707.cn/pic/main.png</a> ，这张图片也就是我在主页的那张每日一图。没错我就是这么无聊。</p>
+<p>而此前我服务器最重要的一项工作，就是跑一份脚本，程序设定每天准点运行，这样我就可以每天都会得到一份图片文件，然后通过nginx服务绑定域名，我在网站上就可以通过域名的形式访问到这张图片 -</p>
+<p><a href="https://download.billie52707.cn/pic/main.png">https://download.billie52707.cn/pic/main.png</a></p>
+<p>这张图片也就是我在主页的那张每日一图。没错我就是这么无聊。</p>
 <p>但这样总是依赖服务器来提供图片文件，总不是长久之计，于是我又萌生了通过前端网页去获取图片的想法。</p>
 <p>说干就干，用vue写了一份js，发送请求用的是axios，然而，不出意外地遇到了bug，报错提示<code>No 'Access-Content-Allow-Origin' header is present on the requested requested resource</code> 明显是前端跨域的问题。请教了一下身边的前端大神，大神说可以使用jsonp发送请求来解决，</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210418172251280.png" alt="image-20210418172251280"></p>
@@ -492,7 +494,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1409 字
+          1425 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

@@ -9,15 +9,6 @@
     <copyright>Billie</copyright>
     <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>「xpath」学习笔记</title>
-      <link>https://billie52707.cn/draft/python-xpath/</link>
-      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-xpath/</guid>
-      <description>导入 from lxml import etree page = etree.HTML(html.lower().decode(&amp;#39;utf-8&amp;#39;)) xpath 用法总结整理 starts-with 获取以xxx开头的元素 例子：xpath(‘//div[stars-with(@class,”test”)]</description>
-    </item>
-    
-    <item>
       <title>新的里程碑 | 一万访客达成！</title>
       <link>https://billie52707.cn/draft/ten-thousand-watch/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
@@ -33,15 +24,6 @@
       
       <guid>https://billie52707.cn/draft/python-keyboard/</guid>
       <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
-    </item>
-    
-    <item>
-      <title>python模块详解 | logging</title>
-      <link>https://billie52707.cn/draft/python-logging/</link>
-      <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-logging/</guid>
-      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 import logging logging.basicConfig( filename = &amp;#39;document.log&amp;#39;, level = logging.INFO, format = &amp;#34;%(asctime)s-%(levelname)s-%(message)s&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;)</description>
     </item>
     
     <item>
@@ -86,7 +68,7 @@
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/data-grand/maersk/maersk/</guid>
-      <description>收获与感悟 一、技术与代码素养 config.py 代码调试 开发流程 一、文件下载 登录系统，获取cookie值，用于后面的下载请求 使用js代码 获取文件下载链接 按照指</description>
+      <description>开发日志 年前（2021.01.25-02.08） 开发部分 登录网站与文件下载 RPA操作Excel 测试部分 测试全局代码的稳定性和异常情况 操作流程</description>
     </item>
     
     <item>
@@ -191,7 +173,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/nginx/</guid>
-      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx # 杀死所有nginx进程 安装 yum install ng nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</description>
+      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx # 杀死所有nginx进程 安装 yum install nginx nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</description>
     </item>
     
     <item>
