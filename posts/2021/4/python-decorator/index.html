@@ -221,6 +221,7 @@ if (!doNotTrack) {
         <li><a href="#3-可传参的装饰器">3. 可传参的装饰器</a></li>
         <li><a href="#4-带参数的装饰器">4. 带参数的装饰器</a></li>
         <li><a href="#5-类装饰器">5. 类装饰器</a></li>
+        <li><a href="#6-装饰器示例">6. 装饰器示例</a></li>
       </ul>
     </li>
     <li><a href="#后记">后记</a></li>
@@ -419,7 +420,7 @@ fun(<span style="color:#e6db74">&#39;Billie&#39;</span>,lang<span style="color:#
 </code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210404113530144.png" alt="image-20210404113530144"></p>
 <h3 id="4-带参数的装饰器">4. 带参数的装饰器</h3>
 <p>使用时给装饰器函数进行传参。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(flag):
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(flag<span style="color:#f92672">=</span>True):
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(func): <span style="color:#75715e">#</span>
         <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs): <span style="color:#75715e">#</span>
             <span style="color:#66d9ef">if</span> flag:
@@ -434,7 +435,37 @@ fun(<span style="color:#e6db74">&#39;Billie&#39;</span>,lang<span style="color:#
 fun()
 </code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210406113440255.png" alt="image-20210406113440255"></p>
 <h3 id="5-类装饰器">5. 类装饰器</h3>
-<h2 id="后记">后记</h2>
+<h3 id="6-装饰器示例">6. 装饰器示例</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StopRetryError</span>(<span style="color:#a6e22e">Exception</span>):
+    <span style="color:#66d9ef">pass</span>
+  
+<span style="color:#75715e"># 重试</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">retry</span>(times<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decorator</span>(func):
+        <span style="color:#a6e22e">@wraps</span>(func)
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner_decorator</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+            error <span style="color:#f92672">=</span> None
+            error_msg <span style="color:#f92672">=</span> None
+            <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(times):
+                <span style="color:#66d9ef">try</span>:
+                    <span style="color:#66d9ef">if</span> error_msg:
+                        rpa_logger<span style="color:#f92672">.</span>error(f<span style="color:#e6db74">&#39;程序运行出错, 错误信息 {error_msg}, 进入重试&#39;</span>)
+                    <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+                <span style="color:#66d9ef">except</span> StopRetryError <span style="color:#66d9ef">as</span> e:
+                    <span style="color:#66d9ef">raise</span> e
+                <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+                    kill_process(<span style="color:#e6db74">&#39;chrome&#39;</span>)
+                    kill_process(<span style="color:#e6db74">&#39;excel&#39;</span>)
+
+                    error <span style="color:#f92672">=</span> e
+                    error_msg <span style="color:#f92672">=</span> str(e)
+            <span style="color:#66d9ef">else</span>:
+                <span style="color:#66d9ef">raise</span> error
+
+        <span style="color:#66d9ef">return</span> inner_decorator
+
+    <span style="color:#66d9ef">return</span> decorator
+</code></pre></div><h2 id="后记">后记</h2>
 <p>更多 - <a href="https://billie52707.cn/posts/2021/3/python-decorator-return/">python学习笔记 | 一次使用装饰器时引发的思考</a></p>
 
     </div>
@@ -473,7 +504,7 @@ fun()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1664 字
+          1770 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -545,6 +576,7 @@ fun()
         <li><a href="#3-可传参的装饰器">3. 可传参的装饰器</a></li>
         <li><a href="#4-带参数的装饰器">4. 带参数的装饰器</a></li>
         <li><a href="#5-类装饰器">5. 类装饰器</a></li>
+        <li><a href="#6-装饰器示例">6. 装饰器示例</a></li>
       </ul>
     </li>
     <li><a href="#后记">后记</a></li>

@@ -23,7 +23,7 @@
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/4/python-xpath/</guid>
-      <description>导入 from lxml import etree page = etree.HTML(html.lower().decode(&amp;#39;utf-8&amp;#39;)) xpath 用法总结整理 starts-with 获取以xxx开头的元素 例子：xpath(‘//div[stars-with(@class,”test”)]</description>
+      <description>导入 from lxml import etree page = etree.HTML(html.lower().decode(&amp;#39;utf-8&amp;#39;)) xpath 用法总结整理 函数整理 starts-with(str) - 获取以str开头的元素 例：xpath(‘//div[stars-with(@class,”tes</description>
     </item>
     
     <item>
@@ -46,10 +46,10 @@
     
     <item>
       <title>python模块详解 | keyboard</title>
-      <link>https://billie52707.cn/draft/python-keyboard/</link>
+      <link>https://billie52707.cn/posts/2021/4/python-keyboard/</link>
       <pubDate>Thu, 15 Apr 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-keyboard/</guid>
+      <guid>https://billie52707.cn/posts/2021/4/python-keyboard/</guid>
       <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
     </item>
     
@@ -59,7 +59,7 @@
       <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/4/python-logging/</guid>
-      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 - logging.basicConfig() import logging logging.basicConfig( filename=&amp;#39;document.log&amp;#39;, level=logging.INFO, format=&amp;#34;%(asctime)s%(pathname)s[%(lineno)s]%(levelname)s:%(message)s&amp;#34;, datefmt=&amp;#34;%Y-%m-%d%H:%M:%S %p&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;) 下面结合四个参数展开来聊一下， 1. filename 可选。</description>
+      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 - logging.basicConfig() 日志基础教程 import logging logging.basicConfig( filename=&amp;#39;document.log&amp;#39;, level=logging.INFO, format=&amp;#34;%(asctime)s%(pathname)s[%(lineno)s]%(levelname)s:%(message)s&amp;#34;, datefmt=&amp;#34;%Y-%m-%d%H:%M:%S %p&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;) 下面结合四个参数展开来聊一下</description>
     </item>
     
     <item>
@@ -104,7 +104,7 @@
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/pytohn-os/</guid>
-      <description></description>
+      <description>os os.remove(path) 删除文件 os.removedirs(path) 删除空文件夹 os.rmdir(path) 删除空文件夹 os.path os.path.getatime(path) 最近访问时间（时间戳） os.path.getctime(path) 文件创建时间（时间戳） os.path.getmtime(path) 最近修改时间（时间戳） time.gmtime(os.path.getmtime(path)) 以struct_time</description>
     </item>
     
     <item>
@@ -1023,6 +1023,15 @@
       
       <guid>https://billie52707.cn/draft/css/</guid>
       <description>渐变 线性渐变 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一</description>
+    </item>
+    
+    <item>
+      <title>docker心路历程</title>
+      <link>https://billie52707.cn/draft/docker-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/docker-2/</guid>
+      <description>-bash: docker-machine: command not found（macOS） base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;amp;&amp;amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &amp;gt;/usr/local/bin/docker-machine &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-machine ​</description>
     </item>
     
     <item>

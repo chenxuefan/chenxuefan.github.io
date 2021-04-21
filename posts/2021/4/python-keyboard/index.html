@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title> python模块详解 | os | 人人都爱小雀斑&#39;s blog </title>
+  <title> python模块详解 | keyboard | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -25,16 +25,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="python模块详解 | os" />
-<meta property="og:description" content="os os.remove(path) 删除文件 os.removedirs(path) 删除空文件夹 os.rmdir(path) 删除空文件夹 os.path os.path.getatime(path) 最近访问时间（时间戳） os.path.getctime(path) 文件创建时间（时间戳） os.path.getmtime(path) 最近修改时间（时间戳） time.gmtime(os.path.getmtime(path)) 以struct_time" />
+  <meta property="og:title" content="python模块详解 | keyboard" />
+<meta property="og:description" content="write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/draft/pytohn-os/" />
-<meta property="article:published_time" content="2021-04-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-04-12T00:00:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/4/python-keyboard/" />
+<meta property="article:published_time" content="2021-04-15T20:54:00+00:00" />
+<meta property="article:modified_time" content="2021-04-15T20:54:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python模块详解 | os"/>
-<meta name="twitter:description" content="os os.remove(path) 删除文件 os.removedirs(path) 删除空文件夹 os.rmdir(path) 删除空文件夹 os.path os.path.getatime(path) 最近访问时间（时间戳） os.path.getctime(path) 文件创建时间（时间戳） os.path.getmtime(path) 最近修改时间（时间戳） time.gmtime(os.path.getmtime(path)) 以struct_time"/>
+<meta name="twitter:title" content="python模块详解 | keyboard"/>
+<meta name="twitter:description" content="write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)"/>
 
   
   
@@ -108,14 +108,14 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2021/4/python-decorator/">
+          <a class="icon" href=" https://billie52707.cn/posts/2021/4/python-logging/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/draft/burn_them_all/">
+          <a class="icon" href="https://billie52707.cn/draft/ten-thousand-watch/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -146,57 +146,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f">
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os&description=os%20os.remove%28path%29%20%e5%88%a0%e9%99%a4%e6%96%87%e4%bb%b6%20os.removedirs%28path%29%20%e5%88%a0%e9%99%a4%e7%a9%ba%e6%96%87%e4%bb%b6%e5%a4%b9%20os.rmdir%28path%29%20%e5%88%a0%e9%99%a4%e7%a9%ba%e6%96%87%e4%bb%b6%e5%a4%b9%20os.path%20os.path.getatime%28path%29%20%e6%9c%80%e8%bf%91%e8%ae%bf%e9%97%ae%e6%97%b6%e9%97%b4%ef%bc%88%e6%97%b6%e9%97%b4%e6%88%b3%ef%bc%89%20os.path.getctime%28path%29%20%e6%96%87%e4%bb%b6%e5%88%9b%e5%bb%ba%e6%97%b6%e9%97%b4%ef%bc%88%e6%97%b6%e9%97%b4%e6%88%b3%ef%bc%89%20os.path.getmtime%28path%29%20%e6%9c%80%e8%bf%91%e4%bf%ae%e6%94%b9%e6%97%b6%e9%97%b4%ef%bc%88%e6%97%b6%e9%97%b4%e6%88%b3%ef%bc%89%20time.gmtime%28os.path.getmtime%28path%29%29%20%e4%bb%a5struct_time">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard&description=write%28text%2c%20delay%3d0%2c%20restore_state_after%3dTrue%2c%20exact%3dNone%29%20send%28hotkey%2c%20do_press%3dTrue%2c%20do_release%3dTrue%29%20press_and_release%28%29%20%2f%e6%8d%a2%e6%b1%a4%e4%b8%8d%e6%8d%a2%e8%8d%af%2f%20is_pressed%28%29%20parse_hotkey%28hotkey%29">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -204,12 +204,7 @@ if (!doNotTrack) {
 
     </div>
     <div id="toc">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#os">os</a></li>
-    <li><a href="#ospath">os.path</a></li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </div>
     
   </span>
@@ -219,7 +214,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        python模块详解 | os
+        python模块详解 | keyboard
       </h1>
       <div class="meta">
         
@@ -229,7 +224,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2021-04-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-12</time>
+          <time datetime="2021-04-15 20:54:00 &#43;0000 UTC" itemprop="datePublished">2021-04-15</time>
           
           
         </div>
@@ -240,6 +235,22 @@ if (!doNotTrack) {
             </span>
         </div>
         
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
         
         
 
@@ -248,23 +259,27 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="os">os</h2>
-<ul>
-<li><code>os.remove(path)</code> 删除文件</li>
-<li><code>os.removedirs(path)</code> 删除空文件夹</li>
-<li><code>os.rmdir(path)</code> 删除空文件夹</li>
+      <ul>
+<li>
+<p><code>write(text, delay=0, restore_state_after=True, exact=None)</code></p>
+</li>
+<li>
+<p><code>send(hotkey, do_press=True, do_release=True)</code></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210415164112643.png" alt="image-20210415164112643"></p>
+</li>
+<li>
+<p><code>press_and_release()</code></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210415163930810.png" alt="image-20210415163930810">/<em>换汤不换药</em>/</p>
+</li>
+<li>
+<p><code>is_pressed()</code></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210415164412191.png" alt="image-20210415164412191"></p>
+</li>
+<li>
+<p><code>parse_hotkey(hotkey)</code></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210415164319927.png" alt="image-20210415164319927"></p>
+</li>
 </ul>
-<h2 id="ospath">os.path</h2>
-<ul>
-<li><code>os.path.getatime(path)</code>  最近访问时间（时间戳）</li>
-<li><code>os.path.getctime(path)</code>  文件创建时间（时间戳）</li>
-<li><code>os.path.getmtime(path)</code>   最近修改时间（时间戳）</li>
-<li><code>time.gmtime(os.path.getmtime(path))</code>   以struct_time形式返回最近修改时间</li>
-<li><code>os.path.getsize(path)</code>   文件大小（字节为单位）</li>
-<li><code>os.path.abspath(path)</code>    绝对路径</li>
-<li><code>os.path.normpath(path)</code>  path路径</li>
-</ul>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210421155144303.png" alt="image-20210421155144303"></p>
 
     </div>
 
@@ -297,13 +312,16 @@ if (!doNotTrack) {
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          104 字
+          17 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2021-04-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-12</time>
+          <time datetime="2021-04-15 20:54:00 &#43;0000 UTC" itemprop="datePublished">2021-04-15</time>
           
 
   </p>
@@ -311,7 +329,7 @@ if (!doNotTrack) {
 
   
 
-<span id="/draft/pytohn-os/" class="leancloud_visitors" data-flag-title="python模块详解 | os">
+<span id="/posts/2021/4/python-keyboard/" class="leancloud_visitors" data-flag-title="python模块详解 | keyboard">
 
   
 
@@ -354,12 +372,7 @@ if (!doNotTrack) {
     </div>
 
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#os">os</a></li>
-    <li><a href="#ospath">os.path</a></li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -371,57 +384,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f">
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os&description=os%20os.remove%28path%29%20%e5%88%a0%e9%99%a4%e6%96%87%e4%bb%b6%20os.removedirs%28path%29%20%e5%88%a0%e9%99%a4%e7%a9%ba%e6%96%87%e4%bb%b6%e5%a4%b9%20os.rmdir%28path%29%20%e5%88%a0%e9%99%a4%e7%a9%ba%e6%96%87%e4%bb%b6%e5%a4%b9%20os.path%20os.path.getatime%28path%29%20%e6%9c%80%e8%bf%91%e8%ae%bf%e9%97%ae%e6%97%b6%e9%97%b4%ef%bc%88%e6%97%b6%e9%97%b4%e6%88%b3%ef%bc%89%20os.path.getctime%28path%29%20%e6%96%87%e4%bb%b6%e5%88%9b%e5%bb%ba%e6%97%b6%e9%97%b4%ef%bc%88%e6%97%b6%e9%97%b4%e6%88%b3%ef%bc%89%20os.path.getmtime%28path%29%20%e6%9c%80%e8%bf%91%e4%bf%ae%e6%94%b9%e6%97%b6%e9%97%b4%ef%bc%88%e6%97%b6%e9%97%b4%e6%88%b3%ef%bc%89%20time.gmtime%28os.path.getmtime%28path%29%29%20%e4%bb%a5struct_time">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard&description=write%28text%2c%20delay%3d0%2c%20restore_state_after%3dTrue%2c%20exact%3dNone%29%20send%28hotkey%2c%20do_press%3dTrue%2c%20do_release%3dTrue%29%20press_and_release%28%29%20%2f%e6%8d%a2%e6%b1%a4%e4%b8%8d%e6%8d%a2%e8%8d%af%2f%20is_pressed%28%29%20parse_hotkey%28hotkey%29">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpytohn-os%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20os">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f4%2fpython-keyboard%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20keyboard">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
