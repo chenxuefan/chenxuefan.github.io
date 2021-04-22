@@ -18,15 +18,6 @@
     </item>
     
     <item>
-      <title>python模块详解 | keyboard</title>
-      <link>https://billie52707.cn/posts/2021/4/python-keyboard/</link>
-      <pubDate>Thu, 15 Apr 2021 20:54:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/posts/2021/4/python-keyboard/</guid>
-      <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
-    </item>
-    
-    <item>
       <title>python模块详解 | logging</title>
       <link>https://billie52707.cn/posts/2021/4/python-logging/</link>
       <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
