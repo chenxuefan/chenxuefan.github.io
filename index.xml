@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sun, 18 Apr 2021 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | re</title>
+      <link>https://billie52707.cn/draft/python-re/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-re/</guid>
+      <description>模式 描述 ^ 匹配字符串的开头 $ 匹配字符串的末尾。 . 匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。</description>
+    </item>
+    
     <item>
       <title>记一次迁移服务器的经历</title>
       <link>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</link>
@@ -19,10 +28,10 @@
     
     <item>
       <title>python模块详解 | xpath</title>
-      <link>https://billie52707.cn/posts/2021/4/python-xpath/</link>
+      <link>https://billie52707.cn/draft/python-xpath/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-xpath/</guid>
+      <guid>https://billie52707.cn/draft/python-xpath/</guid>
       <description>导入 from lxml import etree page = etree.HTML(html.lower().decode(&amp;#39;utf-8&amp;#39;)) xpath 用法总结整理 函数整理 starts-with(str) - 获取以str开头的元素 例：xpath(‘//div[stars-with(@class,”tes</description>
     </item>
     
@@ -100,11 +109,11 @@
     
     <item>
       <title>python模块详解 | os</title>
-      <link>https://billie52707.cn/draft/pytohn-os/</link>
+      <link>https://billie52707.cn/posts/2021/4/pytohn-os/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/pytohn-os/</guid>
-      <description>os os.remove(path) 删除文件 os.removedirs(path) 删除空文件夹 os.rmdir(path) 删除空文件夹 os.path os.path.getatime(path) 最近访问时间（时间戳） os.path.getctime(path) 文件创建时间（时间戳） os.path.getmtime(path) 最近修改时间（时间戳） time.gmtime(os.path.getmtime(path)) 以struct_time</description>
+      <guid>https://billie52707.cn/posts/2021/4/pytohn-os/</guid>
+      <description>os os.remove(path) 删除文件 os.removedirs(path) 删除空文件夹 os.mkdir(dirname) - 新建文件夹 os.rmdir(path) - 删除空文件夹 os.rename(a,b) - 重命名 os.listdir(path) - 返回路径下所有的文件及文件夹 os.system(&amp;quot;ls&amp;quot;) - 运行shell命令 os.path os.path.getatime(path) 最近访问时间（时</description>
     </item>
     
     <item>
@@ -131,7 +140,7 @@
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python/</guid>
-      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 内建函数 __init__ 用来构造初始化函数,用来给类的实例进行初始化属性，所以可以不需要返回值 在创建类的实例时系统自动调用 自定义类如果不</description>
+      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 内置函数 https://docs.python.org/zh-cn/3/library/functions.html repr(obj) - 将对象转化为供解释器读取的形式 all(iterable) - 参数iterable为元组或列表，如果参数的所有元素不为0、&#39;&#39;、Fals</description>
     </item>
     
     <item>
@@ -149,7 +158,7 @@
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/data-grand/maersk/maersk/</guid>
-      <description>开发日志 年前（2021.01.25-02.08） 开发部分 登录网站与文件下载 RPA操作Excel 测试部分 测试全局代码的稳定性和异常情况 操作流程</description>
+      <description>收获与感悟 技术难点 rpa稳定性 开发日志 年前（2021.01.25-02.08） 开发部分 登录网站与文件下载 RPA操作Excel 测试部分 测试全局</description>
     </item>
     
     <item>

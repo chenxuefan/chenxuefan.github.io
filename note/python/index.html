@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="「python」学习笔记" />
-<meta property="og:description" content="更多 - https://billie52707.cn/tags/python/ 基础知识点 内建函数 __init__ 用来构造初始化函数,用来给类的实例进行初始化属性，所以可以不需要返回值 在创建类的实例时系统自动调用 自定义类如果不" />
+<meta property="og:description" content="更多 - https://billie52707.cn/tags/python/ 基础知识点 内置函数 https://docs.python.org/zh-cn/3/library/functions.html repr(obj) - 将对象转化为供解释器读取的形式 all(iterable) - 参数iterable为元组或列表，如果参数的所有元素不为0、&#39;&#39;、Fals" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/note/python/" />
 <meta property="article:published_time" content="2021-03-26T20:54:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「python」学习笔记"/>
-<meta name="twitter:description" content="更多 - https://billie52707.cn/tags/python/ 基础知识点 内建函数 __init__ 用来构造初始化函数,用来给类的实例进行初始化属性，所以可以不需要返回值 在创建类的实例时系统自动调用 自定义类如果不"/>
+<meta name="twitter:description" content="更多 - https://billie52707.cn/tags/python/ 基础知识点 内置函数 https://docs.python.org/zh-cn/3/library/functions.html repr(obj) - 将对象转化为供解释器读取的形式 all(iterable) - 参数iterable为元组或列表，如果参数的所有元素不为0、&#39;&#39;、Fals"/>
 
   
   
@@ -191,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython%2f&name=%e3%80%8cpython%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e6%9b%b4%e5%a4%9a%20-%20https%3a%2f%2fbillie52707.cn%2ftags%2fpython%2f%20%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%82%b9%20%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0%20__init__%20%e7%94%a8%e6%9d%a5%e6%9e%84%e9%80%a0%e5%88%9d%e5%a7%8b%e5%8c%96%e5%87%bd%e6%95%b0%2c%e7%94%a8%e6%9d%a5%e7%bb%99%e7%b1%bb%e7%9a%84%e5%ae%9e%e4%be%8b%e8%bf%9b%e8%a1%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e5%b1%9e%e6%80%a7%ef%bc%8c%e6%89%80%e4%bb%a5%e5%8f%af%e4%bb%a5%e4%b8%8d%e9%9c%80%e8%a6%81%e8%bf%94%e5%9b%9e%e5%80%bc%20%e5%9c%a8%e5%88%9b%e5%bb%ba%e7%b1%bb%e7%9a%84%e5%ae%9e%e4%be%8b%e6%97%b6%e7%b3%bb%e7%bb%9f%e8%87%aa%e5%8a%a8%e8%b0%83%e7%94%a8%20%e8%87%aa%e5%ae%9a%e4%b9%89%e7%b1%bb%e5%a6%82%e6%9e%9c%e4%b8%8d">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython%2f&name=%e3%80%8cpython%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e6%9b%b4%e5%a4%9a%20-%20https%3a%2f%2fbillie52707.cn%2ftags%2fpython%2f%20%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%82%b9%20%e5%86%85%e7%bd%ae%e5%87%bd%e6%95%b0%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2ffunctions.html%20repr%28obj%29%20-%20%e5%b0%86%e5%af%b9%e8%b1%a1%e8%bd%ac%e5%8c%96%e4%b8%ba%e4%be%9b%e8%a7%a3%e9%87%8a%e5%99%a8%e8%af%bb%e5%8f%96%e7%9a%84%e5%bd%a2%e5%bc%8f%20all%28iterable%29%20-%20%e5%8f%82%e6%95%b0iterable%e4%b8%ba%e5%85%83%e7%bb%84%e6%88%96%e5%88%97%e8%a1%a8%ef%bc%8c%e5%a6%82%e6%9e%9c%e5%8f%82%e6%95%b0%e7%9a%84%e6%89%80%e6%9c%89%e5%85%83%e7%b4%a0%e4%b8%8d%e4%b8%ba0%e3%80%81%27%27%e3%80%81Fals">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -208,9 +208,11 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#基础知识点">基础知识点</a>
       <ul>
-        <li><a href="#内建函数">内建函数</a></li>
         <li><a href="#内置函数">内置函数</a></li>
         <li><a href="#内置装饰器">内置装饰器</a></li>
+        <li><a href="#类的内建函数">类的内建函数</a></li>
+        <li><a href="#在子类中调用父类的方法">在子类中调用父类的方法</a></li>
+        <li><a href="#迭代器生成器">迭代器&amp;生成器</a></li>
       </ul>
     </li>
     <li><a href="#那些年遇过的坑儿们">那些年遇过的坑儿们</a></li>
@@ -282,36 +284,8 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <p>更多 - <a href="https://billie52707.cn/tags/python/">https://billie52707.cn/tags/python/</a></p>
 <h2 id="基础知识点">基础知识点</h2>
-<h3 id="内建函数">内建函数</h3>
-<ul>
-<li>
-<p><code>__init__</code></p>
-<ol>
-<li>用来构造初始化函数,用来给类的实例进行初始化属性，所以可以不需要返回值</li>
-<li>在创建类的实例时系统自动调用</li>
-<li>自定义类如果不定义的话，默认调用父类object的，同理继承也是，子类若无，调用父类，若有，调用自己的</li>
-</ol>
-</li>
-<li>
-<p><code>__new__</code></p>
-<ol>
-<li><code>__init__</code>第一个参数是self，表示需要初始的实例，由python解释器自动传入，而这个实例就是这个<code>__new__</code>返回的实例</li>
-<li>然后 <code>__init__</code>在<code>__new__</code>的基础上可以完成一些其它初始化的动作</li>
-</ol>
-</li>
-<li>
-<p><code>__class__</code></p>
-<ol>
-<li><code>__class__</code>功能和type()函数一样，都是查看对象所在的类。</li>
-<li><code>__class__</code>可以套用</li>
-</ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CONFIG</span>:
-  path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;users/billie/desktop/Maersk&#39;</span>
-  <span style="color:#66d9ef">def</span> __init__(self):
-    self<span style="color:#f92672">.</span>path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>path
-</code></pre></div></li>
-</ul>
 <h3 id="内置函数">内置函数</h3>
+<p><a href="https://docs.python.org/zh-cn/3/library/functions.html">https://docs.python.org/zh-cn/3/library/functions.html</a></p>
 <ul>
 <li>
 <p><code>repr(obj)</code> - 将对象转化为供解释器读取的形式</p>
@@ -380,9 +354,99 @@ NB()<span style="color:#f92672">.</span>name <span style="color:#75715e"># Billi
 ExcelOperator()<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 6</span>
 ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 也是6</span>
 </code></pre></div></li>
-<li></li>
 </ul>
-<h2 id="那些年遇过的坑儿们">那些年遇过的坑儿们</h2>
+<h3 id="类的内建函数">类的内建函数</h3>
+<ul>
+<li>
+<p><code>__init__</code></p>
+<ol>
+<li>用来构造初始化函数,用来给类的实例进行初始化属性，所以可以不需要返回值</li>
+<li>在创建类的实例时系统自动调用</li>
+<li>自定义类如果不定义的话，默认调用父类object的，同理继承也是，子类若无，调用父类，若有，调用自己的</li>
+</ol>
+</li>
+<li>
+<p><code>__new__</code></p>
+<ol>
+<li><code>__init__</code>第一个参数是self，表示需要初始的实例，由python解释器自动传入，而这个实例就是这个<code>__new__</code>返回的实例</li>
+<li>然后 <code>__init__</code>在<code>__new__</code>的基础上可以完成一些其它初始化的动作</li>
+</ol>
+</li>
+<li>
+<p><code>__class__</code></p>
+<ol>
+<li><code>__class__</code>功能和<code>type()</code>函数一样，都是查看对象所在的类。</li>
+<li><code>__class__</code>可以套用</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CONFIG</span>:
+  path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;users/billie/desktop/Maersk&#39;</span>
+  <span style="color:#66d9ef">def</span> __init__(self):
+    self<span style="color:#f92672">.</span>path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>path
+</code></pre></div></li>
+</ul>
+<h3 id="在子类中调用父类的方法">在子类中调用父类的方法</h3>
+<ol>
+<li>
+<p>直接使用「父类名」进行调用，调用方法时需加上「self」参数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">person</span>:
+    <span style="color:#66d9ef">def</span> __init__(self,name,age,sex):
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+        self<span style="color:#f92672">.</span>sex <span style="color:#f92672">=</span> sex
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;run!run!run!&#34;</span>)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self,word):
+        <span style="color:#66d9ef">print</span>(word)
+           
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">boy</span>(person): <span style="color:#75715e"># 传入父类</span>
+    <span style="color:#66d9ef">def</span> __init__(self,name,age,sex,motto):
+        person<span style="color:#f92672">.</span>__init__(self,name,age,sex) <span style="color:#75715e"># 调用父类的方法</span>
+        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+        person<span style="color:#f92672">.</span>run(self) <span style="color:#75715e"># 调用父类的方法</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self):
+        person<span style="color:#f92672">.</span>say(self,self<span style="color:#f92672">.</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>motto) <span style="color:#75715e"># 调用父类的方法</span>
+           
+Jon <span style="color:#f92672">=</span> boy(<span style="color:#e6db74">&#39;Jon Snow&#39;</span>,<span style="color:#ae81ff">24</span>,<span style="color:#e6db74">&#39;man&#39;</span>,<span style="color:#e6db74">&#39;you know nothing&#39;</span>)
+Jon<span style="color:#f92672">.</span>run() <span style="color:#75715e"># run!run!run!</span>
+Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># Jon Snow,you know nothing</span>
+</code></pre></div></li>
+<li>
+<p>super()</p>
+<p>优点：</p>
+<ol>
+<li>调用方法时无需加上「self」参数</li>
+<li>当父类名有改动时，子类中只需修改「传入的父类名」即可</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">person</span>:
+    <span style="color:#66d9ef">def</span> __init__(self,name,age,sex):
+        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+        self<span style="color:#f92672">.</span>sex <span style="color:#f92672">=</span> sex
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;run!run!run!&#34;</span>)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self,word):
+        <span style="color:#66d9ef">print</span>(word)
+           
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">boy</span>(person): <span style="color:#75715e"># 传入父类</span>
+    <span style="color:#66d9ef">def</span> __init__(self,name,age,sex,motto):
+        super()<span style="color:#f92672">.</span>__init__(name,age,sex) <span style="color:#75715e"># 调用父类的init</span>
+        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+        super()<span style="color:#f92672">.</span>run() <span style="color:#75715e"># 调用父类的方法</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self):
+        super()<span style="color:#f92672">.</span>say(self<span style="color:#f92672">.</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>motto) <span style="color:#75715e"># 调用父类的方法</span>
+           
+Jon <span style="color:#f92672">=</span> boy(<span style="color:#e6db74">&#39;Jon Snow&#39;</span>,<span style="color:#ae81ff">24</span>,<span style="color:#e6db74">&#39;man&#39;</span>,<span style="color:#e6db74">&#39;you know nothing&#39;</span>)
+Jon<span style="color:#f92672">.</span>run() <span style="color:#75715e"># run!run!run!</span>
+Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># Jon Snow,you know nothing</span>
+</code></pre></div></li>
+</ol>
+<h3 id="迭代器生成器">迭代器&amp;生成器</h3>
+<p><a href="https://www.cnblogs.com/alex3714/articles/5143440.html">https://www.cnblogs.com/alex3714/articles/5143440.html</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> iter(<span style="color:#e6db74">&#39;abc&#39;</span>) <span style="color:#75715e"># 定义一个迭代器对象，该对象定义了一个__next__方法，用于逐一访问容器中的元素</span>
+i<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 或next(i)</span>
+</code></pre></div><h2 id="那些年遇过的坑儿们">那些年遇过的坑儿们</h2>
 <ul>
 <li><code>RuntimeError: dictionary changed size during iteration</code>
 <ul>
@@ -499,7 +563,7 @@ ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#7571
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1272 字
+          1586 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -558,9 +622,11 @@ ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#7571
   <ul>
     <li><a href="#基础知识点">基础知识点</a>
       <ul>
-        <li><a href="#内建函数">内建函数</a></li>
         <li><a href="#内置函数">内置函数</a></li>
         <li><a href="#内置装饰器">内置装饰器</a></li>
+        <li><a href="#类的内建函数">类的内建函数</a></li>
+        <li><a href="#在子类中调用父类的方法">在子类中调用父类的方法</a></li>
+        <li><a href="#迭代器生成器">迭代器&amp;生成器</a></li>
       </ul>
     </li>
     <li><a href="#那些年遇过的坑儿们">那些年遇过的坑儿们</a></li>
@@ -632,7 +698,7 @@ ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#7571
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython%2f&name=%e3%80%8cpython%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e6%9b%b4%e5%a4%9a%20-%20https%3a%2f%2fbillie52707.cn%2ftags%2fpython%2f%20%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%82%b9%20%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0%20__init__%20%e7%94%a8%e6%9d%a5%e6%9e%84%e9%80%a0%e5%88%9d%e5%a7%8b%e5%8c%96%e5%87%bd%e6%95%b0%2c%e7%94%a8%e6%9d%a5%e7%bb%99%e7%b1%bb%e7%9a%84%e5%ae%9e%e4%be%8b%e8%bf%9b%e8%a1%8c%e5%88%9d%e5%a7%8b%e5%8c%96%e5%b1%9e%e6%80%a7%ef%bc%8c%e6%89%80%e4%bb%a5%e5%8f%af%e4%bb%a5%e4%b8%8d%e9%9c%80%e8%a6%81%e8%bf%94%e5%9b%9e%e5%80%bc%20%e5%9c%a8%e5%88%9b%e5%bb%ba%e7%b1%bb%e7%9a%84%e5%ae%9e%e4%be%8b%e6%97%b6%e7%b3%bb%e7%bb%9f%e8%87%aa%e5%8a%a8%e8%b0%83%e7%94%a8%20%e8%87%aa%e5%ae%9a%e4%b9%89%e7%b1%bb%e5%a6%82%e6%9e%9c%e4%b8%8d">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython%2f&name=%e3%80%8cpython%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e6%9b%b4%e5%a4%9a%20-%20https%3a%2f%2fbillie52707.cn%2ftags%2fpython%2f%20%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%82%b9%20%e5%86%85%e7%bd%ae%e5%87%bd%e6%95%b0%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2ffunctions.html%20repr%28obj%29%20-%20%e5%b0%86%e5%af%b9%e8%b1%a1%e8%bd%ac%e5%8c%96%e4%b8%ba%e4%be%9b%e8%a7%a3%e9%87%8a%e5%99%a8%e8%af%bb%e5%8f%96%e7%9a%84%e5%bd%a2%e5%bc%8f%20all%28iterable%29%20-%20%e5%8f%82%e6%95%b0iterable%e4%b8%ba%e5%85%83%e7%bb%84%e6%88%96%e5%88%97%e8%a1%a8%ef%bc%8c%e5%a6%82%e6%9e%9c%e5%8f%82%e6%95%b0%e7%9a%84%e6%89%80%e6%9c%89%e5%85%83%e7%b4%a0%e4%b8%8d%e4%b8%ba0%e3%80%81%27%27%e3%80%81Fals">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

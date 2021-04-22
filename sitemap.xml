@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/draft/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/draft/python-re/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/categories/</loc>
     <lastmod>2021-04-18T02:30:10+00:00</lastmod>
   </url>
@@ -33,11 +48,6 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/</loc>
-    <lastmod>2021-04-18T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</loc>
     <lastmod>2021-04-18T02:30:10+00:00</lastmod>
   </url>
@@ -45,11 +55,6 @@
   <url>
     <loc>https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
     <lastmod>2021-04-18T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -63,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/2021/4/python-xpath/</loc>
+    <loc>https://billie52707.cn/draft/python-xpath/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -108,7 +113,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/draft/pytohn-os/</loc>
+    <loc>https://billie52707.cn/posts/2021/4/pytohn-os/</loc>
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>
   </url>
   
