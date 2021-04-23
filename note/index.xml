@@ -23,7 +23,7 @@
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python/</guid>
-      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 内置函数 https://docs.python.org/zh-cn/3/library/functions.html repr(obj) - 将对象转化为供解释器读取的形式 all(iterable) - 参数iterable为元组或列表，如果参数的所有元素不为0、&#39;&#39;、Fals</description>
+      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 概念 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量的字典 作用： 获取想查看某个作</description>
     </item>
     
     <item>

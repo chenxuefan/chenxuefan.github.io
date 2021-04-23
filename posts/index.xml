@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sun, 18 Apr 2021 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python学习笔记 | xpath</title>
+      <link>https://billie52707.cn/posts/2021/4/python-xpath/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/python-xpath/</guid>
+      <description>关于lxml lxml是python的一个解析库，支持「HTML」和「XML」的解析，支持xpath解析方式，而且解析效率非常高。 XPath，</description>
+    </item>
+    
     <item>
       <title>记一次迁移服务器的经历</title>
       <link>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</link>

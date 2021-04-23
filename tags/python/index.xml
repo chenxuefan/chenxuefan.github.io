@@ -7,14 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>python模块详解 | lxml</title>
-      <link>https://billie52707.cn/draft/python-xpath/</link>
-      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      <title>python学习笔记 | xpath</title>
+      <link>https://billie52707.cn/posts/2021/4/python-xpath/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-xpath/</guid>
-      <description>前言 关于lxml lxml是python的一个解析库，支持「HTML」和「XML」的解析，支持xpath解析方式，而且解析效率非常高。 XPat</description>
+      <guid>https://billie52707.cn/posts/2021/4/python-xpath/</guid>
+      <description>关于lxml lxml是python的一个解析库，支持「HTML」和「XML」的解析，支持xpath解析方式，而且解析效率非常高。 XPath，</description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-beautifulsoup/</guid>
-      <description>Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改</description>
+      <description>前言 Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增</description>
     </item>
     
     <item>
@@ -86,7 +86,7 @@
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python/</guid>
-      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 内置函数 https://docs.python.org/zh-cn/3/library/functions.html repr(obj) - 将对象转化为供解释器读取的形式 all(iterable) - 参数iterable为元组或列表，如果参数的所有元素不为0、&#39;&#39;、Fals</description>
+      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 概念 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量的字典 作用： 获取想查看某个作</description>
     </item>
     
     <item>

@@ -211,8 +211,8 @@ if (!doNotTrack) {
         <li><a href="#什么是跨域">什么是跨域?</a></li>
       </ul>
     </li>
-    <li><a href="#解决方式---修改后端配置">解决方式 - 修改后端配置</a></li>
-    <li><a href="#解决方法---前端请求">解决方法 - 前端请求</a></li>
+    <li><a href="#方式1---修改后端配置">方式1 - 修改后端配置</a></li>
+    <li><a href="#方式2---前端使用jsonp请求">方式2 - 前端使用jsonp请求</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
@@ -287,7 +287,7 @@ if (!doNotTrack) {
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117222936787.png" alt="image-20201117222936787"></p>
 <p>结果返回如下bug</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117222802863.png" alt="image-20201117222802863"></p>
-<h2 id="解决方式---修改后端配置">解决方式 - 修改后端配置</h2>
+<h2 id="方式1---修改后端配置">方式1 - 修改后端配置</h2>
 <p>nginx配置文件<code>nginx.conf</code>中加上这几句</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#e6db74">&#34;</span>$http_origin&#34; <span style="color:#e6db74">always</span>;
 <span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Credentials&#39;</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#e6db74">always</span>;
@@ -296,7 +296,7 @@ if (!doNotTrack) {
 </code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117220901079.png" alt="image-20201117220901079"></p>
 <p>以上，重新启动nginx，再向服务器发送请求，即可成功获取响应数据</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117223517556.png" alt="image-20201117223517556"></p>
-<h2 id="解决方法---前端请求">解决方法 - 前端请求</h2>
+<h2 id="方式2---前端使用jsonp请求">方式2 - 前端使用jsonp请求</h2>
 <ul>
 <li>描述：No &lsquo;Access-Content-Allow-Origin&rsquo; header is present on the requested requested resource</li>
 <li><a href="https://github.com/RekingZhang/axios-jsonp">https://github.com/RekingZhang/axios-jsonp</a></li>
@@ -348,7 +348,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          387 字
+          392 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -410,8 +410,8 @@ if (!doNotTrack) {
         <li><a href="#什么是跨域">什么是跨域?</a></li>
       </ul>
     </li>
-    <li><a href="#解决方式---修改后端配置">解决方式 - 修改后端配置</a></li>
-    <li><a href="#解决方法---前端请求">解决方法 - 前端请求</a></li>
+    <li><a href="#方式1---修改后端配置">方式1 - 修改后端配置</a></li>
+    <li><a href="#方式2---前端使用jsonp请求">方式2 - 前端使用jsonp请求</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>

@@ -3,7 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/categories/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/draft/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/python/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2021/4/python-xpath/</loc>
     <lastmod>2021-04-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,13 +33,18 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/</loc>
+    <loc>https://billie52707.cn/tags/</loc>
     <lastmod>2021-04-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-04-18T02:30:10+00:00</lastmod>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -29,21 +54,6 @@
   
   <url>
     <loc>https://billie52707.cn/tags/nginx/</loc>
-    <lastmod>2021-04-18T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2021-04-18T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2021-04-18T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
     <lastmod>2021-04-18T02:30:10+00:00</lastmod>
   </url>
   
@@ -59,16 +69,6 @@
   
   <url>
     <loc>https://billie52707.cn/note/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/python/</loc>
-    <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/python-xpath/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
   </url>
   

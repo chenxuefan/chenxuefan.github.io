@@ -18,15 +18,6 @@
     </item>
     
     <item>
-      <title>python模块详解 | lxml</title>
-      <link>https://billie52707.cn/draft/python-xpath/</link>
-      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-xpath/</guid>
-      <description>前言 关于lxml lxml是python的一个解析库，支持「HTML」和「XML」的解析，支持xpath解析方式，而且解析效率非常高。 XPat</description>
-    </item>
-    
-    <item>
       <title>新的里程碑 | 一万访客达成！</title>
       <link>https://billie52707.cn/draft/ten-thousand-watch/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
@@ -50,7 +41,7 @@
       <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-beautifulsoup/</guid>
-      <description>Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增 4. 改</description>
+      <description>前言 Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增</description>
     </item>
     
     <item>
