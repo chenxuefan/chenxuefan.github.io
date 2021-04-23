@@ -18,12 +18,12 @@
     </item>
     
     <item>
-      <title>python模块详解 | xpath</title>
+      <title>python模块详解 | lxml</title>
       <link>https://billie52707.cn/draft/python-xpath/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-xpath/</guid>
-      <description>导入 from lxml import etree page = etree.HTML(html.lower().decode(&amp;#39;utf-8&amp;#39;)) xpath 用法总结整理 函数整理 starts-with(str) - 获取以str开头的元素 例：xpath(‘//div[stars-with(@class,”tes</description>
+      <description>前言 关于lxml lxml是python的一个解析库，支持「HTML」和「XML」的解析，支持xpath解析方式，而且解析效率非常高。 XPat</description>
     </item>
     
     <item>

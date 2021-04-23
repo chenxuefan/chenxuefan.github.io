@@ -18,12 +18,12 @@
     </item>
     
     <item>
-      <title>python模块详解 | xpath</title>
+      <title>python模块详解 | lxml</title>
       <link>https://billie52707.cn/draft/python-xpath/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-xpath/</guid>
-      <description>导入 from lxml import etree page = etree.HTML(html.lower().decode(&amp;#39;utf-8&amp;#39;)) xpath 用法总结整理 函数整理 starts-with(str) - 获取以str开头的元素 例：xpath(‘//div[stars-with(@class,”tes</description>
+      <description>前言 关于lxml lxml是python的一个解析库，支持「HTML」和「XML」的解析，支持xpath解析方式，而且解析效率非常高。 XPat</description>
     </item>
     
     <item>
@@ -117,6 +117,33 @@
     </item>
     
     <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/python-django/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/python-requests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-requests/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/python-scrapy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-scrapy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>API</title>
       <link>https://billie52707.cn/draft/api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -145,10 +172,10 @@
     
     <item>
       <title>docker心路历程</title>
-      <link>https://billie52707.cn/draft/docker-2/</link>
+      <link>https://billie52707.cn/draft/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/docker-2/</guid>
+      <guid>https://billie52707.cn/draft/docker/</guid>
       <description>-bash: docker-machine: command not found（macOS） base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;amp;&amp;amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &amp;gt;/usr/local/bin/docker-machine &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-machine ​</description>
     </item>
     
