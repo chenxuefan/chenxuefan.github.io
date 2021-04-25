@@ -405,7 +405,7 @@ ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#7571
         self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
         self<span style="color:#f92672">.</span>sex <span style="color:#f92672">=</span> sex
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;run!run!run!&#34;</span>)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Winter is coming!&#34;</span>)
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self,word):
         <span style="color:#66d9ef">print</span>(word)
            
@@ -416,11 +416,11 @@ ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#7571
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
         person<span style="color:#f92672">.</span>run(self) <span style="color:#75715e"># 调用父类的方法</span>
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self):
-        person<span style="color:#f92672">.</span>say(self,self<span style="color:#f92672">.</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>motto) <span style="color:#75715e"># 调用父类的方法</span>
+        person<span style="color:#f92672">.</span>say(self,self<span style="color:#f92672">.</span>motto<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>name) <span style="color:#75715e"># 调用父类的方法</span>
            
 Jon <span style="color:#f92672">=</span> boy(<span style="color:#e6db74">&#39;Jon Snow&#39;</span>,<span style="color:#ae81ff">24</span>,<span style="color:#e6db74">&#39;man&#39;</span>,<span style="color:#e6db74">&#39;you know nothing&#39;</span>)
-Jon<span style="color:#f92672">.</span>run() <span style="color:#75715e"># run!run!run!</span>
-Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># Jon Snow,you know nothing</span>
+Jon<span style="color:#f92672">.</span>run() <span style="color:#75715e"># Winter is coming!</span>
+Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># you know nothing,Jon Snow</span>
 </code></pre></div></li>
 <li>
 <p>super()</p>
@@ -435,7 +435,7 @@ Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># Jon S
         self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
         self<span style="color:#f92672">.</span>sex <span style="color:#f92672">=</span> sex
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;run!run!run!&#34;</span>)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Winter is coming!&#34;</span>)
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self,word):
         <span style="color:#66d9ef">print</span>(word)
            
@@ -446,11 +446,11 @@ Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># Jon S
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
         super()<span style="color:#f92672">.</span>run() <span style="color:#75715e"># 调用父类的方法</span>
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self):
-        super()<span style="color:#f92672">.</span>say(self<span style="color:#f92672">.</span>name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>motto) <span style="color:#75715e"># 调用父类的方法</span>
+        super()<span style="color:#f92672">.</span>say(self<span style="color:#f92672">.</span>motto<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>name) <span style="color:#75715e"># 调用父类的方法</span>
            
 Jon <span style="color:#f92672">=</span> boy(<span style="color:#e6db74">&#39;Jon Snow&#39;</span>,<span style="color:#ae81ff">24</span>,<span style="color:#e6db74">&#39;man&#39;</span>,<span style="color:#e6db74">&#39;you know nothing&#39;</span>)
-Jon<span style="color:#f92672">.</span>run() <span style="color:#75715e"># run!run!run!</span>
-Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># Jon Snow,you know nothing</span>
+Jon<span style="color:#f92672">.</span>run() <span style="color:#75715e"># Winter is coming!</span>
+Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># you know nothing,Jon Snow</span>
 </code></pre></div></li>
 </ol>
 <h3 id="迭代器生成器">迭代器&amp;生成器</h3>
@@ -574,7 +574,7 @@ i<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># �
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1689 字
+          1697 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
