@@ -218,8 +218,8 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#xpath方法">xpath方法</a></li>
         <li><a href="#xpath规则">xpath规则</a></li>
-        <li><a href="#xpath函数">xpath函数</a></li>
-        <li><a href="#xpath轴">xpath轴</a></li>
+        <li><a href="#xpath函数httpswwwcnblogscomzhaozhanarchive200909111564420html"><a href="https://www.cnblogs.com/zhaozhan/archive/2009/09/11/1564420.html">xpath函数</a></a></li>
+        <li><a href="#xpath轴httpswwwcnblogscomzhaozhanarchive200909101563733html"><a href="https://www.cnblogs.com/zhaozhan/archive/2009/09/10/1563733.html">xpath轴</a></a></li>
       </ul>
     </li>
     <li><a href="#上代码">上代码</a></li>
@@ -411,7 +411,8 @@ html = eleTree.xpath(' ') # ' '中的规则如下
 </tbody>
 </table>
 <p>被嵌在方括号[]中的条件语句，可以理解为xpath语法中的谓语，用来查找<strong>符合条件</strong>的「某个特定的节点或者包含某个指定的值的节点」。</p>
-<h3 id="xpath函数">xpath函数</h3>
+<h3 id="xpath函数httpswwwcnblogscomzhaozhanarchive200909111564420html"><a href="https://www.cnblogs.com/zhaozhan/archive/2009/09/11/1564420.html">xpath函数</a></h3>
+<p>XPath的选择功能十分强大，它提供了非常简明的路径选择表达式，另外，它还提供了超过100个内建函数，用于字符串、数值、时间的匹配以及节点、序列的处理等，几乎所有我们想要定位的节点，都可以用XPath来选择。</p>
 <ul>
 <li>
 <p><code>text()</code></p>
@@ -442,13 +443,78 @@ xpath(<span style="color:#e6db74">&#39;//div/li[last()-1]&#39;</span>) <span sty
 </code></pre></div></li>
 <li>
 <p><code>position()</code> - 位置节点</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">xpath(<span style="color:#e6db74">&#39;//div/li[position = 1]&#39;</span>) <span style="color:#75715e"># 选择所有li中的第一个</span>
-xpath(<span style="color:#e6db74">&#39;//div/li[position &gt; 3]&#39;</span>) <span style="color:#75715e"># 选择所有li中第三个之后的</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">xpath(<span style="color:#e6db74">&#39;//div/li[position() = 1]&#39;</span>) <span style="color:#75715e"># 选择所有li中的第一个</span>
+xpath(<span style="color:#e6db74">&#39;//div/li[position() &gt; 3]&#39;</span>) <span style="color:#75715e"># 选择所有li中第三个之后的</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  
 </code></pre></div></li>
 </ul>
-<h3 id="xpath轴">xpath轴</h3>
-<h2 id="上代码">上代码</h2>
+<h3 id="xpath轴httpswwwcnblogscomzhaozhanarchive200909101563733html"><a href="https://www.cnblogs.com/zhaozhan/archive/2009/09/10/1563733.html">xpath轴</a></h3>
+<p>XPath轴(XPath Axes)可定义某个相对于当前节点的节点集</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>child</td>
+<td>选取当前节点的所有子元素</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>选取当前节点的父节点</td>
+</tr>
+<tr>
+<td><strong>descendant</strong></td>
+<td>选取当前节点的所有后代元素（子、孙等）</td>
+</tr>
+<tr>
+<td><strong>ancestor</strong></td>
+<td>选取当前节点的所有先辈（父、祖父等）</td>
+</tr>
+<tr>
+<td>descendant-or-self</td>
+<td>选取当前节点的所有后代元素（子、孙等）以及当前节点本身</td>
+</tr>
+<tr>
+<td>ancestor-or-self</td>
+<td>选取当前节点的所有先辈（父、祖父等）以及当前节点本身</td>
+</tr>
+<tr>
+<td>preceding-sibling</td>
+<td>选取当前节点之前的所有同级节点</td>
+</tr>
+<tr>
+<td>following-sibling</td>
+<td>选取当前节点之后的所有同级节点</td>
+</tr>
+<tr>
+<td>preceding</td>
+<td>选取文档中当前节点的开始标签之前的所有节点</td>
+</tr>
+<tr>
+<td>following</td>
+<td>选取文档中当前节点的结束标签之后的所有节点</td>
+</tr>
+<tr>
+<td>self</td>
+<td>选取当前节点</td>
+</tr>
+<tr>
+<td>attribute</td>
+<td>选取当前节点的所有属性</td>
+</tr>
+<tr>
+<td>namespace</td>
+<td>选取当前节点的所有命名空间节点。名称空间轴用来选取名称空间结点。每个元素结点都有一个专门名称空间结点表示每个作用域名称空间。</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">xpath(<span style="color:#e6db74">&#39;//*[@id=&#34;PageContent_C006_Col01&#34;]/div[1]/div/p/descendant::a/@href&#39;</span>) <span style="color:#75715e"># 获取p标签下所有的a标签的href值</span>
+xpath(<span style="color:#e6db74">&#39;//li[position()=4]/attribute::*&#39;</span>) <span style="color:#75715e"># 获取位置为四的li节点的所有属性值</span>
+</code></pre></div><h2 id="上代码">上代码</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 </code></pre></div>
     </div>
@@ -487,7 +553,7 @@ xpath(<span style="color:#e6db74">&#39;//div/li[position &gt; 3]&#39;</span>) <s
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1348 字
+          1805 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -556,8 +622,8 @@ xpath(<span style="color:#e6db74">&#39;//div/li[position &gt; 3]&#39;</span>) <s
       <ul>
         <li><a href="#xpath方法">xpath方法</a></li>
         <li><a href="#xpath规则">xpath规则</a></li>
-        <li><a href="#xpath函数">xpath函数</a></li>
-        <li><a href="#xpath轴">xpath轴</a></li>
+        <li><a href="#xpath函数httpswwwcnblogscomzhaozhanarchive200909111564420html"><a href="https://www.cnblogs.com/zhaozhan/archive/2009/09/11/1564420.html">xpath函数</a></a></li>
+        <li><a href="#xpath轴httpswwwcnblogscomzhaozhanarchive200909101563733html"><a href="https://www.cnblogs.com/zhaozhan/archive/2009/09/10/1563733.html">xpath轴</a></a></li>
       </ul>
     </li>
     <li><a href="#上代码">上代码</a></li>
