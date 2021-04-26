@@ -7,16 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Fri, 16 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>「rpa」学习笔记</title>
-      <link>https://billie52707.cn/note/rpa/</link>
-      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/rpa/</guid>
-      <description>前言 达观人，达观魂 😎 使用手册 浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的</description>
-    </item>
-    
+    <lastBuildDate>Fri, 26 Mar 2021 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「python」学习笔记</title>
       <link>https://billie52707.cn/note/python/</link>
@@ -33,6 +24,15 @@
       
       <guid>https://billie52707.cn/note/data-structure/</guid>
       <description>模块一：代码效率优化方法论 复杂度是衡量代码运行效率的重要度量因素 复杂度通常包括「时间复杂度」与「空间复杂度」，其中 时间复杂度与「代码的结构设</description>
+    </item>
+    
+    <item>
+      <title>「rpa」学习笔记</title>
+      <link>https://billie52707.cn/note/rpa/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/rpa/</guid>
+      <description>前言 达观人，达观魂 😎 使用手册 浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的</description>
     </item>
     
     <item>

@@ -228,6 +228,7 @@ if (!doNotTrack) {
         <li><a href="#导出导入容器">导出导入容器</a></li>
       </ul>
     </li>
+    <li><a href="#docker-compose">docker-compose</a></li>
     <li><a href="#网络管理">网络管理</a></li>
     <li><a href="#docker容器和本机互传文件">docker容器和本机互传文件</a></li>
     <li><a href="#坑儿们">坑儿们</a></li>
@@ -335,6 +336,19 @@ Docker采用C/S架构，其组成为:</p>
 </ul>
 <p><strong>总结</strong>：如果你也觉得虚拟机太笨重了，那么docker就是它的不二替代品!</p>
 <h3 id="docker的安装">docker的安装</h3>
+<h4 id="1-centos">1. CentOS</h4>
+<ul>
+<li><code>sudo yum remove docker  docker-common docker-selinux docker-engine</code> - 卸载旧版本的软件</li>
+<li><code>sudo yum install -y yum-utils device-mapper-persistent-data lvm2</code> - 安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</li>
+<li><code>yum list docker-ce --showduplicates | sort -r</code> - 查看所有仓库中所有docker版本，并选择特定版本安装</li>
+<li><code>sudo yum install docker-ce </code> - 由于repo中默认只开启stable仓库，故这里安装的是最新稳定版17.12.0</li>
+<li><code>sudo systemctl start docker</code> - 启动docker</li>
+<li><code>sudo systemctl enable docker</code> - 设置开机自启动</li>
+<li><code>docker version</code> - 查看版本</li>
+<li>安装<code>docker-compose</code> - <a href="https://www.jianshu.com/p/5ba9f9159696">https://www.jianshu.com/p/5ba9f9159696</a></li>
+<li>`</li>
+</ul>
+<h4 id="2-macos">2. macOS</h4>
 <ol>
 <li>
 <p>下载离线安装包：<a href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/</a></p>
@@ -398,9 +412,9 @@ systemctl start/stop/restart docker
 </table>
 <p>ps：<code>docker pull ubuntu</code>或<code>docker pull ubuntu:latest</code>这两个命令会拉取最新版本的ubuntu镜像，另外也可以指定想要的镜像版本进行拉取，拉取<strong>指定版本</strong>的镜像：</p>
 <ul>
-<li>Ubuntu：docker pull ubuntu:16.04</li>
-<li>Centos：docker pull centos:centos6.8</li>
-<li>mysql：docker pull mysql:5.7</li>
+<li>Ubuntu：<code>docker pull ubuntu:16.04</code></li>
+<li>Centos：<code>docker pull centos:centos6.8</code></li>
+<li>mysql：<code>docker pull mysql:5.7</code></li>
 </ul>
 <p>已拉取的镜像<strong>保存位置</strong>：</p>
 <p><code>/var/lib/docker/image/overlay2/repositories.json</code></p>
@@ -672,6 +686,8 @@ cd /tmp &amp;&amp; touch test
 / # ls /tmp/
 test
 </code></pre><p>可以看到我们之前在 /tmp 目录下创建的 test 文件也被迁移过来了。这样我们就通过<code>docker export</code>和<code>docker import</code>命令配合实现了容器的迁移。</p>
+<h2 id="docker-compose">docker-compose</h2>
+<p><a href="https://www.cnblogs.com/minseo/p/11548177.html">https://www.cnblogs.com/minseo/p/11548177.html</a></p>
 <h2 id="网络管理">网络管理</h2>
 <ul>
 <li>
@@ -704,7 +720,13 @@ test
 <pre><code>base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp;
   curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/usr/local/bin/docker-machine &amp;&amp;
   chmod +x /usr/local/bin/docker-machine
-</code></pre><h2 id="后记">后记</h2>
+</code></pre><ul>
+<li>
+<p><code>Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=hello-world&amp;tag=latest: dial unix /var/run/docker.sock: connect: permission denied</code></p>
+<p><a href="https://blog.csdn.net/u011337602/article/details/104541261">https://blog.csdn.net/u011337602/article/details/104541261</a></p>
+</li>
+</ul>
+<h2 id="后记">后记</h2>
 <h3 id="推荐阅读">推荐阅读</h3>
 <ul>
 <li><a href="https://www.cnblogs.com/xuanyuan/p/14003524.html">还不懂Docker？一个故事安排的明明白白！</a></li>
@@ -753,7 +775,7 @@ test
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4740 字
+          4979 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -832,6 +854,7 @@ test
         <li><a href="#导出导入容器">导出导入容器</a></li>
       </ul>
     </li>
+    <li><a href="#docker-compose">docker-compose</a></li>
     <li><a href="#网络管理">网络管理</a></li>
     <li><a href="#docker容器和本机互传文件">docker容器和本机互传文件</a></li>
     <li><a href="#坑儿们">坑儿们</a></li>

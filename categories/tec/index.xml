@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 00:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python学习笔记 | 异常处理</title>
+      <link>https://billie52707.cn/draft/python-error/</link>
+      <pubDate>Mon, 26 Apr 2021 00:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-error/</guid>
+      <description>什么是异常 异常就是程序运行时发生错误的信号（在程序出现错误时，则会产生一个异常，若程序没有处理它，则会抛出该异常，程序的运行也随之终止） 常见</description>
+    </item>
+    
     <item>
       <title>python学习笔记 | xpath</title>
       <link>https://billie52707.cn/posts/2021/4/python-xpath/</link>
@@ -24,15 +33,6 @@
       
       <guid>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</guid>
       <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1366216050\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言 ​ 故事的起源，要从前几个星期说起，我在阿</description>
-    </item>
-    
-    <item>
-      <title>「rpa」学习笔记</title>
-      <link>https://billie52707.cn/note/rpa/</link>
-      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/rpa/</guid>
-      <description>前言 达观人，达观魂 😎 使用手册 浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的</description>
     </item>
     
     <item>
@@ -87,6 +87,15 @@
       
       <guid>https://billie52707.cn/note/python/</guid>
       <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 概念 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量的字典 作用： 获取想查看某个作</description>
+    </item>
+    
+    <item>
+      <title>「rpa」学习笔记</title>
+      <link>https://billie52707.cn/note/rpa/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/rpa/</guid>
+      <description>前言 达观人，达观魂 😎 使用手册 浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的</description>
     </item>
     
     <item>

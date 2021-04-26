@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 00:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python学习笔记 | 异常处理</title>
+      <link>https://billie52707.cn/draft/python-error/</link>
+      <pubDate>Mon, 26 Apr 2021 00:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-error/</guid>
+      <description>什么是异常 异常就是程序运行时发生错误的信号（在程序出现错误时，则会产生一个异常，若程序没有处理它，则会抛出该异常，程序的运行也随之终止） 常见</description>
+    </item>
+    
     <item>
       <title>python模块详解 | re</title>
       <link>https://billie52707.cn/draft/python-re/</link>

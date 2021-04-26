@@ -210,10 +210,8 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#概念">概念</a></li>
         <li><a href="#内置函数">内置函数</a></li>
-        <li><a href="#内置装饰器">内置装饰器</a></li>
         <li><a href="#类的内建函数">类的内建函数</a></li>
         <li><a href="#在子类中调用父类的方法">在子类中调用父类的方法</a></li>
-        <li><a href="#迭代器生成器">迭代器&amp;生成器</a></li>
       </ul>
     </li>
     <li><a href="#那些年遇过的坑儿们">那些年遇过的坑儿们</a></li>
@@ -294,6 +292,7 @@ if (!doNotTrack) {
 <p>方法： <code>locals()</code></p>
 <p>类的命名空间：<code>classname().__dict__</code></p>
 </li>
+<li></li>
 </ul>
 <h3 id="内置函数">内置函数</h3>
 <p><a href="https://docs.python.org/zh-cn/3/library/functions.html">https://docs.python.org/zh-cn/3/library/functions.html</a></p>
@@ -330,42 +329,6 @@ lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</s
 <span style="color:#66d9ef">print</span>(lst3) <span style="color:#75715e"># [(&#39;banana&#39;, 2), (&#39;orange&#39;, 5), (&#39;apple&#39;, 9)]</span>
 </code></pre></div></li>
 </ul>
-<h3 id="内置装饰器">内置装饰器</h3>
-<ul>
-<li>
-<p><code>@wraps(func)</code> - 确保被装饰函数的属性（如<code>__name__</code>、<code>__doc__</code>）不被改变</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> wraps
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decorator</span>(func):
-    <span style="color:#a6e22e">@wraps</span>(func) <span style="color:#75715e"># </span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs):
-        <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs)
-    <span style="color:#66d9ef">return</span> wrapper
-<span style="color:#a6e22e">@decorator</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fruit</span>():
-  <span style="color:#66d9ef">return</span> __name__<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;我爱吃香蕉。&#34;</span>
-  
-<span style="color:#66d9ef">print</span>(fruit<span style="color:#f92672">.</span>__name__)
-</code></pre></div></li>
-<li>
-<p><code>@property</code> - 访问被装饰函数的函数名时，会返回被装饰函数的执行代码及返回值</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NB</span>:
-    <span style="color:#a6e22e">@property</span> <span style="color:#75715e"># </span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">name</span>(self):
-      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Billie&#34;</span>
-      
-NB()<span style="color:#f92672">.</span>name <span style="color:#75715e"># Billie</span>
-</code></pre></div></li>
-<li>
-<p><code>@staticmethod</code> - 声明某个类中的函数为静态方法，可以实现实例化使用，也可不实例化调用该方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExcelOperator</span>:
-    <span style="color:#a6e22e">@staticmethod</span> <span style="color:#75715e"># </span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>(): <span style="color:#75715e"># 这里没有self参数</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">6</span>
-  
-ExcelOperator()<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 6</span>
-ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 也是6</span>
-</code></pre></div></li>
-</ul>
 <h3 id="类的内建函数">类的内建函数</h3>
 <ul>
 <li>
@@ -393,6 +356,16 @@ ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#7571
   path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;users/billie/desktop/Maersk&#39;</span>
   <span style="color:#66d9ef">def</span> __init__(self):
     self<span style="color:#f92672">.</span>path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>path
+</code></pre></div></li>
+<li>
+<p><code>__next__</code>&amp;<code>__iter__</code> - 迭代器</p>
+</li>
+<li>
+<p><code>__doc__</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
+    <span style="color:#e6db74">&#39;&#39;&#39;我是注释文本&#39;&#39;&#39;</span>
+      
+<span style="color:#66d9ef">print</span>(A<span style="color:#f92672">.</span>__doc__) <span style="color:#75715e"># 我是注释文本</span>
 </code></pre></div></li>
 </ul>
 <h3 id="在子类中调用父类的方法">在子类中调用父类的方法</h3>
@@ -453,11 +426,7 @@ Jon<span style="color:#f92672">.</span>run() <span style="color:#75715e"># Winte
 Jon<span style="color:#f92672">.</span>say() <span style="color:#75715e"># you know nothing,Jon Snow</span>
 </code></pre></div></li>
 </ol>
-<h3 id="迭代器生成器">迭代器&amp;生成器</h3>
-<p><a href="https://www.cnblogs.com/alex3714/articles/5143440.html">https://www.cnblogs.com/alex3714/articles/5143440.html</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> iter(<span style="color:#e6db74">&#39;abc&#39;</span>) <span style="color:#75715e"># 定义一个迭代器对象，该对象定义了一个__next__方法，用于逐一访问容器中的元素</span>
-i<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 或next(i)</span>
-</code></pre></div><h2 id="那些年遇过的坑儿们">那些年遇过的坑儿们</h2>
+<h2 id="那些年遇过的坑儿们">那些年遇过的坑儿们</h2>
 <ul>
 <li><code>RuntimeError: dictionary changed size during iteration</code>
 <ul>
@@ -574,7 +543,7 @@ i<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># �
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1697 字
+          1490 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -635,10 +604,8 @@ i<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># �
       <ul>
         <li><a href="#概念">概念</a></li>
         <li><a href="#内置函数">内置函数</a></li>
-        <li><a href="#内置装饰器">内置装饰器</a></li>
         <li><a href="#类的内建函数">类的内建函数</a></li>
         <li><a href="#在子类中调用父类的方法">在子类中调用父类的方法</a></li>
-        <li><a href="#迭代器生成器">迭代器&amp;生成器</a></li>
       </ul>
     </li>
     <li><a href="#那些年遇过的坑儿们">那些年遇过的坑儿们</a></li>

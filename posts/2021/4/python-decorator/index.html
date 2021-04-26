@@ -210,11 +210,12 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#1-如何理解python装饰器httpswwwzhihucomquestion26930016"><a href="https://www.zhihu.com/question/26930016">1. 如何理解Python装饰器？</a></a></li>
         <li><a href="#2-为什么python要引入装饰器">2. 为什么python要引入装饰器？</a></li>
-        <li><a href="#3-装饰器技术的理解">3. 装饰器技术的理解</a></li>
-        <li><a href="#4-参考资料">4. 参考资料</a></li>
+        <li><a href="#3-参考资料">3. 参考资料</a></li>
       </ul>
     </li>
-    <li><a href="#少bb直接上手">少bb，直接上手</a>
+    <li><a href="#装饰器技术的理解">装饰器技术的理解</a></li>
+    <li><a href="#内置装饰器">内置装饰器</a></li>
+    <li><a href="#装饰器实例">装饰器实例</a>
       <ul>
         <li><a href="#1-最基本的装饰器---高阶函数嵌套函数">1. 最基本的装饰器 - 高阶函数+嵌套函数</a></li>
         <li><a href="#2-带语法糖的装饰器">2. 带语法糖的装饰器</a></li>
@@ -314,7 +315,12 @@ if (!doNotTrack) {
 <h3 id="2-为什么python要引入装饰器">2. 为什么python要引入装饰器？</h3>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210328212130102.png" alt="image-20210328212130102"></p>
 <p>🥴 🥴 🥴</p>
-<h3 id="3-装饰器技术的理解">3. 装饰器技术的理解</h3>
+<h3 id="3-参考资料">3. 参考资料</h3>
+<ul>
+<li><a href="https://docs.python.org/zh-cn/3/library/logging.htm">官方文档</a></li>
+<li><a href="https://www.cnblogs.com/alex3714/articles/5143440.html">Python之路,Day4</a></li>
+</ul>
+<h2 id="装饰器技术的理解">装饰器技术的理解</h2>
 <ol>
 <li>
 <p><strong>函数即变量</strong> - 一个带有括号的变量</p>
@@ -361,12 +367,43 @@ fun1()
 </code></pre></div><p>除了声明函数，也可使用return关键字返回这个函数对象。</p>
 </li>
 </ol>
-<h3 id="4-参考资料">4. 参考资料</h3>
+<h2 id="内置装饰器">内置装饰器</h2>
 <ul>
-<li><a href="https://docs.python.org/zh-cn/3/library/logging.htm">官方文档</a></li>
-<li><a href="https://www.cnblogs.com/alex3714/articles/5143440.html">Python之路,Day4</a></li>
+<li>
+<p><code>@wraps(func)</code> - 确保被装饰函数的属性（如<code>__name__</code>、<code>__doc__</code>）不被改变</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> wraps
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decorator</span>(func):
+    <span style="color:#a6e22e">@wraps</span>(func) <span style="color:#75715e"># </span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs):
+        <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs)
+    <span style="color:#66d9ef">return</span> wrapper
+<span style="color:#a6e22e">@decorator</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fruit</span>():
+  <span style="color:#66d9ef">return</span> __name__<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;我爱吃香蕉。&#34;</span>
+  
+<span style="color:#66d9ef">print</span>(fruit<span style="color:#f92672">.</span>__name__)
+</code></pre></div></li>
+<li>
+<p><code>@property</code> - 访问被装饰函数的函数名时，会返回被装饰函数的执行代码及返回值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NB</span>:
+    <span style="color:#a6e22e">@property</span> <span style="color:#75715e"># </span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">name</span>(self):
+      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Billie&#34;</span>
+      
+NB()<span style="color:#f92672">.</span>name <span style="color:#75715e"># Billie</span>
+</code></pre></div></li>
+<li>
+<p><code>@staticmethod</code> - 声明某个类中的函数为静态方法，可以实现实例化使用，也可不实例化调用该方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExcelOperator</span>:
+    <span style="color:#a6e22e">@staticmethod</span> <span style="color:#75715e"># </span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>(): <span style="color:#75715e"># 这里没有self参数</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">6</span>
+  
+ExcelOperator()<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 6</span>
+ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 也是6</span>
+</code></pre></div></li>
 </ul>
-<h2 id="少bb直接上手">少bb，直接上手</h2>
+<h2 id="装饰器实例">装饰器实例</h2>
 <h3 id="1-最基本的装饰器---高阶函数嵌套函数">1. 最基本的装饰器 - 高阶函数+嵌套函数</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(func):
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>():
@@ -508,7 +545,7 @@ fun()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1778 字
+          1966 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -569,11 +606,12 @@ fun()
       <ul>
         <li><a href="#1-如何理解python装饰器httpswwwzhihucomquestion26930016"><a href="https://www.zhihu.com/question/26930016">1. 如何理解Python装饰器？</a></a></li>
         <li><a href="#2-为什么python要引入装饰器">2. 为什么python要引入装饰器？</a></li>
-        <li><a href="#3-装饰器技术的理解">3. 装饰器技术的理解</a></li>
-        <li><a href="#4-参考资料">4. 参考资料</a></li>
+        <li><a href="#3-参考资料">3. 参考资料</a></li>
       </ul>
     </li>
-    <li><a href="#少bb直接上手">少bb，直接上手</a>
+    <li><a href="#装饰器技术的理解">装饰器技术的理解</a></li>
+    <li><a href="#内置装饰器">内置装饰器</a></li>
+    <li><a href="#装饰器实例">装饰器实例</a>
       <ul>
         <li><a href="#1-最基本的装饰器---高阶函数嵌套函数">1. 最基本的装饰器 - 高阶函数+嵌套函数</a></li>
         <li><a href="#2-带语法糖的装饰器">2. 带语法糖的装饰器</a></li>
