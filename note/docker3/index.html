@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title> python学习笔记 | 异常处理 | 人人都爱小雀斑&#39;s blog </title>
+  <title> 「docker」学习笔记 | 容器编排三剑客 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -25,16 +25,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="python学习笔记 | 异常处理" />
-<meta property="og:description" content="什么是异常 异常就是程序运行时发生错误的信号（在程序出现错误时，则会产生一个异常，若程序没有处理它，则会抛出该异常，程序的运行也随之终止） 常见" />
+  <meta property="og:title" content="「docker」学习笔记 | 容器编排三剑客" />
+<meta property="og:description" content="前言 为什么需要用到编排工具？ 当我们的业务越来越复杂时，需要多个容器相互配合，甚至需要多个主机组成容器集群才能满足我们的业务需求，这个时候就需" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/draft/python-error/" />
-<meta property="article:published_time" content="2021-04-26T00:54:00+00:00" />
-<meta property="article:modified_time" content="2021-04-26T00:54:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/note/docker3/" />
+<meta property="article:published_time" content="2021-04-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-27T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python学习笔记 | 异常处理"/>
-<meta name="twitter:description" content="什么是异常 异常就是程序运行时发生错误的信号（在程序出现错误时，则会产生一个异常，若程序没有处理它，则会抛出该异常，程序的运行也随之终止） 常见"/>
+<meta name="twitter:title" content="「docker」学习笔记 | 容器编排三剑客"/>
+<meta name="twitter:description" content="前言 为什么需要用到编排工具？ 当我们的业务越来越复杂时，需要多个容器相互配合，甚至需要多个主机组成容器集群才能满足我们的业务需求，这个时候就需"/>
 
   
   
@@ -108,14 +108,14 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2021/4/python-iterator-generator/">
+          <a class="icon" href=" https://billie52707.cn/draft/python-error/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/note/docker3/">
+          <a class="icon" href="https://billie52707.cn/posts/2021/4/aliyun-server-docker/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -146,57 +146,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&text=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&text=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&is_video=false&description=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&is_video=false&description=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f">
+    <a class="icon" href="mailto:?subject=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86&description=%e4%bb%80%e4%b9%88%e6%98%af%e5%bc%82%e5%b8%b8%20%e5%bc%82%e5%b8%b8%e5%b0%b1%e6%98%af%e7%a8%8b%e5%ba%8f%e8%bf%90%e8%a1%8c%e6%97%b6%e5%8f%91%e7%94%9f%e9%94%99%e8%af%af%e7%9a%84%e4%bf%a1%e5%8f%b7%ef%bc%88%e5%9c%a8%e7%a8%8b%e5%ba%8f%e5%87%ba%e7%8e%b0%e9%94%99%e8%af%af%e6%97%b6%ef%bc%8c%e5%88%99%e4%bc%9a%e4%ba%a7%e7%94%9f%e4%b8%80%e4%b8%aa%e5%bc%82%e5%b8%b8%ef%bc%8c%e8%8b%a5%e7%a8%8b%e5%ba%8f%e6%b2%a1%e6%9c%89%e5%a4%84%e7%90%86%e5%ae%83%ef%bc%8c%e5%88%99%e4%bc%9a%e6%8a%9b%e5%87%ba%e8%af%a5%e5%bc%82%e5%b8%b8%ef%bc%8c%e7%a8%8b%e5%ba%8f%e7%9a%84%e8%bf%90%e8%a1%8c%e4%b9%9f%e9%9a%8f%e4%b9%8b%e7%bb%88%e6%ad%a2%ef%bc%89%20%e5%b8%b8%e8%a7%81">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&name=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2&description=%e5%89%8d%e8%a8%80%20%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%88%b0%e7%bc%96%e6%8e%92%e5%b7%a5%e5%85%b7%ef%bc%9f%20%e5%bd%93%e6%88%91%e4%bb%ac%e7%9a%84%e4%b8%9a%e5%8a%a1%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%a4%8d%e6%9d%82%e6%97%b6%ef%bc%8c%e9%9c%80%e8%a6%81%e5%a4%9a%e4%b8%aa%e5%ae%b9%e5%99%a8%e7%9b%b8%e4%ba%92%e9%85%8d%e5%90%88%ef%bc%8c%e7%94%9a%e8%87%b3%e9%9c%80%e8%a6%81%e5%a4%9a%e4%b8%aa%e4%b8%bb%e6%9c%ba%e7%bb%84%e6%88%90%e5%ae%b9%e5%99%a8%e9%9b%86%e7%be%a4%e6%89%8d%e8%83%bd%e6%bb%a1%e8%b6%b3%e6%88%91%e4%bb%ac%e7%9a%84%e4%b8%9a%e5%8a%a1%e9%9c%80%e6%b1%82%ef%bc%8c%e8%bf%99%e4%b8%aa%e6%97%b6%e5%80%99%e5%b0%b1%e9%9c%80">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&t=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&t=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -206,17 +206,16 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#什么是异常">什么是异常</a></li>
-    <li><a href="#常见的异常种类">常见的异常种类</a>
+    <li><a href="#前言">前言</a>
       <ul>
-        <li><a href="#语法错误">语法错误</a></li>
-        <li><a href="#逻辑错误">逻辑错误</a></li>
+        <li><a href="#为什么需要用到编排工具">为什么需要用到编排工具？</a></li>
+        <li><a href="#容器编排工具的优点">容器编排工具的优点</a></li>
       </ul>
     </li>
-    <li><a href="#异常处理">异常处理</a>
+    <li><a href="#docker-compose">Docker-Compose</a>
       <ul>
-        <li><a href="#if">if</a></li>
-        <li><a href="#tryexcept">try&hellip;except&hellip;</a></li>
+        <li><a href="#docker-compose-的前世今生">Docker Compose 的前世今生</a></li>
+        <li><a href="#linux系统下安装docker-compose">Linux系统下安装Docker Compose</a></li>
       </ul>
     </li>
   </ul>
@@ -230,7 +229,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        python学习笔记 | 异常处理
+        「docker」学习笔记 | 容器编排三剑客
       </h1>
       <div class="meta">
         
@@ -240,7 +239,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2021-04-26 00:54:00 &#43;0000 UTC" itemprop="datePublished">2021-04-26</time>
+          <time datetime="2021-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-27</time>
           
           
         </div>
@@ -264,7 +263,13 @@ if (!doNotTrack) {
             <i class="fas fa-tag"></i>
             
              
-            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            <a class="tag-link" href="/tags/docker" rel="tag">docker</a>
+            
+             
+            <a class="tag-link" href="/tags/linux" rel="tag">Linux</a>
+            
+               
+            <a class="tag-link" href="/tags/mac" rel="tag">Mac</a>
             
         </div> 
         
@@ -275,17 +280,36 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="什么是异常">什么是异常</h2>
-<p>异常就是程序运行时发生错误的信号（在程序出现错误时，则会产生一个异常，若程序没有处理它，则会抛出该异常，程序的运行也随之终止）</p>
-<h2 id="常见的异常种类">常见的异常种类</h2>
-<h3 id="语法错误">语法错误</h3>
-<h3 id="逻辑错误">逻辑错误</h3>
-<h2 id="异常处理">异常处理</h2>
-<p>为了保证程序的健壮性和容错性，在遇到错误时程序不会崩溃，我们需要对异常进行处理。</p>
-<h3 id="if">if</h3>
-<p>如果这个错误是可预见的，可以使用if语句在错误发生之前进行预防</p>
-<h3 id="tryexcept">try&hellip;except&hellip;</h3>
-<p>如果这个错误是不可预见的，则需要用到<code>try...except</code>语句</p>
+      <h2 id="前言">前言</h2>
+<h3 id="为什么需要用到编排工具">为什么需要用到编排工具？</h3>
+<p>当我们的业务越来越复杂时，需要多个容器相互配合，甚至需要多个主机组成容器集群才能满足我们的业务需求，这个时候就需要用到容器的编排工具了。Docker三种常用的编排工具：Docker Compose、Docker Swarm和Kubernetes。了解这些编排工具，可以让你在不同的环境中选择最优的编排框架。</p>
+<h3 id="容器编排工具的优点">容器编排工具的优点</h3>
+<ol>
+<li>批量地创建、调度和管理容器，帮助我们解决容器的部署问题。</li>
+</ol>
+<h2 id="docker-compose">Docker-Compose</h2>
+<h3 id="docker-compose-的前世今生">Docker Compose 的前世今生</h3>
+<p>Docker Compose 的前身是 Orchard 公司开发的 Fig，2014 年 Docker 收购了 Orchard 公司，然后将 Fig 重命名为 Docker Compose。现阶段 Docker Compose 是 Docker 官方的单机多容器管理系统，它本质是一个 Python 脚本，它通过解析用户编写的 yaml 文件，调用 Docker API 实现动态的创建和管理多个容器。</p>
+<h3 id="linux系统下安装docker-compose">Linux系统下安装Docker Compose</h3>
+<p>macOS系统下通常以Docker桌面版本的形式安装docker，桌面版安装之后就默认已安装了docker compose。下面介绍Linux系统下的安装流程：</p>
+<ol>
+<li>
+<p>使用 curl 命令（一种发送 http 请求的命令行工具）下载 Docker Compose 的安装包：</p>
+<pre><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.27.3/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+</code></pre></li>
+<li>
+<p>修改 Docker Compose 执行权限：</p>
+<pre><code>sudo chmod +x /usr/local/bin/docker-compose
+</code></pre></li>
+<li>
+<p>检查 Docker Compose 是否安装成功：</p>
+<pre><code>docker-compose --version # docker-compose version 1.27.3, build 4092ae5d
+</code></pre></li>
+</ol>
+<p>推荐阅读</p>
+<ul>
+<li><a href="https://www.cnblogs.com/minseo/p/11548177.html">https://www.cnblogs.com/minseo/p/11548177.html</a></li>
+</ul>
 
     </div>
 
@@ -319,15 +343,21 @@ if (!doNotTrack) {
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
             
-            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            <a class="tag-link" href="/tags/docker" rel="tag">docker</a>
+            
+            
+            <a class="tag-link" href="/tags/linux" rel="tag">Linux</a>
+            
+              
+            <a class="tag-link" href="/tags/mac" rel="tag">Mac</a>
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          192 字
+          489 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2021-04-26 00:54:00 &#43;0000 UTC" itemprop="datePublished">2021-04-26</time>
+          <time datetime="2021-04-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-27</time>
           
 
   </p>
@@ -335,7 +365,7 @@ if (!doNotTrack) {
 
   
 
-<span id="/draft/python-error/" class="leancloud_visitors" data-flag-title="python学习笔记 | 异常处理">
+<span id="/note/docker3/" class="leancloud_visitors" data-flag-title="「docker」学习笔记 | 容器编排三剑客">
 
   
 
@@ -380,17 +410,16 @@ if (!doNotTrack) {
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#什么是异常">什么是异常</a></li>
-    <li><a href="#常见的异常种类">常见的异常种类</a>
+    <li><a href="#前言">前言</a>
       <ul>
-        <li><a href="#语法错误">语法错误</a></li>
-        <li><a href="#逻辑错误">逻辑错误</a></li>
+        <li><a href="#为什么需要用到编排工具">为什么需要用到编排工具？</a></li>
+        <li><a href="#容器编排工具的优点">容器编排工具的优点</a></li>
       </ul>
     </li>
-    <li><a href="#异常处理">异常处理</a>
+    <li><a href="#docker-compose">Docker-Compose</a>
       <ul>
-        <li><a href="#if">if</a></li>
-        <li><a href="#tryexcept">try&hellip;except&hellip;</a></li>
+        <li><a href="#docker-compose-的前世今生">Docker Compose 的前世今生</a></li>
+        <li><a href="#linux系统下安装docker-compose">Linux系统下安装Docker Compose</a></li>
       </ul>
     </li>
   </ul>
@@ -406,57 +435,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&text=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&text=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&is_video=false&description=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&is_video=false&description=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f">
+    <a class="icon" href="mailto:?subject=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&title=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&title=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86&description=%e4%bb%80%e4%b9%88%e6%98%af%e5%bc%82%e5%b8%b8%20%e5%bc%82%e5%b8%b8%e5%b0%b1%e6%98%af%e7%a8%8b%e5%ba%8f%e8%bf%90%e8%a1%8c%e6%97%b6%e5%8f%91%e7%94%9f%e9%94%99%e8%af%af%e7%9a%84%e4%bf%a1%e5%8f%b7%ef%bc%88%e5%9c%a8%e7%a8%8b%e5%ba%8f%e5%87%ba%e7%8e%b0%e9%94%99%e8%af%af%e6%97%b6%ef%bc%8c%e5%88%99%e4%bc%9a%e4%ba%a7%e7%94%9f%e4%b8%80%e4%b8%aa%e5%bc%82%e5%b8%b8%ef%bc%8c%e8%8b%a5%e7%a8%8b%e5%ba%8f%e6%b2%a1%e6%9c%89%e5%a4%84%e7%90%86%e5%ae%83%ef%bc%8c%e5%88%99%e4%bc%9a%e6%8a%9b%e5%87%ba%e8%af%a5%e5%bc%82%e5%b8%b8%ef%bc%8c%e7%a8%8b%e5%ba%8f%e7%9a%84%e8%bf%90%e8%a1%8c%e4%b9%9f%e9%9a%8f%e4%b9%8b%e7%bb%88%e6%ad%a2%ef%bc%89%20%e5%b8%b8%e8%a7%81">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&name=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2&description=%e5%89%8d%e8%a8%80%20%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e7%94%a8%e5%88%b0%e7%bc%96%e6%8e%92%e5%b7%a5%e5%85%b7%ef%bc%9f%20%e5%bd%93%e6%88%91%e4%bb%ac%e7%9a%84%e4%b8%9a%e5%8a%a1%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%a4%8d%e6%9d%82%e6%97%b6%ef%bc%8c%e9%9c%80%e8%a6%81%e5%a4%9a%e4%b8%aa%e5%ae%b9%e5%99%a8%e7%9b%b8%e4%ba%92%e9%85%8d%e5%90%88%ef%bc%8c%e7%94%9a%e8%87%b3%e9%9c%80%e8%a6%81%e5%a4%9a%e4%b8%aa%e4%b8%bb%e6%9c%ba%e7%bb%84%e6%88%90%e5%ae%b9%e5%99%a8%e9%9b%86%e7%be%a4%e6%89%8d%e8%83%bd%e6%bb%a1%e8%b6%b3%e6%88%91%e4%bb%ac%e7%9a%84%e4%b8%9a%e5%8a%a1%e9%9c%80%e6%b1%82%ef%bc%8c%e8%bf%99%e4%b8%aa%e6%97%b6%e5%80%99%e5%b0%b1%e9%9c%80">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-error%2f&t=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fnote%2fdocker3%2f&t=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b8%89%e5%89%91%e5%ae%a2">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

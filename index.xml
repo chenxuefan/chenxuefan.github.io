@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Mon, 26 Apr 2021 00:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Apr 2021 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用docker容器化部署服务器</title>
+      <link>https://billie52707.cn/posts/2021/4/aliyun-server-docker/</link>
+      <pubDate>Tue, 27 Apr 2021 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/aliyun-server-docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>「docker」学习笔记 | 容器编排三剑客</title>
+      <link>https://billie52707.cn/note/docker3/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/docker3/</guid>
+      <description>前言 为什么需要用到编排工具？ 当我们的业务越来越复杂时，需要多个容器相互配合，甚至需要多个主机组成容器集群才能满足我们的业务需求，这个时候就需</description>
+    </item>
+    
     <item>
       <title>python学习笔记 | 异常处理</title>
       <link>https://billie52707.cn/draft/python-error/</link>
@@ -531,11 +549,11 @@
     </item>
     
     <item>
-      <title>「docker」学习笔记</title>
-      <link>https://billie52707.cn/note/docker/</link>
+      <title>「docker」学习笔记 | 基础概念与操作</title>
+      <link>https://billie52707.cn/note/docker1/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/note/docker/</guid>
+      <guid>https://billie52707.cn/note/docker1/</guid>
       <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
     </item>
     
@@ -1004,7 +1022,7 @@
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/linux/</guid>
-      <description>VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行的时候，会锁定文件，防止被修改，而如果突然系统崩溃了，虚拟机就来不急把已经锁定的</description>
+      <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 常用命令 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 常见报错解决 VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行</description>
     </item>
     
     <item>

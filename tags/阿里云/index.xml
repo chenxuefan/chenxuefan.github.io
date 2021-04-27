@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sun, 18 Apr 2021 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Apr 2021 02:30:10 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用docker容器化部署服务器</title>
+      <link>https://billie52707.cn/posts/2021/4/aliyun-server-docker/</link>
+      <pubDate>Tue, 27 Apr 2021 02:30:10 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/aliyun-server-docker/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>记一次迁移服务器的经历</title>
       <link>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</link>
