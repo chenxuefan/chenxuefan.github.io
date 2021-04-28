@@ -14,7 +14,7 @@
       <pubDate>Tue, 27 Apr 2021 02:30:10 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/4/aliyun-server-docker/</guid>
-      <description></description>
+      <description>新建容器 docker run -itd --name chenxuefan -p 24:22 --privileged centos /usr/sbin/init --privileged 使用该参数，container内的root拥有真正的root权限。 否则，container内的root只是外部</description>
     </item>
     
     <item>
