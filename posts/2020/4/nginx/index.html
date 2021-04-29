@@ -313,7 +313,7 @@ yum install nginx　　　　　　　#centos
 </code></pre><p>查看本机ip地址</p>
 <pre><code>ifconfig
 </code></pre><p>浏览器输入ip地址，若看到如下画面则表示web服务器启动正常</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200415211450842-2131514252.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200415211450842-2131514252.png" alt="img"></p>
 <h2 id="nginx相关文件的配置">nginx相关文件的配置</h2>
 <p>nginx的相关文件位置</p>
 <pre><code>/usr/sbin/nginx     #主程序
@@ -328,14 +328,14 @@ yum install nginx　　　　　　　#centos
 </code></pre><p>根据需要，自行编辑&rsquo;index.html&rsquo;文件的内容</p>
 <pre><code>sudo vim index.html
 </code></pre><p>根据需要，在/www目录下建立多个html文件夹，如下图</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200415220029706-1091802443.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200415220029706-1091802443-20210429115058523.png" alt="img"></p>
 <p>若需要用winscp来操作，则需修改权限，上面文件夹中，为绿色的则是全权限，修改权限的代码如下</p>
 <pre><code>sudo chmod -R 777 文件名
 </code></pre><h3 id="2-default文件etcnginxsites-availabledefault"><strong>2. default文件：/etc/nginx/sites-available/default</strong></h3>
 <p>打开以下目录，目录下这个‘default’是我们真正要关注的配置文件</p>
 <p>cd /etc/nginx/sites-available</p>
 <p>&lsquo;default&rsquo;的意思是默认，说明这是一个默认设置</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200415214841650-1800174895.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200415214841650-1800174895.png" alt="img"></p>
 <p>以防万一，先备份default文件为副本default_bak，代码如下</p>
 <pre><code>sudo cp default default_bak
 </code></pre><p>关注<code>server{}</code>大括号内的内容：</p>
@@ -347,17 +347,17 @@ yum install nginx　　　　　　　#centos
 <p>listen [::]:80 default_server：指出IPv6访问默认服务器，监听端口是80</p>
 </li>
 </ul>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200418190353810-1574326342.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200418190353810-1574326342.png" alt="img"></p>
 <ul>
 <li>server_name：最后的_表示所有的没有明确的ip地址或域名都指向这个默认服务器</li>
 </ul>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200418190958019-1178316759.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200418190958019-1178316759.png" alt="img"></p>
 <ul>
 <li>root /var/www/html：该服务器的主目录，index.html等入口文件放在这里，如以上的index.html文件放在html文件夹下，则编辑方式如下</li>
 </ul>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200418191105450-1630201466.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200418191105450-1630201466.png" alt="img"></p>
 <p>编辑完毕，保存退出，在宿主机浏览器输入框输入IP地址，即可显示在index.html编辑的内容</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200418193535382-1202145894.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200418193535382-1202145894.png" alt="img"></p>
 <h2 id="多站点设置">多站点设置</h2>
 <p>为什么要设置多站点？</p>
 <p>当我们有了一个实体服务器（或任何服务器）之后，为了不浪费服务器的资源，我们可以在一个服务器上放置多个网站项目，这时候我们有两种处理方法：</p>
@@ -369,48 +369,48 @@ yum install nginx　　　　　　　#centos
 <p><strong>修改单个配置文件</strong>（/etc/nginx/sites-available/default）</p>
 <pre><code>sudo vim default
 </code></pre><p>除了通过命令行修改，也可在Windows平台通过编辑器WinScp进行远程编辑</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421163729443-848865938.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421163729443-848865938.png" alt="img"></p>
 <h3 id="1-通过不同的端口连接"><strong>1. 通过不同的端口连接</strong></h3>
 <p>1、修改html文件：</p>
 <p>打开下面的目录，新建一个新的网页源文件，也可直接复制目录下的html文件，因目录下的html是一个文件夹，因此复制的时候需加参数：-R</p>
 <pre><code>cd /var/www/
 sudo cp -R html html2
 </code></pre><p>此时文件关系树如下：</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421165457259-876174879.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421165457259-876174879.png" alt="img"></p>
 <p>编辑 /html2/index.html文件，即修改为&quot;mypage-2&quot;</p>
-<p><strong><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200422114149638-1055394299.png" alt="img"></strong></p>
+<p><strong><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200422114149638-1055394299.png" alt="img"></strong></p>
 <p>编辑完毕，保存退出</p>
 <p>2、修改default文件</p>
 <p>复制default文件中server{}中的全部内容，粘贴至第一个server{}下方，即<em><strong>创建新的服务</strong></em></p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421164732346-1699099464.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421164732346-1699099464.png" alt="img"></p>
 <p>编辑listen、root、后的内容，其中端口为：8080，如上图，</p>
 <p>编辑完毕，保存退出</p>
 <p>浏览器输入：你的Linux ip地址：8080，如192.168.52.162:8080</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421170656214-1768860958.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421170656214-1768860958.png" alt="img"></p>
 <h3 id="2-通过不同的域名连接"><strong>2. 通过不同的域名连接</strong></h3>
 <p>重复上面的方法中的工作，复制default文件中的server{}，以及新建html文件</p>
 <p>编辑html文件内容如下</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421171252146-694727901.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421171252146-694727901.png" alt="img"></p>
 <p>编辑server{}内容如下</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421171411859-457486218.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421171411859-457486218.png" alt="img"></p>
 <p>其中sever_name 后的内容为：www.web3.com web3.com，意为<em><strong>可通过两种域名方式访问</strong></em></p>
 <p>编辑完毕，保存退出</p>
 <p>浏览器输入：www.web3.com</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421171731093-427031414.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421171731093-427031414.png" alt="img"></p>
 <p>这时发现，无法正常打开页面，原因是该域名还未正式注册，无法解析为ip地址，也就无法访问</p>
 <p>为此，我们需要人为修改Windows系统域名映射文件Hosts</p>
 <p>路径为：C:\Windows\System32\drivers\etc\hosts</p>
 <p>👉 右键左下角win图标，点击”命令提示符（管理员）“ 👉 输入notepad 👉 打开hosts文件（路径如下）</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421172404511-1405240926.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421172404511-1405240926.png" alt="img"></p>
 <p>👉 编辑hosts文件，即加入命令：</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421172902419-346086602.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421172902419-346086602.png" alt="img"></p>
 <p>👉 编辑完毕，刷新DNS，有两种方式刷新：</p>
 <ol>
 <li>关闭浏览器，重新打开</li>
 <li>在cmd窗口输入命令：ipconfig /flushdns，即可生效</li>
 </ol>
 <p>👉 浏览器输入：www.web3.com</p>
-<p><img src="https://img2020.cnblogs.com/blog/1846139/202004/1846139-20200421173558664-891401758.png" alt="img"></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421173558664-891401758.png" alt="img"></p>
 <p>此时，可以成功通过域名连接</p>
 
     </div>
