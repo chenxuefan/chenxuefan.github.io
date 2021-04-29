@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title> 基础探究，Session 与 Cookies | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="基础探究，Session 与 Cookies" />
+<meta property="og:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在浏览网站的过程中，经常会遇到需要登录的情况，而有些网页只有登录之后才可以访问，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/2/sessioncookies/" />
+<meta property="article:published_time" content="2021-02-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-27T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="基础探究，Session 与 Cookies"/>
+<meta name="twitter:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在浏览网站的过程中，经常会遇到需要登录的情况，而有些网页只有登录之后才可以访问，"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/posts/2021/2/thread/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/posts/2021/2/principle/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&text=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&is_video=false&description=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&name=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies&description=%2a%e6%9c%ac%e7%af%87%e8%bd%ac%e8%87%aa%e6%8b%89%e5%8b%be%e6%95%99%e8%82%b2%e3%80%8a52%e8%ae%b2%e8%bd%bb%e6%9d%be%e6%90%9e%e5%ae%9a%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e3%80%8b%e4%bd%9c%e8%80%85%ef%bc%9a%e5%b4%94%e5%ba%86%e6%89%8d%20%e6%88%91%e4%bb%ac%e5%9c%a8%e6%b5%8f%e8%a7%88%e7%bd%91%e7%ab%99%e7%9a%84%e8%bf%87%e7%a8%8b%e4%b8%ad%ef%bc%8c%e7%bb%8f%e5%b8%b8%e4%bc%9a%e9%81%87%e5%88%b0%e9%9c%80%e8%a6%81%e7%99%bb%e5%bd%95%e7%9a%84%e6%83%85%e5%86%b5%ef%bc%8c%e8%80%8c%e6%9c%89%e4%ba%9b%e7%bd%91%e9%a1%b5%e5%8f%aa%e6%9c%89%e7%99%bb%e5%bd%95%e4%b9%8b%e5%90%8e%e6%89%8d%e5%8f%af%e4%bb%a5%e8%ae%bf%e9%97%ae%ef%bc%8c">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&t=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#无状态-http">无状态 HTTP</a></li>
+    <li><a href="#session">Session</a></li>
+    <li><a href="#cookies">Cookies</a></li>
+    <li><a href="#session-维持">Session 维持</a></li>
+    <li><a href="#属性结构">属性结构</a></li>
+    <li><a href="#会话-cookie-和持久-cookie">会话 Cookie 和持久 Cookie</a></li>
+    <li><a href="#常见误区">常见误区</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        基础探究，Session 与 Cookies
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
+<p>我们在浏览网站的过程中，经常会遇到需要登录的情况，而有些网页只有登录之后才可以访问，而且登录之后可以连续访问很多次网站，但是有时候过一段时间就需要重新登录。</p>
+<p>还有一些网站，在打开浏览器时就自动登录了，而且很长时间都不会失效，这种情况又是为什么？其实这里面涉及 Session 和 Cookies 的相关知识，本节就来揭开它们的神秘面纱。</p>
+<p>静态网页和动态网页
+在开始介绍它们之前，我们需要先了解一下静态网页和动态网页的概念。这里还是前面的示例代码，内容如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;This is a Demo&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrapper&#34;</span>&gt;
+&lt;<span style="color:#f92672">h2</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;Hello World&lt;/<span style="color:#f92672">h2</span>&gt;
+&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>&gt;Hello, this is a paragraph.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>这是最基本的 HTML 代码，我们将其保存为一个 .html 文件，然后把它放在某台具有固定公网 IP 的主机上，主机上装上 Apache 或 Nginx 等服务器，这样这台主机就可以作为服务器了，其他人便可以通过访问服务器看到这个页面，这就搭建了一个最简单的网站。</p>
+<p>这种网页的内容是 HTML 代码编写的，文字、图片等内容均通过写好的 HTML 代码来指定，这种页面叫作静态网页。它加载速度快，编写简单，但是存在很大的缺陷，如可维护性差，不能根据 URL 灵活多变地显示内容等。例如，我们想要给这个网页的 URL 传入一个 name 参数，让其在网页中显示出来，是无法做到的。</p>
+<p>因此，动态网页应运而生，它可以动态解析 URL 中参数的变化，关联数据库并动态呈现不同的页面内容，非常灵活多变。我们现在遇到的大多数网站都是动态网站，它们不再是一个简单的 HTML，而是可能由 JSP、PHP、Python 等语言编写的，其功能比静态网页强大和丰富太多了。</p>
+<p>此外，动态网站还可以实现用户登录和注册的功能。再回到开头来看提到的问题，很多页面是需要登录之后才可以查看的。按照一般的逻辑来说，输入用户名和密码登录之后，肯定是拿到了一种类似凭证的东西，有了它，我们才能保持登录状态，才能访问登录之后才能看到的页面。</p>
+<p>那么，这种神秘的凭证到底是什么呢？其实它就是 Session 和 Cookies 共同产生的结果，下面我们来一探究竟。</p>
+<h2 id="无状态-http">无状态 HTTP</h2>
+<p>在了解 Session 和 Cookies 之前，我们还需要了解 HTTP 的一个特点，叫作无状态。</p>
+<p>HTTP 的无状态是指 HTTP 协议对事务处理是没有记忆能力的，也就是说服务器不知道客户端是什么状态。</p>
+<p>当我们向服务器发送请求后，服务器解析此请求，然后返回对应的响应，服务器负责完成这个过程，而且这个过程是完全独立的，服务器不会记录前后状态的变化，也就是缺少状态记录。</p>
+<p>这意味着如果后续需要处理前面的信息，则必须重传，这也导致需要额外传递一些前面的重复请求，才能获取后续响应，然而这种效果显然不是我们想要的。为了保持前后状态，我们肯定不能将前面的请求全部重传一次，这太浪费资源了，对于这种需要用户登录的页面来说，更是棘手。</p>
+<p>这时两个用于保持 HTTP 连接状态的技术就出现了，它们分别是 Session 和 Cookies。Session 在服务端，也就是网站的服务器，用来保存用户的 Session 信息；Cookies 在客户端，也可以理解为浏览器端，有了 Cookies，浏览器在下次访问网页时会自动附带上它发送给服务器，服务器通过识别 Cookies 并鉴定出是哪个用户，然后再判断用户是否是登录状态，进而返回对应的响应。</p>
+<p>我们可以理解为 Cookies 里面保存了登录的凭证，有了它，只需要在下次请求携带 Cookies 发送请求而不必重新输入用户名、密码等信息重新登录了。</p>
+<p>因此在爬虫中，有时候处理需要登录才能访问的页面时，我们一般会直接将登录成功后获取的 Cookies 放在请求头里面直接请求，而不必重新模拟登录。</p>
+<p>好了，了解 Session 和 Cookies 的概念之后，我们在来详细剖析它们的原理。</p>
+<h2 id="session">Session</h2>
+<p>Session，中文称之为会话，其本身的含义是指有始有终的一系列动作 / 消息。比如，打电话时，从拿起电话拨号到挂断电话这中间的一系列过程可以称为一个 Session。</p>
+<p>而在 Web 中，Session 对象用来存储特定用户 Session 所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户 Session 中一直存在下去。当用户请求来自应用程序的 Web 页时，如果该用户还没有 Session，则 Web 服务器将自动创建一个 Session 对象。当 Session 过期或被放弃后，服务器将终止该 Session。</p>
+<h2 id="cookies">Cookies</h2>
+<p>Cookies 指某些网站为了辨别用户身份、进行 Session 跟踪而存储在用户本地终端上的数据。</p>
+<h2 id="session-维持">Session 维持</h2>
+<p>那么，我们怎样利用 Cookies 保持状态呢？当客户端第一次请求服务器时，服务器会返回一个响应头中带有 Set-Cookie 字段的响应给客户端，用来标记是哪一个用户，客户端浏览器会把 Cookies 保存起来。当浏览器下一次再请求该网站时，浏览器会把此 Cookies 放到请求头一起提交给服务器，Cookies 携带了 Session ID 信息，服务器检查该 Cookies 即可找到对应的 Session 是什么，然后再判断 Session 来以此来辨认用户状态。</p>
+<p>在成功登录某个网站时，服务器会告诉客户端设置哪些 Cookies 信息，在后续访问页面时客户端会把 Cookies 发送给服务器，服务器再找到对应的 Session 加以判断。如果 Session 中的某些设置登录状态的变量是有效的，那就证明用户处于登录状态，此时返回登录之后才可以查看的网页内容，浏览器再进行解析便可以看到了。</p>
+<p>反之，如果传给服务器的 Cookies 是无效的，或者 Session 已经过期了，我们将不能继续访问页面，此时可能会收到错误的响应或者跳转到登录页面重新登录。</p>
+<p>所以，Cookies 和 Session 需要配合，一个处于客户端，一个处于服务端，二者共同协作，就实现了登录 Session 控制。</p>
+<h2 id="属性结构">属性结构</h2>
+<p>接下来，我们来看看 Cookies 都有哪些内容。这里以知乎为例，在浏览器开发者工具中打开 Application 选项卡，然后在左侧会有一个 Storage 部分，最后一项即为 Cookies，将其点开，如图所示，这些就是 Cookies。</p>
+<p>可以看到，这里有很多条目，其中每个条目可以称为 Cookie。它有如下几个属性。</p>
+<ul>
+<li>Name，即该 Cookie 的名称。Cookie 一旦创建，名称便不可更改。</li>
+<li>Value，即该 Cookie 的值。如果值为 Unicode 字符，需要为字符编码。如果值为二进制数据，则需要使用 BASE64 编码。</li>
+<li>Max Age，即该 Cookie 失效的时间，单位秒，也常和 Expires 一起使用，通过它可以计算出其有效时间。Max Age 如果为正数，则该 Cookie 在 Max Age 秒之后失效。如果为负数，则关闭浏览器时 Cookie 即失效，浏览器也不会以任何形式保存该 Cookie。</li>
+<li>Path，即该 Cookie 的使用路径。如果设置为 /path/，则只有路径为 /path/ 的页面可以访问该 Cookie。如果设置为 /，则本域名下的所有页面都可以访问该 Cookie。</li>
+<li>Domain，即可以访问该 Cookie 的域名。例如如果设置为 .zhihu.com，则所有以 zhihu.com，结尾的域名都可以访问该 Cookie。</li>
+<li>Size 字段，即此 Cookie 的大小。</li>
+<li>Http 字段，即 Cookie 的 httponly 属性。若此属性为 true，则只有在 HTTP Headers 中会带有此 Cookie 的信息，而不能通过 document.cookie 来访问此 Cookie。</li>
+<li>Secure，即该 Cookie 是否仅被使用安全协议传输。安全协议。安全协议有 HTTPS、SSL 等，在网络上传输数据之前先将数据加密。默认为 false。</li>
+</ul>
+<h2 id="会话-cookie-和持久-cookie">会话 Cookie 和持久 Cookie</h2>
+<p>从表面意思来说，会话 Cookie 就是把 Cookie 放在浏览器内存里，浏览器在关闭之后该 Cookie 即失效；持久 Cookie 则会保存到客户端的硬盘中，下次还可以继续使用，用于长久保持用户登录状态。</p>
+<p>其实严格来说，没有会话 Cookie 和持久 Cookie 之 分，只是由 Cookie 的 Max Age 或 Expires 字段决定了过期的时间。</p>
+<p>因此，一些持久化登录的网站其实就是把 Cookie 的有效时间和 Session 有效期设置得比较长，下次我们再访问页面时仍然携带之前的 Cookie，就可以直接保持登录状态。</p>
+<h2 id="常见误区">常见误区</h2>
+<p>在谈论 Session 机制的时候，常常听到这样一种误解 ——“只要关闭浏览器，Session 就消失了”。可以想象一下会员卡的例子，除非顾客主动对店家提出销卡，否则店家绝对不会轻易删除顾客的资料。对 Session 来说，也是一样，除非程序通知服务器删除一个 Session，否则服务器会一直保留。比如，程序一般都是在我们做注销操作时才去删除 Session。</p>
+<p>但是当我们关闭浏览器时，浏览器不会主动在关闭之前通知服务器它将要关闭，所以服务器根本不会有机会知道浏览器已经关闭。之所以会有这种错觉，是因为大部分网站都使用会话 Cookie 来保存 Session ID 信息，而关闭浏览器后 Cookies 就消失了，再次连接服务器时，也就无法找到原来的 Session 了。如果服务器设置的 Cookies 保存到硬盘上，或者使用某种手段改写浏览器发出的 HTTP 请求头，把原来的 Cookies 发送给服务器，则再次打开浏览器，仍然能够找到原来的 Session ID，依旧还是可以保持登录状态的。</p>
+<p>而且恰恰是由于关闭浏览器不会导致 Session 被删除，这就需要服务器为 Session 设置一个失效时间，当距离客户端上一次使用 Session 的时间超过这个失效时间时，服务器就可以认为客户端已经停止了活动，才会把 Session 删除以节省存储空间。</p>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          3359 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2021/2/sessioncookies/" class="leancloud_visitors" data-flag-title="基础探究，Session 与 Cookies">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#无状态-http">无状态 HTTP</a></li>
+    <li><a href="#session">Session</a></li>
+    <li><a href="#cookies">Cookies</a></li>
+    <li><a href="#session-维持">Session 维持</a></li>
+    <li><a href="#属性结构">属性结构</a></li>
+    <li><a href="#会话-cookie-和持久-cookie">会话 Cookie 和持久 Cookie</a></li>
+    <li><a href="#常见误区">常见误区</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&text=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&is_video=false&description=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&title=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&name=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies&description=%2a%e6%9c%ac%e7%af%87%e8%bd%ac%e8%87%aa%e6%8b%89%e5%8b%be%e6%95%99%e8%82%b2%e3%80%8a52%e8%ae%b2%e8%bd%bb%e6%9d%be%e6%90%9e%e5%ae%9a%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e3%80%8b%e4%bd%9c%e8%80%85%ef%bc%9a%e5%b4%94%e5%ba%86%e6%89%8d%20%e6%88%91%e4%bb%ac%e5%9c%a8%e6%b5%8f%e8%a7%88%e7%bd%91%e7%ab%99%e7%9a%84%e8%bf%87%e7%a8%8b%e4%b8%ad%ef%bc%8c%e7%bb%8f%e5%b8%b8%e4%bc%9a%e9%81%87%e5%88%b0%e9%9c%80%e8%a6%81%e7%99%bb%e5%bd%95%e7%9a%84%e6%83%85%e5%86%b5%ef%bc%8c%e8%80%8c%e6%9c%89%e4%ba%9b%e7%bd%91%e9%a1%b5%e5%8f%aa%e6%9c%89%e7%99%bb%e5%bd%95%e4%b9%8b%e5%90%8e%e6%89%8d%e5%8f%af%e4%bb%a5%e8%ae%bf%e9%97%ae%ef%bc%8c">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fsessioncookies%2f&t=%e5%9f%ba%e7%a1%80%e6%8e%a2%e7%a9%b6%ef%bc%8cSession%20%e4%b8%8e%20Cookies">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020-2021 
+    <span>❤ Billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

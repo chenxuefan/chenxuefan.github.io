@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title> 必知必会，掌握 HTTP 基本原理 | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="必知必会，掌握 HTTP 基本原理" />
+<meta property="og:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 本课时我们会详细讲解 HTTP 的基本原理，以及了解在浏览器中输入 URL 到获取网页内容之间发生了什" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/2/http/" />
+<meta property="article:published_time" content="2021-02-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-27T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="必知必会，掌握 HTTP 基本原理"/>
+<meta name="twitter:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 本课时我们会详细讲解 HTTP 的基本原理，以及了解在浏览器中输入 URL 到获取网页内容之间发生了什"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/note/rpa/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/posts/2021/2/web/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&text=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&is_video=false&description=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&name=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86&description=%2a%e6%9c%ac%e7%af%87%e8%bd%ac%e8%87%aa%e6%8b%89%e5%8b%be%e6%95%99%e8%82%b2%e3%80%8a52%e8%ae%b2%e8%bd%bb%e6%9d%be%e6%90%9e%e5%ae%9a%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e3%80%8b%e4%bd%9c%e8%80%85%ef%bc%9a%e5%b4%94%e5%ba%86%e6%89%8d%20%e6%9c%ac%e8%af%be%e6%97%b6%e6%88%91%e4%bb%ac%e4%bc%9a%e8%af%a6%e7%bb%86%e8%ae%b2%e8%a7%a3%20HTTP%20%e7%9a%84%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86%ef%bc%8c%e4%bb%a5%e5%8f%8a%e4%ba%86%e8%a7%a3%e5%9c%a8%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%ad%e8%be%93%e5%85%a5%20URL%20%e5%88%b0%e8%8e%b7%e5%8f%96%e7%bd%91%e9%a1%b5%e5%86%85%e5%ae%b9%e4%b9%8b%e9%97%b4%e5%8f%91%e7%94%9f%e4%ba%86%e4%bb%80">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&t=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#uri-和-url">URI 和 URL</a></li>
+    <li><a href="#超文本">超文本</a></li>
+    <li><a href="#http-和-https">HTTP 和 HTTPS</a></li>
+    <li><a href="#http-请求过程">HTTP 请求过程</a></li>
+    <li><a href="#请求">请求</a></li>
+    <li><a href="#请求方法">请求方法</a></li>
+    <li><a href="#请求头">请求头</a></li>
+    <li><a href="#请求体">请求体</a></li>
+    <li><a href="#响应">响应</a></li>
+    <li><a href="#响应状态码">响应状态码</a></li>
+    <li><a href="#响应体">响应体</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        必知必会，掌握 HTTP 基本原理
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
+<p>本课时我们会详细讲解 HTTP 的基本原理，以及了解在浏览器中输入 URL 到获取网页内容之间发生了什么。了解了这些内容，有助于我们进一步掌握爬虫的基本原理。</p>
+<h2 id="uri-和-url">URI 和 URL</h2>
+<p>首先，我们来了解一下 URI 和 URL，URI 的全称为 Uniform Resource Identifier，即统一资源标志符，URL 的全称为 Universal Resource Locator，即统一资源定位符。</p>
+<p>举例来说，https://github.com/favicon.ico，它是一个 URL，也是一个 URI。即有这样的一个图标资源，我们用 URL/URI 来唯一指定了它的访问方式，这其中包括了访问协议 HTTPS、访问路径（即根目录）和资源名称 favicon.ico。通过这样一个链接，我们便可以从互联网上找到这个资源，这就是 URL/URI。</p>
+<p>URL 是 URI 的子集，也就是说每个 URL 都是 URI，但不是每个 URI 都是 URL。那么，什么样的 URI 不是 URL 呢？URI 还包括一个子类叫作 URN，它的全称为 Universal Resource Name，即统一资源名称。</p>
+<p>URN 只命名资源而不指定如何定位资源，比如 urn:isbn:0451450523 指定了一本书的 ISBN，可以唯一标识这本书，但是没有指定到哪里定位这本书，这就是 URN。URL、URN 和 URI 的关系可以用图表示。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3401619663270_.pic.jpg" alt="3401619663270_.pic"></p>
+<p>但是在目前的互联网，URN 的使用非常少，几乎所有的 URI 都是 URL，所以一般的网页链接我们可以称之为 URL，也可以称之为 URI，我个人习惯称之为 URL。</p>
+<h2 id="超文本">超文本</h2>
+<p>接下来，我们再了解一个概念 —— 超文本，其英文名称叫作 Hypertext，我们在浏览器里看到的网页就是超文本解析而成的，其网页源代码是一系列 HTML 代码，里面包含了一系列标签，比如 img 显示图片，p 指定显示段落等。浏览器解析这些标签后，便形成了我们平常看到的网页，而网页的源代码 HTML 就可以称作超文本。</p>
+<p>例如，我们在 Chrome 浏览器里面打开任意一个页面，如淘宝首页，右击任一地方并选择 “检查” 项（或者直接按快捷键 F12），即可打开浏览器的开发者工具，这时在 Elements 选项卡即可看到当前网页的源代码，这些源代码都是超文本，如图所示。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3411619663292_.pic_hd.jpg" alt="3411619663292_.pic_hd"></p>
+<h2 id="http-和-https">HTTP 和 HTTPS</h2>
+<p>在淘宝的首页 <a href="https://www.taobao.com/">https://www.taobao.com/</a>中，URL 的开头会有 http 或 https，这个就是访问资源需要的协议类型，有时我们还会看到 ftp、sftp、smb 开头的 URL，那么这里的 ftp、sftp、smb 都是指的协议类型。在爬虫中，我们抓取的页面通常就是 http 或 https 协议的，我们在这里首先来了解一下这两个协议的含义。</p>
+<p>HTTP 的全称是 Hyper Text Transfer Protocol，中文名叫作超文本传输协议，HTTP 协议是用于从网络传输超文本数据到本地浏览器的传送协议，它能保证高效而准确地传送超文本文档。HTTP 由万维网协会（World Wide Web Consortium）和 Internet 工作小组 IETF（Internet Engineering Task Force）共同合作制定的规范，目前广泛使用的是 HTTP 1.1 版本。</p>
+<p>HTTPS 的全称是 Hyper Text Transfer Protocol over Secure Socket Layer，是以安全为目标的 HTTP 通道，简单讲是 HTTP 的安全版，即 HTTP 下加入 SSL 层，简称为 HTTPS。</p>
+<p>HTTPS 的安全基础是 SSL，因此通过它传输的内容都是经过 SSL 加密的，它的主要作用可以分为两种：</p>
+<ul>
+<li>建立一个信息安全通道，来保证数据传输的安全。</li>
+<li>确认网站的真实性，凡是使用了 HTTPS 的网站，都可以通过点击浏览器地址栏的锁头标志来查看网站认证之后的真实信息，也可以通过 CA 机构颁发的安全签章来查询。</li>
+</ul>
+<p>现在越来越多的网站和 App 都已经向 HTTPS 方向发展。例如：</p>
+<ul>
+<li>苹果公司强制所有 iOS App 在 2017 年 1 月 1 日 前全部改为使用 HTTPS 加密，否则 App 就无法在应用商店上架。</li>
+<li>谷歌从 2017 年 1 月推出的 Chrome 56 开始，对未进行 HTTPS 加密的网址链接亮出风险提示，即在地址栏的显著位置提醒用户 “此网页不安全”。</li>
+<li>腾讯微信小程序的官方需求文档要求后台使用 HTTPS 请求进行网络通信，不满足条件的域名和协议无法请求。
+因此，HTTPS 已经已经是大势所趋。</li>
+</ul>
+<h2 id="http-请求过程">HTTP 请求过程</h2>
+<p>我们在浏览器中输入一个 URL，回车之后便可以在浏览器中观察到页面内容。实际上，这个过程是浏览器向网站所在的服务器发送了一个请求，网站服务器接收到这个请求后进行处理和解析，然后返回对应的响应，接着传回给浏览器。响应里包含了页面的源代码等内容，浏览器再对其进行解析，便将网页呈现了出来，传输模型如图所示。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3451619663698_.pic.jpg" alt="3451619663698_.pic"></p>
+<p>此处客户端即代表我们自己的 PC 或手机浏览器，服务器即要访问的网站所在的服务器。</p>
+<p>为了更直观地说明这个过程，这里用 Chrome 浏览器的开发者模式下的 Network 监听组件来做下演示，它可以显示访问当前请求网页时发生的所有网络请求和响应。</p>
+<p>打开 Chrome 浏览器，右击并选择 “检查” 项，即可打开浏览器的开发者工具。这里访问百度 <a href="http://www.baidu.com/">http://www.baidu.com/</a>，输入该 URL 后回车，观察这个过程中发生了怎样的网络请求。可以看到，在 Network 页面下方出现了一个个的条目，其中一个条目就代表一次发送请求和接收响应的过程，如图所示。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3461619663806_.pic_hd.jpg" alt="3461619663806_.pic_hd"></p>
+<p>我们先观察第一个网络请求，即 <a href="http://www.baidu.com">www.baidu.com</a>，其中各列的含义如下。</p>
+<ul>
+<li>第一列 Name：请求的名称，一般会将 URL 的最后一部分内容当作名称。</li>
+<li>第二列 Status：响应的状态码，这里显示为 200，代表响应是正常的。通过状态码，我们可以判断发送了请求之后是否得到了正常的响应。</li>
+<li>第三列 Type：请求的文档类型。这里为 document，代表我们这次请求的是一个 HTML 文档，内容就是一些 HTML 代码。</li>
+<li>第四列 Initiator：请求源。用来标记请求是由哪个对象或进程发起的。</li>
+<li>第五列 Size：从服务器下载的文件和请求的资源大小。如果是从缓存中取得的资源，则该列会显示 from cache。</li>
+<li>第六列 Time：发起请求到获取响应所用的总时间。</li>
+<li>第七列 Waterfall：网络请求的可视化瀑布流。</li>
+</ul>
+<p>我们点击这个条目即可看到其更详细的信息，如图所示。</p>
+<p>首先是 General 部分，Request URL 为请求的 URL，Request Method 为请求的方法，Status Code 为响应状态码，Remote Address 为远程服务器的地址和端口，Referrer Policy 为 Referrer 判别策略。</p>
+<p>再继续往下，可以看到，有 Response Headers 和 Request Headers，这分别代表响应头和请求头。请求头里带有许多请求信息，例如浏览器标识、Cookies、Host 等信息，这是请求的一部分，服务器会根据请求头内的信息判断请求是否合法，进而作出对应的响应。图中看到的 Response Headers 就是响应的一部分，例如其中包含了服务器的类型、文档类型、日期等信息，浏览器接受到响应后，会解析响应内容，进而呈现网页内容。</p>
+<p>下面我们分别来介绍一下请求和响应都包含哪些内容。</p>
+<h2 id="请求">请求</h2>
+<p>请求，由客户端向服务端发出，可以分为 4 部分内容：</p>
+<ul>
+<li>请求方法（Request Method）</li>
+<li>请求的网址（Request URL）</li>
+<li>请求头（Request Headers）</li>
+<li>请求体（Request Body）</li>
+</ul>
+<h2 id="请求方法">请求方法</h2>
+<p>常见的请求方法有两种：GET 和 POST。</p>
+<p>在浏览器中直接输入 URL 并回车，这便发起了一个 GET 请求，请求的参数会直接包含到 URL 里。例如，在百度中搜索 Python，这就是一个 GET 请求，链接为 <a href="https://www.baidu.com/s?wd=Python">https://www.baidu.com/s?wd=Python</a>，其中 URL 中包含了请求的参数信息，这里参数 wd 表示要搜寻的关键字。POST 请求大多在表单提交时发起。比如，对于一个登录表单，输入用户名和密码后，点击 “登录” 按钮，这通常会发起一个 POST 请求，其数据通常以表单的形式传输，而不会体现在 URL 中。</p>
+<p>GET 和 POST 请求方法有如下区别。</p>
+<ul>
+<li>GET 请求中的参数包含在 URL 里面，数据可以在 URL 中看到，而 POST 请求的 URL 不会包含这些数据，数据都是通过表单形式传输的，会包含在请求体中。</li>
+<li>GET 请求提交的数据最多只有 1024 字节，而 POST 请求没有限制。
+一般来说，登录时，需要提交用户名和密码，其中包含了敏感信息，使用 GET 方式请求的话，密码就会暴露在 URL 里面，造成密码泄露，所以这里最好以 POST 方式发送。上传文件时，由于文件内容比较大，也会选用 POST 方式。</li>
+</ul>
+<p>我们平常遇到的绝大部分请求都是 GET 或 POST 请求，另外还有一些请求方法，如 HEAD、PUT、DELETE、OPTIONS、CONNECT、TRACE 等，我们简单将其总结为下表。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3471619663926_.pic_hd.jpg" alt="3471619663926_.pic_hd"></p>
+<p>请求的网址本表参考：http://www.runoob.com/http/http-methods.html。</p>
+<p>请求的网址，即统一资源定位符 URL，它可以唯一确定我们想请求的资源。</p>
+<h2 id="请求头">请求头</h2>
+<p>请求头，用来说明服务器要使用的附加信息，比较重要的信息有 Cookie、Referer、User-Agent 等。下面简要说明一些常用的头信息。</p>
+<ul>
+<li>Accept：请求报头域，用于指定客户端可接受哪些类型的信息。</li>
+<li>Accept-Language：指定客户端可接受的语言类型。</li>
+<li>Accept-Encoding：指定客户端可接受的内容编码。</li>
+<li>Host：用于指定请求资源的主机 IP 和端口号，其内容为请求 URL 的原始服务器或网关的位置。从 HTTP 1.1 版本开始，请求必须包含此内容。</li>
+<li>Cookie：也常用复数形式 Cookies，这是网站为了辨别用户进行会话跟踪而存储在用户本地的数据。它的主要功能是维持当前访问会话。例如，我们输入用户名和密码成功登录某个网站后，服务器会用会话保存登录状态信息，后面我们每次刷新或请求该站点的其他页面时，会发现都是登录状态，这就是 Cookies 的功劳。Cookies 里有信息标识了我们所对应的服务器的会话，每次浏览器在请求该站点的页面时，都会在请求头中加上 Cookies 并将其发送给服务器，服务器通过 Cookies 识别出是我们自己，并且查出当前状态是登录状态，所以返回结果就是登录之后才能看到的网页内容。</li>
+<li>Referer：此内容用来标识这个请求是从哪个页面发过来的，服务器可以拿到这一信息并做相应的处理，如做来源统计、防盗链处理等。</li>
+<li>User-Agent：简称 UA，它是一个特殊的字符串头，可以使服务器识别客户使用的操作系统及版本、浏览器及版本等信息。在做爬虫时加上此信息，可以伪装为浏览器；如果不加，很可能会被识别出为爬虫。</li>
+<li>Content-Type：也叫互联网媒体类型（Internet Media Type）或者 MIME 类型，在 HTTP 协议消息头中，它用来表示具体请求中的媒体类型信息。例如，text/html 代表 HTML 格式，image/gif 代表 GIF 图片，application/json 代表 JSON 类型，更多对应关系可以查看此对照表：http://tool.oschina.net/commons。</li>
+</ul>
+<p>因此，请求头是请求的重要组成部分，在写爬虫时，大部分情况下都需要设定请求头。</p>
+<h2 id="请求体">请求体</h2>
+<p>请求体一般承载的内容是 POST 请求中的表单数据，而对于 GET 请求，请求体则为空。</p>
+<p>例如，这里我登录 GitHub 时捕获到的请求和响应如图所示。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3481619663952_.pic_hd.jpg" alt="3481619663952_.pic_hd"></p>
+<p>登录之前，我们填写了用户名和密码信息，提交时这些内容就会以表单数据的形式提交给服务器，此时需要注意 Request Headers 中指定 Content-Type 为 application/x-www-form-urlencoded。只有设置 Content-Type 为 application/x-www-form-urlencoded，才会以表单数据的形式提交。另外，我们也可以将 Content-Type 设置为 application/json 来提交 JSON 数据，或者设置为 multipart/form-data 来上传文件。</p>
+<p>表格中列出了 Content-Type 和 POST 提交数据方式的关系。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3491619663963_.pic.jpg" alt="3491619663963_.pic"></p>
+<p>在爬虫中，如果要构造 POST 请求，需要使用正确的 Content-Type，并了解各种请求库的各个参数设置时使用的是哪种 Content-Type，不然可能会导致 POST 提交后无法正常响应。</p>
+<h2 id="响应">响应</h2>
+<p>响应，由服务端返回给客户端，可以分为三部分：响应状态码（Response Status Code）、响应头（Response Headers）和响应体（Response Body）。</p>
+<h2 id="响应状态码">响应状态码</h2>
+<p>响应状态码表示服务器的响应状态，如 200 代表服务器正常响应，404 代表页面未找到，500 代表服务器内部发生错误。在爬虫中，我们可以根据状态码来判断服务器响应状态，如状态码为 200，则证明成功返回数据，再进行进一步的处理，否则直接忽略。下表列出了常见的错误代码及错误原因。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3501619663985_.pic_hd.jpg" alt="3501619663985_.pic_hd"></p>
+<p>响应头包含了服务器对请求的应答信息，如 Content-Type、Server、Set-Cookie 等。下面简要说明一些常用的响应头信息。</p>
+<ul>
+<li>Date：标识响应产生的时间。</li>
+<li>Last-Modified：指定资源的最后修改时间。</li>
+<li>Content-Encoding：指定响应内容的编码。</li>
+<li>Server：包含服务器的信息，比如名称、版本号等。</li>
+<li>Content-Type：文档类型，指定返回的数据类型是什么，如 text/html 代表返回 HTML 文档，application/x-javascript 则代表返回 JavaScript 文件，image/jpeg 则代表返回图片。</li>
+<li>Set-Cookie：设置 Cookies。响应头中的 Set-Cookie 告诉浏览器需要将此内容放在 Cookies 中，下次请求携带 Cookies 请求。</li>
+<li>Expires：指定响应的过期时间，可以使代理服务器或浏览器将加载的内容更新到缓存中。如果再次访问时，就可以直接从缓存中加载，降低服务器负载，缩短加载时间。</li>
+</ul>
+<h2 id="响应体">响应体</h2>
+<p>最重要的当属响应体的内容了。响应的正文数据都在响应体中，比如请求网页时，它的响应体就是网页的 HTML 代码；请求一张图片时，它的响应体就是图片的二进制数据。我们做爬虫请求网页后，要解析的内容就是响应体，如图所示。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3511619664130_.pic_hd.jpg" alt="3511619664130_.pic_hd"></p>
+<p>在浏览器开发者工具中点击 Preview，就可以看到网页的源代码，也就是响应体的内容，它是解析的目标。</p>
+<p>在做爬虫时，我们主要通过响应体得到网页的源代码、JSON 数据等，然后从中做相应内容的提取。</p>
+<p>好了，今天的内容就全部讲完了，本课时中，我们了解了 HTTP 的基本原理，大概了解了访问网页时背后的请求和响应过程。本课时涉及的知识点需要好好掌握，后面分析网页请求时会经常用到。</p>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          5353 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2021/2/http/" class="leancloud_visitors" data-flag-title="必知必会，掌握 HTTP 基本原理">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#uri-和-url">URI 和 URL</a></li>
+    <li><a href="#超文本">超文本</a></li>
+    <li><a href="#http-和-https">HTTP 和 HTTPS</a></li>
+    <li><a href="#http-请求过程">HTTP 请求过程</a></li>
+    <li><a href="#请求">请求</a></li>
+    <li><a href="#请求方法">请求方法</a></li>
+    <li><a href="#请求头">请求头</a></li>
+    <li><a href="#请求体">请求体</a></li>
+    <li><a href="#响应">响应</a></li>
+    <li><a href="#响应状态码">响应状态码</a></li>
+    <li><a href="#响应体">响应体</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&text=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&is_video=false&description=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&title=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&name=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86&description=%2a%e6%9c%ac%e7%af%87%e8%bd%ac%e8%87%aa%e6%8b%89%e5%8b%be%e6%95%99%e8%82%b2%e3%80%8a52%e8%ae%b2%e8%bd%bb%e6%9d%be%e6%90%9e%e5%ae%9a%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e3%80%8b%e4%bd%9c%e8%80%85%ef%bc%9a%e5%b4%94%e5%ba%86%e6%89%8d%20%e6%9c%ac%e8%af%be%e6%97%b6%e6%88%91%e4%bb%ac%e4%bc%9a%e8%af%a6%e7%bb%86%e8%ae%b2%e8%a7%a3%20HTTP%20%e7%9a%84%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86%ef%bc%8c%e4%bb%a5%e5%8f%8a%e4%ba%86%e8%a7%a3%e5%9c%a8%e6%b5%8f%e8%a7%88%e5%99%a8%e4%b8%ad%e8%be%93%e5%85%a5%20URL%20%e5%88%b0%e8%8e%b7%e5%8f%96%e7%bd%91%e9%a1%b5%e5%86%85%e5%ae%b9%e4%b9%8b%e9%97%b4%e5%8f%91%e7%94%9f%e4%ba%86%e4%bb%80">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fhttp%2f&t=%e5%bf%85%e7%9f%a5%e5%bf%85%e4%bc%9a%ef%bc%8c%e6%8e%8c%e6%8f%a1%20HTTP%20%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020-2021 
+    <span>❤ Billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
