@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python学习笔记 | 异常处理</title>
       <link>https://billie52707.cn/posts/2021/4/python-error/</link>
-      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/4/python-error/</guid>
       <description>什么是异常 异常就是程序运行时发生错误的信号（在程序出现错误时，则会产生一个异常，若程序没有处理它，则会抛出该异常，程序的运行也随之终止）。 异</description>
@@ -99,6 +99,15 @@
     </item>
     
     <item>
+      <title>慢</title>
+      <link>https://billie52707.cn/posts/2021/3/march-shoot/</link>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/3/march-shoot/</guid>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1831838499\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) /小家/ /阳台盛开的第一朵月季，奶黄色/ /仙</description>
+    </item>
+    
+    <item>
       <title>原理探究，了解爬虫的基本原理</title>
       <link>https://billie52707.cn/posts/2021/2/principle/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
@@ -167,7 +176,7 @@
       <pubDate>Thu, 31 Dec 2020 02:30:10 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/2020/</guid>
-      <description>2020，注定是不平凡的一年。 ———— 我在去年的「NCP」疫情项目的README文档中这样写🍞 我始终坚信，一个意志足够坚定的人，是不会被外部</description>
+      <description>2020，注定是不平凡的一年。 ———— 我在去年的「NCP」疫情项目的README文档中这样写🍞 我始终坚信，一个意志足够坚定的人，是不会被外界</description>
     </item>
     
     <item>
