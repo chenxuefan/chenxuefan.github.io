@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | wordcloud</title>
+      <link>https://billie52707.cn/posts/2021/5/python-wordcloud/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-wordcloud/</guid>
+      <description>今天是五一假期的第一天，学一点有意思的东西！ 数据分析领域经常会用到统计与展示的功能需求，数据的展示方式，传统的有统计图之类，但稍显古板，对于</description>
+    </item>
+    
     <item>
       <title>python学习笔记 | 异常处理</title>
       <link>https://billie52707.cn/posts/2021/4/python-error/</link>

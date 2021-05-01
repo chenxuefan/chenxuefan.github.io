@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 29 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | wordcloud</title>
+      <link>https://billie52707.cn/posts/2021/5/python-wordcloud/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-wordcloud/</guid>
+      <description>今天是五一假期的第一天，学一点有意思的东西！ 数据分析领域经常会用到统计与展示的功能需求，数据的展示方式，传统的有统计图之类，但稍显古板，对于</description>
+    </item>
+    
     <item>
       <title>python学习笔记 | 异常处理</title>
       <link>https://billie52707.cn/posts/2021/4/python-error/</link>
@@ -42,6 +51,15 @@
       
       <guid>https://billie52707.cn/note/docker3/</guid>
       <description>why docker-compose? 为什么需要用到编排工具？ 当我们的业务越来越复杂时，需要多个容器相互配合，甚至需要多个主机组成容器集群才能满足我们的业务需求，这个时候就需</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 迭代器&amp;生成器</title>
+      <link>https://billie52707.cn/posts/2021/4/python-iterator-generator/</link>
+      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/python-iterator-generator/</guid>
+      <description>迭代器（iterator） 迭代器是访问集合元素的一种方式。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不</description>
     </item>
     
     <item>
@@ -90,12 +108,30 @@
     </item>
     
     <item>
+      <title>python学习笔记 | 一次使用装饰器时引发的思考</title>
+      <link>https://billie52707.cn/posts/2021/4/python-decorator-return/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/python-decorator-return/</guid>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1444648358\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言 今天使用装饰器时，遇到这样一个错误： 根据</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | os</title>
       <link>https://billie52707.cn/posts/2021/4/pytohn-os/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/4/pytohn-os/</guid>
       <description>os os.remove(path) 删除文件 os.removedirs(path) 删除空文件夹 os.mkdir(dirname) - 新建文件夹 os.rmdir(path) - 删除空文件夹 os.rename(a,b) - 重命名 os.listdir(path) - 返回路径下所有的文件及文件夹 os.system(&amp;quot;ls&amp;quot;) - 运行shell命令 os.path os.path.getatime(path) 最近访问时间（时</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 装饰器</title>
+      <link>https://billie52707.cn/posts/2021/4/python-decorator/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/4/python-decorator/</guid>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 id=\u0022\nneteasemusic\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1832613147\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言 1. 如何理解Python装饰器？ 装饰器本</description>
     </item>
     
     <item>
