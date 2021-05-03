@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="「Linux」学习笔记" />
-<meta property="og:description" content="常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 常用命令 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 常见报错解决 VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行" />
+<meta property="og:description" content="常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 常用命令 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/note/linux/" />
 <meta property="article:published_time" content="2020-03-17T20:54:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「Linux」学习笔记"/>
-<meta name="twitter:description" content="常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 常用命令 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 常见报错解决 VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行"/>
+<meta name="twitter:description" content="常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 常用命令 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户，"/>
 
   
   
@@ -191,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&name=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e5%b8%b8%e7%94%a8%e5%b7%a5%e5%85%b7%20vim%20-%20https%3a%2f%2fblog.csdn.net%2fdylwx_2005%2farticle%2fdetails%2f92765194%20%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%20%e6%89%b9%e9%87%8f%e5%a4%84%e7%90%86%e6%96%87%e4%bb%b6%20-%20%e4%be%8b%e5%88%a0%e9%99%a4%e6%89%80%e6%9c%89%e6%9f%a5%e8%af%a2%e5%88%b0%e6%96%87%e4%bb%b6%20sudo%20rm%20%60find%20.%2f%20-name%201632bcde-a71e-11eb-aa89-02420a000121.pdf%60%20%e5%b8%b8%e8%a7%81%e6%8a%a5%e9%94%99%e8%a7%a3%e5%86%b3%20VMWare%e8%99%9a%e6%8b%9f%e6%9c%ba%e6%8f%90%e7%a4%ba%ef%bc%9a%e9%94%81%e5%ae%9a%e6%96%87%e4%bb%b6%e5%a4%b1%e8%b4%a5%ef%bc%8c%e6%89%93%e4%b8%8d%e5%bc%80%e7%a3%81%e7%9b%98%20%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%9c%a8%e8%bf%90%e8%a1%8c">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&name=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e5%b8%b8%e7%94%a8%e5%b7%a5%e5%85%b7%20vim%20-%20https%3a%2f%2fblog.csdn.net%2fdylwx_2005%2farticle%2fdetails%2f92765194%20%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%20%e6%89%b9%e9%87%8f%e5%a4%84%e7%90%86%e6%96%87%e4%bb%b6%20-%20%e4%be%8b%e5%88%a0%e9%99%a4%e6%89%80%e6%9c%89%e6%9f%a5%e8%af%a2%e5%88%b0%e6%96%87%e4%bb%b6%20sudo%20rm%20%60find%20.%2f%20-name%201632bcde-a71e-11eb-aa89-02420a000121.pdf%60%20%e5%88%a0%e9%99%a4%e6%96%87%e4%bb%b6%e5%a4%b9%20-%20rm%20-rf%20dirname%20-r%20-%20%e9%80%92%e5%bd%92%e5%9c%b0%e5%88%a0%e9%99%a4%e5%8f%82%e6%95%b0%e8%a1%a8%e4%b8%ad%e7%9a%84%e7%9b%ae%e5%bd%95%e5%8f%8a%e5%85%b6%e5%ad%90%e7%9b%ae%e5%bd%95%20-f%20-%20%e4%b8%8d%e6%8f%90%e7%a4%ba%e7%94%a8%e6%88%b7%ef%bc%8c">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -290,6 +290,14 @@ if (!doNotTrack) {
 <p>批量处理文件 - 例删除所有查询到文件</p>
 <pre><code>sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf`
 </code></pre></li>
+<li>
+<p>删除文件夹 - <code>rm -rf dirname</code></p>
+<ul>
+<li><code>-r</code> - 递归地删除参数表中的目录及其子目录</li>
+<li><code>-f</code> - 不提示用户，删除目录下的所有文件</li>
+<li><code>-i</code> - 交互模式，使用这个选项，在删除文件前提示用户确认</li>
+</ul>
+</li>
 </ul>
 <h2 id="常见报错解决">常见报错解决</h2>
 <h3 id="vmware虚拟机提示锁定文件失败打不开磁盘">VMWare虚拟机提示：锁定文件失败，打不开磁盘</h3>
@@ -414,7 +422,7 @@ apt-get install pkg-config
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          509 字
+          581 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -547,7 +555,7 @@ apt-get install pkg-config
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&name=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e5%b8%b8%e7%94%a8%e5%b7%a5%e5%85%b7%20vim%20-%20https%3a%2f%2fblog.csdn.net%2fdylwx_2005%2farticle%2fdetails%2f92765194%20%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%20%e6%89%b9%e9%87%8f%e5%a4%84%e7%90%86%e6%96%87%e4%bb%b6%20-%20%e4%be%8b%e5%88%a0%e9%99%a4%e6%89%80%e6%9c%89%e6%9f%a5%e8%af%a2%e5%88%b0%e6%96%87%e4%bb%b6%20sudo%20rm%20%60find%20.%2f%20-name%201632bcde-a71e-11eb-aa89-02420a000121.pdf%60%20%e5%b8%b8%e8%a7%81%e6%8a%a5%e9%94%99%e8%a7%a3%e5%86%b3%20VMWare%e8%99%9a%e6%8b%9f%e6%9c%ba%e6%8f%90%e7%a4%ba%ef%bc%9a%e9%94%81%e5%ae%9a%e6%96%87%e4%bb%b6%e5%a4%b1%e8%b4%a5%ef%bc%8c%e6%89%93%e4%b8%8d%e5%bc%80%e7%a3%81%e7%9b%98%20%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%9c%a8%e8%bf%90%e8%a1%8c">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2flinux%2f&name=%e3%80%8cLinux%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e5%b8%b8%e7%94%a8%e5%b7%a5%e5%85%b7%20vim%20-%20https%3a%2f%2fblog.csdn.net%2fdylwx_2005%2farticle%2fdetails%2f92765194%20%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%20%e6%89%b9%e9%87%8f%e5%a4%84%e7%90%86%e6%96%87%e4%bb%b6%20-%20%e4%be%8b%e5%88%a0%e9%99%a4%e6%89%80%e6%9c%89%e6%9f%a5%e8%af%a2%e5%88%b0%e6%96%87%e4%bb%b6%20sudo%20rm%20%60find%20.%2f%20-name%201632bcde-a71e-11eb-aa89-02420a000121.pdf%60%20%e5%88%a0%e9%99%a4%e6%96%87%e4%bb%b6%e5%a4%b9%20-%20rm%20-rf%20dirname%20-r%20-%20%e9%80%92%e5%bd%92%e5%9c%b0%e5%88%a0%e9%99%a4%e5%8f%82%e6%95%b0%e8%a1%a8%e4%b8%ad%e7%9a%84%e7%9b%ae%e5%bd%95%e5%8f%8a%e5%85%b6%e5%ad%90%e7%9b%ae%e5%bd%95%20-f%20-%20%e4%b8%8d%e6%8f%90%e7%a4%ba%e7%94%a8%e6%88%b7%ef%bc%8c">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

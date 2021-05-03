@@ -54,15 +54,6 @@
     </item>
     
     <item>
-      <title>「沃尔玛-美洲文件批量上传」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/maersk/walmart-america-swb-upload-readme/</link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/data-grand/maersk/walmart-america-swb-upload-readme/</guid>
-      <description>注意点 稳定性 细节逻辑的处理 开发流程 1. 读取Excel 2. RPA上传文件 3. 上传错误情况的审查</description>
-    </item>
-    
-    <item>
       <title>大厂求索记</title>
       <link>https://billie52707.cn/draft/burn_them_all/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>

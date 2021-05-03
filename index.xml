@@ -144,15 +144,6 @@
     </item>
     
     <item>
-      <title>「沃尔玛-美洲文件批量上传」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/maersk/walmart-america-swb-upload-readme/</link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/data-grand/maersk/walmart-america-swb-upload-readme/</guid>
-      <description>注意点 稳定性 细节逻辑的处理 开发流程 1. 读取Excel 2. RPA上传文件 3. 上传错误情况的审查</description>
-    </item>
-    
-    <item>
       <title>python学习笔记 | 一次使用装饰器时引发的思考</title>
       <link>https://billie52707.cn/posts/2021/4/python-decorator-return/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
@@ -1103,7 +1094,7 @@
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/linux/</guid>
-      <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 常用命令 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 常见报错解决 VMWare虚拟机提示：锁定文件失败，打不开磁盘 虚拟机在运行</description>
+      <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 常用命令 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户，</description>
     </item>
     
     <item>

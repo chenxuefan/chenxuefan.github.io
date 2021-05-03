@@ -209,7 +209,8 @@ if (!doNotTrack) {
     <li><a href="#关于docker">关于docker</a>
       <ul>
         <li><a href="#why-docker">why docker？</a></li>
-        <li><a href="#几个核心概念">几个核心概念</a></li>
+        <li><a href="#docker架构">docker架构</a></li>
+        <li><a href="#四大核心概念">四大核心概念</a></li>
         <li><a href="#开发人员和生产环境为什么要使用-docker">开发人员和生产环境为什么要使用 Docker?</a></li>
         <li><a href="#感言">感言</a></li>
       </ul>
@@ -231,11 +232,16 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#容器的基本操作">容器的基本操作</a></li>
         <li><a href="#详细参数解析">详细参数解析</a></li>
-        <li><a href="#容器的导出导入操作">容器的导出导入操作</a></li>
-        <li><a href="#容器与宿主机互传文件">容器与宿主机互传文件</a></li>
+        <li><a href="#1创建并启动容器">（1）创建并启动容器</a></li>
+        <li><a href="#2终止容器">（2）终止容器</a></li>
+        <li><a href="#3进入容器">（3）进入容器</a></li>
+        <li><a href="#4删除容器">（4）删除容器</a></li>
+        <li><a href="#5导出导入容器">（5）导出导入容器</a></li>
+        <li><a href="#6容器与宿主机互传文件">（6）容器与宿主机互传文件</a></li>
+        <li><a href="#7给已存在的容器添加或修改端口映射">（7）给已存在的容器添加或修改端口映射</a></li>
       </ul>
     </li>
-    <li><a href="#仓库registry管理">仓库（registry）管理</a></li>
+    <li><a href="#仓库repository管理">仓库（repository）管理</a></li>
     <li><a href="#网络管理">网络管理</a></li>
     <li><a href="#坑儿们">坑儿们</a></li>
     <li><a href="#后记">后记</a></li>
@@ -304,39 +310,55 @@ if (!doNotTrack) {
       <h2 id="关于docker">关于docker</h2>
 <h3 id="why-docker">why docker？</h3>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1_JUOITpaBdlrMP9D__-K5Fw.png" alt="1_JUOITpaBdlrMP9D__-K5Fw"></p>
-<p>Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的Linux或Windows机器上，从而实现虚拟化应用，docker这扇窗打开后就相当于另一个github。容器是完全使用沙箱机制，容器之间不会有任何接口。
-Docker采用C/S架构，其组成为:</p>
+<p>Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的Linux或Windows机器上，从而实现虚拟化应用，docker这扇窗打开后就相当于另一个github。容器是完全使用沙箱机制，容器之间不会有任何接口。</p>
+<h3 id="docker架构">docker架构</h3>
+<p>*<strong>转自拉勾教育《由浅入深吃透Docker》</strong></p>
+<p>在了解 Docker 架构前，我先说下相关的背景知识——容器的发展史。</p>
+<p>容器技术随着 Docker 的出现变得炙手可热，所有公司都在积极拥抱容器技术。此时市场上除了有 Docker 容器，还有很多其他的容器技术，比如 CoreOS 的 rkt、lxc 等。容器技术百花齐放是好事，但也出现了很多问题。比如容器技术的标准到底是什么？容器标准应该由谁来制定？</p>
+<p>也许你可能会说， Docker 已经成为了事实标准，把 Docker 作为容器技术的标准不就好了？事实并没有想象的那么简单。因为那时候不仅有容器标准之争，编排技术之争也十分激烈。当时的编排技术有三大主力，分别是 Docker Swarm、Kubernetes 和 Mesos 。Swarm 毋庸置疑，肯定愿意把 Docker 作为唯一的容器运行时，但是 Kubernetes 和 Mesos 就不同意了，因为它们不希望调度的形式过度单一。</p>
+<p>在这样的背景下，最终爆发了容器大战，OCI也正是在这样的背景下应运而生。</p>
+<p>OCI全称为开放容器标准（Open Container Initiative），它是一个轻量级、开放的治理结构。OCI组织在 Linux 基金会的大力支持下，于 2015 年 6 月份正式注册成立。基金会旨在为用户围绕工业化容器的格式和镜像运行时，制定一个开放的容器标准。目前主要有两个标准文档：容器运行时标准 （runtime spec）和容器镜像标准（image spec）。</p>
+<p>正是由于容器的战争，才导致 Docker 不得不在战争中改变一些技术架构。最终形成了下图所示的技术架构。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3711619923682_.pic.jpg" alt="Ciqc1F9PYtCAC1GSAADIK4E6wrc368">/<em>Docker 架构图</em>/</p>
+<p>我们可以看到，Docker 整体架构采用 C/S（客户端 / 服务器）模式，主要由客户端和服务端两大部分组成。客户端负责发送操作指令，服务端负责接收和处理指令。客户端和服务端通信有多种方式，既可以在同一台机器上通过UNIX套接字通信，也可以通过网络连接远程通信。</p>
 <ol>
-<li>Docker Client 客户端</li>
-<li>Docker Daemon 守护进程，即服务器端</li>
-<li>Docker Image 镜像</li>
-<li>Docker Container 容器</li>
+<li>
+<p><code>Docker Client</code> - 客户端</p>
+<p>Docker 客户端其实是一种泛称。其中 docker 命令是 Docker 用户与 Docker 服务端交互的主要方式。除了使用 docker 命令的方式，还可以使用直接请求 REST API 的方式与 Docker 服务端交互，甚至还可以使用各种语言的 SDK 与 Docker 服务端交互。目前社区维护着 Go、Java、Python、PHP 等数十种语言的 SDK，足以满足你的日常需求。</p>
+</li>
+<li>
+<p><code>Docker Daemon</code> - 守护进程，即服务器端</p>
+<p>Docker 服务端是 Docker 所有后台服务的统称。其中 dockerd 是一个非常重要的后台管理进程，它负责响应和处理来自 Docker 客户端的请求，然后将客户端的请求转化为 Docker 的具体操作。例如镜像、容器、网络和挂载卷等具体对象的操作和管理。</p>
+<p>Docker 从诞生到现在，服务端经历了多次架构重构。起初，服务端的组件是全部集成在 docker 二进制里。但是从 1.11 版本开始， dockerd 已经成了独立的二进制，此时的容器也不是直接由 dockerd 来启动了，而是集成了 containerd、runC 等多个组件。</p>
+<p>虽然 Docker 的架构在不停重构，但是各个模块的基本功能和定位并没有变化。它和一般的 C/S 架构系统一样，Docker 服务端模块负责和 Docker 客户端交互，并管理 Docker 的容器、镜像、网络等资源。</p>
+</li>
 </ol>
-<h3 id="几个核心概念">几个核心概念</h3>
+<h3 id="四大核心概念">四大核心概念</h3>
 <ol>
-<li><code>Docker Daemon</code>(守护进程)：Docker Daemon是运行在宿主机( DOCKER&ndash;HOST)的后台进程,可通过 Docker客户端与之通信。</li>
-<li><code>Docker Client</code>(客户端)：Docker Client是Docker的用户界面,它可以接受用户令和配置标识,并与 Docker daemon通信</li>
-<li><code>Docker Images</code>(镜像)：Docker Images是一个只读模板,它包含创建 Docker容器的说明。它和系统安装光盘有点像(或者面向对象中的类),使用系统安装光盘可以安装系统,同理,使用 Docker镜像可以运行 Docker镜像中的程序</li>
-<li><code>Docker Container</code>(容器)：Docker Container是镜像的可运行实例(面向对象中的实例化对象)镜像和容器的关系有点类似于面向对象中,类和对象的关系。可通过 Docker API或者CL命令来启停、移动、删除容器</li>
-<li><code>Docker Registry</code>(仓库)：Docker Registry是一个集中存储与分发镜像的服务，相当于一个仓库。镜像构建完成后，可以很容易的在当前宿主机上运行，但是，<strong>如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务</strong>，Docker Registry 就是这样的服务。此时可借助 Docker Registry来免镜像的手动复制,一个 Docker Registry包含多个Docker仓库,每个仓库可包含多个镜像标签,每个标签TAGS对应一个 Docker镜像,每个标签都有一个d号这跟 Maven的仓库有点类似,如果把 Docker Registry比作Maven仓库的话,那么 Docker仓库就可理解为某jar包的路径,而镜像标签则可解为jar包的版本号。Docker Registry可分为公有 Docker Registry和私有Docker Registry。最常用的 Docker Registry是官网的Docker Hub,这也是默认的 Docker Registry。Docker Hub上存放若大量优秀的镜像,可使用 Docker命令下载并使用</li>
+<li><strong><code>Docker Images</code>(镜像)</strong>：Docker Images是一个只读模板,它包含创建 Docker容器的说明。它和系统安装光盘有点像(或者面向对象中的类),使用系统安装光盘可以安装系统,同理,使用 Docker镜像可以运行 Docker镜像中的程序</li>
+<li><strong><code>Docker Container</code>(容器)</strong>：Docker Container是镜像的可运行实例(面向对象中的实例化对象)镜像和容器的关系有点类似于面向对象中,类和对象的关系。可通过 Docker API或者CL命令来启停、移动、删除容器</li>
+<li><strong><code>Docker Repository</code>(仓库)</strong>：Docker 的镜像仓库类似于代码仓库，用来存储和分发 Docker 镜像。镜像仓库分为公共镜像仓库和私有镜像仓库。镜像构建完成后，可以很容易的在当前宿主机上运行，但是，<strong>如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务</strong>，这时候就用到了仓库。目前，Docker Hub 是 Docker 官方的公开镜像仓库，它不仅有很多应用或者操作系统的官方镜像，还有很多组织或者个人开发的镜像供我们免费存放、下载、研究和使用。除了公开镜像仓库，你也可以构建自己的私有镜像仓库</li>
+<li><strong><code>Docker Registry</code>(注册服务器)</strong>：Docker Registry是一个「集中存储」与「分发镜像」的服务，相当于一个仓库。注册服务器是存放仓库的实际服务器，而仓库则可以被理解为一个具体的项目或者目录；注册服务器可以包含很多个仓库，每个仓库又可以包含多个镜像。Docker Registry可分为公有 Docker Registry和私有Docker Registry。最常用的 Docker Registry是官网的<a href="https://hub.docker.com/">Docker Hub</a>,这也是默认的 Docker Registry。Docker Hub上存放若大量优秀的镜像,可使用 Docker命令下载并使用</li>
 </ol>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200829225002743.png" alt="image-20200829225002743">/<em>关系图</em>/</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/3731619947187_.pic.jpg" alt="3731619947187_.pic">/<em>镜像、容器、仓库</em>/</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Registry%EF%BC%89.svg" alt="注册服务器（Registry）">/<em>registry、repository、image</em>/</p>
 <h3 id="开发人员和生产环境为什么要使用-docker">开发人员和生产环境为什么要使用 Docker?</h3>
-<p>作为一种新兴的虚拟化方式, Docker跟传统的虚拟化方式相比具有众多的优势。</p>
+<p>作为一种新兴的虚拟化方式，Docker跟传统的虚拟化方式相比具有众多的优势。</p>
 <ol>
-<li>Docker容器的启动可以在秒级实现,这相比传统的虚拟机方式要快得多</li>
-<li>Docker对系统资源的利用率很高,一台主机上可同时运行数千个 Docker容器</li>
-<li>容器除了运行其中应用外,基本不消耗额外的系统资源,使得应用的性能很高,同时系统的开销小,比虚拟机节省内存,启动更快</li>
-<li>传统虚拟机方式运行10个不同的应用就要起10个虚拟机,而 Docker只需要启动10个隔离的应用即可,快速部署,安全运行,<strong>不污染系统</strong></li>
+<li>Docker容器的启动可以在秒级实现，这相比传统的虚拟机方式要快得多</li>
+<li>Docker对系统资源的利用率很高，一台主机上可同时运行数千个 Docker容器</li>
+<li>容器除了运行其中应用外，基本不消耗额外的系统资源,使得应用的性能很高，同时系统的开销小，比虚拟机节省内存，启动更快</li>
+<li>传统虚拟机方式运行10个不同的应用就要起10个虚拟机，而 Docker只需要启动10个隔离的应用即可，快速部署，安全运行，<strong>不污染系统</strong></li>
 </ol>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1*XBDzH8kPBzO5oW492NdLDg.png" alt="1*XBDzH8kPBzO5oW492NdLDg">/<em>docker与虚拟机的区别</em>/</p>
 <h3 id="感言">感言</h3>
 <ul>
 <li>Docker的架构很有魅力，拥有类似于虚拟机性质的隔离机制，但并不是严格意义上的虚拟机。以前我们是一条小船运一个集装箱的货物，现在可以把N个集装箱扔到一条大货轮上。每个容器（集装箱）共用宿主机（货轮）的内核（运载力），Docker file文件就像是每个集装箱中的货物清单和说明书，Docker compose软件就像装卸一系列集装箱的流程和标准</li>
 <li>用了Docker方才觉得生产环境终于有了该有的样子，就像集装箱普及之后，大型货轮的价值才逐渐体现出来。</li>
-<li>为了生产的编程就应该搭积木式的架构，开箱即用，隔离清晰，高复用，低耦合。</li>
+<li>为了生产的编程就应该拥抱搭积木式的架构，开箱即用，隔离清晰，高复用，低耦合。</li>
 </ul>
-<p><strong>总结</strong>：如果你也觉得虚拟机太笨重了，那么docker就是它的不二替代品!</p>
+<p><strong>总结</strong>：如果你也觉得虚拟机太笨重了，那么docker就是它的不二替代品! 🤥</p>
 <h2 id="docker的安装">docker的安装</h2>
 <h3 id="1-centos">1. CentOS</h3>
 <ul>
@@ -392,7 +414,11 @@ systemctl start/stop/restart docker
 <tbody>
 <tr>
 <td>查看本地镜像</td>
-<td>docker images</td>
+<td>docker images (ls)</td>
+</tr>
+<tr>
+<td>查找镜像</td>
+<td>docker search image_name</td>
 </tr>
 <tr>
 <td>拉取镜像</td>
@@ -407,8 +433,8 @@ systemctl start/stop/restart docker
 <td>docker rmi image_name/image_id</td>
 </tr>
 <tr>
-<td>查找镜像</td>
-<td>docker search image_name</td>
+<td>重命名镜像</td>
+<td>docker tag image_name</td>
 </tr>
 <tr>
 <td>运行镜像（交互方式）</td>
@@ -501,17 +527,6 @@ systemctl start/stop/restart docker
 </tbody>
 </table>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200915015741572.png" alt="image-20200915015337406">/<em>关系图</em>/</p>
-<p>通过<code>docker create</code>命令生成的容器状态为初建状态，初建状态通过<code>docker start</code>命令可以转化为运行状态，运行状态的容器可以通过<code>docker stop</code>命令转化为停止状态，处于停止状态的容器可以通过<code>docker start</code>转化为运行状态，运行状态的容器也可以通过<code>docker pause</code>命令转化为暂停状态，处于暂停状态的容器可以通过<code>docker unpause</code>转化为运行状态 。处于初建状态、运行状态、停止状态、暂停状态的容器都可以直接删除.</p>
-<p>容器启动有两种方式：</p>
-<ol>
-<li>使用<code>docker start</code>命令基于已经创建好的容器直接启动</li>
-<li>使用<code>docker run</code>命令直接基于镜像新建一个容器并启动，相当于先执行<code>docker create</code>命令从镜像创建容器，然后再执行<code>docker start</code>命令启动容器</li>
-</ol>
-<p>ps：</p>
-<ul>
-<li>ctrl+d 退出容器且关闭</li>
-<li>ctrl+p+q 退出容器但不关闭</li>
-</ul>
 <h3 id="详细参数解析">详细参数解析</h3>
 <table>
 <thead>
@@ -651,6 +666,12 @@ systemctl start/stop/restart docker
 </tr>
 </tbody>
 </table>
+<h3 id="1创建并启动容器">（1）创建并启动容器</h3>
+<p>两种方式：</p>
+<ol>
+<li>
+<p><code>docker create ...</code> + <code>docker start ...</code></p>
+<p>创建容器，启动容器。</p>
 <p>例:   <strong>创建Ubuntu容器</strong>:<code>docker create -it --name=ubuntu16 ubuntu:16.04</code></p>
 <ul>
 <li>
@@ -658,10 +679,38 @@ systemctl start/stop/restart docker
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201028135035471.png" alt="image-20201028135035471"></p>
 </li>
 <li>
-<p><code>ubuntu:16.04</code>:这是使用到的镜像,需指定版本号,如不指定版本号,则默认选取latest版本的镜像</p>
+<p><code>-i</code> - 打开STDIN</p>
 </li>
 <li>
-<p><code>--name=ubuntu16</code>:为创建的容器命名为ubuntu16,注意是两个<code>--</code></p>
+<p><code>-t</code> - 分配一个伪终端，同时使用 -it 参数可以让我们进入交互模式</p>
+</li>
+<li>
+<p><code>ubuntu:16.04</code> - 这是使用到的镜像,需指定版本号,如不指定版本号,则默认选取latest版本的镜像</p>
+</li>
+<li>
+<p><code>--name=ubuntu16</code> - 为创建的容器命名为ubuntu16,注意是两个<code>--</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>docker run ...</code></p>
+<p>使用<code>docker run</code>命令直接基于镜像新建一个容器并启动，一气呵成。相当于先执行<code>docker create</code>命令从镜像创建容器，然后再执行<code>docker start</code>命令启动容器。</p>
+<p>当使用docker run创建并启动容器时，Docker 后台执行的流程为：</p>
+<ul>
+<li>
+<p>Docker 会检查本地是否存在镜像，如不存在则从 Docker Hub 拉取镜像</p>
+</li>
+<li>
+<p>使用镜像创建一个容器</p>
+</li>
+<li>
+<p>分配文件系统，并且在镜像只读层外创建一个读写层</p>
+</li>
+<li>
+<p>从 Docker IP 池中分配一个 IP 给容器</p>
+</li>
+<li>
+<p>执行启动命令运行镜像</p>
 </li>
 </ul>
 <p>例：<strong>运行nginx容器</strong>：<code>docker run --name mynginx -p 8080:80 -d nginx</code></p>
@@ -671,13 +720,35 @@ systemctl start/stop/restart docker
 <li><code>-d</code>：设置容器在后台一直运行</li>
 <li><code>nginx</code>：使用的镜像</li>
 </ul>
+</li>
+</ol>
+<h3 id="2终止容器">（2）终止容器</h3>
+<p><code>docker stop name/ID</code></p>
+<h3 id="3进入容器">（3）进入容器</h3>
+<p>处于运行状态的容器可以通过docker attach、docker exec、nsenter等多种方式进入容器。</p>
+<ul>
+<li>
+<p><code>docker attach name</code> - 不够灵活，通常使用exec方法进入容器</p>
+</li>
+<li>
+<p><code>docker exec ... </code></p>
 <p>例：<strong>进入命名为myubuntu的容器</strong>：<code>docker exec -it myubuntu  -d  /bin/bash</code></p>
 <ul>
 <li><code>-i</code>：保持STDIN打开</li>
 <li><code>-t</code>：分配一个伪终端</li>
 <li><code>-d</code>：分离模式（在后台运行）</li>
 </ul>
-<h3 id="容器的导出导入操作">容器的导出导入操作</h3>
+</li>
+</ul>
+<p>需要退出容器的时候可以执行以下操作：</p>
+<ul>
+<li>exit</li>
+<li>ctrl+d 退出容器且关闭</li>
+<li>ctrl+p+q 退出容器但不关闭</li>
+</ul>
+<h3 id="4删除容器">（4）删除容器</h3>
+<p>如果要删除一个停止状态的容器，可以使用<code>docker rm</code>命令删除。如果要删除正在运行中的容器，必须添加 <code>-f (或 --force) </code>参数， Docker 会发送 SIGKILL 信号强制终止正在运行的容器。</p>
+<h3 id="5导出导入容器">（5）导出导入容器</h3>
 <h4 id="1-导出容器">1. 导出容器</h4>
 <p>我们可以使用<code>docker export CONTAINER</code>命令导出一个容器到文件，不管此时该容器是否处于运行中的状态。执行以下命令后会在当前文件夹下生成 busybox.tar 文件，我们可以将该文件拷贝到其他机器上，通过导入命令实现容器的迁移。</p>
 <pre><code>docker export busybox &gt; busybox.tar
@@ -687,7 +758,7 @@ systemctl start/stop/restart docker
 <p>首先，使用<code>docker import</code>命令导入上一步导出的容器</p>
 <pre><code>docker import busybox.tar busybox:test
 </code></pre><p>此时，busybox.tar 被导入成为新的镜像，镜像名称为 busybox:test</p>
-<h3 id="容器与宿主机互传文件">容器与宿主机互传文件</h3>
+<h3 id="6容器与宿主机互传文件">（6）容器与宿主机互传文件</h3>
 <p>首先确定docker容器的<strong>container_id</strong>或<strong>容器命名</strong>,可以使用<code>docker ps -a </code>或<code>docker images -a</code>查看</p>
 <ul>
 <li>
@@ -701,7 +772,23 @@ systemctl start/stop/restart docker
 <p>例如：<code>docker cp E:\PHP\configure.txt 4a2f08d2c1f8:/data1/configure.txt</code></p>
 </li>
 </ul>
-<h2 id="仓库registry管理">仓库（registry）管理</h2>
+<h3 id="7给已存在的容器添加或修改端口映射">（7）给已存在的容器添加或修改端口映射</h3>
+<ol>
+<li>新建容器时，使用docker run命令创建并运行一个容器，如需要添加端口映射则可以通过 -p 参数进行设置，如<code>docker run -it --name my_nginx -p 8080:80 -d nginx</code>，即可将宿主机的8080端口与容器的80端口进行映射。</li>
+<li>容器已创建时，如若需要给予容器以更多的端口映射，则可以通过修改容器配置文件的方式进行修改。</li>
+</ol>
+<p>配置文件路径：<code>/var/lib/docker/containers/[hash_of_the_container]/hostconfig.json</code></p>
+<ul>
+<li>
+<p><code>hash_of_the_container</code> - 可通过<code>docker inspect name/ID</code>查看该容器的&quot;Id&quot;值，id 就是 容器的 hash 数值。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210503143157721.png" alt="image-20210503143157721"></p>
+</li>
+<li>
+<p><code>hostconfig.json</code> -</p>
+<p>在 <code>hostconfig.json</code> 里有 <code>&quot;PortBindings&quot;:{}</code> 这个配置项，可以改成 <code>&quot;PortBindings&quot;:{&quot;80/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]}</code> 这里 80 是容器端口， 8080 是本地端口</p>
+</li>
+</ul>
+<h2 id="仓库repository管理">仓库（repository）管理</h2>
 <h2 id="网络管理">网络管理</h2>
 <ul>
 <li>
@@ -715,15 +802,19 @@ systemctl start/stop/restart docker
 </ul>
 <h2 id="坑儿们">坑儿们</h2>
 <ul>
-<li><code>-bash: docker-machine: command not found</code>（macOS）</li>
-</ul>
+<li>
+<p><code>-bash: docker-machine: command not found</code>（macOS）</p>
 <pre><code>base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp;
   curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/usr/local/bin/docker-machine &amp;&amp;
   chmod +x /usr/local/bin/docker-machine
-</code></pre><ul>
+</code></pre></li>
 <li>
 <p><code>Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/create?fromImage=hello-world&amp;tag=latest: dial unix /var/run/docker.sock: connect: permission denied</code></p>
 <p><a href="https://blog.csdn.net/u011337602/article/details/104541261">https://blog.csdn.net/u011337602/article/details/104541261</a></p>
+</li>
+<li>
+<p><code>Warning: Stopping docker.service, but it can still be activated by: docker.socket</code></p>
+<p>执行<code>systemctl stop docker</code>命令之后会出现如上提示，主要的意思就是dockers已经停止了，但是呢可以随时被唤醒，所以才能使用docker命令启动docker。</p>
 </li>
 </ul>
 <h2 id="后记">后记</h2>
@@ -774,7 +865,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4855 字
+          6466 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -834,7 +925,8 @@ systemctl start/stop/restart docker
     <li><a href="#关于docker">关于docker</a>
       <ul>
         <li><a href="#why-docker">why docker？</a></li>
-        <li><a href="#几个核心概念">几个核心概念</a></li>
+        <li><a href="#docker架构">docker架构</a></li>
+        <li><a href="#四大核心概念">四大核心概念</a></li>
         <li><a href="#开发人员和生产环境为什么要使用-docker">开发人员和生产环境为什么要使用 Docker?</a></li>
         <li><a href="#感言">感言</a></li>
       </ul>
@@ -856,11 +948,16 @@ systemctl start/stop/restart docker
       <ul>
         <li><a href="#容器的基本操作">容器的基本操作</a></li>
         <li><a href="#详细参数解析">详细参数解析</a></li>
-        <li><a href="#容器的导出导入操作">容器的导出导入操作</a></li>
-        <li><a href="#容器与宿主机互传文件">容器与宿主机互传文件</a></li>
+        <li><a href="#1创建并启动容器">（1）创建并启动容器</a></li>
+        <li><a href="#2终止容器">（2）终止容器</a></li>
+        <li><a href="#3进入容器">（3）进入容器</a></li>
+        <li><a href="#4删除容器">（4）删除容器</a></li>
+        <li><a href="#5导出导入容器">（5）导出导入容器</a></li>
+        <li><a href="#6容器与宿主机互传文件">（6）容器与宿主机互传文件</a></li>
+        <li><a href="#7给已存在的容器添加或修改端口映射">（7）给已存在的容器添加或修改端口映射</a></li>
       </ul>
     </li>
-    <li><a href="#仓库registry管理">仓库（registry）管理</a></li>
+    <li><a href="#仓库repository管理">仓库（repository）管理</a></li>
     <li><a href="#网络管理">网络管理</a></li>
     <li><a href="#坑儿们">坑儿们</a></li>
     <li><a href="#后记">后记</a></li>
