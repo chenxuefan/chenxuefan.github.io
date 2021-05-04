@@ -1235,7 +1235,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/nginx/</guid>
-      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx # 杀死所有nginx进程 安装 yum install nginx nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</description>
+      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx # 杀死所有nginx进程 相关文件位置 /usr/sbin/nginx #主程序 /etc/nginx #存放配置文件 /usr/share/nginx #存放静态文件 /var/log/nginx #存放日志 安装</description>
     </item>
     
     <item>
