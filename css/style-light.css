@@ -1642,13 +1642,9 @@ code {
     height: 200px
 }
 
-/**/
-@media screen and (max-width: 500px) {
-    #mainimg{
-      /*主页图片移动端适应*/
-      img{max-width:100%;height:auto} 
-  }
-}
+/*主页图片移动端适应*/
+img{max-width:100%;height:auto} 
+
 
 
   
