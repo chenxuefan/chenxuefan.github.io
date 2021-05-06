@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | requests</title>
+      <link>https://billie52707.cn/posts/2021/5/python-requests/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-requests/</guid>
+      <description>官方文档 - https://docs.python-requests.org/zh_CN/latest/ Requests: 让 HTTP 服务人类 快速上手 https://docs.python-requests.org/zh_CN/latest/user/quickstart.html （1）发送请求 request(method, url, **kwargs) get(url, params=None, **kwargs) options(url, **kwargs) head(url, **kwargs) post(url, data=None, json=None, **kwargs) put(url, data=None, **kwargs) patch(url, data=None, **kwargs) delete(url, **kwargs) r = requests.put(&amp;#39;http://httpbin.org/put&amp;#39;, data = {&amp;#39;key&amp;#39;:&amp;#39;value&amp;#39;}) r = requests.delete(&amp;#39;http://httpbin.org/delete&amp;#39;) r = requests.head(&amp;#39;http://httpbin.org/get&amp;#39;) r = requests.options(&amp;#39;http://httpbin.org/get&amp;#39;) （2）请求参数 params</description>
+    </item>
+    
     <item>
       <title>python模块详解 | wordcloud</title>
       <link>https://billie52707.cn/posts/2021/5/python-wordcloud/</link>

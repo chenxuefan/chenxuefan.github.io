@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title> python模块详解 | requests | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="python模块详解 | requests" />
+<meta property="og:description" content="官方文档 - https://docs.python-requests.org/zh_CN/latest/ Requests: 让 HTTP 服务人类 快速上手 https://docs.python-requests.org/zh_CN/latest/user/quickstart.html （1）发送请求 request(method, url, **kwargs) get(url, params=None, **kwargs) options(url, **kwargs) head(url, **kwargs) post(url, data=None, json=None, **kwargs) put(url, data=None, **kwargs) patch(url, data=None, **kwargs) delete(url, **kwargs) r = requests.put(&#39;http://httpbin.org/put&#39;, data = {&#39;key&#39;:&#39;value&#39;}) r = requests.delete(&#39;http://httpbin.org/delete&#39;) r = requests.head(&#39;http://httpbin.org/get&#39;) r = requests.options(&#39;http://httpbin.org/get&#39;) （2）请求参数 params" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-requests/" />
+<meta property="article:published_time" content="2021-05-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-06T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python模块详解 | requests"/>
+<meta name="twitter:description" content="官方文档 - https://docs.python-requests.org/zh_CN/latest/ Requests: 让 HTTP 服务人类 快速上手 https://docs.python-requests.org/zh_CN/latest/user/quickstart.html （1）发送请求 request(method, url, **kwargs) get(url, params=None, **kwargs) options(url, **kwargs) head(url, **kwargs) post(url, data=None, json=None, **kwargs) put(url, data=None, **kwargs) patch(url, data=None, **kwargs) delete(url, **kwargs) r = requests.put(&#39;http://httpbin.org/put&#39;, data = {&#39;key&#39;:&#39;value&#39;}) r = requests.delete(&#39;http://httpbin.org/delete&#39;) r = requests.head(&#39;http://httpbin.org/get&#39;) r = requests.options(&#39;http://httpbin.org/get&#39;) （2）请求参数 params"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/draft/python-threading/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python-requests.org%2fzh_CN%2flatest%2f%20Requests%3a%20%e8%ae%a9%20HTTP%20%e6%9c%8d%e5%8a%a1%e4%ba%ba%e7%b1%bb%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%20https%3a%2f%2fdocs.python-requests.org%2fzh_CN%2flatest%2fuser%2fquickstart.html%20%ef%bc%881%ef%bc%89%e5%8f%91%e9%80%81%e8%af%b7%e6%b1%82%20request%28method%2c%20url%2c%20%2a%2akwargs%29%20get%28url%2c%20params%3dNone%2c%20%2a%2akwargs%29%20options%28url%2c%20%2a%2akwargs%29%20head%28url%2c%20%2a%2akwargs%29%20post%28url%2c%20data%3dNone%2c%20json%3dNone%2c%20%2a%2akwargs%29%20put%28url%2c%20data%3dNone%2c%20%2a%2akwargs%29%20patch%28url%2c%20data%3dNone%2c%20%2a%2akwargs%29%20delete%28url%2c%20%2a%2akwargs%29%20r%20%3d%20requests.put%28%26%2339%3bhttp%3a%2f%2fhttpbin.org%2fput%26%2339%3b%2c%20data%20%3d%20%7b%26%2339%3bkey%26%2339%3b%3a%26%2339%3bvalue%26%2339%3b%7d%29%20r%20%3d%20requests.delete%28%26%2339%3bhttp%3a%2f%2fhttpbin.org%2fdelete%26%2339%3b%29%20r%20%3d%20requests.head%28%26%2339%3bhttp%3a%2f%2fhttpbin.org%2fget%26%2339%3b%29%20r%20%3d%20requests.options%28%26%2339%3bhttp%3a%2f%2fhttpbin.org%2fget%26%2339%3b%29%20%ef%bc%882%ef%bc%89%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0%20params">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#快速上手">快速上手</a>
+      <ul>
+        <li><a href="#1发送请求">（1）发送请求</a></li>
+        <li><a href="#2请求参数">（2）请求参数</a></li>
+        <li><a href="#3响应内容">（3）响应内容</a></li>
+      </ul>
+    </li>
+    <li><a href="#高级用法">高级用法</a>
+      <ul>
+        <li><a href="#1会话对象">（1）会话对象</a></li>
+        <li><a href="#2ssl证书验证">（2）SSL证书验证</a></li>
+        <li><a href="#代理">代理</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        python模块详解 | requests
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2021-05-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-06</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>官方文档 -  <a href="https://docs.python-requests.org/zh_CN/latest/">https://docs.python-requests.org/zh_CN/latest/</a></p>
+<blockquote>
+<p>Requests: 让 HTTP 服务人类</p>
+</blockquote>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/WechatIMG376(%E5%B7%B2%E5%8E%BB%E5%BA%95)%20(1).jpeg" alt="WechatIMG376(已去底) (1)"></p>
+<h2 id="快速上手">快速上手</h2>
+<p><a href="https://docs.python-requests.org/zh_CN/latest/user/quickstart.html">https://docs.python-requests.org/zh_CN/latest/user/quickstart.html</a></p>
+<h3 id="1发送请求">（1）发送请求</h3>
+<ul>
+<li><code>request(method, url, **kwargs)</code></li>
+<li><code>get(url, params=None, **kwargs)</code></li>
+<li><code>options(url, **kwargs)</code></li>
+<li><code>head(url, **kwargs)</code></li>
+<li><code>post(url, data=None, json=None, **kwargs)</code></li>
+<li><code>put(url, data=None, **kwargs)</code></li>
+<li><code>patch(url, data=None, **kwargs)</code></li>
+<li><code>delete(url, **kwargs)</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>put(<span style="color:#e6db74">&#39;http://httpbin.org/put&#39;</span>, data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>})
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#39;http://httpbin.org/delete&#39;</span>)
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>head(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>options(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
+</code></pre></div><h3 id="2请求参数">（2）请求参数</h3>
+<ol>
+<li>
+<p><em><strong>params</strong></em></p>
+<p>发送get请求时，若想在不修改URL的内容的情况下添加URL参数，可将params参数添加到请求之中。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>, params<span style="color:#f92672">=</span>params)
+</code></pre></div><p><code>r.url</code>打印得到此时的URL：</p>
+<pre><code>Out[4]: 'http://httpbin.org/get?key=value'
+</code></pre></li>
+<li>
+<p><em><strong>headers</strong></em></p>
+<p>如果你想为请求添加 HTTP 头部，只要简单地传递一个 <code>dict</code> 给 <code>headers</code> 参数就可以了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://api.github.com/some/endpoint&#39;</span>
+headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;user-agent&#39;</span>: <span style="color:#e6db74">&#39;my-app/0.0.1&#39;</span>}
+   
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, headers<span style="color:#f92672">=</span>headers)
+</code></pre></div></li>
+<li>
+<p><em><strong>data</strong></em></p>
+<p>通常，你想要发送一些编码为表单形式的数据——非常像一个 HTML 表单。要实现这个，只需简单地传递一个「字典」给 data 参数。你的数据字典在发出请求时会自动编码为表单形式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key1&#39;</span>: <span style="color:#e6db74">&#39;value1&#39;</span>, <span style="color:#e6db74">&#39;key2&#39;</span>: <span style="color:#e6db74">&#39;value2&#39;</span>}
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;http://httpbin.org/post&#39;</span>,data<span style="color:#f92672">=</span>data)
+</code></pre></div><p>除了传递一个字典，还可以传递一个「元祖列表」给data参数。在表单中多个元素使用同一 key 的时候，这种方式尤其有效：</p>
+<pre><code>&gt;&gt;&gt; payload = (('key1', 'value1'), ('key1', 'value2'))
+&gt;&gt;&gt; r = requests.post('http://httpbin.org/post', data=payload)
+&gt;&gt;&gt; print(r.text)
+{
+  ...
+  &quot;form&quot;: {
+    &quot;key1&quot;: [
+      &quot;value1&quot;,
+      &quot;value2&quot;
+    ]
+  },
+  ...
+}
+</code></pre></li>
+<li>
+<p><em><strong>cookies</strong></em></p>
+</li>
+<li>
+<p><em><strong>timeout</strong></em></p>
+<p>你可以告诉 requests 在经过以 <code>timeout</code> 参数设定的秒数时间之后停止等待响应。基本上所有的生产代码都应该使用这一参数。如果不使用，你的程序可能会永远失去响应：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://github.com&#39;</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">0.001</span>)
+</code></pre></div><p><code>timeout</code> 仅对连接过程有效，与响应体的下载无关。 <code>timeout</code> 并不是整个下载响应的时间限制，而是如果服务器在 <code>timeout</code> 秒内没有应答，将会引发一个异常（更精确地说，是在 <code>timeout</code> 秒内没有从基础套接字上接收到任何字节的数据时）If no timeout is specified explicitly, requests do not time out.</p>
+</li>
+</ol>
+<h3 id="3响应内容">（3）响应内容</h3>
+<ol>
+<li>
+<p><em><strong>text</strong></em> - 返回请求响应体的文档树</p>
+</li>
+<li>
+<p><em><strong>encoding</strong></em></p>
+<p><code>r.encoding</code>返回当前的编码格式，如需修改编码格式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r<span style="color:#f92672">.</span>encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf-8&#39;</span>
+</code></pre></div></li>
+<li>
+<p><em><strong>content</strong></em></p>
+<p>对于非文本请求，你也能以字节的方式访问请求响应体（二进制响应内容），比如图片格式的响应体</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.billie52707.cn/pic/main.png&#39;</span>)
+r<span style="color:#f92672">.</span>content
+</code></pre></div></li>
+<li>
+<p><em><strong>json()</strong></em></p>
+<p>如果 JSON 解码失败， <code>r.json()</code> 就会抛出一个异常: <code>ValueError: No JSON object could be decoded</code> 。需要注意的是，成功调用 <code>r.json()</code> 并<strong>不</strong>意味着响应的成功。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.billie52707.cn/pic/main.png&#39;</span>)
+r<span style="color:#f92672">.</span>json() 
+</code></pre></div></li>
+<li>
+<p><em><strong>raw</strong></em></p>
+<p>在罕见的情况下，你可能想获取来自服务器的原始套接字响应，那么你可以访问 <code>r.raw</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://api.github.com/events&#39;</span>, stream<span style="color:#f92672">=</span>True)
+r<span style="color:#f92672">.</span>raw
+</code></pre></div></li>
+<li>
+<p><em><strong>status_code</strong></em> - 响应状态码</p>
+<p>Requests还附带了一个内置的状态码查询对象<code>requests.codes</code>，其中包含各个状态码，如<code>requests.codes.ok</code>或<code>requests.codes.okay</code>表示请求成功，状态码为200</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
+<span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> requests<span style="color:#f92672">.</span>codes<span style="color:#f92672">.</span>ok:
+  <span style="color:#66d9ef">continue</span>
+</code></pre></div><p>如果发送了一个错误请求(一个 4XX 客户端错误，或者 5XX 服务器错误响应)，我们可以通过 <a href="https://docs.python-requests.org/zh_CN/latest/api.html#requests.Response.raise_for_status"><code>Response.raise_for_status()</code></a> 来抛出异常：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>:
+  r<span style="color:#f92672">.</span>raise_for_status()
+</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210506164931511.png" alt="image-20210506164931511"></p>
+</li>
+<li>
+<p><em><strong>headers</strong></em> - 响应头</p>
+<p><code>r.headers</code>返回字典类型的服务器响应头，还比较特殊：它是仅为 HTTP 头部而生的。根据 <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC 2616</a>， HTTP 头部是大小写不敏感的。</p>
+<p>因此，我们可以使用任意大写形式来访问这些响应头字段：</p>
+<pre><code>&gt;&gt;&gt; r.headers['Content-Type']
+'application/json'
+   
+&gt;&gt;&gt; r.headers.get('content-type')
+'application/json'
+</code></pre></li>
+<li>
+<p><em><strong>cookies</strong></em></p>
+<p>Cookie 的返回对象为 <a href="https://docs.python-requests.org/zh_CN/latest/api.html#requests.cookies.RequestsCookieJar"><code>RequestsCookieJar</code></a>，它的行为和字典类似，但接口更为完整，适合跨域名跨路径使用。</p>
+<pre><code>&gt;&gt;&gt; url = 'http://example.com/some/cookie/setting/url'
+&gt;&gt;&gt; r = requests.get(url)
+&gt;&gt;&gt; r.cookies
+Out[29]: &lt;RequestsCookieJar[]&gt;
+</code></pre></li>
+</ol>
+<h2 id="高级用法">高级用法</h2>
+<p><a href="https://docs.python-requests.org/zh_CN/latest/user/advanced.html#advanceda">https://docs.python-requests.org/zh_CN/latest/user/advanced.html#advanced</a></p>
+<h3 id="1会话对象">（1）会话对象</h3>
+<p>session</p>
+<h3 id="2ssl证书验证">（2）SSL证书验证</h3>
+<h3 id="代理">代理</h3>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          1097 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2021-05-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-06</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2021/5/python-requests/" class="leancloud_visitors" data-flag-title="python模块详解 | requests">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#快速上手">快速上手</a>
+      <ul>
+        <li><a href="#1发送请求">（1）发送请求</a></li>
+        <li><a href="#2请求参数">（2）请求参数</a></li>
+        <li><a href="#3响应内容">（3）响应内容</a></li>
+      </ul>
+    </li>
+    <li><a href="#高级用法">高级用法</a>
+      <ul>
+        <li><a href="#1会话对象">（1）会话对象</a></li>
+        <li><a href="#2ssl证书验证">（2）SSL证书验证</a></li>
+        <li><a href="#代理">代理</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python-requests.org%2fzh_CN%2flatest%2f%20Requests%3a%20%e8%ae%a9%20HTTP%20%e6%9c%8d%e5%8a%a1%e4%ba%ba%e7%b1%bb%20%e5%bf%ab%e9%80%9f%e4%b8%8a%e6%89%8b%20https%3a%2f%2fdocs.python-requests.org%2fzh_CN%2flatest%2fuser%2fquickstart.html%20%ef%bc%881%ef%bc%89%e5%8f%91%e9%80%81%e8%af%b7%e6%b1%82%20request%28method%2c%20url%2c%20%2a%2akwargs%29%20get%28url%2c%20params%3dNone%2c%20%2a%2akwargs%29%20options%28url%2c%20%2a%2akwargs%29%20head%28url%2c%20%2a%2akwargs%29%20post%28url%2c%20data%3dNone%2c%20json%3dNone%2c%20%2a%2akwargs%29%20put%28url%2c%20data%3dNone%2c%20%2a%2akwargs%29%20patch%28url%2c%20data%3dNone%2c%20%2a%2akwargs%29%20delete%28url%2c%20%2a%2akwargs%29%20r%20%3d%20requests.put%28%26%2339%3bhttp%3a%2f%2fhttpbin.org%2fput%26%2339%3b%2c%20data%20%3d%20%7b%26%2339%3bkey%26%2339%3b%3a%26%2339%3bvalue%26%2339%3b%7d%29%20r%20%3d%20requests.delete%28%26%2339%3bhttp%3a%2f%2fhttpbin.org%2fdelete%26%2339%3b%29%20r%20%3d%20requests.head%28%26%2339%3bhttp%3a%2f%2fhttpbin.org%2fget%26%2339%3b%29%20r%20%3d%20requests.options%28%26%2339%3bhttp%3a%2f%2fhttpbin.org%2fget%26%2339%3b%29%20%ef%bc%882%ef%bc%89%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0%20params">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-requests%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20requests">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020-2021 
+    <span>❤ Billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
