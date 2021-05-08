@@ -45,12 +45,12 @@
     </item>
     
     <item>
-      <title>「rpa」学习笔记</title>
+      <title>「rpa」学习笔记 | 使用手册</title>
       <link>https://billie52707.cn/note/rpa/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/rpa/</guid>
-      <description>前言 达观人，达观魂 😎 使用手册 浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的</description>
+      <description>浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的方法 rpa_brower.max_window() # 最大化浏览器 rpa_brower.min_window() # 最小</description>
     </item>
     
     <item>
