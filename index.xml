@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 06 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「广电计量」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</guid>
+      <description>需求分析 流水表（分公司/总部） 资金表（分公司/总部） 计量资金计划表（分公司/总部） 资金收支情况表（总部） 流程设计 开发日志 2021.05.07 今日任务 熟悉业务流</description>
+    </item>
+    
     <item>
       <title>python模块详解 | requests</title>
       <link>https://billie52707.cn/posts/2021/5/python-requests/</link>
@@ -24,6 +33,15 @@
       
       <guid>https://billie52707.cn/draft/python-threading/</guid>
       <description>官方文档 - https://docs.python.org/zh-cn/3/library/threading.html</description>
+    </item>
+    
+    <item>
+      <title>我用什么才能留住你</title>
+      <link>https://billie52707.cn/posts/2021/5/how-can-i/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/how-can-i/</guid>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1483391358\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 我用什么才能留住你？ 我给你瘦弱的街道、绝望的</description>
     </item>
     
     <item>
@@ -203,7 +221,7 @@
       <pubDate>Sun, 28 Mar 2021 01:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/3/python-openpyxl/</guid>
-      <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list wb.remove(sheetname) 2. 工作表的使用 ## 设置工作表</description>
+      <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list wb.remove(sheetname) 2. 工作表的使用 ## 创建工作表</description>
     </item>
     
     <item>
@@ -298,11 +316,11 @@
     
     <item>
       <title>「马士基」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/maersk/maersk/</link>
+      <link>https://billie52707.cn/draft/data-grand/maersk/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/maersk/maersk/</guid>
-      <description>收获与感悟 开发日志 年前（2021.01.25-02.08） 开发部分 登录网站与文件下载 RPA操作Excel 测试部分 测试全局代码的稳定性和异常情</description>
+      <guid>https://billie52707.cn/draft/data-grand/maersk/</guid>
+      <description>收获与感悟 学习总结 python 常用模块 rpa、selenium、openpyxl、os、logging、xpath、requests 其他 装饰器、迭代器</description>
     </item>
     
     <item>
