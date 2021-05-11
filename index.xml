@@ -14,7 +14,7 @@
       <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</guid>
-      <description>需求分析 流水表（分公司/总部） 资金表（分公司/总部） 计量资金计划表（分公司/总部） 资金收支情况表（总部） 流程设计 开发日志 2021.05.07 今日任务 熟悉业务流</description>
+      <description>需求分析 流水表（分公司/总部） 需求细节：复制整张sheet，至资金表的对应日期sheet页 使用方法：rpa.excel.copy_sheet</description>
     </item>
     
     <item>

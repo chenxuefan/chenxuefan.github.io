@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="「广电计量」项目开发文档" />
-<meta property="og:description" content="需求分析 流水表（分公司/总部） 资金表（分公司/总部） 计量资金计划表（分公司/总部） 资金收支情况表（总部） 流程设计 开发日志 2021.05.07 今日任务 熟悉业务流" />
+<meta property="og:description" content="需求分析 流水表（分公司/总部） 需求细节：复制整张sheet，至资金表的对应日期sheet页 使用方法：rpa.excel.copy_sheet" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/" />
 <meta property="article:published_time" content="2021-05-07T00:00:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「广电计量」项目开发文档"/>
-<meta name="twitter:description" content="需求分析 流水表（分公司/总部） 资金表（分公司/总部） 计量资金计划表（分公司/总部） 资金收支情况表（总部） 流程设计 开发日志 2021.05.07 今日任务 熟悉业务流"/>
+<meta name="twitter:description" content="需求分析 流水表（分公司/总部） 需求细节：复制整张sheet，至资金表的对应日期sheet页 使用方法：rpa.excel.copy_sheet"/>
 
   
   
@@ -185,7 +185,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fdata-grand%2f%25E5%25B9%25BF%25E5%25B7%259E%25E5%25B9%25BF%25E7%2594%25B5%25E8%25AE%25A1%25E9%2587%258F%25E6%25A3%2580%25E6%25B5%258B%25E8%2582%25A1%25E4%25BB%25BD%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8%2f&name=%e3%80%8c%e5%b9%bf%e7%94%b5%e8%ae%a1%e9%87%8f%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90%20%e6%b5%81%e6%b0%b4%e8%a1%a8%ef%bc%88%e5%88%86%e5%85%ac%e5%8f%b8%2f%e6%80%bb%e9%83%a8%ef%bc%89%20%e8%b5%84%e9%87%91%e8%a1%a8%ef%bc%88%e5%88%86%e5%85%ac%e5%8f%b8%2f%e6%80%bb%e9%83%a8%ef%bc%89%20%e8%ae%a1%e9%87%8f%e8%b5%84%e9%87%91%e8%ae%a1%e5%88%92%e8%a1%a8%ef%bc%88%e5%88%86%e5%85%ac%e5%8f%b8%2f%e6%80%bb%e9%83%a8%ef%bc%89%20%e8%b5%84%e9%87%91%e6%94%b6%e6%94%af%e6%83%85%e5%86%b5%e8%a1%a8%ef%bc%88%e6%80%bb%e9%83%a8%ef%bc%89%20%e6%b5%81%e7%a8%8b%e8%ae%be%e8%ae%a1%20%e5%bc%80%e5%8f%91%e6%97%a5%e5%bf%97%202021.05.07%20%e4%bb%8a%e6%97%a5%e4%bb%bb%e5%8a%a1%20%e7%86%9f%e6%82%89%e4%b8%9a%e5%8a%a1%e6%b5%81">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fdata-grand%2f%25E5%25B9%25BF%25E5%25B7%259E%25E5%25B9%25BF%25E7%2594%25B5%25E8%25AE%25A1%25E9%2587%258F%25E6%25A3%2580%25E6%25B5%258B%25E8%2582%25A1%25E4%25BB%25BD%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8%2f&name=%e3%80%8c%e5%b9%bf%e7%94%b5%e8%ae%a1%e9%87%8f%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90%20%e6%b5%81%e6%b0%b4%e8%a1%a8%ef%bc%88%e5%88%86%e5%85%ac%e5%8f%b8%2f%e6%80%bb%e9%83%a8%ef%bc%89%20%e9%9c%80%e6%b1%82%e7%bb%86%e8%8a%82%ef%bc%9a%e5%a4%8d%e5%88%b6%e6%95%b4%e5%bc%a0sheet%ef%bc%8c%e8%87%b3%e8%b5%84%e9%87%91%e8%a1%a8%e7%9a%84%e5%af%b9%e5%ba%94%e6%97%a5%e6%9c%9fsheet%e9%a1%b5%20%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95%ef%bc%9arpa.excel.copy_sheet">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -251,7 +251,13 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="需求分析">需求分析</h2>
 <ul>
-<li>流水表（分公司/总部）</li>
+<li>流水表（分公司/总部）
+<ul>
+<li>需求细节：复制整张sheet，至资金表的对应日期sheet页</li>
+<li>使用方法：<code>rpa.excel.copy_sheet()</code>/<code>rpa.excel.remove_sheet()</code></li>
+<li>细节须知：删除原有sheet页，才可成功复制至对应sheet页</li>
+</ul>
+</li>
 <li>资金表（分公司/总部）</li>
 <li>计量资金计划表（分公司/总部）</li>
 <li>资金收支情况表（总部）</li>
@@ -285,13 +291,20 @@ if (!doNotTrack) {
 <ol>
 <li>学习rpa.excel的使用，作总结笔记</li>
 <li>项目代码的编写与调试</li>
-<li>总结</li>
+<li>总结学习成果</li>
 </ol>
 </li>
 <li>问题与挑战
-1.</li>
+<ol>
+<li>进度稍慢，是不完全了解业务需求导致的问题</li>
+</ol>
+</li>
 <li>感想与收获
-1.</li>
+<ol>
+<li>要更加沉住气加把劲，多花时间，多练习</li>
+<li>养成好习惯，生活、工作</li>
+</ol>
+</li>
 </ul>
 
     </div>
@@ -327,7 +340,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          189 字
+          353 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -451,7 +464,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fdata-grand%2f%25E5%25B9%25BF%25E5%25B7%259E%25E5%25B9%25BF%25E7%2594%25B5%25E8%25AE%25A1%25E9%2587%258F%25E6%25A3%2580%25E6%25B5%258B%25E8%2582%25A1%25E4%25BB%25BD%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8%2f&name=%e3%80%8c%e5%b9%bf%e7%94%b5%e8%ae%a1%e9%87%8f%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90%20%e6%b5%81%e6%b0%b4%e8%a1%a8%ef%bc%88%e5%88%86%e5%85%ac%e5%8f%b8%2f%e6%80%bb%e9%83%a8%ef%bc%89%20%e8%b5%84%e9%87%91%e8%a1%a8%ef%bc%88%e5%88%86%e5%85%ac%e5%8f%b8%2f%e6%80%bb%e9%83%a8%ef%bc%89%20%e8%ae%a1%e9%87%8f%e8%b5%84%e9%87%91%e8%ae%a1%e5%88%92%e8%a1%a8%ef%bc%88%e5%88%86%e5%85%ac%e5%8f%b8%2f%e6%80%bb%e9%83%a8%ef%bc%89%20%e8%b5%84%e9%87%91%e6%94%b6%e6%94%af%e6%83%85%e5%86%b5%e8%a1%a8%ef%bc%88%e6%80%bb%e9%83%a8%ef%bc%89%20%e6%b5%81%e7%a8%8b%e8%ae%be%e8%ae%a1%20%e5%bc%80%e5%8f%91%e6%97%a5%e5%bf%97%202021.05.07%20%e4%bb%8a%e6%97%a5%e4%bb%bb%e5%8a%a1%20%e7%86%9f%e6%82%89%e4%b8%9a%e5%8a%a1%e6%b5%81">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fdata-grand%2f%25E5%25B9%25BF%25E5%25B7%259E%25E5%25B9%25BF%25E7%2594%25B5%25E8%25AE%25A1%25E9%2587%258F%25E6%25A3%2580%25E6%25B5%258B%25E8%2582%25A1%25E4%25BB%25BD%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8%2f&name=%e3%80%8c%e5%b9%bf%e7%94%b5%e8%ae%a1%e9%87%8f%e3%80%8d%e9%a1%b9%e7%9b%ae%e5%bc%80%e5%8f%91%e6%96%87%e6%a1%a3&description=%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90%20%e6%b5%81%e6%b0%b4%e8%a1%a8%ef%bc%88%e5%88%86%e5%85%ac%e5%8f%b8%2f%e6%80%bb%e9%83%a8%ef%bc%89%20%e9%9c%80%e6%b1%82%e7%bb%86%e8%8a%82%ef%bc%9a%e5%a4%8d%e5%88%b6%e6%95%b4%e5%bc%a0sheet%ef%bc%8c%e8%87%b3%e8%b5%84%e9%87%91%e8%a1%a8%e7%9a%84%e5%af%b9%e5%ba%94%e6%97%a5%e6%9c%9fsheet%e9%a1%b5%20%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95%ef%bc%9arpa.excel.copy_sheet">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
