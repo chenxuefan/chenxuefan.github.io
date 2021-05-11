@@ -194,13 +194,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/git/</guid>
-      <description>  git init
-  git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git
-  git add .
-  git commit -m&amp;quot;update&amp;quot;
-  git branch
-  git push -u origin master
-  </description>
+      <description>上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&amp;quot;update&amp;quot; git branch git push -u origin master 配置git环境 sudo yum install git git config &amp;ndash;global user.name chenxuefan git config &amp;ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &amp;ldquo;2380540710@qq.com&amp;rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git</description>
     </item>
     
     <item>
