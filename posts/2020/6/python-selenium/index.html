@@ -305,7 +305,19 @@ if (!doNotTrack) {
 <p>⼊门参考⽂献 👉 <a href="http://www.testclass.net/selenium_python/">Selenium⼊门</a></p>
 <h2 id="浏览器配置参数">浏览器配置参数</h2>
 <ul>
-<li><a href="https://zhuanlan.zhihu.com/p/60852696">https://zhuanlan.zhihu.com/p/60852696</a></li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/60852696">https://zhuanlan.zhihu.com/p/60852696</a></p>
+</li>
+<li>
+<p>设置代理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://127.0.0.1:8080&#34;</span>
+options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
+options<span style="color:#f92672">.</span>add_argument(f<span style="color:#e6db74">&#34;--proxy-server={proxy}&#34;</span>)
+  
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
+driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&#34;</span>)
+</code></pre></div></li>
 </ul>
 <h2 id="定位元素"><strong>定位元素</strong></h2>
 <ul>
@@ -603,7 +615,7 @@ driver<span style="color:#f92672">.</span>switch_to_window(c_win)
 </code></pre></div></li>
 </ul>
 <h2 id="对话框操作"><strong>对话框操作</strong></h2>
-<p>在WebDriver中处理JavaScript所⽣成的alert、confirm以及prompt⼗分简单，具体做法是使⽤ switch_to.alert() 或switch_to_alert()⽅法定位到 alert/confirm/prompt，然后使⽤text/accept/dismiss/send_keys 等⽅法进⾏操作。</p>
+<p>在WebDriver中处理JavaScript所⽣成的alert、confirm以及prompt⼗分简单，具体做法是使⽤ <code>switch_to.alert() </code>或<code>switch_to_alert()</code>⽅法定位到 alert/confirm/prompt，然后使⽤text/accept/dismiss/send_keys 等⽅法进⾏操作。</p>
 <ul>
 <li>
 <p><strong>switch_to_alert()</strong>  / <strong>switch_to.alert()</strong> # 切入到警告框</p>
@@ -738,7 +750,6 @@ win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81
 </code></pre></div></li>
 </ul>
 <h2 id="cookie操作"><strong>cookie操作</strong></h2>
-<p>简介：</p>
 <p>有时候我们需要验证浏览器中cookie是否正确，因为基于真实cookie的测试是⽆法通过⽩盒和集成测试进⾏的。WebDriver提供了操作Cookie的相关⽅法，可以读取、添加和删除cookie信息。</p>
 <p>WebDriver操作cookie的⽅法:</p>
 <ul>
@@ -800,7 +811,6 @@ browser<span style="color:#f92672">.</span>delete_all_cookies()
 time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">3</span>)
 browser<span style="color:#f92672">.</span>close()
 </code></pre></div><h2 id="登录操作"><strong>登录操作</strong></h2>
-<p>简介：</p>
 <p>在实际的web应用中，用户登录时通常要求用户输入验证码，验证码大多分为四类：识图验证码、计算验证码、滑块验证码以及语音验证码，这里介绍识图验证码。</p>
 <p>两种解决方案：</p>
 <p><strong>1、通过cookies绕过登录</strong></p>
@@ -829,7 +839,6 @@ browser<span style="color:#f92672">.</span>close()
 <li><strong>实例</strong>：<a href="https://www.cnblogs.com/billie52707/p/12906540.html">selenium自动化 | 借助百度AI开放平台识别验证码登录职教云</a></li>
 </ul>
 <h2 id="javascript操作"><strong>JavaScript操作</strong></h2>
-<p>简介：</p>
 <p>虽然WebDriver提供了操作浏览器的前进和后退⽅法，但对于浏览器滚动条并没有提供相应的操作⽅法。在这种情况下，就可以借助JavaScript来控制浏览器的滚动条。</p>
 <p>WebDriver提供了此方法执⾏JavaScript代码:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">execute_script</span>() 
@@ -996,7 +1005,6 @@ driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6d
 </li>
 </ul>
 <h2 id="窗截图"><strong>窗⼝截图</strong></h2>
-<p>简介:</p>
 <p>⾃动化⽤例是由程序去执⾏的，因此有时候打印的错误信息并不⼗分明确。如果在脚本执⾏出错的时候能对当前窗⼝截图保存，那么通过图⽚就可以⾮常直观地看出出错的原因。
 WebDriver提供了截图函数get_screenshot_as_file()来截取当前窗⼝：</p>
 <ul>
@@ -1049,7 +1057,7 @@ driver<span style="color:#f92672">.</span>quit()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          6679 字
+          6686 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
