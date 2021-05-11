@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title> GlidedSky | 爬虫题目2 | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="GlidedSky | 爬虫题目2" />
+<meta property="og:description" content="题目地址 - http://glidedsky.com/level/crawler-basic-2 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-2 心得 这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/5/glidedsky-level2/" />
+<meta property="article:published_time" content="2021-05-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-07T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GlidedSky | 爬虫题目2"/>
+<meta name="twitter:description" content="题目地址 - http://glidedsky.com/level/crawler-basic-2 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-2 心得 这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&text=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&is_video=false&description=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&name=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2&description=%e9%a2%98%e7%9b%ae%e5%9c%b0%e5%9d%80%20-%20http%3a%2f%2fglidedsky.com%2flevel%2fcrawler-basic-2%20%e5%be%85%e7%88%ac%e5%8f%96%e7%bd%91%e7%ab%99%20-%20http%3a%2f%2fglidedsky.com%2flevel%2fweb%2fcrawler-basic-2%20%e5%bf%83%e5%be%97%20%e8%bf%99%e9%81%93%e9%a2%98%e6%96%b0%e5%a2%9e%e4%ba%86%e5%88%86%e9%a1%b5%e7%9a%84%e6%9c%ba%e5%88%b6%ef%bc%8c%e5%af%b9%e6%9c%8d%e5%8a%a1%e7%ab%af%e6%9d%a5%e8%ae%b2%ef%bc%8c%e5%88%86%e9%a1%b5%e5%a5%bd%e5%a4%84%e6%98%af%e5%8f%af%e4%bb%a5%e5%8f%8d%e7%88%ac%e3%80%82%e8%bf%99%e9%81%93%e9%a2%98%e8%80%8c%e8%a8%80%ef%bc%8c%e5%af%b9%e8%af%b7%e6%b1%82%e9%93%be%e6%8e%a5%e8%bf%9b%e8%a1%8c%e8%bf%ad%e4%bb%a3%e5%a4%84%e7%90%86%ef%bc%8c%e5%a4%9a%e6%ac%a1%e8%af%b7%e6%b1%82%e5%8d%b3%e5%8f%af%ef%bc%8c%e5%a6%82">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&t=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        GlidedSky | 爬虫题目2
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2021-05-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-07</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+             
+            <a class="tag-link" href="/tags/glidedsky" rel="tag">glidedsky</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <ul>
+<li>
+<p>题目地址 - <a href="http://glidedsky.com/level/crawler-basic-2">http://glidedsky.com/level/crawler-basic-2</a></p>
+</li>
+<li>
+<p>待爬取网站 - <a href="http://glidedsky.com/level/web/crawler-basic-2">http://glidedsky.com/level/web/crawler-basic-2</a></p>
+</li>
+<li>
+<p>心得</p>
+<p>这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如果追求速度，还可以加入多线程、多进程的处理。</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74"># Talk is cheap,show me the codes!
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">@Author billie
+</span><span style="color:#e6db74">@Time 2021/05/07
+</span><span style="color:#e6db74">@Describe
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+<span style="color:#f92672">import</span> logging<span style="color:#f92672">,</span>threading<span style="color:#f92672">,</span>time
+<span style="color:#f92672">import</span> requests
+<span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+
+logging<span style="color:#f92672">.</span>basicConfig(
+    <span style="color:#75715e"># filename=&#39;glidedsky.log&#39;,</span>
+    format<span style="color:#f92672">=</span>f<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74">[</span><span style="color:#e6db74">%(lineno)s</span><span style="color:#e6db74">]: </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#34;</span>,
+    datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>,
+    level <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>INFO
+)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">log</span>(func):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs):
+        <span style="color:#66d9ef">try</span>:
+            <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs)
+        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+            logging<span style="color:#f92672">.</span>error(repr(e))
+    <span style="color:#66d9ef">return</span> wrapper
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">spider</span>:
+    <span style="color:#66d9ef">def</span> __init__(self):
+        self<span style="color:#f92672">.</span>login_url<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://glidedsky.com/login&#34;</span>
+        self<span style="color:#f92672">.</span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://glidedsky.com/level/web/crawler-basic-2&#39;</span>
+        self<span style="color:#f92672">.</span>session <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>session()
+        self<span style="color:#f92672">.</span>headers<span style="color:#f92672">=</span>{
+            <span style="color:#75715e"># &#34;Accept&#34;: &#34;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&#34;,</span>
+            <span style="color:#75715e"># &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,</span>
+            <span style="color:#75715e"># &#34;Accept-Language&#34;: &#34;zh-CN,zh;q=0.9,en;q=0.8,en-US;q=0.7&#34;,</span>
+            <span style="color:#75715e"># &#34;Cache-Control&#34;: &#34;max-age=0&#34;,</span>
+            <span style="color:#75715e"># &#34;Connection&#34;: &#34;keep-alive&#34;,</span>
+            <span style="color:#75715e"># &#34;Content-Length&#34;: &#34;94&#34;,</span>
+            <span style="color:#75715e"># &#34;Content-Type&#34;: &#34;application/x-www-form-urlencoded&#34;,</span>
+            <span style="color:#75715e"># &#34;Cookie&#34;: &#34;footprints=eyJpdiI6IllVVkpGRXYzUzJvbTRvXC85VTc2dExnPT0iLCJ2YWx1ZSI6IlhsbUFmeDRzZFdqcW9rWlFYcm1YbUtBNkszdmRDWExWUGlTNlU5QWxqc21ybVh5NzM5TGlcL3hkdzZ4RlI1bGx0IiwibWFjIjoiZWZjOTk5NzAzMTY1YmNlMDE3M2MwYTA2MzVkYjk3Y2QxMDZlNWI3MDM4YTRhOWYxYzRiYjk5YTA3Yjc2MTJkNSJ9; Hm_lvt_020fbaad6104bcddd1db12d6b78812f6=1620240916; XSRF-TOKEN=eyJpdiI6IndYcUViWXhaWDNaUEtNeDM0SnJPTGc9PSIsInZhbHVlIjoieWFja3ZQNXd2SHRKeGxQNmI5VDRkTWFTXC9wN3NRUFdqWWtlMWpcL2poczJScXZUVTNBcVdNWXJ3NzIzcnVCZUswIiwibWFjIjoiNDQwZGYyZGY1MjI1MGQ4MDgyNDNlNGE3ODM0NmJkZGM5MjQyNjgxOGEwYWI3YTViODJlNmExNGU1MWM2OWJkMSJ9; glidedsky_session=eyJpdiI6Ink4RzhSNFwvdkdyVHVmYXFzcW4yOFFRPT0iLCJ2YWx1ZSI6InZablo4cEpQK1dJR0VQS3A4QUFxdFRwUlwvSVpSaFFNNWpcL2dlYk1jQmxFXC9aUnM4N1wvTjVWeDJndzBTWHVXdUNJIiwibWFjIjoiZDRmNGU1NzIwNzczODg5NTg5MzhhMDM5NTIyYzFkMDAwZjEyOTMyMjk4NWY4MjhiMzgzM2YxNDgyMGY5MDI4OCJ9; Hm_lpvt_020fbaad6104bcddd1db12d6b78812f6=1620241770&#34;,</span>
+            <span style="color:#75715e"># &#34;Host&#34;: &#34;glidedsky.com&#34;,</span>
+            <span style="color:#75715e"># &#34;Origin&#34;: &#34;http://glidedsky.com&#34;,</span>
+            <span style="color:#75715e"># &#34;Referer&#34;: &#34;http://glidedsky.com/login&#34;,</span>
+            <span style="color:#75715e"># &#34;Upgrade-Insecure-Requests&#34;: &#34;1&#34;,</span>
+            <span style="color:#e6db74">&#34;User-Agent&#34;</span>: <span style="color:#e6db74">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36&#34;</span>
+        }
+        self<span style="color:#f92672">.</span>page <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        self<span style="color:#f92672">.</span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getToken</span>(self):
+        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>get(self<span style="color:#f92672">.</span>login_url,headers<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>headers)
+        doc <span style="color:#f92672">=</span> pq(r<span style="color:#f92672">.</span>text)
+        token <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;input[name=_token]&#39;</span>)<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;value&#39;</span>)
+        <span style="color:#66d9ef">return</span> token
+
+    <span style="color:#a6e22e">@log</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">login</span>(self):
+        r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>post(
+            url<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>login_url,
+            headers <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>headers,
+            data <span style="color:#f92672">=</span> {
+                <span style="color:#e6db74">&#39;_token&#39;</span>: self<span style="color:#f92672">.</span>getToken(),
+                <span style="color:#e6db74">&#39;email&#39;</span>: <span style="color:#e6db74">&#39;2380540710@qq.com&#39;</span>,
+                <span style="color:#e6db74">&#39;password&#39;</span>: <span style="color:#e6db74">&#39;a1222222222&#39;</span>
+            })
+        <span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+            <span style="color:#66d9ef">return</span> True
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(f<span style="color:#e6db74">&#39;登录失败，状态码：{r.status_code}&#39;</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</span>(self):
+            r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>get(self<span style="color:#f92672">.</span>url,params<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;page&#39;</span>:self<span style="color:#f92672">.</span>page},headers<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>headers)
+            doc <span style="color:#f92672">=</span> pq(r<span style="color:#f92672">.</span>text)
+            numList <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.col-md-1&#39;</span>)<span style="color:#f92672">.</span>text()<span style="color:#f92672">.</span>split()
+            numList <span style="color:#f92672">=</span> [int(num) <span style="color:#66d9ef">for</span> num <span style="color:#f92672">in</span> numList]
+            self<span style="color:#f92672">.</span>count <span style="color:#f92672">+=</span> sum(numList)
+            logging<span style="color:#f92672">.</span>info(f<span style="color:#e6db74">&#39;{self.page}:{self.count}&#39;</span>)
+            self<span style="color:#f92672">.</span>page <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(self):
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>login():
+            logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;登录成功&#39;</span>)
+            <span style="color:#66d9ef">while</span> self<span style="color:#f92672">.</span>page <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1000</span>:
+                <span style="color:#75715e"># self.parse()</span>
+                threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>parse,args<span style="color:#f92672">=</span>[])<span style="color:#f92672">.</span>start()
+
+
+bb <span style="color:#f92672">=</span> spider()
+bb<span style="color:#f92672">.</span>main()
+
+</code></pre></div>
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+            
+            <a class="tag-link" href="/tags/glidedsky" rel="tag">glidedsky</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          374 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2021-05-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-07</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2021/5/glidedsky-level2/" class="leancloud_visitors" data-flag-title="GlidedSky | 爬虫题目2">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&text=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&is_video=false&description=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&title=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&name=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2&description=%e9%a2%98%e7%9b%ae%e5%9c%b0%e5%9d%80%20-%20http%3a%2f%2fglidedsky.com%2flevel%2fcrawler-basic-2%20%e5%be%85%e7%88%ac%e5%8f%96%e7%bd%91%e7%ab%99%20-%20http%3a%2f%2fglidedsky.com%2flevel%2fweb%2fcrawler-basic-2%20%e5%bf%83%e5%be%97%20%e8%bf%99%e9%81%93%e9%a2%98%e6%96%b0%e5%a2%9e%e4%ba%86%e5%88%86%e9%a1%b5%e7%9a%84%e6%9c%ba%e5%88%b6%ef%bc%8c%e5%af%b9%e6%9c%8d%e5%8a%a1%e7%ab%af%e6%9d%a5%e8%ae%b2%ef%bc%8c%e5%88%86%e9%a1%b5%e5%a5%bd%e5%a4%84%e6%98%af%e5%8f%af%e4%bb%a5%e5%8f%8d%e7%88%ac%e3%80%82%e8%bf%99%e9%81%93%e9%a2%98%e8%80%8c%e8%a8%80%ef%bc%8c%e5%af%b9%e8%af%b7%e6%b1%82%e9%93%be%e6%8e%a5%e8%bf%9b%e8%a1%8c%e8%bf%ad%e4%bb%a3%e5%a4%84%e7%90%86%ef%bc%8c%e5%a4%9a%e6%ac%a1%e8%af%b7%e6%b1%82%e5%8d%b3%e5%8f%af%ef%bc%8c%e5%a6%82">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fglidedsky-level2%2f&t=GlidedSky%20%7c%20%e7%88%ac%e8%99%ab%e9%a2%98%e7%9b%ae2">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020-2021 
+    <span>❤ Billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

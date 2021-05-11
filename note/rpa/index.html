@@ -250,14 +250,6 @@ if (!doNotTrack) {
             </span>
         </div>
         
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/tec">tec</a>
-            
-        </div>
-        
         
         
 
@@ -571,28 +563,50 @@ rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6
 <p><strong>设置注释</strong> - <code>sheet_object.set_comment(&quot;&quot;, &quot;comment&quot;)</code></p>
 </li>
 <li>
-<p><strong>设置对齐方式</strong> - <code>sheet_object.get_comment(&quot;&quot;)</code></p>
+<p><strong>读取注释</strong> - <code>sheet_object.get_comment(&quot;&quot;)</code></p>
 </li>
 <li>
-<p><strong>设置数值格式</strong> -</p>
+<p><strong>设置数值格式</strong> - <code>sheet_object.set_border_style(&quot;&quot;, border_style=&quot;All&quot;, line_style=&quot;Continuous&quot;, line_weight=&quot;Medium&quot;, line_color=&quot;(0, 0, 0)&quot;)</code></p>
+</li>
+<li>
+<p><strong>设置对齐方式</strong> - <code>sheet_object.set_style(&quot;&quot;, style=&quot;align&quot;, value=&quot;Align Left&quot;)</code></p>
+<ul>
+<li><code>style=&quot;align&quot;</code> - 设置对齐</li>
+<li>value - 对齐方式
+<ul>
+<li>Align Left - 左对齐</li>
+<li>Align Right - 右对齐</li>
+<li>Center - 居中</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p><strong>设置边框样式</strong></p>
 </li>
 <li>
-<p><strong>设置粗体</strong></p>
+<p><strong>设置粗体</strong> - <code>sheet_object.set_style(&quot;&quot;, style=&quot;bold&quot;, value=&quot;True&quot;)</code></p>
+<ul>
+<li><code>style=&quot;bold&quot;</code> - 设置粗体</li>
+</ul>
 </li>
 <li>
-<p><strong>列去重</strong></p>
+<p><strong>列去重</strong> - <code>sheet_object.remove_duplicate(&quot;A&quot; + str(&quot;1&quot;) + &quot;:&quot; + &quot;B&quot; + str(&quot;2&quot;), [&quot;A&quot;,&quot;D&quot;])</code></p>
 </li>
 <li>
-<p><strong>读取行数</strong></p>
+<p>**读取行数 ** - <code>sheet_object.row_count()</code></p>
 </li>
 <li>
-<p><strong>读取列数</strong></p>
+<p><strong>读取列数</strong> - <code>sheet_object.col_count()</code></p>
 </li>
 <li>
-<p><strong>内容查找</strong></p>
+<p><strong>内容查找</strong> - <code>sheet_object.find(&quot;text&quot;, ranges=&quot;&quot;, match_case=True)</code></p>
+<ul>
+<li>match_case - 是否区分大小写</li>
+</ul>
+</li>
+<li>
+<p><strong>内容替换</strong> - <code>sheet_object.replace(&quot;old&quot;, &quot;new&quot;, &quot;&quot;)</code></p>
 </li>
 <li>
 <p><strong>排序</strong></p>
@@ -692,7 +706,7 @@ rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1434 字
+          1527 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

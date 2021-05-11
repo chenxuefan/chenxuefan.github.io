@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>glidedsky on 人人都爱小雀斑&#39;s blog</title>
+    <link>https://billie52707.cn/tags/glidedsky/</link>
+    <description>Recent content in glidedsky on 人人都爱小雀斑&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Billie</copyright>
+    <lastBuildDate>Fri, 07 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/glidedsky/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GlidedSky | 爬虫题目2</title>
+      <link>https://billie52707.cn/posts/2021/5/glidedsky-level2/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/glidedsky-level2/</guid>
+      <description>题目地址 - http://glidedsky.com/level/crawler-basic-2 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-2 心得 这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如</description>
+    </item>
+    
+    <item>
+      <title>GlidedSky | 爬虫题目1</title>
+      <link>https://billie52707.cn/posts/2021/5/glidedsky-level1/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/glidedsky-level1/</guid>
+      <description>题目地址 - http://glidedsky.com/level/crawler-basic-1 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-1 心得 这道题目所需的技能点都很基础，如发送请求、文档解析，很多工具都可以达到目的，重要是要寻找最简短的代码、最优雅的</description>
+    </item>
+    
+  </channel>
+</rss>
