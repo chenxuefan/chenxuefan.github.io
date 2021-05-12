@@ -9,12 +9,12 @@
     <copyright>Billie</copyright>
     <lastBuildDate>Tue, 11 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>wakatime</title>
+      <title>WakaTime! 完美统计代码工作量</title>
       <link>https://billie52707.cn/posts/2021/5/wakatime/</link>
       <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/5/wakatime/</guid>
-      <description>https://blog.csdn.net/sinat_23133783/article/details/107643656</description>
+      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1340842066\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言 这又是一个相见恨晚的神级工具，开发人员统</description>
     </item>
     
     <item>
