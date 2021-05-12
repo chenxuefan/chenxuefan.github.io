@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Tue, 11 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python学习笔记 | r&#39;&#39;, b&#39;&#39;, u&#39;&#39;, f&#39;&#39;</title>
+      <link>https://billie52707.cn/posts/2021/5/python-rbuf/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-rbuf/</guid>
+      <description>r&#39;&#39; - 非转义原生字符串 以r开头的字符，常用于正则表达式，对应着re模块。 r&#39;\n&#39; - 经处理，&#39;\n&amp;rsquo;表示的是&#39;\&amp;lsquo;和&amp;rsqu</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | re</title>
+      <link>https://billie52707.cn/posts/2021/5/python-re/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-re/</guid>
+      <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
+    </item>
+    
     <item>
       <title>WakaTime! 完美统计代码工作量</title>
       <link>https://billie52707.cn/posts/2021/5/wakatime/</link>

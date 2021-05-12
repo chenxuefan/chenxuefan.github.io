@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Fri, 07 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | scrapy</title>
+      <link>https://billie52707.cn/draft/python-scrapy/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-scrapy/</guid>
+      <description>安装 - pip install scrapy 新建项目 - scrapy startproject project_name /项目目录层级关系/ scrapy.cfg: 项目的配置文件 tutorial/: 该项目的python模块。之后您将在此加入代码。 tutorial/items.py: 项目中的item文件. tutorial/pipelines.py:</description>
+    </item>
+    
     <item>
       <title>「广电计量」项目开发文档</title>
       <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</link>
@@ -41,7 +50,7 @@
       <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-re/</guid>
-      <description>模式 描述 ^ 匹配字符串的开头 $ 匹配字符串的末尾。 . 匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。</description>
+      <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
     </item>
     
     <item>
@@ -131,15 +140,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-django/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://billie52707.cn/draft/python-scrapy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-scrapy/</guid>
       <description></description>
     </item>
     
