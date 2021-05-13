@@ -4,21 +4,41 @@
   
   <url>
     <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/</loc>
-    <lastmod>2021-05-12T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2021-05-12T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/tags/python/</loc>
+    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2021/5/python-re/</loc>
+    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/</loc>
+    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/draft/</loc>
     <lastmod>2021-05-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,27 +48,12 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/2021/5/python-re/</loc>
+    <loc>https://billie52707.cn/draft/python-re/</loc>
     <lastmod>2021-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/draft/python-scrapy/</loc>
-    <lastmod>2021-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2021-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
-    <lastmod>2021-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/</loc>
     <lastmod>2021-05-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -169,11 +174,6 @@
   
   <url>
     <loc>https://billie52707.cn/posts/2021/4/python-xpath/</loc>
-    <lastmod>2021-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/python-re/</loc>
     <lastmod>2021-04-22T00:00:00+00:00</lastmod>
   </url>
   

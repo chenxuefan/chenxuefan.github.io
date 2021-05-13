@@ -95,7 +95,7 @@
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/linux/</guid>
-      <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 unzip - https://blog.csdn.net/qq_27870421/article/details/92623897 rm 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户，</description>
+      <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 unzip - https://blog.csdn.net/qq_27870421/article/details/92623897 rm 批量处理文件 - 例：删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户</description>
     </item>
     
   </channel>

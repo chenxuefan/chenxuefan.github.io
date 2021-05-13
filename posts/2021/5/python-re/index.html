@@ -29,8 +29,8 @@ if (!doNotTrack) {
 <meta property="og:description" content="前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-re/" />
-<meta property="article:published_time" content="2021-05-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-05-12T00:00:00+00:00" />
+<meta property="article:published_time" content="2021-05-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-13T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | re"/>
@@ -108,17 +108,11 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/draft/python-scrapy/">
+          <a class="icon" href=" https://billie52707.cn/posts/2021/5/python-rbuf/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
-        
-        <li>
-          <a class="icon" href="https://billie52707.cn/posts/2021/5/python-rbuf/">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -208,15 +202,23 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#匹配规则">匹配规则</a></li>
-    <li><a href="#匹配方法">匹配方法</a>
+    <li><a href="#匹配模式">匹配模式</a></li>
+    <li><a href="#三大匹配方法">三大匹配方法</a>
       <ul>
-        <li><a href="#rematchpattern-string-flag">re.match(pattern, string, flag)</a></li>
-        <li><a href="#researchpatternstring">re.search(pattern,string)</a></li>
-        <li><a href="#resplit">re.split()</a></li>
-        <li><a href="#refindall">re.findall()</a></li>
-        <li><a href="#resubpatternreplstringcountflag">re.sub(pattern,repl,string,count,flag)</a></li>
+        <li><a href="#1-rematchpattern-string-flags0">1. re.match(pattern, string, flags=0)</a></li>
+        <li><a href="#2-researchpattern-string-flags0">2. re.search(pattern, string, flags=0)</a></li>
+        <li><a href="#3-refindallpattern-string-flags0">3. re.findall(pattern, string, flags=0)</a></li>
       </ul>
     </li>
+    <li><a href="#更多方法">更多方法</a>
+      <ul>
+        <li><a href="#1-recompilepattern-flags0">1. re.compile(pattern, flags=0)</a></li>
+        <li><a href="#2-resplitpattern-string-maxsplit0-flags0">2. re.split(pattern, string, maxsplit=0, flags=0)</a></li>
+        <li><a href="#3-resubpattern-repl-string-count0-flags0">3. re.sub(pattern, repl, string, count=0, flags=0)</a></li>
+      </ul>
+    </li>
+    <li><a href="#一些补充方法">一些补充方法</a></li>
+    <li><a href="#来写一些正则吧强势提高生产力">来写一些正则吧，强势提高生产力！</a></li>
   </ul>
 </nav>
     </div>
@@ -238,7 +240,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2021-05-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-12</time>
+          <time datetime="2021-05-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-13</time>
           
           
         </div>
@@ -276,12 +278,11 @@ if (!doNotTrack) {
       <h2 id="前言">前言</h2>
 <p>正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。</p>
 <p>Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达式模式。</p>
-<p>re 模块使 Python 语言拥有全部的正则表达式功能。</p>
-<p>参考</p>
-<ul>
-<li>开源中国提供的正则表达式测试工具 - <a href="https://tool.oschina.net/regex/">https://tool.oschina.net/regex/</a></li>
-</ul>
+<p>正则并不是python独有的，re 模块使 Python 语言拥有全部的正则表达式功能。</p>
+<p>便于测试自己写的正则，可以使用开源中国提供的正则表达式测试工具 <a href="https://tool.oschina.net/regex/">https://tool.oschina.net/regex/</a></p>
+<p>python学习文档 - <a href="https://docs.python.org/zh-cn/3/library/re.html">https://docs.python.org/zh-cn/3/library/re.html</a></p>
 <h2 id="匹配规则">匹配规则</h2>
+<p>匹配单个字符：</p>
 <table>
 <thead>
 <tr>
@@ -292,15 +293,15 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td>\w</td>
-<td>匹配字母数字</td>
+<td>匹配字母、数字、下划线</td>
 </tr>
 <tr>
 <td>\W</td>
-<td>匹配非字母数字</td>
+<td>匹配非字母、数字、下划线</td>
 </tr>
 <tr>
 <td>\s</td>
-<td>匹配任意空白字符，等价于 [\t\n\r\f].</td>
+<td>匹配任意空白字符，等价于 [\t\n\r\f]</td>
 </tr>
 <tr>
 <td>\S</td>
@@ -308,7 +309,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>\d</td>
-<td>匹配任意数字，等价于 [0-9].</td>
+<td>匹配任意数字，等价于 [0-9]</td>
 </tr>
 <tr>
 <td>\D</td>
@@ -320,7 +321,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>\Z</td>
-<td>匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串。c</td>
+<td>匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串</td>
 </tr>
 <tr>
 <td>\z</td>
@@ -328,30 +329,35 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>\G</td>
-<td>匹配最后匹配完成的位置。</td>
+<td>匹配最后匹配完成的位置</td>
 </tr>
 <tr>
 <td>\b</td>
-<td>匹配一个单词边界，也就是指单词和空格间的位置。例如， &lsquo;er\b&rsquo; 可以匹配&quot;never&quot; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;。</td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。例如， &lsquo;er\b&rsquo; 可以匹配&quot;never&quot; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;</td>
 </tr>
 <tr>
 <td>\B</td>
-<td>匹配非单词边界。&lsquo;er\B&rsquo; 能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;never&rdquo; 中的 &lsquo;er&rsquo;。</td>
+<td>匹配非单词边界。&lsquo;er\B&rsquo; 能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;never&rdquo; 中的 &lsquo;er&rsquo;</td>
 </tr>
 <tr>
-<td>\n, \t, 等.</td>
-<td>匹配一个换行符。匹配一个制表符。等</td>
+<td>\n</td>
+<td>匹配一个换行符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符</td>
 </tr>
 <tr>
 <td>\1&hellip;\9</td>
-<td>匹配第n个分组的子表达式。</td>
+<td>匹配第n个分组的子表达式</td>
 </tr>
 <tr>
 <td>\10</td>
-<td>匹配第n个分组的子表达式，如果它经匹配。否则指的是八进制字符码的表达式。</td>
+<td>匹配第n个分组的子表达式，如果它经匹配。否则指的是八进制字符码的表达式</td>
 </tr>
 </tbody>
 </table>
+<p>字符相关的规则：</p>
 <table>
 <thead>
 <tr>
@@ -366,11 +372,11 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>$</td>
-<td>匹配字符串的末尾。</td>
+<td>匹配字符串的末尾</td>
 </tr>
 <tr>
 <td>.</td>
-<td>匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。</td>
+<td>匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符</td>
 </tr>
 <tr>
 <td>[&hellip;]</td>
@@ -378,15 +384,15 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>[^&hellip;]</td>
-<td>不在[]中的字符：[^abc] 匹配除了a,b,c之外的字符。</td>
+<td>不在[]中的字符：[^abc] 匹配除了a,b,c之外的字符</td>
 </tr>
 <tr>
 <td>*</td>
-<td>匹配0个或多个的表达式。</td>
+<td>匹配0个或多个的表达式</td>
 </tr>
 <tr>
 <td>+</td>
-<td>匹配1个或多个的表达式。</td>
+<td>匹配1个或多个的表达式</td>
 </tr>
 <tr>
 <td>?</td>
@@ -394,7 +400,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>{n}</td>
-<td>精确匹配n个前面表达式。</td>
+<td>精确匹配n个前面表达式</td>
 </tr>
 <tr>
 <td>{n, m}</td>
@@ -405,16 +411,16 @@ if (!doNotTrack) {
 <td>匹配a或b</td>
 </tr>
 <tr>
-<td>()</td>
-<td>G匹配括号内的表达式，也表示一个组</td>
+<td>( )</td>
+<td>匹配括号内的表达式，也表示一个组</td>
 </tr>
 <tr>
 <td>(?imx)</td>
-<td>正则表达式包含三种可选标志：i, m, 或 x 。只影响括号中的区域。</td>
+<td>正则表达式包含三种可选标志：i, m, 或 x 。只影响括号中的区域</td>
 </tr>
 <tr>
 <td>(?-imx)</td>
-<td>正则表达式关闭 i, m, 或 x 可选标志。只影响括号中的区域。</td>
+<td>正则表达式关闭 i, m, 或 x 可选标志。只影响括号中的区域</td>
 </tr>
 <tr>
 <td>(?: )</td>
@@ -430,11 +436,11 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>(?#&hellip;)</td>
-<td>注释.</td>
+<td>注释</td>
 </tr>
 <tr>
 <td>(?= )</td>
-<td>前向肯定界定符。如果所含正则表达式，以 &hellip; 表示，在当前位置成功匹配时成功，否则失败。但一旦所含表达式已经尝试，匹配引擎根本没有提高；模式的剩余部分还要尝试界定符的右边。</td>
+<td>前向肯定界定符。如果所含正则表达式，以 &hellip; 表示，在当前位置成功匹配时成功，否则失败。但一旦所含表达式已经尝试，匹配引擎根本没有提高；模式的剩余部分还要尝试界定符的右边</td>
 </tr>
 <tr>
 <td>(?! re)</td>
@@ -442,25 +448,126 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>(?&gt; re)</td>
-<td>匹配的独立模式，省去回溯。</td>
+<td>匹配的独立模式，省去回溯</td>
 </tr>
 </tbody>
 </table>
-<h2 id="匹配方法">匹配方法</h2>
-<h3 id="rematchpattern-string-flag">re.match(pattern, string, flag)</h3>
-<p>从头开始匹配</p>
+<h2 id="匹配模式">匹配模式</h2>
+<p>正则表达式可以包含一些可选标志修饰符来控制匹配的模式。修饰符被指定为一个可选的标志（flags=0）。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">修饰符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">re.I</td>
+<td style="text-align:left">使匹配对大小写不敏感</td>
+</tr>
+<tr>
+<td style="text-align:left">re.L</td>
+<td style="text-align:left">做本地化识别（locale-aware）匹配</td>
+</tr>
+<tr>
+<td style="text-align:left">re.M</td>
+<td style="text-align:left">多行匹配，影响 ^ 和 $</td>
+</tr>
+<tr>
+<td style="text-align:left">re.S</td>
+<td style="text-align:left">使 . 匹配包括换行在内的所有字符</td>
+</tr>
+<tr>
+<td style="text-align:left">re.U</td>
+<td style="text-align:left">根据Unicode字符集解析字符。这个标志影响 \w, \W, \b, \B.</td>
+</tr>
+<tr>
+<td style="text-align:left">re.X</td>
+<td style="text-align:left">该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解。</td>
+</tr>
+</tbody>
+</table>
+<p>例如很多时候匹配的内容是存在换行的问题的，这个时候就需要拥戴匹配模式re.S来匹配换行的内容 - <code>re.match('','',re.S)</code></p>
+<h2 id="三大匹配方法">三大匹配方法</h2>
+<h3 id="1-rematchpattern-string-flags0">1. re.match(pattern, string, flags=0)</h3>
 <ul>
 <li>pattern - 正则表达式</li>
 <li>string - 要匹配的字符串</li>
-<li>flag - 标志位，用于控制正则表达式的匹配方法，如是否区分大小写，多行匹配等</li>
+<li>flags - 匹配模式，用于控制正则表达式的匹配方法，如是否区分大小写，多行匹配等</li>
 </ul>
-<h3 id="researchpatternstring">re.search(pattern,string)</h3>
-<h3 id="resplit">re.split()</h3>
-<h3 id="refindall">re.findall()</h3>
-<p>查找所有匹配的字符，返回一个列表类型</p>
-<h3 id="resubpatternreplstringcountflag">re.sub(pattern,repl,string,count,flag)</h3>
-<p>匹配字符并替换</p>
-
+<p>从头开始匹配。从字符串的<strong>起始位置</strong>匹配一个模式，如果不是起始位置匹配的话，返回None</p>
+<h3 id="2-researchpattern-string-flags0">2. re.search(pattern, string, flags=0)</h3>
+<ul>
+<li>pattern - 正则表达式</li>
+<li>string - 要匹配的字符串</li>
+<li>flags - 匹配模式</li>
+</ul>
+<p>search方法会扫描<strong>整个字符串</strong>，并返回<strong>第一个</strong>成功匹配的结果。使用match方法时必须匹配头部，因此不是很方便，search方法使用的较多。</p>
+<h3 id="3-refindallpattern-string-flags0">3. re.findall(pattern, string, flags=0)</h3>
+<ul>
+<li>pattern - 正则表达式</li>
+<li>string - 要匹配的字符串</li>
+<li>flags - 匹配模式</li>
+</ul>
+<p>findall方法会搜索<strong>整个字符串</strong>，以<strong>列表</strong>的形式返回全部匹配的结果。</p>
+<p>做一下总结：</p>
+<ol>
+<li>
+<p>匹配多个结果，使用findall()</p>
+</li>
+<li>
+<p>匹配一个结果，使用match()/search()</p>
+<p>从头开始匹配，使用match()；从任意位置匹配，使用search()</p>
+</li>
+</ol>
+<h2 id="更多方法">更多方法</h2>
+<h3 id="1-recompilepattern-flags0">1. re.compile(pattern, flags=0)</h3>
+<p>compile方法将正则表达式的样式编译为一个 <a href="https://docs.python.org/zh-cn/3/library/re.html#re-objects">正则表达式对象</a> （正则对象），可以用于search等方法的匹配：</p>
+<pre><code>prog = re.compile(pattern)
+result = prog.search(string)
+# 等价于
+result = re.search(pattern, string)
+</code></pre><h3 id="2-resplitpattern-string-maxsplit0-flags0">2. re.split(pattern, string, maxsplit=0, flags=0)</h3>
+<ul>
+<li>pattern - 正则表达式</li>
+<li>string - 要匹配的字符串</li>
+<li>maxsplit - 最多分隔次数</li>
+<li>flags - 匹配模式</li>
+</ul>
+<p>用 <em>pattern</em> 分开 <em>string</em> 。 如果在 <em>pattern</em> 中捕获到括号，那么所有的组里的文字也会包含在列表里。如果 <em>maxsplit</em> 非零， 最多进行 <em>maxsplit</em> 次分隔， 剩下的字符全部返回到列表的最后一个元素。</p>
+<pre><code>&gt;&gt;&gt; re.split(r'\W', &quot;Chaos isn't a pit,chaos is a ladder.&quot;)
+['Chaos', 'isn', 't', 'a', 'pit', 'chaos', 'is', 'a', 'ladder', '']
+&gt;&gt;&gt; re.split(r'\s|,', &quot;Chaos isn't a pit,chaos is a ladder.&quot;)
+['Chaos', &quot;isn't&quot;, 'a', 'pit', 'chaos', 'is', 'a', 'ladder.']
+&gt;&gt;&gt; re.split(r'\s|,', &quot;Chaos isn't a pit,chaos is a ladder.&quot;,maxsplit=1)
+['Chaos', &quot;isn't a pit,chaos is a ladder.&quot;]
+</code></pre><h3 id="3-resubpattern-repl-string-count0-flags0">3. re.sub(pattern, repl, string, count=0, flags=0)</h3>
+<ul>
+<li>pattern - 正则表达式</li>
+<li>repl - 新字符串</li>
+<li>string - 原字符串</li>
+<li>count - 替换次数</li>
+<li>flags - 匹配模式</li>
+</ul>
+<p>替换字符串中每一个匹配的子串后返回替换后的字符串</p>
+<pre><code>&gt;&gt;&gt; re.sub('\d','','12ab34cd')
+'abcd'
+</code></pre><p>在替换字符时，如需获取匹配的字符，可以通过<code>\1</code>字符实现</p>
+<pre><code>&gt;&gt;&gt; re.sub('(\d)',r'\1+1','龙妈一共有3条龙🐲')
+'龙妈一共有3+1条龙🐲'
+</code></pre><h2 id="一些补充方法">一些补充方法</h2>
+<ol>
+<li><code>group()</code> - 获得一个或多个分组匹配的字符串，当要获得整个匹配的子串时，可直接使用 <code>group()</code> 或 <code>group(0)</code></li>
+<li><code>groups()</code> - 返回一个元组，包含所有匹配的子组，在样式中出现的从1到任意多的组合。</li>
+<li><code>span()</code> - 返回一个元祖，包含匹配结果的起始、终止下标</li>
+<li><code>start()</code> - 返回一个int类型的起始下标</li>
+<li><code>end() </code>- 返回一个int类型的终止下标</li>
+</ol>
+<h2 id="来写一些正则吧强势提高生产力">来写一些正则吧，强势提高生产力！</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;\d+.{7}&#39;</span>,<span style="color:#e6db74">&#39;2380540710@qq.comwohug&#39;</span>)<span style="color:#f92672">.</span>group()
+<span style="color:#e6db74">&#39;2380540710@qq.com&#39;</span>
+</code></pre></div>
     </div>
 
 
@@ -497,11 +604,11 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1106 字
+          2125 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2021-05-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-12</time>
+          <time datetime="2021-05-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-13</time>
           
 
   </p>
@@ -556,15 +663,23 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#匹配规则">匹配规则</a></li>
-    <li><a href="#匹配方法">匹配方法</a>
+    <li><a href="#匹配模式">匹配模式</a></li>
+    <li><a href="#三大匹配方法">三大匹配方法</a>
       <ul>
-        <li><a href="#rematchpattern-string-flag">re.match(pattern, string, flag)</a></li>
-        <li><a href="#researchpatternstring">re.search(pattern,string)</a></li>
-        <li><a href="#resplit">re.split()</a></li>
-        <li><a href="#refindall">re.findall()</a></li>
-        <li><a href="#resubpatternreplstringcountflag">re.sub(pattern,repl,string,count,flag)</a></li>
+        <li><a href="#1-rematchpattern-string-flags0">1. re.match(pattern, string, flags=0)</a></li>
+        <li><a href="#2-researchpattern-string-flags0">2. re.search(pattern, string, flags=0)</a></li>
+        <li><a href="#3-refindallpattern-string-flags0">3. re.findall(pattern, string, flags=0)</a></li>
       </ul>
     </li>
+    <li><a href="#更多方法">更多方法</a>
+      <ul>
+        <li><a href="#1-recompilepattern-flags0">1. re.compile(pattern, flags=0)</a></li>
+        <li><a href="#2-resplitpattern-string-maxsplit0-flags0">2. re.split(pattern, string, maxsplit=0, flags=0)</a></li>
+        <li><a href="#3-resubpattern-repl-string-count0-flags0">3. re.sub(pattern, repl, string, count=0, flags=0)</a></li>
+      </ul>
+    </li>
+    <li><a href="#一些补充方法">一些补充方法</a></li>
+    <li><a href="#来写一些正则吧强势提高生产力">来写一些正则吧，强势提高生产力！</a></li>
   </ul>
 </nav>
     </div>

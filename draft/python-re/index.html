@@ -29,8 +29,8 @@ if (!doNotTrack) {
 <meta property="og:description" content="前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/draft/python-re/" />
-<meta property="article:published_time" content="2021-04-22T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-04-22T00:00:00+00:00" />
+<meta property="article:published_time" content="2021-05-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-12T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | re"/>
@@ -108,14 +108,14 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2021/4/aliyun-server-initialization/">
+          <a class="icon" href=" https://billie52707.cn/draft/python-scrapy/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/posts/2021/4/python-xpath/">
+          <a class="icon" href="https://billie52707.cn/posts/2021/5/python-rbuf/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -238,7 +238,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2021-04-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-22</time>
+          <time datetime="2021-05-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-12</time>
           
           
         </div>
@@ -339,8 +339,12 @@ if (!doNotTrack) {
 <td>匹配非单词边界。&lsquo;er\B&rsquo; 能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;never&rdquo; 中的 &lsquo;er&rsquo;。</td>
 </tr>
 <tr>
-<td>\n, \t, 等.</td>
-<td>匹配一个换行符。匹配一个制表符。等</td>
+<td>\n</td>
+<td>匹配一个换行符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符</td>
 </tr>
 <tr>
 <td>\1&hellip;\9</td>
@@ -448,6 +452,7 @@ if (!doNotTrack) {
 </table>
 <h2 id="匹配方法">匹配方法</h2>
 <h3 id="rematchpattern-string-flag">re.match(pattern, string, flag)</h3>
+<p>从头开始匹配</p>
 <ul>
 <li>pattern - 正则表达式</li>
 <li>string - 要匹配的字符串</li>
@@ -456,7 +461,9 @@ if (!doNotTrack) {
 <h3 id="researchpatternstring">re.search(pattern,string)</h3>
 <h3 id="resplit">re.split()</h3>
 <h3 id="refindall">re.findall()</h3>
+<p>查找所有匹配的字符，返回一个列表类型</p>
 <h3 id="resubpatternreplstringcountflag">re.sub(pattern,repl,string,count,flag)</h3>
+<p>匹配字符并替换</p>
 
     </div>
 
@@ -494,11 +501,11 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1075 字
+          1101 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2021-04-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-04-22</time>
+          <time datetime="2021-05-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-12</time>
           
 
   </p>

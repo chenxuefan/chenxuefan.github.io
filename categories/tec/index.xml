@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | re</title>
+      <link>https://billie52707.cn/posts/2021/5/python-re/</link>
+      <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-re/</guid>
+      <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
+    </item>
+    
     <item>
       <title>python学习笔记 | r&#39;&#39;, b&#39;&#39;, u&#39;&#39;, f&#39;&#39;</title>
       <link>https://billie52707.cn/posts/2021/5/python-rbuf/</link>
@@ -19,10 +28,10 @@
     
     <item>
       <title>python模块详解 | re</title>
-      <link>https://billie52707.cn/posts/2021/5/python-re/</link>
+      <link>https://billie52707.cn/draft/python-re/</link>
       <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/python-re/</guid>
+      <guid>https://billie52707.cn/draft/python-re/</guid>
       <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
     </item>
     
@@ -141,15 +150,6 @@
       
       <guid>https://billie52707.cn/posts/2021/4/python-xpath/</guid>
       <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=432698831\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 关于lxml ​ lxml是python的一个解</description>
-    </item>
-    
-    <item>
-      <title>python模块详解 | re</title>
-      <link>https://billie52707.cn/draft/python-re/</link>
-      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-re/</guid>
-      <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
     </item>
     
     <item>
@@ -671,7 +671,7 @@
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/linux/</guid>
-      <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 unzip - https://blog.csdn.net/qq_27870421/article/details/92623897 rm 批量处理文件 - 例删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户，</description>
+      <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 unzip - https://blog.csdn.net/qq_27870421/article/details/92623897 rm 批量处理文件 - 例：删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户</description>
     </item>
     
     <item>
