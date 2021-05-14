@@ -27,6 +27,15 @@
     </item>
     
     <item>
+      <title>python模块详解 | re</title>
+      <link>https://billie52707.cn/posts/2021/5/python-re-2/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-re-2/</guid>
+      <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
+    </item>
+    
+    <item>
       <title>WakaTime! 完美统计代码工作量</title>
       <link>https://billie52707.cn/posts/2021/5/wakatime/</link>
       <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>

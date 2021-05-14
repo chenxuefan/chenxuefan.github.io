@@ -36,6 +36,15 @@
     </item>
     
     <item>
+      <title>python模块详解 | re</title>
+      <link>https://billie52707.cn/posts/2021/5/python-re-2/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-re-2/</guid>
+      <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | scrapy</title>
       <link>https://billie52707.cn/draft/python-scrapy/</link>
       <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
@@ -60,6 +69,15 @@
       
       <guid>https://billie52707.cn/posts/2021/5/glidedsky-level2/</guid>
       <description>题目地址 - http://glidedsky.com/level/crawler-basic-2 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-2 心得 这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如</description>
+    </item>
+    
+    <item>
+      <title>「广东农信社」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
+      <description>任务简介</description>
     </item>
     
     <item>
@@ -609,6 +627,15 @@
       
       <guid>https://billie52707.cn/posts/2020/11/wuhan-memory/</guid>
       <description>设备 - Sony RX100M3 / iphone7 日期 - 2020-11-01 /酒店阳台夜景 - 来武汉第一天，窗外的大马路灯火通明，隐约还能看到远处的大桥/ /珞珈山脚下 - 建筑陈旧，生活安逸，很有年代</description>
+    </item>
+    
+    <item>
+      <title>武汉之行</title>
+      <link>https://billie52707.cn/draft/wuhan/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/wuhan/</guid>
+      <description>酒店篇 整体环境 29/日下午五点半到的酒店，共有九层，到前台办理入住之后就上楼了，我们都在六楼，有两人间和大床间可选，我们学生住两人的，两个老</description>
     </item>
     
     <item>
