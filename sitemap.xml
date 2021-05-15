@@ -4,12 +4,37 @@
   
   <url>
     <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/leetcode/</loc>
+    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2021/5/leetcode-670/</loc>
+    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/</loc>
+    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -23,37 +48,12 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
-    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/</loc>
-    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billie52707.cn/draft/</loc>
     <lastmod>2021-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/posts/2021/5/python-rbuf/</loc>
-    <lastmod>2021-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/python-re/</loc>
-    <lastmod>2021-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/posts/2021/5/python-re-2/</loc>
     <lastmod>2021-05-12T00:00:00+00:00</lastmod>
   </url>
   

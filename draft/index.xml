@@ -9,15 +9,6 @@
     <copyright>Billie</copyright>
     <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>python模块详解 | re</title>
-      <link>https://billie52707.cn/draft/python-re/</link>
-      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-re/</guid>
-      <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
-    </item>
-    
-    <item>
       <title>python模块详解 | scrapy</title>
       <link>https://billie52707.cn/draft/python-scrapy/</link>
       <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
