@@ -14,7 +14,7 @@
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/5/leetcode-670/</guid>
-      <description>描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟倒序列表不一样的值，互换位置 难点：定</description>
+      <description>题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟倒序列表不一样的值，互换</description>
     </item>
     
   </channel>

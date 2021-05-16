@@ -25,14 +25,14 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="git" />
-<meta property="og:description" content="上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&quot;update&quot; git branch git push -u origin master 配置git环境 sudo yum install git git config &ndash;global user.name chenxuefan git config &ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &ldquo;2380540710@qq.com&rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git" />
+<meta property="og:description" content="上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&quot;update&quot; git branch git push -u origin master 配置git环境 sudo yum install git git config &ndash;global user.name chenxuefan git config &ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &ldquo;2380540710@qq.com&rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git GitHub workflow yml文件的编写" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/draft/git/" />
 
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="git"/>
-<meta name="twitter:description" content="上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&quot;update&quot; git branch git push -u origin master 配置git环境 sudo yum install git git config &ndash;global user.name chenxuefan git config &ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &ldquo;2380540710@qq.com&rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git"/>
+<meta name="twitter:description" content="上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&quot;update&quot; git branch git push -u origin master 配置git环境 sudo yum install git git config &ndash;global user.name chenxuefan git config &ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &ldquo;2380540710@qq.com&rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git GitHub workflow yml文件的编写"/>
 
   
   
@@ -165,6 +165,54 @@ var _hmt = _hmt || [];
 <li>
 <p>sudo git clone <a href="https://github.com/chenxuefan/dytt.git">https://github.com/chenxuefan/dytt.git</a></p>
 </li>
+</ul>
+<p>GitHub workflow</p>
+<ul>
+<li>
+<p>yml文件的编写</p>
+<pre><code># This is a basic workflow to help you get started with Actions
+  
+name: main
+  
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout # 步骤的名称
+        uses: actions/checkout@v1 #软件市场的名称
+        with: # 参数
+            submodules: true
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.2.2
+        with:
+            hugo-version: '0.64.1'
+            extended: true
+      - name: Build Blog
+        run: hugo -D
+  
+      # 使用大佬提供的代码 - https://github.com/manyuanrong/setup-ossutil
+      - uses: actions/checkout@master
+      - uses: manyuanrong/setup-ossutil@v2.0
+        with:
+          # endpoint 可以去oss控制台上查看
+          endpoint: &quot;oss-cn-beijing.aliyuncs.com&quot;
+          # 使用我们之前配置在secrets里面的accesskeys来配置ossutil
+          access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
+      - name: Deply To OSS
+        run: ossutil cp ./ oss://billie-s-blog/ -rf
+  
+  
+</code></pre></li>
 </ul>
 
   

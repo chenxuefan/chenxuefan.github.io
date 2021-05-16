@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>oss</title>
+      <link>https://billie52707.cn/draft/oss/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/oss/</guid>
+      <description>ossutil命令行管理工具 学习文档 https://help.aliyun.com/document_detail/31882.html?spm=a2c4g.11186623.3.3.41c321b4Dl5AHV 在mac配置ossutil环境 安装 - curl -o ossutilmac64 http://gosspublic.alicdn.com/ossutil/1.7.3/ossutilmac64 赋予权限 - chmod 755 ossutilmac64 改下名 - mv ossutilmac64 ossutil 添加到环境变量 - mv ossutil /usr/local/bin/ossutil 配置 -</description>
+    </item>
+    
     <item>
       <title>python模块详解 | scrapy</title>
       <link>https://billie52707.cn/draft/python-scrapy/</link>
@@ -203,7 +212,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/git/</guid>
-      <description>上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&amp;quot;update&amp;quot; git branch git push -u origin master 配置git环境 sudo yum install git git config &amp;ndash;global user.name chenxuefan git config &amp;ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &amp;ldquo;2380540710@qq.com&amp;rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git</description>
+      <description>上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&amp;quot;update&amp;quot; git branch git push -u origin master 配置git环境 sudo yum install git git config &amp;ndash;global user.name chenxuefan git config &amp;ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &amp;ldquo;2380540710@qq.com&amp;rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git GitHub workflow yml文件的编写</description>
     </item>
     
     <item>
