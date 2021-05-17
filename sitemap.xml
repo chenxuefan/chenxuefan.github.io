@@ -138,12 +138,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/</loc>
-    <lastmod>2021-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/docker4/</loc>
+    <loc>https://billie52707.cn/draft/docker4/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -165,6 +160,11 @@
   <url>
     <loc>https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
     <lastmod>2021-04-27T02:30:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/</loc>
+    <lastmod>2021-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>

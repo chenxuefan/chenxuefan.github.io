@@ -7,16 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>「docker」学习笔记 | 容器编排之Docker Swarm</title>
-      <link>https://billie52707.cn/note/docker4/</link>
-      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/note/docker4/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「docker」学习笔记 | 容器编排之Docker Compose</title>
       <link>https://billie52707.cn/note/docker3/</link>
@@ -50,7 +41,7 @@
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/rpa/</guid>
-      <description>浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的方法 rpa_brower.max_window() # 最大化浏览器 rpa_brower.min_window() # 最小</description>
+      <description>RPA适用场景的特点 大量重复 业务流程发生频率高，每日，每周 高重复性，需定时执行，或手动执行多次 规则明确 业务流程规则明确，标准化程度高 涉及系统</description>
     </item>
     
     <item>

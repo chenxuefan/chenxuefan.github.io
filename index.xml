@@ -23,7 +23,7 @@
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/5/leetcode-670/</guid>
-      <description>题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟倒序列表不一样的值，互换</description>
+      <description>题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟大到小排列列表不一样的值</description>
     </item>
     
     <item>
@@ -145,10 +145,10 @@
     
     <item>
       <title>「docker」学习笔记 | 容器编排之Docker Swarm</title>
-      <link>https://billie52707.cn/note/docker4/</link>
+      <link>https://billie52707.cn/draft/docker4/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/docker4/</guid>
+      <guid>https://billie52707.cn/draft/docker4/</guid>
       <description></description>
     </item>
     
@@ -383,7 +383,7 @@
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/rpa/</guid>
-      <description>浏览器 导入相关的方法和模块 from rpa import Chrome,ChromeOptions from rpa import ElementClickMethod # 元素点击 创建浏览器对象 options = ChromeOptions() options.add_experimental_option(&amp;#34;prefs&amp;#34;,{&amp;#34;safebrowsing.enabled&amp;#34;:True}) rpa_brower = Chrome(options) 浏览器对象的一些操作 # 窗口相关的方法 rpa_brower.max_window() # 最大化浏览器 rpa_brower.min_window() # 最小</description>
+      <description>RPA适用场景的特点 大量重复 业务流程发生频率高，每日，每周 高重复性，需定时执行，或手动执行多次 规则明确 业务流程规则明确，标准化程度高 涉及系统</description>
     </item>
     
     <item>
@@ -1310,7 +1310,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/git/</guid>
-      <description>上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&amp;quot;update&amp;quot; git branch git push -u origin master 配置git环境 sudo yum install git git config &amp;ndash;global user.name chenxuefan git config &amp;ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &amp;ldquo;2380540710@qq.com&amp;rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git GitHub workflow yml文件的编写</description>
+      <description>配置git环境 sudo yum install git git config &amp;ndash;global user.name chenxuefan git config &amp;ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &amp;ldquo;2380540710@qq.com&amp;rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git 上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&amp;quot;update&amp;quot; git branch git push -u origin master GitHub workflow yml文件的编写</description>
     </item>
     
     <item>

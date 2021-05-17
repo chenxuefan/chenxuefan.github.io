@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="LeetCode | 670. 最大交换" />
-<meta property="og:description" content="题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟倒序列表不一样的值，互换" />
+<meta property="og:description" content="题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟大到小排列列表不一样的值" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2021/5/leetcode-670/" />
 <meta property="article:published_time" content="2021-05-15T00:00:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LeetCode | 670. 最大交换"/>
-<meta name="twitter:description" content="题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟倒序列表不一样的值，互换"/>
+<meta name="twitter:description" content="题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟大到小排列列表不一样的值"/>
 
   
   
@@ -191,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fleetcode-670%2f&name=LeetCode%20%7c%20670.%20%e6%9c%80%e5%a4%a7%e4%ba%a4%e6%8d%a2&description=%e9%a2%98%e7%9b%ae%e5%9c%b0%e5%9d%80%20-%20https%3a%2f%2fleetcode-cn.com%2fproblems%2fmaximum-swap%2f%20%e6%8f%8f%e8%bf%b0%ef%bc%9a%e5%ae%9a%e4%b8%80%e4%b8%aa%e9%9d%9e%e8%b4%9f%e6%95%b4%e6%95%b0%ef%bc%8c%e4%bd%a0%e8%87%b3%e5%a4%9a%e5%8f%af%e4%bb%a5%e4%ba%a4%e6%8d%a2%e4%b8%80%e6%ac%a1%e6%95%b0%e5%ad%97%e4%b8%ad%e7%9a%84%e4%bb%bb%e6%84%8f%e4%b8%a4%e4%bd%8d%e3%80%82%e8%bf%94%e5%9b%9e%e4%bd%a0%e8%83%bd%e5%be%97%e5%88%b0%e7%9a%84%e6%9c%80%e5%a4%a7%e5%80%bc%e3%80%82%20%e6%80%9d%e8%b7%af%ef%bc%9a%e6%89%be%e5%88%b0%e5%88%97%e8%a1%a8%e4%b8%ad%e7%ac%ac%e4%b8%80%e4%b8%aa%e8%b7%9f%e5%80%92%e5%ba%8f%e5%88%97%e8%a1%a8%e4%b8%8d%e4%b8%80%e6%a0%b7%e7%9a%84%e5%80%bc%ef%bc%8c%e4%ba%92%e6%8d%a2">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fleetcode-670%2f&name=LeetCode%20%7c%20670.%20%e6%9c%80%e5%a4%a7%e4%ba%a4%e6%8d%a2&description=%e9%a2%98%e7%9b%ae%e5%9c%b0%e5%9d%80%20-%20https%3a%2f%2fleetcode-cn.com%2fproblems%2fmaximum-swap%2f%20%e6%8f%8f%e8%bf%b0%ef%bc%9a%e5%ae%9a%e4%b8%80%e4%b8%aa%e9%9d%9e%e8%b4%9f%e6%95%b4%e6%95%b0%ef%bc%8c%e4%bd%a0%e8%87%b3%e5%a4%9a%e5%8f%af%e4%bb%a5%e4%ba%a4%e6%8d%a2%e4%b8%80%e6%ac%a1%e6%95%b0%e5%ad%97%e4%b8%ad%e7%9a%84%e4%bb%bb%e6%84%8f%e4%b8%a4%e4%bd%8d%e3%80%82%e8%bf%94%e5%9b%9e%e4%bd%a0%e8%83%bd%e5%be%97%e5%88%b0%e7%9a%84%e6%9c%80%e5%a4%a7%e5%80%bc%e3%80%82%20%e6%80%9d%e8%b7%af%ef%bc%9a%e6%89%be%e5%88%b0%e5%88%97%e8%a1%a8%e4%b8%ad%e7%ac%ac%e4%b8%80%e4%b8%aa%e8%b7%9f%e5%a4%a7%e5%88%b0%e5%b0%8f%e6%8e%92%e5%88%97%e5%88%97%e8%a1%a8%e4%b8%8d%e4%b8%80%e6%a0%b7%e7%9a%84%e5%80%bc">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -260,12 +260,45 @@ if (!doNotTrack) {
   
     <div class="content" itemprop="articleBody">
       <ul>
-<li>题目地址 - <a href="https://leetcode-cn.com/problems/maximum-swap/">https://leetcode-cn.com/problems/maximum-swap/</a></li>
-<li>描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。</li>
-<li>思路：找到列表中第一个跟倒序列表不一样的值，互换位置</li>
-<li>难点：定位到交换两数中的后者（较小者）</li>
+<li>
+<p>题目地址 - <a href="https://leetcode-cn.com/problems/maximum-swap/">https://leetcode-cn.com/problems/maximum-swap/</a></p>
+</li>
+<li>
+<p>描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。</p>
+</li>
+<li>
+<p>思路：找到列表中第一个跟大到小排列列表不一样的值，互换位置</p>
+</li>
+<li>
+<p>难点：定位到交换两数中的后者（较大者）</p>
+<ul>
+<li>
+<p>定位方式1：按照num_list顺序定位，num_list.index(num_sort_list[i])得其下标。bug：当同时存在相同两个num_sort_list[i]时，此方法失效。</p>
+</li>
+<li>
+<p>定位方式2：按照num_list逆序定位，num_list[::-1].index(num_sort_list[i])得其逆序的下标。列表长度-1，减去逆序下标，即得其下标。</p>
+</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">[9, 3, 6, 7]
+</span><span style="color:#e6db74">[7, 6, 3, 9] #[::-1]
+</span><span style="color:#e6db74">[9, 7, 6, 3] #sort
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">maximumSwap</span>(self, num):
+        num_list <span style="color:#f92672">=</span> [int(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list(str(num))]
+        num_sort_list <span style="color:#f92672">=</span> sorted(num_list,reverse <span style="color:#f92672">=</span> True)
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(num_list)):
+            <span style="color:#66d9ef">if</span> num_list[i] <span style="color:#f92672">!=</span> num_sort_list[i]:
+                num_list[i], num_list[len(num_list)<span style="color:#f92672">-</span>num_list[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>index(num_sort_list[i])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> \
+                    num_sort_list[i], num_list[i]
+                <span style="color:#66d9ef">break</span>
+        <span style="color:#66d9ef">return</span> int(<span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join([str(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> num_list]))
+    
+<span style="color:#66d9ef">print</span>(Solution()<span style="color:#f92672">.</span>maximumSwap(<span style="color:#ae81ff">98368</span>))
+
 </code></pre></div>
     </div>
 
@@ -303,7 +336,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          91 字
+          331 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -415,7 +448,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fleetcode-670%2f&name=LeetCode%20%7c%20670.%20%e6%9c%80%e5%a4%a7%e4%ba%a4%e6%8d%a2&description=%e9%a2%98%e7%9b%ae%e5%9c%b0%e5%9d%80%20-%20https%3a%2f%2fleetcode-cn.com%2fproblems%2fmaximum-swap%2f%20%e6%8f%8f%e8%bf%b0%ef%bc%9a%e5%ae%9a%e4%b8%80%e4%b8%aa%e9%9d%9e%e8%b4%9f%e6%95%b4%e6%95%b0%ef%bc%8c%e4%bd%a0%e8%87%b3%e5%a4%9a%e5%8f%af%e4%bb%a5%e4%ba%a4%e6%8d%a2%e4%b8%80%e6%ac%a1%e6%95%b0%e5%ad%97%e4%b8%ad%e7%9a%84%e4%bb%bb%e6%84%8f%e4%b8%a4%e4%bd%8d%e3%80%82%e8%bf%94%e5%9b%9e%e4%bd%a0%e8%83%bd%e5%be%97%e5%88%b0%e7%9a%84%e6%9c%80%e5%a4%a7%e5%80%bc%e3%80%82%20%e6%80%9d%e8%b7%af%ef%bc%9a%e6%89%be%e5%88%b0%e5%88%97%e8%a1%a8%e4%b8%ad%e7%ac%ac%e4%b8%80%e4%b8%aa%e8%b7%9f%e5%80%92%e5%ba%8f%e5%88%97%e8%a1%a8%e4%b8%8d%e4%b8%80%e6%a0%b7%e7%9a%84%e5%80%bc%ef%bc%8c%e4%ba%92%e6%8d%a2">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fleetcode-670%2f&name=LeetCode%20%7c%20670.%20%e6%9c%80%e5%a4%a7%e4%ba%a4%e6%8d%a2&description=%e9%a2%98%e7%9b%ae%e5%9c%b0%e5%9d%80%20-%20https%3a%2f%2fleetcode-cn.com%2fproblems%2fmaximum-swap%2f%20%e6%8f%8f%e8%bf%b0%ef%bc%9a%e5%ae%9a%e4%b8%80%e4%b8%aa%e9%9d%9e%e8%b4%9f%e6%95%b4%e6%95%b0%ef%bc%8c%e4%bd%a0%e8%87%b3%e5%a4%9a%e5%8f%af%e4%bb%a5%e4%ba%a4%e6%8d%a2%e4%b8%80%e6%ac%a1%e6%95%b0%e5%ad%97%e4%b8%ad%e7%9a%84%e4%bb%bb%e6%84%8f%e4%b8%a4%e4%bd%8d%e3%80%82%e8%bf%94%e5%9b%9e%e4%bd%a0%e8%83%bd%e5%be%97%e5%88%b0%e7%9a%84%e6%9c%80%e5%a4%a7%e5%80%bc%e3%80%82%20%e6%80%9d%e8%b7%af%ef%bc%9a%e6%89%be%e5%88%b0%e5%88%97%e8%a1%a8%e4%b8%ad%e7%ac%ac%e4%b8%80%e4%b8%aa%e8%b7%9f%e5%a4%a7%e5%88%b0%e5%b0%8f%e6%8e%92%e5%88%97%e5%88%97%e8%a1%a8%e4%b8%8d%e4%b8%80%e6%a0%b7%e7%9a%84%e5%80%bc">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
