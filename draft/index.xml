@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「广东农信社」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
+      <description>任务简介 完成客户提供的两份测试报告 联调测试报告 单元测试报告 出差日志 联系人 - 冼健：17606688412 地址 - 官洲生命科学创新中心。地铁4号线</description>
+    </item>
+    
     <item>
       <title>oss</title>
       <link>https://billie52707.cn/draft/oss/</link>
@@ -24,15 +33,6 @@
       
       <guid>https://billie52707.cn/draft/python-scrapy/</guid>
       <description>安装 - pip install scrapy 新建项目 - scrapy startproject project_name /项目目录层级关系/ scrapy.cfg: 项目的配置文件 tutorial/: 该项目的python模块。之后您将在此加入代码。 tutorial/items.py: 项目中的item文件. tutorial/pipelines.py:</description>
-    </item>
-    
-    <item>
-      <title>「广东农信社」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
-      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
-      <description>任务简介 完成客户提供的两份测试报告 联调测试报告 单元测试报告 出差日志 联系人 - 冼健：17606688412 地址 - 官洲生命科学创新中心。地铁4号线</description>
     </item>
     
     <item>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「广东农信社」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
+      <description>任务简介 完成客户提供的两份测试报告 联调测试报告 单元测试报告 出差日志 联系人 - 冼健：17606688412 地址 - 官洲生命科学创新中心。地铁4号线</description>
+    </item>
+    
     <item>
       <title>oss</title>
       <link>https://billie52707.cn/draft/oss/</link>
@@ -69,15 +78,6 @@
       
       <guid>https://billie52707.cn/posts/2021/5/glidedsky-level2/</guid>
       <description>题目地址 - http://glidedsky.com/level/crawler-basic-2 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-2 心得 这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如</description>
-    </item>
-    
-    <item>
-      <title>「广东农信社」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
-      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
-      <description>任务简介 完成客户提供的两份测试报告 联调测试报告 单元测试报告 出差日志 联系人 - 冼健：17606688412 地址 - 官洲生命科学创新中心。地铁4号线</description>
     </item>
     
     <item>
@@ -383,7 +383,7 @@
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/rpa/</guid>
-      <description>RPA适用场景的特点 大量重复 业务流程发生频率高，每日，每周 高重复性，需定时执行，或手动执行多次 规则明确 业务流程规则明确，标准化程度高 涉及系统</description>
+      <description>一些必要的知识点 RPA适用场景的特点（工业制造、医疗、教育、银行、保险、证券、信托、房地产、政府职能部门、公检法司等行业领域） 大量重复 业务流</description>
     </item>
     
     <item>
