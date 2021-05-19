@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sat, 15 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | BeautifulSoup</title>
+      <link>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</guid>
+      <description>前言 Why BeautifulSoup? Beautiful Soup提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的</description>
+    </item>
+    
     <item>
       <title>LeetCode | 670. 最大交换</title>
       <link>https://billie52707.cn/posts/2021/5/leetcode-670/</link>
@@ -411,15 +420,6 @@
       
       <guid>https://billie52707.cn/posts/2020/11/jupyter-notebook/</guid>
       <description>Jupyter Notebook 入门 通过 Jupyter 使用实时代码、方程式和可视化及文本创建交互式的共享笔记本。 自从有了纸莎草纸以来，出版人们一直在努力以吸引读者的方式来格式化数据</description>
-    </item>
-    
-    <item>
-      <title>Mac初始化设置指南</title>
-      <link>https://billie52707.cn/posts/2020/11/mac-initial/</link>
-      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/posts/2020/11/mac-initial/</guid>
-      <description>前言 有时候可能会遇到重置系统或系统故障必须重装系统的情况，安装完新的系统之后，可以进行一些很有用的初始化设置 设置 三指拖移 系统偏好设置&amp;gt;</description>
     </item>
     
     <item>

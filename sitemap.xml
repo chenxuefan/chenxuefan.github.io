@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/categories/</loc>
+    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/</loc>
+    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/python/</loc>
+    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</loc>
+    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/</loc>
+    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/draft/</loc>
     <lastmod>2021-05-17T00:00:00+00:00</lastmod>
   </url>
@@ -13,18 +48,8 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/</loc>
-    <lastmod>2021-05-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billie52707.cn/draft/oss/</loc>
     <lastmod>2021-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -35,26 +60,6 @@
   <url>
     <loc>https://billie52707.cn/posts/2021/5/leetcode-670/</loc>
     <lastmod>2021-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
-    <lastmod>2021-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/python/</loc>
-    <lastmod>2021-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -210,11 +215,6 @@
   <url>
     <loc>https://billie52707.cn/posts/2021/4/python-logging/</loc>
     <lastmod>2021-04-14T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/python-beautifulsoup/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -483,7 +483,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/posts/2020/11/mac-initial/</loc>
+    <loc>https://billie52707.cn/note/macos/</loc>
     <lastmod>2020-11-04T00:00:00+00:00</lastmod>
   </url>
   

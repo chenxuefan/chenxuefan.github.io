@@ -72,12 +72,12 @@
     </item>
     
     <item>
-      <title>新的里程碑 | 一万访客达成！</title>
+      <title>我的博客项目开发文档</title>
       <link>https://billie52707.cn/draft/billie52707/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/billie52707/</guid>
-      <description></description>
+      <description>功能设计 需求阐述 统计 - 各个文件类型的文件个数和总文件大小（已完成） 将每日统计的数据，以日期为sheet的命名，写入sheet表（已完成） 命名</description>
     </item>
     
     <item>
@@ -87,15 +87,6 @@
       
       <guid>https://billie52707.cn/draft/python-keyboard/</guid>
       <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
-    </item>
-    
-    <item>
-      <title>python模块详解 | BeautifulSoup</title>
-      <link>https://billie52707.cn/draft/python-beautifulsoup/</link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-beautifulsoup/</guid>
-      <description>前言 Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增</description>
     </item>
     
     <item>

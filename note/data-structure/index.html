@@ -206,29 +206,47 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#模块一代码效率优化方法论">模块一：代码效率优化方法论</a>
+    <li><a href="#一时间复杂度">一、时间复杂度</a>
       <ul>
-        <li><a href="#一时间复杂度">一、时间复杂度</a></li>
-        <li><a href="#二空间复杂度">二、空间复杂度</a></li>
+        <li><a href="#1-降低时间复杂度的必要性">1. 降低时间复杂度的必要性</a></li>
+        <li><a href="#2-通常复杂度的计算方法遵循以下几个原则">2. 通常，复杂度的计算方法遵循以下几个原则</a></li>
+        <li><a href="#3-一些试验性的结论">3. 一些试验性的结论</a></li>
       </ul>
     </li>
-    <li><a href="#模块二数据结构基础">模块二：数据结构基础</a>
+    <li><a href="#二空间复杂度">二、空间复杂度</a>
       <ul>
-        <li><a href="#什么叫数据结构">什么叫数据结构？</a></li>
-        <li><a href="#增删查">增删查</a></li>
+        <li><a href="#1-降低空间复杂度的核心思路">1. 降低空间复杂度的核心思路</a></li>
+        <li><a href="#2-程序优化的最核心的思路">2. 程序优化的最核心的思路</a></li>
       </ul>
     </li>
-    <li><a href="#模块三数据结构的分类">模块三：数据结构的分类</a>
+  </ul>
+
+  <ul>
+    <li><a href="#什么叫数据结构">什么叫数据结构？</a></li>
+    <li><a href="#增删查">增删查</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#线性表linear-list">线性表（linear list）</a>
       <ul>
-        <li><a href="#-线性表linear-list"># 线性表（linear list）</a></li>
-        <li><a href="#-栈stack"># 栈（Stack）</a></li>
-        <li><a href="#-队列"># 队列</a></li>
-        <li><a href="#-数组"># 数组</a></li>
-        <li><a href="#-字符串"># 字符串</a></li>
-        <li><a href="#-树与二叉树"># 树与二叉树</a></li>
-        <li><a href="#-哈希表"># 哈希表</a></li>
+        <li><a href="#1-什么是线性表">1. 什么是线性表</a></li>
+        <li><a href="#2-线性表的分类">2. 线性表的分类</a></li>
       </ul>
     </li>
+    <li><a href="#栈stack">栈（Stack）</a>
+      <ul>
+        <li><a href="#1-栈是什么">1. 栈是什么？</a></li>
+        <li><a href="#2-栈的分类">2. 栈的分类</a></li>
+        <li><a href="#3-总结">3. 总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#队列">队列</a></li>
+    <li><a href="#数组">数组</a></li>
+    <li><a href="#串">串</a></li>
+    <li><a href="#表">表</a></li>
+    <li><a href="#树与二叉树">树与二叉树</a></li>
+    <li><a href="#图">图</a></li>
+    <li><a href="#哈希表">哈希表</a></li>
   </ul>
 </nav>
     </div>
@@ -269,7 +287,7 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="模块一代码效率优化方法论">模块一：代码效率优化方法论</h2>
+      <h1 id="模块一代码效率优化方法论">模块一：代码效率优化方法论</h1>
 <blockquote>
 <p>复杂度是衡量<strong>代码运行效率</strong>的重要度量因素</p>
 </blockquote>
@@ -278,16 +296,16 @@ if (!doNotTrack) {
 <li><strong>时间复杂度</strong>与「<strong>代码的结构设计</strong>」高度相关</li>
 <li><strong>空间复杂度</strong>与「<strong>代码中的数据结构的选择</strong>」高度相关</li>
 </ul>
-<h3 id="一时间复杂度">一、时间复杂度</h3>
-<h4 id="1-降低时间复杂度的必要性">1. 降低时间复杂度的必要性</h4>
+<h2 id="一时间复杂度">一、时间复杂度</h2>
+<h3 id="1-降低时间复杂度的必要性">1. 降低时间复杂度的必要性</h3>
 <p>实际的在线环境中，用户的访问请求可以看作一个流式数据。假设这个数据流中，每个访问的平均时间间隔是 t。如果你的代码无法在 t 时间内处理完单次的访问请求，那么这个系统就会一波未平一波又起，最终被大量积压的任务给压垮。这就要求工程师必须通过<strong>优化代码、优化数据结构</strong>，来降低时间复杂度。</p>
-<h4 id="2-通常复杂度的计算方法遵循以下几个原则">2. 通常，复杂度的计算方法遵循以下几个原则</h4>
+<h3 id="2-通常复杂度的计算方法遵循以下几个原则">2. 通常，复杂度的计算方法遵循以下几个原则</h3>
 <ul>
 <li>复杂度与<strong>具体的常系数</strong>无关</li>
 <li>多项式级的复杂度相加时，选择<strong>高者</strong>作为结果</li>
 <li>O(1)也是一个特殊复杂度</li>
 </ul>
-<h4 id="3-一些试验性的结论">3. 一些试验性的结论</h4>
+<h3 id="3-一些试验性的结论">3. 一些试验性的结论</h3>
 <ul>
 <li>一个<strong>顺序结构</strong>的代码，时间复杂度是 O(1)。</li>
 <li>二分查找，或者更通用地说是采用分而治之的二分策略，时间复杂度都是 O(logn)。</li>
@@ -295,12 +313,12 @@ if (!doNotTrack) {
 <li>两个顺序执行的 for 循环，时间复杂度是 O(n)+O(n)=O(2n)，其实也是 O(n)。（复杂度与具体的常系数无关的原则）</li>
 <li>两个嵌套的 for 循环，时间复杂度是 O(n²)。</li>
 </ul>
-<h3 id="二空间复杂度">二、空间复杂度</h3>
-<h4 id="1-降低空间复杂度的核心思路">1. 降低空间复杂度的核心思路</h4>
+<h2 id="二空间复杂度">二、空间复杂度</h2>
+<h3 id="1-降低空间复杂度的核心思路">1. 降低空间复杂度的核心思路</h3>
 <ul>
 <li>能用<strong>低复杂度的数据结构</strong>能解决问题，就千万不要用高复杂度的数据结构</li>
 </ul>
-<h4 id="2-程序优化的最核心的思路">2. 程序优化的最核心的思路</h4>
+<h3 id="2-程序优化的最核心的思路">2. 程序优化的最核心的思路</h3>
 <ol>
 <li>
 <p>暴力解法。在没有任何时间、空间约束下，完成代码任务的开发。</p>
@@ -314,17 +332,17 @@ if (!doNotTrack) {
 <p>（对数据的操作进行细分，全面掌握常见数据结构的基础知识）</p>
 </li>
 </ol>
-<h2 id="模块二数据结构基础">模块二：数据结构基础</h2>
-<h3 id="什么叫数据结构">什么叫数据结构？</h3>
+<h1 id="模块二数据结构基础">模块二：数据结构基础</h1>
+<h2 id="什么叫数据结构">什么叫数据结构？</h2>
 <ul>
 <li>数据结构是一门研究「<strong>非数值计算</strong>」的程序设计问题中的所涉及数据的「<strong>数据元素及其关系</strong>」的科学。😓</li>
 </ul>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png" alt="数据结构"></p>
-<h3 id="增删查">增删查</h3>
+<h2 id="增删查">增删查</h2>
 <p>增和删又可以细分为在数据结构中间的增和删，以及在数据结构最后的增和删。区别就在于原数据的位置是否发生改变。查找又可以细分为按照位置条件的查找和按照数据数值特征的查找。几乎所有的数据处理，都是这些基本操作的组合和叠加。</p>
-<h2 id="模块三数据结构的分类">模块三：数据结构的分类</h2>
-<h3 id="-线性表linear-list"># 线性表（linear list）</h3>
-<h4 id="1-什么是线性表">1. 什么是线性表</h4>
+<h1 id="模块三数据结构的分类">模块三：数据结构的分类</h1>
+<h2 id="线性表linear-list">线性表（linear list）</h2>
+<h3 id="1-什么是线性表">1. 什么是线性表</h3>
 <ul>
 <li>线性表是n个数据元素的有限序列，最常用的是链式表达，通常也叫做线性链表或者链表</li>
 <li>线性表真正的价值在于，它对数据的存储方式是<strong>按照顺序的存储</strong>
@@ -334,7 +352,7 @@ if (!doNotTrack) {
 </ol>
 </li>
 </ul>
-<h4 id="2-线性表的分类">2. 线性表的分类</h4>
+<h3 id="2-线性表的分类">2. 线性表的分类</h3>
 <ul>
 <li>
 <p>顺序表</p>
@@ -370,8 +388,8 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<h3 id="-栈stack"># 栈（Stack）</h3>
-<h4 id="1-栈是什么">1. 栈是什么</h4>
+<h2 id="栈stack">栈（Stack）</h2>
+<h3 id="1-栈是什么">1. 栈是什么？</h3>
 <ul>
 <li>定义 - 一种特殊的线性表</li>
 <li>特性 - 栈的数据结点必须<strong>后进先出</strong>，</li>
@@ -379,7 +397,7 @@ if (!doNotTrack) {
 <li>优势 - 处理只涉及一端新增和删除数据的问题时，效率更高</li>
 <li>栈与线性表的不同 - 体现在：<strong>增和删的操作</strong>，数据新增和删除操作只能在线性表的表尾进行，即“在线性表的基础上加了限制”</li>
 </ul>
-<h4 id="2-栈的分类">2. 栈的分类</h4>
+<h3 id="2-栈的分类">2. 栈的分类</h3>
 <ul>
 <li>
 <p>顺序栈</p>
@@ -411,17 +429,38 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<h4 id="3-总结">3. 总结</h4>
+<h3 id="3-总结">3. 总结</h3>
 <ul>
 <li>栈是一个限制版的线性表，只允许数据「从栈顶进出」</li>
 <li>时间复杂度，新增、删除操作都是O(1)，查找操作是O(n)</li>
 <li>应用场景：浏览器的后退与前进，括号匹配等</li>
 </ul>
-<h3 id="-队列"># 队列</h3>
-<h3 id="-数组"># 数组</h3>
-<h3 id="-字符串"># 字符串</h3>
-<h3 id="-树与二叉树"># 树与二叉树</h3>
-<h3 id="-哈希表"># 哈希表</h3>
+<h2 id="队列">队列</h2>
+<p>顺序队列</p>
+<p>链式队列</p>
+<h2 id="数组">数组</h2>
+<h2 id="串">串</h2>
+<p>顺序串</p>
+<p>链式串</p>
+<h2 id="表">表</h2>
+<p>广义表</p>
+<h2 id="树与二叉树">树与二叉树</h2>
+<p>树</p>
+<p>二叉树</p>
+<p>森林</p>
+<p>哈夫曼树</p>
+<h2 id="图">图</h2>
+<h2 id="哈希表">哈希表</h2>
+<h1 id="模块四">模块四</h1>
+<p>查找</p>
+<p>排序</p>
+<ul>
+<li>插入排序</li>
+<li>交换排序</li>
+<li>选择排序</li>
+<li>归并排序</li>
+<li>基数排序</li>
+</ul>
 
     </div>
 
@@ -456,7 +495,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1710 字
+          1758 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -513,29 +552,47 @@ if (!doNotTrack) {
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#模块一代码效率优化方法论">模块一：代码效率优化方法论</a>
+    <li><a href="#一时间复杂度">一、时间复杂度</a>
       <ul>
-        <li><a href="#一时间复杂度">一、时间复杂度</a></li>
-        <li><a href="#二空间复杂度">二、空间复杂度</a></li>
+        <li><a href="#1-降低时间复杂度的必要性">1. 降低时间复杂度的必要性</a></li>
+        <li><a href="#2-通常复杂度的计算方法遵循以下几个原则">2. 通常，复杂度的计算方法遵循以下几个原则</a></li>
+        <li><a href="#3-一些试验性的结论">3. 一些试验性的结论</a></li>
       </ul>
     </li>
-    <li><a href="#模块二数据结构基础">模块二：数据结构基础</a>
+    <li><a href="#二空间复杂度">二、空间复杂度</a>
       <ul>
-        <li><a href="#什么叫数据结构">什么叫数据结构？</a></li>
-        <li><a href="#增删查">增删查</a></li>
+        <li><a href="#1-降低空间复杂度的核心思路">1. 降低空间复杂度的核心思路</a></li>
+        <li><a href="#2-程序优化的最核心的思路">2. 程序优化的最核心的思路</a></li>
       </ul>
     </li>
-    <li><a href="#模块三数据结构的分类">模块三：数据结构的分类</a>
+  </ul>
+
+  <ul>
+    <li><a href="#什么叫数据结构">什么叫数据结构？</a></li>
+    <li><a href="#增删查">增删查</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#线性表linear-list">线性表（linear list）</a>
       <ul>
-        <li><a href="#-线性表linear-list"># 线性表（linear list）</a></li>
-        <li><a href="#-栈stack"># 栈（Stack）</a></li>
-        <li><a href="#-队列"># 队列</a></li>
-        <li><a href="#-数组"># 数组</a></li>
-        <li><a href="#-字符串"># 字符串</a></li>
-        <li><a href="#-树与二叉树"># 树与二叉树</a></li>
-        <li><a href="#-哈希表"># 哈希表</a></li>
+        <li><a href="#1-什么是线性表">1. 什么是线性表</a></li>
+        <li><a href="#2-线性表的分类">2. 线性表的分类</a></li>
       </ul>
     </li>
+    <li><a href="#栈stack">栈（Stack）</a>
+      <ul>
+        <li><a href="#1-栈是什么">1. 栈是什么？</a></li>
+        <li><a href="#2-栈的分类">2. 栈的分类</a></li>
+        <li><a href="#3-总结">3. 总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#队列">队列</a></li>
+    <li><a href="#数组">数组</a></li>
+    <li><a href="#串">串</a></li>
+    <li><a href="#表">表</a></li>
+    <li><a href="#树与二叉树">树与二叉树</a></li>
+    <li><a href="#图">图</a></li>
+    <li><a href="#哈希表">哈希表</a></li>
   </ul>
 </nav>
     </div>

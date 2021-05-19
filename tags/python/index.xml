@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 13 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | BeautifulSoup</title>
+      <link>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</guid>
+      <description>前言 Why BeautifulSoup? Beautiful Soup提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的</description>
+    </item>
+    
     <item>
       <title>python模块详解 | re</title>
       <link>https://billie52707.cn/posts/2021/5/python-re/</link>
@@ -123,15 +132,6 @@
       
       <guid>https://billie52707.cn/posts/2021/4/python-logging/</guid>
       <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 - logging.basicConfig() 日志基础教程 import logging logging.basicConfig( filename=&amp;#39;document.log&amp;#39;, level=logging.INFO, format=&amp;#34;%(asctime)s%(pathname)s[%(lineno)s]%(levelname)s:%(message)s&amp;#34;, datefmt=&amp;#34;%Y-%m-%d%H:%M:%S %p&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;) 下面结合四个参数展开来聊一下</description>
-    </item>
-    
-    <item>
-      <title>python模块详解 | BeautifulSoup</title>
-      <link>https://billie52707.cn/draft/python-beautifulsoup/</link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-beautifulsoup/</guid>
-      <description>前言 Why BeautifulSoup? 使用 from bs4 import BeautifulSoup 创建BeautifulSoup对象 字符串 - soup = BeatifulSoup(str) 导入文件 - soup = BeautifulSoup(open(&#39;index.html&#39;)) 网络加载 import requests r = requests.get(&amp;#39;https://www.baidu.com&amp;#39;) r.encoding = &amp;#39;utf-8&amp;#39; soup = BeautifulSoup(r.text) print(soup.prettify()) # 格式化输出 1. 查 2. 删 3. 增</description>
     </item>
     
     <item>
