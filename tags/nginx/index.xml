@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>「nginx」学习笔记</title>
+      <link>https://billie52707.cn/note/nginx/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/nginx/</guid>
+      <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
+    </item>
+    
+    <item>
       <title>记一次迁移服务器的经历</title>
       <link>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</link>
       <pubDate>Sun, 18 Apr 2021 02:30:10 +0000</pubDate>

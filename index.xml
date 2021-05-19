@@ -27,11 +27,11 @@
     </item>
     
     <item>
-      <title>oss</title>
-      <link>https://billie52707.cn/draft/oss/</link>
+      <title>「oss」学习笔记</title>
+      <link>https://billie52707.cn/note/oss/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/oss/</guid>
+      <guid>https://billie52707.cn/note/oss/</guid>
       <description>ossutil命令行管理工具 学习文档 https://help.aliyun.com/document_detail/31882.html?spm=a2c4g.11186623.3.3.41c321b4Dl5AHV 在mac配置ossutil环境 安装 - curl -o ossutilmac64 http://gosspublic.alicdn.com/ossutil/1.7.3/ossutilmac64 赋予权限 - chmod 755 ossutilmac64 改下名 - mv ossutilmac64 ossutil 添加到环境变量 - mv ossutil /usr/local/bin/ossutil 配置 -</description>
     </item>
     
@@ -213,6 +213,15 @@
       
       <guid>https://billie52707.cn/posts/2021/4/python-xpath/</guid>
       <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=432698831\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 关于lxml ​ lxml是python的一个解</description>
+    </item>
+    
+    <item>
+      <title>「nginx」学习笔记</title>
+      <link>https://billie52707.cn/note/nginx/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/nginx/</guid>
+      <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
     </item>
     
     <item>
@@ -1320,15 +1329,6 @@
       
       <guid>https://billie52707.cn/draft/html/</guid>
       <description>font size color face img src height width title alt 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border cellspacing cellpadding width height</description>
-    </item>
-    
-    <item>
-      <title>nginx</title>
-      <link>https://billie52707.cn/draft/nginx/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/nginx/</guid>
-      <description>centos 操作nginx的几种方式 /etc/init.d/nginx start/stop sudo service nginx start/stop nginx start/stop killall nginx # 杀死所有nginx进程 相关文件位置 /usr/sbin/nginx #主程序 /etc/nginx #存放配置文件 /usr/share/nginx #存放静态文件 /var/log/nginx #存放日志 安装</description>
     </item>
     
     <item>
