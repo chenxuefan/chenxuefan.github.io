@@ -1046,7 +1046,7 @@ body {
   list-style-type: none;
 }
 .post-list .post-item .meta {
-  display: inline!important;
+  display: block;
   margin-right: 16px;
   min-width: 100px;
   color: #666;
@@ -1054,7 +1054,7 @@ body {
 }
 @media (min-width: 480px) {
   .post-list .post-item {
-    display: inline!important;
+    display: flex;
     margin-bottom: 5px;
   }
   .post-list .post-item .meta {
@@ -1222,7 +1222,7 @@ article .content .caption {
   list-style-type: none;
 }
 #archive .post-list .post-item .meta {
-  display: inline!important;
+  display: block;
   margin-right: 16px;
   min-width: 100px;
   color: #666;
@@ -1230,7 +1230,7 @@ article .content .caption {
 }
 @media (min-width: 480px) {
   #archive .post-list .post-item {
-    display: inline!important;
+    display: flex;
     margin-bottom: 5px;
     margin-left: 1rem;
   }
