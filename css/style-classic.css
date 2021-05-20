@@ -1045,7 +1045,7 @@ body {
   list-style-type: none;
 }
 .post-list .post-item .meta {
-  display: block;
+  display: inline;
   margin-right: 16px;
   min-width: 100px;
   color: #666;
