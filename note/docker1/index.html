@@ -239,9 +239,15 @@ if (!doNotTrack) {
         <li><a href="#5导出导入容器">（5）导出导入容器</a></li>
         <li><a href="#6容器与宿主机互传文件">（6）容器与宿主机互传文件</a></li>
         <li><a href="#7给已存在的容器添加或修改端口映射">（7）给已存在的容器添加或修改端口映射</a></li>
+        <li><a href="#8容器---镜像">（8）容器 -&gt; 镜像</a></li>
       </ul>
     </li>
-    <li><a href="#仓库repository管理">仓库（repository）管理</a></li>
+    <li><a href="#仓库repository管理">仓库（repository）管理</a>
+      <ul>
+        <li><a href="#1-公共镜像仓库">1. 公共镜像仓库</a></li>
+        <li><a href="#2-私有镜像仓库">2. 私有镜像仓库</a></li>
+      </ul>
+    </li>
     <li><a href="#网络管理">网络管理</a></li>
     <li><a href="#坑儿们">坑儿们</a></li>
     <li><a href="#后记">后记</a></li>
@@ -413,15 +419,19 @@ systemctl start/stop/restart docker
 <tbody>
 <tr>
 <td>查看本地镜像</td>
-<td>docker images (ls)</td>
+<td>docker images</td>
 </tr>
 <tr>
 <td>查找镜像</td>
 <td>docker search image_name</td>
 </tr>
 <tr>
-<td>拉取镜像</td>
-<td>docker pull image_name</td>
+<td><a href="https://docs.docker.com/engine/reference/commandline/pull/">拉取镜像</a></td>
+<td>docker pull [OPTIONS] NAME[:TAG]</td>
+</tr>
+<tr>
+<td><a href="https://docs.docker.com/engine/reference/commandline/push/">推送镜像</a></td>
+<td>docker push [OPTIONS] NAME[:TAG]</td>
 </tr>
 <tr>
 <td>查看镜像信息</td>
@@ -522,6 +532,10 @@ systemctl start/stop/restart docker
 <tr>
 <td>导入容器</td>
 <td>docker import filename Name/ID</td>
+</tr>
+<tr>
+<td><a href="https://docs.docker.com/engine/reference/commandline/commit/">将容器打包成镜像</a></td>
+<td>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</td>
 </tr>
 </tbody>
 </table>
@@ -758,7 +772,7 @@ systemctl start/stop/restart docker
 <pre><code>docker import busybox.tar busybox:test
 </code></pre><p>此时，busybox.tar 被导入成为新的镜像，镜像名称为 busybox:test</p>
 <h3 id="6容器与宿主机互传文件">（6）容器与宿主机互传文件</h3>
-<p>首先确定docker容器的<strong>container_id</strong>或<strong>容器命名</strong>,可以使用<code>docker ps -a </code>或<code>docker images -a</code>查看</p>
+<p>首先确定docker容器的<strong>ID</strong>或<strong>NAME</strong>,可以使用<code>docker ps -a</code>或<code>docker images -a</code>查看</p>
 <ul>
 <li>
 <p>docker容器向本机传送文件</p>
@@ -773,10 +787,12 @@ systemctl start/stop/restart docker
 </ul>
 <h3 id="7给已存在的容器添加或修改端口映射">（7）给已存在的容器添加或修改端口映射</h3>
 <ol>
-<li>新建容器时，使用docker run命令创建并运行一个容器，如需要添加端口映射则可以通过 -p 参数进行设置，如<code>docker run -it --name my_nginx -p 8080:80 -d nginx</code>，即可将宿主机的8080端口与容器的80端口进行映射。</li>
-<li>容器已创建时，如若需要给予容器以更多的端口映射，则可以通过修改容器配置文件的方式进行修改。</li>
-</ol>
-<p>配置文件路径：<code>/var/lib/docker/containers/[hash_of_the_container]/hostconfig.json</code></p>
+<li>
+<p>新建容器时，使用docker run命令创建并运行一个容器，如需要添加端口映射则可以通过 -p 参数进行设置，如<code>docker run -it --name my_nginx -p 8080:80 -d nginx</code>，即可将宿主机的8080端口与容器的80端口进行映射。</p>
+</li>
+<li>
+<p>容器已创建时，如若需要给予容器以更多的端口映射，则可以通过修改容器配置文件的方式进行修改。</p>
+<p><strong>配置文件路径</strong>-<code>/var/lib/docker/containers/[hash_of_the_container]/hostconfig.json</code></p>
 <ul>
 <li>
 <p><code>hash_of_the_container</code></p>
@@ -788,7 +804,94 @@ systemctl start/stop/restart docker
 <p>在 <code>hostconfig.json</code> 里有 <code>&quot;PortBindings&quot;:{}</code> 这个配置项，可以改成 <code>&quot;PortBindings&quot;:{&quot;80/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]}</code> 这里 80 是容器端口， 8080 是本地端口</p>
 </li>
 </ul>
+</li>
+</ol>
+<h3 id="8容器---镜像">（8）容器 -&gt; 镜像</h3>
+<p><code>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</code></p>
+<ul>
+<li>
+<p><code>[OPTIONS]</code> - 参数，选项如下：</p>
+<table>
+<thead>
+<tr>
+<th>Name, shorthand</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--author</code> , <code>-a</code></td>
+<td></td>
+<td>Author (e.g., &ldquo;John Hannibal Smith <a href="mailto:hannibal@a-team.com">hannibal@a-team.com</a>&quot;)</td>
+</tr>
+<tr>
+<td><code>--change</code> , <code>-c</code></td>
+<td></td>
+<td>Apply Dockerfile instruction to the created image</td>
+</tr>
+<tr>
+<td><code>--message</code> , <code>-m</code></td>
+<td></td>
+<td>Commit message</td>
+</tr>
+<tr>
+<td><code>--pause</code> , <code>-p</code></td>
+<td><code>true</code></td>
+<td>Pause container during commit</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>CONTAINER</code> - 容器命名或ID</p>
+</li>
+<li>
+<p><code>[REPOSITORY[:TAG]]</code> - 镜像仓库名:版本号</p>
+</li>
+</ul>
+<p>示例：</p>
+<ul>
+<li><code>docker commit -a &quot;Billie&quot; -m &quot;first version&quot; chenxuefan chenxuefan:version1</code>
+<ul>
+<li><code>-a &quot;Billie&quot;</code> - 作者，Billie</li>
+<li><code>-m &quot;first version&quot;</code> - 打包信息</li>
+<li><code>chenxuefan</code> - 容器名</li>
+<li><code>chenxuefan:version1</code> - 镜像名:tag</li>
+</ul>
+</li>
+<li><code>docker commit --change &quot;ENV DEBUG=true&quot; c3f279d17e0a  svendowideit/testimage:version3</code></li>
+</ul>
 <h2 id="仓库repository管理">仓库（repository）管理</h2>
+<p>关于「仓库」概念的解释请移步 - <a href="https://billie52707.cn/note/docker1/#%E5%9B%9B%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5">https://billie52707.cn/note/docker1/#四大核心概念</a></p>
+<p>一句话概括就是，仓库（Repository）是存储和分发 Docker 镜像的地方。</p>
+<p>按照类型，我们将镜像仓库分为 公共镜像仓库 和 私有镜像仓库。</p>
+<h3 id="1-公共镜像仓库">1. 公共镜像仓库</h3>
+<p>公共镜像仓库一般是 Docker 官方或者其他第三方组织（阿里云，腾讯云，网易云等）提供的，允许所有人注册和使用的镜像仓库。</p>
+<p>Docker Hub 是全球最大的镜像市场，目前已经有超过 10w 个容器镜像，这些容器镜像主要来自软件供应商、开源组织和社区。大部分的操作系统镜像和软件镜像都可以直接在 Docker Hub 下载并使用 - <a href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+<p>使用<code>docker pull [OPTIONS] NAME[:TAG|@DIGEST] </code>命令就可以从共有镜像仓库拉取需要的镜像。</p>
+<h3 id="2-私有镜像仓库">2. 私有镜像仓库</h3>
+<ol>
+<li>
+<p>注册Docker Hub账号 - <a href="https://hub.docker.com/">Docker Hub</a></p>
+</li>
+<li>
+<p>创建自己的仓库 - <a href="https://hub.docker.com/repository/create">https://hub.docker.com/repository/create</a></p>
+</li>
+<li>
+<p>本地登录镜像服务器 - <code>docker login</code></p>
+<p><code>docker login</code>命令默认会请求 Docker Hub，如果你想登录第三方镜像仓库或者自建的镜像仓库，在<code>docker login</code>后面加上注册服务器即可。</p>
+</li>
+<li>
+<p>重命名镜像 - <code>docker tag</code></p>
+</li>
+<li>
+<p>本地推送镜像至仓库 -  <code>docker push</code></p>
+</li>
+<li>
+<p>over</p>
+</li>
+</ol>
 <h2 id="网络管理">网络管理</h2>
 <ul>
 <li>
@@ -865,7 +968,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          6464 字
+          7033 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -955,9 +1058,15 @@ systemctl start/stop/restart docker
         <li><a href="#5导出导入容器">（5）导出导入容器</a></li>
         <li><a href="#6容器与宿主机互传文件">（6）容器与宿主机互传文件</a></li>
         <li><a href="#7给已存在的容器添加或修改端口映射">（7）给已存在的容器添加或修改端口映射</a></li>
+        <li><a href="#8容器---镜像">（8）容器 -&gt; 镜像</a></li>
       </ul>
     </li>
-    <li><a href="#仓库repository管理">仓库（repository）管理</a></li>
+    <li><a href="#仓库repository管理">仓库（repository）管理</a>
+      <ul>
+        <li><a href="#1-公共镜像仓库">1. 公共镜像仓库</a></li>
+        <li><a href="#2-私有镜像仓库">2. 私有镜像仓库</a></li>
+      </ul>
+    </li>
     <li><a href="#网络管理">网络管理</a></li>
     <li><a href="#坑儿们">坑儿们</a></li>
     <li><a href="#后记">后记</a></li>
