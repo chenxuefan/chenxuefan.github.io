@@ -63,12 +63,30 @@
     </item>
     
     <item>
+      <title>hugo建站全指南 | 我的第一个博客网站</title>
+      <link>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</link>
+      <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</guid>
+      <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
+    </item>
+    
+    <item>
       <title>Linux学习笔记 | nginx</title>
       <link>https://billie52707.cn/posts/2020/4/nginx/</link>
       <pubDate>Wed, 22 Apr 2020 14:33:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/4/nginx/</guid>
       <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
+    </item>
+    
+    <item>
+      <title>「Linux」学习笔记</title>
+      <link>https://billie52707.cn/note/linux/</link>
+      <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/note/linux/</guid>
+      <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 unzip - https://blog.csdn.net/qq_27870421/article/details/92623897 rm 批量处理文件 - 例：删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户</description>
     </item>
     
   </channel>

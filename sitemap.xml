@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/photo/</loc>
+    <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/categories/</loc>
     <lastmod>2021-05-19T00:00:00+00:00</lastmod>
   </url>
@@ -819,11 +824,6 @@
   
   <url>
     <loc>https://billie52707.cn/posts/2020/3/python-progressbar/</loc>
-    <lastmod>2020-03-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/ubuntu/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
   
