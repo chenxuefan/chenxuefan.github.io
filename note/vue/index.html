@@ -228,8 +228,10 @@ if (!doNotTrack) {
         <li><a href="#v-model">v-model</a></li>
       </ul>
     </li>
-    <li><a href="#网络请求axios">网络请求:axios</a>
+    <li><a href="#网络请求">网络请求</a>
       <ul>
+        <li><a href="#axios">axios</a></li>
+        <li><a href="#jsonp">jsonp</a></li>
         <li><a href="#按钮">按钮</a></li>
       </ul>
     </li>
@@ -329,6 +331,7 @@ if (!doNotTrack) {
            }
       },	<span style="color:#75715e">//数据对象
 </span><span style="color:#75715e"></span>     <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{},	<span style="color:#75715e">//事件
+</span><span style="color:#75715e"></span>     <span style="color:#a6e22e">mounted</span>(){}  <span style="color:#75715e">//挂载事件
 </span><span style="color:#75715e"></span>  });
 &lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><ul>
@@ -352,7 +355,7 @@ if (!doNotTrack) {
 <p><code>var vm = new Vue({ ... });</code></p>
 </li>
 <li>
-<p>el:挂载点</p>
+<p>el - 挂载点</p>
 <ul>
 <li>vue会管理el选项命中的元素及其内部的后代选择器</li>
 <li>可以使用其他的选择器,但是建议使用ID选择器</li>
@@ -360,7 +363,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p>data:数据对象</p>
+<p>data - 数据对象</p>
 <ul>
 <li>vue中用到的数据定义在data中</li>
 <li>data中可以写复杂类型的数据</li>
@@ -368,7 +371,10 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p>methods:事件</p>
+<p>methods - 事件</p>
+</li>
+<li>
+<p>mounted - 挂载事件</p>
 </li>
 </ul>
 <h2 id="vue指令">Vue指令</h2>
@@ -456,7 +462,8 @@ if (!doNotTrack) {
 <li>绑定的数据会和表单元素<strong>值</strong>相关联</li>
 <li>绑定的数据↔️表单元素的值</li>
 </ul>
-<h2 id="网络请求axios">网络请求:axios</h2>
+<h2 id="网络请求">网络请求</h2>
+<h3 id="axios">axios</h3>
 <ul>
 <li>一个功能强大的网络请求库</li>
 <li>导入:<code>&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</code></li>
@@ -473,7 +480,41 @@ if (!doNotTrack) {
 <li>调用变量的时候,把<code>this</code>保存起来,回调函数中直接使用保存的<code>this</code>即可</li>
 <li>和本地应用的最大区别就是改变了<strong>数据来源</strong></li>
 </ul>
-<h3 id="按钮">按钮</h3>
+<h3 id="jsonp">jsonp</h3>
+<ul>
+<li><a href="https://github.com/RekingZhang/axios-jsonp">https://github.com/RekingZhang/axios-jsonp</a></li>
+<li><a href="https://github.com/RekingZhang/axios-jsonp/tree/master/dist">https://github.com/RekingZhang/axios-jsonp/tree/master/dist</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
+	&lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;main_url&#34;</span> &gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+<span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">vue</span> <span style="color:#f92672">--&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;	
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://billie-s-blog.oss-cn-beijing.aliyuncs.com/js/axios.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span>&gt;	
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+		<span style="color:#a6e22e">el</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;#app&#34;</span>, <span style="color:#75715e">//挂载点
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;pass me&#39;</span>,<span style="color:#a6e22e">main_url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#a6e22e">about_url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>},  <span style="color:#75715e">//数据对象
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{
+			<span style="color:#a6e22e">getimg</span>(){
+				<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+				<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">jsonp</span>(<span style="color:#e6db74">&#39;http://open.iciba.com/dsapi/&#39;</span>)
+				  .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
+					  <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">main_url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">fenxiang_img</span>;
+					  <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">about_url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">picture4</span>;
+				    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">response</span>);
+				  })
+				  .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">error</span>) {
+				    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
+				  });
+			}	
+		}, <span style="color:#75715e">// 方法
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">mounted</span>(){
+			<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getimg</span>();
+		}
+	})
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h3 id="按钮">按钮</h3>
 <table>
 <thead>
 <tr>
@@ -593,7 +634,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2401 字
+          2469 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -672,8 +713,10 @@ if (!doNotTrack) {
         <li><a href="#v-model">v-model</a></li>
       </ul>
     </li>
-    <li><a href="#网络请求axios">网络请求:axios</a>
+    <li><a href="#网络请求">网络请求</a>
       <ul>
+        <li><a href="#axios">axios</a></li>
+        <li><a href="#jsonp">jsonp</a></li>
         <li><a href="#按钮">按钮</a></li>
       </ul>
     </li>
