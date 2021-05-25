@@ -9,12 +9,12 @@
     <copyright>Billie</copyright>
     <lastBuildDate>Mon, 24 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>最近的一些项目</title>
+      <title>最近的一些小项目</title>
       <link>https://billie52707.cn/posts/2021/5/recent-projects/</link>
       <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/5/recent-projects/</guid>
-      <description>unsplash Most recent dytt GOT</description>
+      <description>unsplash 预览地址 - https://billie52707.cn/photo/ 项目仓库 - https://github.com/chenxuefan/crawler/tree/main/unsplash 功能模块 - 按照topic（类型）爬取图片（每个类型只爬一张）、前端展示页面 技术栈 - requests、re、xpat</description>
     </item>
     
     <item>
