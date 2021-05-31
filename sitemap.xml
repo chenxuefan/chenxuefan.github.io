@@ -3,13 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://billie52707.cn/categories/</loc>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/draft/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/python/</loc>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/draft/python-asyncio/</loc>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/tags/</loc>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,27 +43,7 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2021-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/python/</loc>
-    <lastmod>2021-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2021-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
     <lastmod>2021-05-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -858,6 +863,10 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/draft/python-aiohttp/</loc>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/draft/python-django/</loc>
   </url>
   
@@ -899,6 +908,10 @@
   
   <url>
     <loc>https://billie52707.cn/draft/other/</loc>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/diary/summer/</loc>
   </url>
   
 </urlset>

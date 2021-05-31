@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | asyncio</title>
+      <link>https://billie52707.cn/draft/python-asyncio/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-asyncio/</guid>
+      <description>概念理解 I/O(读写密集型) ：指的是系统的cpu效能 比磁盘读写效能要高很多，这时是cpu在等io（磁盘到内存）的读写，此时cpu使用率不高；</description>
+    </item>
+    
     <item>
       <title>钢琴学习笔记</title>
       <link>https://billie52707.cn/draft/piano/</link>
@@ -1261,6 +1270,15 @@
     
     <item>
       <title></title>
+      <link>https://billie52707.cn/draft/python-aiohttp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-aiohttp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://billie52707.cn/draft/python-django/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1347,6 +1365,15 @@
       
       <guid>https://billie52707.cn/draft/other/</guid>
       <description>注册香港apple id及充值教程</description>
+    </item>
+    
+    <item>
+      <title>summer</title>
+      <link>https://billie52707.cn/diary/summer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/diary/summer/</guid>
+      <description>菊次郎的夏天 请以你的名字呼唤我</description>
     </item>
     
   </channel>
