@@ -4,36 +4,41 @@
   
   <url>
     <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/draft/</loc>
-    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/tags/python/</loc>
-    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/draft/python-asyncio/</loc>
-    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <loc>https://billie52707.cn/draft/python-aiohttp/</loc>
+    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/categories/tec/</loc>
-    <lastmod>2021-05-31T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/draft/python-asyncio/</loc>
     <lastmod>2021-05-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -288,6 +293,16 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/posts/2021/2/ajax/</loc>
+    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2021/2/proxy/</loc>
+    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/posts/2021/2/principle/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
   </url>
@@ -309,6 +324,11 @@
   
   <url>
     <loc>https://billie52707.cn/posts/2021/2/web/</loc>
+    <lastmod>2021-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/posts/2021/2/async/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -860,10 +880,6 @@
   <url>
     <loc>https://billie52707.cn/posts/2020/3/python-psutil/</loc>
     <lastmod>2020-03-15T10:17:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/python-aiohttp/</loc>
   </url>
   
   <url>

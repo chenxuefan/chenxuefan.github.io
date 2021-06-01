@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title> 异步爬虫的原理和解析 | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="异步爬虫的原理和解析" />
+<meta property="og:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们知道爬虫是 IO 密集型任务，比如如果我们使用 requests 库来爬取某个站点的话，发出一个请求之后" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/2/async/" />
+<meta property="article:published_time" content="2021-02-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-27T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="异步爬虫的原理和解析"/>
+<meta name="twitter:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们知道爬虫是 IO 密集型任务，比如如果我们使用 requests 库来爬取某个站点的话，发出一个请求之后"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/posts/2021/2/http/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/posts/2021/2/web/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&text=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&is_video=false&description=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&name=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90&description=%2a%e6%9c%ac%e7%af%87%e8%bd%ac%e8%87%aa%e6%8b%89%e5%8b%be%e6%95%99%e8%82%b2%e3%80%8a52%e8%ae%b2%e8%bd%bb%e6%9d%be%e6%90%9e%e5%ae%9a%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e3%80%8b%e4%bd%9c%e8%80%85%ef%bc%9a%e5%b4%94%e5%ba%86%e6%89%8d%20%e6%88%91%e4%bb%ac%e7%9f%a5%e9%81%93%e7%88%ac%e8%99%ab%e6%98%af%20IO%20%e5%af%86%e9%9b%86%e5%9e%8b%e4%bb%bb%e5%8a%a1%ef%bc%8c%e6%af%94%e5%a6%82%e5%a6%82%e6%9e%9c%e6%88%91%e4%bb%ac%e4%bd%bf%e7%94%a8%20requests%20%e5%ba%93%e6%9d%a5%e7%88%ac%e5%8f%96%e6%9f%90%e4%b8%aa%e7%ab%99%e7%82%b9%e7%9a%84%e8%af%9d%ef%bc%8c%e5%8f%91%e5%87%ba%e4%b8%80%e4%b8%aa%e8%af%b7%e6%b1%82%e4%b9%8b%e5%90%8e">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&t=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#实例引入">实例引入</a></li>
+    <li><a href="#基本了解">基本了解</a></li>
+    <li><a href="#阻塞">阻塞</a></li>
+    <li><a href="#非阻塞">非阻塞</a></li>
+    <li><a href="#同步">同步</a></li>
+    <li><a href="#异步">异步</a></li>
+    <li><a href="#多进程">多进程</a></li>
+    <li><a href="#协程">协程</a></li>
+    <li><a href="#协程用法">协程用法</a></li>
+    <li><a href="#定义协程">定义协程</a></li>
+    <li><a href="#绑定回调">绑定回调</a></li>
+    <li><a href="#多任务协程">多任务协程</a></li>
+    <li><a href="#协程实现">协程实现</a></li>
+    <li><a href="#使用-aiohttp">使用 aiohttp</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        异步爬虫的原理和解析
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
+<p>我们知道爬虫是 IO 密集型任务，比如如果我们使用 requests 库来爬取某个站点的话，发出一个请求之后，程序必须要等待网站返回响应之后才能接着运行，而在等待响应的过程中，整个爬虫程序是一直在等待的，实际上没有做任何的事情。对于这种情况我们有没有优化方案呢？</p>
+<h2 id="实例引入">实例引入</h2>
+<p>比如在这里我们看这么一个示例网站：https://static4.scrape.center/，如图所示。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/4651622545872_.pic_hd.jpg" alt="4651622545872_.pic_hd"></p>
+<p>这个网站在内部实现返回响应的逻辑的时候特意加了 5 秒的延迟，也就是说如果我们用 requests 来爬取其中某个页面的话，至少需要 5 秒才能得到响应。</p>
+<p>另外这个网站的逻辑结构在之前的案例中我们也分析过，其内容就是电影数据，一共 100 部，每个电影的详情页是一个自增 ID，从 1~100，比如 <a href="https://static4.scrape.center/detail/43">https://static4.scrape.center/detail/43</a> 就代表第 43 部电影，如图所示。</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/4661622545877_.pic_hd.jpg" alt="4661622545877_.pic_hd"></p>
+<p>下面我们来用 requests 写一个遍历程序，直接遍历 1~100 部电影数据，代码实现如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> logging
+<span style="color:#f92672">import</span> time
+logging<span style="color:#f92672">.</span>basicConfig(level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>INFO,
+                   format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74">: </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>)
+TOTAL_NUMBER <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+BASE_URL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://static4.scrape.center/detail/{id}&#39;</span>
+start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+<span style="color:#66d9ef">for</span> id <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, TOTAL_NUMBER <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):
+   url <span style="color:#f92672">=</span> BASE_URL<span style="color:#f92672">.</span>format(id<span style="color:#f92672">=</span>id)
+   logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;scraping </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span>, url)
+   response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;total time </span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> seconds&#39;</span>, end_time <span style="color:#f92672">-</span> start_time)
+</code></pre></div><p>这里我们直接用循环的方式构造了 100 个详情页的爬取，使用的是 requests 单线程，在爬取之前和爬取之后记录下时间，最后输出爬取了 100 个页面消耗的时间。</p>
+<p>运行结果如下：</p>
+<pre><code>2020-03-31 14:40:35,411 - INFO: scraping https://static4.scrape.center/detail/1
+2020-03-31 14:40:40,578 - INFO: scraping https://static4.scrape.center/detail/2
+2020-03-31 14:40:45,658 - INFO: scraping https://static4.scrape.center/detail/3
+2020-03-31 14:40:50,761 - INFO: scraping https://static4.scrape.center/detail/4
+2020-03-31 14:40:55,852 - INFO: scraping https://static4.scrape.center/detail/5
+2020-03-31 14:41:00,956 - INFO: scraping https://static4.scrape.center/detail/6
+...
+2020-03-31 14:48:58,785 - INFO: scraping https://static4.scrape.center/detail/99
+2020-03-31 14:49:03,867 - INFO: scraping https://static4.scrape.center/detail/100
+2020-03-31 14:49:09,042 - INFO: total time 513.6309871673584 seconds
+2020-03-31 14:49:09,042 - INFO: total time 513.6309871673584 seconds
+</code></pre><p>由于每个页面都至少要等待 5 秒才能加载出来，因此 100 个页面至少要花费 500 秒的时间，总的爬取时间最终为 513.6 秒，将近 9 分钟。</p>
+<p>这个在实际情况下是很常见的，有些网站本身加载速度就比较慢，稍慢的可能 1~3 秒，更慢的说不定 10 秒以上才可能加载出来。如果我们用 requests 单线程这么爬取的话，总的耗时是非常多的。此时如果我们开了多线程或多进程来爬取的话，其爬取速度确实会成倍提升，但有没有更好的解决方案呢？</p>
+<p>本课时我们就来了解一下使用异步执行方式来加速的方法，此种方法对于 IO 密集型任务非常有效。如将其应用到网络爬虫中，爬取效率甚至可以成百倍地提升。</p>
+<h2 id="基本了解">基本了解</h2>
+<p>在了解异步协程之前，我们首先得了解一些基础概念，如阻塞和非阻塞、同步和异步、多进程和协程。</p>
+<h2 id="阻塞">阻塞</h2>
+<p>阻塞状态指程序未得到所需计算资源时被挂起的状态。程序在等待某个操作完成期间，自身无法继续处理其他的事情，则称该程序在该操作上是阻塞的。</p>
+<p>常见的阻塞形式有：网络 I/O 阻塞、磁盘 I/O 阻塞、用户输入阻塞等。阻塞是无处不在的，包括 CPU 切换上下文时，所有的进程都无法真正处理事情，它们也会被阻塞。如果是多核 CPU 则正在执行上下文切换操作的核不可被利用。</p>
+<h2 id="非阻塞">非阻塞</h2>
+<p>程序在等待某操作过程中，自身不被阻塞，可以继续处理其他的事情，则称该程序在该操作上是非阻塞的。</p>
+<p>非阻塞并不是在任何程序级别、任何情况下都可以存在的。仅当程序封装的级别可以囊括独立的子程序单元时，它才可能存在非阻塞状态。</p>
+<p>非阻塞的存在是因为阻塞存在，正因为某个操作阻塞导致的耗时与效率低下，我们才要把它变成非阻塞的。</p>
+<h2 id="同步">同步</h2>
+<p>不同程序单元为了完成某个任务，在执行过程中需靠某种通信方式以协调一致，我们称这些程序单元是同步执行的。</p>
+<p>例如购物系统中更新商品库存，需要用“行锁”作为通信信号，让不同的更新请求强制排队顺序执行，那更新库存的操作是同步的。</p>
+<p>简言之，同步意味着有序。</p>
+<h2 id="异步">异步</h2>
+<p>为完成某个任务，不同程序单元之间过程中无需通信协调，也能完成任务的方式，不相关的程序单元之间可以是异步的。</p>
+<p>例如，爬虫下载网页。调度程序调用下载程序后，即可调度其他任务，而无需与该下载任务保持通信以协调行为。不同网页的下载、保存等操作都是无关的，也无需相互通知协调。这些异步操作的完成时刻并不确定。</p>
+<p>简言之，异步意味着无序。</p>
+<h2 id="多进程">多进程</h2>
+<p>多进程就是利用 CPU 的多核优势，在同一时间并行地执行多个任务，可以大大提高执行效率。</p>
+<h2 id="协程">协程</h2>
+<p>协程，英文叫作 Coroutine，又称微线程、纤程，协程是一种用户态的轻量级线程。</p>
+<p>协程拥有自己的寄存器上下文和栈。协程调度切换时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈。因此协程能保留上一次调用时的状态，即所有局部状态的一个特定组合，每次过程重入时，就相当于进入上一次调用的状态。</p>
+<p>协程本质上是个单进程，协程相对于多进程来说，无需线程上下文切换的开销，无需原子操作锁定及同步的开销，编程模型也非常简单。</p>
+<p>我们可以使用协程来实现异步操作，比如在网络爬虫场景下，我们发出一个请求之后，需要等待一定的时间才能得到响应，但其实在这个等待过程中，程序可以干许多其他的事情，等到响应得到之后才切换回来继续处理，这样可以充分利用 CPU 和其他资源，这就是协程的优势。</p>
+<h2 id="协程用法">协程用法</h2>
+<p>接下来，我们来了解下协程的实现，从 Python 3.4 开始，Python 中加入了协程的概念，但这个版本的协程还是以生成器对象为基础的，在 Python 3.5 则增加了 async/await，使得协程的实现更加方便。</p>
+<p>Python 中使用协程最常用的库莫过于 asyncio，所以本文会以 asyncio 为基础来介绍协程的使用。</p>
+<p>首先我们需要了解下面几个概念。</p>
+<ul>
+<li>
+<p>event_loop：事件循环，相当于一个无限循环，我们可以把一些函数注册到这个事件循环上，当满足条件发生的时候，就会调用对应的处理方法。</p>
+</li>
+<li>
+<p>coroutine：中文翻译叫协程，在 Python 中常指代为协程对象类型，我们可以将协程对象注册到时间循环中，它会被事件循环调用。我们可以使用 async 关键字来定义一个方法，这个方法在调用时不会立即被执行，而是返回一个协程对象。</p>
+</li>
+<li>
+<p>task：任务，它是对协程对象的进一步封装，包含了任务的各个状态。</p>
+</li>
+<li>
+<p>future：代表将来执行或没有执行的任务的结果，实际上和 task 没有本质区别。</p>
+</li>
+</ul>
+<p>另外我们还需要了解 async/await 关键字，它是从 Python 3.5 才出现的，专门用于定义协程。其中，async 定义一个协程，await 用来挂起阻塞方法的执行。</p>
+<h2 id="定义协程">定义协程</h2>
+<p>首先我们来定义一个协程，体验一下它和普通进程在实现上的不同之处，代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(x):
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Number:&#39;</span>, x)
+coroutine <span style="color:#f92672">=</span> execute(<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Coroutine:&#39;</span>, coroutine)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;After calling execute&#39;</span>)
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(coroutine)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;After calling loop&#39;</span>)
+<span style="color:#960050;background-color:#1e0010">运行结果：</span>
+Coroutine: <span style="color:#f92672">&lt;</span>coroutine object execute at <span style="color:#ae81ff">0x1034cf830</span><span style="color:#f92672">&gt;</span>
+After calling execute
+Number: <span style="color:#ae81ff">1</span>
+After calling loop
+</code></pre></div><p>首先我们引入了 asyncio 这个包，这样我们才可以使用 async 和 await，然后我们使用 async 定义了一个 execute 方法，方法接收一个数字参数，方法执行之后会打印这个数字。</p>
+<p>随后我们直接调用了这个方法，然而这个方法并没有执行，而是返回了一个 coroutine 协程对象。随后我们使用 get_event_loop 方法创建了一个事件循环 loop，并调用了 loop 对象的 run_until_complete 方法将协程注册到事件循环 loop 中，然后启动。最后我们才看到了 execute 方法打印了输出结果。</p>
+<p>可见，async 定义的方法就会变成一个无法直接执行的 coroutine 对象，必须将其注册到事件循环中才可以执行。</p>
+<p>上面我们还提到了 task，它是对 coroutine 对象的进一步封装，它里面相比 coroutine 对象多了运行状态，比如 running、finished 等，我们可以用这些状态来获取协程对象的执行情况。</p>
+<p>在上面的例子中，当我们将 coroutine 对象传递给 run_until_complete 方法的时候，实际上它进行了一个操作就是将 coroutine 封装成了 task 对象，我们也可以显式地进行声明，如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(x):
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Number:&#39;</span>, x)
+   <span style="color:#66d9ef">return</span> x
+coroutine <span style="color:#f92672">=</span> execute(<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Coroutine:&#39;</span>, coroutine)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;After calling execute&#39;</span>)
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+task <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_task(coroutine)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Task:&#39;</span>, task)
+loop<span style="color:#f92672">.</span>run_until_complete(task)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Task:&#39;</span>, task)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;After calling loop&#39;</span>)
+</code></pre></div><p>运行结果：</p>
+<pre><code>Coroutine: &lt;coroutine object execute at 0x10e0f7830&gt;
+After calling execute
+Task: &lt;Task pending coro=&lt;execute() running at demo.py:4&gt;&gt;
+Number: 1
+Task: &lt;Task finished coro=&lt;execute() done, defined at demo.py:4&gt; result=1&gt;
+After calling loop
+</code></pre><p>这里我们定义了 loop 对象之后，接着调用了它的 create_task 方法将 coroutine 对象转化为了 task 对象，随后我们打印输出一下，发现它是 pending 状态。接着我们将 task 对象添加到事件循环中得到执行，随后我们再打印输出一下 task 对象，发现它的状态就变成了 finished，同时还可以看到其 result 变成了 1，也就是我们定义的 execute 方法的返回结果。</p>
+<p>另外定义 task 对象还有一种方式，就是直接通过 asyncio 的 ensure_future 方法，返回结果也是 task 对象，这样的话我们就可以不借助于 loop 来定义，即使我们还没有声明 loop 也可以提前定义好 task 对象，写法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">execute</span>(x):
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Number:&#39;</span>, x)
+   <span style="color:#66d9ef">return</span> x
+coroutine <span style="color:#f92672">=</span> execute(<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Coroutine:&#39;</span>, coroutine)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;After calling execute&#39;</span>)
+task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>ensure_future(coroutine)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Task:&#39;</span>, task)
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(task)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Task:&#39;</span>, task)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;After calling loop&#39;</span>)
+</code></pre></div><p>运行结果：</p>
+<pre><code>Coroutine: &lt;coroutine object execute at 0x10aa33830&gt;
+After calling execute
+Task: &lt;Task pending coro=&lt;execute() running at demo.py:4&gt;&gt;
+Number: 1
+Task: &lt;Task finished coro=&lt;execute() done, defined at demo.py:4&gt; result=1&gt;
+After calling loop
+</code></pre><p>发现其运行效果都是一样的。</p>
+<h2 id="绑定回调">绑定回调</h2>
+<p>另外我们也可以为某个 task 绑定一个回调方法，比如我们来看下面的例子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> requests
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://www.baidu.com&#39;</span>
+   status <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+   <span style="color:#66d9ef">return</span> status
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">callback</span>(task):
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Status:&#39;</span>, task<span style="color:#f92672">.</span>result())
+
+coroutine <span style="color:#f92672">=</span> request()
+task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>ensure_future(coroutine)
+task<span style="color:#f92672">.</span>add_done_callback(callback)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Task:&#39;</span>, task)
+
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(task)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Task:&#39;</span>, task)
+</code></pre></div><p>在这里我们定义了一个 request 方法，请求了百度，获取其状态码，但是这个方法里面我们没有任何 print 语句。随后我们定义了一个 callback 方法，这个方法接收一个参数，是 task 对象，然后调用 print 方法打印了 task 对象的结果。这样我们就定义好了一个 coroutine 对象和一个回调方法，我们现在希望的效果是，当 coroutine 对象执行完毕之后，就去执行声明的 callback 方法。</p>
+<p>那么它们二者怎样关联起来呢？很简单，只需要调用 add_done_callback 方法即可，我们将 callback 方法传递给了封装好的 task 对象，这样当 task 执行完毕之后就可以调用 callback 方法了，同时 task 对象还会作为参数传递给 callback 方法，调用 task 对象的 result 方法就可以获取返回结果了。</p>
+<p>运行结果：</p>
+<pre><code>Task: &lt;Task pending coro=&lt;request() running at demo.py:5&gt; cb=[callback() at demo.py:11]&gt;
+Status: &lt;Response [200]&gt;
+Task: &lt;Task finished coro=&lt;request() done, defined at demo.py:5&gt; result=&lt;Response [200]&gt;&gt;
+</code></pre><p>实际上不用回调方法，直接在 task 运行完毕之后也可以直接调用 result 方法获取结果，如下所示：</p>
+<pre><code>import asyncio
+import requests
+
+async def request():
+   url = 'https://www.baidu.com'
+   status = requests.get(url)
+   return status
+
+coroutine = request()
+task = asyncio.ensure_future(coroutine)
+print('Task:', task)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(task)
+print('Task:', task)
+print('Task Result:', task.result())
+</code></pre><p>运行结果是一样的：</p>
+<pre><code>Task: &lt;Task pending coro=&lt;request() running at demo.py:4&gt;&gt;
+Task: &lt;Task finished coro=&lt;request() done, defined at demo.py:4&gt; result=&lt;Response [200]&gt;&gt;
+Task Result: &lt;Response [200]&gt;
+</code></pre><h2 id="多任务协程">多任务协程</h2>
+<p>上面的例子我们只执行了一次请求，如果我们想执行多次请求应该怎么办呢？我们可以定义一个 task 列表，然后使用 asyncio 的 wait 方法即可执行，看下面的例子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> requests
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://www.baidu.com&#39;</span>
+   status <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+   <span style="color:#66d9ef">return</span> status
+
+tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>)]
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Tasks:&#39;</span>, tasks)
+
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
+
+<span style="color:#66d9ef">for</span> task <span style="color:#f92672">in</span> tasks:
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Task Result:&#39;</span>, task<span style="color:#f92672">.</span>result())
+</code></pre></div><p>这里我们使用一个 for 循环创建了五个 task，组成了一个列表，然后把这个列表首先传递给了 asyncio 的 wait() 方法，然后再将其注册到时间循环中，就可以发起五个任务了。最后我们再将任务的运行结果输出出来，运行结果如下：</p>
+<pre><code>Tasks: [&lt;Task pending coro=&lt;request() running at demo.py:5&gt;&gt;, 
+&lt;Task pending coro=&lt;request() running at demo.py:5&gt;&gt;, 
+&lt;Task pending coro=&lt;request() running at demo.py:5&gt;&gt;, 
+&lt;Task pending coro=&lt;request() running at demo.py:5&gt;&gt;, 
+&lt;Task pending coro=&lt;request() running at demo.py:5&gt;&gt;]
+
+Task Result: &lt;Response [200]&gt;
+Task Result: &lt;Response [200]&gt;
+Task Result: &lt;Response [200]&gt;
+Task Result: &lt;Response [200]&gt;
+Task Result: &lt;Response [200]&gt;
+</code></pre><p>可以看到五个任务被顺次执行了，并得到了运行结果。</p>
+<h2 id="协程实现">协程实现</h2>
+<p>前面讲了这么多，又是 async，又是 coroutine，又是 task，又是 callback，但似乎并没有看出协程的优势啊？反而写法上更加奇怪和麻烦了，别急，上面的案例只是为后面的使用作铺垫，接下来我们正式来看下协程在解决 IO 密集型任务上有怎样的优势吧！</p>
+<p>上面的代码中，我们用一个网络请求作为示例，这就是一个耗时等待的操作，因为我们请求网页之后需要等待页面响应并返回结果。耗时等待的操作一般都是 IO 操作，比如文件读取、网络请求等等。协程对于处理这种操作是有很大优势的，当遇到需要等待的情况的时候，程序可以暂时挂起，转而去执行其他的操作，从而避免一直等待一个程序而耗费过多的时间，充分利用资源。</p>
+<p>为了表现出协程的优势，我们还是拿本课时开始介绍的网站 <a href="https://static4.scrape.center/">https://static4.scrape.center/</a> 为例来进行演示，因为该网站响应比较慢，所以我们可以通过爬取时间来直观地感受到爬取速度的提升。</p>
+<p>为了让你更好地理解协程的正确使用方法，这里我们先来看看使用协程时常犯的错误，后面再给出正确的例子来对比一下。</p>
+<p>首先，我们还是拿之前的 requests 来进行网页请求，接下来我们再重新使用上面的方法请求一遍：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> time
+
+start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Waiting for&#39;</span>, url)
+   response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Get response from&#39;</span>, url, <span style="color:#e6db74">&#39;response&#39;</span>, response)
+
+
+tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
+
+end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Cost time:&#39;</span>, end <span style="color:#f92672">-</span> start)
+</code></pre></div><p>在这里我们还是创建了 10 个 task，然后将 task 列表传给 wait 方法并注册到时间循环中执行。</p>
+<p>运行结果如下：</p>
+<pre><code>Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Waiting for https://static4.scrape.center/
+...
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Cost time: 51.422438859939575
+</code></pre><p>可以发现和正常的请求并没有什么两样，依然还是顺次执行的，耗时 51 秒，平均一个请求耗时 5 秒，说好的异步处理呢？</p>
+<p>其实，要实现异步处理，我们得先要有挂起的操作，当一个任务需要等待 IO 结果的时候，可以挂起当前任务，转而去执行其他任务，这样我们才能充分利用好资源，上面方法都是一本正经的串行走下来，连个挂起都没有，怎么可能实现异步？想太多了。</p>
+<p>要实现异步，接下来我们需要了解一下 await 的用法，使用 await 可以将耗时等待的操作挂起，让出控制权。当协程执行的时候遇到 await，时间循环就会将本协程挂起，转而去执行别的协程，直到其他的协程挂起或执行完毕。</p>
+<p>所以，我们可能会将代码中的 request 方法改成如下的样子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Waiting for&#39;</span>, url)
+   response <span style="color:#f92672">=</span> await requests<span style="color:#f92672">.</span>get(url)
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Get response from&#39;</span>, url, <span style="color:#e6db74">&#39;response&#39;</span>, response)
+</code></pre></div><p>仅仅是在 requests 前面加了一个 await，然而执行以下代码，会得到如下报错：</p>
+<pre><code>Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+...
+Task exception was never retrieved
+future: &lt;Task finished coro=&lt;request() done, defined at demo.py:8&gt; exception=TypeError(&quot;object Response can't be used in 'await' expression&quot;)&gt;
+Traceback (most recent call last):
+ File &quot;demo.py&quot;, line 11, in request
+   response = await requests.get(url)
+TypeError: object Response can't be used in 'await' expression
+</code></pre><p>这次它遇到 await 方法确实挂起了，也等待了，但是最后却报了这么个错，这个错误的意思是 requests 返回的 Response 对象不能和 await 一起使用，为什么呢？因为根据官方文档说明，await 后面的对象必须是如下格式之一：</p>
+<ul>
+<li>
+<p>A native coroutine object returned from a native coroutine function，一个原生 coroutine 对象。</p>
+</li>
+<li>
+<p>A generator-based coroutine object returned from a function decorated with types.coroutine，一个由 types.coroutine 修饰的生成器，这个生成器可以返回 coroutine 对象。</p>
+</li>
+<li>
+<p>An object with an <strong>await</strong> method returning an iterator，一个包含 <strong>await</strong> 方法的对象返回的一个迭代器。</p>
+</li>
+</ul>
+<p>可以参见：https://www.python.org/dev/peps/pep-0492/#await-expression。</p>
+<p>requests 返回的 Response 不符合上面任一条件，因此就会报上面的错误了。</p>
+<p>那么你可能会发现，既然 await 后面可以跟一个 coroutine 对象，那么我用 async 把请求的方法改成 coroutine 对象不就可以了吗？所以就改写成如下的样子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> time
+
+start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(url):
+   <span style="color:#66d9ef">return</span> requests<span style="color:#f92672">.</span>get(url)
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Waiting for&#39;</span>, url)
+   response <span style="color:#f92672">=</span> await get(url)
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Get response from&#39;</span>, url, <span style="color:#e6db74">&#39;response&#39;</span>, response)
+
+tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
+
+end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Cost time:&#39;</span>, end <span style="color:#f92672">-</span> start)
+</code></pre></div><p>这里我们将请求页面的方法独立出来，并用 async 修饰，这样就得到了一个 coroutine 对象，我们运行一下看看：</p>
+<pre><code>Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Waiting for https://static4.scrape.center/
+...
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;Response [200]&gt;
+Cost time: 51.394437756259273
+</code></pre><p>还是不行，它还不是异步执行，也就是说我们仅仅将涉及 IO 操作的代码封装到 async 修饰的方法里面是不可行的！我们必须要使用支持异步操作的请求方式才可以实现真正的异步，所以这里就需要 aiohttp 派上用场了。</p>
+<h2 id="使用-aiohttp">使用 aiohttp</h2>
+<p>aiohttp 是一个支持异步请求的库，利用它和 asyncio 配合我们可以非常方便地实现异步请求操作。</p>
+<p>安装方式如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip3 install aiohttp
+</code></pre></div><p>官方文档链接为：https://aiohttp.readthedocs.io/，它分为两部分，一部分是 Client，一部分是 Server，详细的内容可以参考官方文档。</p>
+<p>下面我们将 aiohttp 用上来，将代码改成如下样子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> aiohttp
+<span style="color:#f92672">import</span> time
+
+start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(url):
+   session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
+   response <span style="color:#f92672">=</span> await session<span style="color:#f92672">.</span>get(url)
+   await response<span style="color:#f92672">.</span>text()
+   await session<span style="color:#f92672">.</span>close()
+   <span style="color:#66d9ef">return</span> response
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Waiting for&#39;</span>, url)
+   response <span style="color:#f92672">=</span> await get(url)
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Get response from&#39;</span>, url, <span style="color:#e6db74">&#39;response&#39;</span>, response)
+
+tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
+
+end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Cost time:&#39;</span>, end <span style="color:#f92672">-</span> start)
+</code></pre></div><p>在这里我们将请求库由 requests 改成了 aiohttp，通过 aiohttp 的 ClientSession 类的 get 方法进行请求，结果如下：</p>
+<pre><code>Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Waiting for https://static4.scrape.center/
+Get response from https://static4.scrape.center/ response &lt;ClientResponse(https://static4.scrape.center/) [200 OK]&gt;
+&lt;CIMultiDictProxy('Server': 'nginx/1.17.8', 'Date': 'Tue, 31 Mar 2020 09:35:43 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'Content-Encoding': 'gzip')&gt;
+...
+Get response from https://static4.scrape.center/ response &lt;ClientResponse(https://static4.scrape.center/) [200 OK]&gt;
+&lt;CIMultiDictProxy('Server': 'nginx/1.17.8', 'Date': 'Tue, 31 Mar 2020 09:35:44 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains', 'Content-Encoding': 'gzip')&gt;
+Cost time: 6.1102519035339355
+</code></pre><p>成功了！我们发现这次请求的耗时由 51 秒变直接成了 6 秒，耗费时间减少了非常非常多。</p>
+<p>代码里面我们使用了 await，后面跟了 get 方法，在执行这 10 个协程的时候，如果遇到了 await，那么就会将当前协程挂起，转而去执行其他的协程，直到其他的协程也挂起或执行完毕，再进行下一个协程的执行。</p>
+<p>开始运行时，时间循环会运行第一个 task，针对第一个 task 来说，当执行到第一个 await 跟着的 get 方法时，它被挂起，但这个 get 方法第一步的执行是非阻塞的，挂起之后立马被唤醒，所以立即又进入执行，创建了 ClientSession 对象，接着遇到了第二个 await，调用了 session.get 请求方法，然后就被挂起了，由于请求需要耗时很久，所以一直没有被唤醒。</p>
+<p>当第一个 task 被挂起了，那接下来该怎么办呢？事件循环会寻找当前未被挂起的协程继续执行，于是就转而执行第二个 task 了，也是一样的流程操作，直到执行了第十个 task 的 session.get 方法之后，全部的 task 都被挂起了。所有 task 都已经处于挂起状态，怎么办？只好等待了。5 秒之后，几个请求几乎同时都有了响应，然后几个 task 也被唤醒接着执行，输出请求结果，最后总耗时，6 秒！</p>
+<p>怎么样？这就是异步操作的便捷之处，当遇到阻塞式操作时，任务被挂起，程序接着去执行其他的任务，而不是傻傻地等待，这样可以充分利用 CPU 时间，而不必把时间浪费在等待 IO 上。</p>
+<p>你可能会说，既然这样的话，在上面的例子中，在发出网络请求后，既然接下来的 5 秒都是在等待的，在 5 秒之内，CPU 可以处理的 task 数量远不止这些，那么岂不是我们放 10 个、20 个、50 个、100 个、1000 个 task 一起执行，最后得到所有结果的耗时不都是差不多的吗？因为这几个任务被挂起后都是一起等待的。</p>
+<p>理论来说确实是这样的，不过有个前提，那就是服务器在同一时刻接受无限次请求都能保证正常返回结果，也就是服务器无限抗压，另外还要忽略 IO 传输时延，确实可以做到无限 task 一起执行且在预想时间内得到结果。但由于不同服务器处理的实现机制不同，可能某些服务器并不能承受这么高的并发，因此响应速度也会减慢。</p>
+<p>在这里我们以百度为例，来测试下并发数量为 1、3、5、10、&hellip;、500 的情况下的耗时情况，代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> aiohttp
+<span style="color:#f92672">import</span> time
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>(number):
+   start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+
+   async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(url):
+       session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
+       response <span style="color:#f92672">=</span> await session<span style="color:#f92672">.</span>get(url)
+       await response<span style="color:#f92672">.</span>text()
+       await session<span style="color:#f92672">.</span>close()
+       <span style="color:#66d9ef">return</span> response
+
+   async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+       url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://www.baidu.com/&#39;</span>
+       await get(url)
+
+   tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(number)]
+   loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+   loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
+
+   end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Number:&#39;</span>, number, <span style="color:#e6db74">&#39;Cost time:&#39;</span>, end <span style="color:#f92672">-</span> start)
+
+<span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">75</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">500</span>]:
+   test(number)
+</code></pre></div><p>运行结果如下：</p>
+<pre><code>Number: 1 Cost time: 0.05885505676269531
+Number: 3 Cost time: 0.05773782730102539
+Number: 5 Cost time: 0.05768704414367676
+Number: 10 Cost time: 0.15174412727355957
+Number: 15 Cost time: 0.09603095054626465
+Number: 30 Cost time: 0.17843103408813477
+Number: 50 Cost time: 0.3741800785064697
+Number: 75 Cost time: 0.2894289493560791
+Number: 100 Cost time: 0.6185381412506104
+Number: 200 Cost time: 1.0894129276275635
+Number: 500 Cost time: 1.8213098049163818
+</code></pre><p>可以看到，即使我们增加了并发数量，但在服务器能承受高并发的前提下，其爬取速度几乎不太受影响。</p>
+<p>综上所述，使用了异步请求之后，我们几乎可以在相同的时间内实现成百上千倍次的网络请求，把这个运用在爬虫中，速度提升是非常可观的。</p>
+<h2 id="总结">总结</h2>
+<p>以上便是 Python 中协程的基本原理和用法，在后面一课时会详细介绍 aiohttp 的使用和爬取实战，实现快速高并发的爬取。</p>
+<p>本节代码：https://github.com/Python3WebSpider/AsyncTest。</p>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          7048 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2021/2/async/" class="leancloud_visitors" data-flag-title="异步爬虫的原理和解析">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#实例引入">实例引入</a></li>
+    <li><a href="#基本了解">基本了解</a></li>
+    <li><a href="#阻塞">阻塞</a></li>
+    <li><a href="#非阻塞">非阻塞</a></li>
+    <li><a href="#同步">同步</a></li>
+    <li><a href="#异步">异步</a></li>
+    <li><a href="#多进程">多进程</a></li>
+    <li><a href="#协程">协程</a></li>
+    <li><a href="#协程用法">协程用法</a></li>
+    <li><a href="#定义协程">定义协程</a></li>
+    <li><a href="#绑定回调">绑定回调</a></li>
+    <li><a href="#多任务协程">多任务协程</a></li>
+    <li><a href="#协程实现">协程实现</a></li>
+    <li><a href="#使用-aiohttp">使用 aiohttp</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&text=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&is_video=false&description=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&title=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&name=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90&description=%2a%e6%9c%ac%e7%af%87%e8%bd%ac%e8%87%aa%e6%8b%89%e5%8b%be%e6%95%99%e8%82%b2%e3%80%8a52%e8%ae%b2%e8%bd%bb%e6%9d%be%e6%90%9e%e5%ae%9a%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e3%80%8b%e4%bd%9c%e8%80%85%ef%bc%9a%e5%b4%94%e5%ba%86%e6%89%8d%20%e6%88%91%e4%bb%ac%e7%9f%a5%e9%81%93%e7%88%ac%e8%99%ab%e6%98%af%20IO%20%e5%af%86%e9%9b%86%e5%9e%8b%e4%bb%bb%e5%8a%a1%ef%bc%8c%e6%af%94%e5%a6%82%e5%a6%82%e6%9e%9c%e6%88%91%e4%bb%ac%e4%bd%bf%e7%94%a8%20requests%20%e5%ba%93%e6%9d%a5%e7%88%ac%e5%8f%96%e6%9f%90%e4%b8%aa%e7%ab%99%e7%82%b9%e7%9a%84%e8%af%9d%ef%bc%8c%e5%8f%91%e5%87%ba%e4%b8%80%e4%b8%aa%e8%af%b7%e6%b1%82%e4%b9%8b%e5%90%8e">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fasync%2f&t=%e5%bc%82%e6%ad%a5%e7%88%ac%e8%99%ab%e7%9a%84%e5%8e%9f%e7%90%86%e5%92%8c%e8%a7%a3%e6%9e%90">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020-2021 
+    <span>❤ Billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | aiohttp</title>
+      <link>https://billie52707.cn/draft/python-aiohttp/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-aiohttp/</guid>
+      <description>Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing.</description>
+    </item>
+    
     <item>
       <title>python模块详解 | asyncio</title>
       <link>https://billie52707.cn/draft/python-asyncio/</link>
@@ -141,15 +150,6 @@
       
       <guid>https://billie52707.cn/draft/markdown/</guid>
       <description>代码增删对比效果 - old man + new guy</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://billie52707.cn/draft/python-aiohttp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-aiohttp/</guid>
-      <description></description>
     </item>
     
     <item>
