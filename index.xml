@@ -14,7 +14,7 @@
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-asyncio/</guid>
-      <description>概念理解 I/O(读写密集型) ：指的是系统的cpu效能 比磁盘读写效能要高很多，这时是cpu在等io（磁盘到内存）的读写，此时cpu使用率不高；</description>
+      <description>概念理解 I/O（读写密集型）：指的是系统的cpu效能 比磁盘读写效能要高很多，这时是cpu在等io（磁盘到内存）的读写，此时cpu使用率不高；</description>
     </item>
     
     <item>
@@ -442,10 +442,10 @@
     
     <item>
       <title>深信息学生信息查询系统</title>
-      <link>https://billie52707.cn/posts/2020/12/scores.search/</link>
+      <link>https://billie52707.cn/posts/2020/12/scores-search/</link>
       <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/12/scores.search/</guid>
+      <guid>https://billie52707.cn/posts/2020/12/scores-search/</guid>
       <description>技术栈 🀄️ Django requests rsa nginx 项目简介 ➖ 此项目旨在「方便同学查询学科成绩」，以往查询成绩的方式主要为 登录教务系统，查看成绩，需要连接学校内网，过程较为繁</description>
     </item>
     
