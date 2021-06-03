@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="python模块详解 | asyncio" />
-<meta property="og:description" content="概念理解 I/O（读写密集型）：指的是系统的cpu效能 比磁盘读写效能要高很多，这时是cpu在等io（磁盘到内存）的读写，此时cpu使用率不高；" />
+<meta property="og:description" content="当遇到阻塞式操作时，任务被挂起，程序接着去执行其他的任务，而不是傻傻地等待，这样可以充分利用 CPU 时间，而不必把时间浪费在等待 IO 上。这就是异步操" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/draft/python-asyncio/" />
 <meta property="article:published_time" content="2021-05-31T00:00:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | asyncio"/>
-<meta name="twitter:description" content="概念理解 I/O（读写密集型）：指的是系统的cpu效能 比磁盘读写效能要高很多，这时是cpu在等io（磁盘到内存）的读写，此时cpu使用率不高；"/>
+<meta name="twitter:description" content="当遇到阻塞式操作时，任务被挂起，程序接着去执行其他的任务，而不是傻傻地等待，这样可以充分利用 CPU 时间，而不必把时间浪费在等待 IO 上。这就是异步操"/>
 
   
   
@@ -191,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-asyncio%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20asyncio&description=%e6%a6%82%e5%bf%b5%e7%90%86%e8%a7%a3%20I%2fO%ef%bc%88%e8%af%bb%e5%86%99%e5%af%86%e9%9b%86%e5%9e%8b%ef%bc%89%ef%bc%9a%e6%8c%87%e7%9a%84%e6%98%af%e7%b3%bb%e7%bb%9f%e7%9a%84cpu%e6%95%88%e8%83%bd%20%e6%af%94%e7%a3%81%e7%9b%98%e8%af%bb%e5%86%99%e6%95%88%e8%83%bd%e8%a6%81%e9%ab%98%e5%be%88%e5%a4%9a%ef%bc%8c%e8%bf%99%e6%97%b6%e6%98%afcpu%e5%9c%a8%e7%ad%89io%ef%bc%88%e7%a3%81%e7%9b%98%e5%88%b0%e5%86%85%e5%ad%98%ef%bc%89%e7%9a%84%e8%af%bb%e5%86%99%ef%bc%8c%e6%ad%a4%e6%97%b6cpu%e4%bd%bf%e7%94%a8%e7%8e%87%e4%b8%8d%e9%ab%98%ef%bc%9b">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-asyncio%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20asyncio&description=%e5%bd%93%e9%81%87%e5%88%b0%e9%98%bb%e5%a1%9e%e5%bc%8f%e6%93%8d%e4%bd%9c%e6%97%b6%ef%bc%8c%e4%bb%bb%e5%8a%a1%e8%a2%ab%e6%8c%82%e8%b5%b7%ef%bc%8c%e7%a8%8b%e5%ba%8f%e6%8e%a5%e7%9d%80%e5%8e%bb%e6%89%a7%e8%a1%8c%e5%85%b6%e4%bb%96%e7%9a%84%e4%bb%bb%e5%8a%a1%ef%bc%8c%e8%80%8c%e4%b8%8d%e6%98%af%e5%82%bb%e5%82%bb%e5%9c%b0%e7%ad%89%e5%be%85%ef%bc%8c%e8%bf%99%e6%a0%b7%e5%8f%af%e4%bb%a5%e5%85%85%e5%88%86%e5%88%a9%e7%94%a8%20CPU%20%e6%97%b6%e9%97%b4%ef%bc%8c%e8%80%8c%e4%b8%8d%e5%bf%85%e6%8a%8a%e6%97%b6%e9%97%b4%e6%b5%aa%e8%b4%b9%e5%9c%a8%e7%ad%89%e5%be%85%20IO%20%e4%b8%8a%e3%80%82%e8%bf%99%e5%b0%b1%e6%98%af%e5%bc%82%e6%ad%a5%e6%93%8d">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -206,7 +206,6 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#概念理解">概念理解</a></li>
     <li><a href="#实践">实践</a></li>
   </ul>
 </nav>
@@ -264,63 +263,11 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="概念理解">概念理解</h2>
-<ul>
-<li>
-<p>I/O（读写密集型）：指的是系统的cpu效能 比磁盘读写效能要高很多，这时是cpu在等io（磁盘到内存）的读写，此时cpu使用率不高；<strong>在服务器上进行网络通讯、网络传输、磁盘读写等均为IO操作，多为网络请求压力大、磁盘读写频繁的操作；io密集型的可能需要对磁盘进行升级、提高磁盘的相应速度和传输效率或通过负载技术将文件读写分散到多台服务器中；如果网络请求负载较高，可通过负载均衡技术、水平扩展提高负载</strong></p>
-</li>
-<li>
-<p>CPU（计算密集型）指的是系统的磁盘读写效率高于cpu效率，此时cpu效率可能达到100%，但是磁盘读写速度很快；<strong>多用来做计算、逻辑判断等cpu操作。可考虑通过消息队列或其他降维算法，将计算分散到不同的计算节点</strong></p>
-</li>
-<li>
-<p>同步()
-不同程序单元为了完成某个任务，在执行过程中需靠某种通信方式以协调一致，我们称这些程序单元是同步执行的。</p>
-<p>例如购物系统中更新商品库存，需要用“行锁”作为通信信号，让不同的更新请求强制排队顺序执行，那更新库存的操作是同步的。</p>
-<p>简言之，同步意味着有序。</p>
-</li>
-<li>
-<p>异步(concurrency)
-为完成某个任务，不同程序单元之间过程中无需通信协调，也能完成任务的方式，不相关的程序单元之间可以是异步的。</p>
-<p>例如，爬虫下载网页。调度程序调用下载程序后，即可调度其他任务，而无需与该下载任务保持通信以协调行为。不同网页的下载、保存等操作都是无关的，也无需相互通知协调。这些异步操作的完成时刻并不确定。</p>
-<p>简言之，异步意味着无序。</p>
-</li>
-<li>
-<p>多进程
-多进程就是利用 CPU 的多核优势，在同一时间并行地执行多个任务，可以大大提高执行效率。</p>
-</li>
-<li>
-<p>协程
-协程，英文叫作 Coroutine，又称微线程、纤程，协程是一种用户态的轻量级线程。</p>
-<p>协程拥有自己的寄存器上下文和栈。协程调度切换时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈。因此协程能保留上一次调用时的状态，即所有局部状态的一个特定组合，每次过程重入时，就相当于进入上一次调用的状态。</p>
-<p>协程本质上是个单进程，协程相对于多进程来说，无需线程上下文切换的开销，无需原子操作锁定及同步的开销，编程模型也非常简单。</p>
-<p>我们可以使用协程来实现异步操作，比如在网络爬虫场景下，我们发出一个请求之后，需要等待一定的时间才能得到响应，但其实在这个等待过程中，程序可以干许多其他的事情，等到响应得到之后才切换回来继续处理，这样可以充分利用 CPU 和其他资源，这就是协程的优势。</p>
-</li>
-<li>
-<p>协程用法
-接下来，我们来了解下协程的实现，从 Python 3.4 开始，Python 中加入了协程的概念，但这个版本的协程还是以生成器对象为基础的，在 Python 3.5 则增加了 async/await，使得协程的实现更加方便。</p>
-<p>Python 中使用协程最常用的库莫过于 asyncio，所以本文会以 asyncio 为基础来介绍协程的使用。</p>
-<p>首先我们需要了解下面几个概念。</p>
-<ul>
-<li>
-<p>event_loop：事件循环，相当于一个无限循环，我们可以把一些函数注册到这个事件循环上，当满足条件发生的时候，就会调用对应的处理方法。</p>
-</li>
-<li>
-<p>coroutine：中文翻译叫协程，在 Python 中常指代为协程对象类型，我们可以将协程对象注册到事件循环中，它会被事件循环调用。我们可以使用 async 关键字来定义一个方法，这个方法在调用时不会立即被执行，而是返回一个协程对象。</p>
-</li>
-<li>
-<p>task：任务，它是对协程对象的进一步封装，包含了任务的各个状态。</p>
-</li>
-<li>
-<p>future：代表将来执行或没有执行的任务的结果，实际上和 task 没有本质区别。</p>
-</li>
-</ul>
-<p>另外我们还需要了解 async/await 关键字，它是从 Python 3.5 才出现的，专门用于定义协程。其中，async 定义一个协程，await 用来挂起阻塞方法的执行。</p>
-</li>
-</ul>
+      <p>当遇到阻塞式操作时，任务被挂起，程序接着去执行其他的任务，而不是傻傻地等待，这样可以充分利用 CPU 时间，而不必把时间浪费在等待 IO 上。这就是异步操作的便捷之处。</p>
 <h2 id="实践">实践</h2>
 <ul>
 <li>
-<p>定义协程 - async</p>
+<p>定义协程 - <code>async</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio <span style="color:#75715e"># async await</span>
   
 async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
@@ -377,10 +324,10 @@ end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span
 <span style="color:#75715e">#https://www.huodongxing.com/events</span>
 <span style="color:#66d9ef">print</span>(end<span style="color:#f92672">-</span>start)
 </code></pre></div><ol>
-<li>使用 await 可以将「耗时等待的操作」挂起，让出控制权。当协程执行的时候遇到 await，时间循环就会将本协程<strong>挂起</strong>，转而去执行别的协程，直到其他的协程挂起或执行完毕，再进行下一个协程的执行。</li>
-<li><code>asyncio.ensure_future()</code>创建任务，并将多个任务列为列表</li>
-<li>将任务列表传递给<code>wait()</code>方法</li>
-<li>事件循环接收任务，并启动</li>
+<li>使用 <code>await</code> 可以将「耗时等待的操作」挂起，让出控制权。当协程执行的时候遇到 <code>await</code>，时间循环就会将本协程<strong>挂起</strong>，转而去执行别的协程，直到其他的协程挂起或执行完毕，再进行下一个协程的执行</li>
+<li><code>asyncio.ensure_future()</code> - 创建多个任务，并将多个任务列为列表</li>
+<li>将任务列表传递给<code>asyncio.wait()</code>方法</li>
+<li><code>loop.run_until_complete()</code> - 事件循环loop接收任务，并启动</li>
 </ol>
 </li>
 </ul>
@@ -397,7 +344,6 @@ end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span
 </li>
 </ul>
 <p>可以参见：https://www.python.org/dev/peps/pep-0492/#await-expression。</p>
-<p>当遇到阻塞式操作时，任务被挂起，程序接着去执行其他的任务，而不是傻傻地等待，这样可以充分利用 CPU 时间，而不必把时间浪费在等待 IO 上。这就是异步操作的便捷之处。</p>
 
     </div>
 
@@ -435,7 +381,7 @@ end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2112 字
+          653 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -492,7 +438,6 @@ end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#概念理解">概念理解</a></li>
     <li><a href="#实践">实践</a></li>
   </ul>
 </nav>
@@ -552,7 +497,7 @@ end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-asyncio%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20asyncio&description=%e6%a6%82%e5%bf%b5%e7%90%86%e8%a7%a3%20I%2fO%ef%bc%88%e8%af%bb%e5%86%99%e5%af%86%e9%9b%86%e5%9e%8b%ef%bc%89%ef%bc%9a%e6%8c%87%e7%9a%84%e6%98%af%e7%b3%bb%e7%bb%9f%e7%9a%84cpu%e6%95%88%e8%83%bd%20%e6%af%94%e7%a3%81%e7%9b%98%e8%af%bb%e5%86%99%e6%95%88%e8%83%bd%e8%a6%81%e9%ab%98%e5%be%88%e5%a4%9a%ef%bc%8c%e8%bf%99%e6%97%b6%e6%98%afcpu%e5%9c%a8%e7%ad%89io%ef%bc%88%e7%a3%81%e7%9b%98%e5%88%b0%e5%86%85%e5%ad%98%ef%bc%89%e7%9a%84%e8%af%bb%e5%86%99%ef%bc%8c%e6%ad%a4%e6%97%b6cpu%e4%bd%bf%e7%94%a8%e7%8e%87%e4%b8%8d%e9%ab%98%ef%bc%9b">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-asyncio%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20asyncio&description=%e5%bd%93%e9%81%87%e5%88%b0%e9%98%bb%e5%a1%9e%e5%bc%8f%e6%93%8d%e4%bd%9c%e6%97%b6%ef%bc%8c%e4%bb%bb%e5%8a%a1%e8%a2%ab%e6%8c%82%e8%b5%b7%ef%bc%8c%e7%a8%8b%e5%ba%8f%e6%8e%a5%e7%9d%80%e5%8e%bb%e6%89%a7%e8%a1%8c%e5%85%b6%e4%bb%96%e7%9a%84%e4%bb%bb%e5%8a%a1%ef%bc%8c%e8%80%8c%e4%b8%8d%e6%98%af%e5%82%bb%e5%82%bb%e5%9c%b0%e7%ad%89%e5%be%85%ef%bc%8c%e8%bf%99%e6%a0%b7%e5%8f%af%e4%bb%a5%e5%85%85%e5%88%86%e5%88%a9%e7%94%a8%20CPU%20%e6%97%b6%e9%97%b4%ef%bc%8c%e8%80%8c%e4%b8%8d%e5%bf%85%e6%8a%8a%e6%97%b6%e9%97%b4%e6%b5%aa%e8%b4%b9%e5%9c%a8%e7%ad%89%e5%be%85%20IO%20%e4%b8%8a%e3%80%82%e8%bf%99%e5%b0%b1%e6%98%af%e5%bc%82%e6%ad%a5%e6%93%8d">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

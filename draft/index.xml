@@ -23,7 +23,7 @@
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-asyncio/</guid>
-      <description>概念理解 I/O（读写密集型）：指的是系统的cpu效能 比磁盘读写效能要高很多，这时是cpu在等io（磁盘到内存）的读写，此时cpu使用率不高；</description>
+      <description>当遇到阻塞式操作时，任务被挂起，程序接着去执行其他的任务，而不是傻傻地等待，这样可以充分利用 CPU 时间，而不必把时间浪费在等待 IO 上。这就是异步操</description>
     </item>
     
     <item>
