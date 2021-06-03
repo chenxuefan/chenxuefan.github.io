@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="python模块详解 | aiohttp" />
-<meta property="og:description" content="Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing." />
+<meta property="og:description" content="introduce Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with aiohttp.ClientSession() as session:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/draft/python-aiohttp/" />
 <meta property="article:published_time" content="2021-06-01T00:00:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | aiohttp"/>
-<meta name="twitter:description" content="Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing."/>
+<meta name="twitter:description" content="introduce Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with aiohttp.ClientSession() as session:"/>
 
   
   
@@ -108,7 +108,7 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/draft/python-asyncio/">
+          <a class="icon" href=" https://billie52707.cn/posts/2021/5/python-asyncio/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
@@ -185,7 +185,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-aiohttp%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20aiohttp&description=Key%20Features%20Supports%20both%20Client%20and%20HTTP%20Server.%20Supports%20both%20Server%20WebSockets%20and%20Client%20WebSockets%20out-of-the-box%20without%20the%20Callback%20Hell.%20Web-server%20has%20Middlewares%2c%20Signals%20and%20plugable%20routing.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-aiohttp%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20aiohttp&description=introduce%20Key%20Features%20Supports%20both%20Client%20and%20HTTP%20Server.%20Supports%20both%20Server%20WebSockets%20and%20Client%20WebSockets%20out-of-the-box%20without%20the%20Callback%20Hell.%20Web-server%20has%20Middlewares%2c%20Signals%20and%20plugable%20routing.%20%e5%ae%a2%e6%88%b7%e7%ab%af%20-%20https%3a%2f%2fdocs.aiohttp.org%2fen%2fstable%2fclient.html%23aiohttp-client%20%e6%9c%8d%e5%8a%a1%e7%ab%af%20-%20https%3a%2f%2fdocs.aiohttp.org%2fen%2fstable%2fweb.html%23aiohttp-web%20%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e7%a4%ba%e4%be%8b%20import%20asyncio%2c%20aiohttp%2c%20time%20async%20def%20fetch%28session%2curl%29%3a%20async%20with%20session.get%28url%2c%20verify_ssl%3dFalse%29%20as%20response%3a%20return%20await%20response.text%28%29%2c%20response.status%20async%20def%20main%28%29%3a%20async%20with%20aiohttp.ClientSession%28%29%20as%20session%3a">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -200,7 +200,11 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#introduce">introduce</a></li>
     <li><a href="#key-features">Key Features</a></li>
+    <li><a href="#一个简单的示例">一个简单的示例</a></li>
+    <li><a href="#make-a-request">Make a Request</a></li>
+    <li><a href="#param">Param</a></li>
   </ul>
 </nav>
     </div>
@@ -257,13 +261,50 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="key-features">Key Features</h2>
+      <h2 id="introduce">introduce</h2>
+<h2 id="key-features">Key Features</h2>
 <ul>
 <li>Supports both <a href="https://docs.aiohttp.org/en/stable/client.html#aiohttp-client">Client</a> and <a href="https://docs.aiohttp.org/en/stable/web.html#aiohttp-web">HTTP Server</a>.</li>
 <li>Supports both <a href="https://docs.aiohttp.org/en/stable/web_quickstart.html#aiohttp-web-websockets">Server WebSockets</a> and <a href="https://docs.aiohttp.org/en/stable/client_quickstart.html#aiohttp-client-websockets">Client WebSockets</a> out-of-the-box without the Callback Hell.</li>
 <li>Web-server has <a href="https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-middlewares">Middlewares</a>, <a href="https://docs.aiohttp.org/en/stable/web_advanced.html#aiohttp-web-signals">Signals</a> and plugable routing.</li>
 </ul>
+<p>客户端 - <a href="https://docs.aiohttp.org/en/stable/client.html#aiohttp-client">https://docs.aiohttp.org/en/stable/client.html#aiohttp-client</a></p>
+<p>服务端 - <a href="https://docs.aiohttp.org/en/stable/web.html#aiohttp-web">https://docs.aiohttp.org/en/stable/web.html#aiohttp-web</a></p>
+<h2 id="一个简单的示例">一个简单的示例</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio<span style="color:#f92672">,</span> aiohttp<span style="color:#f92672">,</span> time
 
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch</span>(session,url):
+    async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url, verify_ssl<span style="color:#f92672">=</span>False) <span style="color:#66d9ef">as</span> response:
+        <span style="color:#66d9ef">return</span> await response<span style="color:#f92672">.</span>text(), response<span style="color:#f92672">.</span>status
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+        text, status_code <span style="color:#f92672">=</span> await fetch(session, <span style="color:#e6db74">&#34;https://billie52707.cn&#34;</span>)
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;text:{text[:100]}&#34;</span>)
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;code:{status_code}&#34;</span>)
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+    loop<span style="color:#f92672">.</span>run_until_complete(main())
+</code></pre></div><ul>
+<li>返回的是 coroutine 对象，前面就要加 await</li>
+<li>response 调用 <code>text()</code> 方法，查询 API 可以发现其返回的是 coroutine 对象；而调用 <code>status</code> 参数不是。</li>
+<li>with as 语句前面同样需要加 async 来修饰，在 Python 中，with as 语句用于声明一个上下文管理器，能够帮我们自动分配和释放资源，而在异步方法中，with as 前面加上 async 代表声明一个支持异步的上下文管理器。</li>
+<li>在 Python 3.7 及以后的版本中，可以使用 <code>asyncio.run(main())</code> 来代替最后的启动操作，不需要显式声明事件循环，run 方法内部会自动启动一个事件循环。但为了兼容更多的 Python 版本，依然还是显式声明了事件循环。</li>
+</ul>
+<h2 id="make-a-request">Make a Request</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
+
+session<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;http://httpbin.org/post&#39;</span>, data<span style="color:#f92672">=</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;data&#39;</span>)
+session<span style="color:#f92672">.</span>put(<span style="color:#e6db74">&#39;http://httpbin.org/put&#39;</span>, data<span style="color:#f92672">=</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;data&#39;</span>)
+session<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#39;http://httpbin.org/delete&#39;</span>)
+session<span style="color:#f92672">.</span>head(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
+session<span style="color:#f92672">.</span>options(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
+session<span style="color:#f92672">.</span>patch(<span style="color:#e6db74">&#39;http://httpbin.org/patch&#39;</span>, data<span style="color:#f92672">=</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;data&#39;</span>)
+</code></pre></div><h2 id="param">Param</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://billie52707.cn&#39;</span>
+params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}
+async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url,params<span style="color:#f92672">=</span>params) <span style="color:#66d9ef">as</span> resp:
+  	<span style="color:#66d9ef">assert</span> str(resp<span style="color:#f92672">.</span>url) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;https://billie52707.cn?key=value&#39;</span>
+</code></pre></div>
     </div>
 
 
@@ -300,7 +341,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          27 字
+          338 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -357,7 +398,11 @@ if (!doNotTrack) {
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#introduce">introduce</a></li>
     <li><a href="#key-features">Key Features</a></li>
+    <li><a href="#一个简单的示例">一个简单的示例</a></li>
+    <li><a href="#make-a-request">Make a Request</a></li>
+    <li><a href="#param">Param</a></li>
   </ul>
 </nav>
     </div>
@@ -416,7 +461,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-aiohttp%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20aiohttp&description=Key%20Features%20Supports%20both%20Client%20and%20HTTP%20Server.%20Supports%20both%20Server%20WebSockets%20and%20Client%20WebSockets%20out-of-the-box%20without%20the%20Callback%20Hell.%20Web-server%20has%20Middlewares%2c%20Signals%20and%20plugable%20routing.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-aiohttp%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20aiohttp&description=introduce%20Key%20Features%20Supports%20both%20Client%20and%20HTTP%20Server.%20Supports%20both%20Server%20WebSockets%20and%20Client%20WebSockets%20out-of-the-box%20without%20the%20Callback%20Hell.%20Web-server%20has%20Middlewares%2c%20Signals%20and%20plugable%20routing.%20%e5%ae%a2%e6%88%b7%e7%ab%af%20-%20https%3a%2f%2fdocs.aiohttp.org%2fen%2fstable%2fclient.html%23aiohttp-client%20%e6%9c%8d%e5%8a%a1%e7%ab%af%20-%20https%3a%2f%2fdocs.aiohttp.org%2fen%2fstable%2fweb.html%23aiohttp-web%20%e4%b8%80%e4%b8%aa%e7%ae%80%e5%8d%95%e7%9a%84%e7%a4%ba%e4%be%8b%20import%20asyncio%2c%20aiohttp%2c%20time%20async%20def%20fetch%28session%2curl%29%3a%20async%20with%20session.get%28url%2c%20verify_ssl%3dFalse%29%20as%20response%3a%20return%20await%20response.text%28%29%2c%20response.status%20async%20def%20main%28%29%3a%20async%20with%20aiohttp.ClientSession%28%29%20as%20session%3a">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

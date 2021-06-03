@@ -14,16 +14,16 @@
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-aiohttp/</guid>
-      <description>Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing.</description>
+      <description>introduce Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with aiohttp.ClientSession() as session:</description>
     </item>
     
     <item>
       <title>python模块详解 | asyncio</title>
-      <link>https://billie52707.cn/draft/python-asyncio/</link>
+      <link>https://billie52707.cn/posts/2021/5/python-asyncio/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-asyncio/</guid>
-      <description>当遇到阻塞式操作时，任务被挂起，程序接着去执行其他的任务，而不是傻傻地等待，这样可以充分利用 CPU 时间，而不必把时间浪费在等待 IO 上。这就是异步操</description>
+      <guid>https://billie52707.cn/posts/2021/5/python-asyncio/</guid>
+      <description>why async？ 阻塞状态指程序未得到所需计算资源时被挂起的状态。程序在等待某个操作完成期间，自身无法继续处理其他的事情，则称该程序在该操作上是</description>
     </item>
     
     <item>
