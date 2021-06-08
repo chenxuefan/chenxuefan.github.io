@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title> python模块详解 | urllib | 人人都爱小雀斑&#39;s blog </title>
+  <title> 网络爬虫学习笔记 | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -25,16 +25,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="python模块详解 | urllib" />
-<meta property="og:description" content="官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None)" />
+  <meta property="og:title" content="网络爬虫学习笔记" />
+<meta property="og:description" content="反爬虫笔记 验证码 思路 - 商用API接口、打码平台、自主训练深度学习模型等 伪造headers（请求头） 简介 - 简单的headers可应对反爬很一般" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/draft/python-urllib/" />
-<meta property="article:published_time" content="2021-06-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-06-05T00:00:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/draft/spider/" />
+<meta property="article:published_time" content="2021-06-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-08T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python模块详解 | urllib"/>
-<meta name="twitter:description" content="官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None)"/>
+<meta name="twitter:title" content="网络爬虫学习笔记"/>
+<meta name="twitter:description" content="反爬虫笔记 验证码 思路 - 商用API接口、打码平台、自主训练深度学习模型等 伪造headers（请求头） 简介 - 简单的headers可应对反爬很一般"/>
 
   
   
@@ -108,14 +108,14 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2021/6/python-aiohttp/">
+          <a class="icon" href=" https://billie52707.cn/draft/python-urllib/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/draft/spider/">
+          <a class="icon" href="https://billie52707.cn/draft/rsa/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -146,57 +146,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&text=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&is_video=false&description=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f">
+    <a class="icon" href="mailto:?subject=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2f3%2flibrary%2furllib.html%20urllib%20is%20a%20package%20that%20collects%20several%20modules%20for%20working%20with%20URLs%3a%20urllib.request%20for%20opening%20and%20reading%20URLs%20urllib.error%20containing%20the%20exceptions%20raised%20by%20urllib.request%20urllib.parse%20for%20parsing%20URLs%20urllib.robotparser%20for%20parsing%20robots.txt%20files%20urllib.request%20urllib.request.urlopen%28url%2cdata%3dNone%2c%5btimeout%2c%20%5d%2ccafile%3dNone%2ccapath%3dNone%2ccadefault%3dFalse%2ccontext%3dNone%29">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&name=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e5%8f%8d%e7%88%ac%e8%99%ab%e7%ac%94%e8%ae%b0%20%e9%aa%8c%e8%af%81%e7%a0%81%20%e6%80%9d%e8%b7%af%20-%20%e5%95%86%e7%94%a8API%e6%8e%a5%e5%8f%a3%e3%80%81%e6%89%93%e7%a0%81%e5%b9%b3%e5%8f%b0%e3%80%81%e8%87%aa%e4%b8%bb%e8%ae%ad%e7%bb%83%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e6%a8%a1%e5%9e%8b%e7%ad%89%20%e4%bc%aa%e9%80%a0headers%ef%bc%88%e8%af%b7%e6%b1%82%e5%a4%b4%ef%bc%89%20%e7%ae%80%e4%bb%8b%20-%20%e7%ae%80%e5%8d%95%e7%9a%84headers%e5%8f%af%e5%ba%94%e5%af%b9%e5%8f%8d%e7%88%ac%e5%be%88%e4%b8%80%e8%88%ac">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&t=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -206,7 +206,15 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#urllibrequest">urllib.request</a></li>
+    <li><a href="#反爬虫笔记">反爬虫笔记</a>
+      <ul>
+        <li><a href="#验证码">验证码</a></li>
+        <li><a href="#伪造headers请求头">伪造headers（请求头）</a></li>
+        <li><a href="#伪造cookies">伪造cookies</a></li>
+        <li><a href="#伪造form-data">伪造Form Data</a></li>
+        <li><a href="#伪造proxy代理">伪造proxy（代理）</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -218,19 +226,27 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        python模块详解 | urllib
+        网络爬虫学习笔记
       </h1>
       <div class="meta">
 
         
 
         
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">
+            
+              billie chan
+            
+          </span>
+        </span>
+        
 
 
         <div class="postdate">
           
           
-          <time datetime="2021-06-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-05</time>
+          <time datetime="2021-06-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-08</time>
           
           
         </div>
@@ -265,16 +281,58 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <p>官方文档 - <a href="https://docs.python.org/3/library/urllib.html">https://docs.python.org/3/library/urllib.html</a></p>
-<p><code>urllib</code> is a package that collects several modules for working with URLs:</p>
+      <h2 id="反爬虫笔记">反爬虫笔记</h2>
+<h3 id="验证码">验证码</h3>
 <ul>
-<li><a href="https://docs.python.org/3/library/urllib.request.html#module-urllib.request"><code>urllib.request</code></a> for opening and reading URLs</li>
-<li><a href="https://docs.python.org/3/library/urllib.error.html#module-urllib.error"><code>urllib.error</code></a> containing the exceptions raised by <a href="https://docs.python.org/3/library/urllib.request.html#module-urllib.request"><code>urllib.request</code></a></li>
-<li><a href="https://docs.python.org/3/library/urllib.parse.html#module-urllib.parse"><code>urllib.parse</code></a> for parsing URLs</li>
-<li><a href="https://docs.python.org/3/library/urllib.robotparser.html#module-urllib.robotparser"><code>urllib.robotparser</code></a> for parsing <code>robots.txt</code> files</li>
+<li>思路 - 商用API接口、打码平台、自主训练深度学习模型等</li>
 </ul>
-<h2 id="urllibrequest">urllib.request</h2>
-<p><code>urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None)</code></p>
+<h3 id="伪造headers请求头">伪造headers（请求头）</h3>
+<ul>
+<li>简介 - 简单的headers可应对反爬很一般的网站，包含user-agent、cookies等参数，还有一些特殊字段</li>
+<li>技巧 - 快速构造请求头格式<code>feapder create -j</code></li>
+</ul>
+<h3 id="伪造cookies">伪造cookies</h3>
+<ul>
+<li>简介 - 经观察，如若伪造成功，将直接省略登录并获取cookies的操作。</li>
+<li>思路 - 根据cookies中的各个参数，追根溯源，各自找到返回其信息的接口，几种情况：
+<ol>
+<li>（易）返回的参数信息在其接口的<code>Response Headers</code>中，使用<code>requests.get(url).headers</code>，即可获得参数信息</li>
+<li>（难）返回的参数信息的接口为js文件，则需分析其js代码</li>
+</ol>
+</li>
+<li>参考
+<ul>
+<li><a href="https://www.cnblogs.com/Eeyhan/p/12253646.html">https://www.cnblogs.com/Eeyhan/p/12253646.html</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="伪造form-data">伪造Form Data</h3>
+<ul>
+<li>
+<p>简介 - 伪造登录请求时会经常用到</p>
+</li>
+<li>
+<p>涉及的加密算法</p>
+<ol>
+<li>
+<p>md5</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> hashlib
+     
+pd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;password&#39;</span><span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#75715e"># 明文</span>
+hash <span style="color:#f92672">=</span> hashlib<span style="color:#f92672">.</span>md5(pd)
+pd_md5 <span style="color:#f92672">=</span> hash<span style="color:#f92672">.</span>hexdigest() <span style="color:#75715e"># 秘文</span>
+</code></pre></div></li>
+<li>
+<p>rsa</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="伪造proxy代理">伪造proxy（代理）</h3>
+<ul>
+<li>简介 - 频繁爬取触发反爬、封IP等情况适用。</li>
+<li>思路 - 建代理池（免费、收费）</li>
+</ul>
 
     </div>
 
@@ -312,11 +370,11 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          43 字
+          406 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2021-06-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-05</time>
+          <time datetime="2021-06-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-08</time>
           
 
   </p>
@@ -324,7 +382,7 @@ if (!doNotTrack) {
 
   
 
-<span id="/draft/python-urllib/" class="leancloud_visitors" data-flag-title="python模块详解 | urllib">
+<span id="/draft/spider/" class="leancloud_visitors" data-flag-title="网络爬虫学习笔记">
 
   
 
@@ -369,7 +427,15 @@ if (!doNotTrack) {
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#urllibrequest">urllib.request</a></li>
+    <li><a href="#反爬虫笔记">反爬虫笔记</a>
+      <ul>
+        <li><a href="#验证码">验证码</a></li>
+        <li><a href="#伪造headers请求头">伪造headers（请求头）</a></li>
+        <li><a href="#伪造cookies">伪造cookies</a></li>
+        <li><a href="#伪造form-data">伪造Form Data</a></li>
+        <li><a href="#伪造proxy代理">伪造proxy（代理）</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -383,57 +449,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&text=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&is_video=false&description=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f">
+    <a class="icon" href="mailto:?subject=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&title=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2f3%2flibrary%2furllib.html%20urllib%20is%20a%20package%20that%20collects%20several%20modules%20for%20working%20with%20URLs%3a%20urllib.request%20for%20opening%20and%20reading%20URLs%20urllib.error%20containing%20the%20exceptions%20raised%20by%20urllib.request%20urllib.parse%20for%20parsing%20URLs%20urllib.robotparser%20for%20parsing%20robots.txt%20files%20urllib.request%20urllib.request.urlopen%28url%2cdata%3dNone%2c%5btimeout%2c%20%5d%2ccafile%3dNone%2ccapath%3dNone%2ccadefault%3dFalse%2ccontext%3dNone%29">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&name=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e5%8f%8d%e7%88%ac%e8%99%ab%e7%ac%94%e8%ae%b0%20%e9%aa%8c%e8%af%81%e7%a0%81%20%e6%80%9d%e8%b7%af%20-%20%e5%95%86%e7%94%a8API%e6%8e%a5%e5%8f%a3%e3%80%81%e6%89%93%e7%a0%81%e5%b9%b3%e5%8f%b0%e3%80%81%e8%87%aa%e4%b8%bb%e8%ae%ad%e7%bb%83%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e6%a8%a1%e5%9e%8b%e7%ad%89%20%e4%bc%aa%e9%80%a0headers%ef%bc%88%e8%af%b7%e6%b1%82%e5%a4%b4%ef%bc%89%20%e7%ae%80%e4%bb%8b%20-%20%e7%ae%80%e5%8d%95%e7%9a%84headers%e5%8f%af%e5%ba%94%e5%af%b9%e5%8f%8d%e7%88%ac%e5%be%88%e4%b8%80%e8%88%ac">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-urllib%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fspider%2f&t=%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

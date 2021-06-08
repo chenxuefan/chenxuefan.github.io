@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「rsa」学习笔记</title>
+      <link>https://billie52707.cn/draft/rsa/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/rsa/</guid>
+      <description>图解RSA算法</description>
+    </item>
+    
+    <item>
+      <title>网络爬虫学习笔记</title>
+      <link>https://billie52707.cn/draft/spider/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/spider/</guid>
+      <description>反爬虫笔记 验证码 思路 - 商用API接口、打码平台、自主训练深度学习模型等 伪造headers（请求头） 简介 - 简单的headers可应对反爬很一般</description>
+    </item>
+    
     <item>
       <title>python模块详解 | urllib</title>
       <link>https://billie52707.cn/draft/python-urllib/</link>
