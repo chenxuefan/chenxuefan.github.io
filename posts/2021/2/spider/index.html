@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title> 就想写个爬虫，我到底要学多少东西啊？ | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="就想写个爬虫，我到底要学多少东西啊？" />
+<meta property="og:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当今大数据的时代，网络爬虫已经成为了获取数据的一个重要手段。 但要学习好爬虫并没有那么" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/2/spider/" />
+<meta property="article:published_time" content="2021-02-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-27T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="就想写个爬虫，我到底要学多少东西啊？"/>
+<meta name="twitter:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当今大数据的时代，网络爬虫已经成为了获取数据的一个重要手段。 但要学习好爬虫并没有那么"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/posts/2021/2/async/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/posts/2021/2/web/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&text=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&is_video=false&description=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&name=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f&description=%2a%e6%9c%ac%e7%af%87%e8%bd%ac%e8%87%aa%e6%8b%89%e5%8b%be%e6%95%99%e8%82%b2%e3%80%8a52%e8%ae%b2%e8%bd%bb%e6%9d%be%e6%90%9e%e5%ae%9a%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e3%80%8b%e4%bd%9c%e8%80%85%ef%bc%9a%e5%b4%94%e5%ba%86%e6%89%8d%20%e5%bd%93%e4%bb%8a%e5%a4%a7%e6%95%b0%e6%8d%ae%e7%9a%84%e6%97%b6%e4%bb%a3%ef%bc%8c%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%b7%b2%e7%bb%8f%e6%88%90%e4%b8%ba%e4%ba%86%e8%8e%b7%e5%8f%96%e6%95%b0%e6%8d%ae%e7%9a%84%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e6%89%8b%e6%ae%b5%e3%80%82%20%e4%bd%86%e8%a6%81%e5%ad%a6%e4%b9%a0%e5%a5%bd%e7%88%ac%e8%99%ab%e5%b9%b6%e6%b2%a1%e6%9c%89%e9%82%a3%e4%b9%88">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&t=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#初学爬虫">初学爬虫</a></li>
+    <li><a href="#ajax动态渲染">Ajax、动态渲染</a></li>
+    <li><a href="#多进程多线程协程">多进程、多线程、协程</a></li>
+    <li><a href="#分布式">分布式</a></li>
+    <li><a href="#验证码">验证码</a></li>
+    <li><a href="#封-ip">封 IP</a></li>
+    <li><a href="#封账号">封账号</a></li>
+    <li><a href="#奇葩的反爬">奇葩的反爬</a></li>
+    <li><a href="#javascript-逆向">JavaScript 逆向</a></li>
+    <li><a href="#app">App</a></li>
+    <li><a href="#智能化">智能化</a></li>
+    <li><a href="#运维">运维</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        就想写个爬虫，我到底要学多少东西啊？
+      </h1>
+      <div class="meta">
+
+        
+
+        
+
+
+        <div class="postdate">
+          
+          
+          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
+<p>当今大数据的时代，网络爬虫已经成为了获取数据的一个重要手段。</p>
+<p>但要学习好爬虫并没有那么简单。首先知识点和方向实在是太多了，它关系到了计算机网络、编程基础、前端开发、后端开发、App 开发与逆向、网络安全、数据库、运维、机器学习、数据分析等各个方向的内容，它像一张大网一样把现在一些主流的技术栈都连接在了一起。正因为涵盖的方向多，因此学习的东西也非常零散和杂乱，很多初学者搞不清楚究竟要学习哪些知识，学习过程中遇到反爬也不知道用什么方法来解决，本篇我们来做一些归纳和总结。</p>
+<h2 id="初学爬虫">初学爬虫</h2>
+<p>一些最基本的网站，往往不带任何反爬措施。比如某个博客站点，我们要爬全站的话就顺着列表页爬到文章页，再把文章的时间、作者、正文等信息爬下来就可以了。</p>
+<p>那代码怎么写呢？用 Python 的 requests 等库就够了，写一个基本的逻辑，顺着把一篇篇文章的源码获取下来，解析的话用 XPath、BeautifulSoup、PyQuery 或者正则表达式，或者粗暴的字符串匹配把想要的内容抠出来，再加个文本写入存下来就完事了。</p>
+<p>代码很简单，就几个方法调用。逻辑很简单，几个循环加存储。最后就能看到一篇篇文章就被我们存到自己的电脑里面了。当然有的同学可能不太会写代码或者都懒得写，那么利用基本的可视化爬取工具，如某爪鱼、某裔采集器也能通过可视化点选的方式把数据爬下来。</p>
+<p>如果存储方面稍微扩展一下的话，可以对接上 MySQL、MongoDB、Elasticsearch、Kafka 等等来保存数据，实现持久化存储。以后查询或者操作会更方便。</p>
+<p>反正，不管效率如何，一个完全没有反爬的网站用最最基本的方式就搞定了。</p>
+<p>到这里，你就说你会爬虫了吗？不，还差的远呢。</p>
+<h2 id="ajax动态渲染">Ajax、动态渲染</h2>
+<p>随着互联网的发展，前端技术也在不断变化，数据的加载方式也不再是单纯的服务端渲染了。现在你可以看到很多网站的数据可能都是通过接口的形式传输的，或者即使不是接口那也是一些 JSON 的数据，然后经过 JavaScript 渲染得出来的。</p>
+<p>这时候，你要再用 requests 来爬那就不顶用了，因为 requests 爬下来的源码是服务端渲染得到的，浏览器看到页面的和 requests 获取的结果是不一样的。真正的数据是经过 JavaScript 执行的出来的，数据来源可能是 Ajax，也可能是页面里的某些 Data，也可能是一些 ifame 页面等等，不过大多数情况下可能是 Ajax 接口获取的。</p>
+<p>所以很多情况下需要分析 Ajax，知道这些接口的调用方式之后再用程序来模拟。但是有些接口带着加密参数，比如 token、sign 等等，又不好模拟，咋整呢？</p>
+<p>一种方法就是去分析网站的 JavaScript 逻辑，死抠里面的代码，揪出来这些参数是怎么构造的，找出思路来了之后再用爬虫模拟或重写就行了。如果你解出来了，那么直接模拟的方式效率会高非常多，这里面就需要一些 JavaScript 基础了，当然有些网站加密逻辑做的太牛逼了，你可能花一个星期也解不出来，最后放弃了。</p>
+<p>那这样解不出来或者不想解，那咋办呢？这时候可以有一种简单粗暴的方法就是直接用模拟浏览器的方式来爬取，比如用 Puppeteer、Pyppeteer、Selenium、Splash 等，这样爬取到的源代码就是真正的网页代码，数据自然就好提取了，同时也就绕过分析 Ajax 和一些 JavaScript 逻辑的过程。这种方式就做到了可见即可爬，难度也不大，同时模拟了浏览器，也不太会有一些法律方面的问题。</p>
+<p>但其实后面的这种方法也会遇到各种反爬的情况，现在很多网站都会去识别 webdriver，看到你是用的 Selenium 等工具，直接干掉或不返回数据，所以你碰到这种网站还得来专门解一下这个问题。</p>
+<h2 id="多进程多线程协程">多进程、多线程、协程</h2>
+<p>上面的情况如果用单线程的爬虫来模拟是比较简单的，但是有个问题就是速度慢啊。</p>
+<p>爬虫是 IO 密集型的任务，所以可能大多数情况下都在等待网络的响应，如果网络响应速度慢，那就得一直等着。但这个空余的时间其实可以让 CPU 去做更多事情。那怎么办呢？多开点线程吧。</p>
+<p>所以这时候我们就可以在某些场景下加上多进程、多线程，虽然说多线程有 GIL 锁，但对于爬虫来说其实影响没那么大，所以用上多进程、多线程都可以成倍地提高爬取速度，对应的库就有 threading、multiprocessing 了。</p>
+<p>异步协程就更牛逼了，用 aiohttp、gevent、tornado 等等的基本上你想搞多少并发就搞多少并发，但是还是悠着点，别把人家网站搞挂了。</p>
+<p>总之，用上这几个，爬虫速度就提上来了。</p>
+<p>但速度提上来了不一定是好事，反爬接着肯定就要来了，封你 IP、封你账号、弹验证码、返回假数据，所以有时候龟速爬似乎也是个解决办法？</p>
+<h2 id="分布式">分布式</h2>
+<p>多线程、多进程、协程都能加速，但终究还是单机的爬虫。要真正做到规模化，还得来靠分布式爬虫来搞。</p>
+<p>分布式的核心是什么？资源共享。比如爬取队列共享、去重指纹共享等等。</p>
+<p>我们可以使用一些基础的队列或组件来实现分布式，比如 RabbitMQ、Celery、Kafka、Redis 等等，但经过很多人的尝试，自己去实现一个分布式爬虫，性能和扩展性总会出现一些问题，当然特别牛逼的除外哈。不少企业内部其实也有自己开发的一套分布式爬虫，和业务更紧密，这种当然是最好了。</p>
+<p>现在主流的 Python 分布式爬虫还是基于 Scrapy 的，对接 Scrapy-Redis、Scrapy-Redis-BloomFilter 或者用 Scrapy-Cluster 等等，他们都是基于 Redis 来共享爬取队列的，总会多多少少遇到一些内存的问题。所以一些人也考虑对接到了其他的消息队列上面，比如 RabbitMQ、Kafka 等等，解决一些问题，效率也不差。</p>
+<p>总之，要提高爬取效率，分布式还是必须要掌握的。</p>
+<h2 id="验证码">验证码</h2>
+<p>爬虫难免遇到反爬，验证码就是其中之一。要会反爬，那首先就要会解验证码。</p>
+<p>现在你可以看到很多网站都会有各种各样的验证码了，比如最简单的图形验证码，要是验证码的文字规整的话，OCR 过一遍或者基本的模型库都能识别，不想搞这个的话可以直接去对接个打码平台来搞，准确率还是有的。</p>
+<p>然而你可能现在都见不到什么图形验证码了，都是一些行为验证码，如某验、某盾等等，国外也有很多，比如 reCaptcha 等等。一些稍微简单一点的，比如滑动的，你可以找点办法识别缺口，比如图像处理比对、深度学习识别都是可以的。轨迹呢自己写个模拟正常人行为的，加点抖动之类的。有了轨迹之后咋模拟呢，如果你牛逼，那么可以直接去分析验证码的 JavaScript 逻辑，把轨迹数据录入，那就能得到里面的一些加密参数，直接拿着这些参数放到表单或接口里面就能直接用了。当然也可以用模拟浏览器的方式来拖动，也能通过一定的方式拿到加密参数，或者直接用模拟浏览器的方式把登录一起做了，拿着 Cookies 来爬也行。</p>
+<p>当然拖动只是一种验证码，还有文字点选、逻辑推理等，要是真不想搞，可以找打码平台来解出来再模拟，但毕竟花钱的，一些高手就会选择自己训练深度学习相关的模型，收集数据、标注、训练，针对不同的业务训练不同的模型。这样有了核心技术，也不用再去花钱找打码平台了，再研究下验证码的逻辑模拟一下，加密参数就能解出来了。不过有的验证码难得很，有的我也没搞定。</p>
+<p>当然有些验证码可能是请求过于频繁而弹出来的，这种如果换个 IP 什么的也能解。</p>
+<h2 id="封-ip">封 IP</h2>
+<p>封 IP 也是个令人头疼的事，行之有效的方法就是换代理了。</p>
+<p>代理很多种，市面上免费的，收费的太多太多了。</p>
+<p>首先可以把市面上免费的代理用起来，自己搭建一个代理池，收集现在全网所有的免费代理，然后加一个测试器一直不断测试，测试的网址可以改成你要爬的网址。这样测试通过的一般都能直接拿来爬你的目标网站。我自己也搭建过一个代理池，现在对接了一些免费代理，定时爬、定时测，还写了个 API 来取，放在 GitHub 了：https://github.com/Python3WebSpider/ProxyPool，打好了 Docker 镜像，提供了 Kubernetes 脚本，大家可以直接拿来用。</p>
+<p>付费代理也是一样，很多商家提供了代理提取接口，请求一下就能获取几十几百个代理，我们可以同样把它们接入到代理池里面。但这个代理也分各种套餐，什么开放代理、独享代理等等的质量和被封的几率也是不一样的。</p>
+<p>有的商家还利用隧道技术搭了代理，这样代理的地址和端口我们是不知道的，代理池是由他们来维护的，比如某布云，这样用起来更省心一些，但是可控性就差一些。</p>
+<p>还有更稳定的代理，比如拨号代理、蜂窝代理等等，接入成本会高一些，但是一定程度上也能解决一些封 IP 的问题。</p>
+<p>不过这些背后也不简单，为啥一个好好的高匿代理就是莫名其妙爬不了，背后的一些事就不多讲了。</p>
+<h2 id="封账号">封账号</h2>
+<p>有些信息需要模拟登录才能爬嘛，如果爬的过快，人家网站直接把你的账号封禁了，就啥都没得说了。比如爬公众号的，人家把你 WX 号封了，那就全完了。</p>
+<p>一种解决方法当然就是放慢频率，控制下节奏。</p>
+<p>还有种方法就是看看别的终端，比如手机页、App 页、wap 页，看看有没有能绕过登录的法子。</p>
+<p>另外比较好的方法，那就是分流。如果你号足够多，建一个池子，比如 Cookies 池、Token 池、Sign 池反正不管什么池吧，多个账号跑出来的 Cookies、Token 都放到这个池子里面，用的时候随机从里面拿一个。如果你想保证爬取效率不变，那么 100 个账号相比 20 个账号，对于每个账号对应的 Cookies、Token 的取用频率就变成原来的了 1/5，那么被封的概率也就随之降低了。</p>
+<h2 id="奇葩的反爬">奇葩的反爬</h2>
+<p>上面说的是几种比较主流的反爬，当然还有非常多奇葩的反爬。比如返回假数据、返回图片化数据、返回乱序数据、返回骂人的数据、返回求饶的数据，那都具体情况看着办吧。</p>
+<p>这些反爬也得小心点，之前见过一个反爬直接返回 <code>rm -rf /</code> 的也不是没有，你要是正好有个脚本模拟执行返回结果，后果自己想象哈。</p>
+<h2 id="javascript-逆向">JavaScript 逆向</h2>
+<p>说到重头了。随着前端技术的进步和网站反爬意识的增强，很多网站选择在前端上下功夫，那就是在前端对一些逻辑或代码进行加密或混淆。当然这不仅仅是为了保护前端的代码不被轻易盗取，更重要的是反爬。比如很多 Ajax 接口都会带着一些参数，比如 sign、token 等等，这些前文也讲过了。这种数据我们可以用前文所说的 Selenium 等方式来爬，但总归来说效率太低了，毕竟它模拟的是网页渲染的整个过程，而真实的数据可能仅仅就藏在一个小接口里。</p>
+<p>如果我们能够把一些接口的参数真正找出其中的逻辑，用代码来模拟执行，那效率就会有成倍的提升，而且还能在一定程度上规避上述的反爬现象。</p>
+<p>但问题是什么？难啊。</p>
+<p>Webpack 是一方面，前端代码都被压缩和转码成一些 bundle 文件，一些变量的含义已经丢失，不好还原。然后一些网站再加上一些 obfuscator 的机制，把前端代码变成你完全看不懂的东西，比如字符串拆散打乱、变量十六进制化、控制流扁平化、无限 debug、控制台禁用等等，前端的代码和逻辑已经面目全非。有的用 WebAssembly 等技术把前端核心逻辑直接编译，那就只能慢慢抠了，虽然说有些有一定的技巧，但是总归来说还是会花费很多时间。但一旦解出来了，那就万事大吉了。怎么说？就像奥赛题一样，解出来升天，解不出来 GG。</p>
+<p>很多公司招聘爬虫工程师都会问有没有 JavaScript 逆向基础，破解过哪些网站，比如某宝、某多、某条等等，解出来某个他们需要的可能就直接录用你。每家网站的逻辑都不一样，难度也不一样。</p>
+<h2 id="app">App</h2>
+<p>当然爬虫不仅仅是网页爬虫了，随着互联网时代的发展，现在越来越多的公司都选择将数据放到 App 上面，甚至有些公司只有 App 没有网站。所以数据只能通过 App 来爬。</p>
+<p>咋爬呢？基本的就是抓包工具了，Charles、Fiddler 一把梭，抓到接口之后，直接拿来模拟就行了。</p>
+<p>如果接口有加密参数怎么办呢？一种方法你可以边爬边处理，比如 mitmproxy 直接监听接口数据。另一方面你可以走 Hook，比如上 Xposed 也可以拿到。</p>
+<p>那爬的时候又怎么实现自动化呢？总不能拿手来戳吧。其实工具也多，安卓原生的 adb 工具也行，Appium 现在已经是比较主流的方案了，当然还有其他的某精灵都是可以实现的。</p>
+<p>最后，有的时候可能真的就不想走自动化的流程，我就想把里面的一些接口逻辑抠出来，那就得搞逆向了，IDA Pro、jdax、FRIDA 等工具就派上用场了，当然这个过程和 JavaScript 逆向一样很痛苦，甚至可能得读汇编指令。搞一个案例掉一把头发也不是不可能的。</p>
+<h2 id="智能化">智能化</h2>
+<p>上面的这一通，都搞熟了，恭喜你已经超过了百分之八九十的爬虫玩家了，当然专门搞 JavaScript 逆向、App 逆向的都是站在食物链顶端的男人，这种严格来说已经不算爬虫范畴了，这种神我们就不算在里面了，反正我不是。</p>
+<p>除了上面的一些技能，在一些场合下，我们可能也需要结合一些机器学习的技术，让我们的爬虫变得更智能起来。</p>
+<p>比如现在很多博客、新闻文章，其页面结构相似度比较高，要提取的信息也比较类似。</p>
+<p>比如如何区分一个页面是索引页还是详情页？如何提取详情页的文章链接？如何解析文章页的页面内容？这些其实都是可以通过一些算法来计算出来的。</p>
+<p>所以，一些智能解析技术也营运而生，比如提取详情页，一位朋友写的 GeneralNewsExtractor 表现就非常好。</p>
+<p>假如说我来了一个需求，我要爬取一万个新闻网站数据，要一个个写 XPath 吗？写死我吧。如果有了智能化解析技术，在容忍一定错误的条件下，完成这个就是分分钟的事情。</p>
+<p>总之，如果我们能把这一块也学会了，我们的爬虫技术就会如虎添翼。</p>
+<h2 id="运维">运维</h2>
+<p>这块也是一个重头戏。爬虫和运维也是息息相关。</p>
+<p>比如写完一个爬虫，怎样去快速部署到 100 台主机上跑起来。</p>
+<p>比如怎么灵活地监控每个爬虫的运行状态。</p>
+<p>比如爬虫有处代码改动，如何去快速更新。</p>
+<p>比如怎样监控一些爬虫的占用内存、消耗的 CPU 状况。</p>
+<p>比如怎样科学地控制爬虫的定时运行、</p>
+<p>比如爬虫出现了问题，怎样能及时收到通知，怎样设置科学的报警机制。</p>
+<p>这里面，部署大家各有各的方法，比如用 Ansible 当然可以。如果用 Scrapy 的话有 Scrapyd，然后配合上一些管理工具也能完成一些监控和定时任务。不过我现在用的更多是还是 Docker + Kubernetes，再加上 DevOps 一套，比如 GitHub Actions、Azure Pipelines、Jenkins 等等，快速实现分发和部署。</p>
+<p>定时任务大家有的用 crontab，有的用 apscheduler，有的用管理工具，有的用 Kubernetes，我的话用 Kubernetes 就多一些了，定时任务也是很好实现。</p>
+<p>至于监控的话，也有很多，专门的一些爬虫管理工具自带了一些监控和报警功能。一些云服务也带了一些监控的功能。我用的是 Kubernetes + Prometheus + Grafana，什么 CPU、内存、运行状态，一目了然，报警机制在 Grafana 里面配一下也很方便，支持 Webhook、邮件甚至某钉。</p>
+<p>数据的存储和监控，用 Kafka、Elasticsearch 个人感觉也挺方便的，我主要用的是后者，然后再和 Grafana 配合起来，数据爬取量、爬取速度等等监控也都一目了然。</p>
+<h2 id="结语">结语</h2>
+<p>至此，爬虫的一些涵盖的知识点也就差不多了，怎么样，梳理一下，是不是计算机网络、编程基础、前端开发、后端开发、App 开发与逆向、网络安全、数据库、运维、机器学习都涵盖到了？上面总结的可以算是从爬虫小白到爬虫高手的路径了，里面每个方向其实可研究的点非常多，每个点做精了，都会非常了不起。</p>
+<p>爬虫往往学着学着，就成为了一名全栈工程师或者全干工程师，因为你可能真的啥都会了。但是没办法啊，都是被爬虫逼的啊，如果不是生活所困，谁愿意一身才华呢？</p>
+<p>然而有了才华之后呢？摸摸头顶，卧槽，我的头发呢？</p>
+<p>嗯，大家都懂的。</p>
+<p>最后最重要的，珍爱生命、珍爱每一根头发。</p>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          6035 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2021/2/spider/" class="leancloud_visitors" data-flag-title="就想写个爬虫，我到底要学多少东西啊？">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#初学爬虫">初学爬虫</a></li>
+    <li><a href="#ajax动态渲染">Ajax、动态渲染</a></li>
+    <li><a href="#多进程多线程协程">多进程、多线程、协程</a></li>
+    <li><a href="#分布式">分布式</a></li>
+    <li><a href="#验证码">验证码</a></li>
+    <li><a href="#封-ip">封 IP</a></li>
+    <li><a href="#封账号">封账号</a></li>
+    <li><a href="#奇葩的反爬">奇葩的反爬</a></li>
+    <li><a href="#javascript-逆向">JavaScript 逆向</a></li>
+    <li><a href="#app">App</a></li>
+    <li><a href="#智能化">智能化</a></li>
+    <li><a href="#运维">运维</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&text=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&is_video=false&description=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&title=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&name=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f&description=%2a%e6%9c%ac%e7%af%87%e8%bd%ac%e8%87%aa%e6%8b%89%e5%8b%be%e6%95%99%e8%82%b2%e3%80%8a52%e8%ae%b2%e8%bd%bb%e6%9d%be%e6%90%9e%e5%ae%9a%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e3%80%8b%e4%bd%9c%e8%80%85%ef%bc%9a%e5%b4%94%e5%ba%86%e6%89%8d%20%e5%bd%93%e4%bb%8a%e5%a4%a7%e6%95%b0%e6%8d%ae%e7%9a%84%e6%97%b6%e4%bb%a3%ef%bc%8c%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e5%b7%b2%e7%bb%8f%e6%88%90%e4%b8%ba%e4%ba%86%e8%8e%b7%e5%8f%96%e6%95%b0%e6%8d%ae%e7%9a%84%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e6%89%8b%e6%ae%b5%e3%80%82%20%e4%bd%86%e8%a6%81%e5%ad%a6%e4%b9%a0%e5%a5%bd%e7%88%ac%e8%99%ab%e5%b9%b6%e6%b2%a1%e6%9c%89%e9%82%a3%e4%b9%88">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f2%2fspider%2f&t=%e5%b0%b1%e6%83%b3%e5%86%99%e4%b8%aa%e7%88%ac%e8%99%ab%ef%bc%8c%e6%88%91%e5%88%b0%e5%ba%95%e8%a6%81%e5%ad%a6%e5%a4%9a%e5%b0%91%e4%b8%9c%e8%a5%bf%e5%95%8a%ef%bc%9f">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020-2021 
+    <span>❤ Billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

@@ -176,7 +176,7 @@
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/spider/</guid>
-      <description>爬虫基础原理 🕷️ 必知必会，掌握 HTTP 基本原理 夯实根基，Web 网页基础 原理探究，了解爬虫的基本原理 基础探究，Session 与 Cookies 多路加速，了解多线程</description>
+      <description>就想写个爬虫，我到底要学多少东西啊？ 爬虫基础原理 🕷️ 必知必会，掌握 HTTP 基本原理 夯实根基，Web 网页基础 原理探究，了解爬虫的基本原理 基础探究，S</description>
     </item>
     
     <item>
@@ -312,6 +312,15 @@
       
       <guid>https://billie52707.cn/posts/2021/2/web/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当我们用浏览器访问网站时，页面各不相同，那么你有没有想过它为何会呈现成这个样子呢？本</description>
+    </item>
+    
+    <item>
+      <title>就想写个爬虫，我到底要学多少东西啊？</title>
+      <link>https://billie52707.cn/posts/2021/2/spider/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/2/spider/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当今大数据的时代，网络爬虫已经成为了获取数据的一个重要手段。 但要学习好爬虫并没有那么</description>
     </item>
     
     <item>
