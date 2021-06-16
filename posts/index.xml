@@ -190,10 +190,10 @@
     
     <item>
       <title>python模块详解 | os</title>
-      <link>https://billie52707.cn/posts/2021/4/pytohn-os/</link>
+      <link>https://billie52707.cn/posts/2021/4/python-os/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/pytohn-os/</guid>
+      <guid>https://billie52707.cn/posts/2021/4/python-os/</guid>
       <description>os os.remove(path) 删除文件 os.removedirs(path) 删除空文件夹 os.mkdir(dirname) - 新建文件夹 os.rmdir(path) - 删除空文件夹 os.rename(a,b) - 重命名 os.listdir(path) - 返回路径下所有的文件及文件夹 os.system(&amp;quot;ls&amp;quot;) - 运行shell命令 os.path os.path.getatime(path) 最近访问时间（时</description>
     </item>
     
