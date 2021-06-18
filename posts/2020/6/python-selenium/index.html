@@ -224,6 +224,12 @@ if (!doNotTrack) {
     <li><a href="#登录操作"><strong>登录操作</strong></a></li>
     <li><a href="#javascript操作"><strong>JavaScript操作</strong></a></li>
     <li><a href="#窗截图"><strong>窗⼝截图</strong></a></li>
+    <li><a href="#控制已打开的浏览器">控制已打开的浏览器</a>
+      <ul>
+        <li><a href="#启动浏览器">启动浏览器</a></li>
+        <li><a href="#捕获浏览器对象">捕获浏览器对象</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1019,6 +1025,29 @@ sleep(<span style="color:#ae81ff">2</span>)
 <span style="color:#75715e">#1.截取当前窗⼝，并指定截图图⽚的保存位置</span>
 driver<span style="color:#f92672">.</span>get_screenshot_as_file(<span style="color:#e6db74">&#34;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">baidu_img.jpg&#34;</span>)
 driver<span style="color:#f92672">.</span>quit()
+</code></pre></div><h2 id="控制已打开的浏览器">控制已打开的浏览器</h2>
+<p>在使用selenium进行自动化测试中我们有时会遇到这样的情况：</p>
+<p>我们需要手动打开浏览器，进入到所需的页面，执行一些手动任务，如输入表单、输入验证码，登陆成功后，然后再开始运行自动化脚本。</p>
+<p>这种情况下如何使用selenium来接管先前已打开的浏览器呢？</p>
+<p>这里给出Google Chrome浏览器的解决方案。</p>
+<p>我们可以利用Chrome DevTools协议。它允许客户检查和调试Chrome浏览器。</p>
+<h3 id="启动浏览器">启动浏览器</h3>
+<ul>
+<li>
+<p>Windows</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Billie</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">AppData</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Local</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Google</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Chrome</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Application</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome.exe&#39;</span>  <span style="color:#75715e"># chrome.exe所在目录,注：双斜杠</span>
+os<span style="color:#f92672">.</span>system(f<span style="color:#e6db74">&#39;start {chrome_path} --remote-debugging-port=9222 --user-data-dir=&#34;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">selenium_ui_auto</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome_temp&#34;&#39;</span>)  <span style="color:#75715e"># 注：双斜杆;start</span>
+</code></pre></div></li>
+<li>
+<p>macOS</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome&#39;</span>
+os<span style="color:#f92672">.</span>system(f<span style="color:#e6db74">&#39;{chrome_path} --remote-debugging-port=9222 --user-data-dir=&#34;~/ChromeProfile&#34;;&#39;</span>)
+</code></pre></div></li>
+</ul>
+<h3 id="捕获浏览器对象">捕获浏览器对象</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> Options()
+options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options) <span style="color:#75715e"># 如浏览器不存在，则会在约一分钟等待之后，报错-WebDriverException</span>
 </code></pre></div>
     </div>
 
@@ -1056,7 +1085,7 @@ driver<span style="color:#f92672">.</span>quit()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          6656 字
+          6969 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1131,6 +1160,12 @@ driver<span style="color:#f92672">.</span>quit()
     <li><a href="#登录操作"><strong>登录操作</strong></a></li>
     <li><a href="#javascript操作"><strong>JavaScript操作</strong></a></li>
     <li><a href="#窗截图"><strong>窗⼝截图</strong></a></li>
+    <li><a href="#控制已打开的浏览器">控制已打开的浏览器</a>
+      <ul>
+        <li><a href="#启动浏览器">启动浏览器</a></li>
+        <li><a href="#捕获浏览器对象">捕获浏览器对象</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
