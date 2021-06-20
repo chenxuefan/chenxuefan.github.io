@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title> python模块详解 | pyppeteer | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="python模块详解 | pyppeteer" />
+<meta property="og:description" content="Selenium &amp; Pyppeteer selenium的功能十分强大，但很多时候我们发现他也有其自身的缺点，比如： 需要安装好相关的浏览器，Chrome或Firefox等 需要" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/draft/python-pyppeteer/" />
+<meta property="article:published_time" content="2021-06-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-19T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python模块详解 | pyppeteer"/>
+<meta name="twitter:description" content="Selenium &amp; Pyppeteer selenium的功能十分强大，但很多时候我们发现他也有其自身的缺点，比如： 需要安装好相关的浏览器，Chrome或Firefox等 需要"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/draft/python-hashlib/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer&description=Selenium%20%26amp%3b%20Pyppeteer%20selenium%e7%9a%84%e5%8a%9f%e8%83%bd%e5%8d%81%e5%88%86%e5%bc%ba%e5%a4%a7%ef%bc%8c%e4%bd%86%e5%be%88%e5%a4%9a%e6%97%b6%e5%80%99%e6%88%91%e4%bb%ac%e5%8f%91%e7%8e%b0%e4%bb%96%e4%b9%9f%e6%9c%89%e5%85%b6%e8%87%aa%e8%ba%ab%e7%9a%84%e7%bc%ba%e7%82%b9%ef%bc%8c%e6%af%94%e5%a6%82%ef%bc%9a%20%e9%9c%80%e8%a6%81%e5%ae%89%e8%a3%85%e5%a5%bd%e7%9b%b8%e5%85%b3%e7%9a%84%e6%b5%8f%e8%a7%88%e5%99%a8%ef%bc%8cChrome%e6%88%96Firefox%e7%ad%89%20%e9%9c%80%e8%a6%81">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#selenium--pyppeteer">Selenium &amp; Pyppeteer</a></li>
+    <li><a href="#pyppeteer-介绍">Pyppeteer 介绍</a></li>
+    <li><a href="#快速上手">快速上手</a></li>
+    <li><a href="#launch">launch</a>
+      <ul>
+        <li><a href="#无头模式">无头模式</a></li>
+        <li><a href="#禁用chrome-正受到自动测试软件的控制提示条">禁用&quot;Chrome 正受到自动测试软件的控制&quot;提示条</a></li>
+        <li><a href="#防止检测">防止检测</a></li>
+        <li><a href="#浏览器大小设置">浏览器大小设置</a></li>
+        <li><a href="#用户数据持久化-">用户数据持久化 🌹</a></li>
+      </ul>
+    </li>
+    <li><a href="#browser">browser</a></li>
+    <li><a href="#page">page</a>
+      <ul>
+        <li><a href="#页面大小设置">页面大小设置</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        python模块详解 | pyppeteer
+      </h1>
+      <div class="meta">
+
+        
+
+        
+
+
+        <div class="postdate">
+          
+          
+          <time datetime="2021-06-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-19</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="selenium--pyppeteer">Selenium &amp; Pyppeteer</h2>
+<p>selenium的功能十分强大，但很多时候我们发现他也有其自身的缺点，比如：</p>
+<ol>
+<li>需要安装好相关的浏览器，Chrome或Firefox等</li>
+<li>需要下载并配置对应版本的驱动</li>
+</ol>
+<p>因此如果要做大规模部署的话，环境配置方面其实是一个头疼的事情。其实有另一个类似的替代品，叫作 Pyppeteer。</p>
+<h2 id="pyppeteer-介绍">Pyppeteer 介绍</h2>
+<p>Puppeteer 是 Google 基于 Node.js 开发的一个工具，有了它我们可以通过 JavaScript 来控制 Chrome 浏览器的一些操作，当然也可以用作网络爬虫上，其 API 极其完善，功能非常强大，Selenium 当然同样可以做到。</p>
+<p>而 Pyppeteer 又是什么呢？它实际上是 Puppeteer 的 Python 版本的实现，但它不是 Google 开发的，是一位来自于日本的工程师依据 Puppeteer 的一些功能开发出来的非官方版本。</p>
+<p>在 Pyppetter 中，实际上它背后也是有一个类似 Chrome 浏览器的 Chromium 浏览器在执行一些动作进行网页渲染，首先说下 Chrome 浏览器和 Chromium 浏览器的渊源。</p>
+<p>Chromium 是谷歌为了研发 Chrome 而启动的项目，是完全开源的。二者基于相同的源代码构建，Chrome 所有的新功能都会先在 Chromium 上实现，待验证稳定后才会移植，因此 Chromium 的版本更新频率更高，也会包含很多新的功能，但作为一款独立的浏览器，Chromium 的用户群体要小众得多。两款浏览器“同根同源”，它们有着同样的 Logo，但配色不同，Chrome 由蓝红绿黄四种颜色组成，而 Chromium 由不同深度的蓝色构成。</p>
+<p>总的来说，两款浏览器的内核是一样的，实现方式也是一样的，可以认为是开发版和正式版的区别，功能上基本是没有太大区别的。</p>
+<p>Pyppeteer 就是依赖于 Chromium 这个浏览器来运行的。那么有了 Pyppeteer 之后，我们就可以免去那些烦琐的环境配置等问题。如果第一次运行的时候，Chromium 浏览器没有安装，那么程序会帮我们自动安装和配置，就免去了烦琐的环境配置等工作。另外 Pyppeteer 是基于 Python 的新特性 async 实现的，所以它的一些执行也支持异步操作，效率相对于 Selenium 来说也提高了。</p>
+<p>由于 Pyppeteer 采用了 Python 的 async 机制，所以其运行要求的 Python 版本为 3.5 及以上。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install pyppeteer
+</code></pre></div><h2 id="快速上手">快速上手</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pyppeteer
+
+browser <span style="color:#f92672">=</span> pyppeteer<span style="color:#f92672">.</span>launch() <span style="color:#75715e"># 新建 Browser 对象</span>
+page <span style="color:#f92672">=</span> browser<span style="color:#f92672">.</span>newPage() <span style="color:#75715e"># 新建 Page 对象</span>
+page<span style="color:#f92672">.</span>setViewport({<span style="color:#e6db74">&#39;width&#39;</span>: width, <span style="color:#e6db74">&#39;height&#39;</span>: height}) <span style="color:#75715e"># </span>
+page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://billie52707.cn&#39;</span>) <span style="color:#75715e"># 发送请求</span>
+page<span style="color:#f92672">.</span>waitForSelector(<span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#75715e"># Page 对象调用 waitForSelector 方法，传入选择器，那么页面就会等待选择器所对应的节点信息加载出来，如果加载出来了，立即返回，否则会持续等待直到超时。此时如果顺利的话，页面会成功加载出来。</span>
+page<span style="color:#f92672">.</span>screenshot({<span style="color:#e6db74">&#39;path&#39;</span>: <span style="color:#e6db74">&#39;example.png&#39;</span>}) <span style="color:#75715e"># </span>
+page<span style="color:#f92672">.</span>content() <span style="color:#75715e"># 获得当前浏览器页面的源代码</span>
+dimensions <span style="color:#f92672">=</span> await page<span style="color:#f92672">.</span>evaluate(<span style="color:#e6db74">&#39;&#39;&#39;() =&gt; {
+</span><span style="color:#e6db74">       return {
+</span><span style="color:#e6db74">           width: document.documentElement.clientWidth,
+</span><span style="color:#e6db74">           height: document.documentElement.clientHeight,
+</span><span style="color:#e6db74">           deviceScaleFactor: window.devicePixelRatio,
+</span><span style="color:#e6db74">       }
+</span><span style="color:#e6db74">   }&#39;&#39;&#39;</span>) <span style="color:#75715e"># 执行js语句	</span>
+browser<span style="color:#f92672">.</span>close() <span style="color:#75715e"># </span>
+</code></pre></div><p>官方文档 - <a href="https://miyakogi.github.io/pyppeteer/reference.html">https://miyakogi.github.io/pyppeteer/reference.html</a></p>
+<h2 id="launch">launch</h2>
+<p>使用 Pyppeteer 的第一步便是启动浏览器，在puppeteer中需要调用「launch」方法去实现，launch方法的API；</p>
+<p><code>pyppeteer.launcher.launch(options: dict = None, **kwargs) → pyppeteer.browser.Browser</code></p>
+<ul>
+<li>ignoreHTTPSErrors (bool)：是否要忽略 HTTPS 的错误，默认是 False。</li>
+<li>headless (bool)：是否启用 Headless 模式，即无界面模式，如果 devtools 这个参数是 True 的话，那么该参数就会被设置为 False，否则为 True，即默认是开启无界面模式的。</li>
+<li>executablePath (str)：可执行文件的路径，如果指定之后就不需要使用默认的 Chromium 了，可以指定为已有的 Chrome 或 Chromium。</li>
+<li>slowMo (int|float)：通过传入指定的时间，可以减缓 Pyppeteer 的一些模拟操作。</li>
+<li>args (List[str])：在执行过程中可以传入的额外参数。</li>
+<li>ignoreDefaultArgs (bool)：不使用 Pyppeteer 的默认参数，如果使用了这个参数，那么最好通过 args 参数来设定一些参数，否则可能会出现一些意想不到的问题。这个参数相对比较危险，慎用。</li>
+<li>handleSIGINT (bool)：是否响应 SIGINT 信号，也就是可以使用 Ctrl + C 来终止浏览器程序，默认是 True。</li>
+<li>handleSIGTERM (bool)：是否响应 SIGTERM 信号，一般是 kill 命令，默认是 True。</li>
+<li>handleSIGHUP (bool)：是否响应 SIGHUP 信号，即挂起信号，比如终端退出操作，默认是 True。</li>
+<li>dumpio (bool)：是否将 Pyppeteer 的输出内容传给 process.stdout 和 process.stderr 对象，默认是 False。</li>
+<li>userDataDir (str)：即用户数据文件夹，即可以保留一些个性化配置和操作记录。</li>
+<li>env (dict)：环境变量，可以通过字典形式传入。</li>
+<li>devtools (bool)：是否为每一个页面自动开启调试工具，默认是 False。如果这个参数设置为 True，那么 headless 参数就会无效，会被强制设置为 False。</li>
+<li>logLevel  (int|str)：日志级别，默认和 root logger 对象的级别相同。</li>
+<li>autoClose (bool)：当一些命令执行完之后，是否自动关闭浏览器，默认是 True。</li>
+<li>loop (asyncio.AbstractEventLoop)：事件循环对象。</li>
+</ul>
+<p>观察<code>launch</code>方法源码发现他是被<code>async</code>修饰的，是一个协程对象，因此使用时需要加上<code>await</code>关键字。</p>
+<h3 id="无头模式">无头模式</h3>
+<p><code>headless</code>参数默认是设为True，也就是不显示浏览器界面，改为False便可以看到界面了，一般我们在开发阶段需要调试的时候会将其设置为False，在生产环境下就可以设置为True。</p>
+<h3 id="禁用chrome-正受到自动测试软件的控制提示条">禁用&quot;Chrome 正受到自动测试软件的控制&quot;提示条</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser <span style="color:#f92672">=</span> await launch(args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
+</code></pre></div><h3 id="防止检测">防止检测</h3>
+<p>Pyppeteer 的 Page 对象有一个方法叫作 evaluateOnNewDocument，意思就是在每次加载网页的时候执行某个语句，所以这里我们可以执行一下将 WebDriver 隐藏的命令，改写如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
+ 
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+   browser <span style="color:#f92672">=</span> await launch(headless<span style="color:#f92672">=</span>False, args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
+   page <span style="color:#f92672">=</span> await browser<span style="color:#f92672">.</span>newPage()
+   await page<span style="color:#f92672">.</span>evaluateOnNewDocument(<span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>)
+   await page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://antispider1.scrape.center/&#39;</span>)
+   await asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">100</span>)
+ 
+asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</code></pre></div><h3 id="浏览器大小设置">浏览器大小设置</h3>
+<p>在初始化时加入 defaultViewport字典值即可：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser <span style="color:#f92672">=</span> await pyppeteer<span style="color:#f92672">.</span>launch(
+        {<span style="color:#e6db74">&#39;headless&#39;</span>: False,
+         <span style="color:#e6db74">&#39;userDataDir&#39;</span>: UserDataDir,
+         <span style="color:#e6db74">&#39;defaultViewport&#39;</span>: {<span style="color:#e6db74">&#39;width&#39;</span>: <span style="color:#ae81ff">1800</span>, <span style="color:#e6db74">&#39;height&#39;</span>: <span style="color:#ae81ff">1000</span>}
+         }
+    )
+</code></pre></div><p>附上获取屏幕大小的代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">screen_size</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;使用tkinter获取屏幕大小&#34;&#34;&#34;</span>
+    <span style="color:#f92672">import</span> tkinter
+    tk <span style="color:#f92672">=</span> tkinter<span style="color:#f92672">.</span>Tk()
+    width <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>winfo_screenwidth()
+    height <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>winfo_screenheight()
+    tk<span style="color:#f92672">.</span>quit()
+    <span style="color:#66d9ef">return</span> width, height
+</code></pre></div><h3 id="用户数据持久化-">用户数据持久化 🌹</h3>
+<p>每次我们打开 Pyppeteer 的时候都是一个新的空白的浏览器。而且如果遇到了需要登录的网页之后，如果我们这次登录上了，下一次再启动又是空白了，又得登录一次，这的确是一个问题。</p>
+<p>比如以淘宝举例，平时我们逛淘宝的时候，在很多情况下关闭了浏览器再打开，淘宝依然还是登录状态。这是因为淘宝的一些关键 Cookies 已经保存到本地了，下次登录的时候可以直接读取并保持登录状态。</p>
+<p>那么这些信息保存在哪里了呢？其实就是保存在用户目录下了，里面不仅包含了浏览器的基本配置信息，还有一些 Cache、Cookies 等各种信息都在里面，如果我们能在浏览器启动的时候读取这些信息，那么启动的时候就可以恢复一些历史记录甚至一些登录状态信息了。</p>
+<p>这也就解决了一个问题：很多时候你在每次启动 Selenium 或 Pyppeteer 的时候总是一个全新的浏览器，那这究其原因就是没有设置用户目录，如果设置了它，每次打开就不再是一个全新的浏览器了，它可以恢复之前的历史记录，也可以恢复很多网站的登录信息。</p>
+<p>那么这个怎么来做呢？很简单，在启动的时候设置 userDataDir 就好了，示例如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
+ 
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+   browser <span style="color:#f92672">=</span> await launch(headless<span style="color:#f92672">=</span>False, userDataDir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./userdata&#39;</span>, args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
+   page <span style="color:#f92672">=</span> await browser<span style="color:#f92672">.</span>newPage()
+   await page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://www.taobao.com&#39;</span>)
+   await asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">100</span>)
+ 
+asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</code></pre></div><p>具体的介绍可以看官方的一些说明，如： <a href="https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md">https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md</a>，这里面介绍了 userdatadir 的相关内容。</p>
+<p>再次运行上面的代码，这时候可以发现现在就已经是登录状态了，不需要再次登录了，这样就成功跳过了登录的流程。当然可能时间太久了，Cookies 都过期了，那还是需要登录的。</p>
+<h2 id="browser">browser</h2>
+<h2 id="page">page</h2>
+<h3 id="页面大小设置">页面大小设置</h3>
+<p>窗口大小可以通过 Page 的 setViewport 方法设置：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">await page<span style="color:#f92672">.</span>setViewport({<span style="color:#e6db74">&#39;width&#39;</span>:width,<span style="color:#e6db74">&#39;height&#39;</span>:height})
+</code></pre></div><p><a href="https://ld246.com/article/1566221786951">https://ld246.com/article/1566221786951</a></p>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          2777 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2021-06-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-19</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/draft/python-pyppeteer/" class="leancloud_visitors" data-flag-title="python模块详解 | pyppeteer">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#selenium--pyppeteer">Selenium &amp; Pyppeteer</a></li>
+    <li><a href="#pyppeteer-介绍">Pyppeteer 介绍</a></li>
+    <li><a href="#快速上手">快速上手</a></li>
+    <li><a href="#launch">launch</a>
+      <ul>
+        <li><a href="#无头模式">无头模式</a></li>
+        <li><a href="#禁用chrome-正受到自动测试软件的控制提示条">禁用&quot;Chrome 正受到自动测试软件的控制&quot;提示条</a></li>
+        <li><a href="#防止检测">防止检测</a></li>
+        <li><a href="#浏览器大小设置">浏览器大小设置</a></li>
+        <li><a href="#用户数据持久化-">用户数据持久化 🌹</a></li>
+      </ul>
+    </li>
+    <li><a href="#browser">browser</a></li>
+    <li><a href="#page">page</a>
+      <ul>
+        <li><a href="#页面大小设置">页面大小设置</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer&description=Selenium%20%26amp%3b%20Pyppeteer%20selenium%e7%9a%84%e5%8a%9f%e8%83%bd%e5%8d%81%e5%88%86%e5%bc%ba%e5%a4%a7%ef%bc%8c%e4%bd%86%e5%be%88%e5%a4%9a%e6%97%b6%e5%80%99%e6%88%91%e4%bb%ac%e5%8f%91%e7%8e%b0%e4%bb%96%e4%b9%9f%e6%9c%89%e5%85%b6%e8%87%aa%e8%ba%ab%e7%9a%84%e7%bc%ba%e7%82%b9%ef%bc%8c%e6%af%94%e5%a6%82%ef%bc%9a%20%e9%9c%80%e8%a6%81%e5%ae%89%e8%a3%85%e5%a5%bd%e7%9b%b8%e5%85%b3%e7%9a%84%e6%b5%8f%e8%a7%88%e5%99%a8%ef%bc%8cChrome%e6%88%96Firefox%e7%ad%89%20%e9%9c%80%e8%a6%81">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pyppeteer%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pyppeteer">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020-2021 
+    <span>❤ Billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
