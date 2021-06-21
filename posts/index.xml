@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浅谈自动化爬虫场景下的数据持久化</title>
+      <link>https://billie52707.cn/posts/2021/6/user-data-dir/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/6/user-data-dir/</guid>
+      <description>每次我们使用 selenium 或 Pyppeteer 打开的时候都是一个新的空白的浏览器。而且如果遇到了需要登录的网页之后，如果我们这次登录上了，下一次再启动又是空白了，又得登</description>
+    </item>
+    
     <item>
       <title>python模块详解 | pyppeteer</title>
       <link>https://billie52707.cn/posts/2021/6/python-pyppeteer/</link>
