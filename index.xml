@@ -10,10 +10,10 @@
     <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python模块详解 | pyppeteer</title>
-      <link>https://billie52707.cn/draft/python-pyppeteer/</link>
+      <link>https://billie52707.cn/posts/2021/6/python-pyppeteer/</link>
       <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-pyppeteer/</guid>
+      <guid>https://billie52707.cn/posts/2021/6/python-pyppeteer/</guid>
       <description>Selenium &amp;amp; Pyppeteer selenium的功能十分强大，但很多时候我们发现他也有其自身的缺点，比如： 需要安装好相关的浏览器，Chrome或Firefox等 需要</description>
     </item>
     

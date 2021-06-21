@@ -208,7 +208,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#关于selenium">关于Selenium</a></li>
     <li><a href="#配置selenium环境">配置selenium环境</a></li>
-    <li><a href="#浏览器配置参数">浏览器配置参数</a></li>
+    <li><a href="#配置浏览器参数">配置浏览器参数</a></li>
     <li><a href="#定位元素">定位元素</a></li>
     <li><a href="#元素操作">元素操作</a></li>
     <li><a href="#浏览器操作">浏览器操作</a></li>
@@ -231,6 +231,7 @@ if (!doNotTrack) {
         <li><a href="#捕获浏览器对象">捕获浏览器对象</a></li>
       </ul>
     </li>
+    <li><a href="#反屏蔽">反屏蔽</a></li>
   </ul>
 </nav>
     </div>
@@ -295,9 +296,8 @@ if (!doNotTrack) {
 <h2 id="配置selenium环境">配置selenium环境</h2>
 <ul>
 <li>
-<p>安装Selenium</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install selenium
-</code></pre></div></li>
+<p>安装Selenium - <code>pip install selenium</code></p>
+</li>
 <li>
 <p>配置chromedriver</p>
 <p>Selenium3.x调⽤浏览器必须有⼀个webdriver驱动⽂件</p>
@@ -310,10 +310,18 @@ if (!doNotTrack) {
 </ul>
 <p>更多配置方法 👉 <a href="http://www.testclass.net/selenium_python/selenium3-browser-driver/">参考浏览器驱动环境配置</a></p>
 <p>⼊门参考⽂献 👉 <a href="http://www.testclass.net/selenium_python/">Selenium⼊门</a></p>
-<h2 id="浏览器配置参数">浏览器配置参数</h2>
-<ul>
+<h2 id="配置浏览器参数">配置浏览器参数</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(option<span style="color:#f92672">=</span>options)
+</code></pre></div><ul>
 <li>
 <p><a href="https://zhuanlan.zhihu.com/p/60852696">https://zhuanlan.zhihu.com/p/60852696</a></p>
+</li>
+<li>
+<p>静默模式 - <code>options.add_argument('--headless')</code></p>
+</li>
+<li>
+<p>忽略提示语 - <code>options.add_argument('disable-infobars')</code></p>
 </li>
 <li>
 <p>设置代理</p>
@@ -325,6 +333,11 @@ options<span style="color:#f92672">.</span>add_argument(f<span style="color:#e6d
 driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
 driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&#34;</span>)
 </code></pre></div></li>
+<li>
+<p>使用用户配置文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--user-data-dir=/Users/billie/Library/Application Support/Google/Chrome/default&#39;</span>)
+</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210621102119098.png" alt="image-20210621102119098"></p>
+</li>
 </ul>
 <h2 id="定位元素">定位元素</h2>
 <ul>
@@ -1047,6 +1060,21 @@ os<span style="color:#f92672">.</span>system(f<span style="color:#e6db74">&#39;{
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> Options()
 options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
 driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options) <span style="color:#75715e"># 如浏览器不存在，则会在约一分钟等待之后，报错-WebDriverException</span>
+</code></pre></div><h2 id="反屏蔽">反屏蔽</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6db74">&#39;Page.addScriptToEvaluateOnNewDocument&#39;</span>, {
+   <span style="color:#e6db74">&#39;source&#39;</span>: <span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>
+})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+<span style="color:#f92672">from</span> selenium.webdriver <span style="color:#f92672">import</span> ChromeOptions
+
+option <span style="color:#f92672">=</span> ChromeOptions()
+option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;excludeSwitches&#39;</span>, [<span style="color:#e6db74">&#39;enable-automation&#39;</span>])
+option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;useAutomationExtension&#39;</span>, False)
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>option)
+driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6db74">&#39;Page.addScriptToEvaluateOnNewDocument&#39;</span>, {
+   <span style="color:#e6db74">&#39;source&#39;</span>: <span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>
+})
+driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://antispider1.scrape.center/&#39;</span>)
 </code></pre></div>
     </div>
 
@@ -1084,7 +1112,7 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          6982 字
+          7054 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1143,7 +1171,7 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
   <ul>
     <li><a href="#关于selenium">关于Selenium</a></li>
     <li><a href="#配置selenium环境">配置selenium环境</a></li>
-    <li><a href="#浏览器配置参数">浏览器配置参数</a></li>
+    <li><a href="#配置浏览器参数">配置浏览器参数</a></li>
     <li><a href="#定位元素">定位元素</a></li>
     <li><a href="#元素操作">元素操作</a></li>
     <li><a href="#浏览器操作">浏览器操作</a></li>
@@ -1166,6 +1194,7 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
         <li><a href="#捕获浏览器对象">捕获浏览器对象</a></li>
       </ul>
     </li>
+    <li><a href="#反屏蔽">反屏蔽</a></li>
   </ul>
 </nav>
     </div>
