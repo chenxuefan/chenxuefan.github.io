@@ -210,9 +210,18 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#堵塞">堵塞</a></li>
         <li><a href="#协程">协程</a></li>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#缺点">缺点</a></li>
+        <li><a href="#实现协程的方法">实现协程的方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-asyncio">why asyncio？</a>
+      <ul>
         <li><a href="#asyncio">asyncio</a></li>
         <li><a href="#asyncawait">async/await</a></li>
+        <li><a href="#coroutine对象">Coroutine对象</a></li>
         <li><a href="#task对象">Task对象</a></li>
+        <li><a href="#future对象">Future对象</a></li>
       </ul>
     </li>
     <li><a href="#talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</a></li>
@@ -299,7 +308,8 @@ if (!doNotTrack) {
 <p>协程，又称微线程，纤程。英文名Coroutine。一句话说明什么是线程：<strong>协程是一种用户态的轻量级线程</strong>。</p>
 <p>协程拥有自己的寄存器上下文和栈。协程调度切换时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈。因此：</p>
 <p>协程能保留上一次调用时的状态（即所有局部状态的一个特定组合），每次过程重入时，就相当于进入上一次调用的状态，换种说法：进入上一次离开时所处逻辑流的位置。</p>
-<p>优点：</p>
+<p>（协程不是计算机提供，程序员人为创造。）</p>
+<h3 id="优点">优点</h3>
 <ul>
 <li>无需线程上下文切换的开销</li>
 <li>无需原子操作锁定及同步的开销
@@ -310,18 +320,19 @@ if (!doNotTrack) {
 <li>方便切换控制流，简化编程模型</li>
 <li>高并发+高扩展性+低成本：一个CPU支持上万的协程都不是问题。所以很适合用于高并发处理。</li>
 </ul>
-<p>缺点：</p>
+<h3 id="缺点">缺点</h3>
 <ul>
 <li>无法利用多核资源：协程的本质是个单线程,它不能同时将 单个CPU 的多个核用上,协程需要和进程配合才能运行在多CPU上.当然我们日常所编写的绝大部分应用都没有这个必要，除非是cpu密集型应用。</li>
 <li>进行阻塞（Blocking）操作（如IO时）会阻塞掉整个程序</li>
 </ul>
-<p>实现协程有这么几种方法：</p>
+<h3 id="实现协程的方法">实现协程的方法</h3>
 <ul>
 <li>greenlet，早期模块。</li>
 <li>yield关键字。</li>
 <li>asyncio装饰器（py3.4）</li>
 <li>async、await关键字（py3.5)【推荐】</li>
 </ul>
+<h2 id="why-asyncio">why asyncio？</h2>
 <h3 id="asyncio">asyncio</h3>
 <p>从 Python 3.4 开始，Python 中加入了协程的概念，但这个版本的协程还是以生成器对象为基础的，在 Python 3.5 则增加了 async/await，使得协程的实现更加方便。</p>
 <p>Python 中使用协程最常用的库莫过于 asyncio，首先我们需要了解下面几个概念：</p>
@@ -342,9 +353,20 @@ if (!doNotTrack) {
 <h3 id="asyncawait">async/await</h3>
 <p>async/await 关键字，它是从 Python 3.5 才出现的，专门用于定义协程。其中，async 定义一个协程，await 用来挂起阻塞方法的执行。</p>
 <p>await + 可等待的对象（协程对象、Future、Task对象 -&gt; IO等待）</p>
+<p>使用<code>async</code>定义的方法会变成一个无法直接执行的「coroutine对象」，必须将其注册到事件循环中，或使用<code>asyncio.un()</code>，才可以执行。</p>
 <p>要实现异步，需要了解一下 await 的用法，使用 await 可以「将耗时等待的操作挂起，让出控制权」。当协程执行的时候遇到 await，时间循环就会将本协程挂起，转而去执行别的协程，直到其他的协程挂起或执行完毕。</p>
 <p>更多参考 - <a href="https://billie52707.cn/posts/2021/2/async/">https://billie52707.cn/posts/2021/2/async/</a></p>
-<h3 id="task对象">Task对象</h3>
+<h3 id="coroutine对象">Coroutine对象</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1. 创建协程函数</span>
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+  <span style="color:#f92672">...</span>
+  
+<span style="color:#75715e"># 2. 创建协程对象</span>
+coroutine <span style="color:#f92672">=</span> main()
+
+<span style="color:#75715e"># 3. 运行协程对象</span>
+asyncio<span style="color:#f92672">.</span>run(coroutine)
+</code></pre></div><h3 id="task对象">Task对象</h3>
 <blockquote>
 <p><em>Tasks</em> are used to schedule coroutines <em>concurrently</em>.</p>
 <p>When a coroutine is wrapped into a <em>Task</em> with functions like <a href="https://docs.python.org/3.8/library/asyncio-task.html#asyncio.create_task"><code>asyncio.create_task()</code></a> the coroutine is automatically scheduled to run soon。</p>
@@ -352,37 +374,48 @@ if (!doNotTrack) {
 <p>白话：在事件循环中添加多个任务的。</p>
 <p>Tasks用于并发调度协程，通过<code>asyncio.create_task(协程对象)</code>的方式创建Task对象，这样可以让协程加入事件循环中等待被调度执行。除了使用 <code>asyncio.create_task()</code> 函数以外，还可以用低层级的 <code>loop.create_task()</code> 或 <code>ensure_future()</code> 函数。不建议手动实例化 Task 对象。</p>
 <p>注意：<code>asyncio.create_task()</code> 函数在 Python 3.7 中被加入。在 Python 3.7 之前，可以改用低层级的 <code>asyncio.ensure_future()</code> 函数。</p>
-<h2 id="talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1. 创建task</span>
+task <span style="color:#f92672">=</span> coroutine <span style="color:#75715e"># coroutine:协程对象</span>
+task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>create_task(coroutine) <span style="color:#75715e"># coroutine:协程对象</span>
+task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>ensure_future(coroutine) <span style="color:#75715e"># coroutine:协程对象</span>
+
+<span style="color:#75715e"># 2. 创建tasks</span>
+tasks <span style="color:#f92672">=</span> [task1,task2]
+
+<span style="color:#75715e"># 3. 运行task</span>
+<span style="color:#75715e">## 方式1</span>
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(task)
+<span style="color:#75715e">## 方式2（在协程函数内部）</span>
+await task
+
+<span style="color:#75715e"># 4. 运行tasks</span>
+<span style="color:#75715e">## 方式1</span>
+loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
+<span style="color:#75715e">## 方式2（在协程函数内部）</span>
+await asyncio<span style="color:#f92672">.</span>wait(tasks)
+<span style="color:#75715e">## 方式3（在协程函数外部）</span>
+tasks <span style="color:#f92672">=</span> [coroutine1, coroutine2]
+asyncio<span style="color:#f92672">.</span>run( asyncio<span style="color:#f92672">.</span>wait(tasks) )
+</code></pre></div><h3 id="future对象">Future对象</h3>
+<blockquote>
+<p>A <code>Future</code>is a special <strong>low-level</strong> awaitable object that represents an <strong>eventual result</strong> of an asynchronous operation.</p>
+</blockquote>
+<p>Task继承Future，Task对象内部await结果的处理基于Future对象来的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#75715e"># 获取当前事件循环</span>
+    loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_running_loop()
+
+    <span style="color:#75715e"># 创建一个任务（Future对象），这个任务什么都不干。</span>
+    fut <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_future()
+
+    <span style="color:#75715e"># 等待任务最终结果（Future对象），没有结果则会一直等下去。</span>
+    await fut
+
+asyncio<span style="color:#f92672">.</span>run( main() )
+</code></pre></div><h2 id="talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</h2>
 <ul>
-<li>
-<p>定义协程 - <code>async</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio <span style="color:#75715e"># async await</span>
-  
-async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
-  <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;summer come!&#34;</span>)
-  
-coroutine <span style="color:#f92672">=</span> fun() <span style="color:#75715e"># 定义协程对象coroutine</span>
-loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop() <span style="color:#75715e"># 创建事件循环对象loop</span>
-task <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_task(coroutine) <span style="color:#75715e"># 将协程对象封装成task对象</span>
-<span style="color:#75715e"># task = asyncio.ensure_future(coroutine) # 将协程对象封装成task对象</span>
-loop<span style="color:#f92672">.</span>run_until_complete(task) <span style="color:#75715e"># 将协程注册到事件循环，启动</span>
-</code></pre></div><ul>
-<li>
-<p>使用<code>async</code>定义的方法会变成一个无法直接执行的coroutine对象，必须将其注册到事件循环中才可以执行。</p>
-</li>
-<li>
-<p>定义task的两种方法：</p>
-<ol>
-<li>
-<p><code>loop.create_task(coroutine)</code></p>
-</li>
-<li>
-<p><code>asyncio.ensure_future(coroutine)</code></p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
 <li>
 <p>多任务协程</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
@@ -460,7 +493,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</
     <span style="color:#66d9ef">return</span> text
     
 async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">spider</span>(url):
-    await parse2(await fetch(url))
+    await parse(await fetch(url))
       
 urls  <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>]
 tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(spider(url)) <span style="color:#66d9ef">for</span> url <span style="color:#f92672">in</span> urls]
@@ -505,7 +538,7 @@ loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="c
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2186 字
+          2461 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -566,9 +599,18 @@ loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="c
       <ul>
         <li><a href="#堵塞">堵塞</a></li>
         <li><a href="#协程">协程</a></li>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#缺点">缺点</a></li>
+        <li><a href="#实现协程的方法">实现协程的方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-asyncio">why asyncio？</a>
+      <ul>
         <li><a href="#asyncio">asyncio</a></li>
         <li><a href="#asyncawait">async/await</a></li>
+        <li><a href="#coroutine对象">Coroutine对象</a></li>
         <li><a href="#task对象">Task对象</a></li>
+        <li><a href="#future对象">Future对象</a></li>
       </ul>
     </li>
     <li><a href="#talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</a></li>
