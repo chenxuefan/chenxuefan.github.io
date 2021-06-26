@@ -55,10 +55,10 @@
     
     <item>
       <title>python模块详解 | urllib</title>
-      <link>https://billie52707.cn/draft/python-urllib/</link>
+      <link>https://billie52707.cn/posts/2021/6/python-urllib/</link>
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-urllib/</guid>
+      <guid>https://billie52707.cn/posts/2021/6/python-urllib/</guid>
       <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None)</description>
     </item>
     
