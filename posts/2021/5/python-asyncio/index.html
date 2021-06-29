@@ -218,7 +218,7 @@ if (!doNotTrack) {
     <li><a href="#why-asyncio">why asyncio？</a>
       <ul>
         <li><a href="#asyncio">asyncio</a></li>
-        <li><a href="#asyncawait">async/await</a></li>
+        <li><a href="#async--await">async &amp; await</a></li>
         <li><a href="#coroutine对象">Coroutine对象</a></li>
         <li><a href="#task对象">Task对象</a></li>
         <li><a href="#future对象">Future对象</a></li>
@@ -350,10 +350,11 @@ if (!doNotTrack) {
 <p>future：代表将来执行或没有执行的任务的结果，实际上和 task 没有本质区别。</p>
 </li>
 </ul>
-<h3 id="asyncawait">async/await</h3>
+<h3 id="async--await">async &amp; await</h3>
 <p>async/await 关键字，它是从 Python 3.5 才出现的，专门用于定义协程。其中，async 定义一个协程，await 用来挂起阻塞方法的执行。</p>
-<p>await + 可等待的对象（协程对象、Future、Task对象 -&gt; IO等待）</p>
-<p>使用<code>async</code>定义的方法会变成一个无法直接执行的「coroutine对象」，必须将其注册到事件循环中，或使用<code>asyncio.un()</code>，才可以执行。</p>
+<p>Python3.8之后 <code>@asyncio.coroutine</code> 装饰器就会被移除，推荐使用async &amp; awit 关键字实现协程代码。</p>
+<p><strong>await + 可等待的对象（协程对象、Future、Task对象 -&gt; IO等待）</strong></p>
+<p>使用<code>async</code>定义的方法会变成一个无法直接执行的「coroutine对象」，必须将其注册到事件循环中，或使用<code>asyncio.run()</code>，才可以执行。</p>
 <p>要实现异步，需要了解一下 await 的用法，使用 await 可以「将耗时等待的操作挂起，让出控制权」。当协程执行的时候遇到 await，时间循环就会将本协程挂起，转而去执行别的协程，直到其他的协程挂起或执行完毕。</p>
 <p>更多参考 - <a href="https://billie52707.cn/posts/2021/2/async/">https://billie52707.cn/posts/2021/2/async/</a></p>
 <h3 id="coroutine对象">Coroutine对象</h3>
@@ -378,24 +379,27 @@ asyncio<span style="color:#f92672">.</span>run(coroutine)
 task <span style="color:#f92672">=</span> coroutine <span style="color:#75715e"># coroutine:协程对象</span>
 task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>create_task(coroutine) <span style="color:#75715e"># coroutine:协程对象</span>
 task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>ensure_future(coroutine) <span style="color:#75715e"># coroutine:协程对象</span>
+task <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_task(coroutine) <span style="color:#75715e"># loop:事件循环</span>
 
 <span style="color:#75715e"># 2. 创建tasks</span>
 tasks <span style="color:#f92672">=</span> [task1,task2]
 
 <span style="color:#75715e"># 3. 运行task</span>
-<span style="color:#75715e">## 方式1</span>
+<span style="color:#75715e"># 3.1（在协程函数内部）</span>
+await task
+<span style="color:#75715e"># 3.2（在协程函数外部）</span>
 loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
 loop<span style="color:#f92672">.</span>run_until_complete(task)
-<span style="color:#75715e">## 方式2（在协程函数内部）</span>
-await task
+<span style="color:#75715e"># 3.3（在协程函数外部）</span>
+asyncio<span style="color:#f92672">.</span>run(task)
 
 <span style="color:#75715e"># 4. 运行tasks</span>
-<span style="color:#75715e">## 方式1</span>
+<span style="color:#75715e"># 4.1（在协程函数内部）</span>
+await asyncio<span style="color:#f92672">.</span>wait(tasks)
+<span style="color:#75715e"># 4.2（在协程函数外部）</span>
 loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
 loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
-<span style="color:#75715e">## 方式2（在协程函数内部）</span>
-await asyncio<span style="color:#f92672">.</span>wait(tasks)
-<span style="color:#75715e">## 方式3（在协程函数外部）</span>
+<span style="color:#75715e"># 4.3（在协程函数外部）</span>
 tasks <span style="color:#f92672">=</span> [coroutine1, coroutine2]
 asyncio<span style="color:#f92672">.</span>run( asyncio<span style="color:#f92672">.</span>wait(tasks) )
 </code></pre></div><h3 id="future对象">Future对象</h3>
@@ -423,8 +427,6 @@ asyncio<span style="color:#f92672">.</span>run( main() )
 <span style="color:#f92672">import</span> aiohttp
 <span style="color:#f92672">import</span> time
   
-start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-  
 async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(url):
   session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
   response <span style="color:#f92672">=</span> await session<span style="color:#f92672">.</span>get(url)
@@ -436,6 +438,8 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request
   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://baidu.com&#34;</span>
   r <span style="color:#f92672">=</span> await get(url)
   <span style="color:#66d9ef">return</span> r<span style="color:#f92672">.</span>status_code
+  
+start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
   
 tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>)] <span style="color:#75715e"># </span>
 loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop() <span style="color:#75715e"># </span>
@@ -538,7 +542,7 @@ loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="c
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2461 字
+          2551 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -607,7 +611,7 @@ loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="c
     <li><a href="#why-asyncio">why asyncio？</a>
       <ul>
         <li><a href="#asyncio">asyncio</a></li>
-        <li><a href="#asyncawait">async/await</a></li>
+        <li><a href="#async--await">async &amp; await</a></li>
         <li><a href="#coroutine对象">Coroutine对象</a></li>
         <li><a href="#task对象">Task对象</a></li>
         <li><a href="#future对象">Future对象</a></li>
