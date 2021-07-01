@@ -176,7 +176,7 @@
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-threading/</guid>
-      <description>官方文档 - https://docs.python.org/zh-cn/3/library/threading.html 线程 创建子线程 - threading.Thread() import threading def func(i): print(i) threading.Thread(tar)</description>
+      <description>官方文档 - https://docs.python.org/zh-cn/3/library/threading.html 线程 创建子线程 - threading.Thread() import threading def func(i): print(i) threading.Thread(target=func,args=(1,))</description>
     </item>
     
     <item>
