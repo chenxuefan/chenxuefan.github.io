@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title> python模块详解 | threading | 人人都爱小雀斑&#39;s blog </title>
+  <title> python模块详解 | multiprocessing | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -25,16 +25,16 @@ if (!doNotTrack) {
 }
 </script>
 
-  <meta property="og:title" content="python模块详解 | threading" />
-<meta property="og:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/threading.html 线程 创建子线程 - threading.Thread() import threading def func(i): print(i) threading.Thread(target=func,args=(1,)) 计算运行时间 import threading,time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() threads = [] for i in range(5): thread = threading.Thread(target=target, args=(i,)) thread.start() threads.append(thread) for thread in threads: thread.join() end = time.time() print(f&#3" />
+  <meta property="og:title" content="python模块详解 | multiprocessing" />
+<meta property="og:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing,time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() processes = [] for i in range(5): process = multiprocessing.Process(target=target, args=(i,)) process.start() process.append(thread) for process in processes: process.join() end = time.time() print(f&#39;共耗时：{end-star" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/draft/python-threading/" />
-<meta property="article:published_time" content="2021-05-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-05-06T00:00:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/draft/python-multiprocessing/" />
+<meta property="article:published_time" content="2021-07-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-07-02T00:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python模块详解 | threading"/>
-<meta name="twitter:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/threading.html 线程 创建子线程 - threading.Thread() import threading def func(i): print(i) threading.Thread(target=func,args=(1,)) 计算运行时间 import threading,time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() threads = [] for i in range(5): thread = threading.Thread(target=target, args=(i,)) thread.start() threads.append(thread) for thread in threads: thread.join() end = time.time() print(f&#3"/>
+<meta name="twitter:title" content="python模块详解 | multiprocessing"/>
+<meta name="twitter:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing,time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() processes = [] for i in range(5): process = multiprocessing.Process(target=target, args=(i,)) process.start() process.append(thread) for process in processes: process.join() end = time.time() print(f&#39;共耗时：{end-star"/>
 
   
   
@@ -108,17 +108,11 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2021/5/how-can-i/">
+          <a class="icon" href=" https://billie52707.cn/posts/2021/6/user-data-dir/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
-        
-        <li>
-          <a class="icon" href="https://billie52707.cn/posts/2021/5/python-requests/">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -146,57 +140,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f">
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2fthreading.html%20%e7%ba%bf%e7%a8%8b%20%e5%88%9b%e5%bb%ba%e5%ad%90%e7%ba%bf%e7%a8%8b%20-%20threading.Thread%28%29%20import%20threading%20def%20func%28i%29%3a%20print%28i%29%20threading.Thread%28target%3dfunc%2cargs%3d%281%2c%29%29%20%e8%ae%a1%e7%ae%97%e8%bf%90%e8%a1%8c%e6%97%b6%e9%97%b4%20import%20threading%2ctime%20def%20target%28arg%29%3a%20...%20if%20__name__%20%3d%3d%20%26%2339%3b__main__%26%2339%3b%20start%20%3d%20time.time%28%29%20threads%20%3d%20%5b%5d%20for%20i%20in%20range%285%29%3a%20thread%20%3d%20threading.Thread%28target%3dtarget%2c%20args%3d%28i%2c%29%29%20thread.start%28%29%20threads.append%28thread%29%20for%20thread%20in%20threads%3a%20thread.join%28%29%20end%20%3d%20time.time%28%29%20print%28f%26%233">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2fmultiprocessing.html%20%e8%ae%a1%e7%ae%97%e8%bf%90%e8%a1%8c%e6%97%b6%e9%97%b4%20import%20multiprocessing%2ctime%20def%20target%28arg%29%3a%20...%20if%20__name__%20%3d%3d%20%26%2339%3b__main__%26%2339%3b%20start%20%3d%20time.time%28%29%20processes%20%3d%20%5b%5d%20for%20i%20in%20range%285%29%3a%20process%20%3d%20multiprocessing.Process%28target%3dtarget%2c%20args%3d%28i%2c%29%29%20process.start%28%29%20process.append%28thread%29%20for%20process%20in%20processes%3a%20process.join%28%29%20end%20%3d%20time.time%28%29%20print%28f%26%2339%3b%e5%85%b1%e8%80%97%e6%97%b6%ef%bc%9a%7bend-star">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -214,7 +208,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        python模块详解 | threading
+        python模块详解 | multiprocessing
       </h1>
       <div class="meta">
 
@@ -226,7 +220,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2021-05-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-06</time>
+          <time datetime="2021-07-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-02</time>
           
           
         </div>
@@ -261,36 +255,27 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <p>官方文档 - <a href="https://docs.python.org/zh-cn/3/library/threading.html">https://docs.python.org/zh-cn/3/library/threading.html</a></p>
-<p>线程</p>
-<p>创建子线程 - threading.Thread()</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> threading
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(i):
-  <span style="color:#66d9ef">print</span>(i)
-  
-threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>func,args<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>,)) 
-</code></pre></div><p>计算运行时间</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> threading<span style="color:#f92672">,</span>time
+      <p>官方文档 - <a href="https://docs.python.org/zh-cn/3/library/multiprocessing.html">https://docs.python.org/zh-cn/3/library/multiprocessing.html</a></p>
+<p>计算运行时间</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> multiprocessing<span style="color:#f92672">,</span>time
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">target</span>(arg):
   <span style="color:#f92672">...</span>
 
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>  
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>
   start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-  
-  threads <span style="color:#f92672">=</span> []
+
+  processes <span style="color:#f92672">=</span> []
   <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
-    thread <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>target, args<span style="color:#f92672">=</span>(i,))
-    thread<span style="color:#f92672">.</span>start()
-    threads<span style="color:#f92672">.</span>append(thread)
-  <span style="color:#66d9ef">for</span> thread <span style="color:#f92672">in</span> threads:
-    thread<span style="color:#f92672">.</span>join()
+    process <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>target, args<span style="color:#f92672">=</span>(i,))
+    process<span style="color:#f92672">.</span>start()
+    process<span style="color:#f92672">.</span>append(thread)
+  <span style="color:#66d9ef">for</span> process <span style="color:#f92672">in</span> processes:
+    process<span style="color:#f92672">.</span>join()
 
   end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-  <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;共耗时：{end-start} s&#39;</span>)                      
-</code></pre></div><p>trge</p>
-
+  <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;共耗时：{end-start} s&#39;</span>)
+</code></pre></div>
     </div>
 
 
@@ -327,11 +312,11 @@ threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f9
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          89 字
+          73 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2021-05-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-05-06</time>
+          <time datetime="2021-07-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-07-02</time>
           
 
   </p>
@@ -339,7 +324,7 @@ threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f9
 
   
 
-<span id="/draft/python-threading/" class="leancloud_visitors" data-flag-title="python模块详解 | threading">
+<span id="/draft/python-multiprocessing/" class="leancloud_visitors" data-flag-title="python模块详解 | multiprocessing">
 
   
 
@@ -394,57 +379,57 @@ threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f9
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f">
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2fthreading.html%20%e7%ba%bf%e7%a8%8b%20%e5%88%9b%e5%bb%ba%e5%ad%90%e7%ba%bf%e7%a8%8b%20-%20threading.Thread%28%29%20import%20threading%20def%20func%28i%29%3a%20print%28i%29%20threading.Thread%28target%3dfunc%2cargs%3d%281%2c%29%29%20%e8%ae%a1%e7%ae%97%e8%bf%90%e8%a1%8c%e6%97%b6%e9%97%b4%20import%20threading%2ctime%20def%20target%28arg%29%3a%20...%20if%20__name__%20%3d%3d%20%26%2339%3b__main__%26%2339%3b%20start%20%3d%20time.time%28%29%20threads%20%3d%20%5b%5d%20for%20i%20in%20range%285%29%3a%20thread%20%3d%20threading.Thread%28target%3dtarget%2c%20args%3d%28i%2c%29%29%20thread.start%28%29%20threads.append%28thread%29%20for%20thread%20in%20threads%3a%20thread.join%28%29%20end%20%3d%20time.time%28%29%20print%28f%26%233">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2fmultiprocessing.html%20%e8%ae%a1%e7%ae%97%e8%bf%90%e8%a1%8c%e6%97%b6%e9%97%b4%20import%20multiprocessing%2ctime%20def%20target%28arg%29%3a%20...%20if%20__name__%20%3d%3d%20%26%2339%3b__main__%26%2339%3b%20start%20%3d%20time.time%28%29%20processes%20%3d%20%5b%5d%20for%20i%20in%20range%285%29%3a%20process%20%3d%20multiprocessing.Process%28target%3dtarget%2c%20args%3d%28i%2c%29%29%20process.start%28%29%20process.append%28thread%29%20for%20process%20in%20processes%3a%20process.join%28%29%20end%20%3d%20time.time%28%29%20print%28f%26%2339%3b%e5%85%b1%e8%80%97%e6%97%b6%ef%bc%9a%7bend-star">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-threading%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20threading">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
