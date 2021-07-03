@@ -220,6 +220,7 @@ if (!doNotTrack) {
         <li><a href="#data">data</a></li>
         <li><a href="#headers">headers</a></li>
         <li><a href="#cookies">cookies</a></li>
+        <li><a href="#proxy">proxy</a></li>
       </ul>
     </li>
     <li><a href="#response---响应">Response - 响应</a></li>
@@ -358,29 +359,75 @@ async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672"
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cookies <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;cookies_are&#39;</span>: <span style="color:#e6db74">&#39;working&#39;</span>}
 async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(cookies<span style="color:#f92672">=</span>cookies) <span style="color:#66d9ef">as</span> session:
   <span style="color:#f92672">...</span>
-</code></pre></div><h2 id="response---响应">Response - 响应</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">resp <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>)
+</code></pre></div><h3 id="proxy">proxy</h3>
+<h2 id="response---响应">Response - 响应</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">resp <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>,verify_ssl<span style="color:#f92672">=</span>False)
 </code></pre></div><ol>
 <li>
 <p><code>resp.text()</code> - 文本信息</p>
 </li>
 <li>
-<p><code>resp.read()</code> - 二进制文本</p>
+<p><code>resp.read()</code> - 二进制文本信息</p>
 </li>
 <li>
 <p><code>resp.json()</code> - json信息</p>
 </li>
 <li>
+<p><code>resp.content.read()</code> - 以字节流的方式读取响应内容</p>
+<p>虽然json(),text(),read()很方便的能把响应的数据读入到内存，但是我们仍然应该谨慎的使用它们，因为它们是把整个的响应体全部读入了内存。即使你只是想下载几个字节大小的文件，但这些方法却将在内存中加载所有的数据。所以我们可以通过控制字节数来控制读入内存的响应内容：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://api.github.com/events&#39;</span>) <span style="color:#66d9ef">as</span> resp:
+    await resp<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>read(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">#读取前10个字节</span>
+</code></pre></div><p>一般地，我们应该使用以下的模式来把读取的字节流保存到文件中：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> fd:
+    <span style="color:#66d9ef">while</span> True:
+        chunk <span style="color:#f92672">=</span> await resp<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>read(chunk_size)
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> chunk:
+            <span style="color:#66d9ef">break</span>
+        fd<span style="color:#f92672">.</span>write(chunk)
+</code></pre></div></li>
+<li>
 <p><code>resp.status</code> - 状态码</p>
+</li>
+<li>
+<p><code>resp.method</code> -</p>
 </li>
 <li>
 <p><code>resp.url</code> - url，通常加上str()</p>
 </li>
 <li>
+<p><code>resp.real_url</code></p>
+</li>
+<li>
+<p><code>resp.content</code></p>
+</li>
+<li>
+<p><code>resp.cookies</code></p>
+</li>
+<li>
+<p><code>resp.headers</code></p>
+</li>
+<li>
+<p><code>resp.raw_headers</code></p>
+</li>
+<li>
+<p><code>resp.links</code></p>
+</li>
+<li>
+<p><code>resp.content_type</code></p>
+</li>
+<li>
+<p><code>resp.charset</code></p>
+</li>
+<li>
+<p><code>resp.content_disposition</code></p>
+</li>
+<li>
 <p><code>resp.history</code></p>
 </li>
 </ol>
+<p><a href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse">https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse</a></p>
 <h2 id="timeout---超时设置">Timeout - 超时设置</h2>
+<p>如果 timeout=None 或者 timeout=0 将不进行超时检查，也就是不限时长</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">timeout <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientTimeout(total<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span>)
 async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(timeout<span style="color:#f92672">=</span>timeout) <span style="color:#66d9ef">as</span> session:
     async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout) <span style="color:#66d9ef">as</span> resp:
@@ -444,7 +491,7 @@ loop<span style="color:#f92672">.</span>run_until_complete(main())
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          687 字
+          939 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -515,6 +562,7 @@ loop<span style="color:#f92672">.</span>run_until_complete(main())
         <li><a href="#data">data</a></li>
         <li><a href="#headers">headers</a></li>
         <li><a href="#cookies">cookies</a></li>
+        <li><a href="#proxy">proxy</a></li>
       </ul>
     </li>
     <li><a href="#response---响应">Response - 响应</a></li>
