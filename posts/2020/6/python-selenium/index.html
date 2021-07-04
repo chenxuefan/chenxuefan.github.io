@@ -341,10 +341,8 @@ driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&
 </li>
 </ul>
 <h2 id="定位元素">定位元素</h2>
-<ul>
-<li><strong>8种常规定位方法</strong>：id，name，class_name，tag_name，link_text，partial_link_text，xpath，css_selector</li>
-<li><strong>参考官网</strong> 👉 <a href="http://selenium-python.readthedocs.org/locating-elements.html">selenium元素定位</a></li>
-</ul>
+<p><strong>8种常规定位方法</strong>：id，name，class_name，tag_name，link_text，partial_link_text，xpath，css_selector</p>
+<p><strong>参考官网</strong> 👉 <a href="http://selenium-python.readthedocs.org/locating-elements.html">selenium元素定位</a></p>
 <table>
 <thead>
 <tr>
@@ -398,45 +396,47 @@ driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&
 </table>
 <p>ps：除了上面的公共方法，也有两个在页面对象定位器的私有方法: find_element、find_elements</p>
 <ul>
-<li><strong>xpath定位的N种写法</strong></li>
-</ul>
+<li>
+<p><strong>xpath定位的N种写法</strong></p>
 <ol>
-<li>dr.find_element_by_xpath(&quot;//*[@id=&lsquo;kw&rsquo;]&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;//*[@name=&lsquo;wd&rsquo;]&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;//input[@class=&rsquo;s_ipt']&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;/html/body/form/span/input&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;//span[@class=&lsquo;soutu-btn&rsquo;]/input&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;//form[@id=&lsquo;form&rsquo;]/span/input&quot;)</li>
-<li>dr.find_element_by_xpath(&quot;//input[@id=&lsquo;kw&rsquo; and @name=&lsquo;wd&rsquo;]&quot;)</li>
+<li>driver.find_element_by_xpath(&quot;//*[@id=&lsquo;kw&rsquo;]&quot;)</li>
+<li>driver.find_element_by_xpath(&quot;//*[@name=&lsquo;wd&rsquo;]&quot;)</li>
+<li>driver.find_element_by_xpath(&quot;//input[@class=&rsquo;s_ipt']&quot;)</li>
+<li>driver.find_element_by_xpath(&quot;/html/body/form/span/input&quot;)</li>
+<li>driver.find_element_by_xpath(&quot;//span[@class=&lsquo;soutu-btn&rsquo;]/input&quot;)</li>
+<li>driver.find_element_by_xpath(&quot;//form[@id=&lsquo;form&rsquo;]/span/input&quot;)</li>
+<li>driver.find_element_by_xpath(&quot;//input[@id=&lsquo;kw&rsquo; and @name=&lsquo;wd&rsquo;]&quot;)</li>
 </ol>
-<ul>
-<li><strong>css定位的N种写法</strong></li>
-</ul>
+</li>
+<li>
+<p><strong>css定位的N种写法</strong></p>
 <ol>
-<li>dr.find_element_by_css_selector(&quot;#kw&quot;)</li>
-<li>dr.find_element_by_css_selector(&quot;[name=wd]&quot;)</li>
-<li>dr.find_element_by_css_selector(&quot;.s_ipt&quot;)</li>
-<li>dr.find_element_by_css_selector(&ldquo;html &gt; body &gt; form &gt; span &gt; input&rdquo;)</li>
-<li>dr.find_element_by_css_selector(&ldquo;span.soutu-btn&gt; input#kw&rdquo;)</li>
-<li>dr.find_element_by_css_selector(&ldquo;form#form &gt; span &gt; input&rdquo;)</li>
+<li>driver.find_element_by_css_selector(&quot;#kw&quot;)</li>
+<li>driver.find_element_by_css_selector(&quot;[name=wd]&quot;)</li>
+<li>driver.find_element_by_css_selector(&quot;.s_ipt&quot;)</li>
+<li>driver.find_element_by_css_selector(&ldquo;html &gt; body &gt; form &gt; span &gt; input&rdquo;)</li>
+<li>driver.find_element_by_css_selector(&ldquo;span.soutu-btn&gt; input#kw&rdquo;)</li>
+<li>driver.find_element_by_css_selector(&ldquo;form#form &gt; span &gt; input&rdquo;)</li>
 </ol>
-<ul>
-<li><strong>link_text定位的写法（实例）</strong></li>
-</ul>
-<p>　　假如⻚⾯上有⼀组⽂本链接（link_text）</p>
+</li>
+<li>
+<p><strong>link_text定位的写法（实例）</strong></p>
+<p>假如⻚⾯上有⼀组⽂本链接（link_text）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">　　&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mnav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://news.baidu.com&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tj_trnews&#34;</span>&gt;新闻&lt;/<span style="color:#f92672">a</span>&gt;
 　　&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mnav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.hao123.com&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tj_trhao123&#34;</span>&gt;hao123&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><p>　　通过<strong>link_text</strong>定位:</p>
+</code></pre></div><p>通过<strong>link_text</strong>定位:</p>
 <ol>
-<li>dr.find_element_by_link_text(&ldquo;新闻&rdquo;)</li>
-<li>dr.find_element_by_link_text(&ldquo;hao123&rdquo;)</li>
+<li>driver.find_element_by_link_text(&ldquo;新闻&rdquo;)</li>
+<li>driver.find_element_by_link_text(&ldquo;hao123&rdquo;)</li>
 </ol>
-<p>　　通过<strong>partial_link_text</strong>定位:</p>
+<p>通过<strong>partial_link_text</strong>定位:</p>
 <ol>
-<li>dr.find_element_by_partial_link_text(&ldquo;新&rdquo;)</li>
-<li>dr.find_element_by_partial_link_text(&ldquo;hao&rdquo;)</li>
-<li>dr.find_element_by_partial_link_text(&ldquo;123&rdquo;)</li>
+<li>driver.find_element_by_partial_link_text(&ldquo;新&rdquo;)</li>
+<li>driver.find_element_by_partial_link_text(&ldquo;hao&rdquo;)</li>
+<li>driver.find_element_by_partial_link_text(&ldquo;123&rdquo;)</li>
 </ol>
+</li>
+</ul>
 <h2 id="元素操作">元素操作</h2>
 <ul>
 <li>size # 获取元素的尺寸，返回一个字典：{&lsquo;x&rsquo;: 000, &lsquo;y&rsquo;: 000}</li>
@@ -517,6 +517,7 @@ driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;h
 element<span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#34;设置&#34;</span>) <span style="color:#75715e">#定位元素</span>
 ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(element)<span style="color:#f92672">.</span>perform() <span style="color:#75715e">#对定位到的元素执⾏⿏标悬停操作</span>
 </code></pre></div></li>
+<li></li>
 </ul>
 <h2 id="键盘事件">键盘事件</h2>
 <p>参考：<a href="http://selenium-python.readthedocs.org/api.html">http://selenium-python.readthedocs.org/api.html</a></p>
@@ -1128,7 +1129,7 @@ driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="col
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          7102 字
+          7110 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
