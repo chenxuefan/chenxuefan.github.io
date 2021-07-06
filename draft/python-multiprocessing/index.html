@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="python模块详解 | multiprocessing" />
-<meta property="og:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing,time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() processes = [] for i in range(5): process = multiprocessing.Process(target=target, args=(i,)) process.start() process.append(thread) for process in processes: process.join() end = time.time() print(f&#39;共耗时：{end-star" />
+<meta property="og:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing as mp import time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() processes = [] for i in range(5): process = mp.Process(target=target, args=(i,)) process.start() # processes.append(process) for process in processes: process.join() # end = time.time() print(f&#39;共耗时：{en" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/draft/python-multiprocessing/" />
 <meta property="article:published_time" content="2021-07-02T00:00:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | multiprocessing"/>
-<meta name="twitter:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing,time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() processes = [] for i in range(5): process = multiprocessing.Process(target=target, args=(i,)) process.start() process.append(thread) for process in processes: process.join() end = time.time() print(f&#39;共耗时：{end-star"/>
+<meta name="twitter:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing as mp import time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() processes = [] for i in range(5): process = mp.Process(target=target, args=(i,)) process.start() # processes.append(process) for process in processes: process.join() # end = time.time() print(f&#39;共耗时：{en"/>
 
   
   
@@ -108,7 +108,7 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2021/6/user-data-dir/">
+          <a class="icon" href=" https://billie52707.cn/draft/thread-process-coroutine/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
@@ -191,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2fmultiprocessing.html%20%e8%ae%a1%e7%ae%97%e8%bf%90%e8%a1%8c%e6%97%b6%e9%97%b4%20import%20multiprocessing%2ctime%20def%20target%28arg%29%3a%20...%20if%20__name__%20%3d%3d%20%26%2339%3b__main__%26%2339%3b%20start%20%3d%20time.time%28%29%20processes%20%3d%20%5b%5d%20for%20i%20in%20range%285%29%3a%20process%20%3d%20multiprocessing.Process%28target%3dtarget%2c%20args%3d%28i%2c%29%29%20process.start%28%29%20process.append%28thread%29%20for%20process%20in%20processes%3a%20process.join%28%29%20end%20%3d%20time.time%28%29%20print%28f%26%2339%3b%e5%85%b1%e8%80%97%e6%97%b6%ef%bc%9a%7bend-star">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2fmultiprocessing.html%20%e8%ae%a1%e7%ae%97%e8%bf%90%e8%a1%8c%e6%97%b6%e9%97%b4%20import%20multiprocessing%20as%20mp%20import%20time%20def%20target%28arg%29%3a%20...%20if%20__name__%20%3d%3d%20%26%2339%3b__main__%26%2339%3b%20start%20%3d%20time.time%28%29%20processes%20%3d%20%5b%5d%20for%20i%20in%20range%285%29%3a%20process%20%3d%20mp.Process%28target%3dtarget%2c%20args%3d%28i%2c%29%29%20process.start%28%29%20%23%20processes.append%28process%29%20for%20process%20in%20processes%3a%20process.join%28%29%20%23%20end%20%3d%20time.time%28%29%20print%28f%26%2339%3b%e5%85%b1%e8%80%97%e6%97%b6%ef%bc%9a%7ben">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -263,7 +263,8 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <p>官方文档 - <a href="https://docs.python.org/zh-cn/3/library/multiprocessing.html">https://docs.python.org/zh-cn/3/library/multiprocessing.html</a></p>
 <p>计算运行时间</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> multiprocessing<span style="color:#f92672">,</span>time
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> multiprocessing <span style="color:#f92672">as</span> mp
+<span style="color:#f92672">import</span> time
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">target</span>(arg):
   <span style="color:#f92672">...</span>
@@ -273,11 +274,11 @@ if (!doNotTrack) {
 
   processes <span style="color:#f92672">=</span> []
   <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
-    process <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>target, args<span style="color:#f92672">=</span>(i,))
-    process<span style="color:#f92672">.</span>start()
-    process<span style="color:#f92672">.</span>append(thread)
+    process <span style="color:#f92672">=</span> mp<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>target, args<span style="color:#f92672">=</span>(i,))
+    process<span style="color:#f92672">.</span>start() <span style="color:#75715e"># </span>
+    processes<span style="color:#f92672">.</span>append(process)
   <span style="color:#66d9ef">for</span> process <span style="color:#f92672">in</span> processes:
-    process<span style="color:#f92672">.</span>join()
+    process<span style="color:#f92672">.</span>join() <span style="color:#75715e"># </span>
 
   end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
   <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;共耗时：{end-start} s&#39;</span>)
@@ -318,7 +319,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          73 字
+          79 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -430,7 +431,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2fmultiprocessing.html%20%e8%ae%a1%e7%ae%97%e8%bf%90%e8%a1%8c%e6%97%b6%e9%97%b4%20import%20multiprocessing%2ctime%20def%20target%28arg%29%3a%20...%20if%20__name__%20%3d%3d%20%26%2339%3b__main__%26%2339%3b%20start%20%3d%20time.time%28%29%20processes%20%3d%20%5b%5d%20for%20i%20in%20range%285%29%3a%20process%20%3d%20multiprocessing.Process%28target%3dtarget%2c%20args%3d%28i%2c%29%29%20process.start%28%29%20process.append%28thread%29%20for%20process%20in%20processes%3a%20process.join%28%29%20end%20%3d%20time.time%28%29%20print%28f%26%2339%3b%e5%85%b1%e8%80%97%e6%97%b6%ef%bc%9a%7bend-star">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-multiprocessing%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20multiprocessing&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2fzh-cn%2f3%2flibrary%2fmultiprocessing.html%20%e8%ae%a1%e7%ae%97%e8%bf%90%e8%a1%8c%e6%97%b6%e9%97%b4%20import%20multiprocessing%20as%20mp%20import%20time%20def%20target%28arg%29%3a%20...%20if%20__name__%20%3d%3d%20%26%2339%3b__main__%26%2339%3b%20start%20%3d%20time.time%28%29%20processes%20%3d%20%5b%5d%20for%20i%20in%20range%285%29%3a%20process%20%3d%20mp.Process%28target%3dtarget%2c%20args%3d%28i%2c%29%29%20process.start%28%29%20%23%20processes.append%28process%29%20for%20process%20in%20processes%3a%20process.join%28%29%20%23%20end%20%3d%20time.time%28%29%20print%28f%26%2339%3b%e5%85%b1%e8%80%97%e6%97%b6%ef%bc%9a%7ben">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
