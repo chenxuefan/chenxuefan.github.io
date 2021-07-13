@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 08 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/categories/tec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | tensorflow</title>
+      <link>https://billie52707.cn/draft/python-tensorflow/</link>
+      <pubDate>Thu, 08 Jul 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-tensorflow/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>python模块详解 | sqlalchemy</title>
       <link>https://billie52707.cn/draft/python-sqlalchemy/</link>
@@ -69,6 +78,24 @@
       
       <guid>https://billie52707.cn/posts/2021/6/python-pyppeteer/</guid>
       <description>Selenium &amp;amp; Pyppeteer selenium的功能十分强大，但很多时候我们发现他也有其自身的缺点，比如： 需要安装好相关的浏览器，Chrome或Firefox等 需要</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | Django</title>
+      <link>https://billie52707.cn/draft/python-django/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | flask</title>
+      <link>https://billie52707.cn/draft/python-flask/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-flask/</guid>
+      <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&#39;server.py&#39; flask run ps：等号两边无空格</description>
     </item>
     
     <item>
@@ -180,7 +207,7 @@
     </item>
     
     <item>
-      <title>python模块详解 | scrapy</title>
+      <title>python模块详解 | Scrapy</title>
       <link>https://billie52707.cn/draft/python-scrapy/</link>
       <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
       
@@ -599,7 +626,7 @@
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2020/11/1-x-mysql/</guid>
-      <description>why MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。 基本操作 创建数据库 create database 库名</description>
+      <description>why MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。 基本操作 进入mysql命令</description>
     </item>
     
     <item>

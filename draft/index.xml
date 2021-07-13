@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 08 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | tensorflow</title>
+      <link>https://billie52707.cn/draft/python-tensorflow/</link>
+      <pubDate>Thu, 08 Jul 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-tensorflow/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>python模块详解 | sqlalchemy</title>
       <link>https://billie52707.cn/draft/python-sqlalchemy/</link>
@@ -54,6 +63,24 @@
     </item>
     
     <item>
+      <title>python模块详解 | Django</title>
+      <link>https://billie52707.cn/draft/python-django/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | flask</title>
+      <link>https://billie52707.cn/draft/python-flask/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-flask/</guid>
+      <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&#39;server.py&#39; flask run ps：等号两边无空格</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | hashlib</title>
       <link>https://billie52707.cn/draft/python-hashlib/</link>
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
@@ -90,7 +117,7 @@
     </item>
     
     <item>
-      <title>python模块详解 | scrapy</title>
+      <title>python模块详解 | Scrapy</title>
       <link>https://billie52707.cn/draft/python-scrapy/</link>
       <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
       
@@ -207,24 +234,6 @@
     </item>
     
     <item>
-      <title></title>
-      <link>https://billie52707.cn/draft/python-django/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-django/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://billie52707.cn/draft/python-tensorflow/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-tensorflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>API</title>
       <link>https://billie52707.cn/draft/api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -261,15 +270,6 @@
     </item>
     
     <item>
-      <title>flask</title>
-      <link>https://billie52707.cn/draft/python-flask/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/python-flask/</guid>
-      <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&#39;server.py&#39; flask run ps：等号两边无空格</description>
-    </item>
-    
-    <item>
       <title>git</title>
       <link>https://billie52707.cn/draft/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -293,7 +293,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/other/</guid>
-      <description>注册香港apple id及充值教程</description>
+      <description>注册香港apple id及充值教程 URI &amp;amp; URL URI 在于I(Identifier)，是统一资源标示符，可以唯一标识一个资源。 URL在于L(Locater</description>
     </item>
     
   </channel>
