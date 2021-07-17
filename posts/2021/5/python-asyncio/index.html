@@ -221,6 +221,9 @@ if (!doNotTrack) {
         <li><a href="#async--await">async &amp; await</a></li>
         <li><a href="#coroutine对象">Coroutine对象</a></li>
         <li><a href="#task对象">Task对象</a></li>
+        <li><a href="#创建task">创建task</a></li>
+        <li><a href="#执行task">执行task</a></li>
+        <li><a href="#task--tasks">task &amp; tasks</a></li>
         <li><a href="#future对象">Future对象</a></li>
       </ul>
     </li>
@@ -388,12 +391,23 @@ asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f
 <p>When a coroutine is wrapped into a <em>Task</em> with functions like <a href="https://docs.python.org/3.8/library/asyncio-task.html#asyncio.create_task"><code>asyncio.create_task()</code></a> the coroutine is automatically scheduled to run soon。</p>
 </blockquote>
 <p>白话：在事件循环中添加多个任务的。</p>
-<p>Tasks用于并发调度协程，通过<code>asyncio.create_task(协程对象)</code>的方式创建Task对象，这样可以让协程加入事件循环中等待被调度执行。除了使用 <code>asyncio.create_task()</code> 函数以外，还可以用低层级的 <code>loop.create_task()</code> 或 <code>loop.ensure_future()</code> 函数。不建议手动实例化 Task 对象。</p>
-<p>注意：</p>
-<ul>
-<li><code>asyncio.create_task()</code> 函数在 Python 3.7 中被加入。在 Python 3.7 之前，可以改用低层级的方法 -  <code>asyncio.ensure_future()</code>。<strong>注</strong>：<code>create_task()</code>方法使用之前需定义事件循环loop。</li>
-<li><code>asyncio.run()</code>方法在Python3.7中被引入。版本3.7之前，运行task任务，可食用事件循环loop的执行方法 - <code>loop.run_until_complete()</code></li>
-</ul>
+<h3 id="创建task">创建task</h3>
+<ol>
+<li>
+<p><code>asyncio.create_task()</code> / <code>asyncio.ensure_future()</code></p>
+<p><code>create_task()</code> 函数在 Python 3.7 中被加入。在 Python 3.7 之前，可以改用低层级的方法 -  <code>ensure_future()</code>。</p>
+</li>
+<li>
+<p><code>loop.create_task()</code>  /  <code>loop.ensure_future()</code></p>
+</li>
+</ol>
+<p>task用于并发调度协程，创建Task对象，可以让协程加入事件循环中等待被调度执行。不建议手动实例化 Task 对象。</p>
+<h3 id="执行task">执行task</h3>
+<ol>
+<li><code>asyncio.get_event_loop().run_until_complete()</code> - 版本3.7之前</li>
+<li><code>asyncio.run()</code> - 版本3.7之后</li>
+</ol>
+<h3 id="task--tasks">task &amp; tasks</h3>
 <ol>
 <li>
 <p>task</p>
@@ -557,6 +571,9 @@ done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f9
 </code></pre></div></li>
 </ul>
 <h2 id="一起来写协程吧强势提高生产力">一起来写协程吧，强势提高生产力！</h2>
+<ul>
+<li><a href="https://github.com/chenxuefan/crawler/tree/main/unsplash">https://github.com/chenxuefan/crawler/tree/main/unsplash</a></li>
+</ul>
 
     </div>
 
@@ -594,7 +611,7 @@ done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f9
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2954 字
+          2828 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -666,6 +683,9 @@ done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f9
         <li><a href="#async--await">async &amp; await</a></li>
         <li><a href="#coroutine对象">Coroutine对象</a></li>
         <li><a href="#task对象">Task对象</a></li>
+        <li><a href="#创建task">创建task</a></li>
+        <li><a href="#执行task">执行task</a></li>
+        <li><a href="#task--tasks">task &amp; tasks</a></li>
         <li><a href="#future对象">Future对象</a></li>
       </ul>
     </li>
