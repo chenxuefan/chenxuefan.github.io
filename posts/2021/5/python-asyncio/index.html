@@ -227,6 +227,7 @@ if (!doNotTrack) {
         <li><a href="#future对象">Future对象</a></li>
       </ul>
     </li>
+    <li><a href="#基于线程池和进程池的异步">基于线程池和进程池的异步</a></li>
     <li><a href="#talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</a></li>
     <li><a href="#一起来写协程吧强势提高生产力">一起来写协程吧，强势提高生产力！</a></li>
   </ul>
@@ -458,7 +459,36 @@ asyncio<span style="color:#f92672">.</span>run( asyncio<span style="color:#f9267
     await fut
 
 asyncio<span style="color:#f92672">.</span>run( main() )
-</code></pre></div><h2 id="talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</h2>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_after</span>(fut):
+    await asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">2</span>)
+    fut<span style="color:#f92672">.</span>set_result(<span style="color:#e6db74">&#34;666&#34;</span>)
+
+
+async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#75715e"># 获取当前事件循环</span>
+    loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_running_loop()
+
+    <span style="color:#75715e"># 创建一个任务（Future对象），没绑定任何行为，则这个任务永远不知道什么时候结束。</span>
+    fut <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_future()
+
+    <span style="color:#75715e"># 创建一个任务（Task对象），绑定了set_after函数，函数内部在2s之后，会给fut赋值。</span>
+    <span style="color:#75715e"># 即手动设置future任务的最终结果，那么fut就可以结束了。</span>
+    await loop<span style="color:#f92672">.</span>create_task(  set_after(fut) )
+
+    <span style="color:#75715e"># 等待 Future对象获取 最终结果，否则一直等下去</span>
+    data <span style="color:#f92672">=</span> await fut
+    <span style="color:#66d9ef">print</span>(data)
+
+asyncio<span style="color:#f92672">.</span>run( main() )
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1. 创建future</span>
+asyncio<span style="color:#f92672">.</span>get_running_loop()<span style="color:#f92672">.</span>create_future()
+
+</code></pre></div><h2 id="基于线程池和进程池的异步">基于线程池和进程池的异步</h2>
+<p>使用场景：使用异步编程时，遇到某个第三方模块不支持基于协程的异步。</p>
+<h2 id="talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</h2>
 <ul>
 <li>
 <p>多任务协程</p>
@@ -534,7 +564,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</
     <span style="color:#66d9ef">return</span> text
     
 async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(session, url):
-    await parse(await fetch(session, url))
+    <span style="color:#66d9ef">return</span> await parse(await fetch(session, url))
   
 async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
       async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
@@ -562,9 +592,9 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process
     <span style="color:#66d9ef">return</span> await parse(await fetch(url))
                                                                                                                                          
 async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-    urls  <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>]
+      urls  <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>]
       tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(spider(url)) <span style="color:#66d9ef">for</span> url <span style="color:#f92672">in</span> urls]
-    <span style="color:#66d9ef">return</span> await asyncio<span style="color:#f92672">.</span>wait(tasks)
+      <span style="color:#66d9ef">return</span> await asyncio<span style="color:#f92672">.</span>wait(tasks)
   
 done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>run(main())  <span style="color:#75715e"># 此方法由 python3.7 提供 </span>
   
@@ -611,7 +641,7 @@ done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f9
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2828 字
+          3072 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -689,6 +719,7 @@ done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f9
         <li><a href="#future对象">Future对象</a></li>
       </ul>
     </li>
+    <li><a href="#基于线程池和进程池的异步">基于线程池和进程池的异步</a></li>
     <li><a href="#talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</a></li>
     <li><a href="#一起来写协程吧强势提高生产力">一起来写协程吧，强势提高生产力！</a></li>
   </ul>
