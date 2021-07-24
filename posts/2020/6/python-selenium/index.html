@@ -233,6 +233,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#反屏蔽">反屏蔽</a></li>
     <li><a href="#页面加载超时">页面加载超时</a></li>
+    <li><a href="#填写表单的几种姿势">填写表单的几种姿势</a></li>
     <li><a href="#页面元素点击的几种姿势">页面元素点击的几种姿势</a></li>
   </ul>
 </nav>
@@ -867,59 +868,60 @@ browser<span style="color:#f92672">.</span>close()
 <li>
 <p>输入操作</p>
 <ul>
-<li>&ldquo;document.getElementById(' &lsquo;).value=&rsquo; &lsquo;; &quot; #</li>
+<li><code>document.getElementById(' ').value=' '; </code></li>
+<li><code>$(&quot;id&quot;).val(&quot;&quot;);</code></li>
 </ul>
 </li>
 <li>
 <p>单击操作</p>
 <ul>
-<li>&ldquo;document.getElementById(&rsquo; &lsquo;).click(); &quot; #</li>
+<li><code>document.getElementById(' ').click(); </code></li>
 </ul>
 </li>
 <li>
 <p>焦点操作</p>
 <ul>
-<li>e=driver.find_element_by_id(&ldquo;su&rdquo;)</li>
-<li>driver.execute_script(&ldquo;arguments[0].blur();&rdquo; , e) # 移除焦点操作</li>
-<li>driver.execute_script(&ldquo;arguments[0].blur();&rdquo; , e) # 赋予焦点操作</li>
+<li><code>e = driver.find_element_by_id(&quot;su&quot;)</code></li>
+<li><code>driver.execute_script(&quot;arguments[0].blur();&quot; , e)</code> # 移除焦点操作</li>
+<li><code>driver.execute_script(&quot;arguments[0].blur();&quot; , e)</code> # 赋予焦点操作</li>
 </ul>
 </li>
 <li>
 <p>浏览器操作</p>
 <ul>
 <li>
-<p>&ldquo;window.open(url);&rdquo; # 打开浏览器</p>
+<p><code>window.open(url);</code> # 打开浏览器</p>
 </li>
 <li>
-<p>&ldquo;window.resizeTo(width,height);&rdquo; # 绝对方法，设置浏览器窗口的实际大小，即“变化到多少”</p>
+<p><code>window.resizeTo(width,height);</code> # 绝对方法，设置浏览器窗口的实际大小，即“变化到多少”</p>
 </li>
 <li>
-<p>&ldquo;window.resizeBy(width,height);&rdquo; # 相对方法，在当前大小上增加所指定的参数值，即“变化了多少”</p>
+<p><code>window.resizeBy(width,height);</code> # 相对方法，在当前大小上增加所指定的参数值，即“变化了多少”</p>
 </li>
 <li>
-<p>&ldquo;window.moveTo(width,height);&rdquo; # 绝对方法，设置窗口新的绝对位置</p>
+<p><code>window.moveTo(width,height);</code> # 绝对方法，设置窗口新的绝对位置</p>
 </li>
 <li>
-<p>&ldquo;window.moveBy(width,height);” # 相对方法，在当前位置上增加所指定的参数值</p>
+<p><code>window.moveBy(width,height);</code> # 相对方法，在当前位置上增加所指定的参数值</p>
 </li>
 <li>
-<p>&ldquo;history.forward();“ # 控制浏览器前进</p>
+<p><code>history.forward();</code> # 控制浏览器前进</p>
 </li>
 <li>
-<p>&ldquo;history.back();” # 控制浏览器后退</p>
+<p><code>history.back();</code> # 控制浏览器后退</p>
 </li>
 <li>
-<p>“history.go(number | url);&rdquo;</p>
+<p><code>history.go(number | url); </code></p>
 <ul>
 <li>参数可以是数字number，即要访问的url在history的url列表中的相对位置。（-1表示上一个页面，1表示前进一个页面，0则是刷新页面）</li>
 <li>参数可以是一个字符串，字符串必须是局部或完整的url，该函数会去匹配包含字符串的第一个url</li>
 </ul>
 </li>
 <li>
-<p>“history.go(0);” , &ldquo;location.reload();&rdquo; , &ldquo;location=location;&rdquo; , &ldquo;location.assign(location);&rdquo; , &ldquo;location.replace(location);&rdquo; # 刷新浏览器</p>
+<p><code>history.go(0);</code>, <code>location.reload();</code> , <code>location=location;</code> , <code>location.assign(location);</code> , <code>location.replace(location);</code> # 刷新浏览器</p>
 </li>
 <li>
-<p>“window.close();” # 关闭浏览器</p>
+<p><code>window.close();</code> # 关闭浏览器</p>
 </li>
 </ul>
 </li>
@@ -929,20 +931,20 @@ browser<span style="color:#f92672">.</span>close()
 <li>
 <p>创建事件</p>
 <ul>
-<li>document.createEvent(&lsquo;MouseEvents&rsquo;);</li>
+<li><code>document.createEvent('MouseEvents');</code></li>
 </ul>
 </li>
 <li>
 <p>初始化返回的的时间对象</p>
 <ul>
-<li>event.initMouseEvent(type,canBuble,cancelable,view,detail,screenX,screenY,clientY,ctrlKey,altKey,metaKey,button,relatedTarget);</li>
+<li><code>event.initMouseEvent(type,canBuble,cancelable,view,detail,screenX,screenY,clientY,ctrlKey,altKey,metaKey,button,relatedTarget);</code></li>
 <li>type：click(单击)，dbclick(双击)，mouseover(鼠标悬停)</li>
 </ul>
 </li>
 <li>
 <p>触发事件</p>
 <ul>
-<li>arguments[0].dispatchEvent()</li>
+<li><code>arguments[0].dispatchEvent()</code></li>
 </ul>
 </li>
 <li>
@@ -1025,19 +1027,22 @@ driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6d
 </li>
 </ul>
 <h2 id="窗截图">窗⼝截图</h2>
-<p>⾃动化⽤例是由程序去执⾏的，因此有时候打印的错误信息并不⼗分明确。如果在脚本执⾏出错的时候能对当前窗⼝截图保存，那么通过图⽚就可以⾮常直观地看出出错的原因。
-WebDriver提供了截图函数get_screenshot_as_file()来截取当前窗⼝：</p>
+<p>⾃动化⽤例是由程序去执⾏的，因此有时候打印的错误信息并不⼗分明确。如果在脚本执⾏出错的时候能对当前窗⼝截图保存，那么通过图⽚就可以⾮常直观地看出出错的原因。selenium提供了截图函数<code>get_screenshot_as_file()</code>来截取当前窗⼝：</p>
 <ul>
-<li><strong>get_screenshot_as_file(self, filename)</strong> #⽤于截取当前窗⼝，并把图⽚保存到本地</li>
+<li><code>set_window_size()</code> - 设置窗口分辨率</li>
+<li><code>get_screenshot_as_file()</code> - 截取当前窗⼝，保存至本地</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> sleep
-driver <span style="color:#f92672">=</span>webdriver<span style="color:#f92672">.</span>Firefox(executable_path <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;F:\GeckoDriver\geckodriver&#34;</span>)
+
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
 driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://www.baidu.com&#39;</span>)
-driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#39;selenium&#39;</span>)
-driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;su&#39;</span>)<span style="color:#f92672">.</span>click()
-sleep(<span style="color:#ae81ff">2</span>)
-<span style="color:#75715e">#1.截取当前窗⼝，并指定截图图⽚的保存位置</span>
+
+<span style="color:#75715e"># 设置窗口分辨率</span>
+width <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#34;return document.documentElement.scrollWidth&#34;</span>)
+height <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#34;return document.documentElement.scrollHeight&#34;</span>)
+driver<span style="color:#f92672">.</span>set_window_size(width, height)
+
+<span style="color:#75715e"># 截取当前窗⼝，并指定截图图⽚的保存位置</span>
 driver<span style="color:#f92672">.</span>get_screenshot_as_file(<span style="color:#e6db74">&#34;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">baidu_img.jpg&#34;</span>)
 driver<span style="color:#f92672">.</span>quit()
 </code></pre></div><h2 id="控制已打开的浏览器">控制已打开的浏览器</h2>
@@ -1093,7 +1098,18 @@ driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="col
   driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;window.stop()&#39;</span>)
   <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;页面加载超时&#39;</span>)
   
-</code></pre></div><h2 id="页面元素点击的几种姿势">页面元素点击的几种姿势</h2>
+</code></pre></div><h2 id="填写表单的几种姿势">填写表单的几种姿势</h2>
+<ol>
+<li>
+<p><code>send_keys()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">driver<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#39;&#39;</span>)
+</code></pre></div></li>
+<li>
+<p><code>execute_script()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;$(&#34;#kssj&#34;).val(&#34;&#34;);&#39;</span>)  <span style="color:#75715e"># 将id为kssj的元素设置为空</span>
+</code></pre></div></li>
+</ol>
+<h2 id="页面元素点击的几种姿势">页面元素点击的几种姿势</h2>
 <ol>
 <li>
 <p><code>click()</code></p>
@@ -1131,6 +1147,11 @@ ele<span style="color:#f92672">.</span>click()
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains 
    
 ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#39;图片&#39;</span>))<span style="color:#f92672">.</span>click()<span style="color:#f92672">.</span>perform()
+</code></pre></div></li>
+<li>
+<p><code>execute_script()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;document.getElementById(&#39;</span> <span style="color:#e6db74">&#39;).click();&#39;</span>
+driver<span style="color:#f92672">.</span>execute_script(js)
 </code></pre></div></li>
 </ol>
 
@@ -1170,7 +1191,7 @@ ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<s
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          7323 字
+          7236 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1254,6 +1275,7 @@ ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<s
     </li>
     <li><a href="#反屏蔽">反屏蔽</a></li>
     <li><a href="#页面加载超时">页面加载超时</a></li>
+    <li><a href="#填写表单的几种姿势">填写表单的几种姿势</a></li>
     <li><a href="#页面元素点击的几种姿势">页面元素点击的几种姿势</a></li>
   </ul>
 </nav>
