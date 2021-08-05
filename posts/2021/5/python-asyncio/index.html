@@ -438,8 +438,10 @@ asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f
 </ul>
 </li>
 <li>
-<p><code>asyncio.gather(task1, task2...)</code></p>
+<p><code>asyncio.gather( *tasks )</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">res <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>gather(task1, task2)
+<span style="color:#75715e"># 或</span>
+res <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>gather(<span style="color:#f92672">*</span>tasks)
 <span style="color:#66d9ef">print</span>(res)  <span style="color:#75715e"># res: list</span>
 </code></pre></div></li>
 </ul>
@@ -782,7 +784,7 @@ done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f9
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4001 字
+          4007 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
