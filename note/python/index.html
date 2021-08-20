@@ -647,6 +647,13 @@ pdf<span style="color:#f92672">.</span>close()
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
 <span style="color:#f92672">import</span> os
 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_outfile</span>(infile, outfile):
+    <span style="color:#66d9ef">if</span> outfile:
+        <span style="color:#66d9ef">return</span> outfile
+    dir, suffix <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(infile)
+    outfile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{}-out{}&#39;</span><span style="color:#f92672">.</span>format(dir, suffix)
+    <span style="color:#66d9ef">return</span> outfile
+  
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">compress_image</span>(infile, outfile<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>, mb<span style="color:#f92672">=</span><span style="color:#ae81ff">800</span>, step<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>):
     <span style="color:#e6db74">&#34;&#34;&#34;不改变图片尺寸压缩到指定大小
 </span><span style="color:#e6db74">    :param infile: 压缩源文件
@@ -707,7 +714,7 @@ pdf<span style="color:#f92672">.</span>close()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2355 字
+          2372 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
