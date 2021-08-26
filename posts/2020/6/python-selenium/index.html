@@ -327,6 +327,31 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
 <p>忽略提示语 - <code>options.add_argument('disable-infobars')</code></p>
 </li>
 <li>
+<p>谷歌文档提到需要加上这个属性来规避bug - <code>options.add_argument('--disable-gpu')</code></p>
+</li>
+<li>
+<p>隐藏滚动条 - <code>options.add_argument('--disable-gpu')</code></p>
+</li>
+<li>
+<p>解决DevToolsActivePort文件不存在的报错 - <code>options.add_argument('--no-sandbox')</code></p>
+</li>
+<li>
+<p>指定浏览器分辨率 - <code>options.add_argument('window-size=1600x900')</code></p>
+</li>
+<li>
+<p>开启管理者模式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;excludeSwitches&#39;</span>, [<span style="color:#e6db74">&#39;enable-automation&#39;</span>]) 
+</code></pre></div></li>
+<li>
+<p>不加载图片</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;blink-settings=imagesEnabled=false&#39;</span>)
+</code></pre></div></li>
+<li>
+<p>禁止图片和css加载</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;profile.managed_default_content_settings.images&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;permissions.default.stylesheet&#39;</span>: <span style="color:#ae81ff">2</span>}
+options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
+</code></pre></div></li>
+<li>
 <p>设置代理</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
 proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://127.0.0.1:8080&#34;</span>
@@ -1091,7 +1116,8 @@ driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;h
 <span style="color:#f92672">from</span> selenium.common.exceptions <span style="color:#f92672">import</span> TimeoutException
 
 driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
-driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">#</span>
+driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e">#</span>
+browser<span style="color:#f92672">.</span>set_script_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
 <span style="color:#66d9ef">try</span>:
 	driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>)
 <span style="color:#66d9ef">except</span> TimeoutException:
@@ -1193,7 +1219,7 @@ driver<span style="color:#f92672">.</span>execute_script(js)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          7263 字
+          7367 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
