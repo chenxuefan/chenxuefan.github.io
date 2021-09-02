@@ -99,6 +99,15 @@
     </item>
     
     <item>
+      <title>python模块详解 | aiohttp (server)</title>
+      <link>https://billie52707.cn/draft/python-aiohttp-server/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-aiohttp-server/</guid>
+      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://billie52707.cn/posts/2021/5/python-asyncio/ Hello,world! from aiohttp import web routes = web.RouteTableDef() @routes.get(&amp;#39;/&amp;#39;) async def hello(request): return web.Response(text=&amp;#34;Hello,world!&amp;#34;) app = web.Application() app.add_routes(routes) web.run_app(app) Handler A request handler must be a coroutine that accepts</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | Django</title>
       <link>https://billie52707.cn/draft/python-django/</link>
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
@@ -153,11 +162,11 @@
     </item>
     
     <item>
-      <title>python模块详解 | aiohttp</title>
-      <link>https://billie52707.cn/posts/2021/6/python-aiohttp/</link>
+      <title>python模块详解 | aiohttp (client)</title>
+      <link>https://billie52707.cn/posts/2021/6/python-aiohttp-client/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/6/python-aiohttp/</guid>
+      <guid>https://billie52707.cn/posts/2021/6/python-aiohttp-client/</guid>
       <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://billie52707.cn/posts/2021/5/python-asyncio/ 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with</description>
     </item>
     
