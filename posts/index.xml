@@ -50,7 +50,7 @@
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/6/python-urllib/</guid>
-      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None)</description>
+      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse from urllib import parse ch = &amp;#39;老鼠人&amp;#39; en = parse.quote(ch) # &amp;#39;%E8%80%81%E9%BC%A0%E4%BA%BA&amp;#39; ch =</description>
     </item>
     
     <item>
