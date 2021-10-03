@@ -27,12 +27,12 @@
     </item>
     
     <item>
-      <title>python模块详解 | sqlalchemy</title>
+      <title></title>
       <link>https://billie52707.cn/draft/python-sqlalchemy/</link>
       <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-sqlalchemy/</guid>
-      <description>传说中的ORM技术：Object-Relational Mapping，把关系数据库的表结构映射到对象上。 但是由谁来做这个转换呢？所以ORM框</description>
+      <description>SQLAlchemy 1.4 Documentation 传说中的ORM技术：Object-Relational Mapping，把关系数据库的表结构映射到对象上。 但是由谁来做这个转换呢？所以O</description>
     </item>
     
     <item>
@@ -249,6 +249,15 @@
       
       <guid>https://billie52707.cn/draft/markdown/</guid>
       <description>代码增删对比效果 - old man + new guy</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/vim/</guid>
+      <description></description>
     </item>
     
     <item>

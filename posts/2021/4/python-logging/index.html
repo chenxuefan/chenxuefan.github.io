@@ -513,9 +513,14 @@ logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39
 </tr>
 </tbody>
 </table>
+<p>注：</p>
+<ol>
+<li>如果选择 D-天，那么这个不是严格意义上的“天”，而是从你项目启动开始，过了24小时，才会重新新建一个新的日志文件，如果项目重启，这个时间就会重置。</li>
+<li>如果选择“midnight”， 指的是过了午夜12点，就会创建新的日志。</li>
+</ol>
 </li>
 <li>
-<p>例：</p>
+<p>例</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">handler <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>handlers<span style="color:#f92672">.</span>TimedRotatingFileHandler(log_path,
                                                when<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;midnight&#39;</span>,
                                                interval<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,
@@ -539,7 +544,7 @@ logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39
 <li>
 <p><code>handler.setFormatter(formatter)</code> - 设置format格式</p>
 <ul>
-<li><em>formatter</em> - <code>formatter = logging.Formatter(fmt,datefmt)</code> fmt参数的使用请参考：<a href="https://billie52707.cn/posts/2021/4/python-logging/#3-format">format</a></li>
+<li><em>formatter</em> - <code>formatter = logging.Formatter(fmt, datefmt)</code> fmt参数的使用请参考：<a href="https://billie52707.cn/posts/2021/4/python-logging/#3-format">format</a></li>
 </ul>
 </li>
 <li>
@@ -559,6 +564,8 @@ handler<span style="color:#f92672">.</span>addFilter(IgnoreAssLogFilter())
 </ul>
 <h3 id="3-logger--handler">3. logger + handler</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> logging
+
+
 <span style="color:#75715e"># handler</span>
 handler <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>FileHandler(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;document.log&#34;</span>)
 handler<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>INFO)
@@ -568,6 +575,41 @@ logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.
 logger<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>DEBUG)
 logger<span style="color:#f92672">.</span>addHandler(handler) <span style="color:#75715e"># 添加handler到logger</span>
 logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;我是日志内容，快把我记录下来&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
+<span style="color:#f92672">import</span> logging
+<span style="color:#f92672">import</span> logging.handlers
+
+
+<span style="color:#75715e"># formatter</span>
+formatter <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>Formatter(
+    fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(filename)s</span><span style="color:#e6db74">[</span><span style="color:#e6db74">%(lineno)d</span><span style="color:#e6db74">] </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>,
+    datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#39;</span>)
+
+<span style="color:#75715e"># handler</span>
+handler_log <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>handlers<span style="color:#f92672">.</span>TimedRotatingFileHandler(
+  	filename<span style="color:#f92672">=</span>f<span style="color:#e6db74">&#39;{time.strftime(&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;)}.log&#39;</span>,
+  	when<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;midnight&#39;</span>,
+  	interval<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+  	encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>
+)
+handler_log<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>DEBUG)
+handler_log<span style="color:#f92672">.</span>setFormatter(formatter)
+
+handler_error <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>FileHandler(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;error.log&#39;</span>)
+handler_error<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>ERROR)
+handler_error<span style="color:#f92672">.</span>setFormatter(formatter)
+
+handler_console <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>StreamHandler()
+handler_console<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>INFO)
+handler_console<span style="color:#f92672">.</span>setFormatter(formatter)
+
+<span style="color:#75715e"># logger</span>
+log <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger(<span style="color:#e6db74">&#39;RPA&#39;</span>)
+log<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>DEBUG)
+log<span style="color:#f92672">.</span>addHandler(handler_log)  <span style="color:#75715e"># 日志文件</span>
+log<span style="color:#f92672">.</span>addHandler(handler_cs)  <span style="color:#75715e"># console窗口</span>
+
+log<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;欲买桂花同载酒，终不似，少年游。&#39;</span>)
 </code></pre></div>
     </div>
 
@@ -605,7 +647,7 @@ logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1576 字
+          1781 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

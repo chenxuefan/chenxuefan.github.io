@@ -658,9 +658,9 @@ ele <span style="color:#f92672">=</span> Explicit_Waits(driver, By<span style="c
 <ul>
 <li>
 <p>例</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#先通过 xpth 定位到 iframe</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 先通过 xpath 定位到 iframe</span>
 ele_iframe <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@class=&#34;if&#34;]&#39;</span>)
-<span style="color:#75715e">#再将定位对象传给 switch_to_frame()方法</span>
+<span style="color:#75715e"># 再将定位对象传给 switch_to_frame()方法</span>
 driver<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>frame(ele_iframe)
 driver<span style="color:#f92672">.</span>switch_to_default_content() 
 </code></pre></div></li>
@@ -936,40 +936,23 @@ browser<span style="color:#f92672">.</span>close()
 <li>
 <p>浏览器操作</p>
 <ul>
-<li>
-<p><code>window.open(url);</code> # 打开浏览器</p>
-</li>
-<li>
-<p><code>window.resizeTo(width,height);</code> # 绝对方法，设置浏览器窗口的实际大小，即“变化到多少”</p>
-</li>
-<li>
-<p><code>window.resizeBy(width,height);</code> # 相对方法，在当前大小上增加所指定的参数值，即“变化了多少”</p>
-</li>
-<li>
-<p><code>window.moveTo(width,height);</code> # 绝对方法，设置窗口新的绝对位置</p>
-</li>
-<li>
-<p><code>window.moveBy(width,height);</code> # 相对方法，在当前位置上增加所指定的参数值</p>
-</li>
-<li>
-<p><code>history.forward();</code> # 控制浏览器前进</p>
-</li>
-<li>
-<p><code>history.back();</code> # 控制浏览器后退</p>
-</li>
-<li>
-<p><code>history.go(number | url); </code></p>
+<li><code>window.open(url);</code> # 打开浏览器</li>
+<li><code>return document.documentElement.scrollWidth;</code> #  获取网页宽度</li>
+<li><code>return document.documentElement.scrollHeight;</code> # 获取网页长度</li>
+<li><code>window.resizeTo(width,height);</code> # 绝对方法，设置浏览器窗口的实际大小，即“变化到多少”</li>
+<li><code>window.resizeBy(width,height);</code> # 相对方法，在当前大小上增加所指定的参数值，即“变化了多少”</li>
+<li><code>window.moveTo(width,height);</code> # 绝对方法，设置窗口新的绝对位置</li>
+<li><code>window.moveBy(width,height);</code> # 相对方法，在当前位置上增加所指定的参数值</li>
+<li><code>history.forward();</code> # 控制浏览器前进</li>
+<li><code>history.back();</code> # 控制浏览器后退</li>
+<li><code>history.go(number | url); </code>
 <ul>
 <li>参数可以是数字number，即要访问的url在history的url列表中的相对位置。（-1表示上一个页面，1表示前进一个页面，0则是刷新页面）</li>
 <li>参数可以是一个字符串，字符串必须是局部或完整的url，该函数会去匹配包含字符串的第一个url</li>
 </ul>
 </li>
-<li>
-<p><code>history.go(0);</code>, <code>location.reload();</code> , <code>location=location;</code> , <code>location.assign(location);</code> , <code>location.replace(location);</code> # 刷新浏览器</p>
-</li>
-<li>
-<p><code>window.close();</code> # 关闭浏览器</p>
-</li>
+<li><code>history.go(0);</code>, <code>location.reload();</code> , <code>location=location;</code> , <code>location.assign(location);</code> , <code>location.replace(location);</code> # 刷新浏览器</li>
+<li><code>window.close();</code> # 关闭浏览器</li>
 </ul>
 </li>
 <li>
@@ -1003,7 +986,7 @@ js <span style="color:#f92672">=</span>
 </span><span style="color:#e6db74">    event.initMouseEvent(&#39;click&#39;,true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
 </span><span style="color:#e6db74">    arguments[0].dispatchEvent(event);
 </span><span style="color:#e6db74">&#34;&#34;&#34;</span> 
-driver<span style="color:#f92672">.</span>execute_script(js,e)
+driver<span style="color:#f92672">.</span>execute_script(js, e)
 </code></pre></div></li>
 </ul>
 </li>
@@ -1012,29 +995,30 @@ driver<span style="color:#f92672">.</span>execute_script(js,e)
 <ul>
 <li>水平滚动
 <ul>
-<li>&ldquo;document.documentElement.scrollLeft = 100&rdquo; # scrollLeft的初始值为0，最初显示页面最左边的内容，随数值变大，向右滑动</li>
+<li><code>document.documentElement.scrollLeft = 100</code> # scrollLeft的初始值为0，最初显示页面最左边的内容，随数值变大，向右滑动</li>
 </ul>
 </li>
 <li>垂直滚动
 <ul>
-<li>&ldquo;document.documentElement.scrollTop = 100&rdquo; # scrollTop的初始值为0，随数值变大，向下滑动</li>
+<li><code>document.documentElement.scrollTop = 100</code> # scrollTop的初始值为0，随数值变大，向下滑动</li>
 </ul>
 </li>
 <li>滚动到指定坐标
 <ul>
-<li>&ldquo;window.scrollTo(x,y)&rdquo;</li>
-<li>&ldquo;document.documentElement.scrollTo(x,y)&rdquo;</li>
+<li><code>window.scrollTo(x,y)</code></li>
+<li><code>document.documentElement.scrollTo(x,y)</code></li>
+<li><code>driver.execute_script(&quot;arguments[0].scrollIntoView()&quot;, driver.find_element...)</code></li>
 </ul>
 </li>
 <li>滚动到指定的像素数
 <ul>
-<li>&ldquo;window.scrollBy(x,y)&rdquo;</li>
-<li>&ldquo;document.documentElement.scrollBy(x,y)&rdquo;</li>
+<li><code>window.scrollBy(x,y)</code></li>
+<li><code>document.documentElement.scrollBy(x,y)</code></li>
 </ul>
 </li>
 <li>滚动页面元素到可视区域
 <ul>
-<li>&ldquo;documents[0].scrollIntoView()&rdquo;</li>
+<li><code>documents[0].scrollIntoView()</code></li>
 </ul>
 </li>
 </ul>
@@ -1247,7 +1231,7 @@ driver<span style="color:#f92672">.</span>execute_script(js, ele)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          7901 字
+          7922 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

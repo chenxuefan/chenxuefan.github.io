@@ -7,14 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在这里 在那里</title>
+      <link>https://billie52707.cn/posts/2021/9/life-shoot/</link>
+      <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2021/9/life-shoot/</guid>
+      <description>/peace/</description>
+    </item>
+    
     <item>
       <title>日子</title>
       <link>https://billie52707.cn/posts/2021/8/life-shoot/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/8/life-shoot/</guid>
-      <description>![6801630572824_.pic_hd](/Users/billie/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/d03bf471380adff0e2282cef71fc65e9/Message/MessageTemp/7286b1c5184d74a1cca577bddaf4ef2d/Image/6801630572824_.pic_hd.jpg) ![6811630572829_.pic_hd](/Users/billie/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/d03bf471380adff0e2282cef71fc65e9/Message/MessageTemp/7286b1c5184d74a1cca577bddaf4ef2d/Image/6811630572829_.pic_hd.jpg) ![6821630572836_.pic_hd](/Users/billie/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/d03bf471380adff0e2282cef71fc65e9/Message/MessageTemp/7286b1c5184d74a1cca577bddaf4ef2d/Image/6821630572836_.pic_hd.jpg) ![6831630572868_.pic_hd](/Users/billie/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/d03bf471380adff0e2282cef71fc65e9/Message/MessageTemp/7286b1c5184d74a1cca577bddaf4ef2d/Image/6831630572868_.pic_hd.jpg) ![6841630572948_.pic_hd](/Users/billie/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/d03bf471380adff0e2282cef71fc65e9/Message/MessageTemp/7286b1c5184d74a1cca577bddaf4ef2d/Image/6841630572948_.pic_hd.jpg) ![6851630572961_.pic_hd](/Users/billie/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/d03bf471380adff0e2282cef71fc65e9/Message/MessageTemp/7286b1c5184d74a1cca577bddaf4ef2d/Image/6851630572961_.pic_hd.jpg) ![6881630573220_.pic_hd](/Users/billie/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/d03bf471380adff0e2282cef71fc65e9/Message/MessageTemp/7286b1c5184d74a1cca577bddaf4ef2d/Image/6881630573220_.pic_hd.jpg)</description>
+      <description></description>
     </item>
     
     <item>
@@ -45,12 +54,12 @@
     </item>
     
     <item>
-      <title>python模块详解 | sqlalchemy</title>
+      <title></title>
       <link>https://billie52707.cn/draft/python-sqlalchemy/</link>
       <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-sqlalchemy/</guid>
-      <description>传说中的ORM技术：Object-Relational Mapping，把关系数据库的表结构映射到对象上。 但是由谁来做这个转换呢？所以ORM框</description>
+      <description>SQLAlchemy 1.4 Documentation 传说中的ORM技术：Object-Relational Mapping，把关系数据库的表结构映射到对象上。 但是由谁来做这个转换呢？所以O</description>
     </item>
     
     <item>
@@ -167,7 +176,7 @@
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/6/python-urllib/</guid>
-      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse from urllib import parse ch = &amp;#39;老鼠人&amp;#39; en = parse.quote(ch) # &amp;#39;%E8%80%81%E9%BC%A0%E4%BA%BA&amp;#39; ch =</description>
+      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &amp;#39;https://billie52707.cn&amp;#39; url = urljoin(url, &amp;#39;note&amp;#39;) # &amp;#39;https://billie52707.cn/note&amp;#39; quote from urllib.parse import quote, unquote ch = &amp;#39</description>
     </item>
     
     <item>
@@ -509,7 +518,7 @@
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python/</guid>
-      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 概念 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量的字典 作用： 获取想查看某个作</description>
+      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量的字典 作用： 获取想查看某个作</description>
     </item>
     
     <item>
@@ -1491,6 +1500,15 @@
       
       <guid>https://billie52707.cn/posts/2020/3/python-psutil/</guid>
       <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/vim/</guid>
+      <description></description>
     </item>
     
     <item>

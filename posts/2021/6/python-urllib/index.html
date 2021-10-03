@@ -26,7 +26,7 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="python模块详解 | urllib" />
-<meta property="og:description" content="官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse from urllib import parse ch = &#39;老鼠人&#39; en = parse.quote(ch) # &#39;%E8%80%81%E9%BC%A0%E4%BA%BA&#39; ch =" />
+<meta property="og:description" content="官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &#39;https://billie52707.cn&#39; url = urljoin(url, &#39;note&#39;) # &#39;https://billie52707.cn/note&#39; quote from urllib.parse import quote, unquote ch = &#39" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2021/6/python-urllib/" />
 <meta property="article:published_time" content="2021-06-05T00:00:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | urllib"/>
-<meta name="twitter:description" content="官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse from urllib import parse ch = &#39;老鼠人&#39; en = parse.quote(ch) # &#39;%E8%80%81%E9%BC%A0%E4%BA%BA&#39; ch ="/>
+<meta name="twitter:description" content="官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &#39;https://billie52707.cn&#39; url = urljoin(url, &#39;note&#39;) # &#39;https://billie52707.cn/note&#39; quote from urllib.parse import quote, unquote ch = &#39"/>
 
   
   
@@ -191,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f6%2fpython-urllib%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2f3%2flibrary%2furllib.html%20urllib%20is%20a%20package%20that%20collects%20several%20modules%20for%20working%20with%20URLs%3a%20urllib.request%20for%20opening%20and%20reading%20URLs%20urllib.error%20containing%20the%20exceptions%20raised%20by%20urllib.request%20urllib.parse%20for%20parsing%20URLs%20urllib.robotparser%20for%20parsing%20robots.txt%20files%20urllib.request%20urllib.request.urlopen%28url%2cdata%3dNone%2c%5btimeout%2c%20%5d%2ccafile%3dNone%2ccapath%3dNone%2ccadefault%3dFalse%2ccontext%3dNone%29%20urllib.parse%20from%20urllib%20import%20parse%20ch%20%3d%20%26%2339%3b%e8%80%81%e9%bc%a0%e4%ba%ba%26%2339%3b%20en%20%3d%20parse.quote%28ch%29%20%23%20%26%2339%3b%25E8%2580%2581%25E9%25BC%25A0%25E4%25BA%25BA%26%2339%3b%20ch%20%3d">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f6%2fpython-urllib%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2f3%2flibrary%2furllib.html%20urllib%20is%20a%20package%20that%20collects%20several%20modules%20for%20working%20with%20URLs%3a%20urllib.request%20for%20opening%20and%20reading%20URLs%20urllib.error%20containing%20the%20exceptions%20raised%20by%20urllib.request%20urllib.parse%20for%20parsing%20URLs%20urllib.robotparser%20for%20parsing%20robots.txt%20files%20urllib.request%20urllib.request.urlopen%28url%2cdata%3dNone%2c%5btimeout%2c%20%5d%2ccafile%3dNone%2ccapath%3dNone%2ccadefault%3dFalse%2ccontext%3dNone%29%20urllib.parse%20urljoin%20from%20urllib.parse%20import%20urljoin%20url%20%3d%20%26%2339%3bhttps%3a%2f%2fbillie52707.cn%26%2339%3b%20url%20%3d%20urljoin%28url%2c%20%26%2339%3bnote%26%2339%3b%29%20%23%20%26%2339%3bhttps%3a%2f%2fbillie52707.cn%2fnote%26%2339%3b%20quote%20from%20urllib.parse%20import%20quote%2c%20unquote%20ch%20%3d%20%26%2339">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -280,11 +280,21 @@ if (!doNotTrack) {
 <h2 id="urllibrequest">urllib.request</h2>
 <p><code>urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None)</code></p>
 <h3 id="urllibparse">urllib.parse</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> urllib <span style="color:#f92672">import</span> parse
+<ol>
+<li><code>urljoin</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> urljoin
+
+url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://billie52707.cn&#39;</span>
+url <span style="color:#f92672">=</span> urljoin(url, <span style="color:#e6db74">&#39;note&#39;</span>)  <span style="color:#75715e"># &#39;https://billie52707.cn/note&#39;</span>
+</code></pre></div><ol start="2">
+<li><code>quote</code></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> quote, unquote
 
 ch <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;老鼠人&#39;</span>
-en <span style="color:#f92672">=</span> parse<span style="color:#f92672">.</span>quote(ch)  <span style="color:#75715e"># &#39;%E8%80%81%E9%BC%A0%E4%BA%BA&#39;</span>
-ch <span style="color:#f92672">=</span> parse<span style="color:#f92672">.</span>unquote(en)  <span style="color:#75715e"># &#39;老鼠人&#39;</span>
+en <span style="color:#f92672">=</span> quote(ch)  <span style="color:#75715e"># &#39;%E8%80%81%E9%BC%A0%E4%BA%BA&#39;</span>
+ch <span style="color:#f92672">=</span> unquote(en)  <span style="color:#75715e"># &#39;老鼠人&#39;</span>
 </code></pre></div><p>[Python对Url内容进行编码][https://blog.csdn.net/vvaa00/article/details/111938257]</p>
 
     </div>
@@ -323,7 +333,7 @@ ch <span style="color:#f92672">=</span> parse<span style="color:#f92672">.</span
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          159 字
+          175 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -443,7 +453,7 @@ ch <span style="color:#f92672">=</span> parse<span style="color:#f92672">.</span
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f6%2fpython-urllib%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2f3%2flibrary%2furllib.html%20urllib%20is%20a%20package%20that%20collects%20several%20modules%20for%20working%20with%20URLs%3a%20urllib.request%20for%20opening%20and%20reading%20URLs%20urllib.error%20containing%20the%20exceptions%20raised%20by%20urllib.request%20urllib.parse%20for%20parsing%20URLs%20urllib.robotparser%20for%20parsing%20robots.txt%20files%20urllib.request%20urllib.request.urlopen%28url%2cdata%3dNone%2c%5btimeout%2c%20%5d%2ccafile%3dNone%2ccapath%3dNone%2ccadefault%3dFalse%2ccontext%3dNone%29%20urllib.parse%20from%20urllib%20import%20parse%20ch%20%3d%20%26%2339%3b%e8%80%81%e9%bc%a0%e4%ba%ba%26%2339%3b%20en%20%3d%20parse.quote%28ch%29%20%23%20%26%2339%3b%25E8%2580%2581%25E9%25BC%25A0%25E4%25BA%25BA%26%2339%3b%20ch%20%3d">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f6%2fpython-urllib%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20urllib&description=%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3%20-%20https%3a%2f%2fdocs.python.org%2f3%2flibrary%2furllib.html%20urllib%20is%20a%20package%20that%20collects%20several%20modules%20for%20working%20with%20URLs%3a%20urllib.request%20for%20opening%20and%20reading%20URLs%20urllib.error%20containing%20the%20exceptions%20raised%20by%20urllib.request%20urllib.parse%20for%20parsing%20URLs%20urllib.robotparser%20for%20parsing%20robots.txt%20files%20urllib.request%20urllib.request.urlopen%28url%2cdata%3dNone%2c%5btimeout%2c%20%5d%2ccafile%3dNone%2ccapath%3dNone%2ccadefault%3dFalse%2ccontext%3dNone%29%20urllib.parse%20urljoin%20from%20urllib.parse%20import%20urljoin%20url%20%3d%20%26%2339%3bhttps%3a%2f%2fbillie52707.cn%26%2339%3b%20url%20%3d%20urljoin%28url%2c%20%26%2339%3bnote%26%2339%3b%29%20%23%20%26%2339%3bhttps%3a%2f%2fbillie52707.cn%2fnote%26%2339%3b%20quote%20from%20urllib.parse%20import%20quote%2c%20unquote%20ch%20%3d%20%26%2339">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
