@@ -27,7 +27,7 @@
     </item>
     
     <item>
-      <title></title>
+      <title>python模块详解 | sqlalchemy</title>
       <link>https://billie52707.cn/draft/python-sqlalchemy/</link>
       <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
       
@@ -294,15 +294,6 @@
       
       <guid>https://billie52707.cn/draft/docker/</guid>
       <description>-bash: docker-machine: command not found（macOS） base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;amp;&amp;amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &amp;gt;/usr/local/bin/docker-machine &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-machine ​</description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://billie52707.cn/draft/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/git/</guid>
-      <description>配置git环境 sudo yum install git git config &amp;ndash;global user.name chenxuefan git config &amp;ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &amp;ldquo;2380540710@qq.com&amp;rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git 上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&amp;quot;update&amp;quot; git branch git push -u origin master GitHub workflow yml文件的编写</description>
     </item>
     
     <item>

@@ -25,14 +25,14 @@ if (!doNotTrack) {
 </script>
 
   <meta property="og:title" content="git" />
-<meta property="og:description" content="配置git环境 sudo yum install git git config &ndash;global user.name chenxuefan git config &ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &ldquo;2380540710@qq.com&rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git 上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&quot;update&quot; git branch git push -u origin master GitHub workflow yml文件的编写" />
+<meta property="og:description" content="https://git-scm.com/book/zh/v2/ 初次运行 Git 前的配置 https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE 用户信息 你可以通过以下命令查看所有的配置以及它们所在的文件： $ git config --list --show-origin 安装完 Git 之后，要做的第一件事就是设置你的用户名和" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/draft/git/" />
 
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="git"/>
-<meta name="twitter:description" content="配置git环境 sudo yum install git git config &ndash;global user.name chenxuefan git config &ndash;global user.email 2380540710@qq.com ssh-keygen -t rsa -C &ldquo;2380540710@qq.com&rdquo; cat /home/chenxuefan/.ssh/id_rsa.pub ssh -T git@github.com sudo git clone https://github.com/chenxuefan/dytt.git 上传至仓库 git init git remote add origin https://github.com/chenxuefan/chenxuefan.github.io.git git add . git commit -m&quot;update&quot; git branch git push -u origin master GitHub workflow yml文件的编写"/>
+<meta name="twitter:description" content="https://git-scm.com/book/zh/v2/ 初次运行 Git 前的配置 https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE 用户信息 你可以通过以下命令查看所有的配置以及它们所在的文件： $ git config --list --show-origin 安装完 Git 之后，要做的第一件事就是设置你的用户名和"/>
 
   
   
@@ -133,31 +133,29 @@ var _hmt = _hmt || [];
 
   <div class="content" itemprop="articleBody">
   
-    <p>配置git环境</p>
-<ul>
-<li>
-<p>sudo yum install git</p>
-</li>
-<li>
-<p>git config &ndash;global user.name chenxuefan</p>
-</li>
-<li>
-<p>git config &ndash;global user.email <a href="mailto:2380540710@qq.com">2380540710@qq.com</a></p>
-</li>
-<li>
-<p>ssh-keygen -t rsa -C &ldquo;<a href="mailto:2380540710@qq.com">2380540710@qq.com</a>&rdquo;</p>
-</li>
-<li>
-<p>cat /home/chenxuefan/.ssh/id_rsa.pub</p>
-</li>
-<li>
-<p>ssh -T <a href="mailto:git@github.com">git@github.com</a></p>
-</li>
-<li>
-<p>sudo git clone <a href="https://github.com/chenxuefan/dytt.git">https://github.com/chenxuefan/dytt.git</a></p>
-</li>
-</ul>
-<p>上传至仓库</p>
+    <p><a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%85%B3%E4%BA%8E%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6">https://git-scm.com/book/zh/v2/</a></p>
+<h2 id="初次运行-git-前的配置">初次运行 Git 前的配置</h2>
+<p><a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE">https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE</a></p>
+<h3 id="用户信息">用户信息</h3>
+<p>你可以通过以下命令查看所有的配置以及它们所在的文件：</p>
+<pre><code class="language-console" data-lang="console">$ git config --list --show-origin
+</code></pre><p>安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 这一点很重要，因为每一个 Git 提交都会使用这些信息，它们会写入到你的每一次提交中，不可更改：</p>
+<pre><code>$ git config --global user.name chenxuefan
+$ git config --global user.email 2380540710@qq.com
+</code></pre><p>如果使用了 <code>--global</code> 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 <code>--global</code> 选项的命令来配置。</p>
+<h3 id="文本编辑器">文本编辑器</h3>
+<p>如果你想使用不同的文本编辑器，例如 Emacs，可以这样做：</p>
+<pre><code class="language-console" data-lang="console">$ git config --global core.editor emacs
+</code></pre><h2 id="获取帮助">获取帮助</h2>
+<p>若你使用 Git 时需要获取帮助，有三种等价的方法可以找到 Git 命令的综合手册（manpage）：</p>
+<pre><code class="language-console" data-lang="console">$ git help &lt;verb&gt;
+$ git &lt;verb&gt; --help
+$ man git-&lt;verb&gt;
+</code></pre><p>例如，要想获得 <code>git config</code> 命令的手册，执行</p>
+<pre><code class="language-console" data-lang="console">$ git help config
+</code></pre><p>这些命令很棒，因为你随时随地可以使用而无需联网。</p>
+<pre><code class="language-console" data-lang="console">$ git add -h
+</code></pre><p>上传至仓库</p>
 <ul>
 <li>git init</li>
 <li>git remote add origin <a href="https://github.com/chenxuefan/chenxuefan.github.io.git">https://github.com/chenxuefan/chenxuefan.github.io.git</a></li>

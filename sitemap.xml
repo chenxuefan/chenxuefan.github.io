@@ -38,6 +38,21 @@
   </url>
   
   <url>
+    <loc>https://billie52707.cn/tags/git/</loc>
+    <lastmod>2021-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/</loc>
+    <lastmod>2021-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://billie52707.cn/note/git/</loc>
+    <lastmod>2021-09-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://billie52707.cn/posts/2021/8/life-shoot/</loc>
     <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url>
@@ -175,11 +190,6 @@
   <url>
     <loc>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</loc>
     <lastmod>2021-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/note/</loc>
-    <lastmod>2021-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -968,12 +978,12 @@
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/ubuntu/</loc>
+    <loc>https://billie52707.cn/note/linux/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://billie52707.cn/note/linux/</loc>
+    <loc>https://billie52707.cn/note/ubuntu/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url>
   
@@ -1014,14 +1024,6 @@
   
   <url>
     <loc>https://billie52707.cn/draft/docker/</loc>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/tags/git/</loc>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/git/</loc>
   </url>
   
   <url>
