@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | progressbar" />
 <meta property="og:description" content="参考官方文档：https://pypi.org/project/progressbar/#description progressbar 安装 pip install progressbar progressbar.ProgressBar() 可选参数 maxval = None" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/3/python-progressbar/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/3/python-progressbar/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-17T20:54:00+00:00" />
 <meta property="article:modified_time" content="2020-03-17T20:54:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | progressbar"/>
@@ -269,9 +269,9 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <p><strong>参考官方文档：https://pypi.org/project/progressbar/#description</strong></p>
 <h2 id="progressbar-安装">progressbar 安装</h2>
-<pre><code>pip install progressbar
+<pre tabindex="0"><code>pip install progressbar
 </code></pre><h2 id="progressbarprogressbar-可选参数">progressbar.ProgressBar() 可选参数</h2>
-<pre><code>maxval = None
+<pre tabindex="0"><code>maxval = None
 widgets = None
 term_width = None
 poll:int = 1
@@ -281,7 +281,7 @@ fd = None
 例:
 progressbar.ProgressBar(widgets=widgets, maxval)
 </code></pre><h2 id="widgets-可选参数">widgets 可选参数</h2>
-<pre><code>'Progress: ' ：设置进度条前显示的文字
+<pre tabindex="0"><code>'Progress: ' ：设置进度条前显示的文字
 Percentage() ：显示百分比
 Bar('#') ： 设置进度条形状
 ETA() ： 显示预计剩余时间
@@ -290,13 +290,13 @@ FileTransferSpeed() ：显示传输速度
 
 例:
 widgets = ['Progress: ', Percentage(), ' ', Bar('#'), ' ', Timer(), ' ', ETA(), ' ',FileTransferSpeed()] bar = ProgressBar(widgets=widgets, maxval=total)
-</code></pre><pre><code>#写法1
+</code></pre><pre tabindex="0"><code>#写法1
 import time,progressbar
 dowork=lambda:time.sleep(0.01)
 bar = progressbar.ProgressBar()
 for i in bar(range(1000)):
   dowork()
-</code></pre><pre><code>#写法2
+</code></pre><pre tabindex="0"><code>#写法2
 import time,progressbar
 dowork=lambda:time.sleep(0.01)
 bar = progressbar.ProgressBar()
@@ -307,7 +307,7 @@ for i in range(100):
     dowork()
 
 bar.finish()#注意，一定要加这句话
-</code></pre><pre><code>import time
+</code></pre><pre tabindex="0"><code>import time
 from progressbar import *
 total = 100
 dowork=lambda:time.sleep(0.01)

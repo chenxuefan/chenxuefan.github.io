@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python学习笔记 | r&#39;&#39;, b&#39;&#39;, u&#39;&#39;, f&#39;&#39;" />
 <meta property="og:description" content="r&#39;&#39; - 非转义原生字符串 以r开头的字符，常用于正则表达式，对应着re模块。 r&#39;\n&#39; - 经处理，&#39;\n&rsquo;表示的是&#39;\&lsquo;和&rsqu" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-rbuf/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-rbuf/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-05-12T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python学习笔记 | r&#39;&#39;, b&#39;&#39;, u&#39;&#39;, f&#39;&#39;"/>
@@ -284,9 +284,9 @@ if (!doNotTrack) {
 <p><a href="https://www.cnblogs.com/yyxayz/p/4044528.html">Python中文编码问题(字符串前面加&rsquo;u')</a></p>
 <h2 id="f---format格式化操作">f'' - format格式化操作</h2>
 <p>f-string，亦称为格式化字符串常量（formatted string literals），是Python3.6新引入的一种字符串格式化方法，主要目的是使格式化字符串的操作更加简便。f-string在形式上是以 f 或 F 修饰符引领的字符串（f&rsquo;xxx&rsquo;或 F&rsquo;xxx'），以大括号 {} 标明被替换的字段；f-string在本质上并不是字符串常量，而是一个在运行时运算求值的表达式：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-b <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;1+1 = {a}&#39;</span> <span style="color:#75715e">#</span>
-<span style="color:#66d9ef">print</span>(b) <span style="color:#75715e"># 1+1 = 2</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+b <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;1+1 = </span><span style="color:#e6db74">{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e">#</span>
+print(b) <span style="color:#75715e"># 1+1 = 2</span>
 </code></pre></div>
     </div>
 

@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python学习笔记 | 浅谈python虚拟环境" />
 <meta property="og:description" content="前言 python虚拟环境是非常实用且必备的小技能。面对多个项目分别需要不同依赖库环境，或者跨平台部署的场景，都非常实用且优雅。 跨平台部署时，" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/11/python-venv/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/11/python-venv/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-08T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-11-08T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python学习笔记 | 浅谈python虚拟环境"/>
@@ -277,7 +277,7 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>新建虚拟环境</p>
-<pre><code>python3 -m venv venv
+<pre tabindex="0"><code>python3 -m venv venv
 或
 pip3 install virtualenv
 virtualenv --python=python3.7 venv
@@ -289,15 +289,15 @@ virtualenv --python=python3.7 venv
 </li>
 <li>
 <p>生成requirements.txt</p>
-<pre><code>pip3 freeze &gt; requirements.txt
+<pre tabindex="0"><code>pip3 freeze &gt; requirements.txt
 </code></pre></li>
 <li>
 <p>通过requirements.txt配置环境</p>
-<pre><code>pip3 install -r requirements.txt
+<pre tabindex="0"><code>pip3 install -r requirements.txt
 </code></pre></li>
 <li>
 <p>退出虚拟环境</p>
-<pre><code>deactivate
+<pre tabindex="0"><code>deactivate
 </code></pre></li>
 </ul>
 

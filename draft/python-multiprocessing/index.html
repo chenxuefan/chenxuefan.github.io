@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | multiprocessing" />
 <meta property="og:description" content="官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing as mp import time def target(arg): ... if __name__ == &#39;__main__&#39; start = time.time() processes = [] for i in range(5): process = mp.Process(target=target, args=(i,)) process.start() # processes.append(process) for process in processes: process.join() # end = time.time() print(f&#39;共耗时：{en" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/draft/python-multiprocessing/" />
+<meta property="og:url" content="https://billie52707.cn/draft/python-multiprocessing/" /><meta property="article:section" content="draft" />
 <meta property="article:published_time" content="2021-07-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-07-02T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | multiprocessing"/>
@@ -263,7 +263,7 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <p>官方文档 - <a href="https://docs.python.org/zh-cn/3/library/multiprocessing.html">https://docs.python.org/zh-cn/3/library/multiprocessing.html</a></p>
 <p>计算运行时间</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> multiprocessing <span style="color:#f92672">as</span> mp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> multiprocessing <span style="color:#66d9ef">as</span> mp
 <span style="color:#f92672">import</span> time
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">target</span>(arg):
@@ -281,7 +281,7 @@ if (!doNotTrack) {
     process<span style="color:#f92672">.</span>join() <span style="color:#75715e"># </span>
 
   end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-  <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;共耗时：{end-start} s&#39;</span>)
+  print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;共耗时：</span><span style="color:#e6db74">{</span>end<span style="color:#f92672">-</span>start<span style="color:#e6db74">}</span><span style="color:#e6db74"> s&#39;</span>)
 </code></pre></div>
     </div>
 
@@ -319,7 +319,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          79 字
+          85 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

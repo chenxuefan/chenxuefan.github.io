@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | openpyxl" />
 <meta property="og:description" content="前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&#39;filename&#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list wb.remove(sheetname) 2. 工作表的使用 ## 创建工作表" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/3/python-openpyxl/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/3/python-openpyxl/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-28T01:54:00+00:00" />
 <meta property="article:modified_time" content="2021-03-28T01:54:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | openpyxl"/>
@@ -289,12 +289,12 @@ if (!doNotTrack) {
 </ul>
 <h2 id="常规使用">常规使用</h2>
 <h3 id="1-工作簿的使用">1. 工作簿的使用</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>Workbook() <span style="color:#75715e"># 新建</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>Workbook() <span style="color:#75715e"># 新建</span>
 wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>load_workbook(<span style="color:#e6db74">&#39;filename&#39;</span>) <span style="color:#75715e"># 加载本地的文件</span>
 all_sheet <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>sheetnames <span style="color:#75715e"># 获取所有的sheet，返回list</span>
 wb<span style="color:#f92672">.</span>remove(sheetname)
 </code></pre></div><h3 id="2-工作表的使用">2. 工作表的使用</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## 创建工作表对象的四种方法</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## 创建工作表对象的四种方法</span>
 ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>create_sheet(<span style="color:#e6db74">&#39;Sheet1&#39;</span>) <span style="color:#75715e"># 创建sheet，指定位置使用index参数，从0开始</span>
 ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>get_sheet_by_name(<span style="color:#e6db74">&#39;Sheet1&#39;</span>) <span style="color:#75715e"># 通过sheet名称获取sheet对象</span>
 ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>active <span style="color:#75715e"># 激活当前sheet页</span>
@@ -310,7 +310,7 @@ ws<span style="color:#f92672">.</span>dimensions <span style="color:#75715e"># �
 ws<span style="color:#f92672">.</span>columns <span style="color:#75715e"># 获取以列分组的所有单元格</span>
 ws<span style="color:#f92672">.</span>append([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]) <span style="color:#75715e"># 写入一行数据</span>
 </code></pre></div><h3 id="3-单元格的使用">3. 单元格的使用</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cell<span style="color:#f92672">.</span>row<span style="color:#f92672">/</span>column<span style="color:#f92672">/</span>coordinate <span style="color:#75715e"># 获取单元格的行/列/坐标</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cell<span style="color:#f92672">.</span>row<span style="color:#f92672">/</span>column<span style="color:#f92672">/</span>coordinate <span style="color:#75715e"># 获取单元格的行/列/坐标</span>
 <span style="color:#75715e"># 获取单元格对象的两种方法</span>
 cell <span style="color:#f92672">=</span> ws[<span style="color:#e6db74">&#39;A1&#39;</span>]
 cell <span style="color:#f92672">=</span> ws<span style="color:#f92672">.</span>cell(row<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,column<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
@@ -337,7 +337,7 @@ cell<span style="color:#f92672">.</span>fill <span style="color:#f92672">=</span
 </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
 <span style="color:#f92672">from</span> openpyxl.styles <span style="color:#f92672">import</span> Font,colors,Alignment
 <span style="color:#75715e">## 设置字体</span>
-font <span style="color:#f92672">=</span> Font(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">22</span>,italic<span style="color:#f92672">=</span>True,color<span style="color:#f92672">=</span>colors<span style="color:#f92672">.</span>RED,bold<span style="color:#f92672">=</span>True)
+font <span style="color:#f92672">=</span> Font(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">22</span>,italic<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,color<span style="color:#f92672">=</span>colors<span style="color:#f92672">.</span>RED,bold<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 cell<span style="color:#f92672">.</span>font <span style="color:#f92672">=</span> font
 <span style="color:#75715e">## 设置对齐</span>
 cell<span style="color:#f92672">.</span>alignment <span style="color:#f92672">=</span> Alignment(horizontal<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>,vertical<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>) <span style="color:#75715e"># 水平、垂直</span>

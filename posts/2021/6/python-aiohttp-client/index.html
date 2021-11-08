@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | aiohttp (client)" />
 <meta property="og:description" content="About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://billie52707.cn/posts/2021/5/python-asyncio/ 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/6/python-aiohttp-client/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/6/python-aiohttp-client/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-06-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-06-01T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | aiohttp (client)"/>
@@ -303,16 +303,16 @@ if (!doNotTrack) {
 <p>服务端 - <a href="https://docs.aiohttp.org/en/stable/web.html#aiohttp-web">https://docs.aiohttp.org/en/stable/web.html#aiohttp-web</a></p>
 <p>asyncio - <a href="https://billie52707.cn/posts/2021/5/python-asyncio/">https://billie52707.cn/posts/2021/5/python-asyncio/</a></p>
 <h2 id="一个简单的示例">一个简单的示例</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio<span style="color:#f92672">,</span> aiohttp<span style="color:#f92672">,</span> time
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio<span style="color:#f92672">,</span> aiohttp<span style="color:#f92672">,</span> time
 
-async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch</span>(session,url):
-    async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url, verify_ssl<span style="color:#f92672">=</span>False) <span style="color:#66d9ef">as</span> response:
-        <span style="color:#66d9ef">return</span> await response<span style="color:#f92672">.</span>text(), response<span style="color:#f92672">.</span>status
-async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-    async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
-        text, status_code <span style="color:#f92672">=</span> await fetch(session, <span style="color:#e6db74">&#34;https://billie52707.cn&#34;</span>)
-        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;text:{text[:100]}&#34;</span>)
-        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;code:{status_code}&#34;</span>)
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch</span>(session,url):
+    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url, verify_ssl<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>) <span style="color:#66d9ef">as</span> response:
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text(), response<span style="color:#f92672">.</span>status
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+        text, status_code <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> fetch(session, <span style="color:#e6db74">&#34;https://billie52707.cn&#34;</span>)
+        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;text:</span><span style="color:#e6db74">{</span>text[:<span style="color:#ae81ff">100</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;code:</span><span style="color:#e6db74">{</span>status_code<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
         
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
@@ -325,7 +325,7 @@ async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</s
 </ul>
 <h2 id="request---请求">Request - 请求</h2>
 <h3 id="各种各样的请求">各种各样的请求</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
 
 session<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;http://httpbin.org/post&#39;</span>, data<span style="color:#f92672">=</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;data&#39;</span>)
 session<span style="color:#f92672">.</span>put(<span style="color:#e6db74">&#39;http://httpbin.org/put&#39;</span>, data<span style="color:#f92672">=</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;data&#39;</span>)
@@ -334,15 +334,15 @@ session<span style="color:#f92672">.</span>head(<span style="color:#e6db74">&#39
 session<span style="color:#f92672">.</span>options(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
 session<span style="color:#f92672">.</span>patch(<span style="color:#e6db74">&#39;http://httpbin.org/patch&#39;</span>, data<span style="color:#f92672">=</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;data&#39;</span>)
 </code></pre></div><h3 id="params">Params</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}
-async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>,params<span style="color:#f92672">=</span>params) <span style="color:#66d9ef">as</span> resp:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>,params<span style="color:#f92672">=</span>params) <span style="color:#66d9ef">as</span> resp:
   	<span style="color:#66d9ef">assert</span> str(resp<span style="color:#f92672">.</span>url) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;https://billie52707.cn/?key=value&#39;</span>
 </code></pre></div><h3 id="json">json</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">json <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}
-async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
-    await session<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>, json<span style="color:#f92672">=</span>json)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">json <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+    <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>, json<span style="color:#f92672">=</span>json)
 </code></pre></div><h3 id="data">data</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 写法1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 写法1</span>
 data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}  
 <span style="color:#75715e"># 写法2</span>
 data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;file&#39;</span>: open(<span style="color:#e6db74">&#39;report.xls&#39;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>)}  
@@ -353,19 +353,19 @@ data<span style="color:#f92672">.</span>add_field(<span style="color:#e6db74">&#
                filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;report.xls&#39;</span>,
                content_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;application/vnd.ms-excel&#39;</span>)
 
-async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
-    await session<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>, data<span style="color:#f92672">=</span>data)
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+    <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>, data<span style="color:#f92672">=</span>data)
 </code></pre></div><h3 id="headers">headers</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">headers<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">&#34;Basic bG9naW46cGFzcw==&#34;</span>}
-async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(headers<span style="color:#f92672">=</span>headers) <span style="color:#66d9ef">as</span> session:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">headers<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">&#34;Basic bG9naW46cGFzcw==&#34;</span>}
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(headers<span style="color:#f92672">=</span>headers) <span style="color:#66d9ef">as</span> session:
   <span style="color:#f92672">...</span>
 </code></pre></div><h3 id="cookies">cookies</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cookies <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;cookies_are&#39;</span>: <span style="color:#e6db74">&#39;working&#39;</span>}
-async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(cookies<span style="color:#f92672">=</span>cookies) <span style="color:#66d9ef">as</span> session:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cookies <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;cookies_are&#39;</span>: <span style="color:#e6db74">&#39;working&#39;</span>}
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(cookies<span style="color:#f92672">=</span>cookies) <span style="color:#66d9ef">as</span> session:
   <span style="color:#f92672">...</span>
 </code></pre></div><h3 id="proxy">proxy</h3>
 <h2 id="response---响应">Response - 响应</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">resp <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>,verify_ssl<span style="color:#f92672">=</span>False)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">resp <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>,verify_ssl<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </code></pre></div><ol>
 <li>
 <p><code>resp.text()</code> - 文本信息</p>
@@ -379,12 +379,12 @@ async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672"
 <li>
 <p><code>resp.content.read()</code> - 以字节流的方式读取响应内容</p>
 <p>虽然json(),text(),read()很方便的能把响应的数据读入到内存，但是我们仍然应该谨慎的使用它们，因为它们是把整个的响应体全部读入了内存。即使你只是想下载几个字节大小的文件，但这些方法却将在内存中加载所有的数据。所以我们可以通过控制字节数来控制读入内存的响应内容：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://api.github.com/events&#39;</span>) <span style="color:#66d9ef">as</span> resp:
-    await resp<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>read(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">#读取前10个字节</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://api.github.com/events&#39;</span>) <span style="color:#66d9ef">as</span> resp:
+    <span style="color:#66d9ef">await</span> resp<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>read(<span style="color:#ae81ff">10</span>) <span style="color:#75715e">#读取前10个字节</span>
 </code></pre></div><p>一般地，我们应该使用以下的模式来把读取的字节流保存到文件中：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> fd:
-    <span style="color:#66d9ef">while</span> True:
-        chunk <span style="color:#f92672">=</span> await resp<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>read(chunk_size)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(filename, <span style="color:#e6db74">&#39;wb&#39;</span>) <span style="color:#66d9ef">as</span> fd:
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+        chunk <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> resp<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>read(chunk_size)
         <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> chunk:
             <span style="color:#66d9ef">break</span>
         fd<span style="color:#f92672">.</span>write(chunk)
@@ -432,26 +432,26 @@ async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672"
 <p><a href="https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse">https://docs.aiohttp.org/en/stable/client_reference.html#aiohttp.ClientResponse</a></p>
 <h2 id="timeout---超时设置">Timeout - 超时设置</h2>
 <p>如果 timeout=None 或者 timeout=0 将不进行超时检查，也就是不限时长</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">timeout <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientTimeout(total<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span>)
-async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(timeout<span style="color:#f92672">=</span>timeout) <span style="color:#66d9ef">as</span> session:
-    async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout) <span style="color:#66d9ef">as</span> resp:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">timeout <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientTimeout(total<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span>)
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(timeout<span style="color:#f92672">=</span>timeout) <span style="color:#66d9ef">as</span> session:
+    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url, timeout<span style="color:#f92672">=</span>timeout) <span style="color:#66d9ef">as</span> resp:
     <span style="color:#f92672">...</span>
 </code></pre></div><h2 id="concurrency---并发限制">Concurrency - 并发限制</h2>
 <p>由于 aiohttp 可以支持非常大的并发，比如上万、十万、百万都是能做到的，但这么大的并发量，目标网站是很可能在短时间内无法响应的，而且很可能瞬时间将目标网站爬挂掉。所以我们需要控制一下爬取的并发量。</p>
 <p>在一般情况下，我们可以借助于 asyncio 的 Semaphore[ˈseməfɔː(r)]（信号标; 旗语;）来控制并发量，代码示例如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
 <span style="color:#f92672">import</span> aiohttp
 
 concurrency <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e"># 最大并发量</span>
 semaphore <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>Semaphore(concurrency) <span style="color:#75715e"># 信号量</span>
 
-async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(session):
-  async <span style="color:#66d9ef">with</span> semaphore:
-    async <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;https://billie52707.cn/&#34;</span>,verify_ssl<span style="color:#f92672">=</span>False) <span style="color:#66d9ef">as</span> resp:
-      <span style="color:#66d9ef">print</span>(await resp<span style="color:#f92672">.</span>status)
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(session):
+  <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> semaphore:
+    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;https://billie52707.cn/&#34;</span>,verify_ssl<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>) <span style="color:#66d9ef">as</span> resp:
+      print(<span style="color:#66d9ef">await</span> resp<span style="color:#f92672">.</span>status)
     
-async <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-  async <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+  <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
     tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(main()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>)]
     asyncio<span style="color:#f92672">.</span>gather(<span style="color:#f92672">*</span>tasks)
     

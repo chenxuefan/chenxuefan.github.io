@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="从http到https" />
 <meta property="og:description" content="前言 最近博客美化方面做的都差不多了，也没有太多东西好捣鼓了，这个时候我又注意到我的网站标头显示着一个不安全的字样，觉得又好奇又奇怪，因为在这" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/8/http-https/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/8/http-https/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-08-19T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="从http到https"/>
@@ -393,15 +393,15 @@ if (!doNotTrack) {
 <p>在上一步下载你的证书，下载时类型选择其他，下完之后有两个文件</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200820021829890.png" alt="image-20200820021829890"></p>
 <p>登录到服务器，打开<code>nginx.conf</code>文件所在的路径，新建<code>cert</code>文件夹，赋予权限，把这两个文件上传到<code>cert</code>文件夹下</p>
-<pre><code>sudo mkdir cert &amp;&amp; chmod -R 777 cert
+<pre tabindex="0"><code>sudo mkdir cert &amp;&amp; chmod -R 777 cert
 </code></pre><p>执行命令<code>sudo vim nginx.conf</code>编辑文件如下：</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200820022432963.png" alt="image-20200820022432963"></p>
 <p>编辑完毕，保存，检验下文件有无出错（一般会发现少写了一个 { 的错误</p>
-<pre><code class="language-linux" data-lang="linux">nginx -t
+<pre tabindex="0"><code class="language-linux" data-lang="linux">nginx -t
 </code></pre><p>重启nginx</p>
-<pre><code>nginx -s reload
+<pre tabindex="0"><code>nginx -s reload
 </code></pre><p>重启nginx服务</p>
-<pre><code>service nginx restart
+<pre tabindex="0"><code>service nginx restart
 </code></pre><p>接着就可以通过<code>download.billie52707.cn</code>访问了</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200820023054342.png" alt="image-20200820023054342"></p>
 <p>这时网站输入栏左侧出现了一个🔒，说明此链接经过加密，是一个https链接</p>

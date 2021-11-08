@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | BeautifulSoup" />
 <meta property="og:description" content="前言 Why BeautifulSoup? Beautiful Soup提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-beautifulsoup/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-beautifulsoup/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-05-19T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | BeautifulSoup"/>
@@ -284,7 +284,7 @@ if (!doNotTrack) {
 <p>Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用户灵活地提供不同的解析策略或强劲的速度。</p>
 <p>BeautifulSoup支持Python标准库中的HTML解析器,还支持一些第三方的解析器，如果我们不安装它，则 Python 会使用 Python默认的解析器，lxml 解析器更加强大，速度更快，推荐使用lxml 解析器。</p>
 <h2 id="使用">使用</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 </code></pre></div><h3 id="1-创建beautifulsoup对象的三种方式">1. 创建BeautifulSoup对象的三种方式</h3>
 <ol>
 <li>
@@ -295,12 +295,12 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>网络加载导入 - <code>soup = BeautifulSoup(requests.get(url).text)</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
 <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://www.baidu.com&#39;</span>)
 r<span style="color:#f92672">.</span>encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf-8&#39;</span>
 soup <span style="color:#f92672">=</span> BeautifulSoup(r<span style="color:#f92672">.</span>text)
-<span style="color:#66d9ef">print</span>(soup<span style="color:#f92672">.</span>prettify()) <span style="color:#75715e"># 格式化输出</span>
+print(soup<span style="color:#f92672">.</span>prettify()) <span style="color:#75715e"># 格式化输出</span>
 </code></pre></div></li>
 </ol>
 <h3 id="2-查">2. 查</h3>
@@ -330,7 +330,7 @@ only the direct children will be considered.</p>
 <p>:return: A PageElement.</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
 <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.dytt8.net/index.htm&#34;</span>
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
@@ -341,7 +341,7 @@ contents <span style="color:#f92672">=</span> soup<span style="color:#f92672">.<
 </code></pre></div></li>
 <li>
 <p><code>find_all(name, attrs, recursive, text, limit)</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
 <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.dytt8.net/index.htm&#34;</span>
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
@@ -360,9 +360,9 @@ contents <span style="color:#f92672">=</span> soup<span style="color:#f92672">.<
 <li><code>soup.select(&quot;div ~ p&quot;)</code> - 查找div后面的所有同级别的兄弟元素p</li>
 <li><code>soup.select(&quot;div + p&quot;)</code> - 查找div后面的第一个同级别的兄弟元素p</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">   <span style="color:#f92672">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">   <span style="color:#f92672">import</span> requests
    <span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
-      
+
    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://s.weibo.com/top/summary?Refer=top_hot&amp;topnav=1&amp;wvr=6&#34;</span>
    doc <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)<span style="color:#f92672">.</span>text
    soup <span style="color:#f92672">=</span> BeautifulSoup(doc, <span style="color:#e6db74">&#34;lxml&#34;</span>)
@@ -376,8 +376,8 @@ contents <span style="color:#f92672">=</span> soup<span style="color:#f92672">.<
         href <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://s.weibo.com&#34;</span> <span style="color:#f92672">+</span> tr<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#34;td[class=&#39;td-02&#39;] a&#34;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;href&#34;</span>)  <span style="color:#75715e"># [&#34;href&#34;]</span>
         num <span style="color:#f92672">=</span> tr<span style="color:#f92672">.</span>select(<span style="color:#e6db74">&#34;td[class=&#39;td-02&#39;] span&#34;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>text  <span style="color:#75715e"># 访问数</span>
         nameList<span style="color:#f92672">.</span>append(name)
-      
-   <span style="color:#66d9ef">print</span>(nameList[:<span style="color:#ae81ff">5</span>])
+
+   print(nameList[:<span style="color:#ae81ff">5</span>])
 </code></pre></div></li>
 </ol>
 <h3 id="3-获取元素节点">3. 获取元素节点:</h3>

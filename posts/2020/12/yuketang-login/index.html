@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="使用selenium登录雨课堂并获取课程信息" />
 <meta property="og:description" content="登录 ⌛️ 操作逻辑：运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录 class Yuketang: def __init__(self): self.login_url = &#34;https://sziit.yuketang.cn/pro/portal/home/&#34; self.dataDic = dict() self.bar=ProgressBar(widgets=[Percentage(),Bar(&#39;#&#39;), &#39; &#39;, Timer(), &#39; &#39;, ETA(), &#39; &#39;])#,term_width=12,FileTransferSpeed(), def Explicit_Waits(self,driver," />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/12/yuketang-login/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/12/yuketang-login/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-12-05T02:30:10+00:00" />
 <meta property="article:modified_time" content="2020-12-05T02:30:10+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用selenium登录雨课堂并获取课程信息"/>
@@ -271,7 +271,7 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="登录-">登录 ⌛️</h2>
 <p>操作逻辑：运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Yuketang</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Yuketang</span>:
     <span style="color:#66d9ef">def</span> __init__(self):
         self<span style="color:#f92672">.</span>login_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://sziit.yuketang.cn/pro/portal/home/&#34;</span>
         self<span style="color:#f92672">.</span>dataDic <span style="color:#f92672">=</span> dict()
@@ -282,7 +282,7 @@ if (!doNotTrack) {
                 EC<span style="color:#f92672">.</span>presence_of_element_located((way, path)))
             <span style="color:#66d9ef">return</span> ele
         <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;元素寻找失败： &#39;</span> <span style="color:#f92672">+</span> str(e))
+            print(<span style="color:#e6db74">&#39;元素寻找失败： &#39;</span> <span style="color:#f92672">+</span> str(e))
     <span style="color:#75715e"># 爬取数据</span>
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">login</span>(self):
         <span style="color:#75715e"># 创建浏览器对象</span>
@@ -291,9 +291,9 @@ if (!doNotTrack) {
         options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--disable-gpu&#39;</span>)
         self<span style="color:#f92672">.</span>driver <span style="color:#f92672">=</span> selenium<span style="color:#f92672">.</span>webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)  <span style="color:#75715e">#</span>
         <span style="color:#66d9ef">try</span>:
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;使用本地保存的cookies...&#34;</span>)
+            print(<span style="color:#e6db74">&#34;使用本地保存的cookies...&#34;</span>)
             self<span style="color:#f92672">.</span>cookies <span style="color:#f92672">=</span> eval(open(<span style="color:#e6db74">&#39;./bd_login_cookies.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>)<span style="color:#f92672">.</span>read())  <span style="color:#75715e">#</span>
-            <span style="color:#66d9ef">print</span>(self<span style="color:#f92672">.</span>cookies)
+            print(self<span style="color:#f92672">.</span>cookies)
             <span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>cookies:
                 <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;expiry&#39;</span> <span style="color:#f92672">in</span> cookie:
                     <span style="color:#66d9ef">del</span> cookie[<span style="color:#e6db74">&#39;expiry&#39;</span>]
@@ -303,7 +303,7 @@ if (!doNotTrack) {
         <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> err:
             <span style="color:#75715e"># print(err)</span>
 
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;正在扫码登录...&#34;</span>)
+            print(<span style="color:#e6db74">&#34;正在扫码登录...&#34;</span>)
             self<span style="color:#f92672">.</span>Explicit_Waits(self<span style="color:#f92672">.</span>driver,By<span style="color:#f92672">.</span>XPATH,<span style="color:#e6db74">&#39;//*[@id=&#34;app&#34;]/div[2]/div[2]/div[3]/div/div[1]/div/div/div[2]/button&#39;</span>)
             self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@id=&#34;app&#34;]/div[2]/div[2]/div[3]/div/div[1]/div/div/div[2]/button&#39;</span>)<span style="color:#f92672">.</span>click() <span style="color:#75715e"># 点击登陆按钮</span>
             self<span style="color:#f92672">.</span>Explicit_Waits(self<span style="color:#f92672">.</span>driver,By<span style="color:#f92672">.</span>XPATH,<span style="color:#e6db74">&#39;//*[@id=&#34;app&#34;]/div[2]/div[2]/div[3]/div/div[1]/div/div/div[2]/button&#39;</span>)
@@ -321,23 +321,23 @@ if (!doNotTrack) {
             <span style="color:#66d9ef">for</span> chapter <span style="color:#f92672">in</span> chapter_list:  <span style="color:#75715e"># 遍历每一个专题content</span>
                 contents <span style="color:#f92672">=</span> chapter<span style="color:#f92672">.</span>find_elements_by_class_name(<span style="color:#e6db74">&#39;content&#39;</span>)
                 <span style="color:#66d9ef">for</span> content <span style="color:#f92672">in</span> contents:
-                    <span style="color:#66d9ef">print</span>(content)
+                    print(content)
                     content<span style="color:#f92672">.</span>find_elements_by_class_name(<span style="color:#e6db74">&#39;leaf-title text-ellipsis&#39;</span>)<span style="color:#f92672">.</span>click()
 
-        <span style="color:#66d9ef">print</span>(len(self<span style="color:#f92672">.</span>cookies),self<span style="color:#f92672">.</span>cookies)
+        print(len(self<span style="color:#f92672">.</span>cookies),self<span style="color:#f92672">.</span>cookies)
 </code></pre></div><h2 id="获取课程信息-">获取课程信息 🌟</h2>
 <p>上一步登录之后，最大的难题就解决了，获取到登录cookie，requests请求带上请求头，之后就可以访问具体的链接，拿到想要的数据了，后面就自由发挥吧，本来想实现一个刷视频的功能，万变不离其宗根本原理其实也是<strong>目标性地发送各种各样的post请求</strong>，到后面发现请求的参数实在太繁杂了，环环相扣解决了一个又一个，有一个参数始终找不出哪儿来的，就此作罢，乖乖手动刷视频了，以后有机会再弄吧。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_message</span>(self):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_message</span>(self):
 
         headers <span style="color:#f92672">=</span> {
             <span style="color:#e6db74">&#39;authority&#39;</span>: <span style="color:#e6db74">&#39;sziit.yuketang.cn&#39;</span>,
             <span style="color:#e6db74">&#39;method&#39;</span>: <span style="color:#e6db74">&#39;GET&#39;</span>,
-            <span style="color:#e6db74">&#39;path&#39;</span>: <span style="color:#e6db74">&#39;/mooc-api/v1/lms/user/user-courses/?status=1&amp;page=1&amp;no_page=1&amp;term=latest&amp;uv_id={}&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>cookies[<span style="color:#ae81ff">4</span>][<span style="color:#e6db74">&#39;value&#39;</span>]),
+            <span style="color:#e6db74">&#39;path&#39;</span>: <span style="color:#e6db74">&#39;/mooc-api/v1/lms/user/user-courses/?status=1&amp;page=1&amp;no_page=1&amp;term=latest&amp;uv_id=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(self<span style="color:#f92672">.</span>cookies[<span style="color:#ae81ff">4</span>][<span style="color:#e6db74">&#39;value&#39;</span>]),
             <span style="color:#e6db74">&#39;scheme&#39;</span>: <span style="color:#e6db74">&#39;https&#39;</span>,
             <span style="color:#e6db74">&#39;accept&#39;</span>: <span style="color:#e6db74">&#39;application/json, text/plain, */*&#39;</span>,
             <span style="color:#e6db74">&#39;accept-encoding&#39;</span>: <span style="color:#e6db74">&#39;gzip, deflate, br&#39;</span>,
             <span style="color:#e6db74">&#39;accept-language&#39;</span>: <span style="color:#e6db74">&#39;zh-CN,zh;q=0.9&#39;</span>,
-            <span style="color:#e6db74">&#39;cookie&#39;</span>: <span style="color:#e6db74">&#39;university_id={}; platform_id=3; user_role=3; csrftoken={}; sessionid={}; platform_id=3; university_id={}; user_role=3; sessionid={}&#39;</span><span style="color:#f92672">.</span>format(
+            <span style="color:#e6db74">&#39;cookie&#39;</span>: <span style="color:#e6db74">&#39;university_id=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">; platform_id=3; user_role=3; csrftoken=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">; sessionid=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">; platform_id=3; university_id=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">; user_role=3; sessionid=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(
                 self<span style="color:#f92672">.</span>cookies[<span style="color:#ae81ff">4</span>][<span style="color:#e6db74">&#39;value&#39;</span>],self<span style="color:#f92672">.</span>cookies[<span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#39;value&#39;</span>],self<span style="color:#f92672">.</span>cookies[<span style="color:#ae81ff">2</span>][<span style="color:#e6db74">&#39;value&#39;</span>],self<span style="color:#f92672">.</span>cookies[<span style="color:#ae81ff">4</span>][<span style="color:#e6db74">&#39;value&#39;</span>],self<span style="color:#f92672">.</span>cookies[<span style="color:#ae81ff">2</span>][<span style="color:#e6db74">&#39;value&#39;</span>],
             ),
             <span style="color:#e6db74">&#39;referer&#39;</span>: <span style="color:#e6db74">&#39;https://sziit.yuketang.cn/pro/courselist&#39;</span>,
@@ -352,7 +352,7 @@ if (!doNotTrack) {
         <span style="color:#75715e"># 必要参数的获取</span>
         uv_id <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>cookies[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#39;value&#39;</span>]  <span style="color:#75715e"># university_id</span>
         product_list <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(
-            url<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://sziit.yuketang.cn/mooc-api/v1/lms/user/user-courses/?status=1&amp;page=1&amp;no_page=1&amp;term=latest&amp;uv_id={}&#39;</span><span style="color:#f92672">.</span>format(uv_id),
+            url<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://sziit.yuketang.cn/mooc-api/v1/lms/user/user-courses/?status=1&amp;page=1&amp;no_page=1&amp;term=latest&amp;uv_id=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(uv_id),
             headers<span style="color:#f92672">=</span>headers)  <span style="color:#75715e"># 包含所有课程的详细参数信息</span>
         product_list<span style="color:#f92672">.</span>encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>
         product_list <span style="color:#f92672">=</span> product_list<span style="color:#f92672">.</span>json()[<span style="color:#e6db74">&#39;data&#39;</span>][<span style="color:#e6db74">&#39;product_list&#39;</span>]

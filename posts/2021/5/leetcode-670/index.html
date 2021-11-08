@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="LeetCode | 670. 最大交换" />
 <meta property="og:description" content="难度 - 中等 题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟大到小排列列表" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/5/leetcode-670/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/5/leetcode-670/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-15T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-05-15T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LeetCode | 670. 最大交换"/>
@@ -286,7 +286,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;&#39;&#39;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;&#39;&#39;
 </span><span style="color:#e6db74">[9, 3, 6, 7]
 </span><span style="color:#e6db74">[7, 6, 3, 9] #[::-1]
 </span><span style="color:#e6db74">[9, 7, 6, 3] #sort
@@ -294,7 +294,7 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">maximumSwap</span>(self, num):
         num_list <span style="color:#f92672">=</span> [int(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> list(str(num))]
-        num_sort_list <span style="color:#f92672">=</span> sorted(num_list,reverse <span style="color:#f92672">=</span> True)
+        num_sort_list <span style="color:#f92672">=</span> sorted(num_list,reverse <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
         <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(num_list)):
             <span style="color:#66d9ef">if</span> num_list[i] <span style="color:#f92672">!=</span> num_sort_list[i]:
                 num_list[i], num_list[len(num_list)<span style="color:#f92672">-</span>num_list[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>index(num_sort_list[i])<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> \
@@ -302,7 +302,7 @@ if (!doNotTrack) {
                 <span style="color:#66d9ef">break</span>
         <span style="color:#66d9ef">return</span> int(<span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join([str(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> num_list]))
     
-<span style="color:#66d9ef">print</span>(Solution()<span style="color:#f92672">.</span>maximumSwap(<span style="color:#ae81ff">98368</span>))
+print(Solution()<span style="color:#f92672">.</span>maximumSwap(<span style="color:#ae81ff">98368</span>))
 
 </code></pre></div>
     </div>

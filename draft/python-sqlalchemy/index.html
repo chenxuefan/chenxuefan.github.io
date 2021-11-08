@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | sqlalchemy" />
 <meta property="og:description" content="SQLAlchemy 1.4 Documentation 传说中的ORM技术：Object-Relational Mapping，把关系数据库的表结构映射到对象上。 但是由谁来做这个转换呢？所以O" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/draft/python-sqlalchemy/" />
+<meta property="og:url" content="https://billie52707.cn/draft/python-sqlalchemy/" /><meta property="article:section" content="draft" />
 <meta property="article:published_time" content="2021-07-08T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-07-08T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | sqlalchemy"/>
@@ -280,24 +280,24 @@ if (!doNotTrack) {
 <h3 id="建立连接">建立连接</h3>
 <p><code>create_engine()</code>用来初始化数据库连接。SQLAlchemy用一个字符串表示连接信息：</p>
 <p><code>数据库类型 + 数据库驱动名称 : //用户名 : 口令 @机器地址 : 端口号 / 数据库名</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> create_engine
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sqlalchemy <span style="color:#f92672">import</span> create_engine
 
-DB_URI <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DB}&#39;</span>
+DB_URI <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;mysql+pymysql://</span><span style="color:#e6db74">{</span>USERNAME<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>PASSWORD<span style="color:#e6db74">}</span><span style="color:#e6db74">@</span><span style="color:#e6db74">{</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>DB<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>
 engine <span style="color:#f92672">=</span> create_engine(DB_URI)  <span style="color:#75715e"># 创建引擎</span>
 conn <span style="color:#f92672">=</span> engine<span style="color:#f92672">.</span>connect()  <span style="color:#75715e"># 连接</span>
 </code></pre></div><p><code>pymysql.connect</code>只负责连接数据库，它不会帮你创建数据库的，你要先创建一个</p>
 <h3 id="获取连接">获取连接</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1</span>
 conn <span style="color:#f92672">=</span> engine<span style="color:#f92672">.</span>connect()
 
 <span style="color:#75715e"># 2</span>
 <span style="color:#66d9ef">with</span> engine<span style="color:#f92672">.</span>connect() <span style="color:#66d9ef">as</span> conn:
   <span style="color:#f92672">...</span>
 </code></pre></div><h3 id="提交更改">提交更改</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conn<span style="color:#f92672">.</span>commit()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conn<span style="color:#f92672">.</span>commit()
 </code></pre></div><p>当我们希望我们已经完成的工作被提交到我们的块中时，我们调用 <a href="https://www.osgeo.cn/sqlalchemy/core/future.html#sqlalchemy.future.Connection.commit"><code>Connection.commit()</code></a> 提交事务的方法。在我们在块内调用这个方法之后，我们可以继续运行更多的SQL语句，如果我们选择调用 <a href="https://www.osgeo.cn/sqlalchemy/core/future.html#sqlalchemy.future.Connection.commit"><code>Connection.commit()</code></a> 对于以后的陈述也一样。SQLAlchemy将此样式称为 <strong>边做边做</strong> .</p>
 <h3 id="删除记录">删除记录</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">session<span style="color:#f92672">.</span>query(Data)<span style="color:#f92672">.</span>filter(Data<span style="color:#f92672">.</span>person <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;李明&#39;</span>)<span style="color:#f92672">.</span>delete()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">session<span style="color:#f92672">.</span>query(Data)<span style="color:#f92672">.</span>filter(Data<span style="color:#f92672">.</span>person <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;李明&#39;</span>)<span style="color:#f92672">.</span>delete()
 session<span style="color:#f92672">.</span>commit()
 </code></pre></div><h3 id="添加记录">添加记录</h3>
 

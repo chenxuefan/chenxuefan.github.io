@@ -1,1046 +1,618 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://billie52707.cn/categories/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/categories/life/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/10/sunset/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/%E6%91%84%E5%BD%B1%E9%9B%86/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/9/life-shoot/</loc>
     <lastmod>2021-09-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/git/</loc>
     <lastmod>2021-09-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/</loc>
     <lastmod>2021-09-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/git/</loc>
     <lastmod>2021-09-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/8/life-shoot/</loc>
     <lastmod>2021-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/</loc>
     <lastmod>2021-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/one-three-year/</loc>
     <lastmod>2021-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/7/tian-shoot/</loc>
     <lastmod>2021-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/python/</loc>
     <lastmod>2021-07-08T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-tensorflow/</loc>
     <lastmod>2021-07-08T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/categories/tec/</loc>
     <lastmod>2021-07-08T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-sqlalchemy/</loc>
     <lastmod>2021-07-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-xmind/</loc>
     <lastmod>2021-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-opencv/</loc>
     <lastmod>2021-07-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-multiprocessing/</loc>
     <lastmod>2021-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/thread-process-coroutine/</loc>
     <lastmod>2021-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/6/user-data-dir/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/6/python-pyppeteer/</loc>
     <lastmod>2021-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-aiohttp-server/</loc>
     <lastmod>2021-06-08T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-django/</loc>
     <lastmod>2021-06-08T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-flask/</loc>
     <lastmod>2021-06-08T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-hashlib/</loc>
     <lastmod>2021-06-08T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/rsa/</loc>
     <lastmod>2021-06-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/spider/</loc>
     <lastmod>2021-06-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/6/python-urllib/</loc>
     <lastmod>2021-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/6/python-aiohttp-client/</loc>
     <lastmod>2021-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/python-asyncio/</loc>
     <lastmod>2021-05-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/piano/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/vue.js/</loc>
     <lastmod>2021-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/recent-projects/</loc>
     <lastmod>2021-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/photo/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</loc>
     <lastmod>2021-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/oss/</loc>
     <lastmod>2021-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
     <lastmod>2021-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/leetcode/</loc>
     <lastmod>2021-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/leetcode-670/</loc>
     <lastmod>2021-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/python-re/</loc>
     <lastmod>2021-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/python-rbuf/</loc>
     <lastmod>2021-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-scrapy/</loc>
     <lastmod>2021-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/wakatime/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/glidedsky/</loc>
     <lastmod>2021-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/glidedsky-level2/</loc>
     <lastmod>2021-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/data-grand/</loc>
-    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/poem/</loc>
     <lastmod>2021-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/python-requests/</loc>
     <lastmod>2021-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-threading/</loc>
     <lastmod>2021-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/how-can-i/</loc>
     <lastmod>2021-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/glidedsky-level1/</loc>
     <lastmod>2021-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/5/python-wordcloud/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/python-error/</loc>
     <lastmod>2021-04-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/docker/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/docker4/</loc>
     <lastmod>2021-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/linux/</loc>
     <lastmod>2021-04-27T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/nginx/</loc>
     <lastmod>2021-04-27T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/aliyun-server-docker/</loc>
     <lastmod>2021-04-27T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/docker3/</loc>
     <lastmod>2021-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/python-iterator-generator/</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/spider/</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/lyanna-mormont/</loc>
     <lastmod>2021-04-25T00:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/python-xpath/</loc>
     <lastmod>2021-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/nginx/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</loc>
     <lastmod>2021-04-18T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/billie52707/</loc>
     <lastmod>2021-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-keyboard/</loc>
     <lastmod>2021-04-15T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/python-logging/</loc>
     <lastmod>2021-04-14T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/python-decorator-return/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/burn_them_all/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/python-os/</loc>
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/4/python-decorator/</loc>
     <lastmod>2021-04-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/3/python-openpyxl/</loc>
     <lastmod>2021-03-28T01:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/python/</loc>
     <lastmod>2021-03-26T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/3/march-shoot/</loc>
     <lastmod>2021-03-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/data-structure/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/ajax/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/proxy/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/js/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/principle/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/sessioncookies/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/thread/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/process/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/web/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/spider/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/async/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/2/http/</loc>
     <lastmod>2021-02-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/rpa/</loc>
     <lastmod>2021-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2021/1/echarts-country/</loc>
     <lastmod>2021-01-04T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/2020/</loc>
     <lastmod>2020-12-31T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/http/</loc>
     <lastmod>2020-12-08T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/12/scores-search/</loc>
     <lastmod>2020-12-08T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-pyqt5/</loc>
     <lastmod>2020-12-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/pyqt-style-transform/</loc>
     <lastmod>2020-12-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/12/yuketang-login/</loc>
     <lastmod>2020-12-05T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/12/http-statuscode/</loc>
     <lastmod>2020-12-02T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/november-shoot/</loc>
     <lastmod>2020-11-30T01:54:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/ncp-nhc-readme/</loc>
     <lastmod>2020-11-29T14:34:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/ncp-readme/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/python-matplotlib/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/c/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/c/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/css/</loc>
     <lastmod>2020-11-19T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/web-media/</loc>
     <lastmod>2020-11-19T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/cross-domain/</loc>
     <lastmod>2020-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/1-x-examination/</loc>
     <lastmod>2020-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/1x/</loc>
     <lastmod>2020-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/1-x-boostrap/</loc>
     <lastmod>2020-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/bootstrap/</loc>
     <lastmod>2020-11-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/1-x-jquery/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/1-x-mysql/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/jquery/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/mysql/</loc>
     <lastmod>2020-11-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/1-x-js/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/javascript/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/1-x-css/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/1-x-html/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/html/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/ncp/</loc>
     <lastmod>2020-11-08T15:15:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/python-venv/</loc>
     <lastmod>2020-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/jupyter-notebook/</loc>
     <lastmod>2020-11-05T02:30:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/mac/</loc>
     <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/macos/</loc>
     <lastmod>2020-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/11/wuhan-memory/</loc>
     <lastmod>2020-11-01T17:32:35+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/wuhan/</loc>
     <lastmod>2020-11-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/10/october-shoot/</loc>
     <lastmod>2020-10-30T01:54:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/10/php-study-note/</loc>
     <lastmod>2020-10-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/php/</loc>
     <lastmod>2020-10-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/9/september-shoot/</loc>
     <lastmod>2020-09-30T01:54:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-09-23/</loc>
     <lastmod>2020-09-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/vue/</loc>
     <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-09-13/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</loc>
     <lastmod>2020-09-14T01:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/9/scale-question/</loc>
     <lastmod>2020-09-11T01:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/9/week-learning-experience/</loc>
     <lastmod>2020-09-10T01:54:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-09-07/</loc>
     <lastmod>2020-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-31/</loc>
     <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/docker1/</loc>
     <lastmod>2020-08-29T18:10:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-29/</loc>
     <lastmod>2020-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-28/</loc>
     <lastmod>2020-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-27/</loc>
     <lastmod>2020-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-26/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-25/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/markdown/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/machine-learn/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-24/</loc>
     <lastmod>2020-08-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-23/</loc>
     <lastmod>2020-08-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-22/</loc>
     <lastmod>2020-08-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-21/</loc>
     <lastmod>2020-08-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-20/</loc>
     <lastmod>2020-08-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-19/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/8/http-https/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-18/</loc>
     <lastmod>2020-08-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-17/</loc>
     <lastmod>2020-08-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-16/</loc>
     <lastmod>2020-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/hugo/</loc>
     <lastmod>2020-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/8/python-hugo-nginx-daily-picture/</loc>
     <lastmod>2020-08-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-15/</loc>
     <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-14/</loc>
     <lastmod>2020-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/8/nginx-record/</loc>
     <lastmod>2020-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-13/</loc>
     <lastmod>2020-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-12/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-11/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-10/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-09/</loc>
     <lastmod>2020-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-08/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-07/</loc>
     <lastmod>2020-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-06/</loc>
     <lastmod>2020-08-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-05/</loc>
     <lastmod>2020-08-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/about/</loc>
     <lastmod>2020-08-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/8/yellow/</loc>
     <lastmod>2020-08-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</loc>
     <lastmod>2020-08-04T19:19:46+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</loc>
     <lastmod>2020-08-04T18:42:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-04/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-03/</loc>
     <lastmod>2020-08-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-02/</loc>
     <lastmod>2020-08-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-08-01/</loc>
     <lastmod>2020-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/7/python-pyquery/</loc>
     <lastmod>2020-07-31T00:46:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-07-31/</loc>
     <lastmod>2020-07-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/2020-07-30/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/7/travel-wutong/</loc>
     <lastmod>2020-07-22T21:28:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/7/python-mirrors/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/6/python-macos-big-sur/</loc>
     <lastmod>2020-06-27T22:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/6/python-unittest/</loc>
     <lastmod>2020-06-15T14:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/6/python-selenium/</loc>
     <lastmod>2020-06-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/4/python-filecmp/</loc>
     <lastmod>2020-04-30T14:33:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/4/python-shutil/</loc>
     <lastmod>2020-04-30T14:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/4/nginx/</loc>
     <lastmod>2020-04-22T14:33:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/4/python-strftime/</loc>
     <lastmod>2020-04-07T11:01:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/3/python-progressbar/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/tags/ubuntu/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/linux/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/note/ubuntu/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/3/python-pycharm/</loc>
     <lastmod>2020-03-16T20:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/3/python-time/</loc>
     <lastmod>2020-03-15T20:54:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/posts/2020/3/python-psutil/</loc>
     <lastmod>2020-03-15T10:17:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/vim/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/template/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://billie52707.cn/draft/bt/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/css/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/docker/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/html/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/draft/other/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://billie52707.cn/diary/summer/</loc>
   </url>
-  
 </urlset>

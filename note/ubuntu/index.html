@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="「ubuntu」学习笔记" />
 <meta property="og:description" content="必要工具/常用软件的安装 vim/net-tools apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/note/ubuntu/" />
+<meta property="og:url" content="https://billie52707.cn/note/ubuntu/" /><meta property="article:section" content="note" />
 <meta property="article:published_time" content="2020-03-17T20:54:00+00:00" />
 <meta property="article:modified_time" content="2020-03-17T20:54:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「ubuntu」学习笔记"/>
@@ -267,15 +267,15 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="必要工具常用软件的安装">必要工具/常用软件的安装</h2>
 <h3 id="vimnet-tools">vim/net-tools</h3>
-<pre><code>apt-get install vim net-tools 
+<pre tabindex="0"><code>apt-get install vim net-tools 
 </code></pre><h3 id="openssl">openssl</h3>
-<pre><code>问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 
+<pre tabindex="0"><code>问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 
 解决：apt-get install libssl-dev
 </code></pre><h3 id="opencv">opencv</h3>
 <ol>
 <li>
 <p>安装依赖</p>
-<pre><code>apt-get install cma
+<pre tabindex="0"><code>apt-get install cma
 apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev
 apt-get install libgtk2.0-dev
 apt-get install pkg-config
@@ -300,15 +300,15 @@ apt-get install pkg-config
 <ol>
 <li>
 <p>在线下载安装包</p>
-<pre><code>wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
+<pre tabindex="0"><code>wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
 </code></pre></li>
 <li>
 <p>赋予可读权限</p>
-<pre><code>chmod 777 Anaconda3-2020.07-Linux-x86_64.sh
+<pre tabindex="0"><code>chmod 777 Anaconda3-2020.07-Linux-x86_64.sh
 </code></pre></li>
 <li>
 <p>安装</p>
-<pre><code>./Anaconda3-2020.07-Linux-x86_64.sh
+<pre tabindex="0"><code>./Anaconda3-2020.07-Linux-x86_64.sh
 </code></pre></li>
 <li>
 <p>添加到环境变量</p>
@@ -317,7 +317,7 @@ apt-get install pkg-config
 </li>
 <li>
 <p>测试一下</p>
-<pre><code>conda
+<pre tabindex="0"><code>conda
 </code></pre><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201108140821264.png" alt="image-20201108140821264"></p>
 </li>
 </ol>
@@ -325,21 +325,21 @@ apt-get install pkg-config
 <ol>
 <li>
 <p>临时设置</p>
-<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+<pre tabindex="0"><code>export PATH=/root/anaconda3/bin/:$PATH
 </code></pre></li>
 <li>
 <p>全局设置（当前用户）</p>
 <p>打开<code>~/.bashrc</code>，编辑一下</p>
-<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+<pre tabindex="0"><code>export PATH=/root/anaconda3/bin/:$PATH
 </code></pre></li>
 <li>
 <p>全局设置（所有用户）</p>
 <p>打开<code>/etc/profile</code>，编辑一下</p>
-<pre><code>export PATH=/root/anaconda3/bin/:$PATH
+<pre tabindex="0"><code>export PATH=/root/anaconda3/bin/:$PATH
 </code></pre></li>
 <li>
 <p>一步到位设置</p>
-<pre><code>echo &quot;export PATH=/home/cqh:$PATH&quot; &gt;&gt; /etc/profile
+<pre tabindex="0"><code>echo &quot;export PATH=/home/cqh:$PATH&quot; &gt;&gt; /etc/profile
 </code></pre></li>
 </ol>
 

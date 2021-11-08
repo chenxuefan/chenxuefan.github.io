@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="nginx学习笔记 | 一次配置Nginx的踩坑填坑记录" />
 <meta property="og:description" content="前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/8/nginx-record/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/8/nginx-record/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-14T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-08-14T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="nginx学习笔记 | 一次配置Nginx的踩坑填坑记录"/>
@@ -280,12 +280,12 @@ if (!doNotTrack) {
 <h2 id="安装篇">安装篇</h2>
 <h3 id="yum安装">yum安装</h3>
 <h4 id="1安装前准备">1、安装前准备</h4>
-<pre><code>yum install yum-utils
+<pre tabindex="0"><code>yum install yum-utils
 </code></pre><h4 id="2添加源">2、添加源</h4>
-<pre><code>cd /etc/yum.repos.d/ #到`/etc/yum.repos.d/` 目录下
+<pre tabindex="0"><code>cd /etc/yum.repos.d/ #到`/etc/yum.repos.d/` 目录下
 sudo vim nginx.repo #新建`nginx.repo `文件
 </code></pre><p>输入以下信息</p>
-<pre><code>[nginx-stable]
+<pre tabindex="0"><code>[nginx-stable]
 name=nginx stable repo
 baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
 gpgcheck=1
@@ -299,40 +299,40 @@ gpgcheck=1
 enabled=0
 gpgkey=https://nginx.org/keys/nginx_signing.key
 </code></pre><p>通过<code>yum search nginx</code>看看是否已经添加源成功。如果成功则执行下列命令安装nginx。</p>
-<pre><code>yum install nginx
+<pre tabindex="0"><code>yum install nginx
 </code></pre><h3 id="源码安装">源码安装</h3>
 <p>Nginx 源码包安装方式步骤比较繁琐，并且需要提前安装一些 Nginx 依赖库。</p>
 <h4 id="1依赖库安装">1、依赖库安装</h4>
-<pre><code>sudo yum -y install gcc gcc-c++ # nginx 编译时依赖 gcc 环境
-</code></pre><pre><code>sudo yum -y install pcre pcre-devel # 让 nginx 支持重写功能
-</code></pre><pre><code>sudo yum -y install zlib zlib-devel # zlib 库提供了很多压缩和解压缩的方式，nginx 使用 zlib 对 http 包内容进行 gzip 压缩
-</code></pre><pre><code>sudo yum -y install openssl openssl-devel # 安全套接字层密码库，用于通信加密
+<pre tabindex="0"><code>sudo yum -y install gcc gcc-c++ # nginx 编译时依赖 gcc 环境
+</code></pre><pre tabindex="0"><code>sudo yum -y install pcre pcre-devel # 让 nginx 支持重写功能
+</code></pre><pre tabindex="0"><code>sudo yum -y install zlib zlib-devel # zlib 库提供了很多压缩和解压缩的方式，nginx 使用 zlib 对 http 包内容进行 gzip 压缩
+</code></pre><pre tabindex="0"><code>sudo yum -y install openssl openssl-devel # 安全套接字层密码库，用于通信加密
 </code></pre><p>以上安装完成后，进行 nginx 源码的安装。</p>
 <h4 id="2nginx-源码包安装">2、nginx 源码包安装</h4>
 <p>切换至/usr/local目录下，通过wget安装，源码包下载地址：<a href="https://nginx.org/en/download.html">nginx.org/en/download…</a></p>
-<pre><code>sudo wget http://...
-</code></pre><pre><code>sudo tar -zxvf  nginx-1.11.5.tar.gz # 解压缩
+<pre tabindex="0"><code>sudo wget http://...
+</code></pre><pre tabindex="0"><code>sudo tar -zxvf  nginx-1.11.5.tar.gz # 解压缩
 </code></pre><p>在完成解压缩后，进入 <code>nginx-1.11.5</code> 目录进行源码编译安装。</p>
-<pre><code>sudo mv nginx-1.11.5 nginx
+<pre tabindex="0"><code>sudo mv nginx-1.11.5 nginx
 cd nginx
 sudo ./configure --prefix=/usr/local/nginx # 检查平台安装环境
 # --prefix=/usr/local/nginx  是 nginx 编译安装的目录（推荐），安装完后会在此目录下生成相关文件
 </code></pre><p>如果前面的依赖库都安装成功后，执行 <code>./configure --prefix=/usr/local/nginx</code> 命令会显示一些环境信息。如果出现错误，一般是依赖库没有安装完成，可按照错误提示信息进行所缺的依赖库安装。</p>
 <p>进行源码编译并安装 nginx</p>
-<pre><code>make # 编译
+<pre tabindex="0"><code>make # 编译
 make install # 安装
 </code></pre><p>⚠️ <strong>make install这一步出现错误</strong>：<code>cp: conf/koi-win’ and /usr/local/nginx/conf/koi-win’ are the same file </code></p>
 <p>则在上一步<code>sudo ./configure</code>的命令换成</p>
-<pre><code>./configure –prefix=/usr/local/nginx –conf-path=/usr/local/nginx/nginx.conf  
+<pre tabindex="0"><code>./configure –prefix=/usr/local/nginx –conf-path=/usr/local/nginx/nginx.conf  
 </code></pre><p>源码包安装与 yum 安装的 nginx 服务操作命令也不同。</p>
-<pre><code>/usr/local/nginx/sbin/nginx #启动服务
-</code></pre><pre><code>/usr/local/nginx/sbin/nginx -s reload #重新加载服务
-</code></pre><pre><code>/usr/local/nginx/sbin/nginx -s stop #停止服务
-</code></pre><pre><code>ps -ef | grep nginx # 查看服务进程
+<pre tabindex="0"><code>/usr/local/nginx/sbin/nginx #启动服务
+</code></pre><pre tabindex="0"><code>/usr/local/nginx/sbin/nginx -s reload #重新加载服务
+</code></pre><pre tabindex="0"><code>/usr/local/nginx/sbin/nginx -s stop #停止服务
+</code></pre><pre tabindex="0"><code>ps -ef | grep nginx # 查看服务进程
 </code></pre><p>⚠️ <strong>nginx启动失败</strong>：<code>Redirecting to /bin/systemctl start nginx.service Failed to start nginx.service: Unit not found.</code></p>
 <p>如果你想使用<code>service</code>工具控制nginx的启动关闭，出现这个错误，原因是<strong>nginx没有添加到系统服务</strong>，手动手动添加一个即可。可以参考下面的操作:</p>
 <p>在<code> /etc/init.d/</code>下创建名为<code>nginx</code>的启动脚本即可，内容如下：</p>
-<pre><code>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 #
 # chkconfig: - 85 15
 # description: Nginx is a World Wide Web server.
@@ -375,7 +375,7 @@ esac
 <p>注册成服务：<code>chkconfig -add nginx</code></p>
 <p>设置开机启动：<code>chkconfig nginx on</code></p>
 <p>之后，就可以使用以下命令了</p>
-<pre><code>service nginx start/stop/restart/reload
+<pre tabindex="0"><code>service nginx start/stop/restart/reload
 </code></pre><h2 id="后记">后记</h2>
 <p>更多关于nginx使用的文章可以康康我在博客园的文章：</p>
 <p><a href="https://www.cnblogs.com/billie52707/p/12708914.html">Linux学习笔记 | 配置nginx</a></p>

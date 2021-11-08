@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | filecmp" />
 <meta property="og:description" content="简介： filecmp是python内置的一个模块，用于比较文件及文件夹的内容，它是一个轻量级的工具，使用非常简单 两个主要的方法： filecmp.cmp(f1, f2[, shallow]) 比较两" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/4/python-filecmp/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/4/python-filecmp/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-30T14:33:00+00:00" />
 <meta property="article:modified_time" content="2020-04-30T14:33:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | filecmp"/>
@@ -281,7 +281,7 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>Example:</p>
-<pre><code>&gt;&gt;&gt; import filecmp
+<pre tabindex="0"><code>&gt;&gt;&gt; import filecmp
 &gt;&gt;&gt; filecmp.cmp('undoc.rst', 'undoc.rst')
 True
 &gt;&gt;&gt; filecmp.cmp('undoc.rst', 'index.rst')
@@ -309,22 +309,22 @@ False
 <li>funny_files：两边文件夹中都存在，但无法比较的文件；</li>
 <li>subdirs：我没看明白这个属性的意思，python手册中的解释如下：A dictionary mapping names in common_dirs to dircmp objects</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mycomp<span style="color:#f92672">=</span>filecmp<span style="color:#f92672">.</span>dircmp(dir1,dir2)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mycomp<span style="color:#f92672">=</span>filecmp<span style="color:#f92672">.</span>dircmp(dir1,dir2)
 <span style="color:#75715e">#备份模式1、若dir1中有dir2中没有的文件，则继续执行</span>
 <span style="color:#66d9ef">if</span> len(mycomp<span style="color:#f92672">.</span>left_list) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:<span style="color:#75715e">#dir1中的文件</span>
         <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> mycomp<span style="color:#f92672">.</span>left_list:<span style="color:#75715e">#dir1中的所有文件</span>
             <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(dir2<span style="color:#f92672">+</span>file):<span style="color:#75715e">#如dir2中不存在此文件，则</span>
                 shutil<span style="color:#f92672">.</span>copy(dir1<span style="color:#f92672">+</span>file,dir2<span style="color:#f92672">+</span>file)<span style="color:#75715e">#复制dir1中的文件</span>
-                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;已备份|&#39;</span>, dir2 <span style="color:#f92672">+</span> file)
+                print(<span style="color:#e6db74">&#39;已备份|&#39;</span>, dir2 <span style="color:#f92672">+</span> file)
 <span style="color:#75715e">#备份模式2、若dir1中的文件与dir2中的文件存在差异，则继续执行</span>
 <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> mycomp<span style="color:#f92672">.</span>common:<span style="color:#75715e">#dir1、dir2中的相同文件</span>
         about_update_files<span style="color:#f92672">=</span>[]
-        <span style="color:#66d9ef">if</span> is_common(dir1<span style="color:#f92672">+</span>file,dir2<span style="color:#f92672">+</span>file) <span style="color:#f92672">==</span> False:
+        <span style="color:#66d9ef">if</span> is_common(dir1<span style="color:#f92672">+</span>file,dir2<span style="color:#f92672">+</span>file) <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
             about_update_files<span style="color:#f92672">.</span>append(file)
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;待更新|&#39;</span>,dir2<span style="color:#f92672">+</span>file)
+            print(<span style="color:#e6db74">&#39;待更新|&#39;</span>,dir2<span style="color:#f92672">+</span>file)
             shutil<span style="color:#f92672">.</span>copy(dir1 <span style="color:#f92672">+</span> file, dir2 <span style="color:#f92672">+</span> file)  <span style="color:#75715e"># 复制dir1中的文件</span>
-            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;已更新|&#39;</span>, dir2 <span style="color:#f92672">+</span> file)
-        <span style="color:#66d9ef">else</span>:<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;无需更新|&#39;</span>,dir2<span style="color:#f92672">+</span>file)
+            print(<span style="color:#e6db74">&#39;已更新|&#39;</span>, dir2 <span style="color:#f92672">+</span> file)
+        <span style="color:#66d9ef">else</span>:print(<span style="color:#e6db74">&#39;无需更新|&#39;</span>,dir2<span style="color:#f92672">+</span>file)
 </code></pre></div><p>更多内容参考官方文档：<a href="https://docs.python.org/3.0/library/filecmp.html">https://docs.python.org/3.0/library/filecmp.html</a></p>
 
     </div>

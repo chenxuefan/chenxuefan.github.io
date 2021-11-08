@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="「docker」学习笔记 | 容器编排之Docker Compose" />
 <meta property="og:description" content="why docker-compose? 为什么需要用到编排工具？ 当我们的业务越来越复杂时，需要多个容器相互配合，甚至需要多个主机组成容器集群才能满足我们的业务需求，这个时候就需" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/note/docker3/" />
+<meta property="og:url" content="https://billie52707.cn/note/docker3/" /><meta property="article:section" content="note" />
 <meta property="article:published_time" content="2021-04-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-04-27T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「docker」学习笔记 | 容器编排之Docker Compose"/>
@@ -298,15 +298,15 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>使用 curl 命令（一种发送 http 请求的命令行工具）下载 Docker Compose 的安装包：</p>
-<pre><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.27.3/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+<pre tabindex="0"><code>sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.27.3/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
 </code></pre></li>
 <li>
 <p>修改 Docker Compose 执行权限：</p>
-<pre><code>sudo chmod +x /usr/local/bin/docker-compose
+<pre tabindex="0"><code>sudo chmod +x /usr/local/bin/docker-compose
 </code></pre></li>
 <li>
 <p>检查 Docker Compose 是否安装成功：</p>
-<pre><code>docker-compose --version # docker-compose version 1.27.3, build 4092ae5d
+<pre tabindex="0"><code>docker-compose --version # docker-compose version 1.27.3, build 4092ae5d
 </code></pre></li>
 </ol>
 <h2 id="编写-docker-compose-模板文件">编写 Docker Compose 模板文件</h2>
@@ -323,7 +323,7 @@ if (!doNotTrack) {
 <p>Docker Compose 模板文件一共有三个版本： v1、v2 和 v3。目前最新的版本为 v3，也是功能最全面的一个版本。</p>
 <h3 id="2-services">2. services</h3>
 <p>services下，首先需要定义服务名称，例如nginx服务，便可以命名为nginx，格式如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">version: <span style="color:#e6db74">&#34;3&#34;</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">version: <span style="color:#e6db74">&#34;3&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>services:<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>	nginx:<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>		...<span style="color:#960050;background-color:#1e0010">
@@ -379,7 +379,7 @@ if (!doNotTrack) {
 </ul>
 <h3 id="3-volumes">3. volumes</h3>
 <p>如果你想在多个容器间共享数据卷，则需要在外部声明数据卷，然后在容器里声明使用数据卷。例如我想在两个服务间共享日志目录，则使用以下配置：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">version: <span style="color:#e6db74">&#34;3&#34;</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">version: <span style="color:#e6db74">&#34;3&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>services:<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>  my-service1:<span style="color:#960050;background-color:#1e0010">
@@ -400,7 +400,7 @@ if (!doNotTrack) {
 </span></code></pre></div><h3 id="4-netwoks">4. netwoks</h3>
 <p>Docker Compose 文件顶级声明的 networks 允许你创建自定义的网络，类似于<code>docker network create</code>命令。</p>
 <p>例如你想声明一个自定义 bridge 网络配置，并且在服务中使用它，使用格式如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">version: <span style="color:#e6db74">&#34;3&#34;</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">version: <span style="color:#e6db74">&#34;3&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>services:<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>  web:<span style="color:#960050;background-color:#1e0010">

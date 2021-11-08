@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="基础探究，Session 与 Cookies" />
 <meta property="og:description" content="*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在浏览网站的过程中，经常会遇到需要登录的情况，而有些网页只有登录之后才可以访问，" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/2/sessioncookies/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/2/sessioncookies/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-27T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="基础探究，Session 与 Cookies"/>
@@ -276,7 +276,7 @@ if (!doNotTrack) {
 <p>还有一些网站，在打开浏览器时就自动登录了，而且很长时间都不会失效，这种情况又是为什么？其实这里面涉及 Session 和 Cookies 的相关知识，本节就来揭开它们的神秘面纱。</p>
 <p>静态网页和动态网页
 在开始介绍它们之前，我们需要先了解一下静态网页和动态网页的概念。这里还是前面的示例代码，内容如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
 &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;

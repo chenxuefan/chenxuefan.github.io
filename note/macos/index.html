@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="「macOS」学习笔记" />
 <meta property="og:description" content="系统设置 三指拖移 系统偏好设置&gt;辅助功能&gt;鼠标与触控板&gt;触控板选项 放大程序坞图标 系统偏好设置&gt;程序坞&gt;放大 触发角" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/note/macos/" />
+<meta property="og:url" content="https://billie52707.cn/note/macos/" /><meta property="article:section" content="note" />
 <meta property="article:published_time" content="2020-11-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-11-04T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「macOS」学习笔记"/>
@@ -285,7 +285,7 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>任何来源</p>
-<pre><code>sudo spctl --master-disable
+<pre tabindex="0"><code>sudo spctl --master-disable
 </code></pre></li>
 <li>
 <p>更换python镜像源</p>
@@ -295,7 +295,7 @@ if (!doNotTrack) {
 <li>创建文件：<code>touch pip.conf</code></li>
 <li>修改文件为以下：<code>vim pip.conf</code></li>
 </ol>
-<pre><code>[global]
+<pre tabindex="0"><code>[global]
 index-url=http://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host=mirrors.aliyun.com
@@ -313,14 +313,14 @@ trusted-host=mirrors.aliyun.com
 </li>
 <li>
 <p>（base）:设置conda不要自动启动base环境</p>
-<pre><code>conda config --set auto_activate_base false
+<pre tabindex="0"><code>conda config --set auto_activate_base false
 </code></pre><p>mac安装了conda后，前面会有一个(base)，原因是：安装conda后，每次启动终端，都会自动启动conda的base环境，conda的环境可以用<code>conda env list</code>查看</p>
 </li>
 <li>
 <p>终端日志信息</p>
 <p>终端的默认显示是：计算机名称 ~ 用户名 $，如需修改，则如下：</p>
-<pre><code>sudo vim /etc/bashrc
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-PS1=&#39;\h:\W \u\$ &#39;
+<pre tabindex="0"><code>sudo vim /etc/bashrc
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-PS1=&#39;\h:\W \u\$ &#39;
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+PS1=&#39;\$ &#39;
 </span></code></pre></div></li>
 <li>
@@ -347,7 +347,7 @@ trusted-host=mirrors.aliyun.com
 <li>
 <p>安装brew</p>
 <p><a href="https://brew.sh/">https://brew.sh/</a></p>
-<pre><code>/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
+<pre tabindex="0"><code>/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
 </code></pre><p>使用 - <code>brew install/search/uninstall/update/upgrade 软件名</code></p>
 </li>
 <li>
@@ -375,7 +375,7 @@ trusted-host=mirrors.aliyun.com
 </li>
 <li>
 <p>卸载:</p>
-<pre><code>brew remove mysql
+<pre tabindex="0"><code>brew remove mysql
 brew cleanup
 launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 rm ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist

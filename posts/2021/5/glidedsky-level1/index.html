@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="GlidedSky | 爬虫题目1" />
 <meta property="og:description" content="题目地址 - http://glidedsky.com/level/crawler-basic-1 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-1 心得 这道题目所需的技能点都很基础，如发送请求、文档解析，很多工具都可以达到目的，重要是要寻找最简短的代码、最优雅的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/5/glidedsky-level1/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/5/glidedsky-level1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-05-05T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GlidedSky | 爬虫题目1"/>
@@ -276,7 +276,7 @@ if (!doNotTrack) {
 <p>这道题目所需的技能点都很基础，如发送请求、文档解析，很多工具都可以达到目的，重要是要寻找最简短的代码、最优雅的解析方法进行文本的提取，在这里我用的是etree.xpath的方法。十分和谐 🐱</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74"># Talk is cheap,show me the codes!
 </span><span style="color:#e6db74">
@@ -291,7 +291,7 @@ if (!doNotTrack) {
 
 logging<span style="color:#f92672">.</span>basicConfig(
     <span style="color:#75715e"># filename=&#39;glidedsky.log&#39;,</span>
-    format<span style="color:#f92672">=</span>f<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74">: </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#34;</span>,
+    format<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;%(asctime)s %(levelname)s: %(message)s&#34;</span>,
     datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>,
     level <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>INFO
 )
@@ -342,9 +342,9 @@ logging<span style="color:#f92672">.</span>basicConfig(
                 <span style="color:#e6db74">&#39;password&#39;</span>: <span style="color:#e6db74">&#39;a1222222222&#39;</span>
             })
         <span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
-            <span style="color:#66d9ef">return</span> True
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
         <span style="color:#66d9ef">else</span>:
-            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(f<span style="color:#e6db74">&#39;登录失败，状态码：{r.status_code}&#39;</span>)
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;登录失败，状态码：</span><span style="color:#e6db74">{</span>r<span style="color:#f92672">.</span>status_code<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
 
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</span>(self):
         <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>login():
@@ -404,7 +404,7 @@ bb<span style="color:#f92672">.</span>parse()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          373 字
+          374 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

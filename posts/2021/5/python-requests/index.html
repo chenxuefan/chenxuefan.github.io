@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | requests" />
 <meta property="og:description" content="Requests: 让 HTTP 服务人类 官方文档 - https://docs.python-requests.org/zh_CN/latest/ 快速上手 https://docs.python-requests.org/zh_CN/latest/user/quickstart.html （1）发送请求 request(method, url, **kwargs) get(url, params=None, **kwargs) options(url, **kwargs) head(url, **kwargs) post(url, data=None, json=None, **kwargs) put(url, data=None, **kwargs) patch(url, data=None, **kwargs) delete(url, **kwargs) r = requests.put(&#39;http://httpbin.org/put&#39;, data = {&#39;key&#39;:&#39;value&#39;}) r = requests.delete(&#39;http://httpbin.org/delete&#39;) r = requests.head(&#39;http://httpbin.org/get&#39;) r = requests.options(&#39;http://httpbin.org/get&#39;) （2）请求参数 params" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-requests/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-requests/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-06T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-05-06T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | requests"/>
@@ -115,7 +115,7 @@ if (!doNotTrack) {
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/draft/data-grand/">
+          <a class="icon" href="https://billie52707.cn/posts/2021/5/glidedsky-level2/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -300,7 +300,7 @@ if (!doNotTrack) {
 <li><code>patch(url, data=None, **kwargs)</code></li>
 <li><code>delete(url, **kwargs)</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>put(<span style="color:#e6db74">&#39;http://httpbin.org/put&#39;</span>, data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>})
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>put(<span style="color:#e6db74">&#39;http://httpbin.org/put&#39;</span>, data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>})
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#39;http://httpbin.org/delete&#39;</span>)
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>head(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>options(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
@@ -309,26 +309,26 @@ r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</sp
 <li>
 <p><em><strong>params</strong></em></p>
 <p>发送get请求时，若想在不修改URL的内容的情况下添加URL参数，可将params参数添加到请求之中。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">params <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key&#39;</span>:<span style="color:#e6db74">&#39;value&#39;</span>}
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>, params<span style="color:#f92672">=</span>params)
 </code></pre></div><p><code>r.url</code>打印得到此时的URL：</p>
-<pre><code>Out[4]: 'http://httpbin.org/get?key=value'
+<pre tabindex="0"><code>Out[4]: 'http://httpbin.org/get?key=value'
 </code></pre></li>
 <li>
 <p><em><strong>headers</strong></em></p>
 <p>如果你想为请求添加 HTTP 头部，只要简单地传递一个 <code>dict</code> 给 <code>headers</code> 参数就可以了。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://api.github.com/some/endpoint&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://api.github.com/some/endpoint&#39;</span>
 headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;user-agent&#39;</span>: <span style="color:#e6db74">&#39;my-app/0.0.1&#39;</span>}
-   
+
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, headers<span style="color:#f92672">=</span>headers)
 </code></pre></div></li>
 <li>
 <p><em><strong>data</strong></em></p>
 <p>通常，你想要发送一些编码为表单形式的数据——非常像一个 HTML 表单。要实现这个，只需简单地传递一个「字典」给 data 参数。你的数据字典在发出请求时会自动编码为表单形式：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key1&#39;</span>: <span style="color:#e6db74">&#39;value1&#39;</span>, <span style="color:#e6db74">&#39;key2&#39;</span>: <span style="color:#e6db74">&#39;value2&#39;</span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;key1&#39;</span>: <span style="color:#e6db74">&#39;value1&#39;</span>, <span style="color:#e6db74">&#39;key2&#39;</span>: <span style="color:#e6db74">&#39;value2&#39;</span>}
 r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;http://httpbin.org/post&#39;</span>,data<span style="color:#f92672">=</span>data)
 </code></pre></div><p>除了传递一个字典，还可以传递一个「元祖列表」给data参数。在表单中多个元素使用同一 key 的时候，这种方式尤其有效：</p>
-<pre><code>&gt;&gt;&gt; payload = (('key1', 'value1'), ('key1', 'value2'))
+<pre tabindex="0"><code>&gt;&gt;&gt; payload = (('key1', 'value1'), ('key1', 'value2'))
 &gt;&gt;&gt; r = requests.post('http://httpbin.org/post', data=payload)
 &gt;&gt;&gt; print(r.text)
 {
@@ -348,7 +348,7 @@ r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</sp
 <li>
 <p><em><strong>timeout</strong></em></p>
 <p>你可以告诉 requests 在经过以 <code>timeout</code> 参数设定的秒数时间之后停止等待响应。基本上所有的生产代码都应该使用这一参数。如果不使用，你的程序可能会永远失去响应：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://github.com&#39;</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">0.001</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://github.com&#39;</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">0.001</span>)
 </code></pre></div><p><code>timeout</code> 仅对连接过程有效，与响应体的下载无关。 <code>timeout</code> 并不是整个下载响应的时间限制，而是如果服务器在 <code>timeout</code> 秒内没有应答，将会引发一个异常（更精确地说，是在 <code>timeout</code> 秒内没有从基础套接字上接收到任何字节的数据时）If no timeout is specified explicitly, requests do not time out.</p>
 </li>
 </ol>
@@ -360,34 +360,34 @@ r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</sp
 <li>
 <p><em><strong>encoding</strong></em></p>
 <p><code>r.encoding</code>返回当前的编码格式，如需修改编码格式：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r<span style="color:#f92672">.</span>encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf-8&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r<span style="color:#f92672">.</span>encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;utf-8&#39;</span>
 </code></pre></div></li>
 <li>
 <p><em><strong>content</strong></em></p>
 <p>对于非文本请求，你也能以字节的方式访问请求响应体（二进制响应内容），比如图片格式的响应体</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.billie52707.cn/pic/main.png&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.billie52707.cn/pic/main.png&#39;</span>)
 r<span style="color:#f92672">.</span>content
 </code></pre></div></li>
 <li>
 <p><em><strong>json()</strong></em></p>
 <p>如果 JSON 解码失败， <code>r.json()</code> 就会抛出一个异常: <code>ValueError: No JSON object could be decoded</code> 。需要注意的是，成功调用 <code>r.json()</code> 并<strong>不</strong>意味着响应的成功。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.billie52707.cn/pic/main.png&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.billie52707.cn/pic/main.png&#39;</span>)
 r<span style="color:#f92672">.</span>json() 
 </code></pre></div></li>
 <li>
 <p><em><strong>raw</strong></em></p>
 <p>在罕见的情况下，你可能想获取来自服务器的原始套接字响应，那么你可以访问 <code>r.raw</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://api.github.com/events&#39;</span>, stream<span style="color:#f92672">=</span>True)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://api.github.com/events&#39;</span>, stream<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 r<span style="color:#f92672">.</span>raw
 </code></pre></div></li>
 <li>
 <p><em><strong>status_code</strong></em> - 响应状态码</p>
 <p>Requests还附带了一个内置的状态码查询对象<code>requests.codes</code>，其中包含各个状态码，如<code>requests.codes.ok</code>或<code>requests.codes.okay</code>表示请求成功，状态码为200</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://httpbin.org/get&#39;</span>)
 <span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> requests<span style="color:#f92672">.</span>codes<span style="color:#f92672">.</span>ok:
   <span style="color:#66d9ef">continue</span>
 </code></pre></div><p>如果发送了一个错误请求(一个 4XX 客户端错误，或者 5XX 服务器错误响应)，我们可以通过 <a href="https://docs.python-requests.org/zh_CN/latest/api.html#requests.Response.raise_for_status"><code>Response.raise_for_status()</code></a> 来抛出异常：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">!=</span> <span style="color:#ae81ff">200</span>:
   r<span style="color:#f92672">.</span>raise_for_status()
 </code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210506164931511.png" alt="image-20210506164931511"></p>
 </li>
@@ -395,16 +395,16 @@ r<span style="color:#f92672">.</span>raw
 <p><em><strong>headers</strong></em> - 响应头</p>
 <p><code>r.headers</code>返回字典类型的服务器响应头，还比较特殊：它是仅为 HTTP 头部而生的。根据 <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC 2616</a>， HTTP 头部是大小写不敏感的。</p>
 <p>因此，我们可以使用任意大写形式来访问这些响应头字段：</p>
-<pre><code>&gt;&gt;&gt; r.headers['Content-Type']
+<pre tabindex="0"><code>&gt;&gt;&gt; r.headers['Content-Type']
 'application/json'
-   
+
 &gt;&gt;&gt; r.headers.get('content-type')
 'application/json'
 </code></pre></li>
 <li>
 <p><em><strong>cookies</strong></em></p>
 <p>Cookie 的返回对象为 <a href="https://docs.python-requests.org/zh_CN/latest/api.html#requests.cookies.RequestsCookieJar"><code>RequestsCookieJar</code></a>，它的行为和字典类似，但接口更为完整，适合跨域名跨路径使用。</p>
-<pre><code>&gt;&gt;&gt; url = 'http://example.com/some/cookie/setting/url'
+<pre tabindex="0"><code>&gt;&gt;&gt; url = 'http://example.com/some/cookie/setting/url'
 &gt;&gt;&gt; r = requests.get(url)
 &gt;&gt;&gt; r.cookies
 Out[29]: &lt;RequestsCookieJar[]&gt;
@@ -414,42 +414,42 @@ Out[29]: &lt;RequestsCookieJar[]&gt;
 <p><a href="https://docs.python-requests.org/zh_CN/latest/user/advanced.html#advanceda">https://docs.python-requests.org/zh_CN/latest/user/advanced.html#advanced</a></p>
 <h3 id="1会话对象">（1）会话对象</h3>
 <p>会话对象让你能够跨请求保持某些参数。它也会在同一个 Session 实例发出的所有请求之间保持 cookie。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">session <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>Session()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">session <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>Session()
 r <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>get(url)
 </code></pre></div><p>会话也可用来为请求方法提供缺省数据。这是通过为会话对象的属性提供数据来实现的：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>Session()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>Session()
 s<span style="color:#f92672">.</span>auth <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#39;user&#39;</span>, <span style="color:#e6db74">&#39;pass&#39;</span>)
 s<span style="color:#f92672">.</span>headers<span style="color:#f92672">.</span>update({<span style="color:#e6db74">&#39;x-test&#39;</span>: <span style="color:#e6db74">&#39;true&#39;</span>})
 </code></pre></div><p>会话还可以用作前后文管理器：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> requests<span style="color:#f92672">.</span>Session() <span style="color:#66d9ef">as</span> s:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> requests<span style="color:#f92672">.</span>Session() <span style="color:#66d9ef">as</span> s:
   s<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn&#39;</span>)
 </code></pre></div><p>这样就能确保with区块退出后回话能被关闭，即使发生了异常也一样。</p>
 <h3 id="2ssl证书验证">（2）SSL证书验证</h3>
 <p>Requests 可以为 HTTPS 请求验证 SSL 证书，就像 web 浏览器一样。SSL 验证默认是开启的，如果证书验证失败，Requests 会抛出 SSLError:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://github.com&#39;</span>, verify<span style="color:#f92672">=</span>True)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://github.com&#39;</span>, verify<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </code></pre></div><h3 id="3客户端证书">（3）客户端证书</h3>
 <p>你也可以指定一个本地证书用作客户端证书，可以是单个文件（包含密钥和证书）或一个包含两个文件路径的元组：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://kennethreitz.org&#39;</span>, cert<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;/path/client.cert&#39;</span>, <span style="color:#e6db74">&#39;/path/client.key&#39;</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://kennethreitz.org&#39;</span>, cert<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;/path/client.cert&#39;</span>, <span style="color:#e6db74">&#39;/path/client.key&#39;</span>))
 </code></pre></div><h3 id="4流式上传">（4）流式上传</h3>
 <p>Requests支持流式上传，这允许你发送大的数据流或文件而无需先把它们读入内存。要使用流式上传，仅需为你的请求体提供一个类文件对象即可：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;massive-body&#39;</span>) <span style="color:#66d9ef">as</span> f:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;massive-body&#39;</span>) <span style="color:#66d9ef">as</span> f:
     requests<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;http://some.url/streamed&#39;</span>, data<span style="color:#f92672">=</span>f)
 </code></pre></div><h3 id="5流式请求">（5）流式请求</h3>
 <p>使用 <a href="https://docs.python-requests.org/zh_CN/latest/api.html#requests.Response.iter_lines"><code>Response.iter_lines()</code></a> 你可以很方便地对流式 API （例如 <a href="https://dev.twittercom/docs/streaming-api">Twitter 的流式 API</a> ） 进行迭代。简单地设置 <code>stream</code> 为 <code>True</code> 便可以使用 <a href="https://docs.python-requests.org/zh_CN/latest/api.html#requests.Response.iter_lines"><code>iter_lines</code></a> 对相应进行迭代：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> json
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> json
 <span style="color:#f92672">import</span> requests
 
-r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://httpbin.org/stream/20&#39;</span>, stream<span style="color:#f92672">=</span>True)
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://httpbin.org/stream/20&#39;</span>, stream<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 
 <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>iter_lines():
 
     <span style="color:#75715e"># filter out keep-alive new lines</span>
     <span style="color:#66d9ef">if</span> line:
         decoded_line <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
-        <span style="color:#66d9ef">print</span>(json<span style="color:#f92672">.</span>loads(decoded_line))
+        print(json<span style="color:#f92672">.</span>loads(decoded_line))
 </code></pre></div><h3 id="6代理">（6）代理</h3>
 <p>如果需要使用代理，你可以通过为任意请求方法提供 <code>proxies</code> 参数来配置单个请求:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
 
 proxies <span style="color:#f92672">=</span> {
   <span style="color:#e6db74">&#34;http&#34;</span>: <span style="color:#e6db74">&#34;http://10.10.1.10:3128&#34;</span>,
@@ -460,9 +460,9 @@ requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34
 </code></pre></div><h3 id="7socks">（7）SOCKS</h3>
 <p>除了基本的 HTTP 代理，Request 还支持 SOCKS 协议的代理。这是一个可选功能，若要使用， 你需要安装第三方库。</p>
 <p>你可以用 <code>pip</code> 获取依赖:</p>
-<pre><code>$ pip install requests[socks]
+<pre tabindex="0"><code>$ pip install requests[socks]
 </code></pre><p>安装好依赖以后，使用 SOCKS 代理和使用 HTTP 代理一样简单：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">proxies <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">proxies <span style="color:#f92672">=</span> {
     <span style="color:#e6db74">&#39;http&#39;</span>: <span style="color:#e6db74">&#39;socks5://user:pass@host:port&#39;</span>,
     <span style="color:#e6db74">&#39;https&#39;</span>: <span style="color:#e6db74">&#39;socks5://user:pass@host:port&#39;</span>
 }

@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | pyqt5" />
 <meta property="og:description" content="前言 PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/draft/python-pyqt5/" />
+<meta property="og:url" content="https://billie52707.cn/draft/python-pyqt5/" /><meta property="article:section" content="draft" />
 <meta property="article:published_time" content="2020-12-08T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-12-08T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | pyqt5"/>
@@ -313,16 +313,16 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>文件打开 - <code>getOpenFileName</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">file_name <span style="color:#f92672">=</span> QFileDialog<span style="color:#f92672">.</span>getOpenFileName(self,<span style="color:#e6db74">&#34;open file dialog&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span>,<span style="color:#e6db74">&#34;Txt files(*.txt)&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">file_name <span style="color:#f92672">=</span> QFileDialog<span style="color:#f92672">.</span>getOpenFileName(self,<span style="color:#e6db74">&#34;open file dialog&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span>,<span style="color:#e6db74">&#34;Txt files(*.txt)&#34;</span>)
 <span style="color:#75715e">#&#34;open file Dialog &#34;为文件对话框的标题，第三个是打开的默认路径，第四个是文件类型过滤器</span>
 </code></pre></div></li>
 <li>
 <p>文件保存 - <code>getSaveFileName</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">file_path <span style="color:#f92672">=</span>  QFileDialog<span style="color:#f92672">.</span>getSaveFileName(self,<span style="color:#e6db74">&#34;save file&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span> ,<span style="color:#e6db74">&#34;xj3dp files (*.xj3dp);;all files(*.*)&#34;</span>) 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">file_path <span style="color:#f92672">=</span>  QFileDialog<span style="color:#f92672">.</span>getSaveFileName(self,<span style="color:#e6db74">&#34;save file&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span> ,<span style="color:#e6db74">&#34;xj3dp files (*.xj3dp);;all files(*.*)&#34;</span>) 
 </code></pre></div></li>
 <li>
 <p>选择文件夹 - <code>getExistingDirectory</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dir_path<span style="color:#f92672">=</span>QFileDialog<span style="color:#f92672">.</span>getExistingDirectory(self,<span style="color:#e6db74">&#34;choose directory&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dir_path<span style="color:#f92672">=</span>QFileDialog<span style="color:#f92672">.</span>getExistingDirectory(self,<span style="color:#e6db74">&#34;choose directory&#34;</span>,<span style="color:#e6db74">&#34;C:\Users\Administrator\Desktop&#34;</span>)
 </code></pre></div></li>
 </ul>
 

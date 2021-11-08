@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="python模块详解 | shutil" />
 <meta property="og:description" content="简介 shutil是python的一个内置模块，提供了许多关于文件和文件集合的高级操作，特别提供文件夹与文件操作、归档操作了支持文件复制和删除" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/4/python-shutil/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/4/python-shutil/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-30T14:28:00+00:00" />
 <meta property="article:modified_time" content="2020-04-30T14:28:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python模块详解 | shutil"/>
@@ -300,42 +300,42 @@ if (!doNotTrack) {
 <li>fdst： 复制至fdst文件</li>
 <li>length： 缓冲区大小，即fsrc每次读取的长度</li>
 </ul>
-<pre><code>import` `shutil``f1 ``=` `open``(``&quot;file.txt&quot;``,``&quot;r&quot;``)``f2 ``=` `open``(``&quot;file_copy.txt&quot;``,``&quot;a+&quot;``)``shutil.copyfileobj(f1,f2,length``=``1024``)
+<pre tabindex="0"><code>import` `shutil``f1 ``=` `open``(``&quot;file.txt&quot;``,``&quot;r&quot;``)``f2 ``=` `open``(``&quot;file_copy.txt&quot;``,``&quot;a+&quot;``)``shutil.copyfileobj(f1,f2,length``=``1024``)
 </code></pre><p><strong>copyfile(src, dst)</strong>： 将src文件内容复制至dst文件</p>
 <ul>
 <li>src： 源文件路径</li>
 <li>dst： 复制至dst文件，若dst文件不存在，将会生成一个dst文件；若存在将会被覆盖</li>
 <li>follow_symlinks：设置为True时，若src为软连接，则当成文件复制；如果设置为False，复制软连接。默认为True。Python3新增参数</li>
 </ul>
-<pre><code>import` `shutil``shutil.copyfile(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)
+<pre tabindex="0"><code>import` `shutil``shutil.copyfile(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)
 </code></pre><p><strong>copymode(src, dst)</strong>： 将src文件权限复制至dst文件。文件内容，所有者和组不受影响</p>
 <ul>
 <li>src： 源文件路径</li>
 <li>dst： 将权限复制至dst文件，dst路径必须是真实的路径，并且文件必须存在，否则将会报文件找不到错误</li>
 <li>follow_symlinks：设置为False时，src, dst皆为软连接，可以复制软连接权限，如果设置为True，则当成普通文件复制权限。默认为True。Python3新增参数</li>
 </ul>
-<pre><code>import` `shutil``shutil.copymode(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)
+<pre tabindex="0"><code>import` `shutil``shutil.copymode(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)
 </code></pre><p><strong>copystat(src, dst)</strong>： 将权限，上次访问时间，上次修改时间以及src的标志复制到dst。文件内容，所有者和组不受影响</p>
 <ul>
 <li>src： 源文件路径</li>
 <li>dst： 将权限复制至dst文件，dst路径必须是真实的路径，并且文件必须存在，否则将会报文件找不到错误</li>
 <li>follow_symlinks：设置为False时，src, dst皆为软连接，可以复制软连接权限、上次访问时间，上次修改时间以及src的标志，如果设置为True，则当成普通文件复制权限。默认为True。Python3新增参数</li>
 </ul>
-<pre><code>import` `shutil``shutil.copystat(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)
+<pre tabindex="0"><code>import` `shutil``shutil.copystat(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)
 </code></pre><p><strong>copy(src, dst)</strong>： 将文件src复制至dst。dst可以是个目录，会在该目录下创建与src同名的文件，若该目录下存在同名文件，将会报错提示已经存在同名文件。权限会被一并复制。本质是先后调用了copyfile与copymode而已</p>
 <ul>
 <li>src：源文件路径</li>
 <li>dst：复制至dst文件夹或文件</li>
 <li>follow_symlinks：设置为False时，src, dst皆为软连接，可以复制软连接权限，如果设置为True，则当成普通文件复制权限。默认为True。Python3新增参数</li>
 </ul>
-<pre><code>improt shutil,os``shutil.copy(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)``# 或者``shutil.copy(``&quot;file.txt&quot;``,os.path.join(os.getcwd(),``&quot;copy&quot;``))
+<pre tabindex="0"><code>improt shutil,os``shutil.copy(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)``# 或者``shutil.copy(``&quot;file.txt&quot;``,os.path.join(os.getcwd(),``&quot;copy&quot;``))
 </code></pre><p><strong>copy2(src, dst)</strong>： 将文件src复制至dst。dst可以是个目录，会在该目录下创建与src同名的文件，若该目录下存在同名文件，将会报错提示已经存在同名文件。权限、上次访问时间、上次修改时间和src的标志会一并复制至dst。本质是先后调用了copyfile与copystat方法而已</p>
 <ul>
 <li>src：源文件路径</li>
 <li>dst：复制至dst文件夹或文件</li>
 <li>follow_symlinks：设置为False时，src, dst皆为软连接，可以复制软连接权限、上次访问时间，上次修改时间以及src的标志，如果设置为True，则当成普通文件复制权限。默认为True。Python3新增参数</li>
 </ul>
-<pre><code>improt shutil,os``shutil.copy2(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)``# 或者``shutil.copy2(``&quot;file.txt&quot;``,os.path.join(os.getcwd(),``&quot;copy&quot;``))
+<pre tabindex="0"><code>improt shutil,os``shutil.copy2(``&quot;file.txt&quot;``,``&quot;file_copy.txt&quot;``)``# 或者``shutil.copy2(``&quot;file.txt&quot;``,os.path.join(os.getcwd(),``&quot;copy&quot;``))
 </code></pre><p><strong>ignore_patterns(*patterns)</strong>： 忽略模式，用于配合<code>copytree()</code>方法，传递文件将会被忽略，不会被拷贝</p>
 <ul>
 <li>patterns：文件名称，元组</li>
@@ -349,34 +349,34 @@ if (!doNotTrack) {
 <li>copy_function：拷贝文件的方式，可以传入一个可执行的处理函数，默认为copy2，Python3新增参数</li>
 <li>ignore_dangling_symlinks：sysmlinks设置为False时，拷贝指向文件已删除的软连接时，将会报错，如果想消除这个异常，可以设置此值为True。默认为False,Python3新增参数</li>
 </ul>
-<pre><code>import` `shutil,os``folder1 ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``# bbb与ccc文件夹都可以不存在,会自动创建``folder2 ``=` `os.path.join(os.getcwd(),``&quot;bbb&quot;``,``&quot;ccc&quot;``)``# 将&quot;abc.txt&quot;,&quot;bcd.txt&quot;忽略，不复制``shutil.copytree(folder1,folder2,ignore``=``shutil.ignore_patterns(``&quot;abc.txt&quot;``,``&quot;bcd.txt&quot;``)
+<pre tabindex="0"><code>import` `shutil,os``folder1 ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``# bbb与ccc文件夹都可以不存在,会自动创建``folder2 ``=` `os.path.join(os.getcwd(),``&quot;bbb&quot;``,``&quot;ccc&quot;``)``# 将&quot;abc.txt&quot;,&quot;bcd.txt&quot;忽略，不复制``shutil.copytree(folder1,folder2,ignore``=``shutil.ignore_patterns(``&quot;abc.txt&quot;``,``&quot;bcd.txt&quot;``)
 </code></pre><p><strong>rmtree(path, ignore_errors=False, onerror=None)</strong>： 移除文档树，将文件夹目录删除</p>
 <ul>
 <li>ignore_errors：是否忽略错误，默认False</li>
 <li>onerror：定义错误处理函数，需传递一个可执行的处理函数，该处理函数接收三个参数：函数、路径和excinfo</li>
 </ul>
-<pre><code>import` `shutil,os``folder1 ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``shutil.rmtree(folder1)
+<pre tabindex="0"><code>import` `shutil,os``folder1 ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``shutil.rmtree(folder1)
 </code></pre><p><strong>move(src, dst)</strong>： 将src移动至dst目录下。若dst目录不存在，则效果等同于src改名为dst。若dst目录存在，将会把src文件夹的所有内容移动至该目录下面</p>
 <ul>
 <li>src：源文件夹或文件</li>
 <li>dst：移动至dst文件夹，或将文件改名为dst文件。如果src为文件夹，而dst为文件将会报错</li>
 <li>copy_function：拷贝文件的方式，可以传入一个可执行的处理函数。默认为copy2，Python3新增参数</li>
 </ul>
-<pre><code>import` `shutil,os``# 示例一，将src文件夹移动至dst文件夹下面，如果bbb文件夹不存在，则变成了重命名操作``folder1 ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``folder2 ``=` `os.path.join(os.getcwd(),``&quot;bbb&quot;``)``shutil.move(folder1, folder2)``# 示例二，将src文件移动至dst文件夹下面，如果bbb文件夹不存在，则变成了重命名操作``file1 ``=` `os.path.join(os.getcwd(),``&quot;aaa.txt&quot;``)``folder2 ``=` `os.path.join(os.getcwd(),``&quot;bbb&quot;``)``shutil.move(file1, folder2)``# 示例三，将src文件重命名为dst文件(dst文件存在，将会覆盖)``file1 ``=` `os.path.join(os.getcwd(),``&quot;aaa.txt&quot;``)``file2 ``=` `os.path.join(os.getcwd(),``&quot;bbb.txt&quot;``)``shutil.move(file1, file2)
+<pre tabindex="0"><code>import` `shutil,os``# 示例一，将src文件夹移动至dst文件夹下面，如果bbb文件夹不存在，则变成了重命名操作``folder1 ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``folder2 ``=` `os.path.join(os.getcwd(),``&quot;bbb&quot;``)``shutil.move(folder1, folder2)``# 示例二，将src文件移动至dst文件夹下面，如果bbb文件夹不存在，则变成了重命名操作``file1 ``=` `os.path.join(os.getcwd(),``&quot;aaa.txt&quot;``)``folder2 ``=` `os.path.join(os.getcwd(),``&quot;bbb&quot;``)``shutil.move(file1, folder2)``# 示例三，将src文件重命名为dst文件(dst文件存在，将会覆盖)``file1 ``=` `os.path.join(os.getcwd(),``&quot;aaa.txt&quot;``)``file2 ``=` `os.path.join(os.getcwd(),``&quot;bbb.txt&quot;``)``shutil.move(file1, file2)
 </code></pre><p><strong>disk_usage(path)</strong>： 获取当前目录所在硬盘使用情况。Python3新增方法</p>
 <ul>
 <li>path：文件夹或文件路径。windows中必须是文件夹路径，在linux中可以是文件路径和文件夹路径</li>
 </ul>
-<pre><code>import` `shutil.os``path ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``info ``=` `shutil.disk_usage(path)``print``(info)  ``# usage(total=95089164288, used=7953104896, free=87136059392)
+<pre tabindex="0"><code>import` `shutil.os``path ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``info ``=` `shutil.disk_usage(path)``print``(info)  ``# usage(total=95089164288, used=7953104896, free=87136059392)
 </code></pre><p><strong>chown(path, user=None, group=None)</strong>： 修改路径指向的文件或文件夹的所有者或分组。Python3新增方法</p>
 <ul>
 <li>path：路径</li>
 <li>user：所有者，传递user的值必须是真实的，否则将报错no such user</li>
 <li>group：分组，传递group的值必须是真实的，否则将报错no such group</li>
 </ul>
-<pre><code>import` `shutil,os``path ``=` `os.path.join(os.getcwd(),``&quot;file.txt&quot;``)``shutil.chown(path,user``=``&quot;root&quot;``,group``=``&quot;root&quot;``)
+<pre tabindex="0"><code>import` `shutil,os``path ``=` `os.path.join(os.getcwd(),``&quot;file.txt&quot;``)``shutil.chown(path,user``=``&quot;root&quot;``,group``=``&quot;root&quot;``)
 </code></pre><p><strong>which(cmd, mode=os.F_OK | os.X_OK, path=None)</strong>： 获取给定的cmd命令的可执行文件的路径。Python3新增方法</p>
-<pre><code>import` `shutil``info ``=` `shutil.which(``&quot;python3&quot;``)``print``(info)  ``# /usr/bin/python3
+<pre tabindex="0"><code>import` `shutil``info ``=` `shutil.which(``&quot;python3&quot;``)``print``(info)  ``# /usr/bin/python3
 </code></pre><h2 id="归档操作"><strong>归档操作</strong></h2>
 <p>shutil还提供了创建和读取压缩和存档文件的高级使用程序。内部实现主要依靠的是zipfile和tarfile模块</p>
 <p><strong>make_archive(base_name, format, root_dir, …)</strong>： 生成压缩文件</p>
@@ -385,7 +385,7 @@ if (!doNotTrack) {
 <li>format：压缩格式</li>
 <li>root_dir：将制定文件夹进行压缩</li>
 </ul>
-<pre><code>import` `shutil,os``base_name ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``format` `=` `&quot;zip&quot;``root_dir ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``# 将会root_dir文件夹下的内容进行压缩，生成一个aaa.zip文件``shutil.make_archive(base_name, ``format``, root_dir)
+<pre tabindex="0"><code>import` `shutil,os``base_name ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``format` `=` `&quot;zip&quot;``root_dir ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``# 将会root_dir文件夹下的内容进行压缩，生成一个aaa.zip文件``shutil.make_archive(base_name, ``format``, root_dir)
 </code></pre><p><strong>get_archive_formats()</strong>： 获取支持的压缩文件格式。目前支持的有：tar、zip、gztar、bztar。在Python3还多支持一种格式xztar</p>
 <p><strong>unpack_archive(filename, extract_dir=None, format=None)</strong>： 解压操作。Python3新增方法</p>
 <ul>
@@ -393,7 +393,7 @@ if (!doNotTrack) {
 <li>extract_dir：解压至的文件夹路径。文件夹可以不存在，会自动生成</li>
 <li>format：解压格式，默认为None，会根据扩展名自动选择解压格式</li>
 </ul>
-<pre><code>import` `shutil,os``zip_path ``=` `os.path.join(os.getcwd(),``&quot;aaa.zip&quot;``)``extract_dir ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``shutil.unpack_archive(zip_path, extract_dir)
+<pre tabindex="0"><code>import` `shutil,os``zip_path ``=` `os.path.join(os.getcwd(),``&quot;aaa.zip&quot;``)``extract_dir ``=` `os.path.join(os.getcwd(),``&quot;aaa&quot;``)``shutil.unpack_archive(zip_path, extract_dir)
 </code></pre><p><strong>get_unpack_formats()</strong>： 获取支持的解压文件格式。目前支持的有：tar、zip、gztar、bztar和xztar。Python3新增方法</p>
 <p>关于shutil的更多操作：https://docs.python.org/3/library/shutil.html</p>
 

@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="「nginx」学习笔记" />
 <meta property="og:description" content="前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/note/nginx/" />
+<meta property="og:url" content="https://billie52707.cn/note/nginx/" /><meta property="article:section" content="note" />
 <meta property="article:published_time" content="2021-04-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-04-19T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「nginx」学习笔记"/>
@@ -295,7 +295,7 @@ if (!doNotTrack) {
 <li>
 <p>APT源安装，简单，但版本较低，日常使用足够</p>
 <p><a href="https://billie52707.cn/posts/2020/8/nginx-record/">nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</a></p>
-<pre><code>sudo apt-get install nginx　 #ubuntu
+<pre tabindex="0"><code>sudo apt-get install nginx　 #ubuntu
 sudo yum install nginx　　　　#centos
 </code></pre></li>
 <li>
@@ -306,7 +306,7 @@ sudo yum install nginx　　　　#centos
 <ul>
 <li>
 <p>启动/关闭/查看状态 - <code>service nginx start/stop/status</code></p>
-<pre><code>/etc/init.d/nginx start/stop
+<pre tabindex="0"><code>/etc/init.d/nginx start/stop
 sudo service nginx start/stop
 systemctl start/stop nginx 
 nginx start/stop
@@ -319,7 +319,7 @@ nginx start/stop
 </li>
 </ul>
 <h2 id="相关文件位置">相关文件位置</h2>
-<pre><code>/usr/sbin/nginx     #主程序
+<pre tabindex="0"><code>/usr/sbin/nginx     #主程序
 /etc/nginx          #存放配置文件
 /usr/share/nginx    #存放静态文件
 /var/log/nginx      #存放日志

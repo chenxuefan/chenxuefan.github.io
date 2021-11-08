@@ -315,15 +315,6 @@
     </item>
     
     <item>
-      <title>达观工作笔记</title>
-      <link>https://billie52707.cn/draft/data-grand/</link>
-      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/data-grand/</guid>
-      <description>工作日志 2021.05.07 第一次在本公司上班 2021.05.20 今日任务 开发博客新功能“Most recent”，记录最新更新的文章 2021.05.28 STAR法则 Situation： 事情是在什</description>
-    </item>
-    
-    <item>
       <title>python模块详解 | requests</title>
       <link>https://billie52707.cn/posts/2021/5/python-requests/</link>
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
@@ -492,15 +483,6 @@
       
       <guid>https://billie52707.cn/posts/2021/4/python-decorator-return/</guid>
       <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1444648358\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言 今天使用装饰器时，遇到这样一个错误： 根据</description>
-    </item>
-    
-    <item>
-      <title>大厂求索记</title>
-      <link>https://billie52707.cn/draft/burn_them_all/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/burn_them_all/</guid>
-      <description>前言 平凡的一个周一的晚上，朝哥通过了微信的面试，即将进入大厂行列，踏上了逆袭的第一步。恭喜！ LeeCode，我吃定你了</description>
     </item>
     
     <item>
@@ -1545,15 +1527,6 @@
       
       <guid>https://billie52707.cn/draft/api/</guid>
       <description>2020豆瓣电影最新api 获取正在热映的电影：http://api.douban.com/v2/movie/in_theaters?apik</description>
-    </item>
-    
-    <item>
-      <title>bt</title>
-      <link>https://billie52707.cn/draft/bt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://billie52707.cn/draft/bt/</guid>
-      <description>启动 sudo /etc/init.d/bt default 重启 sudo bt restart</description>
     </item>
     
     <item>

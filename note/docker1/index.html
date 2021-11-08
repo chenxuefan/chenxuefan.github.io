@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="「docker」学习笔记 | 镜像、容器、仓库" />
 <meta property="og:description" content="关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/note/docker1/" />
+<meta property="og:url" content="https://billie52707.cn/note/docker1/" /><meta property="article:section" content="note" />
 <meta property="article:published_time" content="2020-08-29T18:10:42+08:00" />
 <meta property="article:modified_time" content="2020-08-29T18:10:42+08:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「docker」学习笔记 | 镜像、容器、仓库"/>
@@ -386,23 +386,23 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>安装完输入命令检查是否成功：</p>
-<pre><code>docker --version
+<pre tabindex="0"><code>docker --version
 docker-compose --version
 docker-machine --version
 </code></pre></li>
 <li>
 <p>设置docker自启动</p>
-<pre><code>systemctl enable docker
+<pre tabindex="0"><code>systemctl enable docker
 </code></pre></li>
 <li>
 <p>docker的启动、停止、重启</p>
-<pre><code>service docker start/stop/restart
+<pre tabindex="0"><code>service docker start/stop/restart
 或
 systemctl start/stop/restart docker
 </code></pre></li>
 <li>
 <p>查看docker的运行状态</p>
-<pre><code>systemctl status docker
+<pre tabindex="0"><code>systemctl status docker
 </code></pre></li>
 </ol>
 <h3 id="3-windows">3. Windows</h3>
@@ -766,12 +766,12 @@ systemctl start/stop/restart docker
 <h3 id="5导出导入容器">（5）导出导入容器</h3>
 <h4 id="1-导出容器">1. 导出容器</h4>
 <p>我们可以使用<code>docker export CONTAINER</code>命令导出一个容器到文件，不管此时该容器是否处于运行中的状态。执行以下命令后会在当前文件夹下生成 busybox.tar 文件，我们可以将该文件拷贝到其他机器上，通过导入命令实现容器的迁移。</p>
-<pre><code>docker export busybox &gt; busybox.tar
+<pre tabindex="0"><code>docker export busybox &gt; busybox.tar
 </code></pre><h4 id="2-导入容器">2. 导入容器</h4>
 <p>通过<code>docker export</code>命令导出的文件，可以使用<code>docker import</code>命令导入，执行完<code>docker import</code>后会变为本地镜像，最后再使用<code>docker run</code>命令启动该镜像，这样我们就实现了容器的迁移。</p>
 <p>导入容器的命令格式为 <code>docker import [OPTIONS] file|URL [REPOSITORY[:TAG]]</code>。接下来我们一步步将上一步导出的镜像文件导入到其他机器的 Docker 中并启动它。</p>
 <p>首先，使用<code>docker import</code>命令导入上一步导出的容器</p>
-<pre><code>docker import busybox.tar busybox:test
+<pre tabindex="0"><code>docker import busybox.tar busybox:test
 </code></pre><p>此时，busybox.tar 被导入成为新的镜像，镜像名称为 busybox:test</p>
 <h3 id="6容器与宿主机互传文件">（6）容器与宿主机互传文件</h3>
 <p>首先确定docker容器的<strong>ID</strong>或<strong>NAME</strong>,可以使用<code>docker ps -a</code>或<code>docker images -a</code>查看</p>
@@ -809,13 +809,13 @@ systemctl start/stop/restart docker
 <li>
 <p><code>hostconfig.json</code></p>
 <p>在 <code>hostconfig.json</code> 里有 <code>&quot;PortBindings&quot;:{}</code> 这个配置项，可以改成 <code>&quot;PortBindings&quot;:{&quot;80/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]}</code> 这里 80 是容器端口， 8080 是本地端口，层级关系如下：</p>
-<pre><code>&quot;PortBindings&quot;:{
+<pre tabindex="0"><code>&quot;PortBindings&quot;:{
      &quot;22/tcp&quot;:[
              {&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;24&quot;}],
      &quot;80/tcp&quot;:[
              {&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]
 }
-</code></pre><pre><code>&quot;PortBindings&quot;:{&quot;22/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;24&quot;}],&quot;80/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]},
+</code></pre><pre tabindex="0"><code>&quot;PortBindings&quot;:{&quot;22/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;24&quot;}],&quot;80/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]},
 </code></pre></li>
 </ul>
 </li>
@@ -915,18 +915,18 @@ systemctl start/stop/restart docker
 <ul>
 <li>
 <p>列出所有的网络</p>
-<pre><code>docker network ls
+<pre tabindex="0"><code>docker network ls
 </code></pre></li>
 <li>
 <p>查看容器80端口对应本地的IP和端口号</p>
-<pre><code>docker port Name/ID 80
+<pre tabindex="0"><code>docker port Name/ID 80
 </code></pre></li>
 </ul>
 <h2 id="坑儿们">坑儿们</h2>
 <ul>
 <li>
 <p><code>-bash: docker-machine: command not found</code>（macOS）</p>
-<pre><code>base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp;
+<pre tabindex="0"><code>base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;&amp;
   curl -L $base/docker-machine-$(uname -s)-$(uname -m) &gt;/usr/local/bin/docker-machine &amp;&amp;
   chmod +x /usr/local/bin/docker-machine
 </code></pre></li>

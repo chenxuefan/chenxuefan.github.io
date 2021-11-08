@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="Linux学习笔记 | nginx" />
 <meta property="og:description" content="前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/4/nginx/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/4/nginx/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-22T14:33:00+00:00" />
 <meta property="article:modified_time" content="2020-04-22T14:33:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux学习笔记 | nginx"/>
@@ -304,42 +304,42 @@ if (!doNotTrack) {
 <li>官网源码安装，相对复杂，可使用最新版本</li>
 </ol>
 <p>在此采用第1种方法安装：</p>
-<pre><code>sudo apt-get install nginx　 #ubuntu
+<pre tabindex="0"><code>sudo apt-get install nginx　 #ubuntu
 yum install nginx　　　　　　　#centos
 </code></pre><p>安装完成，启动nginx</p>
-<pre><code>sudo service nginx start
+<pre tabindex="0"><code>sudo service nginx start
 </code></pre><p>版本查看</p>
-<pre><code>nginx -v
+<pre tabindex="0"><code>nginx -v
 </code></pre><p>nginx状态查询</p>
-<pre><code>sudo service nginx status
+<pre tabindex="0"><code>sudo service nginx status
 </code></pre><p>查看本机ip地址</p>
-<pre><code>ifconfig
+<pre tabindex="0"><code>ifconfig
 </code></pre><p>浏览器输入ip地址，若看到如下画面则表示web服务器启动正常</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200415211450842-2131514252.png" alt="img"></p>
 <h2 id="nginx相关文件的配置">nginx相关文件的配置</h2>
 <p>nginx的相关文件位置</p>
-<pre><code>/usr/sbin/nginx     #主程序
+<pre tabindex="0"><code>/usr/sbin/nginx     #主程序
 /etc/nginx          #存放配置文件
 /usr/share/nginx    #存放静态文件
 /var/log/nginx      #存放日志
 </code></pre><h3 id="1-html文件varwwwhtmlindexhtml">1. html文件：/var/www/html/index.html</h3>
 <p>打开以下目录，目录下的‘index.nginx-debian.html’就是我们刚刚在浏览器看到的欢迎页面的网页源文件</p>
-<pre><code>cd /var/www/html
+<pre tabindex="0"><code>cd /var/www/html
 </code></pre><p>在/html目录下创建新的网页文件&rsquo;index.html'</p>
-<pre><code>sudo touch index.html
+<pre tabindex="0"><code>sudo touch index.html
 </code></pre><p>根据需要，自行编辑&rsquo;index.html&rsquo;文件的内容</p>
-<pre><code>sudo vim index.html
+<pre tabindex="0"><code>sudo vim index.html
 </code></pre><p>根据需要，在/www目录下建立多个html文件夹，如下图</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200415220029706-1091802443-20210429115058523.png" alt="img"></p>
 <p>若需要用winscp来操作，则需修改权限，上面文件夹中，为绿色的则是全权限，修改权限的代码如下</p>
-<pre><code>sudo chmod -R 777 文件名
+<pre tabindex="0"><code>sudo chmod -R 777 文件名
 </code></pre><h3 id="2-default文件etcnginxsites-availabledefault"><strong>2. default文件：/etc/nginx/sites-available/default</strong></h3>
 <p>打开以下目录，目录下这个‘default’是我们真正要关注的配置文件</p>
 <p>cd /etc/nginx/sites-available</p>
 <p>&lsquo;default&rsquo;的意思是默认，说明这是一个默认设置</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200415214841650-1800174895.png" alt="img"></p>
 <p>以防万一，先备份default文件为副本default_bak，代码如下</p>
-<pre><code>sudo cp default default_bak
+<pre tabindex="0"><code>sudo cp default default_bak
 </code></pre><p>关注<code>server{}</code>大括号内的内容：</p>
 <ul>
 <li>
@@ -369,13 +369,13 @@ yum install nginx　　　　　　　#centos
 </ol>
 <p>多站点配置方法非常多，下面介绍其中一种：</p>
 <p><strong>修改单个配置文件</strong>（/etc/nginx/sites-available/default）</p>
-<pre><code>sudo vim default
+<pre tabindex="0"><code>sudo vim default
 </code></pre><p>除了通过命令行修改，也可在Windows平台通过编辑器WinScp进行远程编辑</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421163729443-848865938.png" alt="img"></p>
 <h3 id="1-通过不同的端口连接"><strong>1. 通过不同的端口连接</strong></h3>
 <p>1、修改html文件：</p>
 <p>打开下面的目录，新建一个新的网页源文件，也可直接复制目录下的html文件，因目录下的html是一个文件夹，因此复制的时候需加参数：-R</p>
-<pre><code>cd /var/www/
+<pre tabindex="0"><code>cd /var/www/
 sudo cp -R html html2
 </code></pre><p>此时文件关系树如下：</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200421165457259-876174879.png" alt="img"></p>

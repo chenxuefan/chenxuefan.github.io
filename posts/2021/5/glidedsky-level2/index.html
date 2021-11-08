@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="GlidedSky | 爬虫题目2" />
 <meta property="og:description" content="题目地址 - http://glidedsky.com/level/crawler-basic-2 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-2 心得 这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2021/5/glidedsky-level2/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2021/5/glidedsky-level2/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-07T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-05-07T00:00:00+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GlidedSky | 爬虫题目2"/>
@@ -108,7 +108,7 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/draft/data-grand/">
+          <a class="icon" href=" https://billie52707.cn/posts/2021/5/python-requests/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
@@ -276,7 +276,7 @@ if (!doNotTrack) {
 <p>这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如果追求速度，还可以加入多线程、多进程的处理。</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
 <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74"># Talk is cheap,show me the codes!
 </span><span style="color:#e6db74">
@@ -291,7 +291,7 @@ if (!doNotTrack) {
 
 logging<span style="color:#f92672">.</span>basicConfig(
     <span style="color:#75715e"># filename=&#39;glidedsky.log&#39;,</span>
-    format<span style="color:#f92672">=</span>f<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74">[</span><span style="color:#e6db74">%(lineno)s</span><span style="color:#e6db74">]: </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#34;</span>,
+    format<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;%(asctime)s %(levelname)s[%(lineno)s]: %(message)s&#34;</span>,
     datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#34;</span>,
     level <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>INFO
 )
@@ -344,9 +344,9 @@ logging<span style="color:#f92672">.</span>basicConfig(
                 <span style="color:#e6db74">&#39;password&#39;</span>: <span style="color:#e6db74">&#39;a1222222222&#39;</span>
             })
         <span style="color:#66d9ef">if</span> r<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
-            <span style="color:#66d9ef">return</span> True
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
         <span style="color:#66d9ef">else</span>:
-            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(f<span style="color:#e6db74">&#39;登录失败，状态码：{r.status_code}&#39;</span>)
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;登录失败，状态码：</span><span style="color:#e6db74">{</span>r<span style="color:#f92672">.</span>status_code<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
 
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</span>(self):
             r <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>session<span style="color:#f92672">.</span>get(self<span style="color:#f92672">.</span>url,params<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;page&#39;</span>:self<span style="color:#f92672">.</span>page},headers<span style="color:#f92672">=</span>self<span style="color:#f92672">.</span>headers)
@@ -354,7 +354,7 @@ logging<span style="color:#f92672">.</span>basicConfig(
             numList <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.col-md-1&#39;</span>)<span style="color:#f92672">.</span>text()<span style="color:#f92672">.</span>split()
             numList <span style="color:#f92672">=</span> [int(num) <span style="color:#66d9ef">for</span> num <span style="color:#f92672">in</span> numList]
             self<span style="color:#f92672">.</span>count <span style="color:#f92672">+=</span> sum(numList)
-            logging<span style="color:#f92672">.</span>info(f<span style="color:#e6db74">&#39;{self.page}:{self.count}&#39;</span>)
+            logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>page<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
             self<span style="color:#f92672">.</span>page <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(self):
@@ -408,7 +408,7 @@ bb<span style="color:#f92672">.</span>main()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          374 字
+          375 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

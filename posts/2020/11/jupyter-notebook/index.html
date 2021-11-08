@@ -24,13 +24,13 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-
   <meta property="og:title" content="Jupyter Notebook学习笔记" />
 <meta property="og:description" content="Jupyter Notebook 入门 通过 Jupyter 使用实时代码、方程式和可视化及文本创建交互式的共享笔记本。 自从有了纸莎草纸以来，出版人们一直在努力以吸引读者的方式来格式化数据" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/11/jupyter-notebook/" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/11/jupyter-notebook/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-05T02:30:10+00:00" />
 <meta property="article:modified_time" content="2020-11-05T02:30:10+00:00" />
+
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jupyter Notebook学习笔记"/>
@@ -287,10 +287,10 @@ if (!doNotTrack) {
 <h2 id="安装并开始-jupyter">安装并开始 Jupyter</h2>
 <p>Jupyter 软件是开源的，其授权于<a href="https://opensource.org/licenses/BSD-3-Clause">修改过的 BSD 许可证</a>，它可以<a href="http://jupyter.org/install.html">安装在 Linux、MacOS 或 Windows 上</a>。有很多种方法可以安装 Jupyter；我在 Linux 和 MacOS 上试过 PIP 和 <a href="https://www.anaconda.com/download/#linux">Anaconda</a> 安装方式。PIP 安装要求你的计算机上已经安装了 Python；Jupyter 推荐 Python 3。</p>
 <p>Python 3 已经安装，我通过在终端（在 Linux 或 Mac 上）运行以下命令来安装 Jupyter：</p>
-<pre><code>$ python3 -m pip install --upgrade pip
+<pre tabindex="0"><code>$ python3 -m pip install --upgrade pip
 $ python3 -m pip install jupyter
 </code></pre><p>在终端提示符输入以下命令立即启动应用程序：</p>
-<pre><code>$ jupyter notebook
+<pre tabindex="0"><code>$ jupyter notebook
 </code></pre><p>很快，我的浏览器打开并显示了我在 <code>http://localhost:8888</code> 的 Jupyter Notebook 服务器。（支持的浏览器有 Google Chrome、Firefox 和 Safari）</p>
 <p><a href="https://camo.githubusercontent.com/ec08c7ede1402f4a639411560871c14872a5620e/68747470733a2f2f6f70656e736f757263652e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f70616e6f706f6c795f696d6167655f6f726967696e616c2f7075626c69632f753132383635312f6a7570797465725f312e706e673f69746f6b3d55794d3147755647"><img src="https://p0.ssl.qhimg.com/t0154f1f4a086a632b4.png" alt="img"></a></p>
 <p>在右上角有一个标有 “New” 的下拉菜单，它使我能够根据自己的指示和代码快速创建新的笔记本。请注意，我的新笔记本默认为 Python 3，这是我目前的环境。</p>
@@ -312,16 +312,16 @@ $ python3 -m pip install jupyter
 <ol>
 <li>
 <p>默认端口启动</p>
-<pre><code>jupyter notebook
+<pre tabindex="0"><code>jupyter notebook
 </code></pre></li>
 <li>
 <p>指定端口启动</p>
-<pre><code>jupyter notebook --port &lt;port_number&gt;
+<pre tabindex="0"><code>jupyter notebook --port &lt;port_number&gt;
 </code></pre><p>其中，“&lt;port_number&gt;”是自定义端口号，直接以数字的形式写在命令当中，数字两边不加尖括号“&lt;&gt;”。如：<code>jupyter notebook --port 9999</code>，即在端口号为“9999”的服务器启动Jupyter Notebook</p>
 </li>
 <li>
 <p>启动服务器但不打开浏览器</p>
-<pre><code>jupyter notebook --no-browser
+<pre tabindex="0"><code>jupyter notebook --no-browser
 </code></pre></li>
 </ol>
 <h2 id="在本机远程访问服务器jupyter-notebook">在本机远程访问服务器jupyter notebook</h2>
@@ -329,13 +329,13 @@ $ python3 -m pip install jupyter
 <ol>
 <li>
 <p>生成配置文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jupyter notebook --generate-config
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jupyter notebook --generate-config
 </code></pre></div><p>配置文件目录为 - <code>~/.jupyter/jupyter_notebook_config.py</code></p>
 </li>
 <li>
 <p>生成密码</p>
 <p>在终端输入<code>python3</code>,输入如下代码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> IPython.lib <span style="color:#f92672">import</span> passwd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> IPython.lib <span style="color:#f92672">import</span> passwd
 passwd()
 </code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210105140645558.png" alt="image-20210105140645558"></p>
 <p>提示<code>Enter password:</code>手动输入密码, 这个密码是后面<code>远程访问登录jupyter notebook</code>需要输入的密码(我设置为<code>1234</code>, 方便记忆</p>
@@ -348,7 +348,7 @@ passwd()
 </li>
 <li>
 <p>启动jupyter</p>
-<pre><code>jupyter notebook
+<pre tabindex="0"><code>jupyter notebook
 </code></pre></li>
 <li>
 <p>本机浏览器输入地址 - <code>服务器公网IP:8888</code>，即可访问到登录页面</p>
