@@ -23,7 +23,7 @@
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/oss/</guid>
-      <description>ossutil命令行管理工具 学习文档 https://help.aliyun.com/document_detail/31882.html?spm=a2c4g.11186623.3.3.41c321b4Dl5AHV 在mac配置ossutil环境 安装 - curl -o ossutilmac64 http://gosspublic.alicdn.com/ossutil/1.7.3/ossutilmac64 赋予权限 - chmod 755 ossutilmac64 改下名 - mv ossutilmac64 ossutil 添加到环境变量 - mv ossutil /usr/local/bin/ossutil 配置 -</description>
+      <description>ossutil命令行管理工具 学习文档 https://help.aliyun.com/document_detail/31882.html?spm=a2c4g.11186623.3.3.41c321b4Dl5AHV 在mac配置ossutil环境 安装 - curl -o ossutilmac64 http://gosspublic.alicdn.com/ossutil/1.7.3/ossutilmac64 赋予权限 - chmod 755 ossutilmac64 改下名 - mv ossutilmac64 ossutil 转移到可执行文件保存路径 - mv</description>
     </item>
     
     <item>

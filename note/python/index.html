@@ -578,7 +578,7 @@ time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.
 </code></pre></div></li>
 <li>
 <p>计算n天前后的日期</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delta_time</span>(mode:str, date:str, day:int):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delta_time</span>(mode:str, date:str, day:int) <span style="color:#f92672">-&gt;</span> str:
   <span style="color:#e6db74">&#39;&#39;&#39;
 </span><span style="color:#e6db74">  计算某个日期 n 天前的日期
 </span><span style="color:#e6db74">  :param mode: ADD or SUB （加或减）
@@ -601,7 +601,7 @@ time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.
 </code></pre></div></li>
 <li>
 <p>获取时间段内的日期</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_date_list</span>(start_date, end_date, format):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_date_list</span>(start_date, end_date, format) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">    根据开始日期、结束日期返回这段时间里所有天的集合
 </span><span style="color:#e6db74">    :param start_date: 开始日期(日期格式或者字符串格式)
@@ -622,7 +622,40 @@ time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.
 </code></pre></div></li>
 <li>
 <p>获取时间段内的某一天日期</p>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">split_dates</span>(start_date_str: str, end_date_str: str):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    以月为周期，分割时间段，取每月的一号如 2021-12-01
+</span><span style="color:#e6db74">    :params start_date: 例 2021-10，2021-9
+</span><span style="color:#e6db74">    :params end_date: 例 2021-10，2021-9
+</span><span style="color:#e6db74">    :return date_tuple: 例 [(&#39;2021-09-01&#39;, &#39;2021-10-01&#39;), (&#39;2021-10-01&#39;, &#39;2021-11-01&#39;)]
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    _format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>
+    start_date_str <span style="color:#f92672">=</span> start_date_str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-01&#39;</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> start_date_str<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>) <span style="color:#66d9ef">else</span> start_date_str
+    end_date_str <span style="color:#f92672">=</span> end_date_str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-01&#39;</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> end_date_str<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>) <span style="color:#66d9ef">else</span> end_date_str
+    start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(start_date_str, _format)
+    end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(end_date_str, _format)
+
+    dates <span style="color:#f92672">=</span> list()
+    dates_tuple <span style="color:#f92672">=</span> list()
+    dates<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(_format))
+
+    <span style="color:#75715e"># 获取区间内所有的日期</span>
+    <span style="color:#66d9ef">while</span> start_date <span style="color:#f92672">&lt;=</span> end_date:
+        start_date <span style="color:#f92672">+=</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        dates<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(_format))
+
+    <span style="color:#75715e"># 获取区间内”日为1“的日期</span>
+    dates <span style="color:#f92672">=</span> [date <span style="color:#66d9ef">for</span> date <span style="color:#f92672">in</span> dates <span style="color:#66d9ef">if</span> date<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>)]
+
+    <span style="color:#75715e"># 分组</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(dates<span style="color:#f92672">.</span>__len__() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>):
+        dates_tuple<span style="color:#f92672">.</span>append((dates[i], dates[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]))
+
+    log<span style="color:#f92672">.</span>info(dates)
+    log<span style="color:#f92672">.</span>info(dates_tuple)
+    <span style="color:#66d9ef">return</span> dates_tuple
+
+</code></pre></div></li>
 </ul>
 <h3 id="字典排序">字典排序</h3>
 <ol>
@@ -831,7 +864,7 @@ pdf<span style="color:#f92672">.</span>close()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2971 字
+          3140 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
