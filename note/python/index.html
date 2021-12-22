@@ -333,6 +333,9 @@ A()<span style="color:#f92672">.</span>pm()  <span style="color:#75715e"># c</sp
 <p><code>all(iterable)</code> - 参数iterable为元组或列表，如果参数的所有元素不为0、''、False、None或者iterable为空，all(iterable)返回True，否则返回False；</p>
 </li>
 <li>
+<p><code>any(iterable)</code> -</p>
+</li>
+<li>
 <p><code>isinstance(obj,class_or_tuple)</code> - 如果obj的类型与class_or_tuple的类型相同则返回 True，否则返回 False</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">isinstance(<span style="color:#e6db74">&#39;str&#39;</span>, str) <span style="color:#75715e"># True</span>
 isinstance(<span style="color:#ae81ff">111</span>, (str, int, float)) <span style="color:#75715e"># True</span>
@@ -596,20 +599,50 @@ time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.
   date <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>strftime(format, struct_time)
   <span style="color:#66d9ef">return</span> date
 </code></pre></div></li>
+<li>
+<p>获取时间段内的日期</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_date_list</span>(start_date, end_date, format):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    根据开始日期、结束日期返回这段时间里所有天的集合
+</span><span style="color:#e6db74">    :param start_date: 开始日期(日期格式或者字符串格式)
+</span><span style="color:#e6db74">    :param end_date: 结束日期(日期格式或者字符串格式)
+</span><span style="color:#e6db74">    :param format: 格式化字符串, 如: &#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">    :return:
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    date_list <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">if</span> isinstance(start_date, str) <span style="color:#f92672">and</span> isinstance(end_date, str):
+        start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(start_date, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
+        end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(end_date, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
+    date_list<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(format))
+    <span style="color:#66d9ef">while</span> start_date <span style="color:#f92672">&lt;</span> end_date:
+        start_date <span style="color:#f92672">+=</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        date_list<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(format))
+    <span style="color:#66d9ef">return</span> date_list
+
+</code></pre></div></li>
+<li>
+<p>获取时间段内的某一天日期</p>
+</li>
 </ul>
 <h3 id="字典排序">字典排序</h3>
 <ol>
 <li>按key
 <ul>
-<li>methods：<code>sorted(dict)</code></li>
+<li>methods：<code>sorted(dict)</code>
+<ul>
 <li>return：包含键名的list（键名已排序）</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>按value
 <ul>
-<li>method：<code>sorted(dict.items(), key = lambda kv:(kv[1], kv[0]))</code></li>
+<li>method：<code>sorted(dict.items(), key = lambda kv:(kv[1], kv[0]))</code>
+<ul>
 <li>sorted的两个参数，前者是包含元组的数组，后者是处理的方法（一个函数）</li>
 <li>return：包含元组的数组（已排序）</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
@@ -798,7 +831,7 @@ pdf<span style="color:#f92672">.</span>close()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2839 字
+          2971 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

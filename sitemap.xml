@@ -3,18 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://billie52707.cn/categories/</loc>
-    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/draft/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/tags/python/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/draft/python-xlrd/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/tags/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/categories/tec/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/</loc>
+    <lastmod>2021-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/draft/pycharm/</loc>
+    <lastmod>2021-12-20T20:54:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/categories/life/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/posts/</loc>
-    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://billie52707.cn/tags/</loc>
-    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://billie52707.cn/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/posts/2021/10/sunset/</loc>
@@ -38,22 +53,13 @@
     <loc>https://billie52707.cn/posts/2021/8/life-shoot/</loc>
     <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://billie52707.cn/draft/</loc>
-    <lastmod>2021-08-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://billie52707.cn/draft/one-three-year/</loc>
     <lastmod>2021-08-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/posts/2021/7/tian-shoot/</loc>
     <lastmod>2021-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://billie52707.cn/tags/python/</loc>
-    <lastmod>2021-07-08T20:54:00+00:00</lastmod>
-  </url><url>
     <loc>https://billie52707.cn/draft/python-tensorflow/</loc>
-    <lastmod>2021-07-08T20:54:00+00:00</lastmod>
-  </url><url>
-    <loc>https://billie52707.cn/categories/tec/</loc>
     <lastmod>2021-07-08T20:54:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/draft/python-sqlalchemy/</loc>

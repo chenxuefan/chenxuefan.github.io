@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 08 Jul 2021 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | xlrd</title>
+      <link>https://billie52707.cn/draft/python-xlrd/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-xlrd/</guid>
+      <description>基本操作 import xlrd # 打开文件</description>
+    </item>
+    
+    <item>
+      <title>「pycharm」学习笔记</title>
+      <link>https://billie52707.cn/draft/pycharm/</link>
+      <pubDate>Mon, 20 Dec 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/pycharm/</guid>
+      <description>快捷键 import win: Alt + Enter mac: option + Enter pep8 mac：option+command+L</description>
+    </item>
+    
     <item>
       <title>python模块详解 | tensorflow</title>
       <link>https://billie52707.cn/draft/python-tensorflow/</link>
