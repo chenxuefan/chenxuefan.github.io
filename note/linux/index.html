@@ -311,10 +311,10 @@ if (!doNotTrack) {
 <pre tabindex="0"><code>netstat -tunlp | grep 端口号
 </code></pre><ul>
 <li>-t (tcp) 仅显示tcp相关选项</li>
-<li>-u (udp)仅显示udp相关选项</li>
-<li>-n 拒绝显示别名，能显示数字的全部转化为数字</li>
-<li>-l 仅列出在Listen(监听)的服务状态</li>
-<li>-p 显示建立相关链接的程序名</li>
+<li>-u (udp) 仅显示udp相关选项</li>
+<li>-n (num) 拒绝显示别名，能显示数字的全部转化为数字</li>
+<li>-l (listen) 仅列出在Listen(监听)的服务端口</li>
+<li>-p (port) 显示进程的 PID 和名称。仅当以 root 或 sudo 用户身份运行命令时，才会显示此信息</li>
 </ul>
 <p>例如查看 8000 端口的情况，使用以下命令：</p>
 <pre tabindex="0"><code>netstat -tunlp | grep 8000
@@ -328,6 +328,17 @@ if (!doNotTrack) {
 <p>查看进程占用情况，亦可条件检索</p>
 <pre tabindex="0"><code>ps -ef|grep python
 </code></pre></li>
+<li>
+<p>tar</p>
+<p>本程序最初的设计目的是将文件备份到<a href="https://baike.baidu.com/item/%E7%A3%81%E5%B8%A6">磁带</a>上（<strong>t</strong>ape <strong>ar</strong>chive），因而得名tar。</p>
+<pre tabindex="0"><code>tar -zvxf zz.tar.gz  # 解压
+</code></pre><ul>
+<li>-z或&ndash;gzip或&ndash;ungzip，通过gzip指令处理备份文件</li>
+<li>-v或&ndash;verbose，显示指令执行过程。</li>
+<li>-x或&ndash;extract或&ndash;get，从备份文件中还原文件</li>
+<li>-f&lt;备份文件&gt;或&ndash;file=&lt;备份文件&gt;，指定备份文件</li>
+</ul>
+</li>
 </ul>
 <h2 id="常见报错解决">常见报错解决</h2>
 <ul>
@@ -460,7 +471,7 @@ apt-get install pkg-config
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          766 字
+          990 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
