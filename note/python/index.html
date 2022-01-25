@@ -232,6 +232,7 @@ if (!doNotTrack) {
         <li><a href="#pdf-to-png">PDF to PNG</a></li>
         <li><a href="#图片拼接">图片拼接</a></li>
         <li><a href="#压缩图片大小">压缩图片大小</a></li>
+        <li><a href="#解压压缩包">解压压缩包</a></li>
       </ul>
     </li>
   </ul>
@@ -858,6 +859,24 @@ pdf<span style="color:#f92672">.</span>close()
             quality <span style="color:#f92672">-=</span> step
             o_size <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>getsize(outfile)
         <span style="color:#66d9ef">return</span> outfile, get_size(outfile)
+</code></pre></div><h3 id="解压压缩包">解压压缩包</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> zipfile
+<span style="color:#f92672">import</span> os
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">un_zip</span>(file_name):  
+    <span style="color:#e6db74">&#34;&#34;&#34;unzip zip file&#34;&#34;&#34;</span>  
+    zip_file <span style="color:#f92672">=</span> zipfile<span style="color:#f92672">.</span>ZipFile(file_name)
+    <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">    if os.path.isdir(file_name.split(&#34;.&#34;)[0]):  
+</span><span style="color:#e6db74">        pass  
+</span><span style="color:#e6db74">    else:  
+</span><span style="color:#e6db74">        os.mkdir(file_name.split(&#34;.&#34;)[0])
+</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">for</span> names <span style="color:#f92672">in</span> zip_file<span style="color:#f92672">.</span>namelist():  
+        zip_file<span style="color:#f92672">.</span>extract(names)  <span style="color:#75715e">#加入到某个文件夹中 zip_file.extract(names,file_name.split(&#34;.&#34;)[0])</span>
+    zip_file<span style="color:#f92672">.</span>close()
+
+un_zip(<span style="color:#e6db74">&#34;test.zip&#34;</span>)
 </code></pre></div><p>更多 - <a href="https://billie52707.cn/tags/python/">https://billie52707.cn/tags/python/</a></p>
 
     </div>
@@ -896,7 +915,7 @@ pdf<span style="color:#f92672">.</span>close()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3237 字
+          3279 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -979,6 +998,7 @@ pdf<span style="color:#f92672">.</span>close()
         <li><a href="#pdf-to-png">PDF to PNG</a></li>
         <li><a href="#图片拼接">图片拼接</a></li>
         <li><a href="#压缩图片大小">压缩图片大小</a></li>
+        <li><a href="#解压压缩包">解压压缩包</a></li>
       </ul>
     </li>
   </ul>

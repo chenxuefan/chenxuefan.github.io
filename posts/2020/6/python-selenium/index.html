@@ -1116,21 +1116,35 @@ driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6
 driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://antispider1.scrape.center/&#39;</span>)
 </code></pre></div><h2 id="页面加载超时">页面加载超时</h2>
 <ul>
-<li><code>driver.set_page_load_timeout()</code></li>
+<li>方法1： <code>driver.set_page_load_timeout()</code></li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
 <span style="color:#f92672">from</span> selenium.common.exceptions <span style="color:#f92672">import</span> TimeoutException
 
 driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
-driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e">#</span>
-browser<span style="color:#f92672">.</span>set_script_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
+driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
+driver<span style="color:#f92672">.</span>set_script_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
 <span style="color:#66d9ef">try</span>:
 	driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>)
 <span style="color:#66d9ef">except</span> TimeoutException:
   driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;window.stop()&#39;</span>)
   print(<span style="color:#e6db74">&#39;页面加载超时&#39;</span>)
   
-</code></pre></div><h2 id="填写表单的几种姿势">填写表单的几种姿势</h2>
+</code></pre></div><ul>
+<li>
+<p>方法2：配置浏览器参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+<span style="color:#f92672">from</span> selenium.webdriver.common.desired_capabilities <span style="color:#f92672">import</span> DesiredCapabilities
+
+<span style="color:#75715e">#get直接返回，不再等待界面加载完成</span>
+desired_capabilities <span style="color:#f92672">=</span> DesiredCapabilities<span style="color:#f92672">.</span>CHROME
+desired_capabilities[<span style="color:#e6db74">&#34;pageLoadStrategy&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>
+
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
+driver<span style="color:#f92672">.</span>get()
+</code></pre></div></li>
+</ul>
+<h2 id="填写表单的几种姿势">填写表单的几种姿势</h2>
 <ol>
 <li>
 <p><code>send_keys()</code></p>
@@ -1235,7 +1249,7 @@ driver<span style="color:#f92672">.</span>execute_script(js, ele)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          7822 字
+          7874 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
