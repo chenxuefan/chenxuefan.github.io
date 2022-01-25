@@ -1116,8 +1116,8 @@ driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6
 driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://antispider1.scrape.center/&#39;</span>)
 </code></pre></div><h2 id="页面加载超时">页面加载超时</h2>
 <ul>
-<li>方法1： <code>driver.set_page_load_timeout()</code></li>
-</ul>
+<li>
+<p>方法1： <code>driver.set_page_load_timeout()</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
 <span style="color:#f92672">from</span> selenium.common.exceptions <span style="color:#f92672">import</span> TimeoutException
 
@@ -1129,8 +1129,7 @@ driver<span style="color:#f92672">.</span>set_script_timeout(<span style="color:
 <span style="color:#66d9ef">except</span> TimeoutException:
   driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;window.stop()&#39;</span>)
   print(<span style="color:#e6db74">&#39;页面加载超时&#39;</span>)
-  
-</code></pre></div><ul>
+</code></pre></div></li>
 <li>
 <p>方法2：配置浏览器参数</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
