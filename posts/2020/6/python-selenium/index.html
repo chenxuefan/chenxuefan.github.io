@@ -592,7 +592,7 @@ ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672"
 <span style="color:#f92672">from</span> selenium.webdriver.support <span style="color:#f92672">import</span> expected_conditions <span style="color:#66d9ef">as</span> EC
 
 <span style="color:#75715e">#显式等待的函数</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Explicit_Waits</span>(driver, way, path):
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">explicit_wait</span>(driver, way, path):
      <span style="color:#66d9ef">try</span>:
         ele <span style="color:#f92672">=</span> WebDriverWait(driver, <span style="color:#ae81ff">150</span>)<span style="color:#f92672">.</span>until(
           EC<span style="color:#f92672">.</span>presence_of_element_located((way, path)),
@@ -603,7 +603,7 @@ ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672"
         print(<span style="color:#e6db74">&#39;元素寻找失败： &#39;</span> <span style="color:#f92672">+</span> str(e))
         <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
 
-ele <span style="color:#f92672">=</span> Explicit_Waits(driver, By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#39;//div[@class=&#34;pagination_index&#34;]&#39;</span>)<span style="color:#75715e">#显式等待在DOM中找到目标元素</span>
+ele <span style="color:#f92672">=</span> explicit_wait(driver, By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#39;//div[@class=&#34;pagination_index&#34;]&#39;</span>)<span style="color:#75715e">#显式等待在DOM中找到目标元素</span>
 </code></pre></div><p><code>until()</code>方法de源码</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">until</span>(self, method, message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>):
         <span style="color:#e6db74">&#34;&#34;&#34;Calls the method provided with the driver as an argument until the </span><span style="color:#ae81ff">\
@@ -1124,6 +1124,7 @@ driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;h
 driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
 driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
 driver<span style="color:#f92672">.</span>set_script_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
+
 <span style="color:#66d9ef">try</span>:
 	driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>)
 <span style="color:#66d9ef">except</span> TimeoutException:
@@ -1208,7 +1209,7 @@ driver<span style="color:#f92672">.</span>execute_script(js)
 <p><code>execute_script()</code> + ele</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;arguments[0].click();&#39;</span>
 ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_<span style="color:#f92672">...</span>
-driver<span style="color:#f92672">.</span>execute_script(js, ele)
+driver<span style="color:#f92672">.</span>execute_script(js, ele) <span style="color:#75715e">#</span>
 </code></pre></div></li>
 </ol>
 
@@ -1248,7 +1249,7 @@ driver<span style="color:#f92672">.</span>execute_script(js, ele)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          7874 字
+          7875 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
