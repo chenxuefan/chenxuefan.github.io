@@ -235,6 +235,12 @@ if (!doNotTrack) {
         <li><a href="#解压压缩包">解压压缩包</a></li>
         <li><a href="#获取python执行文件的路径">获取python执行文件的路径</a></li>
         <li><a href="#-is">== is</a></li>
+        <li><a href="#中文转换url编码">中文转换url编码</a></li>
+        <li><a href="#token">token</a></li>
+        <li><a href="#traslate方法">traslate方法</a></li>
+        <li><a href="#cmd命令中的路径存在空格导致命令出错">cmd命令中的路径存在空格，导致命令出错</a></li>
+        <li><a href="#selenium捕获不到调试浏览器">selenium捕获不到调试浏览器</a></li>
+        <li><a href="#shadowdom节点操作">shadowDOM节点操作</a></li>
       </ul>
     </li>
   </ul>
@@ -889,6 +895,40 @@ sys<span style="color:#f92672">.</span>executable  <span style="color:#75715e">#
 <li>is 比较的是<strong>两个实例对象是不是完全相同，它们是不是同一个对象，占用的内存地址是否相同。即is比较两个条件：1.内容相同。2.内存中地址相同</strong></li>
 <li><a href="https://blog.csdn.net/qq_26442553/article/details/82195061">https://blog.csdn.net/qq_26442553/article/details/82195061</a></li>
 </ul>
+<h3 id="中文转换url编码">中文转换url编码</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> urllib.parse
+print(urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>quote())
+print(urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>unquote())
+</code></pre></div><h3 id="token">token</h3>
+<p><a href="https://blog.csdn.net/weixin_30394633/article/details/95011702">https://blog.csdn.net/weixin_30394633/article/details/95011702</a></p>
+<h3 id="traslate方法">traslate方法</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">intab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abcde&#34;</span>
+outtab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;12345&#34;</span>
+trantab <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span>maketrans(intab, outtab)   <span style="color:#75715e"># 制作翻译表</span>
+
+str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;this is string example....wow!!!&#34;</span>
+print(str<span style="color:#f92672">.</span>translate(trantab))
+</code></pre></div><h3 id="cmd命令中的路径存在空格导致命令出错">cmd命令中的路径存在空格，导致命令出错</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span>
+user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\police\AppData\Local\Google\Chrome\User Data&#34;</span>
+os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">rf</span><span style="color:#e6db74">&#39;start &#34;&#34; &#34;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</code></pre></div><ul>
+<li>
+<p>措施一</p>
+<p>在路径前后加上双引号，如<code>&quot;user_data_dir&quot;</code></p>
+</li>
+<li>
+<p>措施二</p>
+<p>在路径前后加上双引号，以及前面再加上一个双引号，如 <code>start &quot;&quot; &quot;{chrome_path}&quot;</code></p>
+</li>
+</ul>
+<h3 id="selenium捕获不到调试浏览器">selenium捕获不到调试浏览器</h3>
+<p>可能原因：chromedriver.exe进程冲突，检查任务管理器中是否有多个chromedriver.exe的进程，全部停止任务，重试即可捕获成功</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> Options()
+options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
+</code></pre></div><h3 id="shadowdom节点操作">shadowDOM节点操作</h3>
+<p><a href="https://www.jianshu.com/p/4d00259f6441">https://www.jianshu.com/p/4d00259f6441</a></p>
 <p>更多 - <a href="https://billie52707.cn/tags/python/">https://billie52707.cn/tags/python/</a></p>
 
     </div>
@@ -927,7 +967,7 @@ sys<span style="color:#f92672">.</span>executable  <span style="color:#75715e">#
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3419 字
+          3684 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1013,6 +1053,12 @@ sys<span style="color:#f92672">.</span>executable  <span style="color:#75715e">#
         <li><a href="#解压压缩包">解压压缩包</a></li>
         <li><a href="#获取python执行文件的路径">获取python执行文件的路径</a></li>
         <li><a href="#-is">== is</a></li>
+        <li><a href="#中文转换url编码">中文转换url编码</a></li>
+        <li><a href="#token">token</a></li>
+        <li><a href="#traslate方法">traslate方法</a></li>
+        <li><a href="#cmd命令中的路径存在空格导致命令出错">cmd命令中的路径存在空格，导致命令出错</a></li>
+        <li><a href="#selenium捕获不到调试浏览器">selenium捕获不到调试浏览器</a></li>
+        <li><a href="#shadowdom节点操作">shadowDOM节点操作</a></li>
       </ul>
     </li>
   </ul>
