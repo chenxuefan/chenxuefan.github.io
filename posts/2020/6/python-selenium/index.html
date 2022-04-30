@@ -229,18 +229,18 @@ if (!doNotTrack) {
     <li><a href="#登录操作">登录操作</a></li>
     <li><a href="#javascript操作">JavaScript操作</a></li>
     <li><a href="#窗截图">窗⼝截图</a></li>
-    <li><a href="#控制已打开的浏览器">控制已打开的浏览器</a>
-      <ul>
-        <li><a href="#1启动浏览器">(1)启动浏览器</a></li>
-        <li><a href="#2捕获调试浏览器">(2)捕获调试浏览器</a></li>
-      </ul>
-    </li>
     <li><a href="#反屏蔽">反屏蔽</a></li>
     <li><a href="#页面加载超时">页面加载超时</a></li>
     <li><a href="#填写表单的几种姿势">填写表单的几种姿势</a></li>
     <li><a href="#页面元素点击的几种姿势">页面元素点击的几种姿势</a>
       <ul>
         <li><a href="#js获取身份验证信息">js获取身份验证信息</a></li>
+      </ul>
+    </li>
+    <li><a href="#控制已打开的浏览器">控制已打开的浏览器</a>
+      <ul>
+        <li><a href="#1步骤1启动浏览器">(1)步骤1：启动浏览器</a></li>
+        <li><a href="#2步骤2捕获调试浏览器">(2)步骤2：捕获调试浏览器</a></li>
       </ul>
     </li>
   </ul>
@@ -358,6 +358,17 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
 <p>禁止图片和css加载</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;profile.managed_default_content_settings.images&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;permissions.default.stylesheet&#39;</span>: <span style="color:#ae81ff">2</span>}
 options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
+</code></pre></div></li>
+<li>
+<p>指定下载文件目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">save_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\&#34;</span>
+prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;download.default_directory&#34;</span>: save_path}
+option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
+</code></pre></div></li>
+<li>
+<p>允许多文件下载弹窗</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;download.prompt_for_download&#34;</span>: <span style="color:#66d9ef">False</span>}
+option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
 </code></pre></div></li>
 <li>
 <p>设置代理</p>
@@ -940,7 +951,7 @@ browser<span style="color:#f92672">.</span>close()
 <li>
 <p>浏览器操作</p>
 <ul>
-<li><code>window.open(url);</code> # 打开浏览器</li>
+<li><code>window.open(url);</code> # 打开网页地址</li>
 <li><code>return document.documentElement.scrollWidth;</code> #  获取网页宽度</li>
 <li><code>return document.documentElement.scrollHeight;</code> # 获取网页长度</li>
 <li><code>window.resizeTo(width,height);</code> # 绝对方法，设置浏览器窗口的实际大小，即“变化到多少”</li>
@@ -1080,46 +1091,7 @@ driver<span style="color:#f92672">.</span>set_window_size(width, height)
 <span style="color:#75715e"># 截取当前窗⼝，并指定截图图⽚的保存位置</span>
 driver<span style="color:#f92672">.</span>get_screenshot_as_file(<span style="color:#e6db74">&#34;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">baidu_img.jpg&#34;</span>)
 driver<span style="color:#f92672">.</span>quit()
-</code></pre></div><h2 id="控制已打开的浏览器">控制已打开的浏览器</h2>
-<p>在使用selenium进行自动化测试中我们有时会遇到这样的情况：</p>
-<p>我们需要手动打开浏览器，进入到所需的页面，执行一些手动任务，如输入表单、输入验证码，登陆成功后，然后再开始运行自动化脚本。</p>
-<p>这种情况下如何使用selenium来接管先前已打开的浏览器呢？</p>
-<p>这里给出Google Chrome浏览器的解决方案。</p>
-<p>我们可以利用Chrome DevTools协议。它允许客户检查和调试Chrome浏览器。</p>
-<h3 id="1启动浏览器">(1)启动浏览器</h3>
-<ul>
-<li>
-<p>Windows</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Billie</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">AppData</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Local</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Google</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Chrome</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Application</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome.exe&#39;</span>  <span style="color:#75715e"># chrome.exe所在目录,注：双斜杠</span>
-user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">selenium_ui_auto</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome_temp&#39;</span>
-os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;start </span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)  <span style="color:#75715e"># 注：双斜杆;start</span>
-</code></pre></div></li>
-<li>
-<p>macOS</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome&#39;</span>
-user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;~/ChromeProfile&#39;</span>
-os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;;&#39;</span>)
-</code></pre></div><p>cmd命令中的路径存在空格，导致命令出错</p>
-<ul>
-<li>
-<p>措施一</p>
-<p>在路径前后加上双引号，如<code>&quot;user_data_dir&quot;</code></p>
-</li>
-<li>
-<p>措施二</p>
-<p>在路径前后加上双引号，以及前面再加上一个双引号，如 <code>start &quot;&quot; &quot;{chrome_path}&quot;</code></p>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span>
-user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\police\AppData\Local\Google\Chrome\User Data&#34;</span>
-os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">rf</span><span style="color:#e6db74">&#39;start &#34;&#34; &#34;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
-</code></pre></div></li>
-</ul>
-<h3 id="2捕获调试浏览器">(2)捕获调试浏览器</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> Options()
-options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options) <span style="color:#75715e"># 如浏览器不存在，则会在约一分钟(或半分钟)等待之后，报错-WebDriverException</span>
-</code></pre></div><p>捕获不到调试浏览器，可能原因：chromedriver.exe进程冲突，检查任务管理器中是否有多个chromedriver.exe的进程，全部停止任务，重试即可捕获成功。</p>
+</code></pre></div><p>下面是一些常见状况的解决方案：</p>
 <h2 id="反屏蔽">反屏蔽</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6db74">&#39;Page.addScriptToEvaluateOnNewDocument&#39;</span>, {
    <span style="color:#e6db74">&#39;source&#39;</span>: <span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>
@@ -1237,7 +1209,56 @@ driver<span style="color:#f92672">.</span>execute_script(js, ele) <span style="c
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return window.localStorage;&#39;</span>
 js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return window.sessionStorage;&#39;</span>
 js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return document.cookie;&#39;</span>
-</code></pre></div>
+</code></pre></div><h2 id="控制已打开的浏览器">控制已打开的浏览器</h2>
+<p>在使用selenium进行自动化测试中我们有时会遇到这样的情况：</p>
+<p>我们需要手动打开浏览器，进入到所需的页面，执行一些手动任务，如输入表单、输入验证码，登陆成功后，然后再开始运行自动化脚本。</p>
+<p>这种情况下如何使用selenium来接管先前已打开的浏览器呢？</p>
+<p>这里给出Google Chrome浏览器的解决方案。</p>
+<p>我们可以利用Chrome DevTools协议。它允许客户检查和调试Chrome浏览器。</p>
+<h3 id="1步骤1启动浏览器">(1)步骤1：启动浏览器</h3>
+<ul>
+<li>
+<p>Windows</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Billie</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">AppData</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Local</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Google</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Chrome</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Application</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome.exe&#39;</span>  <span style="color:#75715e"># chrome.exe所在目录,注：双斜杠</span>
+user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">selenium_ui_auto</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome_temp&#39;</span>
+os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;start </span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)  <span style="color:#75715e"># 注：双斜杆;start</span>
+</code></pre></div></li>
+<li>
+<p>macOS</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome&#39;</span>
+user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;~/ChromeProfile&#39;</span>
+os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;;&#39;</span>)
+</code></pre></div><p>cmd命令中的路径存在空格，导致命令出错</p>
+<ul>
+<li>
+<p>措施一</p>
+<p>在路径前后加上双引号，如<code>&quot;user_data_dir&quot;</code></p>
+</li>
+<li>
+<p>措施二</p>
+<p>在路径前后加上双引号，以及前面再加上一个双引号，如 <code>start &quot;&quot; &quot;{chrome_path}&quot;</code></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span>
+user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\police\AppData\Local\Google\Chrome\User Data&#34;</span>
+os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">rf</span><span style="color:#e6db74">&#39;start &#34;&#34; &#34;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</code></pre></div></li>
+</ul>
+<h3 id="2步骤2捕获调试浏览器">(2)步骤2：捕获调试浏览器</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> Options()
+options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
+driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options) <span style="color:#75715e"># 如浏览器不存在，则会在约一分钟(或半分钟)等待之后，报错-WebDriverException</span>
+</code></pre></div><p>⚠️注：如若捕获不到调试浏览器</p>
+<ul>
+<li>可能原因：「<strong>chromedriver.exe进程冲突</strong>」</li>
+<li>解决方案：检查任务管理器中是否有多个chromedriver.exe的进程，全部停止任务，重试即可捕获成功。</li>
+</ul>
+<p>⚠️注：如遇到捕获浏览器之后，元素操作（比如点击、输入）失败，而在常规启动的浏览器中没有此问题</p>
+<ul>
+<li>可能原因：「<strong>Chrome的位数与计算机位数不符</strong>」。比如64位的计算机，装了32位的Chrome，则会出现上述情况。</li>
+<li>解决方案：按同位数安装Chrome浏览器。</li>
+</ul>
+
     </div>
 
 
@@ -1274,7 +1295,7 @@ js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return 
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          8103 字
+          8295 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1354,18 +1375,18 @@ js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return 
     <li><a href="#登录操作">登录操作</a></li>
     <li><a href="#javascript操作">JavaScript操作</a></li>
     <li><a href="#窗截图">窗⼝截图</a></li>
-    <li><a href="#控制已打开的浏览器">控制已打开的浏览器</a>
-      <ul>
-        <li><a href="#1启动浏览器">(1)启动浏览器</a></li>
-        <li><a href="#2捕获调试浏览器">(2)捕获调试浏览器</a></li>
-      </ul>
-    </li>
     <li><a href="#反屏蔽">反屏蔽</a></li>
     <li><a href="#页面加载超时">页面加载超时</a></li>
     <li><a href="#填写表单的几种姿势">填写表单的几种姿势</a></li>
     <li><a href="#页面元素点击的几种姿势">页面元素点击的几种姿势</a>
       <ul>
         <li><a href="#js获取身份验证信息">js获取身份验证信息</a></li>
+      </ul>
+    </li>
+    <li><a href="#控制已打开的浏览器">控制已打开的浏览器</a>
+      <ul>
+        <li><a href="#1步骤1启动浏览器">(1)步骤1：启动浏览器</a></li>
+        <li><a href="#2步骤2捕获调试浏览器">(2)步骤2：捕获调试浏览器</a></li>
       </ul>
     </li>
   </ul>
