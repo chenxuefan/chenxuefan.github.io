@@ -135,6 +135,15 @@
     </item>
     
     <item>
+      <title>「广州南沙公安分局」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%8D%97%E6%B2%99%E5%85%AC%E5%AE%89%E5%B1%80/</link>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%8D%97%E6%B2%99%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
+      <description>开发流程 调证 1.1 笔录信息 平台 - 广州市公安局笔录系统、反诈平台 地址 - 68.32.99.74:91/login 功能 根据笔录信息，匹配受害人的账号及银行 登录反诈平台，根据银行卡号，查询归</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | opencv</title>
       <link>https://billie52707.cn/draft/python-opencv/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
@@ -225,12 +234,30 @@
     </item>
     
     <item>
+      <title>「招商证券」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E6%8B%9B%E5%95%86%E8%AF%81%E5%88%B8/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E6%8B%9B%E5%95%86%E8%AF%81%E5%88%B8/</guid>
+      <description>技术难点 登录 密码（rsa） 验证码 获取页面信息 使用selenium登录并获取cookies 使用cookies发送requests请求 页面截图</description>
+    </item>
+    
+    <item>
       <title>钢琴学习笔记</title>
       <link>https://billie52707.cn/draft/piano/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/piano/</guid>
       <description>音阶 调 旋律与和声</description>
+    </item>
+    
+    <item>
+      <title>「广东农信社」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
+      <description>任务简介 完成客户提供的两份测试报告 联调测试报告 单元测试报告 出差日志 联系人 - 冼健：17606688412 地址 - 官洲生命科学创新中心。地铁4号线</description>
     </item>
     
     <item>
@@ -243,11 +270,20 @@
     </item>
     
     <item>
-      <title>达观工作笔记</title>
-      <link>https://billie52707.cn/draft/data-grand/</link>
+      <title>「广电计量」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</link>
       <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/</guid>
+      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</guid>
+      <description>需求分析 流水表（分公司/总部） 需求细节：复制整张sheet，至资金表的对应日期sheet页 使用方法：rpa.excel.copy_sheet</description>
+    </item>
+    
+    <item>
+      <title>达观工作笔记</title>
+      <link>https://billie52707.cn/draft/data-grand/dddd/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/dddd/</guid>
       <description>工作日志 2021.05.07 第一次在本公司上班 2021.05.20 今日任务 开发博客新功能“Most recent”，记录最新更新的文章 2021.05.28 STAR法则 Situation： 事情是在什</description>
     </item>
     
@@ -303,6 +339,15 @@
       
       <guid>https://billie52707.cn/draft/burn_them_all/</guid>
       <description>前言 平凡的一个周一的晚上，朝哥通过了微信的面试，即将进入大厂行列，踏上了逆袭的第一步。恭喜！ LeeCode，我吃定你了</description>
+    </item>
+    
+    <item>
+      <title>「马士基」项目开发文档</title>
+      <link>https://billie52707.cn/draft/data-grand/%E9%A9%AC%E5%A3%AB%E5%9F%BA%E8%88%AA%E8%BF%90/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E9%A9%AC%E5%A3%AB%E5%9F%BA%E8%88%AA%E8%BF%90/</guid>
+      <description>收获与感悟 学习总结 python 常用模块 rpa、selenium、openpyxl、os、logging、xpath、requests 其他 装饰器、迭代器</description>
     </item>
     
     <item>
@@ -366,6 +411,51 @@
       
       <guid>https://billie52707.cn/draft/markdown/</guid>
       <description>代码增删对比效果 - old man + new guy</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</guid>
+      <description>2022.4.25 今日任务 （周一） 需求调研：“一般纳税人认定流程”，花一下午，与业务人员了解完所有的需求，交接需求文档与业务录屏 调研结果：发现业务量繁多，流</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%8D%8E%E6%B6%A6%E4%BA%94%E4%B8%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%8D%8E%E6%B6%A6%E4%BA%94%E4%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</guid>
+      <description>2021.12.27 今日计划 出差南宁 熟悉路况交通 游玩广西药用植物园 2021.12.28 今日计划 上午拜访客户现场，调研需求 下午安装环境，进行开发工作 2021.12.29 今日计划 上午被通知由于客户办</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</guid>
+      <description>2021.12.29 熟悉现场，了解需求 开发流程，报表处理 2021.12.30 流程开发 2021.12.31 广州南沙项目支援 回深跨年 2022.01.06 今日计划 出差南宁，做本地核酸，明日进场 2022.01.07 开发“同业业务月报流程”</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
+      <description>44.128.2.79:8000 我的审核，我的处置 2022.5.17 今日任务 演示广东项目，调研需求 开发“嫌疑人账号汇总流程” 2022.5.18 今日任务 开发“嫌疑人账号汇总流程” 2022.5.19 今日任务 开发“人员信息摸</description>
     </item>
     
     <item>
