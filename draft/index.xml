@@ -126,6 +126,15 @@
     </item>
     
     <item>
+      <title>python模块详解 | aiomultiprocess</title>
+      <link>https://billie52707.cn/draft/python-aiomultiprocess/</link>
+      <pubDate>Sun, 20 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-aiomultiprocess/</guid>
+      <description>About 官方文档 - https://aiomultiprocess.omnilib.dev/en/latest/guide.html</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | aiohttp (server)</title>
       <link>https://billie52707.cn/draft/python-aiohttp-server/</link>
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
