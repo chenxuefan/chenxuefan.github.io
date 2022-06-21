@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>生活不易 喵喵叹气</title>
+      <link>https://billie52707.cn/posts/2022/4/miaomiao/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2022/4/miaomiao/</guid>
+      <description>#bilibili { width: 100%; height: 550px; } @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { #bilibili { width: 100%; height: 250px; } }</description>
+    </item>
+    
+    <item>
       <title>浅谈自动化爬虫场景下的数据持久化</title>
       <link>https://billie52707.cn/posts/2021/6/user-data-dir/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
