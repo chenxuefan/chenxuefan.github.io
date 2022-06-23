@@ -448,8 +448,17 @@ print(res)  <span style="color:#75715e"># res: list</span>
 </ul>
 <h4 id="3-执行task">3. 执行task</h4>
 <ul>
-<li><code>asyncio.get_event_loop().run_until_complete()</code> - 版本3.7之前</li>
-<li><code>asyncio.run()</code> - 版本3.7之后</li>
+<li>
+<p><code>asyncio.get_event_loop().run_until_complete()</code> - 版本3.7之前</p>
+</li>
+<li>
+<p><code>asyncio.run(*coro*, ***, *debug=False*)</code> - 版本3.7之后</p>
+<p>执行 <a href="https://docs.python.org/zh-cn/3/glossary.html#term-coroutine">coroutine</a> <em>coro</em> 并返回结果。</p>
+<p>此函数会运行传入的协程，负责管理 asyncio 事件循环，<em>终结异步生成器</em>，并关闭线程池。</p>
+<p>当有其他 asyncio 事件循环在同一线程中运行时，此函数不能被调用。</p>
+<p>如果 <em>debug</em> 为 <code>True</code>，事件循环将以调试模式运行。</p>
+<p>此函数总是会创建一个新的事件循环并在结束时关闭之。它应当被用作 asyncio 程序的主入口点，理想情况下应当只被调用一次。</p>
+</li>
 </ul>
 <h4 id="4-task--tasks">4. task &amp; tasks</h4>
 <ul>
@@ -785,7 +794,7 @@ done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f9
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4062 字
+          4215 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
