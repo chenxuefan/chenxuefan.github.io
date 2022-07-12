@@ -211,6 +211,7 @@ if (!doNotTrack) {
         <li><a href="#变量">变量</a></li>
         <li><a href="#内置函数">内置函数</a></li>
         <li><a href="#类的内建函数">类的内建函数</a></li>
+        <li><a href="#内置装饰器">内置装饰器</a></li>
         <li><a href="#在子类中调用父类的方法">在子类中调用父类的方法</a></li>
       </ul>
     </li>
@@ -222,6 +223,7 @@ if (!doNotTrack) {
         <li><a href="#列表去重">列表去重</a></li>
         <li><a href="#字典相加">字典相加</a></li>
         <li><a href="#快速将请求头转为json格式">快速将请求头转为json格式</a></li>
+        <li><a href="#列表字典表达式">列表/字典表达式</a></li>
         <li><a href="#带颜色的字符串输出">带颜色的字符串输出</a></li>
         <li><a href="#删除文件文件夹">删除文件、文件夹</a></li>
         <li><a href="#异常">异常</a></li>
@@ -366,8 +368,8 @@ lst1 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.<
 lst2 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.</span>values()) <span style="color:#75715e"># [9, 2, 5]</span>
 lst3 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.</span>items()) <span style="color:#75715e"># [(&#39;apple&#39;, 9), (&#39;banana&#39;, 2), (&#39;orange&#39;, 5)]</span>
 
-lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> i:i[<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># 按照字典key值排序</span>
-lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> i:i[<span style="color:#ae81ff">1</span>]) <span style="color:#75715e"># 按照字典value值排序</span>
+lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> i:i[<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># 按照key值排序</span>
+lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> i:i[<span style="color:#ae81ff">1</span>]) <span style="color:#75715e"># 按照value值排序</span>
 
 print(lst3) <span style="color:#75715e"># [(&#39;banana&#39;, 2), (&#39;orange&#39;, 5), (&#39;apple&#39;, 9)]</span>
 </code></pre></div></li>
@@ -490,6 +492,41 @@ print(BB())  <span style="color:#75715e"># &lt;__main__.BB object at 0x102a93e80
     <span style="color:#66d9ef">def</span> __repr__(self):
         <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;You&#39;re done!&#34;</span>
 print(BB())  <span style="color:#75715e"># You&#39;re done!</span>
+</code></pre></div></li>
+</ul>
+<h3 id="内置装饰器">内置装饰器</h3>
+<ul>
+<li>
+<p><code>@wraps(func)</code> - 确保被装饰函数的属性（如<code>__name__</code>、<code>__doc__</code>）不被改变</p>
+</li>
+<li>
+<p><code>@property</code> - 访问被装饰函数的函数名时，会返回被装饰函数的执行代码及返回值</p>
+</li>
+<li>
+<p><code>@staticmethod</code> - 声明某个类中的函数为静态方法，可以实现非实例化调用该方法。静态方法对类一无所知，只处理参数。</p>
+</li>
+<li>
+<p><code>@classmethod</code> - 类方法，当需要和类交互而不需要和实例交互时，就可以选择类方法。类方法与类一起使用，因为它的参数始终是类本身。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Xin</span>:
+    motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;你就好啦&#39;</span>
+
+    <span style="color:#66d9ef">def</span> __init__(self, motto):
+        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
+
+    <span style="color:#a6e22e">@classmethod</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jie</span>(cls, _str):  <span style="color:#75715e"># 第一个参数是cls， 表示调用当前的类名</span>
+        motto <span style="color:#f92672">=</span> cls<span style="color:#f92672">.</span>motto <span style="color:#f92672">+</span> _str
+        <span style="color:#66d9ef">return</span> cls(motto)  <span style="color:#75715e"># 返回的是一个初始化后的类</span>
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">out</span>(self):
+        print(self<span style="color:#f92672">.</span>motto)
+
+
+ri <span style="color:#f92672">=</span> Xin<span style="color:#f92672">.</span>jie(<span style="color:#e6db74">&#39;!&#39;</span>)
+ri<span style="color:#f92672">.</span>out()
+
+cao <span style="color:#f92672">=</span> Xin<span style="color:#f92672">.</span>jie(<span style="color:#e6db74">&#39;。&#39;</span>)
+cao<span style="color:#f92672">.</span>out()
 </code></pre></div></li>
 </ul>
 <h3 id="在子类中调用父类的方法">在子类中调用父类的方法</h3>
@@ -719,7 +756,7 @@ end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672
 <h3 id="列表去重">列表去重</h3>
 <ol>
 <li>
-<p>set(), list()</p>
+<p>tset(), list()</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ls <span style="color:#f92672">=</span> []
 list( set(ls) )
 </code></pre></div></li>
@@ -739,7 +776,14 @@ c <span style="color:#f92672">=</span> {<span style="color:#f92672">**</span>a, 
 <ul>
 <li><code>feapder create -j</code></li>
 </ul>
-<h3 id="带颜色的字符串输出">带颜色的字符串输出</h3>
+<h3 id="列表字典表达式">列表/字典表达式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 单层 列表</span>
+[data <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas]
+<span style="color:#75715e"># 双层 列表</span>
+[data <span style="color:#66d9ef">for</span> datas <span style="color:#f92672">in</span> datas_list <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas]
+<span style="color:#75715e"># 单层 字典</span>
+{data[<span style="color:#ae81ff">0</span>]: {<span style="color:#e6db74">&#39;基金号&#39;</span>: data[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">&#39;基金名称&#39;</span>: data[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#39;历史净值&#39;</span>: []} <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas}
+</code></pre></div><h3 id="带颜色的字符串输出">带颜色的字符串输出</h3>
 <ul>
 <li>&lsquo;\033[3开头的是字体颜色 ; 1m比0m更粗更亮&rsquo;</li>
 <li>&lsquo;\033[4开头的是背景颜色 ; '</li>
@@ -991,7 +1035,7 @@ git clone https://github.com/lxgr-linux/pokete.git
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3827 字
+          4187 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1053,6 +1097,7 @@ git clone https://github.com/lxgr-linux/pokete.git
         <li><a href="#变量">变量</a></li>
         <li><a href="#内置函数">内置函数</a></li>
         <li><a href="#类的内建函数">类的内建函数</a></li>
+        <li><a href="#内置装饰器">内置装饰器</a></li>
         <li><a href="#在子类中调用父类的方法">在子类中调用父类的方法</a></li>
       </ul>
     </li>
@@ -1064,6 +1109,7 @@ git clone https://github.com/lxgr-linux/pokete.git
         <li><a href="#列表去重">列表去重</a></li>
         <li><a href="#字典相加">字典相加</a></li>
         <li><a href="#快速将请求头转为json格式">快速将请求头转为json格式</a></li>
+        <li><a href="#列表字典表达式">列表/字典表达式</a></li>
         <li><a href="#带颜色的字符串输出">带颜色的字符串输出</a></li>
         <li><a href="#删除文件文件夹">删除文件、文件夹</a></li>
         <li><a href="#异常">异常</a></li>

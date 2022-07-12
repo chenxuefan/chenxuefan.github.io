@@ -386,6 +386,15 @@ ExcelOperator()<span style="color:#f92672">.</span>test() <span style="color:#75
 ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 也是6</span>
 </code></pre></div><p>property 和 staticmethod 功能很类似，一个是<code>Class().func</code>一个是<code>Class.func()</code>（强行和谐 👌</p>
 </li>
+<li>
+<p><code>@classmethod</code> - 类方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Xin</span>:
+  motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;你就好啦&#39;</span>
+
+  <span style="color:#a6e22e">@classmethod</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jie</span>(cls):
+    print(cls<span style="color:#f92672">.</span>motto)
+</code></pre></div></li>
 </ul>
 <h2 id="装饰器实例">装饰器实例</h2>
 <h3 id="1-最基本的装饰器---高阶函数嵌套函数">1. 最基本的装饰器 - 高阶函数+嵌套函数</h3>
@@ -562,7 +571,7 @@ fun()
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2135 字
+          2162 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
