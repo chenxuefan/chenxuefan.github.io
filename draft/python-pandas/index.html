@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title> PyQt5开发中的「界面卡顿」问题解决记录 | 人人都爱小雀斑&#39;s blog </title>
+  <title> python模块详解 | pandas | 人人都爱小雀斑&#39;s blog </title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -24,17 +24,17 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
-  <meta property="og:title" content="PyQt5开发中的「界面卡顿」问题解决记录" />
-<meta property="og:description" content="起 每十秒刷新一下界面上的信息，一开始很顺畅，跑了几十分钟后界面变得卡顿 承 layout中添加tablewidget控件，添加控件的这个过程是在" />
+  <meta property="og:title" content="python模块详解 | pandas" />
+<meta property="og:description" content="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2022/6/pyqt/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-06-16T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-06-16T00:00:00+00:00" />
+<meta property="og:url" content="https://billie52707.cn/draft/python-pandas/" /><meta property="article:section" content="draft" />
+<meta property="article:published_time" content="2022-07-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-13T00:00:00+00:00" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PyQt5开发中的「界面卡顿」问题解决记录"/>
-<meta name="twitter:description" content="起 每十秒刷新一下界面上的信息，一开始很顺畅，跑了几十分钟后界面变得卡顿 承 layout中添加tablewidget控件，添加控件的这个过程是在"/>
+<meta name="twitter:title" content="python模块详解 | pandas"/>
+<meta name="twitter:description" content="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame"/>
 
   
   
@@ -108,17 +108,11 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2022/4/miaomiao/">
+          <a class="icon" href=" https://billie52707.cn/posts/2022/6/pyqt/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
-        
-        <li>
-          <a class="icon" href="https://billie52707.cn/draft/python-pandas/">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
         
         <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
@@ -146,57 +140,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&text=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&is_video=false&description=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f">
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&name=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95&description=%e8%b5%b7%20%e6%af%8f%e5%8d%81%e7%a7%92%e5%88%b7%e6%96%b0%e4%b8%80%e4%b8%8b%e7%95%8c%e9%9d%a2%e4%b8%8a%e7%9a%84%e4%bf%a1%e6%81%af%ef%bc%8c%e4%b8%80%e5%bc%80%e5%a7%8b%e5%be%88%e9%a1%ba%e7%95%85%ef%bc%8c%e8%b7%91%e4%ba%86%e5%87%a0%e5%8d%81%e5%88%86%e9%92%9f%e5%90%8e%e7%95%8c%e9%9d%a2%e5%8f%98%e5%be%97%e5%8d%a1%e9%a1%bf%20%e6%89%bf%20layout%e4%b8%ad%e6%b7%bb%e5%8a%a0tablewidget%e6%8e%a7%e4%bb%b6%ef%bc%8c%e6%b7%bb%e5%8a%a0%e6%8e%a7%e4%bb%b6%e7%9a%84%e8%bf%99%e4%b8%aa%e8%bf%87%e7%a8%8b%e6%98%af%e5%9c%a8">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas&description=https%3a%2f%2fpandas.pydata.org%2fdocs%2freference%2fapi%2fpandas.DataFrame.html%3fhighlight%3ddataframe%23pandas.DataFrame">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&t=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -204,18 +198,7 @@ if (!doNotTrack) {
 
     </div>
     <div id="toc">
-      <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#起">起</a></li>
-        <li><a href="#承">承</a></li>
-        <li><a href="#转">转</a></li>
-        <li><a href="#合">合</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </div>
     
   </span>
@@ -225,7 +208,7 @@ if (!doNotTrack) {
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        PyQt5开发中的「界面卡顿」问题解决记录
+        python模块详解 | pandas
       </h1>
       <div class="meta">
 
@@ -237,7 +220,7 @@ if (!doNotTrack) {
         <div class="postdate">
           
           
-          <time datetime="2022-06-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-06-16</time>
+          <time datetime="2022-07-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-07-13</time>
           
           
         </div>
@@ -272,21 +255,7 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h3 id="起">起</h3>
-<p>每十秒刷新一下界面上的信息，一开始很顺畅，跑了几十分钟后界面变得卡顿</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20220616141939248.png" alt="image-20220616141939248"></p>
-<h3 id="承">承</h3>
-<p>layout中添加tablewidget控件，添加控件的这个过程是在不断重复进行的（通过pyqt的多线程实现）</p>
-<h3 id="转">转</h3>
-<p>重复添加的过程中，重复产生了很多个tablewidget控件，存储在内存中，这些控件并没有覆盖掉，而是重复叠加了</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20220616142134084.png" alt="image-20220616142134084"></p>
-<h3 id="合">合</h3>
-<p>解决：在下次刷新界面的时候，使用deleteLater方法销毁控件对象</p>
-<p>相关资料：</p>
-<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20220616142215608.png" alt="image-20220616142215608"></p>
-<p>参考：</p>
-<p><a href="https://blog.csdn.net/seniorwizard/article/details/110199499">https://blog.csdn.net/seniorwizard/article/details/110199499</a></p>
-<p><a href="https://blog.csdn.net/Bit_Coders/article/details/119751953">https://blog.csdn.net/Bit_Coders/article/details/119751953</a></p>
+      <p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame">https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame</a></p>
 
     </div>
 
@@ -324,11 +293,11 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          194 字
+          1 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
-          <time datetime="2022-06-16 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-06-16</time>
+          <time datetime="2022-07-13 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-07-13</time>
           
 
   </p>
@@ -336,7 +305,7 @@ if (!doNotTrack) {
 
   
 
-<span id="/posts/2022/6/pyqt/" class="leancloud_visitors" data-flag-title="PyQt5开发中的「界面卡顿」问题解决记录">
+<span id="/draft/python-pandas/" class="leancloud_visitors" data-flag-title="python模块详解 | pandas">
 
   
 
@@ -379,18 +348,7 @@ if (!doNotTrack) {
     </div>
 
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#起">起</a></li>
-        <li><a href="#承">承</a></li>
-        <li><a href="#转">转</a></li>
-        <li><a href="#合">合</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -402,57 +360,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&text=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&text=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&is_video=false&description=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&is_video=false&description=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f">
+    <a class="icon" href="mailto:?subject=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&title=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&title=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&name=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95&description=%e8%b5%b7%20%e6%af%8f%e5%8d%81%e7%a7%92%e5%88%b7%e6%96%b0%e4%b8%80%e4%b8%8b%e7%95%8c%e9%9d%a2%e4%b8%8a%e7%9a%84%e4%bf%a1%e6%81%af%ef%bc%8c%e4%b8%80%e5%bc%80%e5%a7%8b%e5%be%88%e9%a1%ba%e7%95%85%ef%bc%8c%e8%b7%91%e4%ba%86%e5%87%a0%e5%8d%81%e5%88%86%e9%92%9f%e5%90%8e%e7%95%8c%e9%9d%a2%e5%8f%98%e5%be%97%e5%8d%a1%e9%a1%bf%20%e6%89%bf%20layout%e4%b8%ad%e6%b7%bb%e5%8a%a0tablewidget%e6%8e%a7%e4%bb%b6%ef%bc%8c%e6%b7%bb%e5%8a%a0%e6%8e%a7%e4%bb%b6%e7%9a%84%e8%bf%99%e4%b8%aa%e8%bf%87%e7%a8%8b%e6%98%af%e5%9c%a8">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&name=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas&description=https%3a%2f%2fpandas.pydata.org%2fdocs%2freference%2fapi%2fpandas.DataFrame.html%3fhighlight%3ddataframe%23pandas.DataFrame">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2022%2f6%2fpyqt%2f&t=PyQt5%e5%bc%80%e5%8f%91%e4%b8%ad%e7%9a%84%e3%80%8c%e7%95%8c%e9%9d%a2%e5%8d%a1%e9%a1%bf%e3%80%8d%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3%e8%ae%b0%e5%bd%95">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fdraft%2fpython-pandas%2f&t=python%e6%a8%a1%e5%9d%97%e8%af%a6%e8%a7%a3%20%7c%20pandas">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
