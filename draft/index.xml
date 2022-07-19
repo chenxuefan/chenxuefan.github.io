@@ -117,6 +117,15 @@
     </item>
     
     <item>
+      <title>python模块详解 | aiomysql</title>
+      <link>https://billie52707.cn/draft/python-aiomysql/</link>
+      <pubDate>Thu, 15 Jul 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/python-aiomysql/</guid>
+      <description>官方文档 - https://aiomysql.readthedocs.io/en/latest/pool.html</description>
+    </item>
+    
+    <item>
       <title>python模块详解 | tensorflow</title>
       <link>https://billie52707.cn/draft/python-tensorflow/</link>
       <pubDate>Thu, 08 Jul 2021 20:54:00 +0000</pubDate>

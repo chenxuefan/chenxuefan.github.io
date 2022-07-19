@@ -364,6 +364,40 @@ data<span style="color:#f92672">.</span>add_field(<span style="color:#e6db74">&#
 <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(cookies<span style="color:#f92672">=</span>cookies) <span style="color:#66d9ef">as</span> session:
   <span style="color:#f92672">...</span>
 </code></pre></div><h3 id="proxy">proxy</h3>
+<p>对于 aiohttp 来说，我们可以通过 proxy 参数直接设置即可，HTTP 代理设置如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> aiohttp
+
+proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://127.0.0.1:7890&#39;</span>
+
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+   <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+       <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>, proxy<span style="color:#f92672">=</span>proxy) <span style="color:#66d9ef">as</span> response:
+           print(<span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text())
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</code></pre></div><p>如果代理有用户名密码，像 requests 一样，把 proxy 修改为如下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://username:password@127.0.0.1:7890&#39;</span>
+</code></pre></div><p>这里只需要将 username 和 password 替换即可。</p>
+<p>对于 SOCKS 代理，我们需要安装一个支持库，叫作 aiohttp-socks，安装命令如下：</p>
+<pre tabindex="0"><code>pip3 install aiohttp-socks
+</code></pre><p>可以借助于这个库的 ProxyConnector 来设置 SOCKS 代理，代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
+<span style="color:#f92672">import</span> aiohttp
+<span style="color:#f92672">from</span> aiohttp_socks <span style="color:#f92672">import</span> ProxyConnector
+
+connector <span style="color:#f92672">=</span> ProxyConnector<span style="color:#f92672">.</span>from_url(<span style="color:#e6db74">&#39;socks5://127.0.0.1:7891&#39;</span>)
+
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+   <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(connector<span style="color:#f92672">=</span>connector) <span style="color:#66d9ef">as</span> session:
+       <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>) <span style="color:#66d9ef">as</span> response:
+           print(<span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text())
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</code></pre></div><p>运行结果是一样的。</p>
+<p>另外这个库还支持设置 SOCKS4、HTTP 代理以及对应的代理认证，可以参考其官方介绍。</p>
 <h2 id="response---响应">Response - 响应</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">resp <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn/&#39;</span>,verify_ssl<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </code></pre></div><ol>
@@ -495,7 +529,7 @@ loop<span style="color:#f92672">.</span>run_until_complete(main())
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          953 字
+          1206 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
