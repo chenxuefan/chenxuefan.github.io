@@ -205,7 +205,6 @@ if (!doNotTrack) {
       <nav id="TableOfContents">
   <ul>
     <li><a href="#常用工具">常用工具</a></li>
-    <li><a href="#常用命令">常用命令</a></li>
     <li><a href="#常见报错解决">常见报错解决</a></li>
     <li><a href="#必要工具常用软件的安装">必要工具/常用软件的安装</a>
       <ul>
@@ -299,9 +298,6 @@ if (!doNotTrack) {
 </li>
 </ul>
 </li>
-</ul>
-<h2 id="常用命令">常用命令</h2>
-<ul>
 <li>
 <p>netstat</p>
 <p><strong>netstat -tunlp</strong> 用于显示 tcp，udp 的端口和进程等相关情况。</p>
@@ -337,6 +333,73 @@ if (!doNotTrack) {
 <li>-f&lt;备份文件&gt;或&ndash;file=&lt;备份文件&gt;，指定备份文件</li>
 </ul>
 </li>
+<li>
+<p>用户</p>
+<ul>
+<li>useradd：添加用户账号
+<ul>
+<li>-d 指定用户登录系统时的主目录，如果不使用该参数，系统自动在/home目录下建立与用户名同名目录为主目录</li>
+<li>-m 自动建立目录</li>
+<li>-g 指定组名称</li>
+<li>一般创建用户命令 <code>sudo useradd xxx -m</code> 表示自动在home下创建目录</li>
+<li>建立的账号，保存在<code>/etc/passwd</code>文本文件中</li>
+</ul>
+</li>
+<li>passwd：设置用户密码
+<ul>
+<li><code>passwd chenxuefan</code></li>
+</ul>
+</li>
+<li>su：切换用户
+<ul>
+<li><code>su</code>  <code>su -</code> 切换到root用户，不切换目录</li>
+<li><code>su chenxuefan</code>  切换到chenxuefan用户，不切换目录</li>
+<li><code>su - chenxuefan</code> 切换到对应的用户时会将当前的工作目录自动转换到切换后的用户主目录，如<code>/home/chenxuefan</code></li>
+</ul>
+</li>
+<li><code>sudo -s</code> 仅仅使用root权限，环境还是原来的用户的</li>
+</ul>
+</li>
+<li>
+<p>用户组</p>
+<ul>
+<li>usermod：修改用户组
+<ul>
+<li>-a 追加用户组</li>
+<li>-G 一般配合“-a”来完成想其他组添加</li>
+<li>-g 重新指定新的用户组</li>
+<li><code>usermod -a -G sudo chenxuefan</code> 将用户chenxuefan添加到sudo用户组</li>
+</ul>
+</li>
+<li>groups：查看用户所属用户组
+<ul>
+<li><code>groups chenxuefan</code></li>
+</ul>
+</li>
+<li>groupmod：列出所有的用户组
+<ul>
+<li>方法一：<code>cat /etc/group</code></li>
+<li>方法二：<code>groupmod+空格+两次tab键</code></li>
+</ul>
+</li>
+<li>groupadd：新建组账号
+<ul>
+<li><code>groupadd docker</code> 新建docker组</li>
+</ul>
+</li>
+<li>groupdel：删除组账号</li>
+<li><code>newgrp docker</code> 更新docker用户组</li>
+</ul>
+</li>
+<li>
+<p>权限</p>
+</li>
+<li>
+<p>grep</p>
+<ul>
+<li><code>grep 994 /etc/passwd</code></li>
+</ul>
+</li>
 </ul>
 <h2 id="常见报错解决">常见报错解决</h2>
 <ul>
@@ -353,6 +416,29 @@ if (!doNotTrack) {
 <li>
 <p><code>System has not been booted with systemd as init system (PID 1). Can't operate.</code></p>
 <p>原因：您的Linux系统没有使用systemd。</p>
+</li>
+<li>
+<p><code>Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json: dial unix /var/run/docker.sock: connect: permission denied</code></p>
+<ul>
+<li>
+<p>原因：需要sudo权限，此用户未添加至docker用户组</p>
+</li>
+<li>
+<p>添加此用户至docker用户组</p>
+<ul>
+<li>
+<p><code>sudo groupadd docker</code> #添加docker用户组</p>
+</li>
+<li>
+<p><code>sudo gpasswd -a $USER docker</code> #将登陆用户加入到docker用户组中</p>
+</li>
+<li>
+<p><code>newgrp docker</code> #更新用户组</p>
+<p>ubuntu18.04在重启后会生效，如果不是特别着急，可以先重启然后再做docker操作。</p>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h2 id="必要工具常用软件的安装">必要工具/常用软件的安装</h2>
@@ -469,7 +555,7 @@ apt-get install pkg-config
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          990 字
+          1615 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -525,7 +611,6 @@ apt-get install pkg-config
       <nav id="TableOfContents">
   <ul>
     <li><a href="#常用工具">常用工具</a></li>
-    <li><a href="#常用命令">常用命令</a></li>
     <li><a href="#常见报错解决">常见报错解决</a></li>
     <li><a href="#必要工具常用软件的安装">必要工具/常用软件的安装</a>
       <ul>
