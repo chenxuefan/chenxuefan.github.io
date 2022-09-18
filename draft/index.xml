@@ -442,6 +442,15 @@
     
     <item>
       <title></title>
+      <link>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E5%8D%AB%E5%BB%BA%E5%B1%80/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E5%8D%AB%E5%BB%BA%E5%B1%80/main/</guid>
+      <description>2022.9.15 今日任务 佛山卫健局 （已完成）调试开发板，接收短信功能验证 2022.9.16 待客户确认的点 服务器资源，开放80、8080、8088端口 流程1：护士职业资格证</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -487,11 +496,11 @@
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/main/</link>
+      <link>https://billie52707.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/main/</guid>
-      <description>需求解决记录 1. 通用版机器人证书 （已确认，可以）提供通用版的机器人证书*300，作为证书池，不需要根据每台电脑的机器码进行逐一申请证书，方便客</description>
+      <guid>https://billie52707.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</guid>
+      <description>2022.9.14 问题解决记录 出现平台的问题 开发平台流程发布失败 查看请求界面出现白屏 原因：服务端日志拥堵，内存紧张</description>
     </item>
     
     <item>
