@@ -50,7 +50,7 @@
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/note/python/</guid>
-      <description>更多 - https://billie52707.cn/tags/python/ 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量的字典 作用： 获取想查看某个作</description>
+      <description>更多 - https://billie52707.cn/tags/python/ 安装 Linux 安装pip curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量</description>
     </item>
     
     <item>

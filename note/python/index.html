@@ -25,7 +25,7 @@ if (!doNotTrack) {
 }
 </script>
   <meta property="og:title" content="「python」学习笔记" />
-<meta property="og:description" content="更多 - https://billie52707.cn/tags/python/ 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量的字典 作用： 获取想查看某个作" />
+<meta property="og:description" content="更多 - https://billie52707.cn/tags/python/ 安装 Linux 安装pip curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/note/python/" /><meta property="article:section" content="note" />
 <meta property="article:published_time" content="2021-03-26T20:54:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「python」学习笔记"/>
-<meta name="twitter:description" content="更多 - https://billie52707.cn/tags/python/ 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量的字典 作用： 获取想查看某个作"/>
+<meta name="twitter:description" content="更多 - https://billie52707.cn/tags/python/ 安装 Linux 安装pip curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量"/>
 
   
   
@@ -94,6 +94,8 @@ if (!doNotTrack) {
         <li><a href="/posts">Article</a></li>
          
         <li><a href="/note">Note</a></li>
+         
+        <li><a href="/photo">Photo</a></li>
          
         <li><a href="/about">About</a></li>
          
@@ -189,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython%2f&name=%e3%80%8cpython%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e6%9b%b4%e5%a4%9a%20-%20https%3a%2f%2fbillie52707.cn%2ftags%2fpython%2f%20%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%82%b9%20%e5%8f%98%e9%87%8f%20namespace%ef%bc%88%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4%ef%bc%89%20%e5%ae%9a%e4%b9%89%ef%bc%9a%20%e6%af%8f%e4%b8%80%e4%b8%aa%e4%bd%9c%e7%94%a8%e5%9f%9f%e5%8f%98%e9%87%8f%e5%ad%98%e5%82%a8%e7%9a%84%e4%bd%8d%e7%bd%ae%ef%bc%8c%e6%88%96%e8%80%85%e8%a7%a3%e9%87%8a%e4%b8%ba%20%e5%ad%98%e5%82%a8%e4%bd%9c%e7%94%a8%e5%9f%9f%e4%b8%ad%e5%8f%98%e9%87%8f%e7%9a%84%e5%ad%97%e5%85%b8%20%e4%bd%9c%e7%94%a8%ef%bc%9a%20%e8%8e%b7%e5%8f%96%e6%83%b3%e6%9f%a5%e7%9c%8b%e6%9f%90%e4%b8%aa%e4%bd%9c">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython%2f&name=%e3%80%8cpython%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e6%9b%b4%e5%a4%9a%20-%20https%3a%2f%2fbillie52707.cn%2ftags%2fpython%2f%20%e5%ae%89%e8%a3%85%20Linux%20%e5%ae%89%e8%a3%85pip%20curl%20https%3a%2f%2fbootstrap.pypa.io%2fget-pip.py%20-o%20get-pip.py%20python3%20get-pip.py%20%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%82%b9%20%e5%8f%98%e9%87%8f%20namespace%ef%bc%88%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4%ef%bc%89%20%e5%ae%9a%e4%b9%89%ef%bc%9a%20%e6%af%8f%e4%b8%80%e4%b8%aa%e4%bd%9c%e7%94%a8%e5%9f%9f%e5%8f%98%e9%87%8f%e5%ad%98%e5%82%a8%e7%9a%84%e4%bd%8d%e7%bd%ae%ef%bc%8c%e6%88%96%e8%80%85%e8%a7%a3%e9%87%8a%e4%b8%ba%20%e5%ad%98%e5%82%a8%e4%bd%9c%e7%94%a8%e5%9f%9f%e4%b8%ad%e5%8f%98%e9%87%8f">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -204,6 +206,11 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+      </ul>
+    </li>
     <li><a href="#基础知识点">基础知识点</a>
       <ul>
         <li><a href="#变量">变量</a></li>
@@ -305,6 +312,16 @@ if (!doNotTrack) {
   
     <div class="content" itemprop="articleBody">
       <p>更多 - <a href="https://billie52707.cn/tags/python/">https://billie52707.cn/tags/python/</a></p>
+<h2 id="安装">安装</h2>
+<h3 id="linux">Linux</h3>
+<ul>
+<li>安装pip
+<ul>
+<li><code>curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py</code></li>
+<li><code>python3 get-pip.py</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="基础知识点">基础知识点</h2>
 <h3 id="变量">变量</h3>
 <ul>
@@ -1072,7 +1089,7 @@ git clone https://github.com/lxgr-linux/pokete.git
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4327 字
+          4341 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1117,6 +1134,8 @@ git clone https://github.com/lxgr-linux/pokete.git
          
           <li><a href="/note">Note</a></li>
          
+          <li><a href="/photo">Photo</a></li>
+         
           <li><a href="/about">About</a></li>
          
           <li><a href="https://github.com/chenxuefan">Github</a></li>
@@ -1127,6 +1146,11 @@ git clone https://github.com/lxgr-linux/pokete.git
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+      </ul>
+    </li>
     <li><a href="#基础知识点">基础知识点</a>
       <ul>
         <li><a href="#变量">变量</a></li>
@@ -1227,7 +1251,7 @@ git clone https://github.com/lxgr-linux/pokete.git
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython%2f&name=%e3%80%8cpython%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e6%9b%b4%e5%a4%9a%20-%20https%3a%2f%2fbillie52707.cn%2ftags%2fpython%2f%20%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%82%b9%20%e5%8f%98%e9%87%8f%20namespace%ef%bc%88%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4%ef%bc%89%20%e5%ae%9a%e4%b9%89%ef%bc%9a%20%e6%af%8f%e4%b8%80%e4%b8%aa%e4%bd%9c%e7%94%a8%e5%9f%9f%e5%8f%98%e9%87%8f%e5%ad%98%e5%82%a8%e7%9a%84%e4%bd%8d%e7%bd%ae%ef%bc%8c%e6%88%96%e8%80%85%e8%a7%a3%e9%87%8a%e4%b8%ba%20%e5%ad%98%e5%82%a8%e4%bd%9c%e7%94%a8%e5%9f%9f%e4%b8%ad%e5%8f%98%e9%87%8f%e7%9a%84%e5%ad%97%e5%85%b8%20%e4%bd%9c%e7%94%a8%ef%bc%9a%20%e8%8e%b7%e5%8f%96%e6%83%b3%e6%9f%a5%e7%9c%8b%e6%9f%90%e4%b8%aa%e4%bd%9c">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fnote%2fpython%2f&name=%e3%80%8cpython%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0&description=%e6%9b%b4%e5%a4%9a%20-%20https%3a%2f%2fbillie52707.cn%2ftags%2fpython%2f%20%e5%ae%89%e8%a3%85%20Linux%20%e5%ae%89%e8%a3%85pip%20curl%20https%3a%2f%2fbootstrap.pypa.io%2fget-pip.py%20-o%20get-pip.py%20python3%20get-pip.py%20%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86%e7%82%b9%20%e5%8f%98%e9%87%8f%20namespace%ef%bc%88%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4%ef%bc%89%20%e5%ae%9a%e4%b9%89%ef%bc%9a%20%e6%af%8f%e4%b8%80%e4%b8%aa%e4%bd%9c%e7%94%a8%e5%9f%9f%e5%8f%98%e9%87%8f%e5%ad%98%e5%82%a8%e7%9a%84%e4%bd%8d%e7%bd%ae%ef%bc%8c%e6%88%96%e8%80%85%e8%a7%a3%e9%87%8a%e4%b8%ba%20%e5%ad%98%e5%82%a8%e4%bd%9c%e7%94%a8%e5%9f%9f%e4%b8%ad%e5%8f%98%e9%87%8f">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

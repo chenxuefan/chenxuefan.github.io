@@ -95,6 +95,8 @@ if (!doNotTrack) {
          
         <li><a href="/note">Note</a></li>
          
+        <li><a href="/photo">Photo</a></li>
+         
         <li><a href="/about">About</a></li>
          
         <li><a href="https://github.com/chenxuefan">Github</a></li>
@@ -701,10 +703,10 @@ driver<span style="color:#f92672">.</span>switch_to_window(c_win)
 </code></pre></div></li>
 </ul>
 <h2 id="对话框操作">对话框操作</h2>
-<p>在WebDriver中处理JavaScript所⽣成的alert、confirm以及prompt⼗分简单，具体做法是使⽤ <code>switch_to.alert() </code>或<code>switch_to_alert()</code>⽅法定位到 alert/confirm/prompt，然后使⽤text/accept/dismiss/send_keys 等⽅法进⾏操作。</p>
+<p>在WebDriver中处理JavaScript所⽣成的alert、confirm以及prompt⼗分简单，具体做法是使⽤ <code>switch_to.alert </code>或<code>switch_to_alert()</code>⽅法定位到 alert/confirm/prompt，然后使⽤text/accept/dismiss/send_keys 等⽅法进⾏操作。</p>
 <ul>
 <li>
-<p><strong>switch_to_alert()</strong>  / <strong>switch_to.alert()</strong> # 切入到警告框</p>
+<p><strong>switch_to_alert()</strong>  / <strong>switch_to.alert</strong> # 切入到警告框</p>
 </li>
 <li>
 <p><strong>text</strong> # 返回 alert/confirm/prompt 中的⽂字信息</p>
@@ -1342,6 +1344,8 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
           <li><a href="/posts">Article</a></li>
          
           <li><a href="/note">Note</a></li>
+         
+          <li><a href="/photo">Photo</a></li>
          
           <li><a href="/about">About</a></li>
          

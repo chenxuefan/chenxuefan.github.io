@@ -95,6 +95,8 @@ if (!doNotTrack) {
          
         <li><a href="/note">Note</a></li>
          
+        <li><a href="/photo">Photo</a></li>
+         
         <li><a href="/about">About</a></li>
          
         <li><a href="https://github.com/chenxuefan">Github</a></li>
@@ -325,12 +327,27 @@ if (!doNotTrack) {
 <li>
 <p>tar</p>
 <p>本程序最初的设计目的是将文件备份到<a href="https://baike.baidu.com/item/%E7%A3%81%E5%B8%A6">磁带</a>上（<strong>t</strong>ape <strong>ar</strong>chive），因而得名tar。</p>
-<pre tabindex="0"><code>tar -zvxf zz.tar.gz  # 解压
+<pre tabindex="0"><code>用法：tar [参数] [文件]
+-v 显示指令执行过程
+-c 创建压缩文件
+-x 解压文件
+-z 通过gzip指令处理文件
+-f 指定文件
+-C 解压文件到指定目录
+-t --list查看压缩包里的文件内容
+--exclude 排除不需要压缩的目录或者文件
+</code></pre><pre tabindex="0"><code>tar -zvxf zz.tar.gz  # 解压文件zz.tar.gz
 </code></pre><ul>
 <li>-z或&ndash;gzip或&ndash;ungzip，通过gzip指令处理备份文件</li>
 <li>-v或&ndash;verbose，显示指令执行过程。</li>
 <li>-x或&ndash;extract或&ndash;get，从备份文件中还原文件</li>
 <li>-f&lt;备份文件&gt;或&ndash;file=&lt;备份文件&gt;，指定备份文件</li>
+</ul>
+<pre tabindex="0"><code>tar -zcvf file.tar.gz ./*  # 打包当前目录下的所有文件和文件夹，压缩包名为file.tar.gz
+</code></pre><ul>
+<li>-c 将多个文件或目录进行打包。</li>
+<li>-f 包名 指定包的文件名。包的扩展名是用来给管理员识别格式的，所以一定要正确指定扩展名；</li>
+<li>-v 显示打包文件过程；需要注意的是，在使用 tar 命令指定选项时可以不在选项前面输入“-”。例如，使用“cvf”选项和 “-cvf”起到的作用一样。</li>
 </ul>
 </li>
 <li>
@@ -507,6 +524,7 @@ apt-get install pkg-config
 <p>全局设置（当前用户）</p>
 <p>打开<code>~/.bashrc</code>，编辑一下</p>
 <pre tabindex="0"><code>export PATH=/root/anaconda3/bin/:$PATH
+export PATH=/usr/local/python3.7.1/bin/:$PATH
 </code></pre></li>
 <li>
 <p>全局设置（所有用户）</p>
@@ -555,7 +573,7 @@ apt-get install pkg-config
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1615 字
+          1887 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -599,6 +617,8 @@ apt-get install pkg-config
           <li><a href="/posts">Article</a></li>
          
           <li><a href="/note">Note</a></li>
+         
+          <li><a href="/photo">Photo</a></li>
          
           <li><a href="/about">About</a></li>
          
