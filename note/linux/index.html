@@ -417,6 +417,27 @@ if (!doNotTrack) {
 <li><code>grep 994 /etc/passwd</code></li>
 </ul>
 </li>
+<li>
+<p>df - <code>df -h</code> 查看整体磁盘使用情况</p>
+</li>
+<li>
+<p>du (disk usage）命令用于显示目录或文件的大小。</p>
+<ul>
+<li>-a或-all 显示目录中个别文件的大小。</li>
+<li>-b或-bytes 显示目录或文件大小时，以byte为单位。</li>
+<li>-c或&ndash;total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。</li>
+<li>-h或&ndash;human-readable 以K，M，G为单位，提高信息的可读性。</li>
+<li>-s或&ndash;summarize 仅显示总计。</li>
+<li>&ndash;max-depth=&lt;目录层数&gt; 超过指定层数的目录后，予以忽略。</li>
+</ul>
+</li>
+<li>
+<p>find</p>
+<ul>
+<li><code>find . -size +500M</code> 找到当前目录大于500M文件</li>
+<li><code>find / --name tt</code></li>
+</ul>
+</li>
 </ul>
 <h2 id="常见报错解决">常见报错解决</h2>
 <ul>
@@ -573,7 +594,7 @@ export PATH=/usr/local/python3.7.1/bin/:$PATH
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1887 字
+          2156 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
