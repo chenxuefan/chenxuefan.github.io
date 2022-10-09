@@ -307,10 +307,10 @@
     
     <item>
       <title>达观工作笔记</title>
-      <link>https://billie52707.cn/draft/data-grand/dddd/</link>
+      <link>https://billie52707.cn/draft/data-grand/dddd/2021/</link>
       <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/dddd/</guid>
+      <guid>https://billie52707.cn/draft/data-grand/dddd/2021/</guid>
       <description>工作日志 2021.05.07 第一次在本公司上班 2021.05.20 今日任务 开发博客新功能“Most recent”，记录最新更新的文章 2021.05.28 STAR法则 Situation： 事情是在什</description>
     </item>
     
@@ -438,6 +438,24 @@
       
       <guid>https://billie52707.cn/draft/markdown/</guid>
       <description>代码增删对比效果 - old man + new guy</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/data-grand/dddd/2022/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/dddd/2022/</guid>
+      <description>2022.4.11 今日任务 - 让我看看是谁半年回一次公司？啊是我 南沙 三期项目完工报告、项目流程审批 研祥 技术答疑 广汽 演示机器人 控制中心：http://rpa-v</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://billie52707.cn/draft/data-grand/dddd/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/draft/data-grand/dddd/main/</guid>
+      <description>试用期总结 自我评价 试用期期间主要学习了公司的RPA产品和asyncio、selenium、sqlalchemy等库的使用。通过公安局项目，接</description>
     </item>
     
     <item>
