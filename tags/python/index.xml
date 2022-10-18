@@ -392,7 +392,7 @@
       <pubDate>Sun, 28 Mar 2021 01:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/3/python-openpyxl/</guid>
-      <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list wb.remove(sheetname) 2. 工作表的使用 ## 创建工作表</description>
+      <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list wb.remove(sheetname) wb.save(filename) 2. 工作表的使用 ## 创建工作</description>
     </item>
     
     <item>
