@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billie</copyright>
-    <lastBuildDate>Thu, 22 Sep 2022 15:15:02 +0800</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Dockerfile 构建项目</title>
+      <link>https://billie52707.cn/posts/2022/10/dockerfile/</link>
+      <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://billie52707.cn/posts/2022/10/dockerfile/</guid>
+      <description>悄悄更新 🌹 https://billie52707.cn/note/docker1/#使用-dockerfile-构建项目</description>
+    </item>
+    
     <item>
       <title>旅行笔记</title>
       <link>https://billie52707.cn/travel/</link>
@@ -1166,7 +1175,7 @@
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
       <guid>https://billie52707.cn/note/docker1/</guid>
-      <description>关于docker why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任</description>
+      <description>关于docker 1. why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到</description>
     </item>
     
     <item>
