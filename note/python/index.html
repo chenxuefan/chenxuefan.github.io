@@ -251,6 +251,7 @@ if (!doNotTrack) {
         <li><a href="#shadowdom节点操作">shadowDOM节点操作</a></li>
         <li><a href="#有趣的开源项目">有趣的开源项目</a></li>
         <li><a href="#kfcerror">KFCError</a></li>
+        <li><a href="#unicode编码转换">unicode编码转换</a></li>
       </ul>
     </li>
   </ul>
@@ -1051,6 +1052,9 @@ git clone https://github.com/lxgr-linux/pokete.git
 
 
 <span style="color:#66d9ef">raise</span> KFCError
+</code></pre></div><h3 id="unicode编码转换">unicode编码转换</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;\u6211\u672c\u662f\u663e\u8d6b\u4e16\u5bb6\u7684\u5965\u7279\u66fc\uff0c\u5374\u88ab\u8be1\u8ba1\u591a\u7aef\u7684\u602a\u517d\u6240\u5bb3\uff01\u5965\u7279\u66fc\u5bb6\u65cf\u5f03\u6211\uff01\u5965\u7279\u4e4b\u7236\u9010\u6211\uff01\u751a\u81f3\u65ad\u6211\u4f3d\u9a6c\u5c04\u7ebf\uff01\u91cd\u751f\u4e00\u4e16\uff0c\u4eca\u5929\u80af\u5fb7\u57fa\u75af\u72c2\u661f\u671f\u56db\uff01\u8c01\u8bf7\u6211\u5403\uff1f&#34;</span>
+t<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;unicode_escape&#34;</span>)
 </code></pre></div><p>更多 - <a href="https://billie52707.cn/tags/python/">https://billie52707.cn/tags/python/</a></p>
 
     </div>
@@ -1089,7 +1093,7 @@ git clone https://github.com/lxgr-linux/pokete.git
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4341 字
+          4356 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1191,6 +1195,7 @@ git clone https://github.com/lxgr-linux/pokete.git
         <li><a href="#shadowdom节点操作">shadowDOM节点操作</a></li>
         <li><a href="#有趣的开源项目">有趣的开源项目</a></li>
         <li><a href="#kfcerror">KFCError</a></li>
+        <li><a href="#unicode编码转换">unicode编码转换</a></li>
       </ul>
     </li>
   </ul>
