@@ -1039,7 +1039,10 @@ systemctl start/stop/restart docker
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;./app.py&#34;</span>]<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><ul>
 <li>
-<p><code>ADD . .</code>   将Dockerfile所在目录下的所有文件拷贝到容器内的<code>/docker_test</code>目录下</p>
+<p><code>ADD . .</code></p>
+<ul>
+<li>将Dockerfile所在目录下的所有文件拷贝到容器内的<code>/docker_test</code>目录下</li>
+</ul>
 </li>
 <li>
 <p><code>VOLUME ...</code></p>
@@ -1050,11 +1053,30 @@ systemctl start/stop/restart docker
 </ul>
 </li>
 <li>
-<p><code>EXPOSE 1110</code> 将容器内的1110端口暴露出去</p>
+<p><code>EXPOSE 1110</code></p>
+<ul>
+<li>标示此镜像暴露了容器内的1110端口，主要是给使用这个镜像的人看的。没什么卵用，真正要映射端口还是得润的时候用-p指令。</li>
+</ul>
 </li>
 <li>
-<p><code>CMD [&quot;python&quot;, &quot;./app.py&quot;]</code> 等同于在容器启动的时候在容器内执行cmd命令：</p>
-<p><code>python ./app.py</code></p>
+<p><code>CMD [&quot;python&quot;, &quot;./app.py&quot;]</code></p>
+<ul>
+<li>等同于在「<strong>容器启动的时候</strong>」在容器内执行cmd命令：<code>python ./app.py</code></li>
+<li>CMD定义的三种方式：
+<ul>
+<li>CMD <!-- raw HTML omitted --> 这个会当作/bin/sh -c &ldquo;cmd&quot;来执行</li>
+<li>CMD [&ldquo;executable&rdquo;,&ldquo;arg1&rdquo;,&hellip;.]</li>
+<li>CMD [&ldquo;arg1&rdquo;,&ldquo;arg2&rdquo;]，这个时候CMD作为ENTRYPOINT的参数</li>
+</ul>
+</li>
+<li>就算Dockerfile中有CMD指令，我们仍然可以在docker run命令中带上容器启动时执行的命令，这会覆盖Dockerfile中的CMD指令指定的命令。</li>
+<li>一个Dockerfile中只能有一个有效的CMD，当定义多个CMD的时候，只有最后一个才会起作用</li>
+<li>CMD指令案例 <code>CMD [&quot;/bin/bash&quot;]</code>
+<ul>
+<li>Dockerfile中添加命令如此，即可在执行<code>docker run</code>或<code>docker exec</code>的时候省略后面的<code>/bin/bash</code>，只需要执行<code>docker exec -it 容器</code>，即可等同于<code>docker exec -it 容器 /bin/bash</code> 达到的效果。</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="3-通过dockerfile打包并运行一个项目">3. 通过Dockerfile打包并运行一个项目</h3>
@@ -1076,9 +1098,9 @@ systemctl start/stop/restart docker
 </code></pre></div><ul>
 <li>
 <p><code>-p 宿主机端口:容器内端口</code>  指定映射的端口</p>
-</li>
-<li>
-<p><code>-v 宿主机目录:容器内目录</code>  指定数据卷映射的目录</p>
+<ul>
+<li><code>-v 宿主机目录:容器内目录</code>  指定数据卷映射的目录</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1213,7 +1235,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          8933 字
+          9329 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
