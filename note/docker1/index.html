@@ -233,7 +233,7 @@ if (!doNotTrack) {
         <li><a href="#容器的基本操作">容器的基本操作</a></li>
         <li><a href="#详细参数解析">详细参数解析</a></li>
         <li><a href="#1创建并启动容器">（1）创建并启动容器</a></li>
-        <li><a href="#2终止容器">（2）终止容器</a></li>
+        <li><a href="#2启动终止重启-容器">（2）启动/终止/重启 容器</a></li>
         <li><a href="#3进入容器">（3）进入容器</a></li>
         <li><a href="#4删除容器">（4）删除容器</a></li>
         <li><a href="#5导出导入容器">（5）导出导入容器</a></li>
@@ -747,8 +747,10 @@ systemctl start/stop/restart docker
 </ul>
 </li>
 </ol>
-<h3 id="2终止容器">（2）终止容器</h3>
-<p><code>docker stop name/ID</code></p>
+<h3 id="2启动终止重启-容器">（2）启动/终止/重启 容器</h3>
+<ul>
+<li><code>docker start/stop/restart name/ID</code></li>
+</ul>
 <h3 id="3进入容器">（3）进入容器</h3>
 <p>处于运行状态的容器可以通过docker attach、docker exec、nsenter等多种方式进入容器。</p>
 <ul>
@@ -800,7 +802,14 @@ systemctl start/stop/restart docker
 <h3 id="7给容器添加或追加端口映射">（7）给容器添加或追加端口映射</h3>
 <ul>
 <li>
-<p>新建容器时，使用docker run命令创建并运行一个容器，如需要添加端口映射则可以通过 -p 参数进行设置，如<code>docker run -it --name my_nginx -p 8080:80 -d nginx</code>，即可将宿主机的8080端口与容器的80端口进行映射。</p>
+<p>新建容器时，使用docker run命令创建并运行一个容器，如需要添加端口映射则可以通过 -p 参数进行设置，如<code>docker run -itd --name my_nginx -p 8080:80 nginx</code>，即可将宿主机的8080端口与容器的80端口进行映射。</p>
+<ol>
+<li>映射一个端口 <code>docker run -itd -p 8080:80</code></li>
+<li>映射多个端口 <code>docker run -itd -p 8088:80 -p 8088:80 nginx </code></li>
+<li>映射到指定端口的指定地址 <code>docker run -itd -p 39.108.109.60:8080:80 nginx</code></li>
+<li>映射到指定端口的任意地址  <code>docker run -itd -p 39.108.109.60::80 nginx</code></li>
+<li>查看端口的映射情况 <code>docker port 容器名</code></li>
+</ol>
 </li>
 <li>
 <p>容器已创建时，如若需要给予容器以更多的端口映射，则可以通过以下三种方式实现</p>
@@ -1235,7 +1244,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          9329 字
+          9409 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1319,7 +1328,7 @@ systemctl start/stop/restart docker
         <li><a href="#容器的基本操作">容器的基本操作</a></li>
         <li><a href="#详细参数解析">详细参数解析</a></li>
         <li><a href="#1创建并启动容器">（1）创建并启动容器</a></li>
-        <li><a href="#2终止容器">（2）终止容器</a></li>
+        <li><a href="#2启动终止重启-容器">（2）启动/终止/重启 容器</a></li>
         <li><a href="#3进入容器">（3）进入容器</a></li>
         <li><a href="#4删除容器">（4）删除容器</a></li>
         <li><a href="#5导出导入容器">（5）导出导入容器</a></li>
