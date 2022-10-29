@@ -307,46 +307,46 @@ if (!doNotTrack) {
 <h3 id="官方文档httpscnvuejsorghttpscnvuejsorg">官方文档「<a href="https://cn.vuejs.org/">https://cn.vuejs.org/</a>」</h3>
 <p>学习一门语言或技术,有什么比官方文档更适合的呢,而且Vue的中文文档很完善,对新手来说非常友善,建议一定要去康康.还有这片文章写得也很好:「<a href="https://www.cnblogs.com/lishanlei/p/8423407.html">https://www.cnblogs.com/lishanlei/p/8423407.html</a>」</p>
 <h2 id="一个简单的实例">一个简单的实例</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-&lt;<span style="color:#f92672">html</span>&gt;
-	&lt;<span style="color:#f92672">head</span>&gt;
-		&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-		&lt;<span style="color:#f92672">title</span>&gt;&lt;/<span style="color:#f92672">title</span>&gt;
-	&lt;/<span style="color:#f92672">head</span>&gt;
-	&lt;<span style="color:#f92672">body</span>&gt;
-		&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
-			{{ about.name }} 
-		&lt;/<span style="color:#f92672">div</span>&gt;
-	&lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;
-
-<span style="color:#75715e">&lt;!-- 导入vue.js --&gt;</span>
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;	
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
-      <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;#app&#34;</span>,	<span style="color:#75715e">//挂载点
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {		
-           <span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hello Vue!&#34;</span>,
-         	 <span style="color:#a6e22e">about</span><span style="color:#f92672">:</span>{
-           	<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;billie&#34;</span>,
-           	<span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>,
-           }
-      },	<span style="color:#75715e">//数据对象
-</span><span style="color:#75715e"></span>     <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{},	<span style="color:#75715e">//事件
-</span><span style="color:#75715e"></span>     <span style="color:#a6e22e">mounted</span>(){}  <span style="color:#75715e">//挂载事件
-</span><span style="color:#75715e"></span>  });
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">title</span>&gt;&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>		&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>			{{ about.name }} 
+</span></span><span style="display:flex;"><span>		&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 导入vue.js --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;	
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;#app&#34;</span>,	<span style="color:#75715e">//挂载点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {		
+</span></span><span style="display:flex;"><span>           <span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hello Vue!&#34;</span>,
+</span></span><span style="display:flex;"><span>         	 <span style="color:#a6e22e">about</span><span style="color:#f92672">:</span>{
+</span></span><span style="display:flex;"><span>           	<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;billie&#34;</span>,
+</span></span><span style="display:flex;"><span>           	<span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>,
+</span></span><span style="display:flex;"><span>           }
+</span></span><span style="display:flex;"><span>      },	<span style="color:#75715e">//数据对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>     <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{},	<span style="color:#75715e">//事件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>     <span style="color:#a6e22e">mounted</span>(){}  <span style="color:#75715e">//挂载事件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  });
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><ul>
 <li>
 <p>导入vue的两种方法:</p>
 <ul>
 <li>
 <p>在线导入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">开发环境版本</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">包含了有帮助的命令行警告</span> <span style="color:#f92672">--&gt;</span>
-<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-<span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">生产环境版本</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">优化了尺寸和速度</span> <span style="color:#f92672">--&gt;</span>
-<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">开发环境版本</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">包含了有帮助的命令行警告</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">生产环境版本</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">优化了尺寸和速度</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>本地导入<code>&lt;script src=&quot;./vue.js&quot;&gt;&lt;/script&gt;</code></p>
 </li>
@@ -382,19 +382,19 @@ if (!doNotTrack) {
 <h2 id="vue指令">Vue指令</h2>
 <h3 id="什么是指令">什么是指令?</h3>
 <p>是一种特殊的自定义行间属性（也就是在html标签内写）；指令的职责就是当其表达式的值改变时相应地将某些行为应用到DOM上，在Vue中，指令以“v-”开头, <strong>Vue中的内置指令：</strong><a href="https://link.jianshu.com/?t=http://cn.vuejs.org/v2/api/#%E6%8C%87%E4%BB%A4">点击查看更多</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue"><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bind</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">动态绑定数据</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">简写为</span><span style="color:#960050;background-color:#1e0010">“</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">”</span> <span style="color:#960050;background-color:#1e0010">。</span>=&gt; <span style="color:#a6e22e">以后的</span><span style="color:#f92672">:</span><span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{red:boolean}&#34;</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">on</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">绑定时间监听器</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">简写为</span><span style="color:#960050;background-color:#1e0010">“@”，</span><span style="color:#a6e22e">例</span><span style="color:#960050;background-color:#1e0010">：@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxx&#34;</span><span style="color:#960050;background-color:#1e0010">；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">text</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">更新数据</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">会覆盖已有结构</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">类似</span>{{ <span style="color:#a6e22e">msg</span> }} <span style="color:#960050;background-color:#1e0010">；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">show</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">根据值的真假</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">切换元素的display属性</span><span style="color:#960050;background-color:#1e0010">；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">根据值的真假</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">切换元素会被销毁</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">重建</span><span style="color:#960050;background-color:#1e0010">；</span> =&gt; <span style="color:#a6e22e">在dom中已消失</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">else</span><span style="color:#f92672">-</span><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">多条件判断</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">为真则渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">else</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">条件都不符合时渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">for</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">基于源数据多次渲染元素或模块</span><span style="color:#960050;background-color:#1e0010">；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">model</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">在表单控件元素</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">input等</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#a6e22e">上创建双向数据绑定</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">数据源</span><span style="color:#960050;background-color:#1e0010">）；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">pre</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">跳过元素和子元素的编译过程</span><span style="color:#960050;background-color:#1e0010">；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">once</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">只渲染一次</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">随后数据更新也不重新渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
-<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cloak</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">隐藏未编译的Mustache语法</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">在css中设置</span>[<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cloak</span>]{<span style="color:#a6e22e">display</span><span style="color:#f92672">:</span><span style="color:#a6e22e">none</span>;}
-</code></pre></div><h3 id="v-text">v-text</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">bind</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">动态绑定数据</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">简写为</span><span style="color:#960050;background-color:#1e0010">“</span><span style="color:#f92672">:</span><span style="color:#960050;background-color:#1e0010">”</span> <span style="color:#960050;background-color:#1e0010">。</span>=&gt; <span style="color:#a6e22e">以后的</span><span style="color:#f92672">:</span><span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{red:boolean}&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">on</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">绑定时间监听器</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">简写为</span><span style="color:#960050;background-color:#1e0010">“@”，</span><span style="color:#a6e22e">例</span><span style="color:#960050;background-color:#1e0010">：@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxx&#34;</span><span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">text</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">更新数据</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">会覆盖已有结构</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#a6e22e">类似</span>{{ <span style="color:#a6e22e">msg</span> }} <span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">show</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">根据值的真假</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">切换元素的display属性</span><span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">根据值的真假</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">切换元素会被销毁</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#a6e22e">重建</span><span style="color:#960050;background-color:#1e0010">；</span> =&gt; <span style="color:#a6e22e">在dom中已消失</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">else</span><span style="color:#f92672">-</span><span style="color:#66d9ef">if</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">多条件判断</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">为真则渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">else</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">条件都不符合时渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#66d9ef">for</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">基于源数据多次渲染元素或模块</span><span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">model</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">在表单控件元素</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">input等</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#a6e22e">上创建双向数据绑定</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">数据源</span><span style="color:#960050;background-color:#1e0010">）；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">pre</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">跳过元素和子元素的编译过程</span><span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">once</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">只渲染一次</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">随后数据更新也不重新渲染</span><span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cloak</span> <span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">隐藏未编译的Mustache语法</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">在css中设置</span>[<span style="color:#a6e22e">v</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cloak</span>]{<span style="color:#a6e22e">display</span><span style="color:#f92672">:</span><span style="color:#a6e22e">none</span>;}
+</span></span></code></pre></div><h3 id="v-text">v-text</h3>
 <ul>
 <li>作用:设置标签的<strong>文本内容</strong></li>
 <li>默认写法会替换全部内容,使用插值表达式{{}}可以替换指定内容</li>
@@ -454,11 +454,11 @@ if (!doNotTrack) {
 <li>item和index可以结合其他指令一起使用</li>
 <li>数组长度的更新会同步到页面上,是响应式的</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">ul</span>&gt;
-	&lt;<span style="color:#f92672">li</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;(item,index) in about.arr&#34;&gt;{{ index+1 }}:{{ item }}&lt;/li&gt;
-</span><span style="color:#e6db74">	&lt;li v-for=&#34;item in about.dict&#34;</span>&gt;{{ <span style="color:#a6e22e">item.name</span> }}&lt;/<span style="color:#f92672">li</span>&gt;
-&lt;/<span style="color:#f92672">ul</span>&gt;
-</code></pre></div><h3 id="v-model">v-model</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">li</span> <span style="color:#f92672">v-for</span><span style="color:#e6db74">=&#34;(item,index) in about.arr&#34;&gt;{{ index+1 }}:{{ item }}&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">	&lt;li v-for=&#34;item in about.dict&#34;</span>&gt;{{ <span style="color:#a6e22e">item.name</span> }}&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span></code></pre></div><h3 id="v-model">v-model</h3>
 <ul>
 <li>作用:便捷地<strong>设置和获取表单元素的值</strong></li>
 <li>绑定的数据会和表单元素<strong>值</strong>相关联</li>
@@ -488,36 +488,36 @@ if (!doNotTrack) {
 <li><a href="https://github.com/RekingZhang/axios-jsonp">https://github.com/RekingZhang/axios-jsonp</a></li>
 <li><a href="https://github.com/RekingZhang/axios-jsonp/tree/master/dist">https://github.com/RekingZhang/axios-jsonp/tree/master/dist</a></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
-	&lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;main_url&#34;</span> &gt;
-&lt;/<span style="color:#f92672">div</span>&gt;
-<span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">vue</span> <span style="color:#f92672">--&gt;</span>
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;	
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://billie-s-blog.oss-cn-beijing.aliyuncs.com/axios.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-&lt;<span style="color:#f92672">script</span>&gt;	
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
-		<span style="color:#a6e22e">el</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;#app&#34;</span>, <span style="color:#75715e">//挂载点
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;pass me&#39;</span>,<span style="color:#a6e22e">main_url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#a6e22e">about_url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>},  <span style="color:#75715e">//数据对象
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{
-			<span style="color:#a6e22e">getimg</span>(){
-				<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
-				<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">jsonp</span>(<span style="color:#e6db74">&#39;http://open.iciba.com/dsapi/&#39;</span>)
-				  .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
-					  <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">main_url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">fenxiang_img</span>;
-					  <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">about_url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">picture4</span>;
-				    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">response</span>);
-				  })
-				  .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">error</span>) {
-				    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
-				  });
-			}	
-		}, <span style="color:#75715e">// 方法
-</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">mounted</span>(){
-			<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getimg</span>();
-		}
-	})
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><h3 id="按钮">按钮</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;<span style="color:#f92672">img</span> <span style="color:#f92672">:src</span><span style="color:#e6db74">=&#34;main_url&#34;</span> &gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">vue</span> <span style="color:#f92672">--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;	
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://billie-s-blog.oss-cn-beijing.aliyuncs.com/axios.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">el</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;#app&#34;</span>, <span style="color:#75715e">//挂载点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;pass me&#39;</span>,<span style="color:#a6e22e">main_url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#a6e22e">about_url</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;&#39;</span>},  <span style="color:#75715e">//数据对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">getimg</span>(){
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">jsonp</span>(<span style="color:#e6db74">&#39;http://open.iciba.com/dsapi/&#39;</span>)
+</span></span><span style="display:flex;"><span>				  .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">response</span>) {
+</span></span><span style="display:flex;"><span>					  <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">main_url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">fenxiang_img</span>;
+</span></span><span style="display:flex;"><span>					  <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">about_url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">picture4</span>;
+</span></span><span style="display:flex;"><span>				    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">response</span>);
+</span></span><span style="display:flex;"><span>				  })
+</span></span><span style="display:flex;"><span>				  .<span style="color:#66d9ef">catch</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>				    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>				  });
+</span></span><span style="display:flex;"><span>			}	
+</span></span><span style="display:flex;"><span>		}, <span style="color:#75715e">// 方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">mounted</span>(){
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getimg</span>();
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><h3 id="按钮">按钮</h3>
 <table>
 <thead>
 <tr>
@@ -816,8 +816,8 @@ if (!doNotTrack) {
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

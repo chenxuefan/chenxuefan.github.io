@@ -289,66 +289,66 @@ if (!doNotTrack) {
 </ul>
 <h2 id="常规使用">常规使用</h2>
 <h3 id="1-工作簿的使用">1. 工作簿的使用</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>Workbook() <span style="color:#75715e"># 新建</span>
-wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>load_workbook(<span style="color:#e6db74">&#39;filename&#39;</span>) <span style="color:#75715e"># 加载本地的文件</span>
-all_sheet <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>sheetnames <span style="color:#75715e"># 获取所有的sheet，返回list</span>
-wb<span style="color:#f92672">.</span>remove(sheetname)
-wb<span style="color:#f92672">.</span>save(filename)
-</code></pre></div><h3 id="2-工作表的使用">2. 工作表的使用</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">## 创建工作表对象的四种方法</span>
-ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>create_sheet(<span style="color:#e6db74">&#39;Sheet1&#39;</span>) <span style="color:#75715e"># 创建sheet，指定位置使用index参数，从0开始</span>
-ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>get_sheet_by_name(<span style="color:#e6db74">&#39;Sheet1&#39;</span>) <span style="color:#75715e"># 通过sheet名称获取sheet对象</span>
-ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>active <span style="color:#75715e"># 激活当前sheet页</span>
-ws <span style="color:#f92672">=</span> wb[<span style="color:#e6db74">&#39;Sheet1&#39;</span>] <span style="color:#75715e"># 通过sheet名称获取</span>
-ws <span style="color:#f92672">=</span> wb[<span style="color:#ae81ff">0</span>] <span style="color:#75715e"># 通过下标来获取</span>
-
-ws<span style="color:#f92672">.</span>title <span style="color:#75715e"># 获取sheet名称</span>
-ws<span style="color:#f92672">.</span>title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e"># 设置sheet名称</span>
-ws<span style="color:#f92672">.</span>max_column <span style="color:#75715e"># 获取表最大列数</span>
-ws<span style="color:#f92672">.</span>max_row <span style="color:#75715e"># 获取表最大行数</span>
-ws<span style="color:#f92672">.</span>sheet_properties<span style="color:#f92672">.</span>tabColor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1072BA&#39;</span> <span style="color:#75715e"># 设置sheet名称背景颜色</span>
-ws<span style="color:#f92672">.</span>dimensions <span style="color:#75715e"># 获取sheet内容的维度（例&#39;A1:D37&#39;）</span>
-ws<span style="color:#f92672">.</span>columns <span style="color:#75715e"># 获取以列分组的所有单元格</span>
-ws<span style="color:#f92672">.</span>append([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]) <span style="color:#75715e"># 写入一行数据</span>
-</code></pre></div><h3 id="3-单元格的使用">3. 单元格的使用</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cell<span style="color:#f92672">.</span>row<span style="color:#f92672">/</span>column<span style="color:#f92672">/</span>coordinate <span style="color:#75715e"># 获取单元格的行/列/坐标</span>
-<span style="color:#75715e"># 获取单元格对象的两种方法</span>
-cell <span style="color:#f92672">=</span> ws[<span style="color:#e6db74">&#39;A1&#39;</span>]
-cell <span style="color:#f92672">=</span> ws<span style="color:#f92672">.</span>cell(row<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,column<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-<span style="color:#75715e"># 获取多个单元格内容</span>
-ws[<span style="color:#e6db74">&#39;A&#39;</span>:<span style="color:#e6db74">&#39;D&#39;</span>] <span style="color:#75715e"># 获取A列到D列的单元格</span>
-ws[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>] <span style="color:#75715e"># 获取第1行到第5行的单元格</span>
-ws[<span style="color:#e6db74">&#39;A1&#39;</span>:<span style="color:#e6db74">&#39;A5&#39;</span>] <span style="color:#75715e"># 获取A1到A5的单元格</span>
-ws[<span style="color:#e6db74">&#39;A&#39;</span>] <span style="color:#75715e"># 获取A列所有单元格</span>
-ws[<span style="color:#ae81ff">1</span>] <span style="color:#75715e"># 获取第1行所有单元格</span>
-ws<span style="color:#f92672">.</span>iter_rows()<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 获取第1行所有单元格</span>
-ws[<span style="color:#e6db74">&#39;A1&#39;</span>]<span style="color:#f92672">.</span>value <span style="color:#75715e"># 获取“A1“单元格的值</span>
-ws<span style="color:#f92672">.</span>iter_rows(min_row,max_row,min_col,max_col) <span style="color:#75715e"># （以行）获取指定行列范围之间的单元格</span>
-ws<span style="color:#f92672">.</span>iter_cols(min_row,max_row,min_col,max_col) <span style="color:#75715e"># （以列）获取指定行列范围之间的单元格</span>
-<span style="color:#75715e">## 设置单元格数值的三种方法</span>
-ws<span style="color:#f92672">.</span>cell(row<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,column<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,value<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;a&#39;</span>)
-ws<span style="color:#f92672">.</span>cell(row<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,column<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span> 
-ws[<span style="color:#e6db74">&#39;A1&#39;</span>]<span style="color:#f92672">.</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span>
-<span style="color:#75715e">## 设置单元格填充</span>
-<span style="color:#f92672">from</span> openpyxl.styles <span style="color:#f92672">import</span> PatternFill
-cell<span style="color:#f92672">.</span>fill <span style="color:#f92672">=</span> PatternFill(<span style="color:#e6db74">&#34;solid&#34;</span>, fgColor<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ffff00&#34;</span>)
-<span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">fill_type 有如下的方式 一般纯色填充使用 solid 
-</span><span style="color:#e6db74">{&#39;lightGrid&#39;, &#39;gray0625&#39;, &#39;lightTrellis&#39;, &#39;lightDown&#39;, &#39;lightVertical&#39;, &#39;darkTrellis&#39;, &#39;darkHorizontal&#39;, &#39;darkVertical&#39;, &#39;darkGrid&#39;, &#39;darkGray&#39;, &#39;solid&#39;, &#39;darkUp&#39;, &#39;lightGray&#39;, &#39;mediumGray&#39;, &#39;darkDown&#39;, &#39;lightHorizontal&#39;, &#39;lightUp&#39;, &#39;gray125&#39;}
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-<span style="color:#f92672">from</span> openpyxl.styles <span style="color:#f92672">import</span> Font,colors,Alignment
-<span style="color:#75715e">## 设置字体</span>
-font <span style="color:#f92672">=</span> Font(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">22</span>,italic<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,color<span style="color:#f92672">=</span>colors<span style="color:#f92672">.</span>RED,bold<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-cell<span style="color:#f92672">.</span>font <span style="color:#f92672">=</span> font
-<span style="color:#75715e">## 设置对齐</span>
-cell<span style="color:#f92672">.</span>alignment <span style="color:#f92672">=</span> Alignment(horizontal<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>,vertical<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>) <span style="color:#75715e"># 水平、垂直</span>
-<span style="color:#75715e">## 设置行高</span>
-ws<span style="color:#f92672">.</span>row_dimensions[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>height <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-<span style="color:#75715e">## 设置列高</span>
-ws<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#34;A&#34;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-<span style="color:#75715e">## 合并单元格</span>
-ws<span style="color:#f92672">.</span>merge_cells(<span style="color:#e6db74">&#34;A1:C6&#34;</span>)
-</code></pre></div><h2 id="方法大全">方法大全</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>Workbook() <span style="color:#75715e"># 新建</span>
+</span></span><span style="display:flex;"><span>wb <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>load_workbook(<span style="color:#e6db74">&#39;filename&#39;</span>) <span style="color:#75715e"># 加载本地的文件</span>
+</span></span><span style="display:flex;"><span>all_sheet <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>sheetnames <span style="color:#75715e"># 获取所有的sheet，返回list</span>
+</span></span><span style="display:flex;"><span>wb<span style="color:#f92672">.</span>remove(sheetname)
+</span></span><span style="display:flex;"><span>wb<span style="color:#f92672">.</span>save(filename)
+</span></span></code></pre></div><h3 id="2-工作表的使用">2. 工作表的使用</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">## 创建工作表对象的四种方法</span>
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>create_sheet(<span style="color:#e6db74">&#39;Sheet1&#39;</span>) <span style="color:#75715e"># 创建sheet，指定位置使用index参数，从0开始</span>
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>get_sheet_by_name(<span style="color:#e6db74">&#39;Sheet1&#39;</span>) <span style="color:#75715e"># 通过sheet名称获取sheet对象</span>
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> wb<span style="color:#f92672">.</span>active <span style="color:#75715e"># 激活当前sheet页</span>
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> wb[<span style="color:#e6db74">&#39;Sheet1&#39;</span>] <span style="color:#75715e"># 通过sheet名称获取</span>
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> wb[<span style="color:#ae81ff">0</span>] <span style="color:#75715e"># 通过下标来获取</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>title <span style="color:#75715e"># 获取sheet名称</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e"># 设置sheet名称</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>max_column <span style="color:#75715e"># 获取表最大列数</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>max_row <span style="color:#75715e"># 获取表最大行数</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>sheet_properties<span style="color:#f92672">.</span>tabColor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1072BA&#39;</span> <span style="color:#75715e"># 设置sheet名称背景颜色</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>dimensions <span style="color:#75715e"># 获取sheet内容的维度（例&#39;A1:D37&#39;）</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>columns <span style="color:#75715e"># 获取以列分组的所有单元格</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>append([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]) <span style="color:#75715e"># 写入一行数据</span>
+</span></span></code></pre></div><h3 id="3-单元格的使用">3. 单元格的使用</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cell<span style="color:#f92672">.</span>row<span style="color:#f92672">/</span>column<span style="color:#f92672">/</span>coordinate <span style="color:#75715e"># 获取单元格的行/列/坐标</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 获取单元格对象的两种方法</span>
+</span></span><span style="display:flex;"><span>cell <span style="color:#f92672">=</span> ws[<span style="color:#e6db74">&#39;A1&#39;</span>]
+</span></span><span style="display:flex;"><span>cell <span style="color:#f92672">=</span> ws<span style="color:#f92672">.</span>cell(row<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,column<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 获取多个单元格内容</span>
+</span></span><span style="display:flex;"><span>ws[<span style="color:#e6db74">&#39;A&#39;</span>:<span style="color:#e6db74">&#39;D&#39;</span>] <span style="color:#75715e"># 获取A列到D列的单元格</span>
+</span></span><span style="display:flex;"><span>ws[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>] <span style="color:#75715e"># 获取第1行到第5行的单元格</span>
+</span></span><span style="display:flex;"><span>ws[<span style="color:#e6db74">&#39;A1&#39;</span>:<span style="color:#e6db74">&#39;A5&#39;</span>] <span style="color:#75715e"># 获取A1到A5的单元格</span>
+</span></span><span style="display:flex;"><span>ws[<span style="color:#e6db74">&#39;A&#39;</span>] <span style="color:#75715e"># 获取A列所有单元格</span>
+</span></span><span style="display:flex;"><span>ws[<span style="color:#ae81ff">1</span>] <span style="color:#75715e"># 获取第1行所有单元格</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>iter_rows()<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 获取第1行所有单元格</span>
+</span></span><span style="display:flex;"><span>ws[<span style="color:#e6db74">&#39;A1&#39;</span>]<span style="color:#f92672">.</span>value <span style="color:#75715e"># 获取“A1“单元格的值</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>iter_rows(min_row,max_row,min_col,max_col) <span style="color:#75715e"># （以行）获取指定行列范围之间的单元格</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>iter_cols(min_row,max_row,min_col,max_col) <span style="color:#75715e"># （以列）获取指定行列范围之间的单元格</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 设置单元格数值的三种方法</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>cell(row<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,column<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,value<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>cell(row<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,column<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span> 
+</span></span><span style="display:flex;"><span>ws[<span style="color:#e6db74">&#39;A1&#39;</span>]<span style="color:#f92672">.</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 设置单元格填充</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> openpyxl.styles <span style="color:#f92672">import</span> PatternFill
+</span></span><span style="display:flex;"><span>cell<span style="color:#f92672">.</span>fill <span style="color:#f92672">=</span> PatternFill(<span style="color:#e6db74">&#34;solid&#34;</span>, fgColor<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ffff00&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">fill_type 有如下的方式 一般纯色填充使用 solid 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{&#39;lightGrid&#39;, &#39;gray0625&#39;, &#39;lightTrellis&#39;, &#39;lightDown&#39;, &#39;lightVertical&#39;, &#39;darkTrellis&#39;, &#39;darkHorizontal&#39;, &#39;darkVertical&#39;, &#39;darkGrid&#39;, &#39;darkGray&#39;, &#39;solid&#39;, &#39;darkUp&#39;, &#39;lightGray&#39;, &#39;mediumGray&#39;, &#39;darkDown&#39;, &#39;lightHorizontal&#39;, &#39;lightUp&#39;, &#39;gray125&#39;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> openpyxl.styles <span style="color:#f92672">import</span> Font,colors,Alignment
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 设置字体</span>
+</span></span><span style="display:flex;"><span>font <span style="color:#f92672">=</span> Font(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,size<span style="color:#f92672">=</span><span style="color:#ae81ff">22</span>,italic<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,color<span style="color:#f92672">=</span>colors<span style="color:#f92672">.</span>RED,bold<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>cell<span style="color:#f92672">.</span>font <span style="color:#f92672">=</span> font
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 设置对齐</span>
+</span></span><span style="display:flex;"><span>cell<span style="color:#f92672">.</span>alignment <span style="color:#f92672">=</span> Alignment(horizontal<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>,vertical<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center&#34;</span>) <span style="color:#75715e"># 水平、垂直</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 设置行高</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>row_dimensions[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>height <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 设置列高</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>column_dimensions[<span style="color:#e6db74">&#34;A&#34;</span>]<span style="color:#f92672">.</span>width <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 合并单元格</span>
+</span></span><span style="display:flex;"><span>ws<span style="color:#f92672">.</span>merge_cells(<span style="color:#e6db74">&#34;A1:C6&#34;</span>)
+</span></span></code></pre></div><h2 id="方法大全">方法大全</h2>
 <h3 id="openpyxl对象">「openpyxl对象」</h3>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210328162332508.png" alt="image-20210328162332508"></p>
 <h3 id="工作簿workbook对象">「工作簿（workbook）对象」</h3>
@@ -559,8 +559,8 @@ ws<span style="color:#f92672">.</span>merge_cells(<span style="color:#e6db74">&#
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

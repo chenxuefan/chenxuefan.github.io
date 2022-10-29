@@ -291,11 +291,11 @@ if (!doNotTrack) {
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117222802863.png" alt="image-20201117222802863"></p>
 <h2 id="方式1---修改后端配置">方式1 - 修改后端配置</h2>
 <p>nginx配置文件<code>nginx.conf</code>中加上这几句</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#e6db74">&#34;</span>$http_origin&#34; <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Credentials&#39;</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span> <span style="color:#e6db74">&#39;GET,</span> <span style="color:#e6db74">OPTIONS&#39;</span> <span style="color:#e6db74">always</span>;
-<span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span> <span style="color:#e6db74">&#39;Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-</span>  <span style="color:#e6db74">Since,Keep-Alive,Origin,User-Agent,X-Requested-With&#39;</span> <span style="color:#e6db74">always</span>;
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117220901079.png" alt="image-20201117220901079"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#e6db74">&#34;</span>$http_origin&#34; <span style="color:#e6db74">always</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Credentials&#39;</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#e6db74">always</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span> <span style="color:#e6db74">&#39;GET,</span> <span style="color:#e6db74">OPTIONS&#39;</span> <span style="color:#e6db74">always</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span> <span style="color:#e6db74">&#39;Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-</span>  <span style="color:#e6db74">Since,Keep-Alive,Origin,User-Agent,X-Requested-With&#39;</span> <span style="color:#e6db74">always</span>;
+</span></span></code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117220901079.png" alt="image-20201117220901079"></p>
 <p>以上，重新启动nginx，再向服务器发送请求，即可成功获取响应数据</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201117223517556.png" alt="image-20201117223517556"></p>
 <h2 id="方式2---前端使用jsonp请求">方式2 - 前端使用jsonp请求</h2>
@@ -507,8 +507,8 @@ if (!doNotTrack) {
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

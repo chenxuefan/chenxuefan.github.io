@@ -307,125 +307,125 @@ if (!doNotTrack) {
 <li>
 <p><strong>函数即变量</strong> - 一个带有括号的变量</p>
 <p>定义一个函数，调用时如果不加括号则返回其「内存地址」，加括号则直接调用这个函数。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
-    print(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
-fun()
-print(fun)
-
-<span style="color:#e6db74">&#39;&#39;&#39;运行结果
-</span><span style="color:#e6db74">hello world!
-</span><span style="color:#e6db74">&lt;function fun at 0x111522940&gt;
-</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
+</span></span><span style="display:flex;"><span>fun()
+</span></span><span style="display:flex;"><span>print(fun)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;运行结果
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">hello world!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;function fun at 0x111522940&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span></code></pre></div></li>
 <li>
 <p><strong>高阶函数</strong> - 把一个函数作为「实参」传入另个函数</p>
 <p>python允许一个函数接收另一个函数作为参数，这种函数就称之为高阶函数。带来的一个直接好处就是，在不修改被装饰函数源代码的情况下为其添加功能。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">accept</span>(func):
-    print(<span style="color:#e6db74">&#34;this is accept()&#34;</span>)
-    func()
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">deliver</span>():
-    print(<span style="color:#e6db74">&#34;this is deliver()&#34;</span>)
-accept(deliver)
-
-<span style="color:#e6db74">&#39;&#39;&#39;运行结果
-</span><span style="color:#e6db74">this is accept()
-</span><span style="color:#e6db74">this is deliver()
-</span><span style="color:#e6db74">&#39;&#39;&#39;</span> 
-</code></pre></div><p><a href="https://zhuanlan.zhihu.com/p/93225449">python中5个常用的内置高阶函数</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">accept</span>(func):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;this is accept()&#34;</span>)
+</span></span><span style="display:flex;"><span>	   func()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">deliver</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;this is deliver()&#34;</span>)
+</span></span><span style="display:flex;"><span>accept(deliver)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;运行结果
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">this is accept()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">this is deliver()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span> 
+</span></span></code></pre></div><p><a href="https://zhuanlan.zhihu.com/p/93225449">python中5个常用的内置高阶函数</a></p>
 </li>
 <li>
 <p><strong>嵌套函数</strong> - 在一个函数内声明一个函数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun1</span>():
-    x<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun2</span>():
-        x<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-        print(x)
-    fun2()
-fun1()
-
-<span style="color:#e6db74">&#39;&#39;&#39;运行结果
-</span><span style="color:#e6db74">2
-</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
-</code></pre></div><p>除了声明函数，也可使用return关键字返回这个函数对象。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun1</span>():
+</span></span><span style="display:flex;"><span>    x<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun2</span>():
+</span></span><span style="display:flex;"><span>        x<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        print(x)
+</span></span><span style="display:flex;"><span>    fun2()
+</span></span><span style="display:flex;"><span>fun1()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;运行结果
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span></code></pre></div><p>除了声明函数，也可使用return关键字返回这个函数对象。</p>
 </li>
 </ol>
 <h2 id="内置装饰器">内置装饰器</h2>
 <ul>
 <li>
 <p><code>@wraps(func)</code> - 确保被装饰函数的属性（如<code>__name__</code>、<code>__doc__</code>）不被改变</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> wraps
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decorator</span>(func):
-    <span style="color:#a6e22e">@wraps</span>(func) <span style="color:#75715e"># </span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs):
-        <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs)
-    <span style="color:#66d9ef">return</span> wrapper
-
-<span style="color:#a6e22e">@decorator</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fruit</span>():
-  <span style="color:#66d9ef">return</span> __name__<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;我爱吃香蕉。&#34;</span>
-
-print(fruit<span style="color:#f92672">.</span>__name__) <span style="color:#75715e"># fruit</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> wraps
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decorator</span>(func):
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@wraps</span>(func) <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> wrapper
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@decorator</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fruit</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> __name__<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;我爱吃香蕉。&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(fruit<span style="color:#f92672">.</span>__name__) <span style="color:#75715e"># fruit</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>@property</code> - 访问被装饰函数的函数名时，会返回被装饰函数的执行代码及返回值</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NB</span>:
-    <span style="color:#a6e22e">@property</span> <span style="color:#75715e"># </span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">name</span>(self):
-      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Billie&#34;</span>
-
-NB()<span style="color:#f92672">.</span>name <span style="color:#75715e"># Billie</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NB</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@property</span> <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">name</span>(self):
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Billie&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NB()<span style="color:#f92672">.</span>name <span style="color:#75715e"># Billie</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>@staticmethod</code> - 声明某个类中的函数为静态方法，可以实现非实例化调用该方法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExcelOperator</span>:
-    <span style="color:#a6e22e">@staticmethod</span> <span style="color:#75715e"># </span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>(): <span style="color:#75715e"># 注意，这里没有self参数</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">6</span>
-
-ExcelOperator()<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 6</span>
-ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 也是6</span>
-</code></pre></div><p>property 和 staticmethod 功能很类似，一个是<code>Class().func</code>一个是<code>Class.func()</code>（强行和谐 👌</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExcelOperator</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span> <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>(): <span style="color:#75715e"># 注意，这里没有self参数</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ExcelOperator()<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 6</span>
+</span></span><span style="display:flex;"><span>ExcelOperator<span style="color:#f92672">.</span>test() <span style="color:#75715e"># 也是6</span>
+</span></span></code></pre></div><p>property 和 staticmethod 功能很类似，一个是<code>Class().func</code>一个是<code>Class.func()</code>（强行和谐 👌</p>
 </li>
 <li>
 <p><code>@classmethod</code> - 类方法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Xin</span>:
-  motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;你就好啦&#39;</span>
-
-  <span style="color:#a6e22e">@classmethod</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jie</span>(cls):
-    print(cls<span style="color:#f92672">.</span>motto)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Xin</span>:
+</span></span><span style="display:flex;"><span>  motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;你就好啦&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@classmethod</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jie</span>(cls):
+</span></span><span style="display:flex;"><span>    print(cls<span style="color:#f92672">.</span>motto)
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="装饰器实例">装饰器实例</h2>
 <h3 id="1-最基本的装饰器---高阶函数嵌套函数">1. 最基本的装饰器 - 高阶函数+嵌套函数</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(func):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>():
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;开始执行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-        func()
-    <span style="color:#66d9ef">return</span> wrapper
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
-    print(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
-f <span style="color:#f92672">=</span> logger(fun)
-f()
-</code></pre></div><p>logger函数就是装饰器，它把真正执行业务方法的func包裹在函数里面，看起来像fun被logger装饰了，在这个例子中，函数进入和退出时，被称为一个横切面（Aspect），这种编程方式被称为「面向切面的编程（Aspect-Oriented programming）」，执行结果如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(func):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>():
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;开始执行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        func()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> wrapper
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> logger(fun)
+</span></span><span style="display:flex;"><span>f()
+</span></span></code></pre></div><p>logger函数就是装饰器，它把真正执行业务方法的func包裹在函数里面，看起来像fun被logger装饰了，在这个例子中，函数进入和退出时，被称为一个横切面（Aspect），这种编程方式被称为「面向切面的编程（Aspect-Oriented programming）」，执行结果如下</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210404000722974.png" alt="image-20210404000722974"></p>
 <p>使用return返回函数对象时，不带括号则返回这个函数的内存地址，带上括号则直接运行，如下：</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210404000814834.png" alt="image-20210404000814834"></p>
 <h3 id="2-带语法糖的装饰器">2. 带语法糖的装饰器</h3>
 <p>@ 符号是装饰器的语法糖，在定义函数的时候使用，只需在待执行装饰器的函数上方加上「@装饰器名」即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(func):
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>():
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;正在执行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-    func()
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;结束运行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-	<span style="color:#66d9ef">return</span> wrapper
-
-<span style="color:#a6e22e">@logger</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
-  print(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
-
-fun()
-</code></pre></div><p>使用了语法糖的方法，就可以直接调用fun()，如果还有其他需要执行装饰器的执行函数，也可直接用这样的方式套用，而不用重复修改函数或者增加新的封装。这样一来，就提高了程序的复用性和可读性。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(func):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;正在执行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    func()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;结束运行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> wrapper
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@logger</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fun()
+</span></span></code></pre></div><p>使用了语法糖的方法，就可以直接调用fun()，如果还有其他需要执行装饰器的执行函数，也可直接用这样的方式套用，而不用重复修改函数或者增加新的封装。这样一来，就提高了程序的复用性和可读性。</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210404001032763.png" alt="image-20210404001032763"></p>
 <h3 id="3-可传参的装饰器">3. 可传参的装饰器</h3>
 <p>我们先来唠一唠参数吧，python函数中的参数极具魅力，各种参数的交替使用可充分提高开发效率。</p>
@@ -434,105 +434,105 @@ fun()
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210404112258770.png" alt="image-20210404112258770"></p>
 <p>更多请参考 - <a href="https://www.cnblogs.com/bingabcd/p/6671368.html">python的位置参数、默认参数、关键字参数、可变参数区别</a></p>
 <p>为了给予装饰器更大的灵活性，例如带参数的装饰器，我们也可以给装饰器进行传参的操作。一般而言，我们编写的装饰器需要应用于多个函数，而被应用函数传入的参数都不固定，为了使得<strong>我们的装饰器能够通用于所有的函数</strong>，编写装饰器时可传入可变参数，即<code>*args</code>和<code>**kwargs</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(func):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs): <span style="color:#75715e">#</span>
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;正在执行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-        func(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs) <span style="color:#75715e">#</span>
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;结束运行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-	  <span style="color:#66d9ef">return</span> wrapper
-
-<span style="color:#a6e22e">@logger</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>(name,lang):
-    print(name)
-    print(lang)
-
-fun(<span style="color:#e6db74">&#39;Billie&#39;</span>,lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;python&#39;</span>)
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210404113530144.png" alt="image-20210404113530144"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(func):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs): <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;正在执行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        func(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs) <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;结束运行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>	  <span style="color:#66d9ef">return</span> wrapper
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@logger</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>(name,lang):
+</span></span><span style="display:flex;"><span>    print(name)
+</span></span><span style="display:flex;"><span>    print(lang)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fun(<span style="color:#e6db74">&#39;Billie&#39;</span>,lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;python&#39;</span>)
+</span></span></code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210404113530144.png" alt="image-20210404113530144"></p>
 <h3 id="4-带参数的装饰器">4. 带参数的装饰器</h3>
 <p>使用时给装饰器函数进行传参。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(flag<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(func): <span style="color:#75715e">#</span>
-        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs): <span style="color:#75715e">#</span>
-            <span style="color:#66d9ef">if</span> flag:
-                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;正在执行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-                func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs) <span style="color:#75715e">#</span>
-                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;结束运行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-        <span style="color:#66d9ef">return</span> inner
-    <span style="color:#66d9ef">return</span> wrapper
-<span style="color:#a6e22e">@logger</span>(<span style="color:#66d9ef">False</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
-    print(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
-fun()
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210406113440255.png" alt="image-20210406113440255"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">logger</span>(flag<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(func): <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs): <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> flag:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;正在执行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>                func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs) <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;结束运行函数 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> inner
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> wrapper
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@logger</span>(<span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
+</span></span><span style="display:flex;"><span>fun()
+</span></span></code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210406113440255.png" alt="image-20210406113440255"></p>
 <h3 id="5-类装饰器">5. 类装饰器</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">decorator</span>:
-  <span style="color:#66d9ef">def</span> __init__(self):
-  <span style="color:#66d9ef">def</span> __call__(self):
-  <span style="color:#66d9ef">def</span> __set__(self):
-</code></pre></div><h3 id="6-装饰器示例">6. 装饰器示例</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 异常处理装饰器</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">log</span>(flag):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(func):
-        <span style="color:#a6e22e">@wraps</span>(func)
-        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs):
-            <span style="color:#66d9ef">if</span> flag:
-                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;正在执行 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-                logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;正在执行 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-            <span style="color:#66d9ef">try</span>:
-                <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
-            <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-                logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#39;程序报错提示：&#39;</span>, repr(e) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> traceback<span style="color:#f92672">.</span>format_exc())
-        <span style="color:#66d9ef">return</span> inner
-    <span style="color:#66d9ef">return</span> wrapper
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StopRetryError</span>(<span style="color:#a6e22e">Exception</span>):
-    <span style="color:#66d9ef">pass</span>
-  
-<span style="color:#75715e"># 重试</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">retry</span>(times<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decorator</span>(func):
-        <span style="color:#a6e22e">@wraps</span>(func)
-        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner_decorator</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
-            error <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
-            error_msg <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
-            <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(times):
-                <span style="color:#66d9ef">try</span>:
-                    <span style="color:#66d9ef">if</span> error_msg:
-                        rpa_logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;程序运行出错, 错误信息 </span><span style="color:#e6db74">{</span>error_msg<span style="color:#e6db74">}</span><span style="color:#e6db74">, 进入重试&#39;</span>)
-                    <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
-                <span style="color:#66d9ef">except</span> StopRetryError <span style="color:#66d9ef">as</span> e:
-                    <span style="color:#66d9ef">raise</span> e
-                <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-                    error <span style="color:#f92672">=</span> e
-                    error_msg <span style="color:#f92672">=</span> str(e)
-            <span style="color:#66d9ef">else</span>:
-                <span style="color:#66d9ef">raise</span> error
-
-        <span style="color:#66d9ef">return</span> inner_decorator
-
-    <span style="color:#66d9ef">return</span> decorator
-</code></pre></div><p>使用频率比较高的装饰器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">log</span>(func):
-    <span style="color:#a6e22e">@wraps</span>(func)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
-        <span style="color:#66d9ef">try</span>:
-            <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
-        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-            logging<span style="color:#f92672">.</span>error(repr(e) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> traceback<span style="color:#f92672">.</span>format_exc())
-    <span style="color:#66d9ef">return</span> wrapper
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">makedirs</span>(func):
-    <span style="color:#a6e22e">@wraps</span>(func)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
-        <span style="color:#66d9ef">try</span>:
-            <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
-        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">FileNotFoundError</span> <span style="color:#66d9ef">as</span> e:
-            file_path <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#34;: &#39;(.*?)&#39;&#34;</span>, str(e))<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
-            file_dir <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>split(file_path)[<span style="color:#ae81ff">0</span>]
-            os<span style="color:#f92672">.</span>makedirs(file_dir) <span style="color:#75715e">#</span>
-            logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;makedirs: </span><span style="color:#e6db74">{</span>file_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-            logging<span style="color:#f92672">.</span>error(repr(e) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> traceback<span style="color:#f92672">.</span>format_exc())
-    <span style="color:#66d9ef">return</span> wrapper
-</code></pre></div><h2 id="后记">后记</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">decorator</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __call__(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __set__(self):
+</span></span></code></pre></div><h3 id="6-装饰器示例">6. 装饰器示例</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 异常处理装饰器</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">log</span>(flag):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(func):
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@wraps</span>(func)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner</span>(<span style="color:#f92672">*</span>args,<span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> flag:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;正在执行 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>                logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;正在执行 - </span><span style="color:#e6db74">{</span>func<span style="color:#f92672">.</span>__name__<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>                logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#39;程序报错提示：&#39;</span>, repr(e) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> traceback<span style="color:#f92672">.</span>format_exc())
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> inner
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> wrapper
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StopRetryError</span>(<span style="color:#a6e22e">Exception</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重试</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">retry</span>(times<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decorator</span>(func):
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@wraps</span>(func)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner_decorator</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>            error <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>            error_msg <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(times):
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span> error_msg:
+</span></span><span style="display:flex;"><span>                        rpa_logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;程序运行出错, 错误信息 </span><span style="color:#e6db74">{</span>error_msg<span style="color:#e6db74">}</span><span style="color:#e6db74">, 进入重试&#39;</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">except</span> StopRetryError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">raise</span> e
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>                    error <span style="color:#f92672">=</span> e
+</span></span><span style="display:flex;"><span>                    error_msg <span style="color:#f92672">=</span> str(e)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">raise</span> error
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> inner_decorator
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> decorator
+</span></span></code></pre></div><p>使用频率比较高的装饰器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">log</span>(func):
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@wraps</span>(func)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            logging<span style="color:#f92672">.</span>error(repr(e) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> traceback<span style="color:#f92672">.</span>format_exc())
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> wrapper
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">makedirs</span>(func):
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@wraps</span>(func)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">wrapper</span>(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> func(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">FileNotFoundError</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            file_path <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#34;: &#39;(.*?)&#39;&#34;</span>, str(e))<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            file_dir <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>split(file_path)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>            os<span style="color:#f92672">.</span>makedirs(file_dir) <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>            logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;makedirs: </span><span style="color:#e6db74">{</span>file_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            logging<span style="color:#f92672">.</span>error(repr(e) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> traceback<span style="color:#f92672">.</span>format_exc())
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> wrapper
+</span></span></code></pre></div><h2 id="后记">后记</h2>
 <p>更多 - <a href="https://billie52707.cn/posts/2021/3/python-decorator-return/">python学习笔记 | 一次使用装饰器时引发的思考</a></p>
 
     </div>
@@ -740,8 +740,8 @@ fun()
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

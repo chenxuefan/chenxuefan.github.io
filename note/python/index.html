@@ -337,18 +337,18 @@ if (!doNotTrack) {
 <p>私有变量</p>
 <p><a href="https://zhuanlan.zhihu.com/p/79280319">https://zhuanlan.zhihu.com/p/79280319</a></p>
 <p>定义：至少两个前缀<code>__</code>，最多一个后缀<code>_</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
-  <span style="color:#66d9ef">def</span> __init__(self):
-      self<span style="color:#f92672">.</span>__b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c&#39;</span>
-
-  <span style="color:#75715e"># 私有方法</span>
-  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pm</span>(self):
-    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__b
-
-A()<span style="color:#f92672">.</span>__b  <span style="color:#75715e"># &#39;A&#39; object has no attribute &#39;__b&#39;</span>
-A()<span style="color:#f92672">.</span>_A__b  <span style="color:#75715e"># c</span>
-A()<span style="color:#f92672">.</span>pm()  <span style="color:#75715e"># c</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>  	self<span style="color:#f92672">.</span>__b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 私有方法</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pm</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>__b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A()<span style="color:#f92672">.</span>__b  <span style="color:#75715e"># &#39;A&#39; object has no attribute &#39;__b&#39;</span>
+</span></span><span style="display:flex;"><span>A()<span style="color:#f92672">.</span>_A__b  <span style="color:#75715e"># c</span>
+</span></span><span style="display:flex;"><span>A()<span style="color:#f92672">.</span>pm()  <span style="color:#75715e"># c</span>
+</span></span></code></pre></div></li>
 <li>
 <p>保护变量</p>
 <p>定义：只有一个前缀<code>_</code>，只有类对象和子类对象自己能访问到这些变量</p>
@@ -361,36 +361,36 @@ A()<span style="color:#f92672">.</span>pm()  <span style="color:#75715e"># c</sp
 <p><code>repr(obj)</code> - 将对象转化为供解释器读取的形式。str用于一般用途，repr用于额外细节。</p>
 </li>
 <li>
-<p><code>all(iterable)</code> - 参数iterable为元组或列表，如果参数的所有元素不为0、''、False、None或者iterable为空，all(iterable)返回True，否则返回False；</p>
+<p><code>all(iterable)</code> - 参数iterable为元组或列表，如果参数的所有元素不为0、&rsquo;&rsquo;、False、None或者iterable为空，all(iterable)返回True，否则返回False；</p>
 </li>
 <li>
 <p><code>any(iterable)</code> -</p>
 </li>
 <li>
 <p><code>isinstance(obj, class_or_tuple)</code> - 如果obj的类型与class_or_tuple的类型相同则返回 True，否则返回 False</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">isinstance(<span style="color:#e6db74">&#39;str&#39;</span>, str) <span style="color:#75715e"># True</span>
-isinstance(<span style="color:#ae81ff">111</span>, (str, int, float)) <span style="color:#75715e"># True</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>isinstance(<span style="color:#e6db74">&#39;str&#39;</span>, str) <span style="color:#75715e"># True</span>
+</span></span><span style="display:flex;"><span>isinstance(<span style="color:#ae81ff">111</span>, (str, int, float)) <span style="color:#75715e"># True</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>sorted(iterable, key=None, reverse=False)</code></p>
 </li>
 <li>
 <p><code>sort(key=None, reverse=False)</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># reverse</span>
-lst <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">5</span>]
-lst<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-print(lst) <span style="color:#75715e"># [7, 5, 4, 2, 2]</span>
-<span style="color:#75715e"># key</span>
-dct <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;apple&#39;</span>:<span style="color:#ae81ff">9</span>,<span style="color:#e6db74">&#39;banana&#39;</span>:<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;orange&#39;</span>:<span style="color:#ae81ff">5</span>}
-lst1 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.</span>keys()) <span style="color:#75715e"># [&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;]</span>
-lst2 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.</span>values()) <span style="color:#75715e"># [9, 2, 5]</span>
-lst3 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.</span>items()) <span style="color:#75715e"># [(&#39;apple&#39;, 9), (&#39;banana&#39;, 2), (&#39;orange&#39;, 5)]</span>
-
-lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> i:i[<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># 按照key值排序</span>
-lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> i:i[<span style="color:#ae81ff">1</span>]) <span style="color:#75715e"># 按照value值排序</span>
-
-print(lst3) <span style="color:#75715e"># [(&#39;banana&#39;, 2), (&#39;orange&#39;, 5), (&#39;apple&#39;, 9)]</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># reverse</span>
+</span></span><span style="display:flex;"><span>lst <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>lst<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>print(lst) <span style="color:#75715e"># [7, 5, 4, 2, 2]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># key</span>
+</span></span><span style="display:flex;"><span>dct <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;apple&#39;</span>:<span style="color:#ae81ff">9</span>,<span style="color:#e6db74">&#39;banana&#39;</span>:<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;orange&#39;</span>:<span style="color:#ae81ff">5</span>}
+</span></span><span style="display:flex;"><span>lst1 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.</span>keys()) <span style="color:#75715e"># [&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;]</span>
+</span></span><span style="display:flex;"><span>lst2 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.</span>values()) <span style="color:#75715e"># [9, 2, 5]</span>
+</span></span><span style="display:flex;"><span>lst3 <span style="color:#f92672">=</span> list(dct<span style="color:#f92672">.</span>items()) <span style="color:#75715e"># [(&#39;apple&#39;, 9), (&#39;banana&#39;, 2), (&#39;orange&#39;, 5)]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> i:i[<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># 按照key值排序</span>
+</span></span><span style="display:flex;"><span>lst3<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> i:i[<span style="color:#ae81ff">1</span>]) <span style="color:#75715e"># 按照value值排序</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(lst3) <span style="color:#75715e"># [(&#39;banana&#39;, 2), (&#39;orange&#39;, 5), (&#39;apple&#39;, 9)]</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>str.join(iterable) -&gt; str</code></p>
 </li>
@@ -409,9 +409,9 @@ print(lst3) <span style="color:#75715e"># [(&#39;banana&#39;, 2), (&#39;orange&#
 <li>
 <p><code>ord() </code></p>
 <p>ord() 函数是 chr() 函数（对于 8 位的 ASCII 字符串）的配对函数，它以一个字符串（Unicode 字符）作为参数，返回对应的 ASCII 数值，或者 Unicode 数值。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ord(<span style="color:#e6db74">&#39;a&#39;</span>)  <span style="color:#75715e"># 97</span>
-ord(<span style="color:#e6db74">&#39;b&#39;</span>)  <span style="color:#75715e"># 98 good</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ord(<span style="color:#e6db74">&#39;a&#39;</span>)  <span style="color:#75715e"># 97</span>
+</span></span><span style="display:flex;"><span>ord(<span style="color:#e6db74">&#39;b&#39;</span>)  <span style="color:#75715e"># 98 good</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>exec</code> - exec 执行储存在字符串或文件中的 Python 语句，相比于 eval，exec可以执行更复杂的 Python 代码。</p>
 </li>
@@ -439,81 +439,81 @@ ord(<span style="color:#e6db74">&#39;b&#39;</span>)  <span style="color:#75715e"
 <li><code>__class__</code>功能和<code>type()</code>函数一样，都是查看对象所在的类。</li>
 <li><code>__class__</code>可以套用</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CONFIG</span>:
-  path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;users/billie/desktop/Maersk&#39;</span>
-  <span style="color:#66d9ef">def</span> __init__(self):
-    self<span style="color:#f92672">.</span>path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>path
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CONFIG</span>:
+</span></span><span style="display:flex;"><span>  path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;users/billie/desktop/Maersk&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>path
+</span></span></code></pre></div></li>
 <li>
 <p><code>__next__</code>&amp;<code>__iter__</code> - 迭代器</p>
 </li>
 <li>
 <p><code>__doc__</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
-    <span style="color:#e6db74">&#39;&#39;&#39;我是注释文本&#39;&#39;&#39;</span>
-
-print(A<span style="color:#f92672">.</span>__doc__) <span style="color:#75715e"># 我是注释文本</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;我是注释文本&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(A<span style="color:#f92672">.</span>__doc__) <span style="color:#75715e"># 我是注释文本</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>__dict__</code> - 类的命名空间</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GOT</span>:
-      ch <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;权利的游戏&#34;</span>
-
-      <span style="color:#66d9ef">def</span> __init__(self):
-        self<span style="color:#f92672">.</span>en <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Game of Throne&#34;</span>
-        print(self<span style="color:#f92672">.</span>__dict__)  <span style="color:#75715e"># {&#39;en&#39;: &#39;Game of Throne&#39;}</span>
-        print(self<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__dict__)  <span style="color:#75715e"># {&#39;__module__&#39;: &#39;__main__&#39;, &#39;ch&#39;: &#39;权利的游戏&#39;, &#39;__init__&#39;: &lt;function GOT.__init__ at 0x11046de50&gt;, &#39;__dict__&#39;: &lt;att...</span>
-
-print(GOT()<span style="color:#f92672">.</span>__dict__)  <span style="color:#75715e"># {&#39;en&#39;: &#39;Game of Throne&#39;}</span>
-print(dir(GOT()))  <span style="color:#75715e"># {&#39;en&#39;: &#39;Game of Throne&#39;}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GOT</span>:
+</span></span><span style="display:flex;"><span>  	ch <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;权利的游戏&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   	<span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>en <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Game of Throne&#34;</span>
+</span></span><span style="display:flex;"><span>        print(self<span style="color:#f92672">.</span>__dict__)  <span style="color:#75715e"># {&#39;en&#39;: &#39;Game of Throne&#39;}</span>
+</span></span><span style="display:flex;"><span>        print(self<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__dict__)  <span style="color:#75715e"># {&#39;__module__&#39;: &#39;__main__&#39;, &#39;ch&#39;: &#39;权利的游戏&#39;, &#39;__init__&#39;: &lt;function GOT.__init__ at 0x11046de50&gt;, &#39;__dict__&#39;: &lt;att...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(GOT()<span style="color:#f92672">.</span>__dict__)  <span style="color:#75715e"># {&#39;en&#39;: &#39;Game of Throne&#39;}</span>
+</span></span><span style="display:flex;"><span>print(dir(GOT()))  <span style="color:#75715e"># {&#39;en&#39;: &#39;Game of Throne&#39;}</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>__str__</code> - 类的返回信息</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GOT</span>:
-    <span style="color:#66d9ef">def</span> __str__(self):
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;我烂尾了&#34;</span>
-
-print(GOT()) <span style="color:#75715e"># 我烂尾了</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GOT</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;我烂尾了&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(GOT()) <span style="color:#75715e"># 我烂尾了</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>__setattr__</code> - 属性赋值</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
-    motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-    <span style="color:#66d9ef">def</span> __init__(self):
-          self<span style="color:#f92672">.</span>__setattr__(<span style="color:#e6db74">&#39;motto&#39;</span>, <span style="color:#e6db74">&#39;Now,say my name.&#39;</span>)
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
-    <span style="color:#66d9ef">def</span> __setattr__(self, key, value):
-          print(key, value)
-
-white <span style="color:#f92672">=</span> BB()
-white<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Now,say my name.&#39;</span> <span style="color:#75715e"># motto I am the danger.</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
+</span></span><span style="display:flex;"><span>    motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>      	self<span style="color:#f92672">.</span>__setattr__(<span style="color:#e6db74">&#39;motto&#39;</span>, <span style="color:#e6db74">&#39;Now,say my name.&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __setattr__(self, key, value):
+</span></span><span style="display:flex;"><span>      	print(key, value)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>white <span style="color:#f92672">=</span> BB()
+</span></span><span style="display:flex;"><span>white<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Now,say my name.&#39;</span> <span style="color:#75715e"># motto I am the danger.</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>__getatrr__</code></p>
 <p>如果属性查找（attribute lookup）在实例以及对应的类中（通过__dict__)失败， 那么会调用到类的__getattr__函数, 如果没有定义这个函数，那么抛出AttributeError异常。由此可见，__getattr__一定是作用于属性查找的最后一步，兜底。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
-    <span style="color:#66d9ef">def</span> __init__(self):
-          self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;I am the danger.&#39;</span>
-    <span style="color:#66d9ef">def</span> __getattr__(self, item):
-          print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;can not find value: </span><span style="color:#e6db74">{</span>item<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-
-white <span style="color:#f92672">=</span> BB()
-white<span style="color:#f92672">.</span>motto  <span style="color:#75715e"># I am the danger.</span>
-white<span style="color:#f92672">.</span>pinkman  <span style="color:#75715e"># can not find value: pinkman</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>      	self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;I am the danger.&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __getattr__(self, item):
+</span></span><span style="display:flex;"><span>      	print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;can not find value: </span><span style="color:#e6db74">{</span>item<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>white <span style="color:#f92672">=</span> BB()
+</span></span><span style="display:flex;"><span>white<span style="color:#f92672">.</span>motto  <span style="color:#75715e"># I am the danger.</span>
+</span></span><span style="display:flex;"><span>white<span style="color:#f92672">.</span>pinkman  <span style="color:#75715e"># can not find value: pinkman</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>__repr__</code> - 显示属性</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rr</span>(self):
-        <span style="color:#f92672">...</span>
-print(BB())  <span style="color:#75715e"># &lt;__main__.BB object at 0x102a93e80&gt;</span>
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
-    <span style="color:#66d9ef">def</span> __repr__(self):
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;You&#39;re done!&#34;</span>
-print(BB())  <span style="color:#75715e"># You&#39;re done!</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rr</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>print(BB())  <span style="color:#75715e"># &lt;__main__.BB object at 0x102a93e80&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BB</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;You&#39;re done!&#34;</span>
+</span></span><span style="display:flex;"><span>print(BB())  <span style="color:#75715e"># You&#39;re done!</span>
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="内置装饰器">内置装饰器</h3>
 <ul>
@@ -528,61 +528,61 @@ print(BB())  <span style="color:#75715e"># You&#39;re done!</span>
 </li>
 <li>
 <p><code>@classmethod</code> - 类方法，当需要和类交互而不需要和实例交互时，就可以选择类方法。类方法与类一起使用，因为它的参数始终是类本身。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Xin</span>:
-    motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;你就好啦&#39;</span>
-
-    <span style="color:#66d9ef">def</span> __init__(self, motto):
-        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
-
-    <span style="color:#a6e22e">@classmethod</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jie</span>(cls, _str):  <span style="color:#75715e"># 第一个参数是cls， 表示调用当前的类名</span>
-        motto <span style="color:#f92672">=</span> cls<span style="color:#f92672">.</span>motto <span style="color:#f92672">+</span> _str
-        <span style="color:#66d9ef">return</span> cls(motto)  <span style="color:#75715e"># 返回的是一个初始化后的类</span>
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">accept</span>(self):
-        print(self<span style="color:#f92672">.</span>motto)
-
-
-r <span style="color:#f92672">=</span> Xin<span style="color:#f92672">.</span>jie(<span style="color:#e6db74">&#39;!&#39;</span>)
-r<span style="color:#f92672">.</span>accept()
-
-c <span style="color:#f92672">=</span> Xin<span style="color:#f92672">.</span>jie(<span style="color:#e6db74">&#39;。&#39;</span>)
-c<span style="color:#f92672">.</span>accept()
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Xin</span>:
+</span></span><span style="display:flex;"><span>    motto <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;你就好啦&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, motto):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@classmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">jie</span>(cls, _str):  <span style="color:#75715e"># 第一个参数是cls， 表示调用当前的类名</span>
+</span></span><span style="display:flex;"><span>        motto <span style="color:#f92672">=</span> cls<span style="color:#f92672">.</span>motto <span style="color:#f92672">+</span> _str
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cls(motto)  <span style="color:#75715e"># 返回的是一个初始化后的类</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">accept</span>(self):
+</span></span><span style="display:flex;"><span>        print(self<span style="color:#f92672">.</span>motto)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> Xin<span style="color:#f92672">.</span>jie(<span style="color:#e6db74">&#39;!&#39;</span>)
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>accept()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> Xin<span style="color:#f92672">.</span>jie(<span style="color:#e6db74">&#39;。&#39;</span>)
+</span></span><span style="display:flex;"><span>c<span style="color:#f92672">.</span>accept()
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="在子类中调用父类的方法">在子类中调用父类的方法</h3>
 <ol>
 <li>
 <p>直接使用「父类名」进行调用，调用方法时需加上「self」参数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
-    <span style="color:#66d9ef">def</span> __init__(self, name, age, sex):
-        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
-        self<span style="color:#f92672">.</span>sex <span style="color:#f92672">=</span> sex
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        print(<span style="color:#e6db74">&#34;Winter is coming!&#34;</span>)
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self, word):
-        print(word)
-
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Boy</span>(Person):  <span style="color:#75715e"># 传入父类</span>
-    <span style="color:#66d9ef">def</span> __init__(self, name, age, sex, motto):
-        Person<span style="color:#f92672">.</span>__init__(self, name, age, sex)  <span style="color:#75715e"># 调用父类的方法</span>
-        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        Person<span style="color:#f92672">.</span>run(self)  <span style="color:#75715e"># 调用父类的方法</span>
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self):
-        Person<span style="color:#f92672">.</span>say(self, self<span style="color:#f92672">.</span>motto <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>name)  <span style="color:#75715e"># 调用父类的方法</span>
-
-
-Jon <span style="color:#f92672">=</span> Boy(<span style="color:#e6db74">&#39;Jon Snow&#39;</span>, <span style="color:#ae81ff">24</span>, <span style="color:#e6db74">&#39;man&#39;</span>, <span style="color:#e6db74">&#39;you know nothing&#39;</span>)
-Jon<span style="color:#f92672">.</span>run()  <span style="color:#75715e"># Winter is coming!</span>
-Jon<span style="color:#f92672">.</span>say()  <span style="color:#75715e"># you know nothing,Jon Snow</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, age, sex):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>sex <span style="color:#f92672">=</span> sex
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Winter is coming!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self, word):
+</span></span><span style="display:flex;"><span>        print(word)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Boy</span>(Person):  <span style="color:#75715e"># 传入父类</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, age, sex, motto):
+</span></span><span style="display:flex;"><span>        Person<span style="color:#f92672">.</span>__init__(self, name, age, sex)  <span style="color:#75715e"># 调用父类的方法</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        Person<span style="color:#f92672">.</span>run(self)  <span style="color:#75715e"># 调用父类的方法</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self):
+</span></span><span style="display:flex;"><span>        Person<span style="color:#f92672">.</span>say(self, self<span style="color:#f92672">.</span>motto <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>name)  <span style="color:#75715e"># 调用父类的方法</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Jon <span style="color:#f92672">=</span> Boy(<span style="color:#e6db74">&#39;Jon Snow&#39;</span>, <span style="color:#ae81ff">24</span>, <span style="color:#e6db74">&#39;man&#39;</span>, <span style="color:#e6db74">&#39;you know nothing&#39;</span>)
+</span></span><span style="display:flex;"><span>Jon<span style="color:#f92672">.</span>run()  <span style="color:#75715e"># Winter is coming!</span>
+</span></span><span style="display:flex;"><span>Jon<span style="color:#f92672">.</span>say()  <span style="color:#75715e"># you know nothing,Jon Snow</span>
+</span></span></code></pre></div></li>
 <li>
 <p>super()</p>
 <p>优点：</p>
@@ -590,54 +590,53 @@ Jon<span style="color:#f92672">.</span>say()  <span style="color:#75715e"># you 
 <li>调用方法时无需加上「self」参数</li>
 <li>当父类名有改动时，子类中只需修改「传入的父类名」即可</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
-    <span style="color:#66d9ef">def</span> __init__(self, name, age, sex):
-        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
-        self<span style="color:#f92672">.</span>sex <span style="color:#f92672">=</span> sex
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        print(<span style="color:#e6db74">&#34;Winter is coming!&#34;</span>)
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self, word):
-        print(word)
-
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Boy</span>(Person):  <span style="color:#75715e"># 传入父类</span>
-    <span style="color:#66d9ef">def</span> __init__(self, name, age, sex, motto):
-        super()<span style="color:#f92672">.</span>__init__(name, age, sex)  <span style="color:#75715e"># 调用父类的init</span>
-        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        super()<span style="color:#f92672">.</span>run()  <span style="color:#75715e"># 调用父类的方法</span>
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self):
-        super()<span style="color:#f92672">.</span>say(self<span style="color:#f92672">.</span>motto <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>name)  <span style="color:#75715e"># 调用父类的方法</span>
-
-
-Jon <span style="color:#f92672">=</span> Boy(<span style="color:#e6db74">&#39;Jon Snow&#39;</span>, <span style="color:#ae81ff">24</span>, <span style="color:#e6db74">&#39;man&#39;</span>, <span style="color:#e6db74">&#39;you know nothing&#39;</span>)
-Jon<span style="color:#f92672">.</span>run()  <span style="color:#75715e"># Winter is coming!</span>
-Jon<span style="color:#f92672">.</span>say()  <span style="color:#75715e"># you know nothing,Jon Snow</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ShangBao</span>:
-    <span style="color:#66d9ef">def</span> __init__(self):
-        self<span style="color:#f92672">.</span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://ga.fz.cn&#39;</span>
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_engine</span>(self):
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;sdf&#39;</span>
-
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DaoChu</span>(ShangBao):
-    <span style="color:#66d9ef">def</span> __init__(self):
-        super(self)<span style="color:#f92672">.</span>__init__()
-        self<span style="color:#f92672">.</span>url <span style="color:#f92672">=</span> super()<span style="color:#f92672">.</span>url
-
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">engine</span>(self):
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>get_engine()
-
-
-DaoChu()<span style="color:#f92672">.</span>engine()  <span style="color:#75715e"># sdf</span>
-
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, age, sex):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>sex <span style="color:#f92672">=</span> sex
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Winter is coming!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self, word):
+</span></span><span style="display:flex;"><span>        print(word)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Boy</span>(Person):  <span style="color:#75715e"># 传入父类</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, age, sex, motto):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(name, age, sex)  <span style="color:#75715e"># 调用父类的init</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>motto <span style="color:#f92672">=</span> motto
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>run()  <span style="color:#75715e"># 调用父类的方法</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say</span>(self):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>say(self<span style="color:#f92672">.</span>motto <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>name)  <span style="color:#75715e"># 调用父类的方法</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Jon <span style="color:#f92672">=</span> Boy(<span style="color:#e6db74">&#39;Jon Snow&#39;</span>, <span style="color:#ae81ff">24</span>, <span style="color:#e6db74">&#39;man&#39;</span>, <span style="color:#e6db74">&#39;you know nothing&#39;</span>)
+</span></span><span style="display:flex;"><span>Jon<span style="color:#f92672">.</span>run()  <span style="color:#75715e"># Winter is coming!</span>
+</span></span><span style="display:flex;"><span>Jon<span style="color:#f92672">.</span>say()  <span style="color:#75715e"># you know nothing,Jon Snow</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ShangBao</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://ga.fz.cn&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_engine</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;sdf&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DaoChu</span>(ShangBao):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        super(self)<span style="color:#f92672">.</span>__init__()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>url <span style="color:#f92672">=</span> super()<span style="color:#f92672">.</span>url
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">engine</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>get_engine()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DaoChu()<span style="color:#f92672">.</span>engine()  <span style="color:#75715e"># sdf</span>
+</span></span></code></pre></div></li>
 </ol>
 <h2 id="那些年遇过的坑儿们">那些年遇过的坑儿们</h2>
 <ul>
@@ -660,114 +659,112 @@ DaoChu()<span style="color:#f92672">.</span>engine()  <span style="color:#75715e
 <li>
 <p>七天前的日期</p>
 <pre tabindex="0"><code>import datetime
-(datetime.datetime.now()-datetime.timedelta(days=7)).strftime('%Y-%m-%d')
+(datetime.datetime.now()-datetime.timedelta(days=7)).strftime(&#39;%Y-%m-%d&#39;)
 </code></pre></li>
 <li>
 <p>格式化日期 转为 时间戳</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
-time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#39;2021-02-11&#39;</span>, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>mktime(time<span style="color:#f92672">.</span>strptime(<span style="color:#e6db74">&#39;2021-02-11&#39;</span>, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>))
+</span></span></code></pre></div></li>
 <li>
 <p>时间戳 转为 格式化日期</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">time<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>, time<span style="color:#f92672">.</span>localtime( time<span style="color:#f92672">.</span>time() ))
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>time<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>, time<span style="color:#f92672">.</span>localtime( time<span style="color:#f92672">.</span>time() ))
+</span></span></code></pre></div></li>
 <li>
 <p>计算n天前后的日期</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delta_time</span>(mode:str, date:str, day:int) <span style="color:#f92672">-&gt;</span> str:
-  <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">  计算某个日期 n 天前的日期
-</span><span style="color:#e6db74">  :param mode: ADD or SUB （加或减）
-</span><span style="color:#e6db74">  :param day: 间隔日，如 1
-</span><span style="color:#e6db74">  :param date: 格式化日期，如 2021-08-10
-</span><span style="color:#e6db74">  return : 格式化的日期
-</span><span style="color:#e6db74">  &#39;&#39;&#39;</span>
-  format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>
-  struct_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>strptime(date, format)
-  timestamp <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>mktime(struct_time)
-
-  <span style="color:#66d9ef">if</span> mode <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;ADD&#39;</span>:
-      timestamp <span style="color:#f92672">+=</span> <span style="color:#ae81ff">86400</span><span style="color:#f92672">*</span>day
-  <span style="color:#66d9ef">elif</span> mode <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;SUB&#39;</span>:
-    timestamp <span style="color:#f92672">-=</span> <span style="color:#ae81ff">86400</span><span style="color:#f92672">*</span>day
-
-  struct_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>localtime(timestamp)
-  date <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>strftime(format, struct_time)
-  <span style="color:#66d9ef">return</span> date
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delta_time</span>(mode:str, date:str, day:int) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  计算某个日期 n 天前的日期
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  :param mode: ADD or SUB （加或减）
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  :param day: 间隔日，如 1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  :param date: 格式化日期，如 2021-08-10
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  return : 格式化的日期
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>  format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>  struct_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>strptime(date, format)
+</span></span><span style="display:flex;"><span>  timestamp <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>mktime(struct_time)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> mode <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;ADD&#39;</span>:
+</span></span><span style="display:flex;"><span>  	timestamp <span style="color:#f92672">+=</span> <span style="color:#ae81ff">86400</span><span style="color:#f92672">*</span>day
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">elif</span> mode <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;SUB&#39;</span>:
+</span></span><span style="display:flex;"><span>    timestamp <span style="color:#f92672">-=</span> <span style="color:#ae81ff">86400</span><span style="color:#f92672">*</span>day
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  struct_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>localtime(timestamp)
+</span></span><span style="display:flex;"><span>  date <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>strftime(format, struct_time)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> date
+</span></span></code></pre></div></li>
 <li>
 <p>获取时间段内的日期</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_date_list</span>(start_date, end_date, format) <span style="color:#f92672">-&gt;</span> list:
-    <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    根据开始日期、结束日期返回这段时间里所有天的集合
-</span><span style="color:#e6db74">    :param start_date: 开始日期(日期格式或者字符串格式)
-</span><span style="color:#e6db74">    :param end_date: 结束日期(日期格式或者字符串格式)
-</span><span style="color:#e6db74">    :param format: 格式化字符串, 如: &#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;
-</span><span style="color:#e6db74">    :return:
-</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    date_list <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">if</span> isinstance(start_date, str) <span style="color:#f92672">and</span> isinstance(end_date, str):
-        start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(start_date, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
-        end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(end_date, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
-    date_list<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(format))
-    <span style="color:#66d9ef">while</span> start_date <span style="color:#f92672">&lt;</span> end_date:
-        start_date <span style="color:#f92672">+=</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-        date_list<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(format))
-    <span style="color:#66d9ef">return</span> date_list
-
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_date_list</span>(start_date, end_date, format) <span style="color:#f92672">-&gt;</span> list:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    根据开始日期、结束日期返回这段时间里所有天的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param start_date: 开始日期(日期格式或者字符串格式)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param end_date: 结束日期(日期格式或者字符串格式)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param format: 格式化字符串, 如: &#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :return:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    date_list <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> isinstance(start_date, str) <span style="color:#f92672">and</span> isinstance(end_date, str):
+</span></span><span style="display:flex;"><span>        start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(start_date, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>        end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(end_date, <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>    date_list<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(format))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> start_date <span style="color:#f92672">&lt;</span> end_date:
+</span></span><span style="display:flex;"><span>        start_date <span style="color:#f92672">+=</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        date_list<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(format))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> date_list
+</span></span></code></pre></div></li>
 <li>
 <p>获取时间段内的某一天日期</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">split_dates</span>(start_date_str: str, end_date_str: str):
-    <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    以月为周期，分割时间段，取每月的一号如 2021-12-01
-</span><span style="color:#e6db74">    :params start_date: 例 2021-10，2021-9
-</span><span style="color:#e6db74">    :params end_date: 例 2021-10，2021-9
-</span><span style="color:#e6db74">    :return date_tuple: 例 [(&#39;2021-09-01&#39;, &#39;2021-10-01&#39;), (&#39;2021-10-01&#39;, &#39;2021-11-01&#39;)]
-</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    _format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>
-    start_date_str <span style="color:#f92672">=</span> start_date_str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-01&#39;</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> start_date_str<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>) <span style="color:#66d9ef">else</span> start_date_str
-    end_date_str <span style="color:#f92672">=</span> end_date_str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-01&#39;</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> end_date_str<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>) <span style="color:#66d9ef">else</span> end_date_str
-    start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(start_date_str, _format)
-    end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(end_date_str, _format)
-
-    dates <span style="color:#f92672">=</span> list()
-    dates_tuple <span style="color:#f92672">=</span> list()
-    dates<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(_format))
-
-    <span style="color:#75715e"># 获取区间内所有的日期</span>
-    <span style="color:#66d9ef">while</span> start_date <span style="color:#f92672">&lt;=</span> end_date:
-        start_date <span style="color:#f92672">+=</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-        dates<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(_format))
-
-    <span style="color:#75715e"># 获取区间内”日为1“的日期</span>
-    dates <span style="color:#f92672">=</span> [date <span style="color:#66d9ef">for</span> date <span style="color:#f92672">in</span> dates <span style="color:#66d9ef">if</span> date<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>)]
-
-    <span style="color:#75715e"># 分组</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(dates<span style="color:#f92672">.</span>__len__() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>):
-        dates_tuple<span style="color:#f92672">.</span>append((dates[i], dates[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]))
-
-    log<span style="color:#f92672">.</span>info(dates)
-    log<span style="color:#f92672">.</span>info(dates_tuple)
-    <span style="color:#66d9ef">return</span> dates_tuple
-
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">split_dates</span>(start_date_str: str, end_date_str: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    以月为周期，分割时间段，取每月的一号如 2021-12-01
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :params start_date: 例 2021-10，2021-9
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :params end_date: 例 2021-10，2021-9
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :return date_tuple: 例 [(&#39;2021-09-01&#39;, &#39;2021-10-01&#39;), (&#39;2021-10-01&#39;, &#39;2021-11-01&#39;)]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    _format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span>    start_date_str <span style="color:#f92672">=</span> start_date_str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-01&#39;</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> start_date_str<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>) <span style="color:#66d9ef">else</span> start_date_str
+</span></span><span style="display:flex;"><span>    end_date_str <span style="color:#f92672">=</span> end_date_str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-01&#39;</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> end_date_str<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>) <span style="color:#66d9ef">else</span> end_date_str
+</span></span><span style="display:flex;"><span>    start_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(start_date_str, _format)
+</span></span><span style="display:flex;"><span>    end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>strptime(end_date_str, _format)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    dates <span style="color:#f92672">=</span> list()
+</span></span><span style="display:flex;"><span>    dates_tuple <span style="color:#f92672">=</span> list()
+</span></span><span style="display:flex;"><span>    dates<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(_format))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 获取区间内所有的日期</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> start_date <span style="color:#f92672">&lt;=</span> end_date:
+</span></span><span style="display:flex;"><span>        start_date <span style="color:#f92672">+=</span> datetime<span style="color:#f92672">.</span>timedelta(days<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        dates<span style="color:#f92672">.</span>append(start_date<span style="color:#f92672">.</span>strftime(_format))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 获取区间内”日为1“的日期</span>
+</span></span><span style="display:flex;"><span>    dates <span style="color:#f92672">=</span> [date <span style="color:#66d9ef">for</span> date <span style="color:#f92672">in</span> dates <span style="color:#66d9ef">if</span> date<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#39;-01&#39;</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 分组</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(dates<span style="color:#f92672">.</span>__len__() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        dates_tuple<span style="color:#f92672">.</span>append((dates[i], dates[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    log<span style="color:#f92672">.</span>info(dates)
+</span></span><span style="display:flex;"><span>    log<span style="color:#f92672">.</span>info(dates_tuple)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> dates_tuple
+</span></span></code></pre></div></li>
 <li>
 <p>获取本月的天数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> calendar
-<span style="color:#f92672">import</span> datetime
-
-now <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
-day_num <span style="color:#f92672">=</span> calendar<span style="color:#f92672">.</span>monthrange(now<span style="color:#f92672">.</span>year, now<span style="color:#f92672">.</span>month)[<span style="color:#ae81ff">1</span>]
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> calendar
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>now <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
+</span></span><span style="display:flex;"><span>day_num <span style="color:#f92672">=</span> calendar<span style="color:#f92672">.</span>monthrange(now<span style="color:#f92672">.</span>year, now<span style="color:#f92672">.</span>month)[<span style="color:#ae81ff">1</span>]
+</span></span></code></pre></div></li>
 <li>
 <p>获取本月最后一天的日期</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> calendar
-<span style="color:#f92672">import</span> datetime
-
-now <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
-day_num <span style="color:#f92672">=</span> calendar<span style="color:#f92672">.</span>monthrange(now<span style="color:#f92672">.</span>year, now<span style="color:#f92672">.</span>month)[<span style="color:#ae81ff">1</span>]  <span style="color:#75715e"># 天数</span>
-end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime(now<span style="color:#f92672">.</span>year, now<span style="color:#f92672">.</span>month, day_num)<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> calendar
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>now <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>date<span style="color:#f92672">.</span>today()
+</span></span><span style="display:flex;"><span>day_num <span style="color:#f92672">=</span> calendar<span style="color:#f92672">.</span>monthrange(now<span style="color:#f92672">.</span>year, now<span style="color:#f92672">.</span>month)[<span style="color:#ae81ff">1</span>]  <span style="color:#75715e"># 天数</span>
+</span></span><span style="display:flex;"><span>end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime(now<span style="color:#f92672">.</span>year, now<span style="color:#f92672">.</span>month, day_num)<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="字典排序">字典排序</h3>
 <ol>
@@ -795,9 +792,9 @@ end_date <span style="color:#f92672">=</span> datetime<span style="color:#f92672
 <ol>
 <li>
 <p><code>set()</code>, <code>list()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ls <span style="color:#f92672">=</span> []
-list( set(ls) )
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ls <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>list( set(ls) )
+</span></span></code></pre></div></li>
 <li>
 <p><code>dict()</code>, <code>list()</code></p>
 <pre tabindex="0"><code class="language- python" data-lang=" python">ls = []
@@ -809,29 +806,29 @@ ls.sort(key=ls.index)  # 加上列表中索引（index）的方法保证去重�
 <ol>
 <li>
 <p>reduce</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> reduce
-data_list <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;a&#39;</span>:<span style="color:#e6db74">&#34;123&#34;</span>}, {<span style="color:#e6db74">&#39;a&#39;</span>:<span style="color:#e6db74">&#34;123&#34;</span>}, {<span style="color:#e6db74">&#39;a&#39;</span>:<span style="color:#e6db74">&#34;123&#34;</span>}]
-func <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x, y:x <span style="color:#66d9ef">if</span> y <span style="color:#f92672">in</span> x <span style="color:#66d9ef">else</span> x <span style="color:#f92672">+</span> [y]
-a <span style="color:#f92672">=</span> reduce(func, [[],] <span style="color:#f92672">+</span> data_list)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> reduce
+</span></span><span style="display:flex;"><span>data_list <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;a&#39;</span>:<span style="color:#e6db74">&#34;123&#34;</span>}, {<span style="color:#e6db74">&#39;a&#39;</span>:<span style="color:#e6db74">&#34;123&#34;</span>}, {<span style="color:#e6db74">&#39;a&#39;</span>:<span style="color:#e6db74">&#34;123&#34;</span>}]
+</span></span><span style="display:flex;"><span>func <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x, y:x <span style="color:#66d9ef">if</span> y <span style="color:#f92672">in</span> x <span style="color:#66d9ef">else</span> x <span style="color:#f92672">+</span> [y]
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> reduce(func, [[],] <span style="color:#f92672">+</span> data_list)
+</span></span></code></pre></div></li>
 </ol>
 <h3 id="字典相加">字典相加</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> {}
-b <span style="color:#f92672">=</span> {}
-c <span style="color:#f92672">=</span> {<span style="color:#f92672">**</span>a, <span style="color:#f92672">**</span>b}
-</code></pre></div><p>如果有重复的key，则value的值取<code>{**a, **b}</code>中的后者，即b字典中的值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> {<span style="color:#f92672">**</span>a, <span style="color:#f92672">**</span>b}
+</span></span></code></pre></div><p>如果有重复的key，则value的值取<code>{**a, **b}</code>中的后者，即b字典中的值。</p>
 <h3 id="快速将请求头转为json格式">快速将请求头转为json格式</h3>
 <ul>
 <li><code>feapder create -j</code></li>
 </ul>
 <h3 id="列表字典表达式">列表/字典表达式</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 单层 列表</span>
-[data <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas]
-<span style="color:#75715e"># 双层 列表</span>
-[data <span style="color:#66d9ef">for</span> datas <span style="color:#f92672">in</span> datas_list <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas]
-<span style="color:#75715e"># 单层 字典</span>
-{data[<span style="color:#ae81ff">0</span>]: {<span style="color:#e6db74">&#39;基金号&#39;</span>: data[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">&#39;基金名称&#39;</span>: data[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#39;历史净值&#39;</span>: []} <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas}
-</code></pre></div><h3 id="带颜色的字符串输出">带颜色的字符串输出</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 单层 列表</span>
+</span></span><span style="display:flex;"><span>[data <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 双层 列表</span>
+</span></span><span style="display:flex;"><span>[data <span style="color:#66d9ef">for</span> datas <span style="color:#f92672">in</span> datas_list <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 单层 字典</span>
+</span></span><span style="display:flex;"><span>{data[<span style="color:#ae81ff">0</span>]: {<span style="color:#e6db74">&#39;基金号&#39;</span>: data[<span style="color:#ae81ff">0</span>], <span style="color:#e6db74">&#39;基金名称&#39;</span>: data[<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#39;历史净值&#39;</span>: []} <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> datas}
+</span></span></code></pre></div><h3 id="带颜色的字符串输出">带颜色的字符串输出</h3>
 <ul>
 <li>&lsquo;\033[3开头的是字体颜色 ; 1m比0m更粗更亮&rsquo;</li>
 <li>&lsquo;\033[4开头的是背景颜色 ; '</li>
@@ -850,14 +847,14 @@ c <span style="color:#f92672">=</span> {<span style="color:#f92672">**</span>a, 
 <p><a href="https://www.cnblogs.com/mingmingming/p/11254596.html">https://www.cnblogs.com/mingmingming/p/11254596.html</a></p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> traceback
-<span style="color:#66d9ef">try</span>:
-    a <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;请输入一个数字：&#39;</span>)
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a<span style="color:#f92672">.</span>isdigit():
-        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;输入异常(</span><span style="color:#e6db74">{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">非数字)&#39;</span>)
-<span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> e:
-    print(<span style="color:#e6db74">&#39;程序出错，报错提示: &#39;</span>, repr(e), <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, traceback<span style="color:#f92672">.</span>format_exc())
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> traceback
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;请输入一个数字：&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a<span style="color:#f92672">.</span>isdigit():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;输入异常(</span><span style="color:#e6db74">{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">非数字)&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;程序出错，报错提示: &#39;</span>, repr(e), <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, traceback<span style="color:#f92672">.</span>format_exc())
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="生成二维码">生成二维码</h3>
 <ul>
@@ -876,14 +873,14 @@ c <span style="color:#f92672">=</span> {<span style="color:#f92672">**</span>a, 
 </li>
 </ul>
 <h3 id="将两个列表对应成为字典">将两个列表对应成为字典</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dict(zip(list1,list2))
-</code></pre></div><h3 id="解析特殊的网页元素">解析特殊的网页元素</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> html
-html<span style="color:#f92672">.</span>unescape(<span style="color:#e6db74">&#39;&amp;#39575;&#39;</span>)
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&amp;name;
-&amp;#dddd;
-&amp;#xhhhh;
-</code></pre></div><p>——的一串字符是 HTML、XML 等 SGML 类语言的转义序列（escape sequence）。它们不是「编码」。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dict(zip(list1,list2))
+</span></span></code></pre></div><h3 id="解析特殊的网页元素">解析特殊的网页元素</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> html
+</span></span><span style="display:flex;"><span>html<span style="color:#f92672">.</span>unescape(<span style="color:#e6db74">&#39;&amp;#39575;&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&amp;name;
+</span></span><span style="display:flex;"><span>&amp;#dddd;
+</span></span><span style="display:flex;"><span>&amp;#xhhhh;
+</span></span></code></pre></div><p>——的一串字符是 HTML、XML 等 SGML 类语言的转义序列（escape sequence）。它们不是「编码」。</p>
 <p>以 HTML 为例，这三种转义序列都称作 character reference：</p>
 <ul>
 <li>第一种是 character entity reference，后接预先定义的 entity 名称，而 entity 声明了自身指代的字符。</li>
@@ -891,9 +888,9 @@ html<span style="color:#f92672">.</span>unescape(<span style="color:#e6db74">&#3
 </ul>
 <p>从 HTML 4 开始，NCR 以 Unicode 为准，与文档编码无关。</p>
 <p>「中国」二字分别是 Unicode 字符 U+4E2D 和 U+56FD，十六进制表示的 code point 数值「4E2D」和「56FD」就是十进制的「20013」和「22269」。所以——</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&amp;#x4e2d;&amp;#x56fd;
-&amp;#20013;&amp;#22269;
-</code></pre></div><p>——这两种 NCR 写法都会在显示时转换为「中国」二字。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&amp;#x4e2d;&amp;#x56fd;
+</span></span><span style="display:flex;"><span>&amp;#20013;&amp;#22269;
+</span></span></code></pre></div><p>——这两种 NCR 写法都会在显示时转换为「中国」二字。</p>
 <p>NCR 可以用于转义任何 Unicode 字符，而 character entity reference 很受限，参见 HTML 4 和 HTML5 中已有定义的字符列表：</p>
 <ul>
 <li><a href="https://link.zhihu.com/?target=http%3A//www.w3.org/TR/html401/sgml/entities.html">Character entity references in HTML 4</a></li>
@@ -902,119 +899,119 @@ html<span style="color:#f92672">.</span>unescape(<span style="color:#e6db74">&#3
 <p><a href="https://www.zhihu.com/question/21390312">https://www.zhihu.com/question/21390312</a></p>
 <p><a href="https://www.cnblogs.com/liuhaidon/p/12060184.html">https://www.cnblogs.com/liuhaidon/p/12060184.html</a></p>
 <h3 id="获取当前登录系统的用户名">获取当前登录系统的用户名</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> getpass
-getpass<span style="color:#f92672">.</span>getuser()
-</code></pre></div><h3 id="pdf-to-png">PDF to PNG</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> fitz
-pdf <span style="color:#f92672">=</span> fitz<span style="color:#f92672">.</span>open(pdf_path)
-page <span style="color:#f92672">=</span> pdf[<span style="color:#ae81ff">0</span>]
-trans <span style="color:#f92672">=</span> fitz<span style="color:#f92672">.</span>Matrix(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>preRotate(<span style="color:#ae81ff">0</span>)
-pm <span style="color:#f92672">=</span> page<span style="color:#f92672">.</span>getPixmap(matrix<span style="color:#f92672">=</span>trans, alpha<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-pm<span style="color:#f92672">.</span>writePNG(img_path)
-pdf<span style="color:#f92672">.</span>close()
-</code></pre></div><h3 id="图片拼接">图片拼接</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">image_compose</span>(img_paths:list):
-  <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">  纵向拼接图片
-</span><span style="color:#e6db74">  :param img_paths: 所有图片的路径
-</span><span style="color:#e6db74">  :param img_save_path: 拼接图片的保存路径
-</span><span style="color:#e6db74">  &#39;&#39;&#39;</span>
-  img_count <span style="color:#f92672">=</span> img_paths<span style="color:#f92672">.</span>__len__()
-  img_size <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(img_paths[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>size
-  img_lenth <span style="color:#f92672">=</span> img_size[<span style="color:#ae81ff">0</span>]
-  img_width <span style="color:#f92672">=</span> img_size[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> img_count
-  joint <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;RGB&#39;</span>, (img_lenth,img_width))
-  
-  <span style="color:#66d9ef">for</span> ind, img_path <span style="color:#f92672">in</span> enumerate(img_paths):
-    img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(img_path)
-    loc <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0</span>, img_size[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> ind)
-    joint<span style="color:#f92672">.</span>paste(img, loc)
-    
-  img_save_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join()
-  joint<span style="color:#f92672">.</span>save(img_save_path)
-  <span style="color:#66d9ef">return</span> img_save_path
-</code></pre></div><h3 id="压缩图片大小">压缩图片大小</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
-<span style="color:#f92672">import</span> os
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_outfile</span>(infile, outfile):
-    <span style="color:#66d9ef">if</span> outfile:
-        <span style="color:#66d9ef">return</span> outfile
-    dir, suffix <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(infile)
-    outfile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">-out</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(dir, suffix)
-    <span style="color:#66d9ef">return</span> outfile
-  
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">image_compress</span>(infile, outfile<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>, mb<span style="color:#f92672">=</span><span style="color:#ae81ff">800</span>, step<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>):
-    <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    不改变图片尺寸压缩到指定大小
-</span><span style="color:#e6db74">    :param infile: 压缩源文件
-</span><span style="color:#e6db74">    :param outfile: 压缩文件保存地址
-</span><span style="color:#e6db74">    :param mb: 压缩目标，KB
-</span><span style="color:#e6db74">    :param step: 每次调整的压缩比率
-</span><span style="color:#e6db74">    :param quality: 初始压缩比率
-</span><span style="color:#e6db74">    :return: 压缩文件地址，压缩文件大小
-</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    o_size <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>getsize(infile)
-    <span style="color:#66d9ef">if</span> o_size <span style="color:#f92672">&lt;=</span> mb:
-        <span style="color:#66d9ef">return</span> infile
-    <span style="color:#66d9ef">else</span>:
-        outfile <span style="color:#f92672">=</span> get_outfile(infile, outfile)
-        <span style="color:#66d9ef">while</span> o_size <span style="color:#f92672">&gt;</span> mb:
-            im <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(infile)
-            im<span style="color:#f92672">.</span>save(outfile, quality<span style="color:#f92672">=</span>quality)
-            <span style="color:#66d9ef">if</span> quality <span style="color:#f92672">-</span> step <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>:
-                <span style="color:#66d9ef">break</span>
-            quality <span style="color:#f92672">-=</span> step
-            o_size <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>getsize(outfile)
-        <span style="color:#66d9ef">return</span> outfile, get_size(outfile)
-</code></pre></div><h3 id="解压压缩包">解压压缩包</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> zipfile
-<span style="color:#f92672">import</span> os
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">un_zip</span>(file_name):  
-    <span style="color:#e6db74">&#34;&#34;&#34;unzip zip file&#34;&#34;&#34;</span>  
-    zip_file <span style="color:#f92672">=</span> zipfile<span style="color:#f92672">.</span>ZipFile(file_name)
-    <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    if os.path.isdir(file_name.split(&#34;.&#34;)[0]):  
-</span><span style="color:#e6db74">        pass  
-</span><span style="color:#e6db74">    else:  
-</span><span style="color:#e6db74">        os.mkdir(file_name.split(&#34;.&#34;)[0])
-</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
-    <span style="color:#66d9ef">for</span> names <span style="color:#f92672">in</span> zip_file<span style="color:#f92672">.</span>namelist():  
-        zip_file<span style="color:#f92672">.</span>extract(names)  <span style="color:#75715e">#加入到某个文件夹中 zip_file.extract(names,file_name.split(&#34;.&#34;)[0])</span>
-    zip_file<span style="color:#f92672">.</span>close()
-
-un_zip(<span style="color:#e6db74">&#34;test.zip&#34;</span>)
-</code></pre></div><h3 id="获取python执行文件的路径">获取python执行文件的路径</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
-sys<span style="color:#f92672">.</span>path  <span style="color:#75715e"># </span>
-sys<span style="color:#f92672">.</span>executable  <span style="color:#75715e"># </span>
-</code></pre></div><h3 id="-is">== is</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> getpass
+</span></span><span style="display:flex;"><span>getpass<span style="color:#f92672">.</span>getuser()
+</span></span></code></pre></div><h3 id="pdf-to-png">PDF to PNG</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> fitz
+</span></span><span style="display:flex;"><span>pdf <span style="color:#f92672">=</span> fitz<span style="color:#f92672">.</span>open(pdf_path)
+</span></span><span style="display:flex;"><span>page <span style="color:#f92672">=</span> pdf[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>trans <span style="color:#f92672">=</span> fitz<span style="color:#f92672">.</span>Matrix(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>preRotate(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>pm <span style="color:#f92672">=</span> page<span style="color:#f92672">.</span>getPixmap(matrix<span style="color:#f92672">=</span>trans, alpha<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>pm<span style="color:#f92672">.</span>writePNG(img_path)
+</span></span><span style="display:flex;"><span>pdf<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><h3 id="图片拼接">图片拼接</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">image_compose</span>(img_paths:list):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  纵向拼接图片
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  :param img_paths: 所有图片的路径
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  :param img_save_path: 拼接图片的保存路径
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>  img_count <span style="color:#f92672">=</span> img_paths<span style="color:#f92672">.</span>__len__()
+</span></span><span style="display:flex;"><span>  img_size <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(img_paths[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">.</span>size
+</span></span><span style="display:flex;"><span>  img_lenth <span style="color:#f92672">=</span> img_size[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>  img_width <span style="color:#f92672">=</span> img_size[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> img_count
+</span></span><span style="display:flex;"><span>  joint <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;RGB&#39;</span>, (img_lenth,img_width))
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> ind, img_path <span style="color:#f92672">in</span> enumerate(img_paths):
+</span></span><span style="display:flex;"><span>    img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(img_path)
+</span></span><span style="display:flex;"><span>    loc <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0</span>, img_size[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> ind)
+</span></span><span style="display:flex;"><span>    joint<span style="color:#f92672">.</span>paste(img, loc)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>  img_save_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>  joint<span style="color:#f92672">.</span>save(img_save_path)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> img_save_path
+</span></span></code></pre></div><h3 id="压缩图片大小">压缩图片大小</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_outfile</span>(infile, outfile):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> outfile:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> outfile
+</span></span><span style="display:flex;"><span>    dir, suffix <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(infile)
+</span></span><span style="display:flex;"><span>    outfile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">-out</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(dir, suffix)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> outfile
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">image_compress</span>(infile, outfile<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>, mb<span style="color:#f92672">=</span><span style="color:#ae81ff">800</span>, step<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, quality<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    不改变图片尺寸压缩到指定大小
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param infile: 压缩源文件
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param outfile: 压缩文件保存地址
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param mb: 压缩目标，KB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param step: 每次调整的压缩比率
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :param quality: 初始压缩比率
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    :return: 压缩文件地址，压缩文件大小
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    o_size <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>getsize(infile)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> o_size <span style="color:#f92672">&lt;=</span> mb:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> infile
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        outfile <span style="color:#f92672">=</span> get_outfile(infile, outfile)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> o_size <span style="color:#f92672">&gt;</span> mb:
+</span></span><span style="display:flex;"><span>            im <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(infile)
+</span></span><span style="display:flex;"><span>            im<span style="color:#f92672">.</span>save(outfile, quality<span style="color:#f92672">=</span>quality)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> quality <span style="color:#f92672">-</span> step <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            quality <span style="color:#f92672">-=</span> step
+</span></span><span style="display:flex;"><span>            o_size <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>getsize(outfile)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> outfile, get_size(outfile)
+</span></span></code></pre></div><h3 id="解压压缩包">解压压缩包</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> zipfile
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">un_zip</span>(file_name):  
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;unzip zip file&#34;&#34;&#34;</span>  
+</span></span><span style="display:flex;"><span>    zip_file <span style="color:#f92672">=</span> zipfile<span style="color:#f92672">.</span>ZipFile(file_name)
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    if os.path.isdir(file_name.split(&#34;.&#34;)[0]):  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        pass  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    else:  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        os.mkdir(file_name.split(&#34;.&#34;)[0])
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> names <span style="color:#f92672">in</span> zip_file<span style="color:#f92672">.</span>namelist():  
+</span></span><span style="display:flex;"><span>        zip_file<span style="color:#f92672">.</span>extract(names)  <span style="color:#75715e">#加入到某个文件夹中 zip_file.extract(names,file_name.split(&#34;.&#34;)[0])</span>
+</span></span><span style="display:flex;"><span>    zip_file<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>un_zip(<span style="color:#e6db74">&#34;test.zip&#34;</span>)
+</span></span></code></pre></div><h3 id="获取python执行文件的路径">获取python执行文件的路径</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span>sys<span style="color:#f92672">.</span>path  <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>sys<span style="color:#f92672">.</span>executable  <span style="color:#75715e"># </span>
+</span></span></code></pre></div><h3 id="-is">== is</h3>
 <ul>
 <li>== 是比较两个对象的内容是否相等，即两个对象的“值“”是否相等，不管两者在<a href="https://so.csdn.net/so/search?q=%E5%86%85%E5%AD%98&amp;spm=1001.2101.3001.7020">内存</a>中的引用地址是否一样</li>
 <li>is 比较的是<strong>两个实例对象是不是完全相同，它们是不是同一个对象，占用的内存地址是否相同。即is比较两个条件：1.内容相同。2.内存中地址相同</strong></li>
 <li><a href="https://blog.csdn.net/qq_26442553/article/details/82195061">https://blog.csdn.net/qq_26442553/article/details/82195061</a></li>
 </ul>
 <h3 id="中文转换url编码">中文转换url编码</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> urllib.parse
-print(urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>quote())
-print(urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>unquote())
-</code></pre></div><h3 id="token">token</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.parse
+</span></span><span style="display:flex;"><span>print(urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>quote())
+</span></span><span style="display:flex;"><span>print(urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>unquote())
+</span></span></code></pre></div><h3 id="token">token</h3>
 <p><a href="https://blog.csdn.net/weixin_30394633/article/details/95011702">https://blog.csdn.net/weixin_30394633/article/details/95011702</a></p>
 <h3 id="traslate方法">traslate方法</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">intab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abcde&#34;</span>
-outtab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;12345&#34;</span>
-trantab <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span>maketrans(intab, outtab)   <span style="color:#75715e"># 制作翻译表</span>
-
-str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;this is string example....wow!!!&#34;</span>
-print(str<span style="color:#f92672">.</span>translate(trantab))
-</code></pre></div><h3 id="cmd命令中的路径存在空格导致命令出错">cmd命令中的路径存在空格，导致命令出错</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span>
-user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\police\AppData\Local\Google\Chrome\User Data&#34;</span>
-os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">rf</span><span style="color:#e6db74">&#39;start &#34;&#34; &#34;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>intab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abcde&#34;</span>
+</span></span><span style="display:flex;"><span>outtab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;12345&#34;</span>
+</span></span><span style="display:flex;"><span>trantab <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span>maketrans(intab, outtab)   <span style="color:#75715e"># 制作翻译表</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;this is string example....wow!!!&#34;</span>
+</span></span><span style="display:flex;"><span>print(str<span style="color:#f92672">.</span>translate(trantab))
+</span></span></code></pre></div><h3 id="cmd命令中的路径存在空格导致命令出错">cmd命令中的路径存在空格，导致命令出错</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span>
+</span></span><span style="display:flex;"><span>user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\police\AppData\Local\Google\Chrome\User Data&#34;</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">rf</span><span style="color:#e6db74">&#39;start &#34;&#34; &#34;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span></code></pre></div><ul>
 <li>
 <p>措施一</p>
 <p>在路径前后加上双引号，如<code>&quot;user_data_dir&quot;</code></p>
@@ -1026,10 +1023,10 @@ os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">rf</spa
 </ul>
 <h3 id="selenium捕获不到调试浏览器">selenium捕获不到调试浏览器</h3>
 <p>可能原因：chromedriver.exe进程冲突，检查任务管理器中是否有多个chromedriver.exe的进程，全部停止任务，重试即可捕获成功</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> Options()
-options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
-</code></pre></div><h3 id="shadowdom节点操作">shadowDOM节点操作</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options <span style="color:#f92672">=</span> Options()
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
+</span></span></code></pre></div><h3 id="shadowdom节点操作">shadowDOM节点操作</h3>
 <p><a href="https://www.jianshu.com/p/4d00259f6441">https://www.jianshu.com/p/4d00259f6441</a></p>
 <h3 id="有趣的开源项目">有趣的开源项目</h3>
 <ul>
@@ -1046,16 +1043,16 @@ git clone https://github.com/lxgr-linux/pokete.git
 </code></pre></li>
 </ul>
 <h3 id="kfcerror">KFCError</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KFCError</span>(<span style="color:#a6e22e">BaseException</span>):
-    <span style="color:#66d9ef">def</span> __str__(self):
-        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;KFC Crazy Thursday v me ¥50.&#39;</span>
-
-
-<span style="color:#66d9ef">raise</span> KFCError
-</code></pre></div><h3 id="unicode编码转换">unicode编码转换</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;\u6211\u672c\u662f\u663e\u8d6b\u4e16\u5bb6\u7684\u5965\u7279\u66fc\uff0c\u5374\u88ab\u8be1\u8ba1\u591a\u7aef\u7684\u602a\u517d\u6240\u5bb3\uff01\u5965\u7279\u66fc\u5bb6\u65cf\u5f03\u6211\uff01\u5965\u7279\u4e4b\u7236\u9010\u6211\uff01\u751a\u81f3\u65ad\u6211\u4f3d\u9a6c\u5c04\u7ebf\uff01\u91cd\u751f\u4e00\u4e16\uff0c\u4eca\u5929\u80af\u5fb7\u57fa\u75af\u72c2\u661f\u671f\u56db\uff01\u8c01\u8bf7\u6211\u5403\uff1f&#34;</span>
-t<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;unicode_escape&#34;</span>)
-</code></pre></div><p>更多 - <a href="https://billie52707.cn/tags/python/">https://billie52707.cn/tags/python/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KFCError</span>(<span style="color:#a6e22e">BaseException</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;KFC Crazy Thursday v me ¥50.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">raise</span> KFCError
+</span></span></code></pre></div><h3 id="unicode编码转换">unicode编码转换</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>t <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;\u6211\u672c\u662f\u663e\u8d6b\u4e16\u5bb6\u7684\u5965\u7279\u66fc\uff0c\u5374\u88ab\u8be1\u8ba1\u591a\u7aef\u7684\u602a\u517d\u6240\u5bb3\uff01\u5965\u7279\u66fc\u5bb6\u65cf\u5f03\u6211\uff01\u5965\u7279\u4e4b\u7236\u9010\u6211\uff01\u751a\u81f3\u65ad\u6211\u4f3d\u9a6c\u5c04\u7ebf\uff01\u91cd\u751f\u4e00\u4e16\uff0c\u4eca\u5929\u80af\u5fb7\u57fa\u75af\u72c2\u661f\u671f\u56db\uff01\u8c01\u8bf7\u6211\u5403\uff1f&#34;</span>
+</span></span><span style="display:flex;"><span>t<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;unicode_escape&#34;</span>)
+</span></span></code></pre></div><p>更多 - <a href="https://billie52707.cn/tags/python/">https://billie52707.cn/tags/python/</a></p>
 
     </div>
 
@@ -1093,7 +1090,7 @@ t<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4356 字
+          4368 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1290,8 +1287,8 @@ t<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

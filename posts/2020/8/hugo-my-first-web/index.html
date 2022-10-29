@@ -393,7 +393,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>设置主题</td>
-<td>echo &lsquo;theme = &ldquo;cactus&rdquo;&rsquo; &raquo; config.toml</td>
+<td>echo &rsquo;theme = &ldquo;cactus&rdquo;&rsquo; &raquo; config.toml</td>
 </tr>
 <tr>
 <td>启动博客</td>
@@ -411,16 +411,16 @@ if (!doNotTrack) {
 </table>
 <h2 id="快速部署基本设置">快速部署基本设置</h2>
 <p>博客的基本设置可以通过对应主题的GitHub帮助文档进行一步步设置，也可以走捷径，直接替换<code>博客项目下的config.toml</code>为主题文件中<code>exampleSite下的config.toml</code>文件，接着在config.toml中的对应位置修改自己的设置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://billie52707.cn&#34;</span>
-<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
-<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;人人都爱小雀斑&#39;s blogs&#34;</span>
-<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;cactus&#34;</span>
-<span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;billie&#34;</span> <span style="color:#75715e"># cactus will use title if copyright is not set</span>
-<span style="color:#a6e22e">disqusShortname</span> = <span style="color:#e6db74">&#34;example&#34;</span> <span style="color:#75715e"># Used when comments is enabled. Cactus will use site title if not set</span>
-<span style="color:#75715e"># googleAnalytics = &#34;UA-1234-5&#34;</span>
-</code></pre></div><h2 id="文章添加标签和分类">文章添加标签和分类</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://billie52707.cn&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;人人都爱小雀斑&#39;s blogs&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;cactus&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;billie&#34;</span> <span style="color:#75715e"># cactus will use title if copyright is not set</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">disqusShortname</span> = <span style="color:#e6db74">&#34;example&#34;</span> <span style="color:#75715e"># Used when comments is enabled. Cactus will use site title if not set</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># googleAnalytics = &#34;UA-1234-5&#34;</span>
+</span></span></code></pre></div><h2 id="文章添加标签和分类">文章添加标签和分类</h2>
 <p>以你现在看到的这篇文章为例，新建一篇文章之后，如果想加入标签，可以在每篇文章的页首这样设置：</p>
-<pre tabindex="0"><code>title: &quot;hugo建站 | 我的第一个博客网站&quot;
+<pre tabindex="0"><code>title: &#34;hugo建站 | 我的第一个博客网站&#34;
 date: 2020-08-04T18:42:17+08:00
 categories:
 - tec
@@ -429,46 +429,46 @@ tags:
 </code></pre><p>ps：注意<code>-</code>后面有一个空格</p>
 <h2 id="页脚信息的编辑">页脚信息的编辑</h2>
 <p>以我现在使用的<a href="https://github.com/monkeyWzr/hugo-theme-cactus">cactus主题</a>为例，页脚配置文件位于：<code>cactus/layouts/partials/footer.html</code>，编辑如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer-left&#34;</span>&gt;
-    Copyright  
-    &amp;copy; 
-    {{ now.Format &#34;2006&#34; }} 
-    &lt;<span style="color:#f92672">span</span>&gt;❤️{{ if .Site.Copyright }} {{ print .Site.Copyright }} {{ else }} {{ print .Site.Title }} {{ end }} | &lt;/<span style="color:#f92672">span</span>&gt;  
-    &lt;<span style="color:#f92672">span</span>&gt;粤ICP备20025795号-1 | &lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;<span style="color:#f92672">span</span>&gt;Powered By Hugo | &lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_pv&#34;</span>&gt;
-        pv：&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt; | 
-    &lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_uv&#34;</span>&gt;
-        uv: &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_uv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt; 
-    &lt;/<span style="color:#f92672">span</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
-&lt;/<span style="color:#f92672">footer</span>&gt;
-</code></pre></div><h2 id="网站流量统计">网站流量统计</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer-left&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    Copyright  
+</span></span><span style="display:flex;"><span>    &amp;copy; 
+</span></span><span style="display:flex;"><span>    {{ now.Format &#34;2006&#34; }} 
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span>&gt;❤️{{ if .Site.Copyright }} {{ print .Site.Copyright }} {{ else }} {{ print .Site.Title }} {{ end }} | &lt;/<span style="color:#f92672">span</span>&gt;  
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span>&gt;粤ICP备20025795号-1 | &lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span>&gt;Powered By Hugo | &lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_pv&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        pv：&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt; | 
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_uv&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        uv: &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_uv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt; 
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">footer</span>&gt;
+</span></span></code></pre></div><h2 id="网站流量统计">网站流量统计</h2>
 <p>工具：<a href="http://busuanzi.ibruce.info/">不蒜子</a>，一个通过仅仅两行代码实现的网页流量计数器</p>
 <p>1、在<code>/cactus/layouts/partials/head.html</code>文件中引入不蒜子js文件</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 不蒜子 --&gt;</span>
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>2、在页面添加统计代码，在<code>/cactus/layouts/partials/footer.html</code>中添加如下代码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_pv&#34;</span>&gt;
-    本站访问量：&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次
-&lt;/<span style="color:#f92672">span</span>&gt;
-&amp;nbsp;
-&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_uv&#34;</span>&gt;
-    您是本站第 &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_uv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt; 位访问者
-&lt;/<span style="color:#f92672">span</span>&gt;
-</code></pre></div><p>3、设置文章阅读数，在<code>/cactus/layouts/posts/single.html</code>中，大概35行的位置，添加如下代码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;article-tag&#34;</span>&gt;
-            &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-eye&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt; 
-            &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_page_pv&#34;</span>&gt;
-              &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;0&lt;/<span style="color:#f92672">span</span>&gt;
-            &lt;/<span style="color:#f92672">span</span>&gt;
-        &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>具体显示效果可移步此文章页首标题处查看</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 不蒜子 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>2、在页面添加统计代码，在<code>/cactus/layouts/partials/footer.html</code>中添加如下代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_pv&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    本站访问量：&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>&amp;nbsp;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_uv&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    您是本站第 &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_uv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt; 位访问者
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span></code></pre></div><p>3、设置文章阅读数，在<code>/cactus/layouts/posts/single.html</code>中，大概35行的位置，添加如下代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;article-tag&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">i</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa fa-eye&#34;</span>&gt;&lt;/<span style="color:#f92672">i</span>&gt; 
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_page_pv&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>              &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;0&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>具体显示效果可移步此文章页首标题处查看</p>
 <p>4、设置文章字数和阅读时间，在<code>/cactus/layouts/_default/single.html</code>中添加以下代码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wc&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;font-size: 1rem;text-align: center;&#34;</span>&gt;{{ .FuzzyWordCount }} Words|Read in about {{ .ReadingTime }} Min|本文总阅读量&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次&lt;/<span style="color:#f92672">h5</span>&gt;
-</code></pre></div><h2 id="首页添加每日一图">首页添加每日一图</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wc&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;font-size: 1rem;text-align: center;&#34;</span>&gt;{{ .FuzzyWordCount }} Words|Read in about {{ .ReadingTime }} Min|本文总阅读量&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次&lt;/<span style="color:#f92672">h5</span>&gt;
+</span></span></code></pre></div><h2 id="首页添加每日一图">首页添加每日一图</h2>
 <p><a href="https://billie52707.cn/2020/08/python-hugo-nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/">python+hugo+nginx | 实现博客主页每日一图 </a></p>
 <h2 id="添加评论系统valine">添加评论系统Valine</h2>
 <blockquote>
@@ -502,19 +502,19 @@ tags:
 <li>为应用添加安全域名，左边栏点击 <strong>设置</strong>，找到 <strong>安全中心</strong>，点击后会看到 <strong>安全域名</strong> 设置框，输入博客使用的域名，点击保存即可</li>
 </ul>
 <h3 id="添加-valine-参数项">添加 <strong>Valine</strong> 参数项：</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">  <span style="color:#75715e"># Valine.</span>
-  <span style="color:#75715e"># You can get your appid and appkey from https://leancloud.cn</span>
-  <span style="color:#75715e"># more info please open https://valine.js.org</span>
-  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">valine</span>]
-    <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
-    <span style="color:#a6e22e">appId</span> = <span style="color:#e6db74">&#39;你的appId&#39;</span>
-    <span style="color:#a6e22e">appKey</span> = <span style="color:#e6db74">&#39;你的appKey&#39;</span>
-    <span style="color:#a6e22e">notify</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># mail notifier , https://github.com/xCss/Valine/wiki</span>
-    <span style="color:#a6e22e">verify</span> = <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Verification code</span>
-    <span style="color:#a6e22e">avatar</span> = <span style="color:#e6db74">&#39;mm&#39;</span> 
-    <span style="color:#a6e22e">placeholder</span> = <span style="color:#e6db74">&#39;说点什么吧...&#39;</span>
-    <span style="color:#a6e22e">visitor</span> = <span style="color:#66d9ef">true</span>
-</code></pre></div><p>上面几项内容的含义，这里简单一说，具体还是要看 <a href="https://valine.js.org/configuration.html">Valine官网中配置相关的内容</a>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>  <span style="color:#75715e"># Valine.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># You can get your appid and appkey from https://leancloud.cn</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># more info please open https://valine.js.org</span>
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">valine</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enable</span> = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">appId</span> = <span style="color:#e6db74">&#39;你的appId&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">appKey</span> = <span style="color:#e6db74">&#39;你的appKey&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">notify</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># mail notifier , https://github.com/xCss/Valine/wiki</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">verify</span> = <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Verification code</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">avatar</span> = <span style="color:#e6db74">&#39;mm&#39;</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">placeholder</span> = <span style="color:#e6db74">&#39;说点什么吧...&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">visitor</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>上面几项内容的含义，这里简单一说，具体还是要看 <a href="https://valine.js.org/configuration.html">Valine官网中配置相关的内容</a>：</p>
 <table>
 <thead>
 <tr>
@@ -559,40 +559,40 @@ tags:
 </table>
 <h3 id="修改主题文件">修改主题文件：</h3>
 <p>主要是修改主题中评论相关的布局文件 <code>themes/even/layouts/partials/comments.html</code>，按照 <a href="https://valine.js.org/quickstart.html">Valine快速开始</a> 添加 <strong>Valine</strong> 相关代码，找到以下位置，大概55～81行的位置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!-- gitment --&gt;</span>
-  {{- if .Site.Params.gitment.enable -}}
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comments-gitment&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-  <span style="color:#75715e">&lt;!--这里省略了部分代码--&gt;</span>
-  &lt;<span style="color:#f92672">noscript</span>&gt;Please enable JavaScript to view the &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/imsun/gitment&#34;</span>&gt;comments powered by gitment.&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">noscript</span>&gt;
-  {{- end }}
-
-  <span style="color:#75715e">&lt;!--这个位置添加Valine相关代码--&gt;</span>
-</code></pre></div><p>添加的 <strong>Valine</strong> 评论的代码如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">  <span style="color:#75715e">&lt;!-- valine --&gt;</span>
-  {{- if .Site.Params.valine.enable -}}
-  <span style="color:#75715e">&lt;!-- id 将作为查询条件 --&gt;</span>
-  &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .URL | relURL }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;leancloud_visitors&#34;</span> <span style="color:#a6e22e">data-flag-title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Title }}&#34;</span>&gt;
-    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-meta-item-text&#34;</span>&gt;文章阅读量 &lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;leancloud-visitors-count&#34;</span>&gt;1000000&lt;/<span style="color:#f92672">span</span>&gt;
-    &lt;<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
-  &lt;/<span style="color:#f92672">span</span>&gt;
-  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vcomments&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdn1.lncld.net/static/js/3.0.4/av-min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;//unpkg.com/valine/dist/Valine.min.js&#39;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
-    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Valine</span>({
-        <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#vcomments&#39;</span> ,
-        <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.Params.valine.appId }}&#39;</span>,
-        <span style="color:#a6e22e">appKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.Params.valine.appKey }}&#39;</span>,
-        <span style="color:#a6e22e">notify</span><span style="color:#f92672">:</span> {{ .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">valine</span>.<span style="color:#a6e22e">notify</span> }}, 
-        <span style="color:#a6e22e">verify</span><span style="color:#f92672">:</span> {{ .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">valine</span>.<span style="color:#a6e22e">verify</span> }}, 
-        <span style="color:#a6e22e">avatar</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;{{ .Site.Params.valine.avatar }}&#39;</span>, 
-        <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.Params.valine.placeholder }}&#39;</span>,
-        <span style="color:#a6e22e">visitor</span><span style="color:#f92672">:</span> {{ .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">valine</span>.<span style="color:#a6e22e">visitor</span> }}
-    });
-  &lt;/<span style="color:#f92672">script</span>&gt;
-  {{- end }}
-</code></pre></div><p>可以看到上述代码中引用了配置文件中的相关参数，这样以后修改配置就不用修改代码了，只需要改配置文件 <code>config.toml</code>，另外注意到的是，我也添加了文章阅读数统计的显示内容。将配置文件中 <strong>valine</strong> 配置的 <code>eanble</code> 设置为 <code>true</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- gitment --&gt;</span>
+</span></span><span style="display:flex;"><span>  {{- if .Site.Params.gitment.enable -}}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comments-gitment&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!--这里省略了部分代码--&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">noscript</span>&gt;Please enable JavaScript to view the &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/imsun/gitment&#34;</span>&gt;comments powered by gitment.&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">noscript</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- end }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!--这个位置添加Valine相关代码--&gt;</span>
+</span></span></code></pre></div><p>添加的 <strong>Valine</strong> 评论的代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- valine --&gt;</span>
+</span></span><span style="display:flex;"><span>  {{- if .Site.Params.valine.enable -}}
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- id 将作为查询条件 --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .URL | relURL }}&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;leancloud_visitors&#34;</span> <span style="color:#a6e22e">data-flag-title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .Title }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-meta-item-text&#34;</span>&gt;文章阅读量 &lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;leancloud-visitors-count&#34;</span>&gt;1000000&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vcomments&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdn1.lncld.net/static/js/3.0.4/av-min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;//unpkg.com/valine/dist/Valine.min.js&#39;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Valine</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#vcomments&#39;</span> ,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">appId</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.Params.valine.appId }}&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">appKey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.Params.valine.appKey }}&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">notify</span><span style="color:#f92672">:</span> {{ .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">valine</span>.<span style="color:#a6e22e">notify</span> }}, 
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">verify</span><span style="color:#f92672">:</span> {{ .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">valine</span>.<span style="color:#a6e22e">verify</span> }}, 
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">avatar</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;{{ .Site.Params.valine.avatar }}&#39;</span>, 
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;{{ .Site.Params.valine.placeholder }}&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">visitor</span><span style="color:#f92672">:</span> {{ .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Params</span>.<span style="color:#a6e22e">valine</span>.<span style="color:#a6e22e">visitor</span> }}
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  {{- end }}
+</span></span></code></pre></div><p>可以看到上述代码中引用了配置文件中的相关参数，这样以后修改配置就不用修改代码了，只需要改配置文件 <code>config.toml</code>，另外注意到的是，我也添加了文章阅读数统计的显示内容。将配置文件中 <strong>valine</strong> 配置的 <code>eanble</code> 设置为 <code>true</code></p>
 <h3 id="后台管理评论信息">后台管理评论信息</h3>
 <p>难免会遇到有一些垃圾评论或自动程序产生的无效评论，这时候需要删除或编辑</p>
 <p>访问leancloud：<a href="https://console.leancloud.cn/">https://console.leancloud.cn/</a></p>
@@ -606,22 +606,21 @@ tags:
 <li>在博客项目目录下新建文件<code>deploy.sh</code></li>
 <li>打开<code>deploy.sh</code>并编辑</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo -D <span style="color:#75715e">#打包成静态文件目录public</span>
-
-cd public <span style="color:#75715e">#切换到public目录</span>
-git init
-git remote rm origin
-
-git remote add origin https://github.com/your_github_id/your_github_id.github.io.git <span style="color:#75715e">#链接到你的GitHub博客项目</span>
-
-git add .
-git commit -m <span style="color:#e6db74">&#34;update&#34;</span>
-echo <span style="color:#e6db74">&#34;Pushing to github&#34;</span>
-git pull origin master
-
-git push -u origin +master
-
-</code></pre></div><h2 id="为你的博客添加一个域名githubpages">为你的博客添加一个域名(GithubPages)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo -D <span style="color:#75715e">#打包成静态文件目录public</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd public <span style="color:#75715e">#切换到public目录</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git remote rm origin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/your_github_id/your_github_id.github.io.git <span style="color:#75715e">#链接到你的GitHub博客项目</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;update&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Pushing to github&#34;</span>
+</span></span><span style="display:flex;"><span>git pull origin master
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git push -u origin +master
+</span></span></code></pre></div><h2 id="为你的博客添加一个域名githubpages">为你的博客添加一个域名(GithubPages)</h2>
 <p>上传代码到GitHub之后，在GitHub项目下新建一个&rsquo;CNAME&rsquo;文件，打开并编辑，在第一行写入<code>你的域名</code>（所以你要先有一个域名，并备案），比如我的就是<code>billie52707.cn</code>，这一步目的是做一个域名的关联，当你访问你的域名的时候，就会关联到你的博客项目来。</p>
 <p>接着，以阿里云为例，在这之前，你的域名已经备案好了，登录阿里云，进入你的域名列表，在域名右侧点击<code>解析</code>，点击添加<code>安全组</code>,<code>新手引导</code>，在<code>记录值</code>输入你的博客项目GitHub pages的IP地址，IP地址可以通过终端输入<code>ping your_github_id.github.io</code>获取。</p>
 <h2 id="添加字数统计">添加字数统计</h2>
@@ -633,8 +632,8 @@ git push -u origin +master
 <p>我们可以看到 <strong><code>.FuzzyWordCount</code></strong> 提供的是一个大概的值 (整 100)，比如 1 个字算 100 字，2 个字还算 100 字，201 个字算 200 字。这样统计出来的字数可能会比实际情况更多一点，虽然更有牌面但全都是整数未免也太假了。所以我还是决定使用 <strong><code>.WordCount</code></strong>。</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816082207539.png" alt="image-20200816082207539"></p>
 <p>参考用法，在html文件中任意位置添加:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ .FuzzyWordCount }} Words | Read in about {{ .ReadingTime }} Min
-</code></pre></div><p>更多与<strong>模板变量</strong>相关信息请参考：<a href="https://gohugo.io/variables/">Variables and Params</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ .FuzzyWordCount }} Words | Read in about {{ .ReadingTime }} Min
+</span></span></code></pre></div><p>更多与<strong>模板变量</strong>相关信息请参考：<a href="https://gohugo.io/variables/">Variables and Params</a></p>
 <h2 id="终极优化部署博客到阿里云oss">终极优化，部署博客到阿里云oss</h2>
 <p>部署博客有很多选择，国内外都有很多服务可以用，各有各的优缺点：</p>
 <table>
@@ -776,7 +775,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
       with:
-        node-version: &quot;12.x&quot;
+        node-version: &#34;12.x&#34;
     - name: Build Blog
       run: |
         npm install
@@ -785,7 +784,7 @@ jobs:
     - uses: manyuanrong/setup-ossutil@v1.0
       with:
         # endpoint 可以去oss控制台上查看
-        endpoint: &quot;oss-cn-beijing.aliyuncs.com&quot;
+        endpoint: &#34;oss-cn-beijing.aliyuncs.com&#34;
         # 使用我们之前配置在secrets里面的accesskeys来配置ossutil
         access-key-id: ${{ secrets.ACCESS_KEY_ID }}
         access-key-secret: ${{ secrets.ACCESS_KEY_SECRET }}
@@ -836,11 +835,11 @@ jobs:
 <ol>
 <li>
 <p>在目录 <strong>./themes/cactus/layouts/shortcodes</strong>下创建文件<strong>echarts.html</strong>，并编辑</p>
-<pre tabindex="0"><code>&lt;div id=&quot;echarts{{ .Get `height` }}&quot; style=&quot;width: 100%;height: {{.Get `height`}}px;margin: 0 auto&quot;&gt;&lt;/div&gt;
-    &lt;script src=&quot;https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
+<pre tabindex="0"><code>&lt;div id=&#34;echarts{{ .Get `height` }}&#34; style=&#34;width: 100%;height: {{.Get `height`}}px;margin: 0 auto&#34;&gt;&lt;/div&gt;
+    &lt;script src=&#34;https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js&#34;&gt;&lt;/script&gt;
+    &lt;script type=&#34;text/javascript&#34;&gt;
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts{{ .Get `height` }}'));
+        var myChart = echarts.init(document.getElementById(&#39;echarts{{ .Get `height` }}&#39;));
         // 指定图表的配置项和数据
         var option = JSON.parse({{ .Inner }})
         // 使用刚指定的配置项和数据显示图表。
@@ -849,8 +848,8 @@ jobs:
 </code></pre></li>
 <li>
 <p>在你的文章（md文件）任意处插入echarts的配置数据，注意echarts标签与左侧右侧的大括号之间<strong>没有空格</strong>，下方的演示代码需修改</p>
-<pre tabindex="0"><code>{{ &lt;echarts height=&quot;500&quot;&gt; }}
-        {&quot;title&quot;:{&quot;text&quot;:&quot;ECharts 入门示例&quot;},&quot;tooltip&quot;:{},&quot;legend&quot;:{&quot;data&quot;:[&quot;销量&quot;]},&quot;xAxis&quot;:{&quot;data&quot;:[&quot;衬衫&quot;,&quot;羊毛衫&quot;,&quot;雪纺衫&quot;,&quot;裤子&quot;,&quot;高跟鞋&quot;,&quot;袜子&quot;]},&quot;yAxis&quot;:{},&quot;series&quot;:[{&quot;name&quot;:&quot;销量&quot;,&quot;type&quot;:&quot;bar&quot;,&quot;data&quot;: [5, 20, 36, 10, 10, 20]}]}
+<pre tabindex="0"><code>{{ &lt;echarts height=&#34;500&#34;&gt; }}
+        {&#34;title&#34;:{&#34;text&#34;:&#34;ECharts 入门示例&#34;},&#34;tooltip&#34;:{},&#34;legend&#34;:{&#34;data&#34;:[&#34;销量&#34;]},&#34;xAxis&#34;:{&#34;data&#34;:[&#34;衬衫&#34;,&#34;羊毛衫&#34;,&#34;雪纺衫&#34;,&#34;裤子&#34;,&#34;高跟鞋&#34;,&#34;袜子&#34;]},&#34;yAxis&#34;:{},&#34;series&#34;:[{&#34;name&#34;:&#34;销量&#34;,&#34;type&#34;:&#34;bar&#34;,&#34;data&#34;: [5, 20, 36, 10, 10, 20]}]}
 {{ &lt;/echarts&gt; }}
 </code></pre></li>
 </ol>
@@ -894,9 +893,9 @@ jobs:
 <h3 id="方法1编辑configtoml">方法1:编辑config.toml</h3>
 <p>参考官方文档:<a href="https://www.gohugo.org/doc/extras/permalinks/">https://www.gohugo.org/doc/extras/permalinks/</a></p>
 <p>在config.toml文件中编辑以下代码,如不编辑,则访问链接默认为<strong>文件路径+文章命名</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">permalinks</span>:
-  <span style="color:#f92672">post</span>: <span style="color:#ae81ff">/:year/:month/:title/</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">permalinks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">post</span>: <span style="color:#ae81ff">/:year/:month/:title/</span>
+</span></span></code></pre></div><ul>
 <li><strong>:year</strong> the 4-digit year</li>
 <li><strong>:month</strong> the 2-digit month</li>
 <li><strong>:monthname</strong> the name of the month</li>
@@ -922,67 +921,67 @@ jobs:
 <ol>
 <li>
 <p>在<code>themes\cactus\layouts\partials</code>目录下新建词云文件<code>tagcloud.html</code>，并编辑</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;theme-tagcloud&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tagcloud-wrap&#34;</span>&gt;
-    {{ $tags := $.Site.Taxonomies.tags.Alphabetical }}
-    {{ $v1 := where $tags &#34;Count&#34; &#34;&gt;=&#34; 1 }}
-    {{ $v2 := where $v1 &#34;Term&#34; &#34;not in&#34; (slice  &#34;tags&#34; &#34;rss&#34; &#34;weekly&#34;) }}
-    {{ range $v2 }}
-    {{ if .Term }}
-    {{ $tagURL := printf &#34;tags/%s&#34; .Term | relURL }}
-
-    {{$tagSize := 12}}
-    {{if gt .Count 5}}
-    {{ $tagSize = 16 }}
-    {{end}}
-
-    {{if gt .Count 10}}
-    {{ $tagSize = 22 }}
-    {{end}}
-
-    {{if gt .Count 20}}
-    {{ $tagSize = 24 }}
-    {{end}}
-
-    {{if gt .Count 30}}
-    {{ $tagSize = 26 }}
-    {{end}}
-
-    {{if gt .Count 45}}
-    {{ $tagSize = 28 }}
-    {{end}}
-
-    {{if gt .Count 65}}
-    {{ $tagSize = 30 }}
-    {{end}}
-
-
-    &lt;<span style="color:#f92672">style</span>&gt; <span style="color:#f92672">a</span> {<span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">none</span>}&lt;/<span style="color:#f92672">style</span>&gt;
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $tagURL }}&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;font-size:{{ $tagSize }}px; text-transform:capitalize;text-decoration: none!important;&#34;</span>&gt;
-        {{ .Term }}<span style="color:#75715e">&lt;!-- &lt;span class=&#34;badge&#34;&gt;({{ .Count }})&lt;/span&gt;  --&gt;</span>
-    &lt;/<span style="color:#f92672">a</span>&gt;
-
-
-    {{ end }}
-    {{ end }}
-&lt;/<span style="color:#f92672">div</span>&gt;
-&lt;<span style="color:#f92672">style</span>&gt;
-	.<span style="color:#a6e22e">tagcloud-wrap</span>{
-    <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
-}
-	.<span style="color:#a6e22e">tagcloud-wrap</span> <span style="color:#f92672">a</span><span style="color:#f92672">,</span>.<span style="color:#a6e22e">tagcloud-wrap</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
-    <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">-webkit-</span>text-size-adjust:<span style="color:#66d9ef">none</span>; 
-    <span style="color:#66d9ef">white-space</span>:<span style="color:#66d9ef">nowrap</span>;
-    <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">23</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">left</span>;  
-}
-&lt;/<span style="color:#f92672">style</span>&gt;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;theme-tagcloud&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tagcloud-wrap&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ $tags := $.Site.Taxonomies.tags.Alphabetical }}
+</span></span><span style="display:flex;"><span>    {{ $v1 := where $tags &#34;Count&#34; &#34;&gt;=&#34; 1 }}
+</span></span><span style="display:flex;"><span>    {{ $v2 := where $v1 &#34;Term&#34; &#34;not in&#34; (slice  &#34;tags&#34; &#34;rss&#34; &#34;weekly&#34;) }}
+</span></span><span style="display:flex;"><span>    {{ range $v2 }}
+</span></span><span style="display:flex;"><span>    {{ if .Term }}
+</span></span><span style="display:flex;"><span>    {{ $tagURL := printf &#34;tags/%s&#34; .Term | relURL }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {{$tagSize := 12}}
+</span></span><span style="display:flex;"><span>    {{if gt .Count 5}}
+</span></span><span style="display:flex;"><span>    {{ $tagSize = 16 }}
+</span></span><span style="display:flex;"><span>    {{end}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {{if gt .Count 10}}
+</span></span><span style="display:flex;"><span>    {{ $tagSize = 22 }}
+</span></span><span style="display:flex;"><span>    {{end}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {{if gt .Count 20}}
+</span></span><span style="display:flex;"><span>    {{ $tagSize = 24 }}
+</span></span><span style="display:flex;"><span>    {{end}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {{if gt .Count 30}}
+</span></span><span style="display:flex;"><span>    {{ $tagSize = 26 }}
+</span></span><span style="display:flex;"><span>    {{end}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {{if gt .Count 45}}
+</span></span><span style="display:flex;"><span>    {{ $tagSize = 28 }}
+</span></span><span style="display:flex;"><span>    {{end}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {{if gt .Count 65}}
+</span></span><span style="display:flex;"><span>    {{ $tagSize = 30 }}
+</span></span><span style="display:flex;"><span>    {{end}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span>&gt; <span style="color:#f92672">a</span> {<span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">none</span>}&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $tagURL }}&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;font-size:{{ $tagSize }}px; text-transform:capitalize;text-decoration: none!important;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        {{ .Term }}<span style="color:#75715e">&lt;!-- &lt;span class=&#34;badge&#34;&gt;({{ .Count }})&lt;/span&gt;  --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {{ end }}
+</span></span><span style="display:flex;"><span>    {{ end }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>	.<span style="color:#a6e22e">tagcloud-wrap</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>	.<span style="color:#a6e22e">tagcloud-wrap</span> <span style="color:#f92672">a</span><span style="color:#f92672">,</span>.<span style="color:#a6e22e">tagcloud-wrap</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">-webkit-</span>text-size-adjust:<span style="color:#66d9ef">none</span>; 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">white-space</span>:<span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">23</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">left</span>;  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>在<code>themes\cactus\layouts\_default\list.html</code>文件中添加词云模块</p>
-<pre tabindex="0"><code>{{ partial &quot;tagcloud.html&quot; . }}
+<pre tabindex="0"><code>{{ partial &#34;tagcloud.html&#34; . }}
 </code></pre><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201121112709702.png" alt="image-20201121112709702"></p>
 </li>
 <li>
@@ -994,53 +993,52 @@ jobs:
 <ol>
 <li>
 <p>在<code>themes\cactus\layouts\partials</code>目录下新建文件<code>bilibili.html</code>，编辑如下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
-	<span style="color:#75715e">/*// 嵌入 BiliBili 视频*/</span>
-	#bilibili {
-   <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-   <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">550</span><span style="color:#66d9ef">px</span>;
-	}
-	@<span style="color:#66d9ef">media</span> <span style="color:#f92672">only</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-device-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">320px</span><span style="color:#f92672">)</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-device-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">480px</span><span style="color:#f92672">)</span> {
-   #bilibili {
-     <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-     <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">250</span><span style="color:#66d9ef">px</span>;
-   }
-	}
-&lt;/<span style="color:#f92672">style</span>&gt;
-
-{{ $videoID := index .Params 0 }}
-{{ $pageNum := index .Params 1 | default 1}}
-
-{{ if (findRE &#34;^[bB][vV][0-9a-zA-Z]+$&#34; $videoID) }}
-&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bilibili&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//player.bilibili.com/player.html?bvid={{ $videoID }}&amp;page={{ $pageNum }}&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span> &gt; &lt;/<span style="color:#f92672">iframe</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-{{ else }}
-&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bilibili&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//player.bilibili.com/player.html?aid={{ $videoID }}&amp;page={{ $pageNum }}&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span> &gt; &lt;/<span style="color:#f92672">iframe</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-{{ end }}
-
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/*// 嵌入 BiliBili 视频*/</span>
+</span></span><span style="display:flex;"><span>	#bilibili {
+</span></span><span style="display:flex;"><span>	  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>	  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">550</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">media</span> <span style="color:#f92672">only</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">min-device-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">320px</span><span style="color:#f92672">)</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-device-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">480px</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>	  #bilibili {
+</span></span><span style="display:flex;"><span>	    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>	    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">250</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>	  }
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{ $videoID := index .Params 0 }}
+</span></span><span style="display:flex;"><span>{{ $pageNum := index .Params 1 | default 1}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{ if (findRE &#34;^[bB][vV][0-9a-zA-Z]+$&#34; $videoID) }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bilibili&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//player.bilibili.com/player.html?bvid={{ $videoID }}&amp;page={{ $pageNum }}&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span> &gt; &lt;/<span style="color:#f92672">iframe</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>{{ else }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bilibili&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//player.bilibili.com/player.html?aid={{ $videoID }}&amp;page={{ $pageNum }}&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span> &gt; &lt;/<span style="color:#f92672">iframe</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div></li>
 <li>
 <p>用法</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201123193959533.png" alt="image-20201123193959533"></p>
 <style>
-	 
-	#bilibili {
-	  width: 100%;
-	  height: 550px;
-	}
-	@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	  #bilibili {
-	    width: 100%;
-	    height: 250px;
-	  }
-	}
-</style>
-
-
-
-
-
-<div><iframe id="bilibili" src="//player.bilibili.com/player.html?aid=2271112&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy" > </iframe></div>
-
+   	 
+   	#bilibili {
+   	  width: 100%;
+   	  height: 550px;
+   	}
+   	@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+   	  #bilibili {
+   	    width: 100%;
+   	    height: 250px;
+   	  }
+   	}
+   </style>
+   
+   
+   
+   
+   
+   <div><iframe id="bilibili" src="//player.bilibili.com/player.html?aid=2271112&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" loading="lazy" > </iframe></div>
+   
 
 </li>
 </ol>
@@ -1053,14 +1051,14 @@ jobs:
 </ul>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210520162322159.png" alt="image-20210520162322159"></p>
 <p>移动端，将<code>list.html</code>文章列表的显示样式设为不换行显示：<code>display:inline;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
-@<span style="color:#66d9ef">media</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">500px</span><span style="color:#f92672">)</span> {
-    #archive .<span style="color:#a6e22e">post-list</span> .<span style="color:#a6e22e">post-item</span> .<span style="color:#a6e22e">meta</span>{
-		<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#75715e">!important</span>;
-	}
-}
-<span style="color:#f92672">&lt;/</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
-</code></pre></div><h2 id="后记">后记</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">media</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">500px</span><span style="color:#f92672">)</span> {
+</span></span><span style="display:flex;"><span>    #archive .<span style="color:#a6e22e">post-list</span> .<span style="color:#a6e22e">post-item</span> .<span style="color:#a6e22e">meta</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><h2 id="后记">后记</h2>
 <p>updated by 2022-06-21 16:00</p>
 
     </div>
@@ -1126,7 +1124,7 @@ jobs:
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          8916 字
+          7537 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1334,8 +1332,8 @@ jobs:
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

@@ -342,22 +342,22 @@ nginx=/usr/local/nginx/sbin/nginx
 conf=/usr/local/nginx/conf/nginx.conf
 case $1 in
 start)
-echo -n &quot;Starting Nginx&quot;
+echo -n &#34;Starting Nginx&#34;
 $nginx -c $conf
-echo &quot; done&quot;
+echo &#34; done&#34;
 ;;
 stop)
-echo -n &quot;Stopping Nginx&quot;
+echo -n &#34;Stopping Nginx&#34;
 killall -9 nginx
-echo &quot; done&quot;
+echo &#34; done&#34;
 ;;
 test)
 $nginx -t -c $conf
 ;;
 reload)
-echo -n &quot;Reloading Nginx&quot;
-ps auxww | grep nginx | grep master | awk '{print $2}' | xargs kill -HUP
-echo &quot; done&quot;
+echo -n &#34;Reloading Nginx&#34;
+ps auxww | grep nginx | grep master | awk &#39;{print $2}&#39; | xargs kill -HUP
+echo &#34; done&#34;
 ;;
 restart)
 $0 stop
@@ -367,7 +367,7 @@ show)
 ps -aux|grep nginx
 ;;
 *)
-echo -n &quot;Usage: $0 {start|restart|reload|stop|test|show}&quot;
+echo -n &#34;Usage: $0 {start|restart|reload|stop|test|show}&#34;
 ;;
 esac
 </code></pre><p>注意，保存一定要保存成UNIX格式（notepad++：编辑&ndash;文档格式转换&ndash;转为UNIX格式），否则会报错的（no such file or directory）</p>
@@ -576,8 +576,8 @@ esac
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

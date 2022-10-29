@@ -303,16 +303,16 @@ if (!doNotTrack) {
 <li>group 分组。</li>
 </ul>
 <p>我们先用一个实例来感受一下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> multiprocessing
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(index):
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Process: </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
-        p <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>process, args<span style="color:#f92672">=</span>(i,))
-        p<span style="color:#f92672">.</span>start()
-</code></pre></div><p>这是一个实现多进程最基础的方式：通过创建 Process 来新建一个子进程，其中 target 参数传入方法名，args 是方法的参数，是以元组的形式传入，其和被调用的方法 process 的参数是一一对应的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> multiprocessing
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(index):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Process: </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>process, args<span style="color:#f92672">=</span>(i,))
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">.</span>start()
+</span></span></code></pre></div><p>这是一个实现多进程最基础的方式：通过创建 Process 来新建一个子进程，其中 target 参数传入方法名，args 是方法的参数，是以元组的形式传入，其和被调用的方法 process 的参数是一一对应的。</p>
 <p><strong>注意：这里 args 必须要是一个元组，如果只有一个参数，那也要在元组第一个元素后面加一个逗号，如果没有逗号则和单个元素本身没有区别，无法构成元组，导致参数传递出现问题。</strong>**</p>
 <p>创建完进程之后，我们通过调用 start 方法即可启动进程了。运行结果如下：</p>
 <pre tabindex="0"><code>Process: 0
@@ -325,22 +325,22 @@ Process: 4
 <p>另外，在当前 CPU 核数足够的情况下，这些不同的进程会分配给不同的 CPU 核来运行，实现真正的并行执行。</p>
 <p>multiprocessing 还提供了几个比较有用的方法，如我们可以通过 cpu_count 的方法来获取当前机器 CPU 的核心数量，通过 active_children 方法获取当前还在运行的所有进程。</p>
 <p>下面通过一个实例来看一下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> multiprocessing
-<span style="color:#f92672">import</span> time
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(index):
-    time<span style="color:#f92672">.</span>sleep(index)
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Process: </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
-        p <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>process, args<span style="color:#f92672">=</span>[i])
-        p<span style="color:#f92672">.</span>start()
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;CPU number: </span><span style="color:#e6db74">{</span>multiprocessing<span style="color:#f92672">.</span>cpu_count()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-    <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> multiprocessing<span style="color:#f92672">.</span>active_children():
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Child process name: </span><span style="color:#e6db74">{</span>p<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> id: </span><span style="color:#e6db74">{</span>p<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-    print(<span style="color:#e6db74">&#39;Process Ended&#39;</span>)
-</code></pre></div><p>运行结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> multiprocessing
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(index):
+</span></span><span style="display:flex;"><span>    time<span style="color:#f92672">.</span>sleep(index)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Process: </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>process, args<span style="color:#f92672">=</span>[i])
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;CPU number: </span><span style="color:#e6db74">{</span>multiprocessing<span style="color:#f92672">.</span>cpu_count()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> multiprocessing<span style="color:#f92672">.</span>active_children():
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Child process name: </span><span style="color:#e6db74">{</span>p<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> id: </span><span style="color:#e6db74">{</span>p<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Process Ended&#39;</span>)
+</span></span></code></pre></div><p>运行结果如下：</p>
 <pre tabindex="0"><code>Process: 0
 CPU number: 8
 Child process name: Process-5 id: 73595
@@ -358,23 +358,23 @@ Process: 4
 <h2 id="继承-process-类">继承 Process 类</h2>
 <p>在上面的例子中，我们创建进程是直接使用 Process 这个类来创建的，这是一种创建进程的方式。不过，创建进程的方式不止这一种，同样，我们也可以像线程 Thread 一样来通过继承的方式创建一个进程类，进程的基本操作我们在子类的 run 方法中实现即可。</p>
 <p>通过一个实例来看一下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process
-<span style="color:#f92672">import</span> time
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyProcess</span>(Process):
-    <span style="color:#66d9ef">def</span> __init__(self, loop):
-        Process<span style="color:#f92672">.</span>__init__(self)
-        self<span style="color:#f92672">.</span>loop <span style="color:#f92672">=</span> loop
-		<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">for</span> count <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>loop):
-            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Pid: </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74"> LoopCount: </span><span style="color:#e6db74">{</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-            
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>):
-        p <span style="color:#f92672">=</span> MyProcess(i)
-        p<span style="color:#f92672">.</span>start()
-</code></pre></div><p>我们首先声明了一个构造方法，这个方法接收一个 loop 参数，代表循环次数，并将其设置为全局变量。在 run 方法中，又使用这个 loop 变量循环了 loop 次并打印了当前的进程号和循环次数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyProcess</span>(Process):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, loop):
+</span></span><span style="display:flex;"><span>        Process<span style="color:#f92672">.</span>__init__(self)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>loop <span style="color:#f92672">=</span> loop
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> count <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>loop):
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Pid: </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74"> LoopCount: </span><span style="color:#e6db74">{</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> MyProcess(i)
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">.</span>start()
+</span></span></code></pre></div><p>我们首先声明了一个构造方法，这个方法接收一个 loop 参数，代表循环次数，并将其设置为全局变量。在 run 方法中，又使用这个 loop 变量循环了 loop 次并打印了当前的进程号和循环次数。</p>
 <p>在调用时，我们用 range 方法得到了 2、3、4 三个数字，并把它们分别初始化了 MyProcess 进程，然后调用 start 方法将进程启动起来。</p>
 <p>注意：这里进程的执行逻辑需要在 run 方法中实现，启动进程需要调用 start 方法，调用之后 run 方法便会执行。</p>
 <p>运行结果如下：</p>
@@ -393,40 +393,40 @@ Pid: 73669 LoopCount: 3
 <h2 id="守护进程">守护进程</h2>
 <p>在多进程中，同样存在守护进程的概念，如果一个进程被设置为守护进程，当父进程结束后，子进程会自动被终止，我们可以通过设置 daemon 属性来控制是否为守护进程。</p>
 <p>还是原来的例子，增加了 deamon 属性的设置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process
-<span style="color:#f92672">import</span> time
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyProcess</span>(Process):
-    <span style="color:#66d9ef">def</span> __init__(self, loop):
-        Process<span style="color:#f92672">.</span>__init__(self)
-        self<span style="color:#f92672">.</span>loop <span style="color:#f92672">=</span> loop
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">for</span> count <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>loop):
-            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Pid: </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74"> LoopCount: </span><span style="color:#e6db74">{</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-            
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>):
-        p <span style="color:#f92672">=</span> MyProcess(i)
-        p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-        p<span style="color:#f92672">.</span>start()
-        print(<span style="color:#e6db74">&#39;Main Process ended&#39;</span>)
-</code></pre></div><p>运行结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyProcess</span>(Process):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, loop):
+</span></span><span style="display:flex;"><span>        Process<span style="color:#f92672">.</span>__init__(self)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>loop <span style="color:#f92672">=</span> loop
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> count <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>loop):
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Pid: </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74"> LoopCount: </span><span style="color:#e6db74">{</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> MyProcess(i)
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;Main Process ended&#39;</span>)
+</span></span></code></pre></div><p>运行结果如下：</p>
 <pre tabindex="0"><code>Main Process ended
 </code></pre><p>结果很简单，因为主进程没有做任何事情，直接输出一句话结束，所以在这时也直接终止了子进程的运行。</p>
 <p>这样可以有效防止无控制地生成子进程。这样的写法可以让我们在主进程运行结束后无需额外担心子进程是否关闭，避免了独立子进程的运行。</p>
 <h2 id="进程等待">进程等待</h2>
 <p>上面的运行效果其实不太符合我们预期：主进程运行结束时，子进程（守护进程）也都退出了，子进程什么都没来得及执行。</p>
 <p>能不能让所有子进程都执行完了然后再结束呢？当然是可以的，只需要加入 join 方法即可，我们可以将代码改写如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">processes <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>):
-    p <span style="color:#f92672">=</span> MyProcess(i)
-    processes<span style="color:#f92672">.</span>append(p)
-    p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-    p<span style="color:#f92672">.</span>start()
-<span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> processes:
-    p<span style="color:#f92672">.</span>join()
-</code></pre></div><p>运行结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>processes <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> MyProcess(i)
+</span></span><span style="display:flex;"><span>    processes<span style="color:#f92672">.</span>append(p)
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> processes:
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>join()
+</span></span></code></pre></div><p>运行结果如下：</p>
 <pre tabindex="0"><code>Pid: 40866 LoopCount: 0
 Pid: 40867 LoopCount: 0
 Pid: 40868 LoopCount: 0
@@ -440,15 +440,15 @@ Main Process ended
 </code></pre><p>在调用 start 和 join 方法后，父进程就可以等待所有子进程都执行完毕后，再打印出结束的结果。</p>
 <p>默认情况下，join 是无限期的。也就是说，如果有子进程没有运行完毕，主进程会一直等待。这种情况下，如果子进程出现问题陷入了死循环，主进程也会无限等待下去。怎么解决这个问题呢？可以给 join 方法传递一个超时参数，代表最长等待秒数。如果子进程没有在这个指定秒数之内完成，会被强制返回，主进程不再会等待。也就是说这个参数设置了主进程等待该子进程的最长时间。</p>
 <p>例如这里我们传入 1，代表最长等待 1 秒，代码改写如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">processes <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>):
-    p <span style="color:#f92672">=</span> MyProcess(i)
-    processes<span style="color:#f92672">.</span>append(p)
-    p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-    p<span style="color:#f92672">.</span>start()
-<span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> processes:
-    p<span style="color:#f92672">.</span>join(<span style="color:#ae81ff">1</span>)
-</code></pre></div><p>运行结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>processes <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> MyProcess(i)
+</span></span><span style="display:flex;"><span>    processes<span style="color:#f92672">.</span>append(p)
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> processes:
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>join(<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>运行结果如下：</p>
 <pre tabindex="0"><code>Pid: 40970 LoopCount: 0
 Pid: 40971 LoopCount: 0
 Pid: 40970 LoopCount: 1
@@ -459,27 +459,27 @@ Main Process ended
 <h2 id="终止进程">终止进程</h2>
 <p>当然，终止进程不止有守护进程这一种做法，我们也可以通过 terminate 方法来终止某个子进程，另外我们还可以通过 is_alive 方法判断进程是否还在运行。</p>
 <p>下面我们来看一个实例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> multiprocessing
-<span style="color:#f92672">import</span> time
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>():
-    print(<span style="color:#e6db74">&#39;Starting&#39;</span>)
-    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">5</span>)
-    print(<span style="color:#e6db74">&#39;Finished&#39;</span>)
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    p <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>process)
-    print(<span style="color:#e6db74">&#39;Before:&#39;</span>, p, p<span style="color:#f92672">.</span>is_alive())
-    
-    p<span style="color:#f92672">.</span>start()
-		print(<span style="color:#e6db74">&#39;During:&#39;</span>, p, p<span style="color:#f92672">.</span>is_alive())
-
-    p<span style="color:#f92672">.</span>terminate()
-    print(<span style="color:#e6db74">&#39;Terminate:&#39;</span>, p, p<span style="color:#f92672">.</span>is_alive())
-
-    p<span style="color:#f92672">.</span>join()
-    print(<span style="color:#e6db74">&#39;Joined:&#39;</span>, p, p<span style="color:#f92672">.</span>is_alive())
-</code></pre></div><p>在上面的例子中，我们用 Process 创建了一个进程，接着调用 start 方法启动这个进程，然后调用 terminate 方法将进程终止，最后调用 join 方法。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> multiprocessing
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Starting&#39;</span>)
+</span></span><span style="display:flex;"><span>    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Finished&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> multiprocessing<span style="color:#f92672">.</span>Process(target<span style="color:#f92672">=</span>process)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Before:&#39;</span>, p, p<span style="color:#f92672">.</span>is_alive())
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#39;During:&#39;</span>, p, p<span style="color:#f92672">.</span>is_alive())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>terminate()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Terminate:&#39;</span>, p, p<span style="color:#f92672">.</span>is_alive())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Joined:&#39;</span>, p, p<span style="color:#f92672">.</span>is_alive())
+</span></span></code></pre></div><p>在上面的例子中，我们用 Process 创建了一个进程，接着调用 start 方法启动这个进程，然后调用 terminate 方法将进程终止，最后调用 join 方法。</p>
 <p>另外，在进程运行不同的阶段，我们还通过 is_alive 方法判断当前进程是否还在运行。</p>
 <p>运行结果如下：</p>
 <pre tabindex="0"><code>Before: &lt;Process(Process-1, initial)&gt; False
@@ -505,26 +505,26 @@ Main Process ended
 <p>那如何来避免这种问题？如果我们能保证，多个进程运行期间的任一时间，只能一个进程输出，其他进程等待，等刚才那个进程输出完毕之后，另一个进程再进行输出，这样就不会出现输出没有换行的现象了。</p>
 <p>这种解决方案实际上就是实现了进程互斥，避免了多个进程同时抢占临界区（输出）资源。我们可以通过 multiprocessing 中的 Lock 来实现。Lock，即锁，在一个进程输出时，加锁，其他进程等待。等此进程执行结束后，释放锁，其他进程可以进行输出。</p>
 <p>我们首先实现一个不加锁的实例，代码如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process, Lock
-<span style="color:#f92672">import</span> time
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyProcess</span>(Process):
-    <span style="color:#66d9ef">def</span> __init__(self, loop, lock):
-        Process<span style="color:#f92672">.</span>__init__(self)
-        self<span style="color:#f92672">.</span>loop <span style="color:#f92672">=</span> loop
-        self<span style="color:#f92672">.</span>lock <span style="color:#f92672">=</span> lock
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">for</span> count <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>loop):
-            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.1</span>)
-            <span style="color:#75715e"># self.lock.acquire()</span>
-            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Pid: </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74"> LoopCount: </span><span style="color:#e6db74">{</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-            <span style="color:#75715e"># self.lock.release()</span>
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    lock <span style="color:#f92672">=</span> Lock()
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">15</span>):
-        p <span style="color:#f92672">=</span> MyProcess(i, lock)
-        p<span style="color:#f92672">.</span>start()
-</code></pre></div><p>运行结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process, Lock
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyProcess</span>(Process):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, loop, lock):
+</span></span><span style="display:flex;"><span>        Process<span style="color:#f92672">.</span>__init__(self)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>loop <span style="color:#f92672">=</span> loop
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>lock <span style="color:#f92672">=</span> lock
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> count <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>loop):
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.1</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># self.lock.acquire()</span>
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Pid: </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74"> LoopCount: </span><span style="color:#e6db74">{</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># self.lock.release()</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    lock <span style="color:#f92672">=</span> Lock()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">15</span>):
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> MyProcess(i, lock)
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">.</span>start()
+</span></span></code></pre></div><p>运行结果如下：</p>
 <pre tabindex="0"><code>Pid: 74030 LoopCount: 0
 Pid: 74031 LoopCount: 0
 Pid: 74032 LoopCount: 0
@@ -561,48 +561,48 @@ Pid: 74064 LoopCount: 2
 <p>如果你学过操作系统，那么一定对这方面非常了解，如果你还不了解信号量是什么，可以先熟悉一下这个概念。</p>
 <p>我们可以用 multiprocessing 库中的 Semaphore 来实现信号量。</p>
 <p>那么接下来我们就用一个实例来演示一下进程之间利用 Semaphore 做到多个进程共享资源，同时又限制同时可访问的进程数量，代码如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process, Semaphore, Lock, Queue
-<span style="color:#f92672">import</span> time
-
-buffer <span style="color:#f92672">=</span> Queue(<span style="color:#ae81ff">10</span>)
-empty <span style="color:#f92672">=</span> Semaphore(<span style="color:#ae81ff">2</span>)
-full <span style="color:#f92672">=</span> Semaphore(<span style="color:#ae81ff">0</span>)
-lock <span style="color:#f92672">=</span> Lock()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Consumer</span>(Process):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">global</span> buffer, empty, full, lock
-        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-            full<span style="color:#f92672">.</span>acquire()
-            lock<span style="color:#f92672">.</span>acquire()
-            buffer<span style="color:#f92672">.</span>get()
-            print(<span style="color:#e6db74">&#39;Consumer pop an element&#39;</span>)
-            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-            lock<span style="color:#f92672">.</span>release()
-            empty<span style="color:#f92672">.</span>release()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Producer</span>(Process):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">global</span> buffer, empty, full, lock
-        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-            empty<span style="color:#f92672">.</span>acquire()
-            lock<span style="color:#f92672">.</span>acquire()
-            buffer<span style="color:#f92672">.</span>put(<span style="color:#ae81ff">1</span>)
-            print(<span style="color:#e6db74">&#39;Producer append an element&#39;</span>)
-            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-            lock<span style="color:#f92672">.</span>release()
-            full<span style="color:#f92672">.</span>release()
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    p <span style="color:#f92672">=</span> Producer()
-    c <span style="color:#f92672">=</span> Consumer()
-    p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-    p<span style="color:#f92672">.</span>start()
-    c<span style="color:#f92672">.</span>start()
-    p<span style="color:#f92672">.</span>join()
-    c<span style="color:#f92672">.</span>join()
-    print(<span style="color:#e6db74">&#39;Main Process Ended&#39;</span>)
-</code></pre></div><p>如上代码实现了经典的生产者和消费者问题。它定义了两个进程类，一个是消费者，一个是生产者。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process, Semaphore, Lock, Queue
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>buffer <span style="color:#f92672">=</span> Queue(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>empty <span style="color:#f92672">=</span> Semaphore(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>full <span style="color:#f92672">=</span> Semaphore(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>lock <span style="color:#f92672">=</span> Lock()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Consumer</span>(Process):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">global</span> buffer, empty, full, lock
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            full<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span>            lock<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span>            buffer<span style="color:#f92672">.</span>get()
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#39;Consumer pop an element&#39;</span>)
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            lock<span style="color:#f92672">.</span>release()
+</span></span><span style="display:flex;"><span>            empty<span style="color:#f92672">.</span>release()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Producer</span>(Process):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">global</span> buffer, empty, full, lock
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            empty<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span>            lock<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span>            buffer<span style="color:#f92672">.</span>put(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#39;Producer append an element&#39;</span>)
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            lock<span style="color:#f92672">.</span>release()
+</span></span><span style="display:flex;"><span>            full<span style="color:#f92672">.</span>release()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> Producer()
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> Consumer()
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>    c<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>    c<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Main Process Ended&#39;</span>)
+</span></span></code></pre></div><p>如上代码实现了经典的生产者和消费者问题。它定义了两个进程类，一个是消费者，一个是生产者。</p>
 <p>另外，这里使用 multiprocessing 中的 Queue 定义了一个共享队列，然后定义了两个信号量 Semaphore，一个代表缓冲区空余数，一个表示缓冲区占用数。</p>
 <p>生产者 Producer 使用 acquire 方法来占用一个缓冲区位置，缓冲区空闲区大小减 1，接下来进行加锁，对缓冲区进行操作，然后释放锁，最后让代表占用的缓冲区位置数量加 1，消费者则相反。</p>
 <p>运行结果如下：</p>
@@ -626,49 +626,49 @@ Producer append an element
 <p>而如果我们把上面程序中的 Queue 换成普通的 list，是完全起不到效果的，因为进程和进程之间的资源是不共享的。即使在一个进程中改变了这个 list，在另一个进程也不能获取到这个 list 的状态，所以声明全局变量对多进程是没有用处的。</p>
 <p>那进程如何共享数据呢？可以用 Queue，即队列。当然这里的队列指的是 multiprocessing 里面的 Queue。</p>
 <p>依然用上面的例子，我们一个进程向队列中放入随机数据，然后另一个进程取出数据。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process, Semaphore, Lock, Queue
-<span style="color:#f92672">import</span> time
-<span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> random
-
-buffer <span style="color:#f92672">=</span> Queue(<span style="color:#ae81ff">10</span>)
-empty <span style="color:#f92672">=</span> Semaphore(<span style="color:#ae81ff">2</span>)
-full <span style="color:#f92672">=</span> Semaphore(<span style="color:#ae81ff">0</span>)
-lock <span style="color:#f92672">=</span> Lock()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Consumer</span>(Process):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">global</span> buffer, empty, full, lock
-        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-            full<span style="color:#f92672">.</span>acquire()
-            lock<span style="color:#f92672">.</span>acquire()
-            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Consumer get </span><span style="color:#e6db74">{</span>buffer<span style="color:#f92672">.</span>get()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-            lock<span style="color:#f92672">.</span>release()
-            empty<span style="color:#f92672">.</span>release()
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Producer</span>(Process):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
-        <span style="color:#66d9ef">global</span> buffer, empty, full, lock
-        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-            empty<span style="color:#f92672">.</span>acquire()
-            lock<span style="color:#f92672">.</span>acquire()
-            num <span style="color:#f92672">=</span> random()
-            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Producer put </span><span style="color:#e6db74">{</span>num<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-            buffer<span style="color:#f92672">.</span>put(num)
-            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-            lock<span style="color:#f92672">.</span>release()
-            full<span style="color:#f92672">.</span>release()
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    p <span style="color:#f92672">=</span> Producer()
-    c <span style="color:#f92672">=</span> Consumer()
-    p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-    p<span style="color:#f92672">.</span>start()
-    c<span style="color:#f92672">.</span>start()
-    p<span style="color:#f92672">.</span>join()
-    c<span style="color:#f92672">.</span>join()
-    print(<span style="color:#e6db74">&#39;Main Process Ended&#39;</span>)
-</code></pre></div><p>运行结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Process, Semaphore, Lock, Queue
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>buffer <span style="color:#f92672">=</span> Queue(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>empty <span style="color:#f92672">=</span> Semaphore(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>full <span style="color:#f92672">=</span> Semaphore(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>lock <span style="color:#f92672">=</span> Lock()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Consumer</span>(Process):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">global</span> buffer, empty, full, lock
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            full<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span>            lock<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Consumer get </span><span style="color:#e6db74">{</span>buffer<span style="color:#f92672">.</span>get()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            lock<span style="color:#f92672">.</span>release()
+</span></span><span style="display:flex;"><span>            empty<span style="color:#f92672">.</span>release()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Producer</span>(Process):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">global</span> buffer, empty, full, lock
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            empty<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span>            lock<span style="color:#f92672">.</span>acquire()
+</span></span><span style="display:flex;"><span>            num <span style="color:#f92672">=</span> random()
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Producer put </span><span style="color:#e6db74">{</span>num<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>            buffer<span style="color:#f92672">.</span>put(num)
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            lock<span style="color:#f92672">.</span>release()
+</span></span><span style="display:flex;"><span>            full<span style="color:#f92672">.</span>release()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> Producer()
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> Consumer()
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>daemon <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>    c<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>    p<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>    c<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Main Process Ended&#39;</span>)
+</span></span></code></pre></div><p>运行结果如下：</p>
 <pre tabindex="0"><code>Producer put  0.719213647437
 Producer put  0.44287326683
 Consumer get 0.719213647437
@@ -724,25 +724,25 @@ Main Process Ended
 <p>用 Process 和 Semaphore 可以实现，但是实现起来比较我们可以用 Process 和 Semaphore 解决问题，但是实现起来比较烦琐。而这种需求在平时又是非常常见的。此时，我们就可以派上进程池了，即 multiprocessing 中的 Pool。</p>
 <p>Pool 可以提供指定数量的进程，供用户调用，当有新的请求提交到 pool 中时，如果池还没有满，就会创建一个新的进程用来执行该请求；但如果池中的进程数已经达到规定最大值，那么该请求就会等待，直到池中有进程结束，才会创建新的进程来执行它。</p>
 <p>我们用一个实例来实现一下，代码如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Pool
-<span style="color:#f92672">import</span> time
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">function</span>(index):
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Start process: </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
-    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">3</span>)
-    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;End process </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>, )
-
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    pool <span style="color:#f92672">=</span> Pool(processes<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
-        pool<span style="color:#f92672">.</span>apply_async(function, args<span style="color:#f92672">=</span>(i,))
-    print(<span style="color:#e6db74">&#39;Main Process started&#39;</span>)
-    pool<span style="color:#f92672">.</span>close()
-    pool<span style="color:#f92672">.</span>join()
-    print(<span style="color:#e6db74">&#39;Main Process ended&#39;</span>)
-</code></pre></div><p>在这个例子中我们声明了一个大小为 3 的进程池，通过 processes 参数来指定，如果不指定，那么会自动根据处理器内核来分配进程数。接着我们使用 apply_async 方法将进程添加进去，args 可以用来传递参数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Pool
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">function</span>(index):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Start process: </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;End process </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>, )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    pool <span style="color:#f92672">=</span> Pool(processes<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>        pool<span style="color:#f92672">.</span>apply_async(function, args<span style="color:#f92672">=</span>(i,))
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Main Process started&#39;</span>)
+</span></span><span style="display:flex;"><span>    pool<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>    pool<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;Main Process ended&#39;</span>)
+</span></span></code></pre></div><p>在这个例子中我们声明了一个大小为 3 的进程池，通过 processes 参数来指定，如果不指定，那么会自动根据处理器内核来分配进程数。接着我们使用 apply_async 方法将进程添加进去，args 可以用来传递参数。</p>
 <p>运行结果如下：</p>
 <pre tabindex="0"><code>Main Process started
 Start process: 0
@@ -760,30 +760,30 @@ Main Process ended
 <p>map 方法是怎么用的呢？第一个参数就是要启动的进程对应的执行方法，第 2 个参数是一个可迭代对象，其中的每个元素会被传递给这个执行方法。</p>
 <p>举个例子：现在我们有一个 list，里面包含了很多 URL，另外我们也定义了一个方法用来抓取每个 URL 内容并解析，那么我们可以直接在 map 的第一个参数传入方法名，第 2 个参数传入 URL 数组。</p>
 <p>我们用一个实例来感受一下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Pool
-<span style="color:#f92672">import</span> urllib.request
-<span style="color:#f92672">import</span> urllib.error
-
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">scrape</span>(url):
-    <span style="color:#66d9ef">try</span>:
-        urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(url)
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;URL </span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74"> Scraped&#39;</span>)
-    <span style="color:#66d9ef">except</span> (urllib<span style="color:#f92672">.</span>error<span style="color:#f92672">.</span>HTTPError, urllib<span style="color:#f92672">.</span>error<span style="color:#f92672">.</span>URLError):
-        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;URL </span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74"> not Scraped&#39;</span>)
-
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    pool <span style="color:#f92672">=</span> Pool(processes<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
-    urls <span style="color:#f92672">=</span> [
-        <span style="color:#e6db74">&#39;https://www.baidu.com&#39;</span>,
-        <span style="color:#e6db74">&#39;http://www.meituan.com/&#39;</span>,
-        <span style="color:#e6db74">&#39;http://blog.csdn.net/&#39;</span>,
-        <span style="color:#e6db74">&#39;http://xxxyxxx.net&#39;</span>
-    ]
-    pool<span style="color:#f92672">.</span>map(scrape, urls)
-    pool<span style="color:#f92672">.</span>close()
-</code></pre></div><p>这个例子中我们先定义了一个 scrape 方法，它接收一个参数 url，这里就是请求了一下这个链接，然后输出爬取成功的信息，如果发生错误，则会输出爬取失败的信息。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> multiprocessing <span style="color:#f92672">import</span> Pool
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.request
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.error
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">scrape</span>(url):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(url)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;URL </span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74"> Scraped&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> (urllib<span style="color:#f92672">.</span>error<span style="color:#f92672">.</span>HTTPError, urllib<span style="color:#f92672">.</span>error<span style="color:#f92672">.</span>URLError):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;URL </span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74"> not Scraped&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    pool <span style="color:#f92672">=</span> Pool(processes<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>    urls <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;https://www.baidu.com&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;http://www.meituan.com/&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;http://blog.csdn.net/&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;http://xxxyxxx.net&#39;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>    pool<span style="color:#f92672">.</span>map(scrape, urls)
+</span></span><span style="display:flex;"><span>    pool<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><p>这个例子中我们先定义了一个 scrape 方法，它接收一个参数 url，这里就是请求了一下这个链接，然后输出爬取成功的信息，如果发生错误，则会输出爬取失败的信息。</p>
 <p>首先我们要初始化一个 Pool，指定进程数为 3。然后我们声明一个 urls 列表，接着我们调用了 map 方法，第 1 个参数就是进程对应的执行方法，第 2 个参数就是 urls 列表，map 方法会依次将 urls 的每个元素作为 scrape 的参数传递并启动一个新的进程，加到进程池中执行。</p>
 <p>运行结果如下：</p>
 <pre tabindex="0"><code>URL https://www.baidu.com Scraped
@@ -830,7 +830,7 @@ URL http://www.meituan.com/ Scraped
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          6875 字
+          6881 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -992,8 +992,8 @@ URL http://www.meituan.com/ Scraped
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

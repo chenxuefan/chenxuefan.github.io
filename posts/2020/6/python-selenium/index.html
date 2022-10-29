@@ -323,9 +323,9 @@ if (!doNotTrack) {
 <p>⼊门参考⽂献 👉 <a href="http://www.testclass.net/selenium_python/">Selenium⼊门</a></p>
 <p>IE环境配置 👉 <a href="http://t.zoukankan.com/ppppying-p-6143658.html">http://t.zoukankan.com/ppppying-p-6143658.html</a></p>
 <h2 id="配置浏览器参数">配置浏览器参数</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
+</span></span></code></pre></div><ul>
 <li>
 <p><a href="https://zhuanlan.zhihu.com/p/60852696">https://zhuanlan.zhihu.com/p/60852696</a></p>
 </li>
@@ -349,46 +349,46 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
 </li>
 <li>
 <p>开启管理者模式</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;excludeSwitches&#39;</span>, [<span style="color:#e6db74">&#39;enable-automation&#39;</span>]) 
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;excludeSwitches&#39;</span>, [<span style="color:#e6db74">&#39;enable-automation&#39;</span>]) 
+</span></span></code></pre></div></li>
 <li>
 <p>不加载图片</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;blink-settings=imagesEnabled=false&#39;</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;blink-settings=imagesEnabled=false&#39;</span>)
+</span></span></code></pre></div></li>
 <li>
 <p>禁止图片和css加载</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;profile.managed_default_content_settings.images&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;permissions.default.stylesheet&#39;</span>: <span style="color:#ae81ff">2</span>}
-options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;profile.managed_default_content_settings.images&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;permissions.default.stylesheet&#39;</span>: <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
+</span></span></code></pre></div></li>
 <li>
 <p>指定下载文件目录</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">save_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\&#34;</span>
-prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;download.default_directory&#34;</span>: save_path}
-option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>save_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:</span><span style="color:#ae81ff">\&#34;</span>
+</span></span><span style="display:flex;"><span>prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;download.default_directory&#34;</span>: save_path}
+</span></span><span style="display:flex;"><span>option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
+</span></span></code></pre></div></li>
 <li>
 <p>允许多文件下载弹窗</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;download.prompt_for_download&#34;</span>: <span style="color:#66d9ef">False</span>}
-option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>prefs <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;download.prompt_for_download&#34;</span>: <span style="color:#66d9ef">False</span>}
+</span></span><span style="display:flex;"><span>option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>, prefs)
+</span></span></code></pre></div></li>
 <li>
 <p>禁止弹出“您的连接不是私密连接”</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;ignore-certificate-errors&#39;</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;ignore-certificate-errors&#39;</span>)
+</span></span></code></pre></div></li>
 <li>
 <p>设置代理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://127.0.0.1:8080&#34;</span>
-options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
-options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;--proxy-server=</span><span style="color:#e6db74">{</span>proxy<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
-driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&#34;</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://127.0.0.1:8080&#34;</span>
+</span></span><span style="display:flex;"><span>options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;--proxy-server=</span><span style="color:#e6db74">{</span>proxy<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span></code></pre></div></li>
 <li>
 <p>使用用户配置文件</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--user-data-dir=/Users/billie/Library/Application Support/Google/Chrome/default&#39;</span>)
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210621102119098.png" alt="image-20210621102119098"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--user-data-dir=/Users/billie/Library/Application Support/Google/Chrome/default&#39;</span>)
+</span></span></code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210621102119098.png" alt="image-20210621102119098"></p>
 </li>
 </ul>
 <h2 id="定位元素">定位元素</h2>
@@ -452,7 +452,7 @@ driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&
 <ol>
 <li>driver.find_element_by_xpath(&quot;//*[@id=&lsquo;kw&rsquo;]&quot;)</li>
 <li>driver.find_element_by_xpath(&quot;//*[@name=&lsquo;wd&rsquo;]&quot;)</li>
-<li>driver.find_element_by_xpath(&quot;//input[@class=&rsquo;s_ipt']&quot;)</li>
+<li>driver.find_element_by_xpath(&quot;//input[@class=&rsquo;s_ipt&rsquo;]&quot;)</li>
 <li>driver.find_element_by_xpath(&quot;/html/body/form/span/input&quot;)</li>
 <li>driver.find_element_by_xpath(&quot;//span[@class=&lsquo;soutu-btn&rsquo;]/input&quot;)</li>
 <li>driver.find_element_by_xpath(&quot;//form[@id=&lsquo;form&rsquo;]/span/input&quot;)</li>
@@ -473,9 +473,9 @@ driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&
 <li>
 <p><strong>link_text定位的写法（实例）</strong></p>
 <p>假如⻚⾯上有⼀组⽂本链接（link_text）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">　　&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mnav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://news.baidu.com&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tj_trnews&#34;</span>&gt;新闻&lt;/<span style="color:#f92672">a</span>&gt;
-　　&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mnav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.hao123.com&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tj_trhao123&#34;</span>&gt;hao123&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></div><p>通过<strong>link_text</strong>定位:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>　　&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mnav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://news.baidu.com&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tj_trnews&#34;</span>&gt;新闻&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>　　&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mnav&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.hao123.com&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tj_trhao123&#34;</span>&gt;hao123&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><p>通过<strong>link_text</strong>定位:</p>
 <ol>
 <li>driver.find_element_by_link_text(&ldquo;新闻&rdquo;)</li>
 <li>driver.find_element_by_link_text(&ldquo;hao123&rdquo;)</li>
@@ -561,20 +561,20 @@ driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;&
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains <span style="color:#75715e">#引⼊ ActionChains 类</span>
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox()
-driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;https://www.baidu.com&#34;</span>)
-element<span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#34;设置&#34;</span>) <span style="color:#75715e">#定位元素</span>
-ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(element)<span style="color:#f92672">.</span>perform() <span style="color:#75715e">#对定位到的元素执⾏⿏标悬停操作</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains <span style="color:#75715e">#引⼊ ActionChains 类</span>
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox()
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;https://www.baidu.com&#34;</span>)
+</span></span><span style="display:flex;"><span>element<span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#34;设置&#34;</span>) <span style="color:#75715e">#定位元素</span>
+</span></span><span style="display:flex;"><span>ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(element)<span style="color:#f92672">.</span>perform() <span style="color:#75715e">#对定位到的元素执⾏⿏标悬停操作</span>
+</span></span></code></pre></div></li>
 <li></li>
 </ul>
 <h2 id="键盘事件">键盘事件</h2>
 <p>参考：<a href="http://selenium-python.readthedocs.org/api.html">http://selenium-python.readthedocs.org/api.html</a></p>
 <p>提供键盘按键操作的类：<code>webdriver.common.keys</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys
+</span></span></code></pre></div><ul>
 <li>send_keys(Keys.ENTER) # 按下回车键</li>
 <li>send_keys(Keys.TAB) # 按下Tab制表键</li>
 <li>send_keys(Keys.SPACE) # 按下空格键space</li>
@@ -588,14 +588,14 @@ ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(element)
 <li>send_keys(Keys.CONTROL,&lsquo;x&rsquo;) # 组合键剪切Ctrl+X</li>
 <li>send_keys(Keys.F1…Fn) # 键盘 F1…Fn</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys
-
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
-driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;XXXX&#39;</span>)
-ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by<span style="color:#f92672">.......</span>
-ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672">.</span>ENTER)
-</code></pre></div><h2 id="设置元素等待">设置元素等待</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;XXXX&#39;</span>)
+</span></span><span style="display:flex;"><span>ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by<span style="color:#f92672">.......</span>
+</span></span><span style="display:flex;"><span>ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672">.</span>ENTER)
+</span></span></code></pre></div><h2 id="设置元素等待">设置元素等待</h2>
 <ul>
 <li>
 <p>隐式等待</p>
@@ -606,45 +606,45 @@ ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672"
 <p>显式等待</p>
 <p><code>ele = WebDriverWait(driver, timeout).until(method,message)</code></p>
 <p>明确地等到某个元素出现或某个元素的可点击等条件，等不到，就一直等，在规定的时间内没有找到，则抛出异常</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#显式等待</span>
-<span style="color:#f92672">from</span> selenium.webdriver.common.by <span style="color:#f92672">import</span> By
-<span style="color:#f92672">from</span> selenium.webdriver.support.ui <span style="color:#f92672">import</span> WebDriverWait
-<span style="color:#f92672">from</span> selenium.webdriver.support <span style="color:#f92672">import</span> expected_conditions <span style="color:#66d9ef">as</span> EC
-
-<span style="color:#75715e">#显式等待的函数</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">explicit_wait</span>(driver, way, path):
-     <span style="color:#66d9ef">try</span>:
-        ele <span style="color:#f92672">=</span> WebDriverWait(driver, <span style="color:#ae81ff">150</span>)<span style="color:#f92672">.</span>until(
-          EC<span style="color:#f92672">.</span>presence_of_element_located((way, path)),
-          message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
-        )
-        <span style="color:#66d9ef">return</span> ele
-     <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-        print(<span style="color:#e6db74">&#39;元素寻找失败： &#39;</span> <span style="color:#f92672">+</span> str(e))
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-
-ele <span style="color:#f92672">=</span> explicit_wait(driver, By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#39;//div[@class=&#34;pagination_index&#34;]&#39;</span>)<span style="color:#75715e">#显式等待在DOM中找到目标元素</span>
-</code></pre></div><p><code>until()</code>方法de源码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">until</span>(self, method, message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>):
-        <span style="color:#e6db74">&#34;&#34;&#34;Calls the method provided with the driver as an argument until the </span><span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#e6db74">        return value is not False.&#34;&#34;&#34;</span>
-        screen <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
-        stacktrace <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
-
-        end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_timeout
-        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-            <span style="color:#66d9ef">try</span>:
-                value <span style="color:#f92672">=</span> method(self<span style="color:#f92672">.</span>_driver)
-                <span style="color:#66d9ef">if</span> value:
-                    <span style="color:#66d9ef">return</span> value
-            <span style="color:#66d9ef">except</span> self<span style="color:#f92672">.</span>_ignored_exceptions <span style="color:#66d9ef">as</span> exc:
-                screen <span style="color:#f92672">=</span> getattr(exc, <span style="color:#e6db74">&#39;screen&#39;</span>, <span style="color:#66d9ef">None</span>)
-                stacktrace <span style="color:#f92672">=</span> getattr(exc, <span style="color:#e6db74">&#39;stacktrace&#39;</span>, <span style="color:#66d9ef">None</span>)
-            time<span style="color:#f92672">.</span>sleep(self<span style="color:#f92672">.</span>_poll)
-            <span style="color:#66d9ef">if</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">&gt;</span> end_time:
-                <span style="color:#66d9ef">break</span>
-        <span style="color:#66d9ef">raise</span> TimeoutException(message, screen, stacktrace)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#显式等待</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.by <span style="color:#f92672">import</span> By
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.support.ui <span style="color:#f92672">import</span> WebDriverWait
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.support <span style="color:#f92672">import</span> expected_conditions <span style="color:#66d9ef">as</span> EC
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#显式等待的函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">explicit_wait</span>(driver, way, path):
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        ele <span style="color:#f92672">=</span> WebDriverWait(driver, <span style="color:#ae81ff">150</span>)<span style="color:#f92672">.</span>until(
+</span></span><span style="display:flex;"><span>          EC<span style="color:#f92672">.</span>presence_of_element_located((way, path)),
+</span></span><span style="display:flex;"><span>          message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ele
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;元素寻找失败： &#39;</span> <span style="color:#f92672">+</span> str(e))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ele <span style="color:#f92672">=</span> explicit_wait(driver, By<span style="color:#f92672">.</span>XPATH, <span style="color:#e6db74">&#39;//div[@class=&#34;pagination_index&#34;]&#39;</span>)<span style="color:#75715e">#显式等待在DOM中找到目标元素</span>
+</span></span></code></pre></div><p><code>until()</code>方法de源码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">until</span>(self, method, message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Calls the method provided with the driver as an argument until the </span><span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">        return value is not False.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        screen <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        stacktrace <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_timeout
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>                value <span style="color:#f92672">=</span> method(self<span style="color:#f92672">.</span>_driver)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> value:
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span> value
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> self<span style="color:#f92672">.</span>_ignored_exceptions <span style="color:#66d9ef">as</span> exc:
+</span></span><span style="display:flex;"><span>                screen <span style="color:#f92672">=</span> getattr(exc, <span style="color:#e6db74">&#39;screen&#39;</span>, <span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>                stacktrace <span style="color:#f92672">=</span> getattr(exc, <span style="color:#e6db74">&#39;stacktrace&#39;</span>, <span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(self<span style="color:#f92672">.</span>_poll)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">&gt;</span> end_time:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> TimeoutException(message, screen, stacktrace)
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="ec">EC</h3>
 <ul>
@@ -678,12 +678,12 @@ ele <span style="color:#f92672">=</span> explicit_wait(driver, By<span style="co
 <ul>
 <li>
 <p>例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 先通过 xpath 定位到 iframe</span>
-ele_iframe <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@class=&#34;if&#34;]&#39;</span>)
-<span style="color:#75715e"># 再将定位对象传给 switch_to_frame()方法</span>
-driver<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>frame(ele_iframe)
-driver<span style="color:#f92672">.</span>switch_to_default_content() 
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 先通过 xpath 定位到 iframe</span>
+</span></span><span style="display:flex;"><span>ele_iframe <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@class=&#34;if&#34;]&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 再将定位对象传给 switch_to_frame()方法</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>switch_to<span style="color:#f92672">.</span>frame(ele_iframe)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>switch_to_default_content() 
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="多窗切换">多窗⼝切换</h2>
 <p>在⻚⾯操作过程中有时候点击某个链接会弹出新的窗⼝，这时就需要主机切换到新打开的窗⼝上进⾏操作。WebDriver提供了switch_to.window()⽅法，可以实现在不同的窗⼝之间切换。</p>
@@ -697,12 +697,11 @@ driver<span style="color:#f92672">.</span>switch_to_default_content()
 <li>
 <p><strong>switch_to.window</strong>() #⽤于切换到相应的窗⼝，与上⼀节的switch_to.frame()类似，前者⽤于不同窗⼝的切换，后者⽤于不同表单之间的切换</p>
 </li>
-<li>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c_win <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>current_window_handle
-driver<span style="color:#f92672">.</span>switch_to_window(c_win)
-</code></pre></div></li>
+<li></li>
 </ul>
-<h2 id="对话框操作">对话框操作</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>c_win <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>current_window_handle
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>switch_to_window(c_win)
+</span></span></code></pre></div><h2 id="对话框操作">对话框操作</h2>
 <p>在WebDriver中处理JavaScript所⽣成的alert、confirm以及prompt⼗分简单，具体做法是使⽤ <code>switch_to.alert </code>或<code>switch_to_alert()</code>⽅法定位到 alert/confirm/prompt，然后使⽤text/accept/dismiss/send_keys 等⽅法进⾏操作。</p>
 <ul>
 <li>
@@ -722,10 +721,10 @@ driver<span style="color:#f92672">.</span>switch_to_window(c_win)
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">al <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>switch_to_alert()
-al<span style="color:#f92672">.</span>accept()
-al<span style="color:#f92672">.</span>text
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>al <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>switch_to_alert()
+</span></span><span style="display:flex;"><span>al<span style="color:#f92672">.</span>accept()
+</span></span><span style="display:flex;"><span>al<span style="color:#f92672">.</span>text
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="复选框操作">复选框操作</h2>
 <ul>
@@ -762,11 +761,11 @@ al<span style="color:#f92672">.</span>text
 </li>
 </ul>
 <p>ps：上述方法仅用于多选下拉框，即设置了multiple=“multiple”属性的「<strong>select标签</strong>」，这种下拉框可以多选。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.support.ui <span style="color:#f92672">import</span> Select
-ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_<span style="color:#f92672">...</span>
-all_options <span style="color:#f92672">=</span> Select(ele)<span style="color:#f92672">.</span>options
-Select(ele)<span style="color:#f92672">.</span>select_by_value(<span style="color:#e6db74">&#39;选项A&#39;</span>) <span style="color:#75715e"># 按值xu，无返回值</span>
-</code></pre></div><h2 id="文件上传">文件上传</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.support.ui <span style="color:#f92672">import</span> Select
+</span></span><span style="display:flex;"><span>ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_<span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>all_options <span style="color:#f92672">=</span> Select(ele)<span style="color:#f92672">.</span>options
+</span></span><span style="display:flex;"><span>Select(ele)<span style="color:#f92672">.</span>select_by_value(<span style="color:#e6db74">&#39;选项A&#39;</span>) <span style="color:#75715e"># 按值xu，无返回值</span>
+</span></span></code></pre></div><h2 id="文件上传">文件上传</h2>
 <p>selenium没有提供直接的文件上传功能，目前主要有以下几种解决方案：</p>
 <ul>
 <li>send_keys()</li>
@@ -776,15 +775,15 @@ Select(ele)<span style="color:#f92672">.</span>select_by_value(<span style="colo
 <p><strong>1、send_keys()</strong></p>
 <p>对于通过input标签实现的上传功能，可以将其看作是⼀个输⼊框，定位到用于上传的input标签，接着通过send_keys()指定本地⽂件路径的⽅式，实现⽂件上传。
 例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">import</span> os
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox()
-file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;file:///&#39;</span> <span style="color:#f92672">+</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(<span style="color:#e6db74">&#39;upfile.html&#39;</span>)
-driver<span style="color:#f92672">.</span>get(file_path)
-<span style="color:#75715e"># 定位上传按钮，添加本地⽂件</span>
-driver<span style="color:#f92672">.</span>find_element_by_name(<span style="color:#e6db74">&#34;file&#34;</span>)<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#39;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">upload_file.txt&#39;</span>)
-driver<span style="color:#f92672">.</span>quit()
-</code></pre></div><p><strong>2、AutoIT</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Firefox()
+</span></span><span style="display:flex;"><span>file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;file:///&#39;</span> <span style="color:#f92672">+</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(<span style="color:#e6db74">&#39;upfile.html&#39;</span>)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(file_path)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 定位上传按钮，添加本地⽂件</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>find_element_by_name(<span style="color:#e6db74">&#34;file&#34;</span>)<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#39;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">upload_file.txt&#39;</span>)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>quit()
+</span></span></code></pre></div><p><strong>2、AutoIT</strong></p>
 <p>AutoIT通过操作Windows窗口控件来实现自动化任务。selenium通过AutoIT来操作Windows窗口，实质是通过python代码来调用AutoIT生成的脚本.exe文件，即利用AutoIT编写适合的脚本，然后将脚本编译成可执行文件，在自动化测试实现时，直接调用此脚本实现文件上传。</p>
 <p>ps：编写脚本和编译需要借助AutoIT提供的工具，但是脚本编译成可执行文件后，可直接使用，不需要安装AutiIT。</p>
 <ul>
@@ -813,29 +812,29 @@ driver<span style="color:#f92672">.</span>quit()
 <ul>
 <li>
 <p>例：下载搜狗图片</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> win32api<span style="color:#f92672">,</span>win32con
-driver<span style="color:#f92672">.</span>get(sg_url)
-ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#39;图片&#39;</span>))<span style="color:#f92672">.</span>click()<span style="color:#f92672">.</span>perform()<span style="color:#75715e">#点击跳转到图片</span>
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@id=&#34;feed_list&#34;]/div[1]/ul/li[1]/a/img&#39;</span>))<span style="color:#f92672">.</span>context_click()<span style="color:#f92672">.</span>perform()
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)<span style="color:#75715e">#40对应的是向下键，由于’另存为‘在菜单的顺序为7，所以需操作7次</span>
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> win32api<span style="color:#f92672">,</span>win32con
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(sg_url)
+</span></span><span style="display:flex;"><span>ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_link_text(<span style="color:#e6db74">&#39;图片&#39;</span>))<span style="color:#f92672">.</span>click()<span style="color:#f92672">.</span>perform()<span style="color:#75715e">#点击跳转到图片</span>
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>ActionChains(driver)<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*[@id=&#34;feed_list&#34;]/div[1]/ul/li[1]/a/img&#39;</span>))<span style="color:#f92672">.</span>context_click()<span style="color:#f92672">.</span>perform()
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)<span style="color:#75715e">#40对应的是向下键，由于’另存为‘在菜单的顺序为7，所以需操作7次</span>
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">40</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="cookie操作">cookie操作</h2>
 <p>有时候我们需要验证浏览器中cookie是否正确，因为基于真实cookie的测试是⽆法通过⽩盒和集成测试进⾏的。WebDriver提供了操作Cookie的相关⽅法，可以读取、添加和删除cookie信息。</p>
@@ -868,37 +867,37 @@ win32api<span style="color:#f92672">.</span>keybd_event(<span style="color:#ae81
 <p>例：</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">import</span> time
-browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(<span style="color:#e6db74">&#34;F:\Chrome\ChromeDriver\chromedriver&#34;</span>)
-browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;http://www.youdao.com&#34;</span>)
-<span style="color:#75715e">#1.打印cookie信息</span>
-print(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
-print(<span style="color:#e6db74">&#34;打印cookie信息为：&#34;</span>)
-print(browser<span style="color:#f92672">.</span>get_cookies)
-<span style="color:#75715e">#2.添加cookie信息</span>
-dict<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;name&#39;</span>:<span style="color:#e6db74">&#34;name&#34;</span>,<span style="color:#e6db74">&#39;value&#39;</span>:<span style="color:#e6db74">&#39;Kaina&#39;</span>}
-browser<span style="color:#f92672">.</span>add_cookie(dict)
-print(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
-print(<span style="color:#e6db74">&#39;添加cookie信息为：&#39;</span>)
-<span style="color:#75715e">#3.遍历打印cookie信息</span>
-<span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
-print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
-<span style="color:#75715e">#4.删除⼀个cookie</span>
-browser<span style="color:#f92672">.</span>delete_cookie(<span style="color:#e6db74">&#39;name&#39;</span>)
-print(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
-print(<span style="color:#e6db74">&#39;删除⼀个cookie&#39;</span>)
-<span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
-print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
-print(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
-print(<span style="color:#e6db74">&#39;删除所有cookie后：&#39;</span>)
-<span style="color:#75715e">#5.删除所有cookie,⽆需传递参数</span>
-browser<span style="color:#f92672">.</span>delete_all_cookies()
-<span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
-print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
-time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">3</span>)
-browser<span style="color:#f92672">.</span>close()
-</code></pre></div><h2 id="登录操作">登录操作</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(<span style="color:#e6db74">&#34;F:\Chrome\ChromeDriver\chromedriver&#34;</span>)
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;http://www.youdao.com&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#1.打印cookie信息</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;打印cookie信息为：&#34;</span>)
+</span></span><span style="display:flex;"><span>print(browser<span style="color:#f92672">.</span>get_cookies)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#2.添加cookie信息</span>
+</span></span><span style="display:flex;"><span>dict<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;name&#39;</span>:<span style="color:#e6db74">&#34;name&#34;</span>,<span style="color:#e6db74">&#39;value&#39;</span>:<span style="color:#e6db74">&#39;Kaina&#39;</span>}
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>add_cookie(dict)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;添加cookie信息为：&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#3.遍历打印cookie信息</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#4.删除⼀个cookie</span>
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>delete_cookie(<span style="color:#e6db74">&#39;name&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;删除⼀个cookie&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;=====================================&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;删除所有cookie后：&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#5.删除所有cookie,⽆需传递参数</span>
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>delete_all_cookies()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> cookie <span style="color:#f92672">in</span> browser<span style="color:#f92672">.</span>get_cookies():
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">----</span><span style="color:#e6db74">%s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span>(cookie[<span style="color:#e6db74">&#39;name&#39;</span>],cookie[<span style="color:#e6db74">&#39;value&#39;</span>]))
+</span></span><span style="display:flex;"><span>time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><h2 id="登录操作">登录操作</h2>
 <p>在实际的web应用中，用户登录时通常要求用户输入验证码，验证码大多分为四类：识图验证码、计算验证码、滑块验证码以及语音验证码，这里介绍识图验证码。</p>
 <p>两种解决方案：</p>
 <p><strong>1、通过cookies绕过登录</strong></p>
@@ -929,8 +928,8 @@ browser<span style="color:#f92672">.</span>close()
 <h2 id="javascript操作">JavaScript操作</h2>
 <p>虽然WebDriver提供了操作浏览器的前进和后退⽅法，但对于浏览器滚动条并没有提供相应的操作⽅法。在这种情况下，就可以借助JavaScript来控制浏览器的滚动条。</p>
 <p>WebDriver提供了此方法执⾏JavaScript代码:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">execute_script</span>() 
-</code></pre></div><p>js代码的相关操作：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">execute_script</span>() 
+</span></span></code></pre></div><p>js代码的相关操作：</p>
 <ul>
 <li>
 <p>输入操作</p>
@@ -999,15 +998,15 @@ browser<span style="color:#f92672">.</span>close()
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_name(<span style="color:#e6db74">&#34;name&#34;</span>)
-js <span style="color:#f92672">=</span> 
-<span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    var event = document.createEvent(&#39;MouseEvents&#39;);
-</span><span style="color:#e6db74">    event.initMouseEvent(&#39;click&#39;,true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
-</span><span style="color:#e6db74">    arguments[0].dispatchEvent(event);
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span> 
-driver<span style="color:#f92672">.</span>execute_script(js, e)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>e <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_name(<span style="color:#e6db74">&#34;name&#34;</span>)
+</span></span><span style="display:flex;"><span>js <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    var event = document.createEvent(&#39;MouseEvents&#39;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    event.initMouseEvent(&#39;click&#39;,true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    arguments[0].dispatchEvent(event);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span> 
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_script(js, e)
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -1066,14 +1065,14 @@ driver<span style="color:#f92672">.</span>execute_script(js, e)
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://www.w3school.com.cn/tiy/t.asp?f=html_video&#39;</span>)
-driver<span style="color:#f92672">.</span>switch_to_frame(<span style="color:#e6db74">&#39;iframeResult&#39;</span>)
-video<span style="color:#f92672">=</span>driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;/html/body/video&#39;</span>)
-video<span style="color:#f92672">.</span>click()
-driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].load()&#39;</span>,video)
-driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].play()&#39;</span>,video)
-driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].pause()&#39;</span>,video)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://www.w3school.com.cn/tiy/t.asp?f=html_video&#39;</span>)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>switch_to_frame(<span style="color:#e6db74">&#39;iframeResult&#39;</span>)
+</span></span><span style="display:flex;"><span>video<span style="color:#f92672">=</span>driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;/html/body/video&#39;</span>)
+</span></span><span style="display:flex;"><span>video<span style="color:#f92672">.</span>click()
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].load()&#39;</span>,video)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].play()&#39;</span>,video)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;return arguments[0].pause()&#39;</span>,video)
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -1083,138 +1082,138 @@ driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6d
 <li><code>set_window_size()</code> - 设置窗口分辨率</li>
 <li><code>get_screenshot_as_file()</code> - 截取当前窗⼝，保存至本地</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
-driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://www.baidu.com&#39;</span>)
-
-<span style="color:#75715e"># 设置窗口分辨率</span>
-width <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#34;return document.documentElement.scrollWidth&#34;</span>)
-height <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#34;return document.documentElement.scrollHeight&#34;</span>)
-driver<span style="color:#f92672">.</span>set_window_size(width, height)
-
-<span style="color:#75715e"># 截取当前窗⼝，并指定截图图⽚的保存位置</span>
-driver<span style="color:#f92672">.</span>get_screenshot_as_file(<span style="color:#e6db74">&#34;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">baidu_img.jpg&#34;</span>)
-driver<span style="color:#f92672">.</span>quit()
-</code></pre></div><p>下面是一些常见状况的解决方案：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;http://www.baidu.com&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置窗口分辨率</span>
+</span></span><span style="display:flex;"><span>width <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#34;return document.documentElement.scrollWidth&#34;</span>)
+</span></span><span style="display:flex;"><span>height <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#34;return document.documentElement.scrollHeight&#34;</span>)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>set_window_size(width, height)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 截取当前窗⼝，并指定截图图⽚的保存位置</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get_screenshot_as_file(<span style="color:#e6db74">&#34;D:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">baidu_img.jpg&#34;</span>)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>quit()
+</span></span></code></pre></div><p>下面是一些常见状况的解决方案：</p>
 <h2 id="反屏蔽">反屏蔽</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6db74">&#39;Page.addScriptToEvaluateOnNewDocument&#39;</span>, {
-   <span style="color:#e6db74">&#39;source&#39;</span>: <span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>
-})
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">from</span> selenium.webdriver <span style="color:#f92672">import</span> ChromeOptions
-
-option <span style="color:#f92672">=</span> ChromeOptions()
-option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;excludeSwitches&#39;</span>, [<span style="color:#e6db74">&#39;enable-automation&#39;</span>])
-option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;useAutomationExtension&#39;</span>, <span style="color:#66d9ef">False</span>)
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>option)
-driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6db74">&#39;Page.addScriptToEvaluateOnNewDocument&#39;</span>, {
-   <span style="color:#e6db74">&#39;source&#39;</span>: <span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>
-})
-driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://antispider1.scrape.center/&#39;</span>)
-</code></pre></div><h2 id="页面加载超时">页面加载超时</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6db74">&#39;Page.addScriptToEvaluateOnNewDocument&#39;</span>, {
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;source&#39;</span>: <span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver <span style="color:#f92672">import</span> ChromeOptions
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>option <span style="color:#f92672">=</span> ChromeOptions()
+</span></span><span style="display:flex;"><span>option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;excludeSwitches&#39;</span>, [<span style="color:#e6db74">&#39;enable-automation&#39;</span>])
+</span></span><span style="display:flex;"><span>option<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#39;useAutomationExtension&#39;</span>, <span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>option)
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_cdp_cmd(<span style="color:#e6db74">&#39;Page.addScriptToEvaluateOnNewDocument&#39;</span>, {
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;source&#39;</span>: <span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://antispider1.scrape.center/&#39;</span>)
+</span></span></code></pre></div><h2 id="页面加载超时">页面加载超时</h2>
 <ul>
 <li>
 <p>方法1： <code>driver.set_page_load_timeout() </code>+<code>driver.set_script_timeout() </code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">from</span> selenium.common.exceptions <span style="color:#f92672">import</span> TimeoutException
-
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
-driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
-driver<span style="color:#f92672">.</span>set_script_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
-
-<span style="color:#66d9ef">try</span>:
-	driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>)
-<span style="color:#66d9ef">except</span> TimeoutException:
-  driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;window.stop()&#39;</span>)
-  print(<span style="color:#e6db74">&#39;页面加载超时&#39;</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.common.exceptions <span style="color:#f92672">import</span> TimeoutException
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>set_page_load_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>set_script_timeout(<span style="color:#ae81ff">10</span>)  <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>	driver<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> TimeoutException:
+</span></span><span style="display:flex;"><span>  driver<span style="color:#f92672">.</span>execute_script(<span style="color:#e6db74">&#39;window.stop()&#39;</span>)
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#39;页面加载超时&#39;</span>)
+</span></span></code></pre></div></li>
 <li>
 <p>方法2：配置浏览器参数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">from</span> selenium.webdriver.common.desired_capabilities <span style="color:#f92672">import</span> DesiredCapabilities
-
-<span style="color:#75715e">#get直接返回，不再等待界面加载完成</span>
-desired_capabilities <span style="color:#f92672">=</span> DesiredCapabilities<span style="color:#f92672">.</span>CHROME
-desired_capabilities[<span style="color:#e6db74">&#34;pageLoadStrategy&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>
-
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
-driver<span style="color:#f92672">.</span>get()
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.desired_capabilities <span style="color:#f92672">import</span> DesiredCapabilities
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#get直接返回，不再等待界面加载完成</span>
+</span></span><span style="display:flex;"><span>desired_capabilities <span style="color:#f92672">=</span> DesiredCapabilities<span style="color:#f92672">.</span>CHROME
+</span></span><span style="display:flex;"><span>desired_capabilities[<span style="color:#e6db74">&#34;pageLoadStrategy&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>get()
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="填写表单的几种姿势">填写表单的几种姿势</h2>
 <ol>
 <li>
 <p><code>send_keys()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*&#39;</span>)
-ele<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#39;&#39;</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*&#39;</span>)
+</span></span><span style="display:flex;"><span>ele<span style="color:#f92672">.</span>send_keys(<span style="color:#e6db74">&#39;&#39;</span>)
+</span></span></code></pre></div></li>
 <li>
 <p><code>execute_script()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;$(&#34;#kssj&#34;).val(&#34;&#34;);&#39;</span>  <span style="color:#75715e"># 将id为kssj的元素设置为空</span>
-js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;document.getElementsByClassName(&#34;el-input_inner&#34;)[7].value=&#34;&#34;;&#39;</span>  <span style="color:#75715e"># 通过class name定位元素，设置其值</span>
-driver<span style="color:#f92672">.</span>execute_script(js)  
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;$(&#34;#kssj&#34;).val(&#34;&#34;);&#39;</span>  <span style="color:#75715e"># 将id为kssj的元素设置为空</span>
+</span></span><span style="display:flex;"><span>js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;document.getElementsByClassName(&#34;el-input_inner&#34;)[7].value=&#34;&#34;;&#39;</span>  <span style="color:#75715e"># 通过class name定位元素，设置其值</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_script(js)  
+</span></span></code></pre></div></li>
 </ol>
 <h2 id="页面元素点击的几种姿势">页面元素点击的几种姿势</h2>
 <ol>
 <li>
 <p><code>click()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*&#39;</span>)
-ele<span style="color:#f92672">.</span>click()
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*&#39;</span>)
+</span></span><span style="display:flex;"><span>ele<span style="color:#f92672">.</span>click()
+</span></span></code></pre></div></li>
 <li>
 <p><code>send_keys()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys
-ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*&#39;</span>)
-ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672">.</span>ENTER)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.keys <span style="color:#f92672">import</span> Keys
+</span></span><span style="display:flex;"><span>ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*&#39;</span>)
+</span></span><span style="display:flex;"><span>ele<span style="color:#f92672">.</span>send_keys(Keys<span style="color:#f92672">.</span>ENTER)
+</span></span></code></pre></div></li>
 <li>
 <p>显式等待+<code>click()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.common.by <span style="color:#f92672">import</span> By
-<span style="color:#f92672">from</span> selenium.webdriver.support.ui <span style="color:#f92672">import</span> WebDriverWait
-<span style="color:#f92672">from</span> selenium.webdriver.support <span style="color:#f92672">import</span> expected_conditions <span style="color:#66d9ef">as</span> EC
-<span style="color:#f92672">from</span> selenium.webdriver.support.exception <span style="color:#f92672">import</span> TimeoutException
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">explicit_waits</span>(driver, xpath, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>):
-     <span style="color:#66d9ef">try</span>:
-        <span style="color:#66d9ef">return</span> WebDriverWait(driver, timeout)<span style="color:#f92672">.</span>until(
-          EC<span style="color:#f92672">.</span>presence_of_element_located((By<span style="color:#f92672">.</span>XPATH, xpath)),
-          message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
-        )
-     <span style="color:#66d9ef">except</span> TimeoutException <span style="color:#66d9ef">as</span> e:
-        print(<span style="color:#e6db74">&#39;元素寻找失败：&#39;</span> <span style="color:#f92672">+</span> repr(e))
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-
-ele <span style="color:#f92672">=</span> explicit_waits(driver, <span style="color:#e6db74">&#39;//div[@class=&#34;pagination_index&#34;]&#39;</span>)
-ele<span style="color:#f92672">.</span>click()
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.by <span style="color:#f92672">import</span> By
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.support.ui <span style="color:#f92672">import</span> WebDriverWait
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.support <span style="color:#f92672">import</span> expected_conditions <span style="color:#66d9ef">as</span> EC
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.support.exception <span style="color:#f92672">import</span> TimeoutException
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">explicit_waits</span>(driver, xpath, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>):
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> WebDriverWait(driver, timeout)<span style="color:#f92672">.</span>until(
+</span></span><span style="display:flex;"><span>          EC<span style="color:#f92672">.</span>presence_of_element_located((By<span style="color:#f92672">.</span>XPATH, xpath)),
+</span></span><span style="display:flex;"><span>          message<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">except</span> TimeoutException <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;元素寻找失败：&#39;</span> <span style="color:#f92672">+</span> repr(e))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ele <span style="color:#f92672">=</span> explicit_waits(driver, <span style="color:#e6db74">&#39;//div[@class=&#34;pagination_index&#34;]&#39;</span>)
+</span></span><span style="display:flex;"><span>ele<span style="color:#f92672">.</span>click()
+</span></span></code></pre></div></li>
 <li>
 <p><code>ActionChains()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains 
-
-ActionChains(driver)
-	<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*&#39;</span>))
-  <span style="color:#f92672">.</span>click()
-  <span style="color:#f92672">.</span>perform()
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.common.action_chains <span style="color:#f92672">import</span> ActionChains 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ActionChains(driver)
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">.</span>move_to_element(driver<span style="color:#f92672">.</span>find_element_by_xpath(<span style="color:#e6db74">&#39;//*&#39;</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>click()
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">.</span>perform()
+</span></span></code></pre></div></li>
 <li>
 <p><code>execute_script()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;document.getElementById(&#34;&#34;).click();&#39;</span>
-driver<span style="color:#f92672">.</span>execute_script(js)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;document.getElementById(&#34;&#34;).click();&#39;</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_script(js)
+</span></span></code></pre></div></li>
 <li>
 <p><code>execute_script()</code> + ele</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;arguments[0].click();&#39;</span>
-ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_<span style="color:#f92672">...</span>
-driver<span style="color:#f92672">.</span>execute_script(js, ele) <span style="color:#75715e">#</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;arguments[0].click();&#39;</span>
+</span></span><span style="display:flex;"><span>ele <span style="color:#f92672">=</span> driver<span style="color:#f92672">.</span>find_element_<span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>driver<span style="color:#f92672">.</span>execute_script(js, ele) <span style="color:#75715e">#</span>
+</span></span></code></pre></div></li>
 </ol>
 <h3 id="js获取身份验证信息">js获取身份验证信息</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return window.localStorage;&#39;</span>
-js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return window.sessionStorage;&#39;</span>
-js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return document.cookie;&#39;</span>
-</code></pre></div><h2 id="控制已打开的浏览器">控制已打开的浏览器</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return window.localStorage;&#39;</span>
+</span></span><span style="display:flex;"><span>js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return window.sessionStorage;&#39;</span>
+</span></span><span style="display:flex;"><span>js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return document.cookie;&#39;</span>
+</span></span></code></pre></div><h2 id="控制已打开的浏览器">控制已打开的浏览器</h2>
 <p>在使用selenium进行自动化测试中我们有时会遇到这样的情况：</p>
 <p>我们需要手动打开浏览器，进入到所需的页面，执行一些手动任务，如输入表单、输入验证码，登陆成功后，然后再开始运行自动化脚本。</p>
 <p>这种情况下如何使用selenium来接管先前已打开的浏览器呢？</p>
@@ -1224,16 +1223,16 @@ js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;return 
 <ul>
 <li>
 <p>Windows</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Billie</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">AppData</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Local</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Google</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Chrome</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Application</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome.exe&#39;</span>  <span style="color:#75715e"># chrome.exe所在目录,注：双斜杠</span>
-user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">selenium_ui_auto</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome_temp&#39;</span>
-os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;start </span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)  <span style="color:#75715e"># 注：双斜杆;start</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Users</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Billie</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">AppData</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Local</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Google</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Chrome</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">Application</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome.exe&#39;</span>  <span style="color:#75715e"># chrome.exe所在目录,注：双斜杠</span>
+</span></span><span style="display:flex;"><span>user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">selenium_ui_auto</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">chrome_temp&#39;</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;start </span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)  <span style="color:#75715e"># 注：双斜杆;start</span>
+</span></span></code></pre></div></li>
 <li>
 <p>macOS</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome&#39;</span>
-user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;~/ChromeProfile&#39;</span>
-os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;;&#39;</span>)
-</code></pre></div><p>cmd命令中的路径存在空格，导致命令出错</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome&#39;</span>
+</span></span><span style="display:flex;"><span>user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;~/ChromeProfile&#39;</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74"> --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;;&#39;</span>)
+</span></span></code></pre></div><p>cmd命令中的路径存在空格，导致命令出错</p>
 <ul>
 <li>
 <p>措施一</p>
@@ -1244,16 +1243,16 @@ os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">f</span
 <p>在路径前后加上双引号，以及前面再加上一个双引号，如 <code>start &quot;&quot; &quot;{chrome_path}&quot;</code></p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span>
-user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\police\AppData\Local\Google\Chrome\User Data&#34;</span>
-os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">rf</span><span style="color:#e6db74">&#39;start &#34;&#34; &#34;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>chrome_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Program Files\Google\Chrome\Application\chrome.exe&#34;</span>
+</span></span><span style="display:flex;"><span>user_data_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;C:\Users\police\AppData\Local\Google\Chrome\User Data&#34;</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>system(<span style="color:#e6db74">rf</span><span style="color:#e6db74">&#39;start &#34;&#34; &#34;</span><span style="color:#e6db74">{</span>chrome_path<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; --remote-debugging-port=9222 --user-data-dir=&#34;</span><span style="color:#e6db74">{</span>user_data_dir<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&#39;</span>)
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="2步骤2捕获调试浏览器">(2)步骤2：捕获调试浏览器</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> Options()
-options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
-driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options) <span style="color:#75715e"># 如浏览器不存在，则会在约一分钟(或半分钟)等待之后，报错-WebDriverException</span>
-</code></pre></div><p>⚠️注：如若捕获不到调试浏览器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options <span style="color:#f92672">=</span> Options()
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
+</span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options) <span style="color:#75715e"># 如浏览器不存在，则会在约一分钟(或半分钟)等待之后，报错-WebDriverException</span>
+</span></span></code></pre></div><p>⚠️注：如若捕获不到调试浏览器</p>
 <ul>
 <li>可能原因：「<strong>chromedriver.exe进程冲突</strong>」</li>
 <li>解决方案：检查任务管理器中是否有多个chromedriver.exe的进程，全部停止任务，重试即可捕获成功。</li>
@@ -1300,7 +1299,7 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          8321 字
+          8323 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1486,8 +1485,8 @@ driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672"
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

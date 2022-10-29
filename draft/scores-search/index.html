@@ -331,14 +331,14 @@ if (!doNotTrack) {
 </code></pre></li>
 <li>
 <p>添加nginx配置文件，即配置<code>nginx.conf</code>文件，具体代码参考上方的文档，其中的对应参数需参考上一步的代码，这个过程为使得文件生效，需重启nginx和uwsgi服务，用到的命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl start/stop/restart nginx.server <span style="color:#75715e">#启动/关闭/重启nginx</span>
-service nginx start/stop/restart <span style="color:#75715e">#启动/关闭/重启nginx</span>
-killall nginx <span style="color:#75715e">#杀死所有nginx进程</span>
-nginx -t <span style="color:#75715e">#检查nginx配置文件</span>
-
-uwsgi -x mysite.xml <span style="color:#75715e">#运行xml文件</span>
-killall uwsgi <span style="color:#75715e">#杀死所有uwsgi进程</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl start/stop/restart nginx.server <span style="color:#75715e">#启动/关闭/重启nginx</span>
+</span></span><span style="display:flex;"><span>service nginx start/stop/restart <span style="color:#75715e">#启动/关闭/重启nginx</span>
+</span></span><span style="display:flex;"><span>killall nginx <span style="color:#75715e">#杀死所有nginx进程</span>
+</span></span><span style="display:flex;"><span>nginx -t <span style="color:#75715e">#检查nginx配置文件</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uwsgi -x mysite.xml <span style="color:#75715e">#运行xml文件</span>
+</span></span><span style="display:flex;"><span>killall uwsgi <span style="color:#75715e">#杀死所有uwsgi进程</span>
+</span></span></code></pre></div></li>
 </ol>
 <h2 id="更多">更多👴</h2>
 <ul>
@@ -538,8 +538,8 @@ killall uwsgi <span style="color:#75715e">#杀死所有uwsgi进程</span>
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

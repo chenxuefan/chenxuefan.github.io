@@ -337,23 +337,23 @@ if (!doNotTrack) {
 <li><code>create table 表名（列1 类型 [宽度] 约束，列2 类型 [宽度] 约束，...）</code></li>
 </ul>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210713145716442.png" alt="image-20210713145716442"></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#66d9ef">use</span> mydb;
-<span style="color:#75715e"># 创建学生表
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">exists</span> student; <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#a6e22e">student</span> (
-sno <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> comment <span style="color:#e6db74">&#39;学号&#39;</span>, <span style="color:#75715e">-- 主键约束(值不能为空，且唯一) sname varchar(4) not null, -- 非空约束
-</span><span style="color:#75715e"></span>ssex <span style="color:#66d9ef">char</span>(<span style="color:#ae81ff">2</span>) characterset big5 <span style="color:#66d9ef">collate</span> big5_chinese_ci <span style="color:#66d9ef">default</span> <span style="color:#e6db74">&#34;男&#34;</span>, <span style="color:#75715e">-- 默认值约束 sbirthday varchar(10) default null,
-</span><span style="color:#75715e"></span>class <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>
-) <span style="color:#66d9ef">engine</span><span style="color:#f92672">=</span>innodb <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">charset</span><span style="color:#f92672">=</span>utf8; <span style="color:#75715e">-- 设置编码
-</span><span style="color:#75715e"># 创建教师表
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">exists</span> teacher; <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#a6e22e">teacher</span> (
-    tno <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>,
-    tname <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
-    tsex <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
-    tbirthday <span style="color:#66d9ef">datetime</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
-    prof <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">6</span>) <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">null</span>,
-    depart <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>
-) <span style="color:#66d9ef">engine</span><span style="color:#f92672">=</span>innodb <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">charset</span><span style="color:#f92672">=</span>utf8;
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> mydb;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建学生表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">exists</span> student; <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#a6e22e">student</span> (
+</span></span><span style="display:flex;"><span>sno <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> comment <span style="color:#e6db74">&#39;学号&#39;</span>, <span style="color:#75715e">-- 主键约束(值不能为空，且唯一) sname varchar(4) not null, -- 非空约束
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ssex <span style="color:#66d9ef">char</span>(<span style="color:#ae81ff">2</span>) characterset big5 <span style="color:#66d9ef">collate</span> big5_chinese_ci <span style="color:#66d9ef">default</span> <span style="color:#e6db74">&#34;男&#34;</span>, <span style="color:#75715e">-- 默认值约束 sbirthday varchar(10) default null,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>class <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">engine</span><span style="color:#f92672">=</span>innodb <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">charset</span><span style="color:#f92672">=</span>utf8; <span style="color:#75715e">-- 设置编码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建教师表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">exists</span> teacher; <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#a6e22e">teacher</span> (
+</span></span><span style="display:flex;"><span>    tno <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>,
+</span></span><span style="display:flex;"><span>    tname <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    tsex <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    tbirthday <span style="color:#66d9ef">datetime</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    prof <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">6</span>) <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    depart <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">engine</span><span style="color:#f92672">=</span>innodb <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">charset</span><span style="color:#f92672">=</span>utf8;
+</span></span></code></pre></div><ul>
 <li><code>auto_increment</code> - 表示该列是否是自动编号（int，主键，创建主键是会自动生成一个唯一索引）</li>
 <li>一张表中只能有一个主键（primary key）</li>
 <li><code>desc 表名;</code> - 查看表结构</li>
@@ -623,8 +623,8 @@ select * from student limit 3
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

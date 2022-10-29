@@ -329,15 +329,15 @@ $ python3 -m pip install jupyter
 <ol>
 <li>
 <p>生成配置文件</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jupyter notebook --generate-config
-</code></pre></div><p>配置文件目录为 - <code>~/.jupyter/jupyter_notebook_config.py</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>jupyter notebook --generate-config
+</span></span></code></pre></div><p>配置文件目录为 - <code>~/.jupyter/jupyter_notebook_config.py</code></p>
 </li>
 <li>
 <p>生成密码</p>
 <p>在终端输入<code>python3</code>,输入如下代码</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> IPython.lib <span style="color:#f92672">import</span> passwd
-passwd()
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210105140645558.png" alt="image-20210105140645558"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> IPython.lib <span style="color:#f92672">import</span> passwd
+</span></span><span style="display:flex;"><span>passwd()
+</span></span></code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210105140645558.png" alt="image-20210105140645558"></p>
 <p>提示<code>Enter password:</code>手动输入密码, 这个密码是后面<code>远程访问登录jupyter notebook</code>需要输入的密码(我设置为<code>1234</code>, 方便记忆</p>
 <p>生成的密码: <code>'sha1:660853759c43:702029d4d7a1a78f3bdb0c20339621e9df80f695'</code>是一串哈希字符串, 这在后面的配置文件中会用到，复制它。sha1:51bbc9d1ee59:c6b3671ec4d2a41e21e1e958f66b5359d89d75c4</p>
 </li>
@@ -549,8 +549,8 @@ passwd()
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

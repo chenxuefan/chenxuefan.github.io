@@ -843,35 +843,35 @@ systemctl start/stop/restart docker
 <li>
 <p><code>hostconfig.json</code></p>
 <p>在 <code>hostconfig.json</code> 里有 <code>&quot;PortBindings&quot;:{}</code> 这个配置项，可以改成 <code>&quot;PortBindings&quot;:{&quot;80/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]}</code> 这里 80 是容器端口， 8080 是本地端口，层级关系如下：</p>
-<pre tabindex="0"><code>&quot;PortBindings&quot;:{
-      &quot;22/tcp&quot;:[
-              {&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;24&quot;}],
-      &quot;80/tcp&quot;:[
-              {&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]
+<pre tabindex="0"><code>&#34;PortBindings&#34;:{
+		&#34;22/tcp&#34;:[
+				{&#34;HostIp&#34;:&#34;&#34;,&#34;HostPort&#34;:&#34;24&#34;}],
+		&#34;80/tcp&#34;:[
+				{&#34;HostIp&#34;:&#34;&#34;,&#34;HostPort&#34;:&#34;8080&#34;}]
 }
-</code></pre><pre tabindex="0"><code>&quot;PortBindings&quot;:{&quot;22/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;24&quot;}],&quot;80/tcp&quot;:[{&quot;HostIp&quot;:&quot;&quot;,&quot;HostPort&quot;:&quot;8080&quot;}]},
+</code></pre><pre tabindex="0"><code>&#34;PortBindings&#34;:{&#34;22/tcp&#34;:[{&#34;HostIp&#34;:&#34;&#34;,&#34;HostPort&#34;:&#34;24&#34;}],&#34;80/tcp&#34;:[{&#34;HostIp&#34;:&#34;&#34;,&#34;HostPort&#34;:&#34;8080&#34;}]},
 </code></pre></li>
 </ul>
 </li>
 <li>
 <p>（3）修改端口配置 -  <code>config.v2.json</code></p>
 <p><code>/var/lib/docker/containers/[hash_of_the_container]/config.v2.json</code> 在ExposedPorts中加上要暴露的端口</p>
-<pre tabindex="0"><code>&quot;ExposedPorts&quot;: {
-  &quot;888/tcp&quot;: {},
-  &quot;21/tcp&quot;: {}
+<pre tabindex="0"><code>&#34;ExposedPorts&#34;: {
+  &#34;888/tcp&#34;: {},
+  &#34;21/tcp&#34;: {}
 }
 ...
-&quot;Ports&quot;: {
-    &quot;888/tcp&quot;: [
+&#34;Ports&#34;: {
+    &#34;888/tcp&#34;: [
         {
-          &quot;HostIp&quot;: &quot;0.0.0.0&quot;,
-          &quot;HostPort&quot;: &quot;888&quot;
+          &#34;HostIp&#34;: &#34;0.0.0.0&#34;,
+          &#34;HostPort&#34;: &#34;888&#34;
         }
     ],
-    &quot;21/tcp&quot;: [
+    &#34;21/tcp&#34;: [
         {
-          &quot;HostIp&quot;: &quot;0.0.0.0&quot;,
-          &quot;HostPort&quot;: &quot;21&quot;
+          &#34;HostIp&#34;: &#34;0.0.0.0&#34;,
+          &#34;HostPort&#34;: &#34;21&#34;
         }
     ]
 }
@@ -885,8 +885,8 @@ systemctl start/stop/restart docker
 </li>
 </ul>
 <h3 id="8容器---镜像">（8）容器 -&gt; 镜像</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+</span></span></code></pre></div><ul>
 <li>
 <p><code>[OPTIONS]</code> - 参数，选项如下：</p>
 <table>
@@ -901,7 +901,7 @@ systemctl start/stop/restart docker
 <tr>
 <td><code>--author</code> , <code>-a</code></td>
 <td></td>
-<td>Author (e.g., &ldquo;John Hannibal Smith <a href="mailto:hannibal@a-team.com">hannibal@a-team.com</a>&quot;)</td>
+<td>Author (e.g., &ldquo;John Hannibal Smith <a href="mailto:hannibal@a-team.com">hannibal@a-team.com</a>&rdquo;)</td>
 </tr>
 <tr>
 <td><code>--change</code> , <code>-c</code></td>
@@ -929,15 +929,15 @@ systemctl start/stop/restart docker
 </li>
 </ul>
 <p>示例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">docker commit -a <span style="color:#e6db74">&#34;Billie&#34;</span> -m <span style="color:#e6db74">&#34;first version&#34;</span> chenxuefan chenxuefan:version1
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker commit -a <span style="color:#e6db74">&#34;Billie&#34;</span> -m <span style="color:#e6db74">&#34;first version&#34;</span> chenxuefan chenxuefan:version1
+</span></span></code></pre></div><ul>
 <li><code>-a &quot;Billie&quot;</code> - 作者，Billie</li>
 <li><code>-m &quot;first version&quot;</code> - 打包信息</li>
 <li><code>chenxuefan</code> - 容器名</li>
 <li><code>chenxuefan:version1</code> - 镜像名:tag</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">docker commit --change <span style="color:#e6db74">&#34;ENV DEBUG=true&#34;</span> c3f279d17e0a  svendowideit/testimage:version3
-</code></pre></div><h2 id="仓库repository管理">仓库（repository）管理</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker commit --change <span style="color:#e6db74">&#34;ENV DEBUG=true&#34;</span> c3f279d17e0a  svendowideit/testimage:version3
+</span></span></code></pre></div><h2 id="仓库repository管理">仓库（repository）管理</h2>
 <p>关于「仓库」概念的解释请移步 - <a href="https://billie52707.cn/note/docker1/#%E5%9B%9B%E5%A4%A7%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5">https://billie52707.cn/note/docker1/#四大核心概念</a></p>
 <p>一句话概括就是，仓库（Repository）是存储和分发 Docker 镜像的地方。</p>
 <p>按照类型，我们将镜像仓库分为 公共镜像仓库 和 私有镜像仓库。</p>
@@ -959,12 +959,12 @@ systemctl start/stop/restart docker
 </li>
 <li>
 <p>重命名镜像 - <code>docker tag</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">docker tag blog:v1 用户名/blog:v1
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker tag blog:v1 用户名/blog:v1
+</span></span></code></pre></div></li>
 <li>
 <p>本地推送镜像至仓库 -  <code>docker push</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">docker push 用户名/blog:v1
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker push 用户名/blog:v1
+</span></span></code></pre></div></li>
 <li>
 <p>over</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20221020165408338.png" alt="image-20221020165408338"></p>
@@ -1031,22 +1031,22 @@ systemctl start/stop/restart docker
 </tbody>
 </table>
 <h3 id="2-写一个dockerfile实例">2. 写一个Dockerfile实例</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.9</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billie_Chan</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> ./docker_test</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span> [<span style="color:#e6db74">&#34;/container_volume1&#34;</span>, <span style="color:#e6db74">&#34;/container_volume2&#34;</span>, <span style="color:#e6db74">&#34;/container_volume3&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ADD</span> . .<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 1110</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;./app.py&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.9</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billie_Chan</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> ./docker_test</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span> [<span style="color:#e6db74">&#34;/container_volume1&#34;</span>, <span style="color:#e6db74">&#34;/container_volume2&#34;</span>, <span style="color:#e6db74">&#34;/container_volume3&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ADD</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 1110</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;./app.py&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><ul>
 <li>
 <p><code>ADD . .</code></p>
 <ul>
@@ -1093,8 +1093,8 @@ systemctl start/stop/restart docker
 <ul>
 <li>
 <p>打包镜像</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">docker build -t demo:v1 --platform linux/amd64 .
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker build -t demo:v1 --platform linux/amd64 .
+</span></span></code></pre></div><ul>
 <li><code>docker build</code> 命令用于使用 Dockerfile 创建镜像。更多指令讲解请转：<a href="https://docs.docker.com/engine/reference/commandline/build/">https://docs.docker.com/engine/reference/commandline/build/</a></li>
 <li><code>-t demo:v1</code> 镜像的名字及tag，通常name:tag或者name格式；可以在一次构建中为一个镜像设置多个tag</li>
 <li><code>--platform linux/amd64</code> 在不同os之间打包、使用时，需要指定计算机平台。比如macOS （arm架构）构建的镜像在 Centos（AMD处理器架构）运行，需要通过此指令来指定计算机平台如：<code>linux/amd64</code> <code>linux/arm64</code> 等。相同os、架构之间打包、使用，则不需要此指令。</li>
@@ -1103,8 +1103,8 @@ systemctl start/stop/restart docker
 </li>
 <li>
 <p>创建并运行容器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">docker run -itd -p 1110:1110 -v /Users/billie/Desktop/Docker/docker_test/vvv:/docker_test/images demo:v1
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run -itd -p 1110:1110 -v /Users/billie/Desktop/Docker/docker_test/vvv:/docker_test/images demo:v1
+</span></span></code></pre></div><ul>
 <li>
 <p><code>-p 宿主机端口:容器内端口</code>  指定映射的端口</p>
 <ul>
@@ -1244,7 +1244,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          9409 字
+          9420 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1447,8 +1447,8 @@ systemctl start/stop/restart docker
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

@@ -6,7 +6,7 @@
     <description>Recent content in 阿里云 on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Billie</copyright>
+    <copyright>Billy</copyright>
     <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「oss」学习笔记</title>
@@ -32,7 +32,7 @@
       <pubDate>Sun, 18 Apr 2021 02:30:10 +0000</pubDate>
       
       <guid>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</guid>
-      <description>$(function () { var html = &#34;\n\n\u003ciframe frameborder=\u0022no\u0022 border=\u00220\u0022 marginwidth=\u00220\u0022 marginheight=\u00220\u0022 width=100% height=86 src=\u0022\/\/music.163.com\/outchain\/player?type=2\u0026id=1366216050\u0026auto=1\u0026height=66\u0022\u003e\u003c\/iframe\u003e\n\n&#34; html = html.replace(/&#34;{/g, &#34;{&#34;) html = html.replace(/{&#34;/g, &#34;{&#34;) html = html.replace(/&#34;}/g, &#34;}&#34;) html = html.replace(/}&#34;/g, &#34;}&#34;) $(&#39;#raw&#39;).html(html); let postTitle = $(&#39;.posttitle&#39;).text() let postContentTitle = $(&#39;#raw h1&#39;).text() if(postTitle === postContentTitle){ $(&#39;#raw h1&#39;).hide() } $(&#39;button.preview&#39;).hide() }) 前言 ​ 故事的起源，要从前几个星期说起，我在阿</description>
+      <description>前言 ​ 故事的起源，要从前几个星期说起，我在阿里云购入的为期一年的云服务器正式到期，本来在几个月之前，如果我选择续费的话，还可以享受优惠，只需</description>
     </item>
     
     <item>

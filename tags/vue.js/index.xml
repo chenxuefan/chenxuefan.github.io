@@ -6,7 +6,7 @@
     <description>Recent content in vue.js on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Billie</copyright>
+    <copyright>Billy</copyright>
     <lastBuildDate>Mon, 24 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>最近的一些小项目</title>
@@ -23,7 +23,7 @@
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/photo/</guid>
-      <description>图片来源 - unsplash.com 项目地址 - chenxuefan/crawler/unsplash wallpapers-unsplash // var vm = new Vue({ el:&#34;#unsplash&#34;, data:{ msg:&#39;获取图片文件链接&#39;, host:&#39;http://127.0.0.1:1100&#39;+&#39;/files&#39;, topic_urls:{} }, methods:{ get_topic_urls(){ var that = this; console.log(that.host); axios.get(that.host) .then(function(response){ console.log(response); that.topic_urls = response; }) .catch(function (error) { console.log(error); }); } }, mounted(){ this.get_topic_urls(); } })</description>
+      <description>图片来源 - unsplash.com 项目地址 - chenxuefan/crawler/unsplash &lt;!DOCTYPE html&gt; wallpapers-unsplash //</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@
       <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
       
       <guid>https://billie52707.cn/ncp/</guid>
-      <description>@media screen and (max-width: 500px) { #chart{ display: none!important; } } *{ background-color: #E2E0DE!important; } h2{ margin: 50px; } .container{ margin: 2px; height: 100px; text-align: center; } #4d493bfbcc7142e088b07fb73056b5a9{ width: 100%; height: auto; } 确诊 正在获取... 死亡 治愈 LastUpdateTime - var ChinaData={ msg: &#34;新冠疫情动态 - 国内&#34;, confirm:&#39;&#39;, dead:&#39;&#39;, heal:&#39;&#39;, }; var AbroadData={ m</description>
+      <description>确诊 正在获取... 死亡 治愈 LastUpdateTime -</description>
     </item>
     
     <item>

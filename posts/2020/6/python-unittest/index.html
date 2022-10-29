@@ -333,7 +333,7 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div></li>
 </ul>
 <p>import unittest</p>
 <h1 id="自定义一个测试实例类传入unittest的测试实例类testcase">自定义一个测试实例类，传入unittest的测试实例类TestCase</h1>
@@ -343,12 +343,12 @@ driver.get(bd_url)
 def test_1(self):
 print(1)
 # 断言等于
-self.assertEqual(self.driver.title,u&rsquo;百度一下，你就知道')
+self.assertEqual(self.driver.title,u&rsquo;百度一下，你就知道&rsquo;)
 def test_2(self):
 print(2)
 # 断言为真
 self.assertTrue(self.driver.find_element_by_id(&lsquo;kw&rsquo;).is_enabled())
-if <strong>name</strong> == &lsquo;<strong>main</strong>':
+if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo;:
 unittest.main()</p>
 <pre tabindex="0"><code>
 
@@ -367,20 +367,20 @@ import unittest
 # 自定义一个测试实例类，传入unittest的测试实例类TestCase
 class TestBaidu(unittest.TestCase):
   def setUp(self):
-      print('一个测试用例前的初始化工作...')
+      print(&#39;一个测试用例前的初始化工作...&#39;)
       self.driver = webdriver.Chrome()
       self.driver.get(bd_url)
   def tearDown(self):
-      print('一个测试用例前的清除工作...')
+      print(&#39;一个测试用例前的清除工作...&#39;)
       self.driver.quit()
   def test_1(self):
       print(1)
       # 断言等于
-      self.assertEqual(self.driver.title,u'百度一下，你就知道')
+      self.assertEqual(self.driver.title,u&#39;百度一下，你就知道&#39;)
   def test_2(self):
       print(2)
       # 断言为真
-      self.assertTrue(self.driver.find_element_by_id('kw').is_enabled())
+      self.assertTrue(self.driver.find_element_by_id(&#39;kw&#39;).is_enabled())
 </code></pre><p>ps：</p>
 <ol>
 <li>如果setUp()执行成功（没有异常），那么无论测试方法是否通过，tearDown()都会被执行；</li>
@@ -401,36 +401,36 @@ class TestBaidu(unittest.TestCase):
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unittest
-<span style="color:#75715e"># 自定义一个测试实例类，传入unittest的测试实例类TestCase</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestBaidu</span>(unittest<span style="color:#f92672">.</span>TestCase):
-    <span style="color:#a6e22e">@classmethod</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUpClass</span>(cls) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
-        print(<span style="color:#e6db74">&#39;所有测试用例前的准备工作...&#39;</span>)
-        cls<span style="color:#f92672">.</span>driver<span style="color:#f92672">=</span>webdriver<span style="color:#f92672">.</span>Chrome()
-        cls<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>get(bd_url)
-    <span style="color:#a6e22e">@classmethod</span>
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tearDownClass</span>(cls) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
-        print(<span style="color:#e6db74">&#39;所有测试用例执行后的清理工作...&#39;</span>)
-        cls<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>quit()
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUp</span>(self):
-        print(<span style="color:#e6db74">&#39;一个测试用例前的初始化工作...&#39;</span>)
-        self<span style="color:#f92672">.</span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>get(bd_url)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tearDown</span>(self):
-        print(<span style="color:#e6db74">&#39;一个测试用例前的清除工作...&#39;</span>)
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>quit()
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_1</span>(self):
-        print(<span style="color:#ae81ff">1</span>)
-        <span style="color:#75715e"># 断言等于</span>
-        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;百度一下，你就知道&#39;</span>)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_2</span>(self):
-        print(<span style="color:#ae81ff">2</span>)
-        <span style="color:#75715e"># 断言为真</span>
-        self<span style="color:#f92672">.</span>assertTrue(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>is_enabled())
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    unittest<span style="color:#f92672">.</span>main()
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> unittest
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 自定义一个测试实例类，传入unittest的测试实例类TestCase</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestBaidu</span>(unittest<span style="color:#f92672">.</span>TestCase):
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@classmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUpClass</span>(cls) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;所有测试用例前的准备工作...&#39;</span>)
+</span></span><span style="display:flex;"><span>        cls<span style="color:#f92672">.</span>driver<span style="color:#f92672">=</span>webdriver<span style="color:#f92672">.</span>Chrome()
+</span></span><span style="display:flex;"><span>        cls<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>get(bd_url)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@classmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tearDownClass</span>(cls) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;所有测试用例执行后的清理工作...&#39;</span>)
+</span></span><span style="display:flex;"><span>        cls<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>quit()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUp</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;一个测试用例前的初始化工作...&#39;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>get(bd_url)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tearDown</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;一个测试用例前的清除工作...&#39;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>quit()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_1</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 断言等于</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;百度一下，你就知道&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_2</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 断言为真</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertTrue(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>is_enabled())
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    unittest<span style="color:#f92672">.</span>main()
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="13-测试套件testsuite"><strong>1.3 测试套件</strong>（TestSuite）</h3>
 <ul>
@@ -445,17 +445,17 @@ class TestBaidu(unittest.TestCase):
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    <span style="color:#75715e"># 测试套件写法1</span>
-    suite1<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TestSuite(map(TestBaidu,[<span style="color:#e6db74">&#39;test_1&#39;</span>,<span style="color:#e6db74">&#39;test_2&#39;</span>]))
-    <span style="color:#75715e"># 测试套件写法2</span>
-    suite2<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TestSuite()
-    suite2<span style="color:#f92672">.</span>addTests(map(TestBaidu,[<span style="color:#e6db74">&#39;test_1&#39;</span>,<span style="color:#e6db74">&#39;test_2&#39;</span>]))
-    <span style="color:#75715e"># 测试套件写法3</span>
-    suite3 <span style="color:#f92672">=</span> unittest<span style="color:#f92672">.</span>TestSuite()
-    suite3<span style="color:#f92672">.</span>addTest(TestBaidu(<span style="color:#e6db74">&#39;test_1&#39;</span>))
-    suite3<span style="color:#f92672">.</span>addTest(TestBaidu(<span style="color:#e6db74">&#39;test_2&#39;</span>))
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 测试套件写法1</span>
+</span></span><span style="display:flex;"><span>    suite1<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TestSuite(map(TestBaidu,[<span style="color:#e6db74">&#39;test_1&#39;</span>,<span style="color:#e6db74">&#39;test_2&#39;</span>]))
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 测试套件写法2</span>
+</span></span><span style="display:flex;"><span>    suite2<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TestSuite()
+</span></span><span style="display:flex;"><span>    suite2<span style="color:#f92672">.</span>addTests(map(TestBaidu,[<span style="color:#e6db74">&#39;test_1&#39;</span>,<span style="color:#e6db74">&#39;test_2&#39;</span>]))
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 测试套件写法3</span>
+</span></span><span style="display:flex;"><span>    suite3 <span style="color:#f92672">=</span> unittest<span style="color:#f92672">.</span>TestSuite()
+</span></span><span style="display:flex;"><span>    suite3<span style="color:#f92672">.</span>addTest(TestBaidu(<span style="color:#e6db74">&#39;test_1&#39;</span>))
+</span></span><span style="display:flex;"><span>    suite3<span style="color:#f92672">.</span>addTest(TestBaidu(<span style="color:#e6db74">&#39;test_2&#39;</span>))
+</span></span></code></pre></div></li>
 </ul>
 <h4 id="14-测试执行器texttestrunner"><strong>1.4 测试执行器</strong>（TextTestRunner）</h4>
 <ul>
@@ -473,10 +473,10 @@ class TestBaidu(unittest.TestCase):
 </li>
 <li>
 <p>例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#75715e">#测试执行器</span>
-    runner<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TextTestRunner()
-    runner<span style="color:#f92672">.</span>run(suite)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#75715e">#测试执行器</span>
+</span></span><span style="display:flex;"><span>    runner<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TextTestRunner()
+</span></span><span style="display:flex;"><span>    runner<span style="color:#f92672">.</span>run(suite)
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="加载测试用例的三个方法"><strong>加载测试用例的三个方法</strong></h2>
 <h3 id="21-unittestmain"><strong>2.1</strong> unittest.main()</h3>
@@ -504,9 +504,9 @@ class TestBaidu(unittest.TestCase):
 <ul>
 <li>
 <p>例：　　</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-    unittest<span style="color:#f92672">.</span>main()
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    unittest<span style="color:#f92672">.</span>main()
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="22-测试套件testsuite"><strong>2.2</strong> 测试套件(TestSuite)</h3>
 <ul>
@@ -568,15 +568,15 @@ class TestBaidu(unittest.TestCase):
 <ul>
 <li>例：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#加载测试用例</span>
-test_case<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TestLoader()<span style="color:#f92672">.</span>loadTestsFromTestCase(BaiduTest)
-<span style="color:#75715e">#加载测试套件</span>
-suite<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TestSuite()
-suite<span style="color:#f92672">.</span>addTest(test_case)
-<span style="color:#75715e">#执行测试</span>
-runner<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TextTestRunner()
-runner<span style="color:#f92672">.</span>run(suite)
-</code></pre></div><h2 id="自动加载测试用例"><strong>自动加载测试用例</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#加载测试用例</span>
+</span></span><span style="display:flex;"><span>test_case<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TestLoader()<span style="color:#f92672">.</span>loadTestsFromTestCase(BaiduTest)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#加载测试套件</span>
+</span></span><span style="display:flex;"><span>suite<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TestSuite()
+</span></span><span style="display:flex;"><span>suite<span style="color:#f92672">.</span>addTest(test_case)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#执行测试</span>
+</span></span><span style="display:flex;"><span>runner<span style="color:#f92672">=</span>unittest<span style="color:#f92672">.</span>TextTestRunner()
+</span></span><span style="display:flex;"><span>runner<span style="color:#f92672">.</span>run(suite)
+</span></span></code></pre></div><h2 id="自动加载测试用例"><strong>自动加载测试用例</strong></h2>
 <p>简介：</p>
 <p>　　unittest的TestLoader类提供了一个discover方法，以递归的方式，实现从指定顶层目录、模块找到<strong>指定目录里的测试用例文件</strong>，并将查找到的测试用例文件组装到测试套件中，然后运行。</p>
 <ul>
@@ -616,15 +616,15 @@ runner<span style="color:#f92672">.</span>run(suite)
 <p>例：　　</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#discover()方法加载所有测试用例进行测试</span>
-discover <span style="color:#f92672">=</span> unittest<span style="color:#f92672">.</span>TestLoader<span style="color:#f92672">.</span>discover(start_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./&#39;</span>,
-                                            pattern<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*.py&#39;</span>,
-                                            top_level_dir<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
-<span style="color:#75715e">#实例化测试执行器</span>
-runner <span style="color:#f92672">=</span> unittest<span style="color:#f92672">.</span>TextTestRunner()
-<span style="color:#75715e">#运行测试用例</span>
-runner<span style="color:#f92672">.</span>run(discover)
-</code></pre></div><h2 id="忽略测试和预期失败"><strong>忽略测试和预期失败</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#discover()方法加载所有测试用例进行测试</span>
+</span></span><span style="display:flex;"><span>discover <span style="color:#f92672">=</span> unittest<span style="color:#f92672">.</span>TestLoader<span style="color:#f92672">.</span>discover(start_dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./&#39;</span>,
+</span></span><span style="display:flex;"><span>                                            pattern<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*.py&#39;</span>,
+</span></span><span style="display:flex;"><span>                                            top_level_dir<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#实例化测试执行器</span>
+</span></span><span style="display:flex;"><span>runner <span style="color:#f92672">=</span> unittest<span style="color:#f92672">.</span>TextTestRunner()
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#运行测试用例</span>
+</span></span><span style="display:flex;"><span>runner<span style="color:#f92672">.</span>run(discover)
+</span></span></code></pre></div><h2 id="忽略测试和预期失败"><strong>忽略测试和预期失败</strong></h2>
 <table>
 <thead>
 <tr>
@@ -655,36 +655,36 @@ runner<span style="color:#f92672">.</span>run(discover)
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BaiduTest2</span>(unittest<span style="color:#f92672">.</span>TestCase):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUp</span>(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
-        print(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">测试开始...&#39;</span>)
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">=</span>webdriver<span style="color:#f92672">.</span>Firefox()
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>get(bd_url)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tearDown</span>(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>quit()
-        print(<span style="color:#e6db74">&#39;测试结束...&#39;</span>)
-    <span style="color:#a6e22e">@unittest</span><span style="color:#f92672">.</span>skip(<span style="color:#e6db74">&#39;跳过此测试，没有为什么&#39;</span>)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test1</span>(self):
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>send_keys(keywords[<span style="color:#ae81ff">0</span>])
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;su&#39;</span>)<span style="color:#f92672">.</span>click()
-        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-        print(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
-        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;Python_百度搜索&#39;</span>)
-    <span style="color:#a6e22e">@unittest</span><span style="color:#f92672">.</span>skipIf(condition<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>,reason<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;又跳过了，因为2大于1&#39;</span>)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test2</span>(self):
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>send_keys(keywords[<span style="color:#ae81ff">1</span>])
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;su&#39;</span>)<span style="color:#f92672">.</span>click()
-        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-        print(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
-        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;Selenium_百度搜索&#39;</span>)
-    <span style="color:#a6e22e">@unittest</span><span style="color:#f92672">.</span>skipUnless(condition<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>,reason<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2大于1，执行此测试&#39;</span>)
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test3</span>(self):
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>send_keys(keywords[<span style="color:#ae81ff">2</span>])
-        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;su&#39;</span>)<span style="color:#f92672">.</span>click()
-        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-        print(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
-        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;TestSuite_百度搜索&#39;</span>)
-</code></pre></div><h2 id="html测试报告"><strong>html测试报告</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BaiduTest2</span>(unittest<span style="color:#f92672">.</span>TestCase):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setUp</span>(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">测试开始...&#39;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">=</span>webdriver<span style="color:#f92672">.</span>Firefox()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>get(bd_url)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tearDown</span>(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>quit()
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#39;测试结束...&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@unittest</span><span style="color:#f92672">.</span>skip(<span style="color:#e6db74">&#39;跳过此测试，没有为什么&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test1</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>send_keys(keywords[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;su&#39;</span>)<span style="color:#f92672">.</span>click()
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        print(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;Python_百度搜索&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@unittest</span><span style="color:#f92672">.</span>skipIf(condition<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>,reason<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;又跳过了，因为2大于1&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test2</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>send_keys(keywords[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;su&#39;</span>)<span style="color:#f92672">.</span>click()
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        print(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;Selenium_百度搜索&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@unittest</span><span style="color:#f92672">.</span>skipUnless(condition<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">2</span>,reason<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;2大于1，执行此测试&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test3</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;kw&#39;</span>)<span style="color:#f92672">.</span>send_keys(keywords[<span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>find_element_by_id(<span style="color:#e6db74">&#39;su&#39;</span>)<span style="color:#f92672">.</span>click()
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        print(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>assertEqual(self<span style="color:#f92672">.</span>driver<span style="color:#f92672">.</span>title,<span style="color:#e6db74">&#39;TestSuite_百度搜索&#39;</span>)
+</span></span></code></pre></div><h2 id="html测试报告"><strong>html测试报告</strong></h2>
 <h3 id="51-配置htmltestrunner">5.1 配置HTMLTestRunner</h3>
 <ul>
 <li>
@@ -793,7 +793,7 @@ runner<span style="color:#f92672">.</span>run(discover)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          3809 字
+          3839 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -971,8 +971,8 @@ runner<span style="color:#f92672">.</span>run(discover)
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

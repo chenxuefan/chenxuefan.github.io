@@ -282,9 +282,9 @@ if (!doNotTrack) {
 </ul>
 <p>Example:</p>
 <pre tabindex="0"><code>&gt;&gt;&gt; import filecmp
-&gt;&gt;&gt; filecmp.cmp('undoc.rst', 'undoc.rst')
+&gt;&gt;&gt; filecmp.cmp(&#39;undoc.rst&#39;, &#39;undoc.rst&#39;)
 True
-&gt;&gt;&gt; filecmp.cmp('undoc.rst', 'index.rst')
+&gt;&gt;&gt; filecmp.cmp(&#39;undoc.rst&#39;, &#39;index.rst&#39;)
 False
 </code></pre><h2 id="dircmp类"><strong>dircmp类：</strong></h2>
 <p>filecmp模块中定义了一个dircmp类，用于比较<strong>文件夹</strong>，通过该类比较两个文件夹，可以获取一些详细的比较结果（如只在A文件夹存在的文件列表），并支持子文件夹的递归比较。</p>
@@ -309,23 +309,23 @@ False
 <li>funny_files：两边文件夹中都存在，但无法比较的文件；</li>
 <li>subdirs：我没看明白这个属性的意思，python手册中的解释如下：A dictionary mapping names in common_dirs to dircmp objects</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mycomp<span style="color:#f92672">=</span>filecmp<span style="color:#f92672">.</span>dircmp(dir1,dir2)
-<span style="color:#75715e">#备份模式1、若dir1中有dir2中没有的文件，则继续执行</span>
-<span style="color:#66d9ef">if</span> len(mycomp<span style="color:#f92672">.</span>left_list) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:<span style="color:#75715e">#dir1中的文件</span>
-        <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> mycomp<span style="color:#f92672">.</span>left_list:<span style="color:#75715e">#dir1中的所有文件</span>
-            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(dir2<span style="color:#f92672">+</span>file):<span style="color:#75715e">#如dir2中不存在此文件，则</span>
-                shutil<span style="color:#f92672">.</span>copy(dir1<span style="color:#f92672">+</span>file,dir2<span style="color:#f92672">+</span>file)<span style="color:#75715e">#复制dir1中的文件</span>
-                print(<span style="color:#e6db74">&#39;已备份|&#39;</span>, dir2 <span style="color:#f92672">+</span> file)
-<span style="color:#75715e">#备份模式2、若dir1中的文件与dir2中的文件存在差异，则继续执行</span>
-<span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> mycomp<span style="color:#f92672">.</span>common:<span style="color:#75715e">#dir1、dir2中的相同文件</span>
-        about_update_files<span style="color:#f92672">=</span>[]
-        <span style="color:#66d9ef">if</span> is_common(dir1<span style="color:#f92672">+</span>file,dir2<span style="color:#f92672">+</span>file) <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
-            about_update_files<span style="color:#f92672">.</span>append(file)
-            print(<span style="color:#e6db74">&#39;待更新|&#39;</span>,dir2<span style="color:#f92672">+</span>file)
-            shutil<span style="color:#f92672">.</span>copy(dir1 <span style="color:#f92672">+</span> file, dir2 <span style="color:#f92672">+</span> file)  <span style="color:#75715e"># 复制dir1中的文件</span>
-            print(<span style="color:#e6db74">&#39;已更新|&#39;</span>, dir2 <span style="color:#f92672">+</span> file)
-        <span style="color:#66d9ef">else</span>:print(<span style="color:#e6db74">&#39;无需更新|&#39;</span>,dir2<span style="color:#f92672">+</span>file)
-</code></pre></div><p>更多内容参考官方文档：<a href="https://docs.python.org/3.0/library/filecmp.html">https://docs.python.org/3.0/library/filecmp.html</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mycomp<span style="color:#f92672">=</span>filecmp<span style="color:#f92672">.</span>dircmp(dir1,dir2)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#备份模式1、若dir1中有dir2中没有的文件，则继续执行</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> len(mycomp<span style="color:#f92672">.</span>left_list) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:<span style="color:#75715e">#dir1中的文件</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> mycomp<span style="color:#f92672">.</span>left_list:<span style="color:#75715e">#dir1中的所有文件</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(dir2<span style="color:#f92672">+</span>file):<span style="color:#75715e">#如dir2中不存在此文件，则</span>
+</span></span><span style="display:flex;"><span>                shutil<span style="color:#f92672">.</span>copy(dir1<span style="color:#f92672">+</span>file,dir2<span style="color:#f92672">+</span>file)<span style="color:#75715e">#复制dir1中的文件</span>
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">&#39;已备份|&#39;</span>, dir2 <span style="color:#f92672">+</span> file)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#备份模式2、若dir1中的文件与dir2中的文件存在差异，则继续执行</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> mycomp<span style="color:#f92672">.</span>common:<span style="color:#75715e">#dir1、dir2中的相同文件</span>
+</span></span><span style="display:flex;"><span>        about_update_files<span style="color:#f92672">=</span>[]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> is_common(dir1<span style="color:#f92672">+</span>file,dir2<span style="color:#f92672">+</span>file) <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>            about_update_files<span style="color:#f92672">.</span>append(file)
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#39;待更新|&#39;</span>,dir2<span style="color:#f92672">+</span>file)
+</span></span><span style="display:flex;"><span>            shutil<span style="color:#f92672">.</span>copy(dir1 <span style="color:#f92672">+</span> file, dir2 <span style="color:#f92672">+</span> file)  <span style="color:#75715e"># 复制dir1中的文件</span>
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#39;已更新|&#39;</span>, dir2 <span style="color:#f92672">+</span> file)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:print(<span style="color:#e6db74">&#39;无需更新|&#39;</span>,dir2<span style="color:#f92672">+</span>file)
+</span></span></code></pre></div><p>更多内容参考官方文档：<a href="https://docs.python.org/3.0/library/filecmp.html">https://docs.python.org/3.0/library/filecmp.html</a></p>
 
     </div>
 
@@ -515,8 +515,8 @@ False
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

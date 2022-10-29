@@ -6,7 +6,7 @@
     <description>Recent content in Drafts on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Billie</copyright>
+    <copyright>Billy</copyright>
     <lastBuildDate>Thu, 21 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/draft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>KFC疯狂星期四文学</title>
@@ -158,7 +158,7 @@
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-flask/</guid>
-      <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&#39;server.py&#39; flask run ps：等号两边无空格</description>
+      <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&amp;#39;server.py&amp;#39; flask run ps：等号两边无空格</description>
     </item>
     
     <item>
@@ -338,7 +338,7 @@
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://billie52707.cn/draft/python-matplotlib/</guid>
-      <description>一、图表的保存 ## 保存图片 直接输入文件路径，新建文件名字 ## dpi图片分辨率 越高越清晰。bbox_inches = &#39;tight&#39;,去掉空白部分 plt.savefig(r&#39;C:\Users\admin\Pictures\Camera Roll\exam_annotate1.jpg&#39;,</description>
+      <description>一、图表的保存 ## 保存图片 直接输入文件路径，新建文件名字 ## dpi图片分辨率 越高越清晰。bbox_inches = &amp;#39;tight&amp;#39;,</description>
     </item>
     
     <item>

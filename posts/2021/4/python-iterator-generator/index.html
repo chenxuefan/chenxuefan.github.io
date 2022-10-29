@@ -280,92 +280,92 @@ if (!doNotTrack) {
 <li>访问到一半时不能往回退</li>
 <li>便于循环比较大的数据集合，节省内存</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> iter(<span style="color:#e6db74">&#39;abc&#39;</span>) <span style="color:#75715e"># 定义一个迭代器对象i，该对象定义了一个__next__方法，用于逐一访问容器中的元素</span>
-i <span style="color:#75715e"># &lt;str_iterator at 0x10b5199a0&gt;</span>
-i<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 或next(i)</span>
-</code></pre></div><p>生成一个迭代器：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dragon</span>:
-  <span style="color:#66d9ef">def</span> __init__(self,count):
-    self<span style="color:#f92672">.</span>count <span style="color:#f92672">=</span> count
-  <span style="color:#66d9ef">def</span> __iter__(self):
-    <span style="color:#66d9ef">return</span> self
-  <span style="color:#66d9ef">def</span> __next__(self):
-    self<span style="color:#f92672">.</span>count<span style="color:#f92672">-=</span><span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>count <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-      print(<span style="color:#e6db74">&#34;别杀了，别杀了，龙妈只有一条龙了！&#34;</span>)
-      <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopIteration</span>
-    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>count
-D <span style="color:#f92672">=</span> Dragon(<span style="color:#ae81ff">3</span>)
-</code></pre></div><h3 id="模拟range方法">模拟range方法</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Range</span>:
-    <span style="color:#66d9ef">def</span> __init__(self, start, end, step):
-        self<span style="color:#f92672">.</span>start <span style="color:#f92672">=</span> start
-        self<span style="color:#f92672">.</span>end <span style="color:#f92672">=</span> end
-        self<span style="color:#f92672">.</span>step <span style="color:#f92672">=</span> step
-    <span style="color:#66d9ef">def</span> __iter__(self):
-        <span style="color:#66d9ef">return</span> self
-    <span style="color:#66d9ef">def</span> __next__(self):
-        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>start <span style="color:#f92672">&gt;=</span> self<span style="color:#f92672">.</span>end:
-            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopIteration</span>
-        rel <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>start
-        self<span style="color:#f92672">.</span>start <span style="color:#f92672">+=</span> self<span style="color:#f92672">.</span>step
-        <span style="color:#66d9ef">return</span> rel
-
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> Range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>): print(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#75715e"># 1,3,5,7,</span>
-</code></pre></div><h3 id="模拟斐波那契数列">模拟斐波那契数列</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fib</span>:
-  <span style="color:#66d9ef">def</span> __init__(self):
-    self<span style="color:#f92672">.</span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    self<span style="color:#f92672">.</span>b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-  <span style="color:#66d9ef">def</span> __iter__(self):
-    <span style="color:#66d9ef">return</span> self
-  <span style="color:#66d9ef">def</span> __next__(self):
-    self<span style="color:#f92672">.</span>a,self<span style="color:#f92672">.</span>b <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>b,self<span style="color:#f92672">.</span>a<span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>b
-    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>a
-  
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> Fib():
-  <span style="color:#66d9ef">if</span> i<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1000</span>:<span style="color:#66d9ef">break</span>
-  print(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#75715e"># 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,</span>
-</code></pre></div><h2 id="生成器generator">生成器（generator）</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>i <span style="color:#f92672">=</span> iter(<span style="color:#e6db74">&#39;abc&#39;</span>) <span style="color:#75715e"># 定义一个迭代器对象i，该对象定义了一个__next__方法，用于逐一访问容器中的元素</span>
+</span></span><span style="display:flex;"><span>i <span style="color:#75715e"># &lt;str_iterator at 0x10b5199a0&gt;</span>
+</span></span><span style="display:flex;"><span>i<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 或next(i)</span>
+</span></span></code></pre></div><p>生成一个迭代器：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dragon</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self,count):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>count <span style="color:#f92672">=</span> count
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __iter__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __next__(self):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>count<span style="color:#f92672">-=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>count <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>      print(<span style="color:#e6db74">&#34;别杀了，别杀了，龙妈只有一条龙了！&#34;</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopIteration</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>count
+</span></span><span style="display:flex;"><span>D <span style="color:#f92672">=</span> Dragon(<span style="color:#ae81ff">3</span>)
+</span></span></code></pre></div><h3 id="模拟range方法">模拟range方法</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Range</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, start, end, step):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>start <span style="color:#f92672">=</span> start
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>end <span style="color:#f92672">=</span> end
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>step <span style="color:#f92672">=</span> step
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __iter__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __next__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>start <span style="color:#f92672">&gt;=</span> self<span style="color:#f92672">.</span>end:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopIteration</span>
+</span></span><span style="display:flex;"><span>        rel <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>start
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>start <span style="color:#f92672">+=</span> self<span style="color:#f92672">.</span>step
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> rel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> Range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">2</span>): print(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#75715e"># 1,3,5,7,</span>
+</span></span></code></pre></div><h3 id="模拟斐波那契数列">模拟斐波那契数列</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fib</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __iter__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __next__(self):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>a,self<span style="color:#f92672">.</span>b <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>b,self<span style="color:#f92672">.</span>a<span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>b
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>a
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> Fib():
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> i<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1000</span>:<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>  print(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#75715e"># 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,</span>
+</span></span></code></pre></div><h2 id="生成器generator">生成器（generator）</h2>
 <p>在 Python 中，使用了 yield 的函数被称为生成器（generator）。</p>
 <p>跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。</p>
 <p>在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">G</span>(count):
-    <span style="color:#66d9ef">while</span> count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
-        <span style="color:#66d9ef">yield</span> count
-        count<span style="color:#f92672">-=</span><span style="color:#ae81ff">1</span>
-        
-G(<span style="color:#ae81ff">5</span>) <span style="color:#75715e"># &lt;generator object G at 0x10b569ac0&gt;</span>
-g <span style="color:#f92672">=</span> G(<span style="color:#ae81ff">5</span>)
-g <span style="color:#f92672">=</span> (i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>))
-g<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 5</span>
-g<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 4</span>
-</code></pre></div><p>这个yield的主要效果，就是可以使函数中断，并保存中断状态</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">G</span>(count):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">yield</span> count
+</span></span><span style="display:flex;"><span>        count<span style="color:#f92672">-=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>G(<span style="color:#ae81ff">5</span>) <span style="color:#75715e"># &lt;generator object G at 0x10b569ac0&gt;</span>
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> G(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> (i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 5</span>
+</span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>__next__() <span style="color:#75715e"># 4</span>
+</span></span></code></pre></div><p>这个yield的主要效果，就是可以使函数中断，并保存中断状态</p>
 <p>中断后，下一次调用这个函数，从上次yield的下一句开始执行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Dragon</span>(count):
-  <span style="color:#66d9ef">while</span> count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
-    <span style="color:#66d9ef">yield</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;龙妈还剩</span><span style="color:#e6db74">{</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">条龙&#39;</span>
-    count <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-    
-D <span style="color:#f92672">=</span> Dragon(<span style="color:#ae81ff">3</span>)
-next(D) <span style="color:#75715e"># &#39;龙妈还剩3条龙&#39;</span>
-next(D) <span style="color:#75715e"># &#39;龙妈还剩2条龙&#39;</span>
-next(D) <span style="color:#75715e"># &#39;龙妈还剩1条龙&#39;</span>
-next(D) <span style="color:#75715e"># Traceback (most recent call last):</span>
-        <span style="color:#75715e"># File &#34;&lt;input&gt;&#34;, line 1, in &lt;module&gt;</span>
-        <span style="color:#75715e"># StopIteration</span>
-</code></pre></div><p>模拟斐波那契数列:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Fib</span>(num):
-  a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-  b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-  <span style="color:#66d9ef">while</span> b <span style="color:#f92672">&lt;</span> num:
-    <span style="color:#66d9ef">yield</span> b
-    a,b <span style="color:#f92672">=</span> b,a<span style="color:#f92672">+</span>b
-    
-F <span style="color:#f92672">=</span> Fib(<span style="color:#ae81ff">1000</span>)
-<span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> F:
-  print(f,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#75715e"># 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Dragon</span>(count):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;龙妈还剩</span><span style="color:#e6db74">{</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74">条龙&#39;</span>
+</span></span><span style="display:flex;"><span>    count <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>D <span style="color:#f92672">=</span> Dragon(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>next(D) <span style="color:#75715e"># &#39;龙妈还剩3条龙&#39;</span>
+</span></span><span style="display:flex;"><span>next(D) <span style="color:#75715e"># &#39;龙妈还剩2条龙&#39;</span>
+</span></span><span style="display:flex;"><span>next(D) <span style="color:#75715e"># &#39;龙妈还剩1条龙&#39;</span>
+</span></span><span style="display:flex;"><span>next(D) <span style="color:#75715e"># Traceback (most recent call last):</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># File &#34;&lt;input&gt;&#34;, line 1, in &lt;module&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># StopIteration</span>
+</span></span></code></pre></div><p>模拟斐波那契数列:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Fib</span>(num):
+</span></span><span style="display:flex;"><span>  a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">while</span> b <span style="color:#f92672">&lt;</span> num:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> b
+</span></span><span style="display:flex;"><span>    a,b <span style="color:#f92672">=</span> b,a<span style="color:#f92672">+</span>b
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>F <span style="color:#f92672">=</span> Fib(<span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> F:
+</span></span><span style="display:flex;"><span>  print(f,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#75715e"># 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,</span>
+</span></span></code></pre></div>
     </div>
 
 
@@ -558,8 +558,8 @@ F <span style="color:#f92672">=</span> Fib(<span style="color:#ae81ff">1000</spa
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

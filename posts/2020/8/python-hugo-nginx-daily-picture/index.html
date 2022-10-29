@@ -283,16 +283,16 @@ if (!doNotTrack) {
 <p>这里用到的API接口是来自词霸的，每天零点更新</p>
 <p><a href="http://open.iciba.com/dsapi/">http://open.iciba.com/dsapi/</a></p>
 <p>通过向这条API发送请求，我们可以得到它返回的信息是这样的一段json：</p>
-<pre tabindex="0"><code>{'sid': '3856', 'tts': 'https://edu-wps.ks3-cn-beijing.ksyun.com/audio/697196205cba75132a2adb5f6226a623.mp3', 'content': 'The best way out is always through.', 'note': '最好的出路永远都是勇往直前。', 'love': '0', 'translation': '新版每日一句', 'picture': 'https://edu-wps.ks3-cn-beijing.ksyun.com/image/e3335242fa173999650a7293bccf9845.jpg', 'picture2': 'https://edu-wps.ks3-cn-beijing.ksyun.com/image/205e6f4c3c9b91f33d84612217ca9e9c.jpg', 'caption': '词霸每日一句', 'dateline': '2020-08-16', 's_pv': '0', 'sp_pv': '0', 'fenxiang_img': 'https://edu-wps.ks3-cn-beijing.ksyun.com/image/e41d27593014c52fe7bd73a1566891ce.png', 'picture3': 'https://edu-wps.ks3-cn-beijing.ksyun.com/image/84bbb715bc74b288fcb3aa3b2738f0bc.jpg', 'picture4': 'https://edu-wps.ks3-cn-beijing.ksyun.com/image/6699f9fcebb7d3730485d793f83d3f66.jpg', 'tags': []}
+<pre tabindex="0"><code>{&#39;sid&#39;: &#39;3856&#39;, &#39;tts&#39;: &#39;https://edu-wps.ks3-cn-beijing.ksyun.com/audio/697196205cba75132a2adb5f6226a623.mp3&#39;, &#39;content&#39;: &#39;The best way out is always through.&#39;, &#39;note&#39;: &#39;最好的出路永远都是勇往直前。&#39;, &#39;love&#39;: &#39;0&#39;, &#39;translation&#39;: &#39;新版每日一句&#39;, &#39;picture&#39;: &#39;https://edu-wps.ks3-cn-beijing.ksyun.com/image/e3335242fa173999650a7293bccf9845.jpg&#39;, &#39;picture2&#39;: &#39;https://edu-wps.ks3-cn-beijing.ksyun.com/image/205e6f4c3c9b91f33d84612217ca9e9c.jpg&#39;, &#39;caption&#39;: &#39;词霸每日一句&#39;, &#39;dateline&#39;: &#39;2020-08-16&#39;, &#39;s_pv&#39;: &#39;0&#39;, &#39;sp_pv&#39;: &#39;0&#39;, &#39;fenxiang_img&#39;: &#39;https://edu-wps.ks3-cn-beijing.ksyun.com/image/e41d27593014c52fe7bd73a1566891ce.png&#39;, &#39;picture3&#39;: &#39;https://edu-wps.ks3-cn-beijing.ksyun.com/image/84bbb715bc74b288fcb3aa3b2738f0bc.jpg&#39;, &#39;picture4&#39;: &#39;https://edu-wps.ks3-cn-beijing.ksyun.com/image/6699f9fcebb7d3730485d793f83d3f66.jpg&#39;, &#39;tags&#39;: []}
 </code></pre><p>而我需要的每日一图的URL链接则是存储在<code>fenxiang_img</code>这个对象里面的，因此很简单就可以获取到每日一图，编写代码：</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816184656737.png" alt="image-20200816184656737"></p>
 <p>在这里我把图片保存了两次，一个是以<code>日期</code>命名，用于保留记录，一个命名为<code>main.png</code>，用于后续链接访问；接着的代码，我用了python的schedule模块，设定为<strong>每日零点</strong>执行任务。</p>
 <p>写好代码之后，放在<strong>服务器</strong>里面运行，并且使用<code>nohup</code>设置运行不受窗口关闭影响，将运行日志输出到<code>nohup.out</code>, &lsquo;&amp;&rsquo; 号表示在后台运行。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nohup python3 main.py &amp;
-exit
-</code></pre></div><p>运行之后，查看python相关进程：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ps -ef|grep python
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816185547872.png" alt="image-20200816185547872"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nohup python3 main.py &amp;
+</span></span><span style="display:flex;"><span>exit
+</span></span></code></pre></div><p>运行之后，查看python相关进程：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ps -ef|grep python
+</span></span></code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816185547872.png" alt="image-20200816185547872"></p>
 <p>图片搞定之后，就可以用nginx部署web服务了</p>
 <h2 id="nginx部署">Nginx部署</h2>
 <p>在上一步骤中，我的图片保存的路径是：<code>/home/chenxuefan/html/pic/main.png</code></p>
@@ -307,7 +307,7 @@ exit
 <p>在本地博客项目中，需要修改的文件是：<code>./themes/cactus/layouts/index.html </code></p>
 <p>打开文件<img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816191121597.png" alt="image-20200816191121597"></p>
 <p>在第二行的位置添加图片：</p>
-<pre tabindex="0"><code>&lt;img height=&quot;921&quot; width=&quot;706&quot; src=&quot;https://download.billie52707.cn/pic/main.png&quot;&gt;
+<pre tabindex="0"><code>&lt;img height=&#34;921&#34; width=&#34;706&#34; src=&#34;https://download.billie52707.cn/pic/main.png&#34;&gt;
 </code></pre><p>保存文件，就可以上传代码部署上线了</p>
 <h2 id="后记">后记</h2>
 <p>updated by 2020-08-24</p>
@@ -354,7 +354,7 @@ exit
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          822 字
+          846 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -508,8 +508,8 @@ exit
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

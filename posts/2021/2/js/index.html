@@ -413,8 +413,8 @@ if (!doNotTrack) {
 <pre tabindex="0"><code>npm install --save-dev javascript-obfuscator
 </code></pre><p>接下来我们就可以编写代码来实现混淆了，如新建一个 main.js 文件，内容如下：</p>
 <pre tabindex="0"><code>const code = `
-let x = '1' + 1
-console.log('x', x)
+let x = &#39;1&#39; + 1
+console.log(&#39;x&#39;, x)
 `
 
 const options = {
@@ -423,7 +423,7 @@ const options = {
 
 }
 
-const obfuscator = require('javascript-obfuscator')
+const obfuscator = require(&#39;javascript-obfuscator&#39;)
 function obfuscate(code, options) {
    return obfuscator.obfuscate(code, options).getObfuscatedCode()
 }
@@ -432,11 +432,11 @@ console.log(obfuscate(code, options))
 <p>代码逻辑比较简单，我们来执行一下代码：</p>
 <pre tabindex="0"><code>node main.js
 </code></pre><p>输出结果如下：</p>
-<pre tabindex="0"><code>var _0x53bf = ['log'];
+<pre tabindex="0"><code>var _0x53bf = [&#39;log&#39;];
 (function (_0x1d84fe, _0x3aeda0) {
    var _0x10a5a = function (_0x2f0a52) {
        while (--_0x2f0a52) {
-           _0x1d84fe['push'](_0x1d84fe['shift']());
+           _0x1d84fe[&#39;push&#39;](_0x1d84fe[&#39;shift&#39;]());
       }
   };
    _0x10a5a(++_0x3aeda0);
@@ -446,8 +446,8 @@ var _0x480a = function (_0x4341e5, _0x5923b4) {
    var _0xb3622e = _0x53bf[_0x4341e5];
    return _0xb3622e;
 };
-let x = '1' + 0x1;
-console[_0x480a('0x0')]('x', x);
+let x = &#39;1&#39; + 0x1;
+console[_0x480a(&#39;0x0&#39;)](&#39;x&#39;, x);
 </code></pre><p>看到了吧，这么简单的两行代码，被我们混淆成了这个样子，其实这里我们就是设定了一个“控制流扁平化”的选项。</p>
 <p>整体看来，代码的可读性大大降低，也大大加大了 JavaScript 调试的难度。</p>
 <p>好，接下来我们来跟着 javascript-obfuscator 走一遍，就能具体知道 JavaScript 混淆到底有多少方法了。</p>
@@ -455,17 +455,17 @@ console[_0x480a('0x0')]('x', x);
 <p>这里 javascript-obfuscator 也提供了代码压缩的功能，使用其参数 compact 即可完成 JavaScript 代码的压缩，输出为一行内容。默认是 true，如果定义为 false，则混淆后的代码会分行显示。</p>
 <p>示例如下：</p>
 <pre tabindex="0"><code>const code = `
-let x = '1' + 1
-console.log('x', x)
+let x = &#39;1&#39; + 1
+console.log(&#39;x&#39;, x)
 `
 const options = {
    compact: false
 }
 </code></pre><p>这里我们先把代码压缩 compact 选项设置为 false，运行结果如下：</p>
-<pre tabindex="0"><code>let x = '1' + 0x1;
-console['log']('x', x);
+<pre tabindex="0"><code>let x = &#39;1&#39; + 0x1;
+console[&#39;log&#39;](&#39;x&#39;, x);
 </code></pre><p>如果不设置 compact 或把 compact 设置为 true，结果如下：</p>
-<pre tabindex="0"><code>var _0x151c=['log'];(function(_0x1ce384,_0x20a7c7){var _0x25fc92=function(_0x188aec){while(--_0x188aec){_0x1ce384['push'](_0x1ce384['shift']());}};_0x25fc92(++_0x20a7c7);}(_0x151c,0x1b7));var _0x553e=function(_0x259219,_0x241445){_0x259219=_0x259219-0x0;var _0x56d72d=_0x151c[_0x259219];return _0x56d72d;};let x='1'+0x1;console[_0x553e('0x0');}};_0x25fc92(++_0x20a7c7);}(_0x151c,0x1b7));var _0x553e=function(_0x259219,_0x241445){_0x259219=_0x259219-0x0;var _0x56d72d=_0x151c[_0x259219];return _0x56d72d;};let x='1'+0x1;console[_0x553e('0x0');}};_0x25fc92(++_0x20a7c7);}(_0x151c,0x1b7));var _0x553e=function(_0x259219,_0x241445){_0x259219=_0x259219-0x0;var _0x56d72d=_0x151c[_0x259219];return _0x56d72d;};let x='1'+0x1;console[_0x553e('0x0');}};_0x25fc92(++_0x20a7c7);}(_0x151c,0x1b7));var _0x553e=function(_0x259219,_0x241445){_0x259219=_0x259219-0x0;var _0x56d72d=_0x151c[_0x259219];return _0x56d72d;};let x='1'+0x1;console[_0x553e('0x0')]('x',x);
+<pre tabindex="0"><code>var _0x151c=[&#39;log&#39;];(function(_0x1ce384,_0x20a7c7){var _0x25fc92=function(_0x188aec){while(--_0x188aec){_0x1ce384[&#39;push&#39;](_0x1ce384[&#39;shift&#39;]());}};_0x25fc92(++_0x20a7c7);}(_0x151c,0x1b7));var _0x553e=function(_0x259219,_0x241445){_0x259219=_0x259219-0x0;var _0x56d72d=_0x151c[_0x259219];return _0x56d72d;};let x=&#39;1&#39;+0x1;console[_0x553e(&#39;0x0&#39;);}};_0x25fc92(++_0x20a7c7);}(_0x151c,0x1b7));var _0x553e=function(_0x259219,_0x241445){_0x259219=_0x259219-0x0;var _0x56d72d=_0x151c[_0x259219];return _0x56d72d;};let x=&#39;1&#39;+0x1;console[_0x553e(&#39;0x0&#39;);}};_0x25fc92(++_0x20a7c7);}(_0x151c,0x1b7));var _0x553e=function(_0x259219,_0x241445){_0x259219=_0x259219-0x0;var _0x56d72d=_0x151c[_0x259219];return _0x56d72d;};let x=&#39;1&#39;+0x1;console[_0x553e(&#39;0x0&#39;);}};_0x25fc92(++_0x20a7c7);}(_0x151c,0x1b7));var _0x553e=function(_0x259219,_0x241445){_0x259219=_0x259219-0x0;var _0x56d72d=_0x151c[_0x259219];return _0x56d72d;};let x=&#39;1&#39;+0x1;console[_0x553e(&#39;0x0&#39;)](&#39;x&#39;,x);
 </code></pre><p>可以看到单行显示的时候，对变量名进行了进一步的混淆和控制流扁平化操作。</p>
 <h3 id="变量名混淆">变量名混淆</h3>
 <p>变量名混淆可以通过配置 identifierNamesGenerator 参数实现，我们通过这个参数可以控制变量名混淆的方式，如 hexadecimal 则会替换为 16 进制形式的字符串，在这里我们可以设定如下值：</p>
@@ -476,29 +476,29 @@ console['log']('x', x);
 </ul>
 <p>我们将该参数修改为 mangled 来试一下：</p>
 <pre tabindex="0"><code>const code = `
-let hello = '1' + 1
-console.log('hello', hello)
+let hello = &#39;1&#39; + 1
+console.log(&#39;hello&#39;, hello)
 `
 const options = {
   compact: true,
-  identifierNamesGenerator: 'mangled'
+  identifierNamesGenerator: &#39;mangled&#39;
 }
 </code></pre><p>运行结果如下：</p>
-<pre tabindex="0"><code>var a=['hello'];(function(c,d){var e=function(f){while(--f){c['push'](c['shift']());}};e(++d);}(a,0x9b));var b=function(c,d){c=c-0x0;var e=a[c];return e;};let hello='1'+0x1;console['log'](b('0x0'),hello);
+<pre tabindex="0"><code>var a=[&#39;hello&#39;];(function(c,d){var e=function(f){while(--f){c[&#39;push&#39;](c[&#39;shift&#39;]());}};e(++d);}(a,0x9b));var b=function(c,d){c=c-0x0;var e=a[c];return e;};let hello=&#39;1&#39;+0x1;console[&#39;log&#39;](b(&#39;0x0&#39;),hello);
 </code></pre><p>可以看到这里的变量命名都变成了 a、b 等形式。</p>
 <p>如果我们将 identifierNamesGenerator 修改为 hexadecimal 或者不设置，运行结果如下：</p>
-<pre tabindex="0"><code>var _0x4e98=['log','hello'];(function(_0x4464de,_0x39de6c){var _0xdffdda=function(_0x6a95d5){while(--_0x6a95d5){_0x4464de['push'](_0x4464de['shift']());}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello='1'+0x1;console[_0x53cb('0x0');}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello='1'+0x1;console[_0x53cb('0x0');}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello='1'+0x1;console[_0x53cb('0x0');}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello='1'+0x1;console[_0x53cb('0x0');}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello='1'+0x1;console[_0x53cb('0x0')](_0x53cb('0x1'),hello);
+<pre tabindex="0"><code>var _0x4e98=[&#39;log&#39;,&#39;hello&#39;];(function(_0x4464de,_0x39de6c){var _0xdffdda=function(_0x6a95d5){while(--_0x6a95d5){_0x4464de[&#39;push&#39;](_0x4464de[&#39;shift&#39;]());}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello=&#39;1&#39;+0x1;console[_0x53cb(&#39;0x0&#39;);}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello=&#39;1&#39;+0x1;console[_0x53cb(&#39;0x0&#39;);}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello=&#39;1&#39;+0x1;console[_0x53cb(&#39;0x0&#39;);}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello=&#39;1&#39;+0x1;console[_0x53cb(&#39;0x0&#39;);}};_0xdffdda(++_0x39de6c);}(_0x4e98,0xc8));var _0x53cb=function(_0x393bda,_0x8504e7){_0x393bda=_0x393bda-0x0;var _0x46ab80=_0x4e98[_0x393bda];return _0x46ab80;};let hello=&#39;1&#39;+0x1;console[_0x53cb(&#39;0x0&#39;)](_0x53cb(&#39;0x1&#39;),hello);
 </code></pre><p>可以看到选用了 mangled，其代码体积会更小，但 hexadecimal 其可读性会更低。</p>
 <p>另外我们还可以通过设置 identifiersPrefix 参数来控制混淆后的变量前缀，示例如下：</p>
 <pre tabindex="0"><code>const code = `
-let hello = '1' + 1
-console.log('hello', hello)
+let hello = &#39;1&#39; + 1
+console.log(&#39;hello&#39;, hello)
 `
 const options = {
-  identifiersPrefix: 'germey'
+  identifiersPrefix: &#39;germey&#39;
 }
 </code></pre><p>运行结果：</p>
-<pre tabindex="0"><code>var germey_0x3dea=['log','hello'];(function(_0x348ff3,_0x5330e8){var _0x1568b1=function(_0x4740d8){while(--_0x4740d8){_0x348ff3['push'](_0x348ff3['shift']());}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0');}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0');}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0');}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0');}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0');}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0');}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0');}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0');}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello='1'+0x1;console[germey_0x30e4('0x0')](germey_0x30e4('0x1'),hello);
+<pre tabindex="0"><code>var germey_0x3dea=[&#39;log&#39;,&#39;hello&#39;];(function(_0x348ff3,_0x5330e8){var _0x1568b1=function(_0x4740d8){while(--_0x4740d8){_0x348ff3[&#39;push&#39;](_0x348ff3[&#39;shift&#39;]());}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;);}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;);}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;);}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;);}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;);}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;);}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;);}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;);}};_0x1568b1(++_0x5330e8);}(germey_0x3dea,0x94));var germey_0x30e4=function(_0x2e8f7c,_0x1066a8){_0x2e8f7c=_0x2e8f7c-0x0;var _0x5166ba=germey_0x3dea[_0x2e8f7c];return _0x5166ba;};let hello=&#39;1&#39;+0x1;console[germey_0x30e4(&#39;0x0&#39;)](germey_0x30e4(&#39;0x1&#39;),hello);
 </code></pre><p>可以看到混淆后的变量前缀加上了我们自定义的字符串 germey。</p>
 <p>另外 renameGlobals 这个参数还可以指定是否混淆全局变量和函数名称，默认为 false。示例如下：</p>
 <pre tabindex="0"><code>const code = `
@@ -510,10 +510,10 @@ const options = {
   renameGlobals: true
 }
 </code></pre><p>运行结果如下：</p>
-<pre tabindex="0"><code>var _0x4864b0=function(_0x5763be){return document['getElementById'](_0x5763be);};
+<pre tabindex="0"><code>var _0x4864b0=function(_0x5763be){return document[&#39;getElementById&#39;](_0x5763be);};
 </code></pre><p>可以看到这里我们声明了一个全局变量 $，在 renameGlobals 设置为 true 之后，$ 这个变量也被替换了。如果后文用到了这个 $ 对象，可能就会有找不到定义的错误，因此这个参数可能导致代码执行不通。</p>
 <p>如果我们不设置 renameGlobals 或者设置为 false，结果如下：</p>
-<pre tabindex="0"><code>var _0x239a=['getElementById'];(function(_0x3f45a3,_0x583dfa){var _0x2cade2=function(_0x28479a){while(--_0x28479a){_0x3f45a3['push'](_0x3f45a3['shift']());}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758('0x0');}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758('0x0');}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758('0x0');}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758('0x0');}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758('0x0')](_0x3d8723);};
+<pre tabindex="0"><code>var _0x239a=[&#39;getElementById&#39;];(function(_0x3f45a3,_0x583dfa){var _0x2cade2=function(_0x28479a){while(--_0x28479a){_0x3f45a3[&#39;push&#39;](_0x3f45a3[&#39;shift&#39;]());}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758(&#39;0x0&#39;);}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758(&#39;0x0&#39;);}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758(&#39;0x0&#39;);}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758(&#39;0x0&#39;);}};_0x2cade2(++_0x583dfa);}(_0x239a,0xe1));var _0x3758=function(_0x18659d,_0x50c21d){_0x18659d=_0x18659d-0x0;var _0x531b8d=_0x239a[_0x18659d];return _0x531b8d;};var $=function(_0x3d8723){return document[_0x3758(&#39;0x0&#39;)](_0x3d8723);};
 </code></pre><p>可以看到，最后还是有 $ 的声明，其全局名称没有被改变。</p>
 <h3 id="字符串混淆">字符串混淆</h3>
 <p>字符串混淆，即将一个字符串声明放到一个数组里面，使之无法被直接搜索到。我们可以通过控制 stringArray 参数来控制，默认为 true。</p>
@@ -522,34 +522,34 @@ const options = {
 还可以通过 stringArrayThreshold 来控制启用编码的概率，范围 0 到 1，默认 0.8。</p>
 <p>示例如下：</p>
 <pre tabindex="0"><code>const code = `
-var a = 'hello world'
+var a = &#39;hello world&#39;
 `
 const options = {
   stringArray: true,
   rotateStringArray: true,
-  stringArrayEncoding: true, // 'base64' or 'rc4' or false
+  stringArrayEncoding: true, // &#39;base64&#39; or &#39;rc4&#39; or false
   stringArrayThreshold: 1,
 }
 </code></pre><p>运行结果如下：</p>
-<pre tabindex="0"><code>var _0x4215=['aGVsbG8gd29ybGQ='];(function(_0x42bf17,_0x4c348f){var _0x328832=function(_0x355be1){while(--_0x355be1){_0x42bf17['push'](_0x42bf17['shift']());}};_0x328832(++_0x4c348f);}(_0x4215,0x1da));var _0x5191=function(_0x3cf2ba,_0x1917d8){_0x3cf2ba=_0x3cf2ba-0x0;var _0x1f93f0=_0x4215[_0x3cf2ba];if(_0x5191['LqbVDH']===undefined){(function(){var _0x5096b2;try{var _0x282db1=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');}};_0x328832(++_0x4c348f);}(_0x4215,0x1da));var _0x5191=function(_0x3cf2ba,_0x1917d8){_0x3cf2ba=_0x3cf2ba-0x0;var _0x1f93f0=_0x4215[_0x3cf2ba];if(_0x5191['LqbVDH']===undefined){(function(){var _0x5096b2;try{var _0x282db1=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');}};_0x328832(++_0x4c348f);}(_0x4215,0x1da));var _0x5191=function(_0x3cf2ba,_0x1917d8){_0x3cf2ba=_0x3cf2ba-0x0;var _0x1f93f0=_0x4215[_0x3cf2ba];if(_0x5191['LqbVDH']===undefined){(function(){var _0x5096b2;try{var _0x282db1=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');}};_0x328832(++_0x4c348f);}(_0x4215,0x1da));var _0x5191=function(_0x3cf2ba,_0x1917d8){_0x3cf2ba=_0x3cf2ba-0x0;var _0x1f93f0=_0x4215[_0x3cf2ba];if(_0x5191['LqbVDH']===undefined){(function(){var _0x5096b2;try{var _0x282db1=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x5096b2=_0x282db1();}catch(_0x2acb9c){_0x5096b2=window;}var _0x388c14='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x5096b2['atob']||(_0x5096b2['atob']=function(_0x4cc27c){var _0x2af4ae=String(_0x4cc27c)['replace'](/=+$/,'');for(var _0x21400b=0x0,_0x3f4e2e,_0x5b193b,_0x233381=0x0,_0x3dccf7='';_0x5b193b=_0x2af4ae['charAt'](_0x233381++);~_0x5b193b&amp;&amp;(_0x3f4e2e=_0x21400b%0x4?_0x3f4e2e*0x40+_0x5b193b:_0x5b193b,_0x21400b++%0x4)?_0x3dccf7+=String['fromCharCode'](0xff&amp;_0x3f4e2e&gt;&gt;(-0x2*_0x21400b&amp;0x6)):0x0){_0x5b193b=_0x388c14['indexOf'](_0x5b193b);}return _0x3dccf7;});}());_0x5191['DuIurT']=function(_0x51888e){var _0x29801f=atob(_0x51888e);var _0x561e62=[];for(var _0x5dd788=0x0,_0x1a8b73=_0x29801f['length'];_0x5dd788&lt;_0x1a8b73;_0x5dd788++){_0x561e62+='%'+('00'+_0x29801f['charCodeAt'](_0x5dd788)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x561e62);};_0x5191['mgoBRd']={};_0x5191['LqbVDH']=!![];}var _0x1741f0=_0x5191['mgoBRd'][_0x3cf2ba];if(_0x1741f0===undefined){_0x1f93f0=_0x5191['DuIurT'](_0x1f93f0);_0x5191['mgoBRd'][_0x3cf2ba]=_0x1f93f0;}else{_0x1f93f0=_0x1741f0;}return _0x1f93f0;};var a=_0x5191('0x0');
+<pre tabindex="0"><code>var _0x4215=[&#39;aGVsbG8gd29ybGQ=&#39;];(function(_0x42bf17,_0x4c348f){var _0x328832=function(_0x355be1){while(--_0x355be1){_0x42bf17[&#39;push&#39;](_0x42bf17[&#39;shift&#39;]());}};_0x328832(++_0x4c348f);}(_0x4215,0x1da));var _0x5191=function(_0x3cf2ba,_0x1917d8){_0x3cf2ba=_0x3cf2ba-0x0;var _0x1f93f0=_0x4215[_0x3cf2ba];if(_0x5191[&#39;LqbVDH&#39;]===undefined){(function(){var _0x5096b2;try{var _0x282db1=Function(&#39;return\x20(function()\x20&#39;+&#39;{}.constructor(\x22return\x20this\x22)(\x20)&#39;+&#39;);}};_0x328832(++_0x4c348f);}(_0x4215,0x1da));var _0x5191=function(_0x3cf2ba,_0x1917d8){_0x3cf2ba=_0x3cf2ba-0x0;var _0x1f93f0=_0x4215[_0x3cf2ba];if(_0x5191[&#39;LqbVDH&#39;]===undefined){(function(){var _0x5096b2;try{var _0x282db1=Function(&#39;return\x20(function()\x20&#39;+&#39;{}.constructor(\x22return\x20this\x22)(\x20)&#39;+&#39;);}};_0x328832(++_0x4c348f);}(_0x4215,0x1da));var _0x5191=function(_0x3cf2ba,_0x1917d8){_0x3cf2ba=_0x3cf2ba-0x0;var _0x1f93f0=_0x4215[_0x3cf2ba];if(_0x5191[&#39;LqbVDH&#39;]===undefined){(function(){var _0x5096b2;try{var _0x282db1=Function(&#39;return\x20(function()\x20&#39;+&#39;{}.constructor(\x22return\x20this\x22)(\x20)&#39;+&#39;);}};_0x328832(++_0x4c348f);}(_0x4215,0x1da));var _0x5191=function(_0x3cf2ba,_0x1917d8){_0x3cf2ba=_0x3cf2ba-0x0;var _0x1f93f0=_0x4215[_0x3cf2ba];if(_0x5191[&#39;LqbVDH&#39;]===undefined){(function(){var _0x5096b2;try{var _0x282db1=Function(&#39;return\x20(function()\x20&#39;+&#39;{}.constructor(\x22return\x20this\x22)(\x20)&#39;+&#39;);&#39;);_0x5096b2=_0x282db1();}catch(_0x2acb9c){_0x5096b2=window;}var _0x388c14=&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&#39;;_0x5096b2[&#39;atob&#39;]||(_0x5096b2[&#39;atob&#39;]=function(_0x4cc27c){var _0x2af4ae=String(_0x4cc27c)[&#39;replace&#39;](/=+$/,&#39;&#39;);for(var _0x21400b=0x0,_0x3f4e2e,_0x5b193b,_0x233381=0x0,_0x3dccf7=&#39;&#39;;_0x5b193b=_0x2af4ae[&#39;charAt&#39;](_0x233381++);~_0x5b193b&amp;&amp;(_0x3f4e2e=_0x21400b%0x4?_0x3f4e2e*0x40+_0x5b193b:_0x5b193b,_0x21400b++%0x4)?_0x3dccf7+=String[&#39;fromCharCode&#39;](0xff&amp;_0x3f4e2e&gt;&gt;(-0x2*_0x21400b&amp;0x6)):0x0){_0x5b193b=_0x388c14[&#39;indexOf&#39;](_0x5b193b);}return _0x3dccf7;});}());_0x5191[&#39;DuIurT&#39;]=function(_0x51888e){var _0x29801f=atob(_0x51888e);var _0x561e62=[];for(var _0x5dd788=0x0,_0x1a8b73=_0x29801f[&#39;length&#39;];_0x5dd788&lt;_0x1a8b73;_0x5dd788++){_0x561e62+=&#39;%&#39;+(&#39;00&#39;+_0x29801f[&#39;charCodeAt&#39;](_0x5dd788)[&#39;toString&#39;](0x10))[&#39;slice&#39;](-0x2);}return decodeURIComponent(_0x561e62);};_0x5191[&#39;mgoBRd&#39;]={};_0x5191[&#39;LqbVDH&#39;]=!![];}var _0x1741f0=_0x5191[&#39;mgoBRd&#39;][_0x3cf2ba];if(_0x1741f0===undefined){_0x1f93f0=_0x5191[&#39;DuIurT&#39;](_0x1f93f0);_0x5191[&#39;mgoBRd&#39;][_0x3cf2ba]=_0x1f93f0;}else{_0x1f93f0=_0x1741f0;}return _0x1f93f0;};var a=_0x5191(&#39;0x0&#39;);
 </code></pre><p>可以看到这里就把字符串进行了 Base64 编码，我们再也无法通过查找的方式找到字符串的位置了。</p>
 <p>如果将 stringArray 设置为 false 的话，输出就是这样：</p>
-<pre tabindex="0"><code>var a='hello\x20world';
+<pre tabindex="0"><code>var a=&#39;hello\x20world&#39;;
 </code></pre><p>字符串就仍然是明文显示的，没有被编码。</p>
 <p>另外我们还可以使用 unicodeEscapeSequence 这个参数对字符串进行 Unicode 转码，使之更加难以辨认，示例如下：</p>
 <pre tabindex="0"><code>const code = `
-var a = 'hello world'
+var a = &#39;hello world&#39;
 `
 const options = {
   compact: false,
   unicodeEscapeSequence: true
 }
 </code></pre><p>运行结果如下：</p>
-<pre tabindex="0"><code>var _0x5c0d = ['\x68\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64'];
+<pre tabindex="0"><code>var _0x5c0d = [&#39;\x68\x65\x6c\x6c\x6f\x20\x77\x6f\x72\x6c\x64&#39;];
 (function (_0x54cc9c, _0x57a3b2) {
   var _0xf833cf = function (_0x3cd8c6) {
     while (--_0x3cd8c6) {
-      _0x54cc9c['push'](_0x54cc9c['shift']());
+      _0x54cc9c[&#39;push&#39;](_0x54cc9c[&#39;shift&#39;]());
     }
 };
 _0xf833cf(++_0x57a3b2);
@@ -559,57 +559,57 @@ var _0x28e8 = function (_0x3fd645, _0x2cf5e7) {
   var _0x298a20 = _0x5c0d[_0x3fd645];
   return _0x298a20;
 };
-var a = _0x28e8('0x0');
+var a = _0x28e8(&#39;0x0&#39;);
 </code></pre><p>可以看到，这里字符串被数字化和 Unicode 化，非常难以辨认。</p>
 <p>在很多 JavaScript 逆向的过程中，一些关键的字符串可能会作为切入点来查找加密入口。用了这种混淆之后，如果有人想通过全局搜索的方式搜索 hello 这样的字符串找加密入口，也没法搜到了。</p>
 <h3 id="代码自我保护">代码自我保护</h3>
 <p>我们可以通过设置 selfDefending 参数来开启代码自我保护功能。开启之后，混淆后的 JavaScript 会强制以一行形式显示，如果我们将混淆后的代码进行格式化（美化）或者重命名，该段代码将无法执行。</p>
 <p>例如：</p>
 <pre tabindex="0"><code>const code = `
-console.log('hello world')
+console.log(&#39;hello world&#39;)
 `
 const options = {
   selfDefending: true
 }
 </code></pre><p>运行结果如下：</p>
-<pre tabindex="0"><code>var _0x26da=['log','hello\x20world'];(function(_0x190327,_0x57c2c0){var _0x577762=function(_0xc9dabb){while(--_0xc9dabb){_0x190327['push'](_0x190327['shift']());}};var _0x35976e=function(){var _0x16b3fe={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+'='+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5['length'];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=';\x20'+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5['push'](_0x4aa006);_0x19ae36=_0x2d52d5['length'];if(_0x4aa006!==!![]){_0x5b6dc3+='='+_0x4aa006;}}_0x56056f['cookie']=_0x5b6dc3;},'removeCookie':function(){return'dev';},'getCookie':function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp('(?:^|;\x20)'+_0x51923d['replace'](/([.$?*|{}()[]\/+^])/g,'$1');}};var _0x35976e=function(){var _0x16b3fe={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+'='+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5['length'];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=';\x20'+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5['push'](_0x4aa006);_0x19ae36=_0x2d52d5['length'];if(_0x4aa006!==!![]){_0x5b6dc3+='='+_0x4aa006;}}_0x56056f['cookie']=_0x5b6dc3;},'removeCookie':function(){return'dev';},'getCookie':function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp('(?:^|;\x20)'+_0x51923d['replace'](/([.$?*|{}()[]\/+^])/g,'$1');}};var _0x35976e=function(){var _0x16b3fe={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+'='+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5['length'];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=';\x20'+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5['push'](_0x4aa006);_0x19ae36=_0x2d52d5['length'];if(_0x4aa006!==!![]){_0x5b6dc3+='='+_0x4aa006;}}_0x56056f['cookie']=_0x5b6dc3;},'removeCookie':function(){return'dev';},'getCookie':function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp('(?:^|;\x20)'+_0x51923d['replace'](/([.$?*|{}()[]\/+^])/g,'$1');}};var _0x35976e=function(){var _0x16b3fe={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+'='+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5['length'];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=';\x20'+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5['push'](_0x4aa006);_0x19ae36=_0x2d52d5['length'];if(_0x4aa006!==!![]){_0x5b6dc3+='='+_0x4aa006;}}_0x56056f['cookie']=_0x5b6dc3;},'removeCookie':function(){return'dev';},'getCookie':function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp('(?:^|;\x20)'+_0x51923d['replace'](/([.$?*|{}()[]\/+^])/g,'$1');}};var _0x35976e=function(){var _0x16b3fe={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+'='+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5['length'];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=';\x20'+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5['push'](_0x4aa006);_0x19ae36=_0x2d52d5['length'];if(_0x4aa006!==!![]){_0x5b6dc3+='='+_0x4aa006;}}_0x56056f['cookie']=_0x5b6dc3;},'removeCookie':function(){return'dev';},'getCookie':function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp('(?:^|;\x20)'+_0x51923d['replace'](/([.$?*|{}()[]\/+^])/g,'$1');}};var _0x35976e=function(){var _0x16b3fe={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+'='+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5['length'];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=';\x20'+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5['push'](_0x4aa006);_0x19ae36=_0x2d52d5['length'];if(_0x4aa006!==!![]){_0x5b6dc3+='='+_0x4aa006;}}_0x56056f['cookie']=_0x5b6dc3;},'removeCookie':function(){return'dev';},'getCookie':function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp('(?:^|;\x20)'+_0x51923d['replace'](/([.$?*|{}()[]\/+^])/g,'$1');}};var _0x35976e=function(){var _0x16b3fe={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+'='+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5['length'];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=';\x20'+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5['push'](_0x4aa006);_0x19ae36=_0x2d52d5['length'];if(_0x4aa006!==!![]){_0x5b6dc3+='='+_0x4aa006;}}_0x56056f['cookie']=_0x5b6dc3;},'removeCookie':function(){return'dev';},'getCookie':function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp('(?:^|;\x20)'+_0x51923d['replace'](/([.$?*|{}()[]\/+^])/g,'$1')+'=([^;]*)'));var _0x817646=function(_0xf3fae7,_0x5d8208){_0xf3fae7(++_0x5d8208);};_0x817646(_0x577762,_0x57c2c0);return _0x557e06?decodeURIComponent(_0x557e06[0x1]):undefined;}};var _0x4673cd=function(){var _0x4c6c5c=new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');return _0x4c6c5c['test'](_0x16b3fe['removeCookie']['toString']());};_0x16b3fe['updateCookie']=_0x4673cd;var _0x5baa80='';var _0x1faf19=_0x16b3fe['updateCookie']();if(!_0x1faf19){_0x16b3fe['setCookie'](['*'],'counter',0x1);}else if(_0x1faf19){_0x5baa80=_0x16b3fe['getCookie'](null,'counter');}else{_0x16b3fe['removeCookie']();}};_0x35976e();}(_0x26da,0x140));var _0x4391=function(_0x1b42d8,_0x57edc8){_0x1b42d8=_0x1b42d8-0x0;var _0x2fbeca=_0x26da[_0x1b42d8];return _0x2fbeca;};var _0x197926=function(){var _0x10598f=!![];return function(_0xffa3b3,_0x7a40f9){var _0x48e571=_0x10598f?function(){if(_0x7a40f9){var _0x2194b5=_0x7a40f9['apply'](_0xffa3b3,arguments);_0x7a40f9=null;return _0x2194b5;}}:function(){};_0x10598f=![];return _0x48e571;};}();var _0x2c6fd7=_0x197926(this,function(){var _0x4828bb=function(){return'\x64\x65\x76';},_0x35c3bc=function(){return'\x77\x69\x6e\x64\x6f\x77';};var _0x456070=function(){var _0x4576a4=new RegExp('\x5c\x77\x2b\x20\x2a\x5c\x28\x5c\x29\x20\x2a\x7b\x5c\x77\x2b\x20\x2a\x5b\x27\x7c\x22\x5d\x2e\x2b\x5b\x27\x7c\x22\x5d\x3b\x3f\x20\x2a\x7d');return!_0x4576a4['\x74\x65\x73\x74'](_0x4828bb['\x74\x6f\x53\x74\x72\x69\x6e\x67']());};var _0x3fde69=function(){var _0xabb6f4=new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');};var _0x3fde69=function(){var _0xabb6f4=new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');};var _0x3fde69=function(){var _0xabb6f4=new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');};var _0x3fde69=function(){var _0xabb6f4=new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');};var _0x3fde69=function(){var _0xabb6f4=new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');};var _0x3fde69=function(){var _0xabb6f4=new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');};var _0x3fde69=function(){var _0xabb6f4=new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');return _0xabb6f4['\x74\x65\x73\x74'](_0x35c3bc['\x74\x6f\x53\x74\x72\x69\x6e\x67']());};var _0x2d9a50=function(_0x58fdb4){var _0x2a6361=~-0x1&gt;&gt;0x1+0xff%0x0;if(_0x58fdb4['\x69\x6e\x64\x65\x78\x4f\x66']('\x69'===_0x2a6361)){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![]+'')){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![]+'')){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![]+'')){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![]+'')){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![]+'')){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![]+'')){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![]+'')[0x3])!==_0x6bb49f){_0x2d9a50(_0x2073d6);}};if(!_0x456070()){if(!_0x3fde69()){_0x2d9a50('\x69\x6e\x64\u0435\x78\x4f\x66');}else{_0x2d9a50('\x69\x6e\x64\x65\x78\x4f\x66');}}else{_0x2d9a50('\x69\x6e\x64\u0435\x78\x4f\x66');}});_0x2c6fd7();console[_0x4391('0x0')](_0x4391('0x1'));
+<pre tabindex="0"><code>var _0x26da=[&#39;log&#39;,&#39;hello\x20world&#39;];(function(_0x190327,_0x57c2c0){var _0x577762=function(_0xc9dabb){while(--_0xc9dabb){_0x190327[&#39;push&#39;](_0x190327[&#39;shift&#39;]());}};var _0x35976e=function(){var _0x16b3fe={&#39;data&#39;:{&#39;key&#39;:&#39;cookie&#39;,&#39;value&#39;:&#39;timeout&#39;},&#39;setCookie&#39;:function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+&#39;=&#39;+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5[&#39;length&#39;];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=&#39;;\x20&#39;+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5[&#39;push&#39;](_0x4aa006);_0x19ae36=_0x2d52d5[&#39;length&#39;];if(_0x4aa006!==!![]){_0x5b6dc3+=&#39;=&#39;+_0x4aa006;}}_0x56056f[&#39;cookie&#39;]=_0x5b6dc3;},&#39;removeCookie&#39;:function(){return&#39;dev&#39;;},&#39;getCookie&#39;:function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp(&#39;(?:^|;\x20)&#39;+_0x51923d[&#39;replace&#39;](/([.$?*|{}()[]\/+^])/g,&#39;$1&#39;);}};var _0x35976e=function(){var _0x16b3fe={&#39;data&#39;:{&#39;key&#39;:&#39;cookie&#39;,&#39;value&#39;:&#39;timeout&#39;},&#39;setCookie&#39;:function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+&#39;=&#39;+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5[&#39;length&#39;];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=&#39;;\x20&#39;+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5[&#39;push&#39;](_0x4aa006);_0x19ae36=_0x2d52d5[&#39;length&#39;];if(_0x4aa006!==!![]){_0x5b6dc3+=&#39;=&#39;+_0x4aa006;}}_0x56056f[&#39;cookie&#39;]=_0x5b6dc3;},&#39;removeCookie&#39;:function(){return&#39;dev&#39;;},&#39;getCookie&#39;:function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp(&#39;(?:^|;\x20)&#39;+_0x51923d[&#39;replace&#39;](/([.$?*|{}()[]\/+^])/g,&#39;$1&#39;);}};var _0x35976e=function(){var _0x16b3fe={&#39;data&#39;:{&#39;key&#39;:&#39;cookie&#39;,&#39;value&#39;:&#39;timeout&#39;},&#39;setCookie&#39;:function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+&#39;=&#39;+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5[&#39;length&#39;];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=&#39;;\x20&#39;+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5[&#39;push&#39;](_0x4aa006);_0x19ae36=_0x2d52d5[&#39;length&#39;];if(_0x4aa006!==!![]){_0x5b6dc3+=&#39;=&#39;+_0x4aa006;}}_0x56056f[&#39;cookie&#39;]=_0x5b6dc3;},&#39;removeCookie&#39;:function(){return&#39;dev&#39;;},&#39;getCookie&#39;:function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp(&#39;(?:^|;\x20)&#39;+_0x51923d[&#39;replace&#39;](/([.$?*|{}()[]\/+^])/g,&#39;$1&#39;);}};var _0x35976e=function(){var _0x16b3fe={&#39;data&#39;:{&#39;key&#39;:&#39;cookie&#39;,&#39;value&#39;:&#39;timeout&#39;},&#39;setCookie&#39;:function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+&#39;=&#39;+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5[&#39;length&#39;];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=&#39;;\x20&#39;+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5[&#39;push&#39;](_0x4aa006);_0x19ae36=_0x2d52d5[&#39;length&#39;];if(_0x4aa006!==!![]){_0x5b6dc3+=&#39;=&#39;+_0x4aa006;}}_0x56056f[&#39;cookie&#39;]=_0x5b6dc3;},&#39;removeCookie&#39;:function(){return&#39;dev&#39;;},&#39;getCookie&#39;:function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp(&#39;(?:^|;\x20)&#39;+_0x51923d[&#39;replace&#39;](/([.$?*|{}()[]\/+^])/g,&#39;$1&#39;);}};var _0x35976e=function(){var _0x16b3fe={&#39;data&#39;:{&#39;key&#39;:&#39;cookie&#39;,&#39;value&#39;:&#39;timeout&#39;},&#39;setCookie&#39;:function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+&#39;=&#39;+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5[&#39;length&#39;];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=&#39;;\x20&#39;+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5[&#39;push&#39;](_0x4aa006);_0x19ae36=_0x2d52d5[&#39;length&#39;];if(_0x4aa006!==!![]){_0x5b6dc3+=&#39;=&#39;+_0x4aa006;}}_0x56056f[&#39;cookie&#39;]=_0x5b6dc3;},&#39;removeCookie&#39;:function(){return&#39;dev&#39;;},&#39;getCookie&#39;:function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp(&#39;(?:^|;\x20)&#39;+_0x51923d[&#39;replace&#39;](/([.$?*|{}()[]\/+^])/g,&#39;$1&#39;);}};var _0x35976e=function(){var _0x16b3fe={&#39;data&#39;:{&#39;key&#39;:&#39;cookie&#39;,&#39;value&#39;:&#39;timeout&#39;},&#39;setCookie&#39;:function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+&#39;=&#39;+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5[&#39;length&#39;];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=&#39;;\x20&#39;+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5[&#39;push&#39;](_0x4aa006);_0x19ae36=_0x2d52d5[&#39;length&#39;];if(_0x4aa006!==!![]){_0x5b6dc3+=&#39;=&#39;+_0x4aa006;}}_0x56056f[&#39;cookie&#39;]=_0x5b6dc3;},&#39;removeCookie&#39;:function(){return&#39;dev&#39;;},&#39;getCookie&#39;:function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp(&#39;(?:^|;\x20)&#39;+_0x51923d[&#39;replace&#39;](/([.$?*|{}()[]\/+^])/g,&#39;$1&#39;);}};var _0x35976e=function(){var _0x16b3fe={&#39;data&#39;:{&#39;key&#39;:&#39;cookie&#39;,&#39;value&#39;:&#39;timeout&#39;},&#39;setCookie&#39;:function(_0x2d52d5,_0x16feda,_0x57cadf,_0x56056f){_0x56056f=_0x56056f||{};var _0x5b6dc3=_0x16feda+&#39;=&#39;+_0x57cadf;var _0x333ced=0x0;for(var _0x333ced=0x0,_0x19ae36=_0x2d52d5[&#39;length&#39;];_0x333ced&lt;_0x19ae36;_0x333ced++){var _0x409587=_0x2d52d5[_0x333ced];_0x5b6dc3+=&#39;;\x20&#39;+_0x409587;var _0x4aa006=_0x2d52d5[_0x409587];_0x2d52d5[&#39;push&#39;](_0x4aa006);_0x19ae36=_0x2d52d5[&#39;length&#39;];if(_0x4aa006!==!![]){_0x5b6dc3+=&#39;=&#39;+_0x4aa006;}}_0x56056f[&#39;cookie&#39;]=_0x5b6dc3;},&#39;removeCookie&#39;:function(){return&#39;dev&#39;;},&#39;getCookie&#39;:function(_0x30c497,_0x51923d){_0x30c497=_0x30c497||function(_0x4b7e18){return _0x4b7e18;};var _0x557e06=_0x30c497(new RegExp(&#39;(?:^|;\x20)&#39;+_0x51923d[&#39;replace&#39;](/([.$?*|{}()[]\/+^])/g,&#39;$1&#39;)+&#39;=([^;]*)&#39;));var _0x817646=function(_0xf3fae7,_0x5d8208){_0xf3fae7(++_0x5d8208);};_0x817646(_0x577762,_0x57c2c0);return _0x557e06?decodeURIComponent(_0x557e06[0x1]):undefined;}};var _0x4673cd=function(){var _0x4c6c5c=new RegExp(&#39;\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}&#39;);return _0x4c6c5c[&#39;test&#39;](_0x16b3fe[&#39;removeCookie&#39;][&#39;toString&#39;]());};_0x16b3fe[&#39;updateCookie&#39;]=_0x4673cd;var _0x5baa80=&#39;&#39;;var _0x1faf19=_0x16b3fe[&#39;updateCookie&#39;]();if(!_0x1faf19){_0x16b3fe[&#39;setCookie&#39;]([&#39;*&#39;],&#39;counter&#39;,0x1);}else if(_0x1faf19){_0x5baa80=_0x16b3fe[&#39;getCookie&#39;](null,&#39;counter&#39;);}else{_0x16b3fe[&#39;removeCookie&#39;]();}};_0x35976e();}(_0x26da,0x140));var _0x4391=function(_0x1b42d8,_0x57edc8){_0x1b42d8=_0x1b42d8-0x0;var _0x2fbeca=_0x26da[_0x1b42d8];return _0x2fbeca;};var _0x197926=function(){var _0x10598f=!![];return function(_0xffa3b3,_0x7a40f9){var _0x48e571=_0x10598f?function(){if(_0x7a40f9){var _0x2194b5=_0x7a40f9[&#39;apply&#39;](_0xffa3b3,arguments);_0x7a40f9=null;return _0x2194b5;}}:function(){};_0x10598f=![];return _0x48e571;};}();var _0x2c6fd7=_0x197926(this,function(){var _0x4828bb=function(){return&#39;\x64\x65\x76&#39;;},_0x35c3bc=function(){return&#39;\x77\x69\x6e\x64\x6f\x77&#39;;};var _0x456070=function(){var _0x4576a4=new RegExp(&#39;\x5c\x77\x2b\x20\x2a\x5c\x28\x5c\x29\x20\x2a\x7b\x5c\x77\x2b\x20\x2a\x5b\x27\x7c\x22\x5d\x2e\x2b\x5b\x27\x7c\x22\x5d\x3b\x3f\x20\x2a\x7d&#39;);return!_0x4576a4[&#39;\x74\x65\x73\x74&#39;](_0x4828bb[&#39;\x74\x6f\x53\x74\x72\x69\x6e\x67&#39;]());};var _0x3fde69=function(){var _0xabb6f4=new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);};var _0x3fde69=function(){var _0xabb6f4=new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);};var _0x3fde69=function(){var _0xabb6f4=new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);};var _0x3fde69=function(){var _0xabb6f4=new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);};var _0x3fde69=function(){var _0xabb6f4=new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);};var _0x3fde69=function(){var _0xabb6f4=new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);};var _0x3fde69=function(){var _0xabb6f4=new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);return _0xabb6f4[&#39;\x74\x65\x73\x74&#39;](_0x35c3bc[&#39;\x74\x6f\x53\x74\x72\x69\x6e\x67&#39;]());};var _0x2d9a50=function(_0x58fdb4){var _0x2a6361=~-0x1&gt;&gt;0x1+0xff%0x0;if(_0x58fdb4[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;](&#39;\x69&#39;===_0x2a6361)){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![]+&#39;&#39;)){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![]+&#39;&#39;)){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![]+&#39;&#39;)){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![]+&#39;&#39;)){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![]+&#39;&#39;)){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![]+&#39;&#39;)){_0xc388c5(_0x58fdb4);}};var _0xc388c5=function(_0x2073d6){var _0x6bb49f=~-0x4&gt;&gt;0x1+0xff%0x0;if(_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![]+&#39;&#39;)[0x3])!==_0x6bb49f){_0x2d9a50(_0x2073d6);}};if(!_0x456070()){if(!_0x3fde69()){_0x2d9a50(&#39;\x69\x6e\x64\u0435\x78\x4f\x66&#39;);}else{_0x2d9a50(&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;);}}else{_0x2d9a50(&#39;\x69\x6e\x64\u0435\x78\x4f\x66&#39;);}});_0x2c6fd7();console[_0x4391(&#39;0x0&#39;)](_0x4391(&#39;0x1&#39;));
 </code></pre><p>如果我们将上述代码放到控制台，它的执行结果和之前是一模一样的，没有任何问题。
 如果我们将其进行格式化，会变成如下内容：</p>
-<pre tabindex="0"><code>var _0x26da = ['log', 'hello\x20world'];
+<pre tabindex="0"><code>var _0x26da = [&#39;log&#39;, &#39;hello\x20world&#39;];
 (function (_0x190327, _0x57c2c0) {
     var _0x577762 = function (_0xc9dabb) {
         while (--_0xc9dabb) {
-            _0x190327['push'](_0x190327['shift']());
+            _0x190327[&#39;push&#39;](_0x190327[&#39;shift&#39;]());
         }
     };
     var _0x35976e = function () {
         var _0x16b3fe = {
-            'data': {
-                'key': 'cookie',
-                'value': 'timeout'
+            &#39;data&#39;: {
+                &#39;key&#39;: &#39;cookie&#39;,
+                &#39;value&#39;: &#39;timeout&#39;
             },
-            'setCookie': function (_0x2d52d5, _0x16feda, _0x57cadf, _0x56056f) {
+            &#39;setCookie&#39;: function (_0x2d52d5, _0x16feda, _0x57cadf, _0x56056f) {
                 _0x56056f = _0x56056f || {};
-                var _0x5b6dc3 = _0x16feda + '=' + _0x57cadf;
+                var _0x5b6dc3 = _0x16feda + &#39;=&#39; + _0x57cadf;
                 var _0x333ced = 0x0;
-                for (var _0x333ced = 0x0, _0x19ae36 = _0x2d52d5['length']; _0x333ced &lt; _0x19ae36; _0x333ced++) {
+                for (var _0x333ced = 0x0, _0x19ae36 = _0x2d52d5[&#39;length&#39;]; _0x333ced &lt; _0x19ae36; _0x333ced++) {
                     var _0x409587 = _0x2d52d5[_0x333ced];
-                    _0x5b6dc3 += ';\x20' + _0x409587;
+                    _0x5b6dc3 += &#39;;\x20&#39; + _0x409587;
                     var _0x4aa006 = _0x2d52d5[_0x409587];
-                    _0x2d52d5['push'](_0x4aa006);
-                    _0x19ae36 = _0x2d52d5['length'];
+                    _0x2d52d5[&#39;push&#39;](_0x4aa006);
+                    _0x19ae36 = _0x2d52d5[&#39;length&#39;];
                     if (_0x4aa006 !== !![]) {
-                        _0x5b6dc3 += '=' + _0x4aa006;
+                        _0x5b6dc3 += &#39;=&#39; + _0x4aa006;
                     }
                 }
-                _0x56056f['cookie'] = _0x5b6dc3;
-            }, 'removeCookie': function () {
-                return 'dev';
-            }, 'getCookie': function (_0x30c497, _0x51923d) {
+                _0x56056f[&#39;cookie&#39;] = _0x5b6dc3;
+            }, &#39;removeCookie&#39;: function () {
+                return &#39;dev&#39;;
+            }, &#39;getCookie&#39;: function (_0x30c497, _0x51923d) {
                 _0x30c497 = _0x30c497 || function (_0x4b7e18) {
                     return _0x4b7e18;
                 };
-                var _0x557e06 = _0x30c497(new RegExp('(?:^|;\x20)' + _0x51923d['replace'](/([.$?*|{}()[]\/+^])/g, '$1') + '=([^;]*)'));
+                var _0x557e06 = _0x30c497(new RegExp(&#39;(?:^|;\x20)&#39; + _0x51923d[&#39;replace&#39;](/([.$?*|{}()[]\/+^])/g, &#39;$1&#39;) + &#39;=([^;]*)&#39;));
                 var _0x817646 = function (_0xf3fae7, _0x5d8208) {
                     _0xf3fae7(++_0x5d8208);
                 };
@@ -618,18 +618,18 @@ const options = {
             }
         };
         var _0x4673cd = function () {
-            var _0x4c6c5c = new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');
-            return _0x4c6c5c['test'](_0x16b3fe['removeCookie']['toString']());
+            var _0x4c6c5c = new RegExp(&#39;\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}&#39;);
+            return _0x4c6c5c[&#39;test&#39;](_0x16b3fe[&#39;removeCookie&#39;][&#39;toString&#39;]());
         };
-        _0x16b3fe['updateCookie'] = _0x4673cd;
-        var _0x5baa80 = '';
-        var _0x1faf19 = _0x16b3fe['updateCookie']();
+        _0x16b3fe[&#39;updateCookie&#39;] = _0x4673cd;
+        var _0x5baa80 = &#39;&#39;;
+        var _0x1faf19 = _0x16b3fe[&#39;updateCookie&#39;]();
         if (!_0x1faf19) {
-            _0x16b3fe['setCookie'](['*'], 'counter', 0x1);
+            _0x16b3fe[&#39;setCookie&#39;]([&#39;*&#39;], &#39;counter&#39;, 0x1);
         } else if (_0x1faf19) {
-            _0x5baa80 = _0x16b3fe['getCookie'](null, 'counter');
+            _0x5baa80 = _0x16b3fe[&#39;getCookie&#39;](null, &#39;counter&#39;);
         } else {
-            _0x16b3fe['removeCookie']();
+            _0x16b3fe[&#39;removeCookie&#39;]();
         }
     };
     _0x35976e();
@@ -644,7 +644,7 @@ var _0x197926 = function () {
     return function (_0xffa3b3, _0x7a40f9) {
         var _0x48e571 = _0x10598f ? function () {
             if (_0x7a40f9) {
-                var _0x2194b5 = _0x7a40f9['apply'](_0xffa3b3, arguments);
+                var _0x2194b5 = _0x7a40f9[&#39;apply&#39;](_0xffa3b3, arguments);
                 _0x7a40f9 = null;
                 return _0x2194b5;
             }
@@ -655,88 +655,88 @@ var _0x197926 = function () {
 }();
 var _0x2c6fd7 = _0x197926(this, function () {
     var _0x4828bb = function () {
-            return '\x64\x65\x76';
+            return &#39;\x64\x65\x76&#39;;
         },
         _0x35c3bc = function () {
-            return '\x77\x69\x6e\x64\x6f\x77';
+            return &#39;\x77\x69\x6e\x64\x6f\x77&#39;;
         };
     var _0x456070 = function () {
-        var _0x4576a4 = new RegExp('\x5c\x77\x2b\x20\x2a\x5c\x28\x5c\x29\x20\x2a\x7b\x5c\x77\x2b\x20\x2a\x5b\x27\x7c\x22\x5d\x2e\x2b\x5b\x27\x7c\x22\x5d\x3b\x3f\x20\x2a\x7d');
-        return !_0x4576a4['\x74\x65\x73\x74'](_0x4828bb['\x74\x6f\x53\x74\x72\x69\x6e\x67']());
+        var _0x4576a4 = new RegExp(&#39;\x5c\x77\x2b\x20\x2a\x5c\x28\x5c\x29\x20\x2a\x7b\x5c\x77\x2b\x20\x2a\x5b\x27\x7c\x22\x5d\x2e\x2b\x5b\x27\x7c\x22\x5d\x3b\x3f\x20\x2a\x7d&#39;);
+        return !_0x4576a4[&#39;\x74\x65\x73\x74&#39;](_0x4828bb[&#39;\x74\x6f\x53\x74\x72\x69\x6e\x67&#39;]());
     };
     var _0x3fde69 = function () {
-        var _0xabb6f4 = new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');
+        var _0xabb6f4 = new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);
     };
     var _0x3fde69 = function () {
-        var _0xabb6f4 = new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');
+        var _0xabb6f4 = new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);
     };
     var _0x3fde69 = function () {
-        var _0xabb6f4 = new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');
+        var _0xabb6f4 = new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);
     };
     var _0x3fde69 = function () {
-        var _0xabb6f4 = new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');
+        var _0xabb6f4 = new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);
     };
     var _0x3fde69 = function () {
-        var _0xabb6f4 = new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');
+        var _0xabb6f4 = new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);
     };
     var _0x3fde69 = function () {
-        var _0xabb6f4 = new RegExp('\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b');
-        return _0xabb6f4['\x74\x65\x73\x74'](_0x35c3bc['\x74\x6f\x53\x74\x72\x69\x6e\x67']());
+        var _0xabb6f4 = new RegExp(&#39;\x28\x5c\x5c\x5b\x78\x7c\x75\x5d\x28\x5c\x77\x29\x7b\x32\x2c\x34\x7d\x29\x2b&#39;);
+        return _0xabb6f4[&#39;\x74\x65\x73\x74&#39;](_0x35c3bc[&#39;\x74\x6f\x53\x74\x72\x69\x6e\x67&#39;]());
     };
     var _0x2d9a50 = function (_0x58fdb4) {
         var _0x2a6361 = ~-0x1 &gt;&gt; 0x1 + 0xff % 0x0;
-        if (_0x58fdb4['\x69\x6e\x64\x65\x78\x4f\x66']('\x69' === _0x2a6361)) {
+        if (_0x58fdb4[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;](&#39;\x69&#39; === _0x2a6361)) {
             _0xc388c5(_0x58fdb4);
         }
     };
     var _0xc388c5 = function (_0x2073d6) {
         var _0x6bb49f = ~-0x4 &gt;&gt; 0x1 + 0xff % 0x0;
-        if (_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![] + '')) {
+        if (_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![] + &#39;&#39;)) {
             _0xc388c5(_0x58fdb4);
         }
     };
     var _0xc388c5 = function (_0x2073d6) {
         var _0x6bb49f = ~-0x4 &gt;&gt; 0x1 + 0xff % 0x0;
-        if (_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![] + '')) {
+        if (_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![] + &#39;&#39;)) {
             _0xc388c5(_0x58fdb4);
         }
     };
     var _0xc388c5 = function (_0x2073d6) {
         var _0x6bb49f = ~-0x4 &gt;&gt; 0x1 + 0xff % 0x0;
-        if (_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![] + '')) {
+        if (_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![] + &#39;&#39;)) {
             _0xc388c5(_0x58fdb4);
         }
     };
     var _0xc388c5 = function (_0x2073d6) {
         var _0x6bb49f = ~-0x4 &gt;&gt; 0x1 + 0xff % 0x0;
-        if (_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![] + '')) {
+        if (_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![] + &#39;&#39;)) {
             _0xc388c5(_0x58fdb4);
         }
     };
     var _0xc388c5 = function (_0x2073d6) {
         var _0x6bb49f = ~-0x4 &gt;&gt; 0x1 + 0xff % 0x0;
-        if (_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![] + '')) {
+        if (_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![] + &#39;&#39;)) {
             _0xc388c5(_0x58fdb4);
         }
     };
     var _0xc388c5 = function (_0x2073d6) {
         var _0x6bb49f = ~-0x4 &gt;&gt; 0x1 + 0xff % 0x0;
-        if (_0x2073d6['\x69\x6e\x64\x65\x78\x4f\x66']((!![] + '')[0x3]) !== _0x6bb49f) {
+        if (_0x2073d6[&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;]((!![] + &#39;&#39;)[0x3]) !== _0x6bb49f) {
             _0x2d9a50(_0x2073d6);
         }
     };
     if (!_0x456070()) {
         if (!_0x3fde69()) {
-            _0x2d9a50('\x69\x6e\x64\u0435\x78\x4f\x66');
+            _0x2d9a50(&#39;\x69\x6e\x64\u0435\x78\x4f\x66&#39;);
         } else {
-            _0x2d9a50('\x69\x6e\x64\x65\x78\x4f\x66');
+            _0x2d9a50(&#39;\x69\x6e\x64\x65\x78\x4f\x66&#39;);
         }
     } else {
-        _0x2d9a50('\x69\x6e\x64\u0435\x78\x4f\x66');
+        _0x2d9a50(&#39;\x69\x6e\x64\u0435\x78\x4f\x66&#39;);
     }
 });
 _0x2c6fd7();
-console[_0x4391('0x0')](_0x4391('0x1'));
+console[_0x4391(&#39;0x0&#39;)](_0x4391(&#39;0x1&#39;));
 </code></pre><p>如果把这段代码放到浏览器里面，浏览器会直接卡死无法运行。这样如果有人对代码进行了格式化，就无法正常对代码进行运行和调试，从而起到了保护作用。</p>
 <h3 id="控制流平坦化">控制流平坦化</h3>
 <p>控制流平坦化其实就是将代码的执行逻辑混淆，使其变得复杂难读。其基本思想是将一些逻辑处理块都统一加上一个前驱逻辑块，每个逻辑块都由前驱逻辑块进行条件判断和分发，构成一个个闭环逻辑，导致整个执行逻辑十分复杂难读。</p>
@@ -767,18 +767,18 @@ const options = {
 
 复制代码
 var _0xbaf1 = [
-    'dZwUe',
-    'log',
-    'fXqMu',
-    '0|1|3|4|6|5|2',
-    'chYMl',
-    'IZEsA',
-    'split'
+    &#39;dZwUe&#39;,
+    &#39;log&#39;,
+    &#39;fXqMu&#39;,
+    &#39;0|1|3|4|6|5|2&#39;,
+    &#39;chYMl&#39;,
+    &#39;IZEsA&#39;,
+    &#39;split&#39;
 ];
 (function (_0x22d342, _0x4f6332) {
     var _0x43ff59 = function (_0x5ad417) {
         while (--_0x5ad417) {
-            _0x22d342['push'](_0x22d342['shift']());
+            _0x22d342[&#39;push&#39;](_0x22d342[&#39;shift&#39;]());
         }
     };
     _0x43ff59(++_0x4f6332);
@@ -790,61 +790,60 @@ var _0x1a69 = function (_0x8d64b1, _0x5e07b3) {
 };
 (function () {
     var _0x19d8ce = {
-        'chYMl': _0x1a69('0x0'),
-        'IZEsA': function (_0x22e521, _0x298a22) {
+        &#39;chYMl&#39;: _0x1a69(&#39;0x0&#39;),
+        &#39;IZEsA&#39;: function (_0x22e521, _0x298a22) {
             return _0x22e521 + _0x298a22;
         },
-        'fXqMu': function (_0x13124b) {
+        &#39;fXqMu&#39;: function (_0x13124b) {
             return _0x13124b();
         }
     };
     function _0x4e2ee0() {
         var _0x118a6a = {
-            'LZAQV': _0x19d8ce[_0x1a69('0x1')],
-            'dZwUe': function (_0x362ef3, _0x352709) {
-                return _0x19d8ce[_0x1a69('0x2')](_0x362ef3, _0x352709);
+            &#39;LZAQV&#39;: _0x19d8ce[_0x1a69(&#39;0x1&#39;)],
+            &#39;dZwUe&#39;: function (_0x362ef3, _0x352709) {
+                return _0x19d8ce[_0x1a69(&#39;0x2&#39;)](_0x362ef3, _0x352709);
             }
         };
         return function () {
-            var _0x4c336d = _0x118a6a['LZAQV'][_0x1a69('0x3')]('|'), _0x2b6466 = 0x0;
+            var _0x4c336d = _0x118a6a[&#39;LZAQV&#39;][_0x1a69(&#39;0x3&#39;)](&#39;|&#39;), _0x2b6466 = 0x0;
             while (!![]) {
                 switch (_0x4c336d[_0x2b6466++]) {
-                case '0':
-                    var _0xbfa3fd = _0x118a6a[_0x1a69('0x4')](0x1, 0x2);
+                case &#39;0&#39;:
+                    var _0xbfa3fd = _0x118a6a[_0x1a69(&#39;0x4&#39;)](0x1, 0x2);
                     continue;
-                case '1':
-                    console['log'](0x1);
+                case &#39;1&#39;:
+                    console[&#39;log&#39;](0x1);
                     continue;
-                case '2':
-                    console[_0x1a69('0x5')](0x6);
+                case &#39;2&#39;:
+                    console[_0x1a69(&#39;0x5&#39;)](0x6);
                     continue;
-                case '3':
-                    console[_0x1a69('0x5')](0x2);
+                case &#39;3&#39;:
+                    console[_0x1a69(&#39;0x5&#39;)](0x2);
                     continue;
-                case '4':
-                    console[_0x1a69('0x5')](0x3);
+                case &#39;4&#39;:
+                    console[_0x1a69(&#39;0x5&#39;)](0x3);
                     continue;
-                case '5':
-                    console[_0x1a69('0x5')](0x5);
+                case &#39;5&#39;:
+                    console[_0x1a69(&#39;0x5&#39;)](0x5);
                     continue;
-                case '6':
-                    console[_0x1a69('0x5')](0x4);
+                case &#39;6&#39;:
+                    console[_0x1a69(&#39;0x5&#39;)](0x4);
                     continue;
                 }
                 break;
             }
         };
     }
-    _0x19d8ce[_0x1a69('0x6')](_0x4e2ee0)();
+    _0x19d8ce[_0x1a69(&#39;0x6&#39;)](_0x4e2ee0)();
 }());
-
 </code></pre><p>可以看到，一些连续的执行逻辑被打破，代码被修改为一个 switch 语句，我们很难再一眼看出多条 console.log 语句的执行顺序了。</p>
 <p>如果我们将 controlFlowFlattening 设置为 false 或者不设置，运行结果如下：</p>
-<pre tabindex="0"><code>var _0x552c = ['log'];
+<pre tabindex="0"><code>var _0x552c = [&#39;log&#39;];
 (function (_0x4c4fa0, _0x59faa0) {
     var _0xa01786 = function (_0x409a37) {
         while (--_0x409a37) {
-            _0x4c4fa0['push'](_0x4c4fa0['shift']());
+            _0x4c4fa0[&#39;push&#39;](_0x4c4fa0[&#39;shift&#39;]());
         }
     };
     _0xa01786(++_0x59faa0);
@@ -858,12 +857,12 @@ var _0x4e63 = function (_0x75ea1a, _0x50e176) {
     function _0x507f38() {
         return function () {
             var _0x17fb7e = 0x1 + 0x2;
-            console[_0x4e63('0x0')](0x1);
-            console['log'](0x2);
-            console['log'](0x3);
-            console[_0x4e63('0x0')](0x4);
-            console[_0x4e63('0x0')](0x5);
-            console[_0x4e63('0x0')](0x6);
+            console[_0x4e63(&#39;0x0&#39;)](0x1);
+            console[&#39;log&#39;](0x2);
+            console[&#39;log&#39;](0x3);
+            console[_0x4e63(&#39;0x0&#39;)](0x4);
+            console[_0x4e63(&#39;0x0&#39;)](0x5);
+            console[_0x4e63(&#39;0x0&#39;)](0x6);
         };
     }
     _0x507f38()();
@@ -879,22 +878,22 @@ var _0x4e63 = function (_0x75ea1a, _0x50e176) {
 (function(){
     if (true) {
         var foo = function () {
-            console.log('abc');
-            console.log('cde');
-            console.log('efg');
-            console.log('hij');
+            console.log(&#39;abc&#39;);
+            console.log(&#39;cde&#39;);
+            console.log(&#39;efg&#39;);
+            console.log(&#39;hij&#39;);
         };
 
         var bar = function () {
-            console.log('klm');
-            console.log('nop');
-            console.log('qrs');
+            console.log(&#39;klm&#39;);
+            console.log(&#39;nop&#39;);
+            console.log(&#39;qrs&#39;);
         };
     
         var baz = function () {
-            console.log('tuv');
-            console.log('wxy');
-            console.log('z');
+            console.log(&#39;tuv&#39;);
+            console.log(&#39;wxy&#39;);
+            console.log(&#39;z&#39;);
         };
     
         foo();
@@ -910,21 +909,21 @@ const options = {
 }
 </code></pre><p>运行结果如下：</p>
 <pre tabindex="0"><code>var _0x5024 = [
-    'zaU',
-    'log',
-    'tuv',
-    'wxy',
-    'abc',
-    'cde',
-    'efg',
-    'hij',
-    'QhG',
-    'TeI',
-    'klm',
-    'nop',
-    'qrs',
-    'bZd',
-    'HMx'
+    &#39;zaU&#39;,
+    &#39;log&#39;,
+    &#39;tuv&#39;,
+    &#39;wxy&#39;,
+    &#39;abc&#39;,
+    &#39;cde&#39;,
+    &#39;efg&#39;,
+    &#39;hij&#39;,
+    &#39;QhG&#39;,
+    &#39;TeI&#39;,
+    &#39;klm&#39;,
+    &#39;nop&#39;,
+    &#39;qrs&#39;,
+    &#39;bZd&#39;,
+    &#39;HMx&#39;
 ];
 var _0x4502 = function (_0x1254b1, _0x583689) {
     _0x1254b1 = _0x1254b1 - 0x0;
@@ -934,38 +933,38 @@ var _0x4502 = function (_0x1254b1, _0x583689) {
 (function () {
     if (!![]) {
         var _0x16c18d = function () {
-            if (_0x4502('0x0') !== _0x4502('0x0')) {
-                console[_0x4502('0x1')](_0x4502('0x2'));
-                console[_0x4502('0x1')](_0x4502('0x3'));
-                console[_0x4502('0x1')]('z');
+            if (_0x4502(&#39;0x0&#39;) !== _0x4502(&#39;0x0&#39;)) {
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x2&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x3&#39;));
+                console[_0x4502(&#39;0x1&#39;)](&#39;z&#39;);
             } else {
-                console[_0x4502('0x1')](_0x4502('0x4'));
-                console[_0x4502('0x1')](_0x4502('0x5'));
-                console[_0x4502('0x1')](_0x4502('0x6'));
-                console[_0x4502('0x1')](_0x4502('0x7'));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x4&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x5&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x6&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x7&#39;));
             }
         };
         var _0x1f7292 = function () {
-            if (_0x4502('0x8') === _0x4502('0x9')) {
-                console[_0x4502('0x1')](_0x4502('0xa'));
-                console[_0x4502('0x1')](_0x4502('0xb'));
-                console[_0x4502('0x1')](_0x4502('0xc'));
+            if (_0x4502(&#39;0x8&#39;) === _0x4502(&#39;0x9&#39;)) {
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0xa&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0xb&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0xc&#39;));
             } else {
-                console[_0x4502('0x1')](_0x4502('0xa'));
-                console[_0x4502('0x1')](_0x4502('0xb'));
-                console[_0x4502('0x1')](_0x4502('0xc'));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0xa&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0xb&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0xc&#39;));
             }
         };
         var _0x33b212 = function () {
-            if (_0x4502('0xd') !== _0x4502('0xe')) {
-                console[_0x4502('0x1')](_0x4502('0x2'));
-                console[_0x4502('0x1')](_0x4502('0x3'));
-                console[_0x4502('0x1')]('z');
+            if (_0x4502(&#39;0xd&#39;) !== _0x4502(&#39;0xe&#39;)) {
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x2&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x3&#39;));
+                console[_0x4502(&#39;0x1&#39;)](&#39;z&#39;);
             } else {
-                console[_0x4502('0x1')](_0x4502('0x4'));
-                console[_0x4502('0x1')](_0x4502('0x5'));
-                console[_0x4502('0x1')](_0x4502('0x6'));
-                console[_0x4502('0x1')](_0x4502('0x7'));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x4&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x5&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x6&#39;));
+                console[_0x4502(&#39;0x1&#39;)](_0x4502(&#39;0x7&#39;));
             }
         };
         _0x16c18d();
@@ -976,19 +975,19 @@ var _0x4502 = function (_0x1254b1, _0x583689) {
 </code></pre><p>可见这里增加了一些不会执行到的逻辑区块内容。</p>
 <p>如果将 deadCodeInjection 设置为 false 或者不设置，运行结果如下：</p>
 <pre tabindex="0"><code>var _0x402a = [
-    'qrs',
-    'wxy',
-    'log',
-    'abc',
-    'cde',
-    'efg',
-    'hij',
-    'nop'
+    &#39;qrs&#39;,
+    &#39;wxy&#39;,
+    &#39;log&#39;,
+    &#39;abc&#39;,
+    &#39;cde&#39;,
+    &#39;efg&#39;,
+    &#39;hij&#39;,
+    &#39;nop&#39;
 ];
 (function (_0x57239e, _0x4747e8) {
     var _0x3998cd = function (_0x34a502) {
         while (--_0x34a502) {
-            _0x57239e['push'](_0x57239e['shift']());
+            _0x57239e[&#39;push&#39;](_0x57239e[&#39;shift&#39;]());
         }
     };
     _0x3998cd(++_0x4747e8);
@@ -1001,20 +1000,20 @@ var _0x5356 = function (_0x2f2c10, _0x2878a6) {
 (function () {
     if (!![]) {
         var _0x60edc1 = function () {
-            console[_0x5356('0x0')](_0x5356('0x1'));
-            console[_0x5356('0x0')](_0x5356('0x2'));
-            console[_0x5356('0x0')](_0x5356('0x3'));
-            console['log'](_0x5356('0x4'));
+            console[_0x5356(&#39;0x0&#39;)](_0x5356(&#39;0x1&#39;));
+            console[_0x5356(&#39;0x0&#39;)](_0x5356(&#39;0x2&#39;));
+            console[_0x5356(&#39;0x0&#39;)](_0x5356(&#39;0x3&#39;));
+            console[&#39;log&#39;](_0x5356(&#39;0x4&#39;));
         };
         var _0x56405f = function () {
-            console[_0x5356('0x0')]('klm');
-            console['log'](_0x5356('0x5'));
-            console['log'](_0x5356('0x6'));
+            console[_0x5356(&#39;0x0&#39;)](&#39;klm&#39;);
+            console[&#39;log&#39;](_0x5356(&#39;0x5&#39;));
+            console[&#39;log&#39;](_0x5356(&#39;0x6&#39;));
         };
         var _0x332d12 = function () {
-            console[_0x5356('0x0')]('tuv');
-            console[_0x5356('0x0')](_0x5356('0x7'));
-            console['log']('z');
+            console[_0x5356(&#39;0x0&#39;)](&#39;tuv&#39;);
+            console[_0x5356(&#39;0x0&#39;)](_0x5356(&#39;0x7&#39;));
+            console[&#39;log&#39;](&#39;z&#39;);
         };
         _0x60edc1();
         _0x56405f();
@@ -1028,9 +1027,9 @@ var _0x5356 = function (_0x2f2c10, _0x2878a6) {
 <pre tabindex="0"><code>const code = `
 (function(){
     var object = {
-        foo: 'test1',
+        foo: &#39;test1&#39;,
         bar: {
-            baz: 'test2'
+            baz: &#39;test2&#39;
         }
     };
 })(); 
@@ -1041,14 +1040,14 @@ const options = {
 }
 </code></pre><p>输出结果如下：</p>
 <pre tabindex="0"><code>var _0x7a5d = [
-    'bar',
-    'test2',
-    'test1'
+    &#39;bar&#39;,
+    &#39;test2&#39;,
+    &#39;test1&#39;
 ];
 (function (_0x59fec5, _0x2e4fac) {
     var _0x231e7a = function (_0x46f33e) {
         while (--_0x46f33e) {
-            _0x59fec5['push'](_0x59fec5['shift']());
+            _0x59fec5[&#39;push&#39;](_0x59fec5[&#39;shift&#39;]());
         }
     };
     _0x231e7a(++_0x2e4fac);
@@ -1060,47 +1059,47 @@ var _0x3bc4 = function (_0x309ad3, _0x22d5ac) {
 };
 (function () {
     var _0x9f1fd1 = {};
-    _0x9f1fd1['foo'] = _0x3bc4('0x0');
-    _0x9f1fd1[_0x3bc4('0x1')] = {};
-    _0x9f1fd1[_0x3bc4('0x1')]['baz'] = _0x3bc4('0x2');
+    _0x9f1fd1[&#39;foo&#39;] = _0x3bc4(&#39;0x0&#39;);
+    _0x9f1fd1[_0x3bc4(&#39;0x1&#39;)] = {};
+    _0x9f1fd1[_0x3bc4(&#39;0x1&#39;)][&#39;baz&#39;] = _0x3bc4(&#39;0x2&#39;);
 }());
 </code></pre><p>可以看到，Object 的变量名被替换为了特殊的变量，这也可以起到一定的防护作用。</p>
 <h3 id="禁用控制台输出">禁用控制台输出</h3>
 <p>可以使用 disableConsoleOutput 来禁用掉 console.log 输出功能，加大调试难度，示例如下：</p>
 <pre tabindex="0"><code>const code = `
-console.log('hello world')
+console.log(&#39;hello world&#39;)
 `
 const options = {
     disableConsoleOutput: true
 }
 </code></pre><p>运行结果如下：</p>
-<pre tabindex="0"><code>var _0x3a39=['debug','info','error','exception','trace','hello\x20world','apply','{}.constructor(\x22return\x20this\x22)(\x20)','console','log','warn'];(function(_0x2a157a,_0x5d9d3b){var _0x488e2c=function(_0x5bcb73){while(--_0x5bcb73){_0x2a157a['push'](_0x2a157a['shift']());}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0');}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff('0x0')](_0x5efe0d,arguments);_0x33db62=null;return _0x77054c;}}:function(){};_0x1f484b=![];return _0x20bcd2;};}();var _0x19f538=_0x349b01(this,function(){var _0x7ab6e4=function(){};var _0x157bff;try{var _0x5e672c=Function('return\x20(function()\x20'+_0x5bff('0x1')+');');_0x157bff=_0x5e672c();}catch(_0x11028d){_0x157bff=window;}if(!_0x157bff[_0x5bff('0x2')]){_0x157bff[_0x5bff('0x2')]=function(_0x7ab6e4){var _0x5a8d9e={};_0x5a8d9e[_0x5bff('0x3')]=_0x7ab6e4;_0x5a8d9e[_0x5bff('0x4')]=_0x7ab6e4;_0x5a8d9e[_0x5bff('0x5')]=_0x7ab6e4;_0x5a8d9e[_0x5bff('0x6')]=_0x7ab6e4;_0x5a8d9e[_0x5bff('0x7')]=_0x7ab6e4;_0x5a8d9e[_0x5bff('0x8')]=_0x7ab6e4;_0x5a8d9e[_0x5bff('0x9')]=_0x7ab6e4;return _0x5a8d9e;}(_0x7ab6e4);}else{_0x157bff[_0x5bff('0x2')][_0x5bff('0x3')]=_0x7ab6e4;_0x157bff[_0x5bff('0x2')][_0x5bff('0x4')]=_0x7ab6e4;_0x157bff[_0x5bff('0x2')]['debug']=_0x7ab6e4;_0x157bff[_0x5bff('0x2')][_0x5bff('0x6')]=_0x7ab6e4;_0x157bff[_0x5bff('0x2')][_0x5bff('0x7')]=_0x7ab6e4;_0x157bff[_0x5bff('0x2')][_0x5bff('0x8')]=_0x7ab6e4;_0x157bff[_0x5bff('0x2')][_0x5bff('0x9')]=_0x7ab6e4;}});_0x19f538();console[_0x5bff('0x3')](_0x5bff('0xa'));
+<pre tabindex="0"><code>var _0x3a39=[&#39;debug&#39;,&#39;info&#39;,&#39;error&#39;,&#39;exception&#39;,&#39;trace&#39;,&#39;hello\x20world&#39;,&#39;apply&#39;,&#39;{}.constructor(\x22return\x20this\x22)(\x20)&#39;,&#39;console&#39;,&#39;log&#39;,&#39;warn&#39;];(function(_0x2a157a,_0x5d9d3b){var _0x488e2c=function(_0x5bcb73){while(--_0x5bcb73){_0x2a157a[&#39;push&#39;](_0x2a157a[&#39;shift&#39;]());}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;);}};_0x488e2c(++_0x5d9d3b);}(_0x3a39,0x10e));var _0x5bff=function(_0x43bdfc,_0x52e4c6){_0x43bdfc=_0x43bdfc-0x0;var _0xb67384=_0x3a39[_0x43bdfc];return _0xb67384;};var _0x349b01=function(){var _0x1f484b=!![];return function(_0x5efe0d,_0x33db62){var _0x20bcd2=_0x1f484b?function(){if(_0x33db62){var _0x77054c=_0x33db62[_0x5bff(&#39;0x0&#39;)](_0x5efe0d,arguments);_0x33db62=null;return _0x77054c;}}:function(){};_0x1f484b=![];return _0x20bcd2;};}();var _0x19f538=_0x349b01(this,function(){var _0x7ab6e4=function(){};var _0x157bff;try{var _0x5e672c=Function(&#39;return\x20(function()\x20&#39;+_0x5bff(&#39;0x1&#39;)+&#39;);&#39;);_0x157bff=_0x5e672c();}catch(_0x11028d){_0x157bff=window;}if(!_0x157bff[_0x5bff(&#39;0x2&#39;)]){_0x157bff[_0x5bff(&#39;0x2&#39;)]=function(_0x7ab6e4){var _0x5a8d9e={};_0x5a8d9e[_0x5bff(&#39;0x3&#39;)]=_0x7ab6e4;_0x5a8d9e[_0x5bff(&#39;0x4&#39;)]=_0x7ab6e4;_0x5a8d9e[_0x5bff(&#39;0x5&#39;)]=_0x7ab6e4;_0x5a8d9e[_0x5bff(&#39;0x6&#39;)]=_0x7ab6e4;_0x5a8d9e[_0x5bff(&#39;0x7&#39;)]=_0x7ab6e4;_0x5a8d9e[_0x5bff(&#39;0x8&#39;)]=_0x7ab6e4;_0x5a8d9e[_0x5bff(&#39;0x9&#39;)]=_0x7ab6e4;return _0x5a8d9e;}(_0x7ab6e4);}else{_0x157bff[_0x5bff(&#39;0x2&#39;)][_0x5bff(&#39;0x3&#39;)]=_0x7ab6e4;_0x157bff[_0x5bff(&#39;0x2&#39;)][_0x5bff(&#39;0x4&#39;)]=_0x7ab6e4;_0x157bff[_0x5bff(&#39;0x2&#39;)][&#39;debug&#39;]=_0x7ab6e4;_0x157bff[_0x5bff(&#39;0x2&#39;)][_0x5bff(&#39;0x6&#39;)]=_0x7ab6e4;_0x157bff[_0x5bff(&#39;0x2&#39;)][_0x5bff(&#39;0x7&#39;)]=_0x7ab6e4;_0x157bff[_0x5bff(&#39;0x2&#39;)][_0x5bff(&#39;0x8&#39;)]=_0x7ab6e4;_0x157bff[_0x5bff(&#39;0x2&#39;)][_0x5bff(&#39;0x9&#39;)]=_0x7ab6e4;}});_0x19f538();console[_0x5bff(&#39;0x3&#39;)](_0x5bff(&#39;0xa&#39;));
 </code></pre><p>此时，我们如果执行这段代码，发现是没有任何输出的，这里实际上就是将 console 的一些功能禁用了，加大了调试难度。</p>
 <h2 id="调试保护">调试保护</h2>
 <p>我们可以使用 debugProtection 来禁用调试模式，进入无限 Debug 模式。另外我们还可以使用 debugProtectionInterval 来启用无限 Debug 的间隔，使得代码在调试过程中会不断进入断点模式，无法顺畅执行。
 示例如下：</p>
 <pre tabindex="0"><code>const code = `
 for (let i = 0; i &lt; 5; i ++) {
-    console.log('i', i)
+    console.log(&#39;i&#39;, i)
 }
 `
 const options = {
     debugProtection: true
 }
 </code></pre><p>运行结果如下：</p>
-<pre tabindex="0"><code>var _0x41d0=['action','debu','stateObject','function\x20*\x5c(\x20*\x5c)','\x5c+\x5c+\x20*(?:_0x(?:[a-f0-9]){4,6}|(?:\x5cb|\x5cd)[a-z0-9]{1,4}(?:\x5cb|\x5cd))','init','test','chain','input','log','string','constructor','while\x20(true)\x20{}','apply','gger','call'];(function(_0x69147e,_0x180e03){var _0x2cc589=function(_0x18d18c){while(--_0x18d18c){_0x69147e['push'](_0x69147e['shift']());}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267['apply'](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2('0x0');}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267['apply'](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2('0x0');}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267['apply'](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2('0x0');}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267['apply'](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2('0x0');}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267['apply'](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2('0x0'));var _0x4a170e=new RegExp(_0x16d2('0x1'),'i');var _0x5351d7=_0x227210(_0x16d2('0x2'));if(!_0x5de4a4[_0x16d2('0x3')](_0x5351d7+_0x16d2('0x4'))||!_0x4a170e[_0x16d2('0x3')](_0x5351d7+_0x16d2('0x5'))){_0x5351d7('0');}else{_0x227210();}})();}());for(let i=0x0;i&lt;0x5;i++){console[_0x16d2('0x6')]('i',i);}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2('0x7');}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2('0x7');}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2('0x7');}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2('0x7');}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2('0x7')){return function(_0x3718f7){}[_0x16d2('0x8')](_0x16d2('0x9'))[_0x16d2('0xa')]('counter');}else{if((''+_0x19628c/_0x19628c)['length']!==0x1||_0x19628c%0x14===0x0){(function(){return!![];}[_0x16d2('0x8')]('debu'+_0x16d2('0xb'))[_0x16d2('0xc')](_0x16d2('0xd')));}else{(function(){return![];}[_0x16d2('0x8')](_0x16d2('0xe')+_0x16d2('0xb'))[_0x16d2('0xa')](_0x16d2('0xf')));}}_0x1971c7(++_0x19628c);}try{if(_0x30bc32){return _0x1971c7;}else{_0x1971c7(0x0);}}catch(_0x58d434){}}
+<pre tabindex="0"><code>var _0x41d0=[&#39;action&#39;,&#39;debu&#39;,&#39;stateObject&#39;,&#39;function\x20*\x5c(\x20*\x5c)&#39;,&#39;\x5c+\x5c+\x20*(?:_0x(?:[a-f0-9]){4,6}|(?:\x5cb|\x5cd)[a-z0-9]{1,4}(?:\x5cb|\x5cd))&#39;,&#39;init&#39;,&#39;test&#39;,&#39;chain&#39;,&#39;input&#39;,&#39;log&#39;,&#39;string&#39;,&#39;constructor&#39;,&#39;while\x20(true)\x20{}&#39;,&#39;apply&#39;,&#39;gger&#39;,&#39;call&#39;];(function(_0x69147e,_0x180e03){var _0x2cc589=function(_0x18d18c){while(--_0x18d18c){_0x69147e[&#39;push&#39;](_0x69147e[&#39;shift&#39;]());}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267[&#39;apply&#39;](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2(&#39;0x0&#39;);}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267[&#39;apply&#39;](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2(&#39;0x0&#39;);}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267[&#39;apply&#39;](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2(&#39;0x0&#39;);}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267[&#39;apply&#39;](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2(&#39;0x0&#39;);}};_0x2cc589(++_0x180e03);}(_0x41d0,0x153));var _0x16d2=function(_0x3d813e,_0x59f7b2){_0x3d813e=_0x3d813e-0x0;var _0x228f98=_0x41d0[_0x3d813e];return _0x228f98;};var _0x241eee=function(){var _0xeb17=!![];return function(_0x5caffe,_0x2bb267){var _0x16e1bf=_0xeb17?function(){if(_0x2bb267){var _0x573619=_0x2bb267[&#39;apply&#39;](_0x5caffe,arguments);_0x2bb267=null;return _0x573619;}}:function(){};_0xeb17=![];return _0x16e1bf;};}();(function(){_0x241eee(this,function(){var _0x5de4a4=new RegExp(_0x16d2(&#39;0x0&#39;));var _0x4a170e=new RegExp(_0x16d2(&#39;0x1&#39;),&#39;i&#39;);var _0x5351d7=_0x227210(_0x16d2(&#39;0x2&#39;));if(!_0x5de4a4[_0x16d2(&#39;0x3&#39;)](_0x5351d7+_0x16d2(&#39;0x4&#39;))||!_0x4a170e[_0x16d2(&#39;0x3&#39;)](_0x5351d7+_0x16d2(&#39;0x5&#39;))){_0x5351d7(&#39;0&#39;);}else{_0x227210();}})();}());for(let i=0x0;i&lt;0x5;i++){console[_0x16d2(&#39;0x6&#39;)](&#39;i&#39;,i);}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2(&#39;0x7&#39;);}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2(&#39;0x7&#39;);}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2(&#39;0x7&#39;);}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2(&#39;0x7&#39;);}function _0x227210(_0x30bc32){function _0x1971c7(_0x19628c){if(typeof _0x19628c===_0x16d2(&#39;0x7&#39;)){return function(_0x3718f7){}[_0x16d2(&#39;0x8&#39;)](_0x16d2(&#39;0x9&#39;))[_0x16d2(&#39;0xa&#39;)](&#39;counter&#39;);}else{if((&#39;&#39;+_0x19628c/_0x19628c)[&#39;length&#39;]!==0x1||_0x19628c%0x14===0x0){(function(){return!![];}[_0x16d2(&#39;0x8&#39;)](&#39;debu&#39;+_0x16d2(&#39;0xb&#39;))[_0x16d2(&#39;0xc&#39;)](_0x16d2(&#39;0xd&#39;)));}else{(function(){return![];}[_0x16d2(&#39;0x8&#39;)](_0x16d2(&#39;0xe&#39;)+_0x16d2(&#39;0xb&#39;))[_0x16d2(&#39;0xa&#39;)](_0x16d2(&#39;0xf&#39;)));}}_0x1971c7(++_0x19628c);}try{if(_0x30bc32){return _0x1971c7;}else{_0x1971c7(0x0);}}catch(_0x58d434){}}
 </code></pre><p>如果我们将代码粘贴到控制台，其会不断跳到 debugger 代码的位置，无法顺畅执行。</p>
 <h3 id="域名锁定">域名锁定</h3>
 <p>我们可以通过控制 domainLock 来控制 JavaScript 代码只能在特定域名下运行，这样就可以降低被模拟的风险。</p>
 <p>示例如下：</p>
 <pre tabindex="0"><code>const code = `
-console.log('hello world')
+console.log(&#39;hello world&#39;)
 `
 const options = {
-    domainLock: ['cuiqingcai.com']
+    domainLock: [&#39;cuiqingcai.com&#39;]
 }
 </code></pre><p>运行结果如下：</p>
-<pre tabindex="0"><code>var _0x3203=['apply','return\x20(function()\x20','{}.constructor(\x22return\x20this\x22)(\x20)','item','attribute','value','replace','length','charCodeAt','log','hello\x20world'];(function(_0x2ed22c,_0x3ad370){var _0x49dc54=function(_0x53a786){while(--_0x53a786){_0x2ed22c['push'](_0x2ed22c['shift']());}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38('0x0');}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38('0x0');}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38('0x0');}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38('0x0');}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38('0x0')](_0xd1fa29,arguments);_0x2ed646=null;return _0x33af63;}}:function(){};_0x5cf798=![];return _0x56abf;};}();var _0x67dcc8=_0x485919(this,function(){var _0x276a31;try{var _0x5c8be2=Function(_0x5b38('0x1')+_0x5b38('0x2')+');');_0x276a31=_0x5c8be2();}catch(_0x5f1c00){_0x276a31=window;}var _0x254a0d=function(){return{'key':_0x5b38('0x3'),'value':_0x5b38('0x4'),'getAttribute':function(){for(var _0x5cc3c7=0x0;_0x5cc3c7&lt;0x3e8;_0x5cc3c7--){var _0x35b30b=_0x5cc3c7&gt;0x0;switch(_0x35b30b){case!![]:return this[_0x5b38('0x3')]+'_'+this[_0x5b38('0x5')]+'_'+_0x5cc3c7;default:this[_0x5b38('0x3')]+'_'+this[_0x5b38('0x5')];}}}()};};var _0x3b375a=new RegExp('[QLCIKYkCFzdWpzRAXMhxJOYpTpYWJHPll]','g');var _0x5a94d2='cuQLiqiCInKYkgCFzdWcpzRAaXMi.hcoxmJOYpTpYWJHPll'[_0x5b38('0x6')](_0x3b375a,'')['split'](';');var _0x5c0da2;var _0x19ad5d;var _0x5992ca;var _0x40bd39;for(var _0x5cad1 in _0x276a31){if(_0x5cad1[_0x5b38('0x7')]==0x8&amp;&amp;_0x5cad1[_0x5b38('0x8')](0x7)==0x74&amp;&amp;_0x5cad1[_0x5b38('0x8')](0x5)==0x65&amp;&amp;_0x5cad1[_0x5b38('0x8')](0x3)==0x75&amp;&amp;_0x5cad1[_0x5b38('0x8')](0x0)==0x64){_0x5c0da2=_0x5cad1;break;}}for(var _0x29551 in _0x276a31[_0x5c0da2]){if(_0x29551[_0x5b38('0x7')]==0x6&amp;&amp;_0x29551[_0x5b38('0x8')](0x5)==0x6e&amp;&amp;_0x29551[_0x5b38('0x8')](0x0)==0x64){_0x19ad5d=_0x29551;break;}}if(!('~'&gt;_0x19ad5d)){for(var _0x2b71bd in _0x276a31[_0x5c0da2]){if(_0x2b71bd[_0x5b38('0x7')]==0x8&amp;&amp;_0x2b71bd[_0x5b38('0x8')](0x7)==0x6e&amp;&amp;_0x2b71bd[_0x5b38('0x8')](0x0)==0x6c){_0x5992ca=_0x2b71bd;break;}}for(var _0x397f55 in _0x276a31[_0x5c0da2][_0x5992ca]){if(_0x397f55['length']==0x8&amp;&amp;_0x397f55[_0x5b38('0x8')](0x7)==0x65&amp;&amp;_0x397f55[_0x5b38('0x8')](0x0)==0x68){_0x40bd39=_0x397f55;break;}}}if(!_0x5c0da2||!_0x276a31[_0x5c0da2]){return;}var _0x5f19be=_0x276a31[_0x5c0da2][_0x19ad5d];var _0x674f76=!!_0x276a31[_0x5c0da2][_0x5992ca]&amp;&amp;_0x276a31[_0x5c0da2][_0x5992ca][_0x40bd39];var _0x5e1b34=_0x5f19be||_0x674f76;if(!_0x5e1b34){return;}var _0x593394=![];for(var _0x479239=0x0;_0x479239&lt;_0x5a94d2['length'];_0x479239++){var _0x19ad5d=_0x5a94d2[_0x479239];var _0x112c24=_0x5e1b34['length']-_0x19ad5d['length'];var _0x51731c=_0x5e1b34['indexOf'](_0x19ad5d,_0x112c24);var _0x173191=_0x51731c!==-0x1&amp;&amp;_0x51731c===_0x112c24;if(_0x173191){if(_0x5e1b34['length']==_0x19ad5d[_0x5b38('0x7')]||_0x19ad5d['indexOf']('.')===0x0){_0x593394=!![];}}}if(!_0x593394){data;}else{return;}_0x254a0d();});_0x67dcc8();console[_0x5b38('0x9')](_0x5b38('0xa'));
+<pre tabindex="0"><code>var _0x3203=[&#39;apply&#39;,&#39;return\x20(function()\x20&#39;,&#39;{}.constructor(\x22return\x20this\x22)(\x20)&#39;,&#39;item&#39;,&#39;attribute&#39;,&#39;value&#39;,&#39;replace&#39;,&#39;length&#39;,&#39;charCodeAt&#39;,&#39;log&#39;,&#39;hello\x20world&#39;];(function(_0x2ed22c,_0x3ad370){var _0x49dc54=function(_0x53a786){while(--_0x53a786){_0x2ed22c[&#39;push&#39;](_0x2ed22c[&#39;shift&#39;]());}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38(&#39;0x0&#39;);}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38(&#39;0x0&#39;);}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38(&#39;0x0&#39;);}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38(&#39;0x0&#39;);}};_0x49dc54(++_0x3ad370);}(_0x3203,0x155));var _0x5b38=function(_0xd7780b,_0x19c0f2){_0xd7780b=_0xd7780b-0x0;var _0x2d2f44=_0x3203[_0xd7780b];return _0x2d2f44;};var _0x485919=function(){var _0x5cf798=!![];return function(_0xd1fa29,_0x2ed646){var _0x56abf=_0x5cf798?function(){if(_0x2ed646){var _0x33af63=_0x2ed646[_0x5b38(&#39;0x0&#39;)](_0xd1fa29,arguments);_0x2ed646=null;return _0x33af63;}}:function(){};_0x5cf798=![];return _0x56abf;};}();var _0x67dcc8=_0x485919(this,function(){var _0x276a31;try{var _0x5c8be2=Function(_0x5b38(&#39;0x1&#39;)+_0x5b38(&#39;0x2&#39;)+&#39;);&#39;);_0x276a31=_0x5c8be2();}catch(_0x5f1c00){_0x276a31=window;}var _0x254a0d=function(){return{&#39;key&#39;:_0x5b38(&#39;0x3&#39;),&#39;value&#39;:_0x5b38(&#39;0x4&#39;),&#39;getAttribute&#39;:function(){for(var _0x5cc3c7=0x0;_0x5cc3c7&lt;0x3e8;_0x5cc3c7--){var _0x35b30b=_0x5cc3c7&gt;0x0;switch(_0x35b30b){case!![]:return this[_0x5b38(&#39;0x3&#39;)]+&#39;_&#39;+this[_0x5b38(&#39;0x5&#39;)]+&#39;_&#39;+_0x5cc3c7;default:this[_0x5b38(&#39;0x3&#39;)]+&#39;_&#39;+this[_0x5b38(&#39;0x5&#39;)];}}}()};};var _0x3b375a=new RegExp(&#39;[QLCIKYkCFzdWpzRAXMhxJOYpTpYWJHPll]&#39;,&#39;g&#39;);var _0x5a94d2=&#39;cuQLiqiCInKYkgCFzdWcpzRAaXMi.hcoxmJOYpTpYWJHPll&#39;[_0x5b38(&#39;0x6&#39;)](_0x3b375a,&#39;&#39;)[&#39;split&#39;](&#39;;&#39;);var _0x5c0da2;var _0x19ad5d;var _0x5992ca;var _0x40bd39;for(var _0x5cad1 in _0x276a31){if(_0x5cad1[_0x5b38(&#39;0x7&#39;)]==0x8&amp;&amp;_0x5cad1[_0x5b38(&#39;0x8&#39;)](0x7)==0x74&amp;&amp;_0x5cad1[_0x5b38(&#39;0x8&#39;)](0x5)==0x65&amp;&amp;_0x5cad1[_0x5b38(&#39;0x8&#39;)](0x3)==0x75&amp;&amp;_0x5cad1[_0x5b38(&#39;0x8&#39;)](0x0)==0x64){_0x5c0da2=_0x5cad1;break;}}for(var _0x29551 in _0x276a31[_0x5c0da2]){if(_0x29551[_0x5b38(&#39;0x7&#39;)]==0x6&amp;&amp;_0x29551[_0x5b38(&#39;0x8&#39;)](0x5)==0x6e&amp;&amp;_0x29551[_0x5b38(&#39;0x8&#39;)](0x0)==0x64){_0x19ad5d=_0x29551;break;}}if(!(&#39;~&#39;&gt;_0x19ad5d)){for(var _0x2b71bd in _0x276a31[_0x5c0da2]){if(_0x2b71bd[_0x5b38(&#39;0x7&#39;)]==0x8&amp;&amp;_0x2b71bd[_0x5b38(&#39;0x8&#39;)](0x7)==0x6e&amp;&amp;_0x2b71bd[_0x5b38(&#39;0x8&#39;)](0x0)==0x6c){_0x5992ca=_0x2b71bd;break;}}for(var _0x397f55 in _0x276a31[_0x5c0da2][_0x5992ca]){if(_0x397f55[&#39;length&#39;]==0x8&amp;&amp;_0x397f55[_0x5b38(&#39;0x8&#39;)](0x7)==0x65&amp;&amp;_0x397f55[_0x5b38(&#39;0x8&#39;)](0x0)==0x68){_0x40bd39=_0x397f55;break;}}}if(!_0x5c0da2||!_0x276a31[_0x5c0da2]){return;}var _0x5f19be=_0x276a31[_0x5c0da2][_0x19ad5d];var _0x674f76=!!_0x276a31[_0x5c0da2][_0x5992ca]&amp;&amp;_0x276a31[_0x5c0da2][_0x5992ca][_0x40bd39];var _0x5e1b34=_0x5f19be||_0x674f76;if(!_0x5e1b34){return;}var _0x593394=![];for(var _0x479239=0x0;_0x479239&lt;_0x5a94d2[&#39;length&#39;];_0x479239++){var _0x19ad5d=_0x5a94d2[_0x479239];var _0x112c24=_0x5e1b34[&#39;length&#39;]-_0x19ad5d[&#39;length&#39;];var _0x51731c=_0x5e1b34[&#39;indexOf&#39;](_0x19ad5d,_0x112c24);var _0x173191=_0x51731c!==-0x1&amp;&amp;_0x51731c===_0x112c24;if(_0x173191){if(_0x5e1b34[&#39;length&#39;]==_0x19ad5d[_0x5b38(&#39;0x7&#39;)]||_0x19ad5d[&#39;indexOf&#39;](&#39;.&#39;)===0x0){_0x593394=!![];}}}if(!_0x593394){data;}else{return;}_0x254a0d();});_0x67dcc8();console[_0x5b38(&#39;0x9&#39;)](_0x5b38(&#39;0xa&#39;));
 </code></pre><p>这段代码就只能在指定域名 cuiqingcai.com 下运行，不能在其他网站运行，不信你可以试试。</p>
 <h3 id="特殊编码">特殊编码</h3>
 <p>另外还有一些特殊的工具包，如使用 aaencode、jjencode、jsfuck 等工具对代码进行混淆和编码。</p>
@@ -1110,9 +1109,9 @@ const options = {
 <pre tabindex="0"><code>+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]([][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+([][[]]+[])[+[]]+([][[]]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(![]+[])[!+[]+!![]+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+([]+[][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(![]+[])[!+[]+!![]]+([]+{})[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+(!![]+[])[+[]]+([][[]]+[])[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]])(!+[]+!![]+!![]+!![]+!![]))[!+[]+!![]+!![]]+([][[]]+[])[!+[]+!![]+!![]])(!+[]+!![]+!![]+!![])([][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(![]+[])[!+[]+!![]+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+([]+[][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(![]+[])[!+[]+!![]]+([]+{})[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+(!![]+[])[+[]]+([][[]]+[])[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]])(!+[]+!![]+!![]+!![]+!![]))[!+[]+!![]+!![]]+([][[]]+[])[!+[]+!![]+!![]])(!+[]+!![]+!![]+!![]+!![])(([]+{})[+[]])[+[]]+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+[]))+(+{}+[])[+!![]]+(!![]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+[][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+([][[]]+[])[+[]]+([][[]]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(![]+[])[!+[]+!![]+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+([]+[][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(![]+[])[!+[]+!![]]+([]+{})[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+(!![]+[])[+[]]+([][[]]+[])[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]])(!+[]+!![]+!![]+!![]+!![]))[!+[]+!![]+!![]]+([][[]]+[])[!+[]+!![]+!![]])(!+[]+!![]+!![]+!![])([][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(![]+[])[!+[]+!![]+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+([]+[][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]]((!![]+[])[+!![]]+([][[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(![]+[])[!+[]+!![]]+([]+{})[+!![]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(+{}+[])[+!![]]+(!![]+[])[+[]]+([][[]]+[])[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]])(!+[]+!![]+!![]+!![]+!![]))[!+[]+!![]+!![]]+([][[]]+[])[!+[]+!![]+!![]])(!+[]+!![]+!![]+!![]+!![])(([]+{})[+[]])[+[]]+(!+[]+!![]+!![]+[])+([][[]]+[])[!+[]+!![]])+([]+{})[!+[]+!![]+!![]+!![]+!![]+!![]+!![]]+(+!![]+[]))(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])
 </code></pre><p>[][(![]
 aaencode 的结果：</p>
-<pre tabindex="0"><code>ﾟωﾟﾉ= /｀ｍ´）ﾉ ~┻━┻ / ['_']; o=(ﾟｰﾟ) =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) =(ﾟΘﾟ)= (o^_^o)/ (o^_^o);(ﾟДﾟ)={ﾟΘﾟ: '_' ,ﾟωﾟﾉ : ((ﾟωﾟﾉ==3) +'_') [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ '_')[o^_^o -(ﾟΘﾟ)] ,ﾟДﾟﾉ:((ﾟｰﾟ==3) +'_')[ﾟｰﾟ] }; (ﾟДﾟ) [ﾟΘﾟ] =((ﾟωﾟﾉ==3) +'_') [c^_^o];(ﾟДﾟ) ['c'] = ((ﾟДﾟ)+'_') [ (ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) ['o'] = ((ﾟДﾟ)+'_') [ﾟΘﾟ];(ﾟoﾟ)=(ﾟДﾟ) ['c']+(ﾟДﾟ) ['o']+(ﾟωﾟﾉ +'_')[ﾟΘﾟ]+ ((ﾟωﾟﾉ==3) +'_') [ﾟｰﾟ] + ((ﾟДﾟ) +'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) ['c']+((ﾟДﾟ)+'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) ['o']+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ];(ﾟДﾟ) ['_'] =(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)=((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+'_') [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ==3) +'_') [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟωﾟﾉ +'_') [ﾟΘﾟ]; (ﾟｰﾟ)+=(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]='\\'; (ﾟДﾟ).ﾟΘﾟﾉ=(ﾟДﾟ+ ﾟｰﾟ)[o^_^o -(ﾟΘﾟ)];(oﾟｰﾟo)=(ﾟωﾟﾉ +'_')[c^_^o];(ﾟДﾟ) [ﾟoﾟ]='\&quot;';(ﾟДﾟ) ['_'] ( (ﾟДﾟ) ['_'] (ﾟεﾟ+(ﾟДﾟ)[ﾟoﾟ]+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ ((o^_^o) +(o^_^o))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (o^_^o))+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+((o^_^o) +(o^_^o))+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟoﾟ])(ﾟΘﾟ))((ﾟΘﾟ)+(ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ)+(ﾟΘﾟ))+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟoﾟ]);
+<pre tabindex="0"><code>ﾟωﾟﾉ= /｀ｍ´）ﾉ ~┻━┻ / [&#39;_&#39;]; o=(ﾟｰﾟ) =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) =(ﾟΘﾟ)= (o^_^o)/ (o^_^o);(ﾟДﾟ)={ﾟΘﾟ: &#39;_&#39; ,ﾟωﾟﾉ : ((ﾟωﾟﾉ==3) +&#39;_&#39;) [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ &#39;_&#39;)[o^_^o -(ﾟΘﾟ)] ,ﾟДﾟﾉ:((ﾟｰﾟ==3) +&#39;_&#39;)[ﾟｰﾟ] }; (ﾟДﾟ) [ﾟΘﾟ] =((ﾟωﾟﾉ==3) +&#39;_&#39;) [c^_^o];(ﾟДﾟ) [&#39;c&#39;] = ((ﾟДﾟ)+&#39;_&#39;) [ (ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) [&#39;o&#39;] = ((ﾟДﾟ)+&#39;_&#39;) [ﾟΘﾟ];(ﾟoﾟ)=(ﾟДﾟ) [&#39;c&#39;]+(ﾟДﾟ) [&#39;o&#39;]+(ﾟωﾟﾉ +&#39;_&#39;)[ﾟΘﾟ]+ ((ﾟωﾟﾉ==3) +&#39;_&#39;) [ﾟｰﾟ] + ((ﾟДﾟ) +&#39;_&#39;) [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ==3) +&#39;_&#39;) [ﾟΘﾟ]+((ﾟｰﾟ==3) +&#39;_&#39;) [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) [&#39;c&#39;]+((ﾟДﾟ)+&#39;_&#39;) [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) [&#39;o&#39;]+((ﾟｰﾟ==3) +&#39;_&#39;) [ﾟΘﾟ];(ﾟДﾟ) [&#39;_&#39;] =(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)=((ﾟｰﾟ==3) +&#39;_&#39;) [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+&#39;_&#39;) [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ==3) +&#39;_&#39;) [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ==3) +&#39;_&#39;) [ﾟΘﾟ]+ (ﾟωﾟﾉ +&#39;_&#39;) [ﾟΘﾟ]; (ﾟｰﾟ)+=(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]=&#39;\\&#39;; (ﾟДﾟ).ﾟΘﾟﾉ=(ﾟДﾟ+ ﾟｰﾟ)[o^_^o -(ﾟΘﾟ)];(oﾟｰﾟo)=(ﾟωﾟﾉ +&#39;_&#39;)[c^_^o];(ﾟДﾟ) [ﾟoﾟ]=&#39;\&#34;&#39;;(ﾟДﾟ) [&#39;_&#39;] ( (ﾟДﾟ) [&#39;_&#39;] (ﾟεﾟ+(ﾟДﾟ)[ﾟoﾟ]+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ ((o^_^o) +(o^_^o))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (o^_^o))+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+((o^_^o) +(o^_^o))+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟoﾟ])(ﾟΘﾟ))((ﾟΘﾟ)+(ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ)+(ﾟΘﾟ))+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟoﾟ]);
 </code></pre><p>jjencode 的结果：</p>
-<pre tabindex="0"><code>$=~[];$={___:++$,$$$$:(![]+&quot;&quot;)[$],__$:++$,$_$_:(![]+&quot;&quot;)[$],_$_:++$,$_$$:({}+&quot;&quot;)[$],$$_$:($[$]+&quot;&quot;)[$],_$$:++$,$$$_:(!&quot;&quot;+&quot;&quot;)[$],$__:++$,$_$:++$,$$__:({}+&quot;&quot;)[$],$$_:++$,$$$:++$,$___:++$,$__$:++$};$.$_=($.$_=$+&quot;&quot;)[$.$_$]+($._$=$.$_[$.__$])+($.$$=($.$+&quot;&quot;)[$.__$])+((!$)+&quot;&quot;)[$._$$]+($.__=$.$_[$.$$_])+($.$=(!&quot;&quot;+&quot;&quot;)[$.__$])+($._=(!&quot;&quot;+&quot;&quot;)[$._$_])+$.$_[$.$_$]+$.__+$._$+$.$;$.$$=$.$+(!&quot;&quot;+&quot;&quot;)[$._$$]+$.__+$._+$.$+$.$$;$.$=($.___)[$.$_][$.$_];$.$($.$($.$$+&quot;\&quot;&quot;+&quot;\\&quot;+$.__$+$.$$_+$.$$_+$.$_$_+&quot;\\&quot;+$.__$+$.$$_+$._$_+&quot;\\&quot;+$.$__+$.___+$.$_$_+&quot;\\&quot;+$.$__+$.___+&quot;=\\&quot;+$.$__+$.___+$.__$+&quot;\&quot;&quot;)())();
+<pre tabindex="0"><code>$=~[];$={___:++$,$$$$:(![]+&#34;&#34;)[$],__$:++$,$_$_:(![]+&#34;&#34;)[$],_$_:++$,$_$$:({}+&#34;&#34;)[$],$$_$:($[$]+&#34;&#34;)[$],_$$:++$,$$$_:(!&#34;&#34;+&#34;&#34;)[$],$__:++$,$_$:++$,$$__:({}+&#34;&#34;)[$],$$_:++$,$$$:++$,$___:++$,$__$:++$};$.$_=($.$_=$+&#34;&#34;)[$.$_$]+($._$=$.$_[$.__$])+($.$$=($.$+&#34;&#34;)[$.__$])+((!$)+&#34;&#34;)[$._$$]+($.__=$.$_[$.$$_])+($.$=(!&#34;&#34;+&#34;&#34;)[$.__$])+($._=(!&#34;&#34;+&#34;&#34;)[$._$_])+$.$_[$.$_$]+$.__+$._$+$.$;$.$$=$.$+(!&#34;&#34;+&#34;&#34;)[$._$$]+$.__+$._+$.$+$.$$;$.$=($.___)[$.$_][$.$_];$.$($.$($.$$+&#34;\&#34;&#34;+&#34;\\&#34;+$.__$+$.$$_+$.$$_+$.$_$_+&#34;\\&#34;+$.__$+$.$$_+$._$_+&#34;\\&#34;+$.$__+$.___+$.$_$_+&#34;\\&#34;+$.$__+$.___+&#34;=\\&#34;+$.$__+$.___+$.__$+&#34;\&#34;&#34;)())();
 </code></pre><p>这些混淆方式比较另类，但只需要输入到控制台即可执行，其没有真正达到强力混淆的效果。</p>
 <p>以上便是对 JavaScript 混淆方式的介绍和总结。总的来说，经过混淆的 JavaScript 代码其可读性大大降低，同时防护效果也大大增强。</p>
 <h3 id="javascript-加密">JavaScript 加密</h3>
@@ -1136,9 +1135,9 @@ aaencode 的结果：</p>
 )).then(module =&gt; {
   const instance = new WebAssembly.Instance(module)
   const { add, square } = instance.exports
-  console.log('2 + 4 =', add(2, 4))
-  console.log('3^2 =', square(3))
-  console.log('(2 + 5)^2 =', square(add(2 + 5)))
+  console.log(&#39;2 + 4 =&#39;, add(2, 4))
+  console.log(&#39;3^2 =&#39;, square(3))
+  console.log(&#39;(2 + 5)^2 =&#39;, square(add(2 + 5)))
 })
 </code></pre><p>这种加密方式更加安全，因为作为二进制编码它能起到的防护效果无疑是更好的。如果想要逆向或破解那得需要逆向 WebAssembly，难度也是很大的。</p>
 <h2 id="总结">总结</h2>
@@ -1191,7 +1190,7 @@ aaencode 的结果：</p>
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          10769 字
+          10872 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -1371,8 +1370,8 @@ aaencode 的结果：</p>
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

@@ -25,7 +25,7 @@ if (!doNotTrack) {
 }
 </script>
   <meta property="og:title" content="python学习笔记 | r&#39;&#39;, b&#39;&#39;, u&#39;&#39;, f&#39;&#39;" />
-<meta property="og:description" content="r&#39;&#39; - 非转义原生字符串 以r开头的字符，常用于正则表达式，对应着re模块。 r&#39;\n&#39; - 经处理，&#39;\n&rsquo;表示的是&#39;\&lsquo;和&rsqu" />
+<meta property="og:description" content="r&rsquo;&rsquo; - 非转义原生字符串 以r开头的字符，常用于正则表达式，对应着re模块。 r&#39;\n&#39; - 经处理，&rsquo;\n&rsquo;表示的是&rsquo;\&" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://billie52707.cn/posts/2021/5/python-rbuf/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-12T00:00:00+00:00" />
@@ -34,7 +34,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python学习笔记 | r&#39;&#39;, b&#39;&#39;, u&#39;&#39;, f&#39;&#39;"/>
-<meta name="twitter:description" content="r&#39;&#39; - 非转义原生字符串 以r开头的字符，常用于正则表达式，对应着re模块。 r&#39;\n&#39; - 经处理，&#39;\n&rsquo;表示的是&#39;\&lsquo;和&rsqu"/>
+<meta name="twitter:description" content="r&rsquo;&rsquo; - 非转义原生字符串 以r开头的字符，常用于正则表达式，对应着re模块。 r&#39;\n&#39; - 经处理，&rsquo;\n&rsquo;表示的是&rsquo;\&"/>
 
   
   
@@ -191,7 +191,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-rbuf%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20r%27%27%2c%20b%27%27%2c%20u%27%27%2c%20f%27%27&description=r%27%27%20-%20%e9%9d%9e%e8%bd%ac%e4%b9%89%e5%8e%9f%e7%94%9f%e5%ad%97%e7%ac%a6%e4%b8%b2%20%e4%bb%a5r%e5%bc%80%e5%a4%b4%e7%9a%84%e5%ad%97%e7%ac%a6%ef%bc%8c%e5%b8%b8%e7%94%a8%e4%ba%8e%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%ef%bc%8c%e5%af%b9%e5%ba%94%e7%9d%80re%e6%a8%a1%e5%9d%97%e3%80%82%20r%27%5cn%27%20-%20%e7%bb%8f%e5%a4%84%e7%90%86%ef%bc%8c%27%5cn%26rsquo%3b%e8%a1%a8%e7%a4%ba%e7%9a%84%e6%98%af%27%5c%26lsquo%3b%e5%92%8c%26rsqu">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-rbuf%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20r%27%27%2c%20b%27%27%2c%20u%27%27%2c%20f%27%27&description=r%26rsquo%3b%26rsquo%3b%20-%20%e9%9d%9e%e8%bd%ac%e4%b9%89%e5%8e%9f%e7%94%9f%e5%ad%97%e7%ac%a6%e4%b8%b2%20%e4%bb%a5r%e5%bc%80%e5%a4%b4%e7%9a%84%e5%ad%97%e7%ac%a6%ef%bc%8c%e5%b8%b8%e7%94%a8%e4%ba%8e%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%ef%bc%8c%e5%af%b9%e5%ba%94%e7%9d%80re%e6%a8%a1%e5%9d%97%e3%80%82%20r%27%5cn%27%20-%20%e7%bb%8f%e5%a4%84%e7%90%86%ef%bc%8c%26rsquo%3b%5cn%26rsquo%3b%e8%a1%a8%e7%a4%ba%e7%9a%84%e6%98%af%26rsquo%3b%5c%26">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -206,10 +206,10 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#r---非转义原生字符串">r'' - 非转义原生字符串</a></li>
-    <li><a href="#b---bytes">b'' - bytes</a></li>
-    <li><a href="#u---unicode字符串">u&rsquo;' - unicode字符串</a></li>
-    <li><a href="#f---format格式化操作">f'' - format格式化操作</a></li>
+    <li><a href="#r---非转义原生字符串">r&rsquo;&rsquo; - 非转义原生字符串</a></li>
+    <li><a href="#b---bytes">b&rsquo;&rsquo; - bytes</a></li>
+    <li><a href="#u---unicode字符串">u&rsquo;&rsquo; - unicode字符串</a></li>
+    <li><a href="#f---format格式化操作">f&rsquo;&rsquo; - format格式化操作</a></li>
   </ul>
 </nav>
     </div>
@@ -268,26 +268,26 @@ if (!doNotTrack) {
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="r---非转义原生字符串">r'' - 非转义原生字符串</h2>
+      <h2 id="r---非转义原生字符串">r&rsquo;&rsquo; - 非转义原生字符串</h2>
 <p>以r开头的字符，常用于正则表达式，对应着re模块。</p>
-<p><code>r'\n'</code> - 经处理，'\n&rsquo;表示的是'\&lsquo;和&rsquo;n&rsquo;两个字符，而不是代表&rsquo;\n&rsquo;的换行的意思。</p>
-<h2 id="b---bytes">b'' - bytes</h2>
-<p>python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b'&lsquo;前缀代表的就是bytes。</p>
+<p><code>r'\n'</code> - 经处理，&rsquo;\n&rsquo;表示的是&rsquo;\&lsquo;和&rsquo;n&rsquo;两个字符，而不是代表&rsquo;\n&rsquo;的换行的意思。</p>
+<h2 id="b---bytes">b&rsquo;&rsquo; - bytes</h2>
+<p>python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b&rsquo;&lsquo;前缀代表的就是bytes。</p>
 <p>python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这种写法。</p>
 <p>bytes字节符，打印以b开头。</p>
-<h2 id="u---unicode字符串">u&rsquo;' - unicode字符串</h2>
+<h2 id="u---unicode字符串">u&rsquo;&rsquo; - unicode字符串</h2>
 <p>u 不仅仅针对中文，还可以针对任何的字符串，代表对字符串进行unicode编码。</p>
 <p>python3默认编码为utf-8。</p>
 <p>对于英文，一般在各种编码下，基本都可以正常解析，所以一般不用带 u；</p>
 <p>对于中文，有必要的情况下，则需要表明所需编码，否则一旦编码转换。</p>
 <p>u 表示将后面跟的字符串以unicode格式存储。type(‘哈’)，会得到&lt;type ‘str’&gt;，而type(u’哈’)，则会得到&lt;type ‘unicode’&gt;</p>
-<p><a href="https://www.cnblogs.com/yyxayz/p/4044528.html">Python中文编码问题(字符串前面加&rsquo;u')</a></p>
-<h2 id="f---format格式化操作">f'' - format格式化操作</h2>
-<p>f-string，亦称为格式化字符串常量（formatted string literals），是Python3.6新引入的一种字符串格式化方法，主要目的是使格式化字符串的操作更加简便。f-string在形式上是以 f 或 F 修饰符引领的字符串（f&rsquo;xxx&rsquo;或 F&rsquo;xxx'），以大括号 {} 标明被替换的字段；f-string在本质上并不是字符串常量，而是一个在运行时运算求值的表达式：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-b <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;1+1 = </span><span style="color:#e6db74">{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e">#</span>
-print(b) <span style="color:#75715e"># 1+1 = 2</span>
-</code></pre></div>
+<p><a href="https://www.cnblogs.com/yyxayz/p/4044528.html">Python中文编码问题(字符串前面加&rsquo;u&rsquo;)</a></p>
+<h2 id="f---format格式化操作">f&rsquo;&rsquo; - format格式化操作</h2>
+<p>f-string，亦称为格式化字符串常量（formatted string literals），是Python3.6新引入的一种字符串格式化方法，主要目的是使格式化字符串的操作更加简便。f-string在形式上是以 f 或 F 修饰符引领的字符串（f&rsquo;xxx&rsquo;或 F&rsquo;xxx&rsquo;），以大括号 {} 标明被替换的字段；f-string在本质上并不是字符串常量，而是一个在运行时运算求值的表达式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;1+1 = </span><span style="color:#e6db74">{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span> <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>print(b) <span style="color:#75715e"># 1+1 = 2</span>
+</span></span></code></pre></div>
     </div>
 
 
@@ -324,7 +324,7 @@ print(b) <span style="color:#75715e"># 1+1 = 2</span>
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          729 字
+          759 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -381,10 +381,10 @@ print(b) <span style="color:#75715e"># 1+1 = 2</span>
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#r---非转义原生字符串">r'' - 非转义原生字符串</a></li>
-    <li><a href="#b---bytes">b'' - bytes</a></li>
-    <li><a href="#u---unicode字符串">u&rsquo;' - unicode字符串</a></li>
-    <li><a href="#f---format格式化操作">f'' - format格式化操作</a></li>
+    <li><a href="#r---非转义原生字符串">r&rsquo;&rsquo; - 非转义原生字符串</a></li>
+    <li><a href="#b---bytes">b&rsquo;&rsquo; - bytes</a></li>
+    <li><a href="#u---unicode字符串">u&rsquo;&rsquo; - unicode字符串</a></li>
+    <li><a href="#f---format格式化操作">f&rsquo;&rsquo; - format格式化操作</a></li>
   </ul>
 </nav>
     </div>
@@ -443,7 +443,7 @@ print(b) <span style="color:#75715e"># 1+1 = 2</span>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-rbuf%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20r%27%27%2c%20b%27%27%2c%20u%27%27%2c%20f%27%27&description=r%27%27%20-%20%e9%9d%9e%e8%bd%ac%e4%b9%89%e5%8e%9f%e7%94%9f%e5%ad%97%e7%ac%a6%e4%b8%b2%20%e4%bb%a5r%e5%bc%80%e5%a4%b4%e7%9a%84%e5%ad%97%e7%ac%a6%ef%bc%8c%e5%b8%b8%e7%94%a8%e4%ba%8e%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%ef%bc%8c%e5%af%b9%e5%ba%94%e7%9d%80re%e6%a8%a1%e5%9d%97%e3%80%82%20r%27%5cn%27%20-%20%e7%bb%8f%e5%a4%84%e7%90%86%ef%bc%8c%27%5cn%26rsquo%3b%e8%a1%a8%e7%a4%ba%e7%9a%84%e6%98%af%27%5c%26lsquo%3b%e5%92%8c%26rsqu">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2021%2f5%2fpython-rbuf%2f&name=python%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20r%27%27%2c%20b%27%27%2c%20u%27%27%2c%20f%27%27&description=r%26rsquo%3b%26rsquo%3b%20-%20%e9%9d%9e%e8%bd%ac%e4%b9%89%e5%8e%9f%e7%94%9f%e5%ad%97%e7%ac%a6%e4%b8%b2%20%e4%bb%a5r%e5%bc%80%e5%a4%b4%e7%9a%84%e5%ad%97%e7%ac%a6%ef%bc%8c%e5%b8%b8%e7%94%a8%e4%ba%8e%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%ef%bc%8c%e5%af%b9%e5%ba%94%e7%9d%80re%e6%a8%a1%e5%9d%97%e3%80%82%20r%27%5cn%27%20-%20%e7%bb%8f%e5%a4%84%e7%90%86%ef%bc%8c%26rsquo%3b%5cn%26rsquo%3b%e8%a1%a8%e7%a4%ba%e7%9a%84%e6%98%af%26rsquo%3b%5c%26">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -477,8 +477,8 @@ print(b) <span style="color:#75715e"># 1+1 = 2</span>
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

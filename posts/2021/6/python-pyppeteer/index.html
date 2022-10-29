@@ -309,23 +309,23 @@ if (!doNotTrack) {
 <p>总的来说，两款浏览器的内核是一样的，实现方式也是一样的，可以认为是开发版和正式版的区别，功能上基本是没有太大区别的。</p>
 <p>Pyppeteer 就是依赖于 Chromium 这个浏览器来运行的。那么有了 Pyppeteer 之后，我们就可以免去那些烦琐的环境配置等问题。如果第一次运行的时候，Chromium 浏览器没有安装，那么程序会帮我们自动安装和配置，就免去了烦琐的环境配置等工作。另外 Pyppeteer 是基于 Python 的新特性 async 实现的，所以它的一些执行也支持异步操作，效率相对于 Selenium 来说也提高了。</p>
 <p>由于 Pyppeteer 采用了 Python 的 async 机制，所以其运行要求的 Python 版本为 3.5 及以上。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install pyppeteer
-</code></pre></div><h2 id="快速上手">快速上手</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
-<span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch()
-   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
-   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://dynamic2.scrape.center/&#39;</span>)
-   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>waitForSelector(<span style="color:#e6db74">&#39;.item .name&#39;</span>)
-   doc <span style="color:#f92672">=</span> pq(<span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>content())
-   names <span style="color:#f92672">=</span> [item<span style="color:#f92672">.</span>text() <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> doc(<span style="color:#e6db74">&#39;.item .name&#39;</span>)<span style="color:#f92672">.</span>items()]
-   print(<span style="color:#e6db74">&#39;Names:&#39;</span>, names)
-   <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>close()
-  
-asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
-</code></pre></div><p>官方文档 - <a href="https://miyakogi.github.io/pyppeteer/reference.html">https://miyakogi.github.io/pyppeteer/reference.html</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pip install pyppeteer
+</span></span></code></pre></div><h2 id="快速上手">快速上手</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch()
+</span></span><span style="display:flex;"><span>   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://dynamic2.scrape.center/&#39;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>waitForSelector(<span style="color:#e6db74">&#39;.item .name&#39;</span>)
+</span></span><span style="display:flex;"><span>   doc <span style="color:#f92672">=</span> pq(<span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>content())
+</span></span><span style="display:flex;"><span>   names <span style="color:#f92672">=</span> [item<span style="color:#f92672">.</span>text() <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> doc(<span style="color:#e6db74">&#39;.item .name&#39;</span>)<span style="color:#f92672">.</span>items()]
+</span></span><span style="display:flex;"><span>   print(<span style="color:#e6db74">&#39;Names:&#39;</span>, names)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</span></span></code></pre></div><p>官方文档 - <a href="https://miyakogi.github.io/pyppeteer/reference.html">https://miyakogi.github.io/pyppeteer/reference.html</a></p>
 <h2 id="launch">launch</h2>
 <p>使用 Pyppeteer 的第一步便是启动浏览器，在puppeteer中需要调用「launch」方法去实现，launch方法的API：</p>
 <p><code>pyppeteer.launcher.launch(options: dict = None, **kwargs) → pyppeteer.browser.Browser</code></p>
@@ -350,76 +350,76 @@ asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f
 <p>观察<code>launch</code>方法源码发现他是被<code>async</code>修饰的，是一个协程对象，因此使用时需要加上<code>await</code>关键字。</p>
 <h3 id="无头模式">无头模式</h3>
 <p><code>headless</code>参数默认是设为True，也就是不显示浏览器界面，改为False便可以看到界面了，一般我们在开发阶段需要调试的时候会将其设置为False，在生产环境下就可以设置为True。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</code></pre></div><h3 id="禁用chrome-正受到自动测试软件的控制提示条">禁用&quot;Chrome 正受到自动测试软件的控制&quot;提示条</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
-</code></pre></div><h3 id="浏览器大小设置">浏览器大小设置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><h3 id="禁用chrome-正受到自动测试软件的控制提示条">禁用&quot;Chrome 正受到自动测试软件的控制&quot;提示条</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
+</span></span></code></pre></div><h3 id="浏览器大小设置">浏览器大小设置</h3>
 <p>在初始化时加入 defaultViewport字典值即可：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> pyppeteer<span style="color:#f92672">.</span>launch(
-        {<span style="color:#e6db74">&#39;headless&#39;</span>: <span style="color:#66d9ef">False</span>,
-         <span style="color:#e6db74">&#39;userDataDir&#39;</span>: UserDataDir,
-         <span style="color:#e6db74">&#39;defaultViewport&#39;</span>: {<span style="color:#e6db74">&#39;width&#39;</span>: <span style="color:#ae81ff">1800</span>, <span style="color:#e6db74">&#39;height&#39;</span>: <span style="color:#ae81ff">1000</span>}
-         }
-    )
-</code></pre></div><p>or</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> pyppeteer<span style="color:#f92672">.</span>launch(
-  headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
-  args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;--window-size=</span><span style="color:#e6db74">{</span>width<span style="color:#e6db74">}</span><span style="color:#e6db74">,</span><span style="color:#e6db74">{</span>height<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>]
-)
-</code></pre></div><p>附上获取屏幕大小的代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">screen_size</span>():
-    <span style="color:#e6db74">&#34;&#34;&#34;使用tkinter获取屏幕大小&#34;&#34;&#34;</span>
-    <span style="color:#f92672">import</span> tkinter
-    tk <span style="color:#f92672">=</span> tkinter<span style="color:#f92672">.</span>Tk()
-    width <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>winfo_screenwidth()
-    height <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>winfo_screenheight()
-    tk<span style="color:#f92672">.</span>quit()
-    <span style="color:#66d9ef">return</span> width, height
-</code></pre></div><h3 id="用户数据持久化-">用户数据持久化 🌹</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> pyppeteer<span style="color:#f92672">.</span>launch(
+</span></span><span style="display:flex;"><span>        {<span style="color:#e6db74">&#39;headless&#39;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;userDataDir&#39;</span>: UserDataDir,
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;defaultViewport&#39;</span>: {<span style="color:#e6db74">&#39;width&#39;</span>: <span style="color:#ae81ff">1800</span>, <span style="color:#e6db74">&#39;height&#39;</span>: <span style="color:#ae81ff">1000</span>}
+</span></span><span style="display:flex;"><span>         }
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> pyppeteer<span style="color:#f92672">.</span>launch(
+</span></span><span style="display:flex;"><span>  headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>  args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;--window-size=</span><span style="color:#e6db74">{</span>width<span style="color:#e6db74">}</span><span style="color:#e6db74">,</span><span style="color:#e6db74">{</span>height<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>]
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>附上获取屏幕大小的代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">screen_size</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;使用tkinter获取屏幕大小&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">import</span> tkinter
+</span></span><span style="display:flex;"><span>    tk <span style="color:#f92672">=</span> tkinter<span style="color:#f92672">.</span>Tk()
+</span></span><span style="display:flex;"><span>    width <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>winfo_screenwidth()
+</span></span><span style="display:flex;"><span>    height <span style="color:#f92672">=</span> tk<span style="color:#f92672">.</span>winfo_screenheight()
+</span></span><span style="display:flex;"><span>    tk<span style="color:#f92672">.</span>quit()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> width, height
+</span></span></code></pre></div><h3 id="用户数据持久化-">用户数据持久化 🌹</h3>
 <p>每次我们打开 Pyppeteer 的时候都是一个新的空白的浏览器。而且如果遇到了需要登录的网页之后，如果我们这次登录上了，下一次再启动又是空白了，又得登录一次，这的确是一个问题。</p>
 <p>比如以淘宝举例，平时我们逛淘宝的时候，在很多情况下关闭了浏览器再打开，淘宝依然还是登录状态。这是因为淘宝的一些关键 Cookies 已经保存到本地了，下次登录的时候可以直接读取并保持登录状态。</p>
 <p>那么这些信息保存在哪里了呢？其实就是保存在用户目录下了，里面不仅包含了浏览器的基本配置信息，还有一些 Cache、Cookies 等各种信息都在里面，如果我们能在浏览器启动的时候读取这些信息，那么启动的时候就可以恢复一些历史记录甚至一些登录状态信息了。</p>
 <p>这也就解决了一个问题：很多时候你在每次启动 Selenium 或 Pyppeteer 的时候总是一个全新的浏览器，那这究其原因就是没有设置用户目录，如果设置了它，每次打开就不再是一个全新的浏览器了，它可以恢复之前的历史记录，也可以恢复很多网站的登录信息。</p>
 <p>那么这个怎么来做呢？很简单，在启动的时候设置 userDataDir 就好了，示例如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
- 
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, userDataDir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./userdata&#39;</span>, args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
-   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
-   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://www.taobao.com&#39;</span>)
-   <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">100</span>)
- 
-asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
-</code></pre></div><p>具体的介绍可以看官方的一些说明，如： <a href="https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md">https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md</a>，这里面介绍了 userdatadir 的相关内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, userDataDir<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;./userdata&#39;</span>, args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
+</span></span><span style="display:flex;"><span>   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://www.taobao.com&#39;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</span></span></code></pre></div><p>具体的介绍可以看官方的一些说明，如： <a href="https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md">https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md</a>，这里面介绍了 userdatadir 的相关内容。</p>
 <p>再次运行上面的代码，这时候可以发现现在就已经是登录状态了，不需要再次登录了，这样就成功跳过了登录的流程。当然可能时间太久了，Cookies 都过期了，那还是需要登录的。</p>
 <h2 id="browser">browser</h2>
 <p>launch 方法，其返回的就是一个 Browser 对象，即浏览器对象，Browser 类的定义：</p>
 <p><code>class pyppeteer.browser.Browser(connection: pyppeteer.connection.Connection, contextIds: List[str], ignoreHTTPSErrors: bool, setDefaultViewport: bool, process: Optional[subprocess.Popen] = None, closeCallback: Callable[[], Awaitable[None]] = None, **kwargs)</code></p>
 <h3 id="开启无痕模式">开启无痕模式</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-context <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>createIncognitoBrowserContext()
-page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> context<span style="color:#f92672">.</span>newPage()
-</code></pre></div><h3 id="关闭">关闭</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>close()
-</code></pre></div><h2 id="page">page</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>context <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>createIncognitoBrowserContext()
+</span></span><span style="display:flex;"><span>page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> context<span style="color:#f92672">.</span>newPage()
+</span></span></code></pre></div><h3 id="关闭">关闭</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><h2 id="page">page</h2>
 <h3 id="页面大小设置">页面大小设置</h3>
 <p>窗口大小可以通过 Page 的 setViewport 方法设置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>setViewport({<span style="color:#e6db74">&#39;width&#39;</span>:width,<span style="color:#e6db74">&#39;height&#39;</span>:height})
-</code></pre></div><h3 id="防止检测">防止检测</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>setViewport({<span style="color:#e6db74">&#39;width&#39;</span>:width,<span style="color:#e6db74">&#39;height&#39;</span>:height})
+</span></span></code></pre></div><h3 id="防止检测">防止检测</h3>
 <p>Pyppeteer 的 Page 对象有一个方法叫作 evaluateOnNewDocument，意思就是在每次加载网页的时候执行某个语句，所以这里我们可以执行一下将 WebDriver 隐藏的命令，改写如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
- 
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
-   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
-   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>evaluateOnNewDocument(<span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>)
-   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://antispider1.scrape.center/&#39;</span>)
-   <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">100</span>)
- 
-asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
-</code></pre></div><h3 id="选项卡操作">选项卡操作</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch(headless<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, args<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;--disable-infobars&#39;</span>])
+</span></span><span style="display:flex;"><span>   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>evaluateOnNewDocument(<span style="color:#e6db74">&#39;Object.defineProperty(navigator, &#34;webdriver&#34;, {get: () =&gt; undefined})&#39;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://antispider1.scrape.center/&#39;</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</span></span></code></pre></div><h3 id="选项卡操作">选项卡操作</h3>
 <ul>
 <li><code>page = browser.newPage()</code> - 新建</li>
 <li><code>page.pages()</code> - 获取所有的页面</li>
@@ -495,18 +495,18 @@ asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f
 </li>
 </ul>
 <h3 id="点击">点击</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>gather(
-    page<span style="color:#f92672">.</span>waitForNavigation(waitOptions),
-    page<span style="color:#f92672">.</span>click(
-      selector<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>, 
-      clickOptions<span style="color:#f92672">=</span>{
-        <span style="color:#e6db74">&#39;button&#39;</span>:<span style="color:#e6db74">&#39;left&#39;</span>, <span style="color:#75715e"># left or right</span>
-        <span style="color:#e6db74">&#39;clickCount&#39;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#75715e"># 1 or 2</span>
-        <span style="color:#e6db74">&#39;delay&#39;</span>:<span style="color:#ae81ff">3000</span> <span style="color:#75715e"># 毫秒</span>
-      }
-    )
-)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>gather(
+</span></span><span style="display:flex;"><span>    page<span style="color:#f92672">.</span>waitForNavigation(waitOptions),
+</span></span><span style="display:flex;"><span>    page<span style="color:#f92672">.</span>click(
+</span></span><span style="display:flex;"><span>      selector<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>, 
+</span></span><span style="display:flex;"><span>      clickOptions<span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;button&#39;</span>:<span style="color:#e6db74">&#39;left&#39;</span>, <span style="color:#75715e"># left or right</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;clickCount&#39;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#75715e"># 1 or 2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;delay&#39;</span>:<span style="color:#ae81ff">3000</span> <span style="color:#75715e"># 毫秒</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><ul>
 <li><code>selector</code> - css选择器语句</li>
 <li><code>clickOptions</code> - 选项参数
 <ul>
@@ -520,8 +520,8 @@ asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f
 <ul>
 <li><code>page.type()</code> - 第一个参数为 css 选择器，第二个为文本内容</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">page<span style="color:#f92672">.</span>type(<span style="color:#e6db74">&#39;.item .username&#39;</span>,<span style="color:#e6db74">&#39;chenxuefan&#39;</span>)
-</code></pre></div><h3 id="延迟等待">延迟等待</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>page<span style="color:#f92672">.</span>type(<span style="color:#e6db74">&#39;.item .username&#39;</span>,<span style="color:#e6db74">&#39;chenxuefan&#39;</span>)
+</span></span></code></pre></div><h3 id="延迟等待">延迟等待</h3>
 <p>等待某些符合条件的节点加载出来再返回</p>
 <ul>
 <li>
@@ -532,15 +532,15 @@ asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f
 </li>
 <li>
 <p><code>page.waitForNavigation()</code> - 等待页面跳转，如果没加载出来就会报错</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">navigationPromise <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span><span style="color:#f92672">.</span>ensure_future(page<span style="color:#f92672">.</span>waitForNavigation())
-<span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>click(<span style="color:#e6db74">&#39;a.my-link&#39;</span>)  <span style="color:#75715e"># indirectly cause a navigation</span>
-<span style="color:#66d9ef">await</span> navigationPromise  <span style="color:#75715e"># wait until navigation finishes</span>
-<span style="color:#75715e"># or</span>
-<span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>wait([
-    page<span style="color:#f92672">.</span>click(<span style="color:#e6db74">&#39;a.my-link&#39;</span>),
-    page<span style="color:#f92672">.</span>waitForNavigation(),
-])
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>navigationPromise <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span><span style="color:#f92672">.</span>ensure_future(page<span style="color:#f92672">.</span>waitForNavigation())
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>click(<span style="color:#e6db74">&#39;a.my-link&#39;</span>)  <span style="color:#75715e"># indirectly cause a navigation</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> navigationPromise  <span style="color:#75715e"># wait until navigation finishes</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>wait([
+</span></span><span style="display:flex;"><span>    page<span style="color:#f92672">.</span>click(<span style="color:#e6db74">&#39;a.my-link&#39;</span>),
+</span></span><span style="display:flex;"><span>    page<span style="color:#f92672">.</span>waitForNavigation(),
+</span></span><span style="display:flex;"><span>])
+</span></span></code></pre></div></li>
 <li>
 <p><code>page.waitForRequest()</code> - 等待某个特定的请求被发出</p>
 </li>
@@ -774,8 +774,8 @@ asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

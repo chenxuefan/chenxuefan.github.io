@@ -56,13 +56,13 @@
     <loc>https://billie52707.cn/draft/pycharm/</loc>
     <lastmod>2021-12-20T20:54:00+00:00</lastmod>
   </url><url>
+    <loc>https://billie52707.cn/note/git/</loc>
+    <lastmod>2021-09-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://billie52707.cn/tags/git/</loc>
     <lastmod>2021-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/note/</loc>
-    <lastmod>2021-09-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://billie52707.cn/note/git/</loc>
     <lastmod>2021-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/draft/python-aiomysql/</loc>
@@ -170,13 +170,13 @@
     <loc>https://billie52707.cn/posts/2021/5/wakatime/</loc>
     <lastmod>2021-05-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</loc>
+    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://billie52707.cn/tags/glidedsky/</loc>
     <lastmod>2021-05-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/posts/2021/5/glidedsky-level2/</loc>
-    <lastmod>2021-05-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</loc>
     <lastmod>2021-05-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/draft/data-grand/dddd/2021/</loc>
@@ -341,10 +341,10 @@
     <loc>https://billie52707.cn/draft/python-matplotlib/</loc>
     <lastmod>2020-11-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://billie52707.cn/tags/c/</loc>
+    <loc>https://billie52707.cn/note/c/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://billie52707.cn/note/c/</loc>
+    <loc>https://billie52707.cn/tags/c/</loc>
     <lastmod>2020-11-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/tags/css/</loc>
@@ -404,10 +404,10 @@
     <loc>https://billie52707.cn/posts/2020/11/jupyter-notebook/</loc>
     <lastmod>2020-11-05T02:30:10+00:00</lastmod>
   </url><url>
-    <loc>https://billie52707.cn/tags/mac/</loc>
+    <loc>https://billie52707.cn/note/macos/</loc>
     <lastmod>2020-11-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://billie52707.cn/note/macos/</loc>
+    <loc>https://billie52707.cn/tags/mac/</loc>
     <lastmod>2020-11-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/posts/2020/11/wuhan-memory/</loc>
@@ -467,13 +467,13 @@
     <loc>https://billie52707.cn/diary/2020-08-26/</loc>
     <lastmod>2020-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://billie52707.cn/diary/2020-08-25/</loc>
-    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://billie52707.cn/draft/markdown/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/note/machine-learn/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/diary/2020-08-25/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/diary/2020-08-24/</loc>
@@ -608,16 +608,16 @@
     <loc>https://billie52707.cn/posts/2020/4/python-strftime/</loc>
     <lastmod>2020-04-07T11:01:00+00:00</lastmod>
   </url><url>
-    <loc>https://billie52707.cn/posts/2020/3/python-progressbar/</loc>
-    <lastmod>2020-03-17T20:54:00+00:00</lastmod>
-  </url><url>
-    <loc>https://billie52707.cn/tags/ubuntu/</loc>
-    <lastmod>2020-03-17T20:54:00+00:00</lastmod>
-  </url><url>
     <loc>https://billie52707.cn/note/linux/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/note/ubuntu/</loc>
+    <lastmod>2020-03-17T20:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/posts/2020/3/python-progressbar/</loc>
+    <lastmod>2020-03-17T20:54:00+00:00</lastmod>
+  </url><url>
+    <loc>https://billie52707.cn/tags/ubuntu/</loc>
     <lastmod>2020-03-17T20:54:00+00:00</lastmod>
   </url><url>
     <loc>https://billie52707.cn/posts/2020/3/python-pycharm/</loc>

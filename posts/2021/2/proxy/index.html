@@ -334,250 +334,250 @@ if (!doNotTrack) {
 <h2 id="requests-设置代理">requests 设置代理</h2>
 <p>对于 requests 来说，代理设置非常简单，我们只需要传入 proxies 参数即可。</p>
 <p>我在这里以我本机的代理为例，来看下 requests 的 HTTP 代理的设置，代码如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7890&#39;</span>
-proxies <span style="color:#f92672">=</span> {
-   <span style="color:#e6db74">&#39;http&#39;</span>: <span style="color:#e6db74">&#39;http://&#39;</span> <span style="color:#f92672">+</span> proxy,
-   <span style="color:#e6db74">&#39;https&#39;</span>: <span style="color:#e6db74">&#39;https://&#39;</span> <span style="color:#f92672">+</span> proxy,
-}
-<span style="color:#66d9ef">try</span>:
-   response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>, proxies<span style="color:#f92672">=</span>proxies)
-   print(response<span style="color:#f92672">.</span>text)
-<span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ConnectionError <span style="color:#66d9ef">as</span> e:
-   print(<span style="color:#e6db74">&#39;Error&#39;</span>, e<span style="color:#f92672">.</span>args)
-运行结果<span style="color:#960050;background-color:#1e0010">：</span>
-{
- <span style="color:#e6db74">&#34;args&#34;</span>: {},
- <span style="color:#e6db74">&#34;headers&#34;</span>: {
-   <span style="color:#e6db74">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;*/*&#34;</span>,
-   <span style="color:#e6db74">&#34;Accept-Encoding&#34;</span>: <span style="color:#e6db74">&#34;gzip, deflate&#34;</span>,
-   <span style="color:#e6db74">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;httpbin.org&#34;</span>,
-   <span style="color:#e6db74">&#34;User-Agent&#34;</span>: <span style="color:#e6db74">&#34;python-requests/2.22.0&#34;</span>,
-   <span style="color:#e6db74">&#34;X-Amzn-Trace-Id&#34;</span>: <span style="color:#e6db74">&#34;Root=1-5e8f358d-87913f68a192fb9f87aa0323&#34;</span>
- },
- <span style="color:#e6db74">&#34;origin&#34;</span>: <span style="color:#e6db74">&#34;210.173.1.204&#34;</span>,
- <span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://httpbin.org/get&#34;</span>
-}
-</code></pre></div><p>可以发现，我们通过一个字典的形式就设置好了 HTTP 代理，它分为两个类别，有 HTTP 和 HTTPS，如果我们访问的链接是 HTTP 协议，那就用 http 字典名指定的代理，如果是 HTTPS 协议，那就用 https 字典名指定的代理。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7890&#39;</span>
+</span></span><span style="display:flex;"><span>proxies <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;http&#39;</span>: <span style="color:#e6db74">&#39;http://&#39;</span> <span style="color:#f92672">+</span> proxy,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;https&#39;</span>: <span style="color:#e6db74">&#39;https://&#39;</span> <span style="color:#f92672">+</span> proxy,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>   response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>, proxies<span style="color:#f92672">=</span>proxies)
+</span></span><span style="display:flex;"><span>   print(response<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ConnectionError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>   print(<span style="color:#e6db74">&#39;Error&#39;</span>, e<span style="color:#f92672">.</span>args)
+</span></span><span style="display:flex;"><span>运行结果<span style="color:#960050;background-color:#1e0010">：</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;args&#34;</span>: {},
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;headers&#34;</span>: {
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;*/*&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;Accept-Encoding&#34;</span>: <span style="color:#e6db74">&#34;gzip, deflate&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;httpbin.org&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;User-Agent&#34;</span>: <span style="color:#e6db74">&#34;python-requests/2.22.0&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;X-Amzn-Trace-Id&#34;</span>: <span style="color:#e6db74">&#34;Root=1-5e8f358d-87913f68a192fb9f87aa0323&#34;</span>
+</span></span><span style="display:flex;"><span> },
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;origin&#34;</span>: <span style="color:#e6db74">&#34;210.173.1.204&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://httpbin.org/get&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>可以发现，我们通过一个字典的形式就设置好了 HTTP 代理，它分为两个类别，有 HTTP 和 HTTPS，如果我们访问的链接是 HTTP 协议，那就用 http 字典名指定的代理，如果是 HTTPS 协议，那就用 https 字典名指定的代理。</p>
 <p>其运行结果的 origin 如是代理服务器的 IP，则证明代理已经设置成功。</p>
 <p>如果代理需要认证，同样在代理的前面加上用户名密码即可，代理的写法就变成如下所示：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;username:password@127.0.0.1:7890&#39;</span>
-</code></pre></div><p>这里只需要将 username 和 password 替换即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;username:password@127.0.0.1:7890&#39;</span>
+</span></span></code></pre></div><p>这里只需要将 username 和 password 替换即可。</p>
 <p>如果需要使用 SOCKS 代理，则可以使用如下方式来设置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7891&#39;</span>
-proxies <span style="color:#f92672">=</span> {
-   <span style="color:#e6db74">&#39;http&#39;</span>: <span style="color:#e6db74">&#39;socks5://&#39;</span> <span style="color:#f92672">+</span> proxy,
-   <span style="color:#e6db74">&#39;https&#39;</span>: <span style="color:#e6db74">&#39;socks5://&#39;</span> <span style="color:#f92672">+</span> proxy
-}
-<span style="color:#66d9ef">try</span>:
-   response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>, proxies<span style="color:#f92672">=</span>proxies)
-   print(response<span style="color:#f92672">.</span>text)
-<span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ConnectionError <span style="color:#66d9ef">as</span> e:
-   print(<span style="color:#e6db74">&#39;Error&#39;</span>, e<span style="color:#f92672">.</span>args)
-</code></pre></div><p>在这里，我们需要额外安装一个包，这个包叫作 requests[socks]，安装命令如下所示：</p>
-<pre tabindex="0"><code>pip3 install &quot;requests[socks]&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7891&#39;</span>
+</span></span><span style="display:flex;"><span>proxies <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;http&#39;</span>: <span style="color:#e6db74">&#39;socks5://&#39;</span> <span style="color:#f92672">+</span> proxy,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#39;https&#39;</span>: <span style="color:#e6db74">&#39;socks5://&#39;</span> <span style="color:#f92672">+</span> proxy
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>   response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>, proxies<span style="color:#f92672">=</span>proxies)
+</span></span><span style="display:flex;"><span>   print(response<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ConnectionError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>   print(<span style="color:#e6db74">&#39;Error&#39;</span>, e<span style="color:#f92672">.</span>args)
+</span></span></code></pre></div><p>在这里，我们需要额外安装一个包，这个包叫作 requests[socks]，安装命令如下所示：</p>
+<pre tabindex="0"><code>pip3 install &#34;requests[socks]&#34;
 </code></pre><p>运行结果是完全相同的：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
- <span style="color:#e6db74">&#34;args&#34;</span>: {},
- <span style="color:#e6db74">&#34;headers&#34;</span>: {
-   <span style="color:#e6db74">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;*/*&#34;</span>,
-   <span style="color:#e6db74">&#34;Accept-Encoding&#34;</span>: <span style="color:#e6db74">&#34;gzip, deflate&#34;</span>,
-   <span style="color:#e6db74">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;httpbin.org&#34;</span>,
-   <span style="color:#e6db74">&#34;User-Agent&#34;</span>: <span style="color:#e6db74">&#34;python-requests/2.22.0&#34;</span>,
-   <span style="color:#e6db74">&#34;X-Amzn-Trace-Id&#34;</span>: <span style="color:#e6db74">&#34;Root=1-5e8f364a-589d3cf2500fafd47b5560f2&#34;</span>
- },
- <span style="color:#e6db74">&#34;origin&#34;</span>: <span style="color:#e6db74">&#34;210.173.1.204&#34;</span>,
- <span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://httpbin.org/get&#34;</span>
-}
-</code></pre></div><p>另外，还有一种设置方式即使用 socks 模块，也需要像上文一样安装 socks 库。这种设置方法如下所示：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
-<span style="color:#f92672">import</span> socks
-<span style="color:#f92672">import</span> socket
-socks<span style="color:#f92672">.</span>set_default_proxy(socks<span style="color:#f92672">.</span>SOCKS5, <span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, <span style="color:#ae81ff">7891</span>)
-socket<span style="color:#f92672">.</span>socket <span style="color:#f92672">=</span> socks<span style="color:#f92672">.</span>socksocket
-<span style="color:#66d9ef">try</span>:
-   response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
-   print(response<span style="color:#f92672">.</span>text)
-<span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ConnectionError <span style="color:#66d9ef">as</span> e:
-   print(<span style="color:#e6db74">&#39;Error&#39;</span>, e<span style="color:#f92672">.</span>args)
-</code></pre></div><p>使用这种方法也可以设置 SOCKS 代理，运行结果完全相同。相比第一种方法，此方法是全局设置。我们可以在不同情况下选用不同的方法。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;args&#34;</span>: {},
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;headers&#34;</span>: {
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;*/*&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;Accept-Encoding&#34;</span>: <span style="color:#e6db74">&#34;gzip, deflate&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;httpbin.org&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;User-Agent&#34;</span>: <span style="color:#e6db74">&#34;python-requests/2.22.0&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;X-Amzn-Trace-Id&#34;</span>: <span style="color:#e6db74">&#34;Root=1-5e8f364a-589d3cf2500fafd47b5560f2&#34;</span>
+</span></span><span style="display:flex;"><span> },
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;origin&#34;</span>: <span style="color:#e6db74">&#34;210.173.1.204&#34;</span>,
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://httpbin.org/get&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>另外，还有一种设置方式即使用 socks 模块，也需要像上文一样安装 socks 库。这种设置方法如下所示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> socks
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> socket
+</span></span><span style="display:flex;"><span>socks<span style="color:#f92672">.</span>set_default_proxy(socks<span style="color:#f92672">.</span>SOCKS5, <span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, <span style="color:#ae81ff">7891</span>)
+</span></span><span style="display:flex;"><span>socket<span style="color:#f92672">.</span>socket <span style="color:#f92672">=</span> socks<span style="color:#f92672">.</span>socksocket
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>   response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
+</span></span><span style="display:flex;"><span>   print(response<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> requests<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ConnectionError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>   print(<span style="color:#e6db74">&#39;Error&#39;</span>, e<span style="color:#f92672">.</span>args)
+</span></span></code></pre></div><p>使用这种方法也可以设置 SOCKS 代理，运行结果完全相同。相比第一种方法，此方法是全局设置。我们可以在不同情况下选用不同的方法。</p>
 <h2 id="selenium-设置代理">Selenium 设置代理</h2>
 <p>Selenium 同样可以设置代理，在这里以 Chrome 为例来介绍下其设置方法。</p>
 <p>对于无认证的代理，设置方法如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7890&#39;</span>
-options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
-options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--proxy-server=http://&#39;</span> <span style="color:#f92672">+</span> proxy)
-browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
-browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
-print(browser<span style="color:#f92672">.</span>page_source)
-browser<span style="color:#f92672">.</span>close()
-</code></pre></div><p>运行结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7890&#39;</span>
+</span></span><span style="display:flex;"><span>options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--proxy-server=http://&#39;</span> <span style="color:#f92672">+</span> proxy)
+</span></span><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
+</span></span><span style="display:flex;"><span>print(browser<span style="color:#f92672">.</span>page_source)
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><p>运行结果如下：</p>
 <pre tabindex="0"><code>{
- &quot;args&quot;: {},
- &quot;headers&quot;: {
-   &quot;Accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;,
-   &quot;Accept-Encoding&quot;: &quot;gzip, deflate&quot;,
-   &quot;Accept-Language&quot;: &quot;zh-CN,zh;q=0.9&quot;,
-   &quot;Host&quot;: &quot;httpbin.org&quot;,
-   &quot;Upgrade-Insecure-Requests&quot;: &quot;1&quot;,
-   &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36&quot;,
-   &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-5e8f39cd-60930018205fd154a9af39cc&quot;
+ &#34;args&#34;: {},
+ &#34;headers&#34;: {
+   &#34;Accept&#34;: &#34;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&#34;,
+   &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+   &#34;Accept-Language&#34;: &#34;zh-CN,zh;q=0.9&#34;,
+   &#34;Host&#34;: &#34;httpbin.org&#34;,
+   &#34;Upgrade-Insecure-Requests&#34;: &#34;1&#34;,
+   &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36&#34;,
+   &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e8f39cd-60930018205fd154a9af39cc&#34;
  },
- &quot;origin&quot;: &quot;210.173.1.204&quot;,
- &quot;url&quot;: &quot;http://httpbin.org/get&quot;
+ &#34;origin&#34;: &#34;210.173.1.204&#34;,
+ &#34;url&#34;: &#34;http://httpbin.org/get&#34;
 }
 </code></pre><p>代理设置成功，origin 同样为代理 IP 的地址。</p>
 <p>如果代理是认证代理，则设置方法相对比较麻烦，设置方法如下所示：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-<span style="color:#f92672">from</span> selenium.webdriver.chrome.options <span style="color:#f92672">import</span> Options
-<span style="color:#f92672">import</span> zipfile
-
-ip <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1&#39;</span>
-port <span style="color:#f92672">=</span> <span style="color:#ae81ff">7890</span>
-username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span>
-password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>
-
-manifest_json <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;{&#34;version&#34;:&#34;1.0.0&#34;,&#34;manifest_version&#34;: 2,&#34;name&#34;:&#34;Chrome Proxy&#34;,&#34;permissions&#34;: [&#34;proxy&#34;,&#34;tabs&#34;,&#34;unlimitedStorage&#34;,&#34;storage&#34;,&#34;&lt;all_urls&gt;&#34;,&#34;webRequest&#34;,&#34;webRequestBlocking&#34;],&#34;background&#34;: {&#34;scripts&#34;: [&#34;background.js&#34;]
-</span><span style="color:#e6db74">   }
-</span><span style="color:#e6db74">}
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
-background_js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">var config = {
-</span><span style="color:#e6db74">       mode: &#34;fixed_servers&#34;,
-</span><span style="color:#e6db74">       rules: {
-</span><span style="color:#e6db74">         singleProxy: {
-</span><span style="color:#e6db74">           scheme: &#34;http&#34;,
-</span><span style="color:#e6db74">           host: &#34;</span><span style="color:#e6db74">%(ip) s</span><span style="color:#e6db74">&#34;,
-</span><span style="color:#e6db74">           port: </span><span style="color:#e6db74">%(port) s</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">         }
-</span><span style="color:#e6db74">       }
-</span><span style="color:#e6db74">     }
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">chrome.proxy.settings.set({value: config, scope: &#34;regular&#34;}, function() </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">);
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">function callbackFn(details) {
-</span><span style="color:#e6db74">   return {
-</span><span style="color:#e6db74">       authCredentials: {username: &#34;</span><span style="color:#e6db74">%(username) s</span><span style="color:#e6db74">&#34;,
-</span><span style="color:#e6db74">           password: &#34;</span><span style="color:#e6db74">%(password) s</span><span style="color:#e6db74">&#34;
-</span><span style="color:#e6db74">       }
-</span><span style="color:#e6db74">   }
-</span><span style="color:#e6db74">}
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">chrome.webRequest.onAuthRequired.addListener(
-</span><span style="color:#e6db74">           callbackFn,
-</span><span style="color:#e6db74">           {urls: [&#34;&lt;all_urls&gt;&#34;]},
-</span><span style="color:#e6db74">           [&#39;blocking&#39;]
-</span><span style="color:#e6db74">)
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span> <span style="color:#f92672">%</span> {<span style="color:#e6db74">&#39;ip&#39;</span>: ip, <span style="color:#e6db74">&#39;port&#39;</span>: port, <span style="color:#e6db74">&#39;username&#39;</span>: username, <span style="color:#e6db74">&#39;password&#39;</span>: password}
-
-plugin_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;proxy_auth_plugin.zip&#39;</span>
-<span style="color:#66d9ef">with</span> zipfile<span style="color:#f92672">.</span>ZipFile(plugin_file, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> zp:
-   zp<span style="color:#f92672">.</span>writestr(<span style="color:#e6db74">&#34;manifest.json&#34;</span>, manifest_json)
-   zp<span style="color:#f92672">.</span>writestr(<span style="color:#e6db74">&#34;background.js&#34;</span>, background_js)
-options <span style="color:#f92672">=</span> Options()
-options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;--start-maximized&#34;</span>)
-options<span style="color:#f92672">.</span>add_extension(plugin_file)
-browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
-browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
-print(browser<span style="color:#f92672">.</span>page_source)
-browser<span style="color:#f92672">.</span>close()
-</code></pre></div><p>这里需要在本地创建一个 manifest.json 配置文件和 background.js 脚本来设置认证代理。运行代码之后本地会生成一个 proxy_auth_plugin.zip 文件来保存当前配置。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium.webdriver.chrome.options <span style="color:#f92672">import</span> Options
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> zipfile
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ip <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1&#39;</span>
+</span></span><span style="display:flex;"><span>port <span style="color:#f92672">=</span> <span style="color:#ae81ff">7890</span>
+</span></span><span style="display:flex;"><span>username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span>
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>manifest_json <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;{&#34;version&#34;:&#34;1.0.0&#34;,&#34;manifest_version&#34;: 2,&#34;name&#34;:&#34;Chrome Proxy&#34;,&#34;permissions&#34;: [&#34;proxy&#34;,&#34;tabs&#34;,&#34;unlimitedStorage&#34;,&#34;storage&#34;,&#34;&lt;all_urls&gt;&#34;,&#34;webRequest&#34;,&#34;webRequestBlocking&#34;],&#34;background&#34;: {&#34;scripts&#34;: [&#34;background.js&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>background_js <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">var config = {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       mode: &#34;fixed_servers&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       rules: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         singleProxy: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           scheme: &#34;http&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           host: &#34;</span><span style="color:#e6db74">%(ip) s</span><span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           port: </span><span style="color:#e6db74">%(port) s</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">chrome.proxy.settings.set({value: config, scope: &#34;regular&#34;}, function() </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">function callbackFn(details) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   return {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       authCredentials: {username: &#34;</span><span style="color:#e6db74">%(username) s</span><span style="color:#e6db74">&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           password: &#34;</span><span style="color:#e6db74">%(password) s</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">       }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">chrome.webRequest.onAuthRequired.addListener(
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           callbackFn,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           {urls: [&#34;&lt;all_urls&gt;&#34;]},
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">           [&#39;blocking&#39;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span> <span style="color:#f92672">%</span> {<span style="color:#e6db74">&#39;ip&#39;</span>: ip, <span style="color:#e6db74">&#39;port&#39;</span>: port, <span style="color:#e6db74">&#39;username&#39;</span>: username, <span style="color:#e6db74">&#39;password&#39;</span>: password}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plugin_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;proxy_auth_plugin.zip&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> zipfile<span style="color:#f92672">.</span>ZipFile(plugin_file, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> zp:
+</span></span><span style="display:flex;"><span>   zp<span style="color:#f92672">.</span>writestr(<span style="color:#e6db74">&#34;manifest.json&#34;</span>, manifest_json)
+</span></span><span style="display:flex;"><span>   zp<span style="color:#f92672">.</span>writestr(<span style="color:#e6db74">&#34;background.js&#34;</span>, background_js)
+</span></span><span style="display:flex;"><span>options <span style="color:#f92672">=</span> Options()
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#34;--start-maximized&#34;</span>)
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_extension(plugin_file)
+</span></span><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
+</span></span><span style="display:flex;"><span>print(browser<span style="color:#f92672">.</span>page_source)
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><p>这里需要在本地创建一个 manifest.json 配置文件和 background.js 脚本来设置认证代理。运行代码之后本地会生成一个 proxy_auth_plugin.zip 文件来保存当前配置。</p>
 <p>运行结果和上例一致，origin 同样为代理 IP。</p>
 <p>SOCKS 代理的设置也比较简单，把对应的协议修改为 socks5 即可，如无密码认证的代理设置方法为：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
-proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7891&#39;</span>
-options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
-options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--proxy-server=socks5://&#39;</span> <span style="color:#f92672">+</span> proxy)
-browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
-browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
-print(browser<span style="color:#f92672">.</span>page_source)
-browser<span style="color:#f92672">.</span>close()
-</code></pre></div><p>运行结果是一样的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> selenium <span style="color:#f92672">import</span> webdriver
+</span></span><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7891&#39;</span>
+</span></span><span style="display:flex;"><span>options <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>ChromeOptions()
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_argument(<span style="color:#e6db74">&#39;--proxy-server=socks5://&#39;</span> <span style="color:#f92672">+</span> proxy)
+</span></span><span style="display:flex;"><span>browser <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options)
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
+</span></span><span style="display:flex;"><span>print(browser<span style="color:#f92672">.</span>page_source)
+</span></span><span style="display:flex;"><span>browser<span style="color:#f92672">.</span>close()
+</span></span></code></pre></div><p>运行结果是一样的。</p>
 <h2 id="aiohttp-设置代理">aiohttp 设置代理</h2>
 <p>对于 aiohttp 来说，我们可以通过 proxy 参数直接设置即可，HTTP 代理设置如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">import</span> aiohttp
-
-proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://127.0.0.1:7890&#39;</span>
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-   <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
-       <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>, proxy<span style="color:#f92672">=</span>proxy) <span style="color:#66d9ef">as</span> response:
-           print(<span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text())
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
-</code></pre></div><p>如果代理有用户名密码，像 requests 一样，把 proxy 修改为如下内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://username:password@127.0.0.1:7890&#39;</span>
-</code></pre></div><p>这里只需要将 username 和 password 替换即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> aiohttp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://127.0.0.1:7890&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>, proxy<span style="color:#f92672">=</span>proxy) <span style="color:#66d9ef">as</span> response:
+</span></span><span style="display:flex;"><span>           print(<span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</span></span></code></pre></div><p>如果代理有用户名密码，像 requests 一样，把 proxy 修改为如下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://username:password@127.0.0.1:7890&#39;</span>
+</span></span></code></pre></div><p>这里只需要将 username 和 password 替换即可。</p>
 <p>对于 SOCKS 代理，我们需要安装一个支持库，叫作 aiohttp-socks，安装命令如下：</p>
 <pre tabindex="0"><code>pip3 install aiohttp-socks
 </code></pre><p>可以借助于这个库的 ProxyConnector 来设置 SOCKS 代理，代码如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">import</span> aiohttp
-<span style="color:#f92672">from</span> aiohttp_socks <span style="color:#f92672">import</span> ProxyConnector
-
-connector <span style="color:#f92672">=</span> ProxyConnector<span style="color:#f92672">.</span>from_url(<span style="color:#e6db74">&#39;socks5://127.0.0.1:7891&#39;</span>)
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-   <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(connector<span style="color:#f92672">=</span>connector) <span style="color:#66d9ef">as</span> session:
-       <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>) <span style="color:#66d9ef">as</span> response:
-           print(<span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text())
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
-</code></pre></div><p>运行结果是一样的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> aiohttp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> aiohttp_socks <span style="color:#f92672">import</span> ProxyConnector
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>connector <span style="color:#f92672">=</span> ProxyConnector<span style="color:#f92672">.</span>from_url(<span style="color:#e6db74">&#39;socks5://127.0.0.1:7891&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession(connector<span style="color:#f92672">=</span>connector) <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>) <span style="color:#66d9ef">as</span> response:
+</span></span><span style="display:flex;"><span>           print(<span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</span></span></code></pre></div><p>运行结果是一样的。</p>
 <p>另外这个库还支持设置 SOCKS4、HTTP 代理以及对应的代理认证，可以参考其官方介绍。</p>
 <h2 id="pyppeteer-设置代理">Pyppeteer 设置代理</h2>
 <p>对于 Pyppeteer 来说，由于其默认使用的是类似 Chrome 的 Chromium 浏览器，因此设置方法和 Selenium 的 Chrome 是一样的，如 HTTP 无认证代理设置方法都是通过 args 来设置，实现如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
-
-proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7890&#39;</span>
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch({<span style="color:#e6db74">&#39;args&#39;</span>: [<span style="color:#e6db74">&#39;--proxy-server=http://&#39;</span> <span style="color:#f92672">+</span> proxy], <span style="color:#e6db74">&#39;headless&#39;</span>: <span style="color:#66d9ef">False</span>})
-   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
-   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
-   print(<span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>content())
-   <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>close()
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
-</code></pre></div><p>运行结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7890&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch({<span style="color:#e6db74">&#39;args&#39;</span>: [<span style="color:#e6db74">&#39;--proxy-server=http://&#39;</span> <span style="color:#f92672">+</span> proxy], <span style="color:#e6db74">&#39;headless&#39;</span>: <span style="color:#66d9ef">False</span>})
+</span></span><span style="display:flex;"><span>   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
+</span></span><span style="display:flex;"><span>   print(<span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>content())
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</span></span></code></pre></div><p>运行结果：</p>
 <pre tabindex="0"><code>{
- &quot;args&quot;: {},
- &quot;headers&quot;: {
-   &quot;Accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&quot;,
-   &quot;Accept-Encoding&quot;: &quot;gzip, deflate, br&quot;,
-   &quot;Accept-Language&quot;: &quot;zh-CN,zh;q=0.9&quot;,
-   &quot;Host&quot;: &quot;httpbin.org&quot;,
-   &quot;Upgrade-Insecure-Requests&quot;: &quot;1&quot;,
-   &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3494.0 Safari/537.36&quot;,
-   &quot;X-Amzn-Trace-Id&quot;: &quot;Root=1-5e8f442c-12b1ed7865b049007267a66c&quot;
+ &#34;args&#34;: {},
+ &#34;headers&#34;: {
+   &#34;Accept&#34;: &#34;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#34;,
+   &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
+   &#34;Accept-Language&#34;: &#34;zh-CN,zh;q=0.9&#34;,
+   &#34;Host&#34;: &#34;httpbin.org&#34;,
+   &#34;Upgrade-Insecure-Requests&#34;: &#34;1&#34;,
+   &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3494.0 Safari/537.36&#34;,
+   &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e8f442c-12b1ed7865b049007267a66c&#34;
  },
- &quot;origin&quot;: &quot;210.173.1.204&quot;,
- &quot;url&quot;: &quot;https://httpbin.org/get&quot;
+ &#34;origin&#34;: &#34;210.173.1.204&#34;,
+ &#34;url&#34;: &#34;https://httpbin.org/get&#34;
 }
 </code></pre><p>同样可以看到设置成功。</p>
 <p>对于 SOCKS 代理，也是一样的，只需要将协议修改为 socks5 即可，代码实现如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
-
-proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7891&#39;</span>
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch({<span style="color:#e6db74">&#39;args&#39;</span>: [<span style="color:#e6db74">&#39;--proxy-server=socks5://&#39;</span> <span style="color:#f92672">+</span> proxy], <span style="color:#e6db74">&#39;headless&#39;</span>: <span style="color:#66d9ef">False</span>})
-   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
-   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
-   print(<span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>content())
-   <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>close()
-
-<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
-</code></pre></div><p>运行结果也是一样的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyppeteer <span style="color:#f92672">import</span> launch
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1:7891&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>   browser <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> launch({<span style="color:#e6db74">&#39;args&#39;</span>: [<span style="color:#e6db74">&#39;--proxy-server=socks5://&#39;</span> <span style="color:#f92672">+</span> proxy], <span style="color:#e6db74">&#39;headless&#39;</span>: <span style="color:#66d9ef">False</span>})
+</span></span><span style="display:flex;"><span>   page <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>newPage()
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>goto(<span style="color:#e6db74">&#39;https://httpbin.org/get&#39;</span>)
+</span></span><span style="display:flex;"><span>   print(<span style="color:#66d9ef">await</span> page<span style="color:#f92672">.</span>content())
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> browser<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>   asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(main())
+</span></span></code></pre></div><p>运行结果也是一样的。</p>
 <h2 id="总结">总结</h2>
 <p>以上总结了各个库的代理使用方式，以后如果遇到封 IP 的问题，我们就可以轻松通过加代理的方式来解决啦。</p>
 <p>本节代码：https://github.com/Python3WebSpider/ProxyTest。</p>
@@ -618,7 +618,7 @@ proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          4287 字
+          4288 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -780,8 +780,8 @@ proxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

@@ -301,18 +301,18 @@ if (!doNotTrack) {
 <p>下面我们分别详细介绍一下这几个过程。</p>
 <h2 id="发送请求">发送请求</h2>
 <p>我们知道 JavaScript 可以实现页面的各种交互功能，Ajax 也不例外，它是由 JavaScript 实现的，实际上执行了如下代码：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlhttp</span>;
-<span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">XMLHttpRequest</span>) {
-    <span style="color:#75715e">//code for IE7+, Firefox, Chrome, Opera, Safari
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlhttp</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();} <span style="color:#66d9ef">else</span> {<span style="color:#75715e">//code for IE6, IE5
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlhttp</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#e6db74">&#34;Microsoft.XMLHTTP&#34;</span>);
-}
-<span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">onreadystatechange</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>() {<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">readyState</span><span style="color:#f92672">==</span><span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">status</span><span style="color:#f92672">==</span><span style="color:#ae81ff">200</span>) {document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;myDiv&#34;</span>).<span style="color:#a6e22e">innerHTML</span><span style="color:#f92672">=</span><span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">responseText</span>;
-    }
-}
-<span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;POST&#34;</span>,<span style="color:#e6db74">&#34;/ajax/&#34;</span>,<span style="color:#66d9ef">true</span>);
-<span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">send</span>();
-</code></pre></div><p>这是 JavaScript 对 Ajax 最底层的实现，这个过程实际上是新建了 XMLHttpRequest 对象，然后调用 onreadystatechange 属性设置监听，最后调用 open() 和 send() 方法向某个链接（也就是服务器）发送请求。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlhttp</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">XMLHttpRequest</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//code for IE7+, Firefox, Chrome, Opera, Safari
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlhttp</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();} <span style="color:#66d9ef">else</span> {<span style="color:#75715e">//code for IE6, IE5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">xmlhttp</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ActiveXObject</span>(<span style="color:#e6db74">&#34;Microsoft.XMLHTTP&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">onreadystatechange</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>() {<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">readyState</span><span style="color:#f92672">==</span><span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">status</span><span style="color:#f92672">==</span><span style="color:#ae81ff">200</span>) {document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;myDiv&#34;</span>).<span style="color:#a6e22e">innerHTML</span><span style="color:#f92672">=</span><span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">responseText</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;POST&#34;</span>,<span style="color:#e6db74">&#34;/ajax/&#34;</span>,<span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xmlhttp</span>.<span style="color:#a6e22e">send</span>();
+</span></span></code></pre></div><p>这是 JavaScript 对 Ajax 最底层的实现，这个过程实际上是新建了 XMLHttpRequest 对象，然后调用 onreadystatechange 属性设置监听，最后调用 open() 和 send() 方法向某个链接（也就是服务器）发送请求。</p>
 <p>前面我们用 Python 实现请求发送之后，可以得到响应结果，但这里请求的发送由 JavaScript 来完成。由于设置了监听，所以当服务器返回响应时，onreadystatechange 对应的方法便会被触发，我们在这个方法里面解析响应内容即可。</p>
 <h2 id="解析内容">解析内容</h2>
 <p>得到响应之后，onreadystatechange 属性对应的方法会被触发，此时利用 xmlhttp 的 responseText 属性便可取到响应内容。这类似于 Python 中利用 requests 向服务器发起请求，然后得到响应的过程。</p>
@@ -543,8 +543,8 @@ if (!doNotTrack) {
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

@@ -279,63 +279,63 @@ if (!doNotTrack) {
 <pre tabindex="0"><code>pip3 install pyquery
 </code></pre><h2 id="初始化">初始化</h2>
 <p>🍑 <strong>字符串初始化</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">&lt;div&gt;
-</span><span style="color:#e6db74">    &lt;ul&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-0&#34;&gt;first item&lt;/li&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-1&#34;&gt;&lt;a href=&#34;link2.html&#34;&gt;second item&lt;/a&gt;&lt;/li&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-0 active&#34;&gt;&lt;a href=&#34;link3.html&#34;&gt;&lt;span class=&#34;bold&#34;&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-1 active&#34;&gt;&lt;a href=&#34;link4.html&#34;&gt;fourth item&lt;/a&gt;&lt;/li&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-0&#34;&gt;&lt;a href=&#34;link5.html&#34;&gt;fifth item&lt;/a&gt;&lt;/li&gt;
-</span><span style="color:#e6db74">     &lt;/ul&gt;
-</span><span style="color:#e6db74"> &lt;/div&gt;
-</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
-<span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
-doc <span style="color:#f92672">=</span> pq(html)
-print(doc(<span style="color:#e6db74">&#39;li&#39;</span>))
-</code></pre></div><p>🥭 <strong>URL初始化</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
-doc <span style="color:#f92672">=</span> pq(url<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://baidu.com&#39;</span>)
-print(doc(<span style="color:#e6db74">&#39;title&#39;</span>))
-</code></pre></div><p>🍉 <strong>文件初始化</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
-doc <span style="color:#f92672">=</span> pq(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;demo.html&#39;</span>)
-print(doc(<span style="color:#e6db74">&#39;li&#39;</span>))
-</code></pre></div><h2 id="基本css选择器">基本CSS选择器</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;ul&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-0&#34;&gt;first item&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-1&#34;&gt;&lt;a href=&#34;link2.html&#34;&gt;second item&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-0 active&#34;&gt;&lt;a href=&#34;link3.html&#34;&gt;&lt;span class=&#34;bold&#34;&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-1 active&#34;&gt;&lt;a href=&#34;link4.html&#34;&gt;fourth item&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-0&#34;&gt;&lt;a href=&#34;link5.html&#34;&gt;fifth item&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     &lt;/ul&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+</span></span><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span>print(doc(<span style="color:#e6db74">&#39;li&#39;</span>))
+</span></span></code></pre></div><p>🥭 <strong>URL初始化</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+</span></span><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(url<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://baidu.com&#39;</span>)
+</span></span><span style="display:flex;"><span>print(doc(<span style="color:#e6db74">&#39;title&#39;</span>))
+</span></span></code></pre></div><p>🍉 <strong>文件初始化</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+</span></span><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;demo.html&#39;</span>)
+</span></span><span style="display:flex;"><span>print(doc(<span style="color:#e6db74">&#39;li&#39;</span>))
+</span></span></code></pre></div><h2 id="基本css选择器">基本CSS选择器</h2>
 <p>🍎 <strong>id选择器（#）</strong></p>
 <p>🍊 <strong>class选择器（.）</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">&lt;div id=&#34;container&#34;&gt;
-</span><span style="color:#e6db74">    &lt;ul class=&#34;list&#34;&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-0&#34;&gt;first item&lt;/li&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-1&#34;&gt;&lt;a href=&#34;link2.html&#34;&gt;second item&lt;/a&gt;&lt;/li&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-0 active&#34;&gt;&lt;a href=&#34;link3.html&#34;&gt;&lt;span class=&#34;bold&#34;&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-1 active&#34;&gt;&lt;a href=&#34;link4.html&#34;&gt;fourth item&lt;/a&gt;&lt;/li&gt;
-</span><span style="color:#e6db74">         &lt;li class=&#34;item-0&#34;&gt;&lt;a href=&#34;link5.html&#34;&gt;fifth item&lt;/a&gt;&lt;/li&gt;
-</span><span style="color:#e6db74">     &lt;/ul&gt;
-</span><span style="color:#e6db74"> &lt;/div&gt;
-</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
-<span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
-doc <span style="color:#f92672">=</span> pq(html)
-print(doc(<span style="color:#e6db74">&#39;#container .list li&#39;</span>))
-</code></pre></div><h2 id="查找节点">查找节点</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;div id=&#34;container&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;ul class=&#34;list&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-0&#34;&gt;first item&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-1&#34;&gt;&lt;a href=&#34;link2.html&#34;&gt;second item&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-0 active&#34;&gt;&lt;a href=&#34;link3.html&#34;&gt;&lt;span class=&#34;bold&#34;&gt;third item&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-1 active&#34;&gt;&lt;a href=&#34;link4.html&#34;&gt;fourth item&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         &lt;li class=&#34;item-0&#34;&gt;&lt;a href=&#34;link5.html&#34;&gt;fifth item&lt;/a&gt;&lt;/li&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     &lt;/ul&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+</span></span><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span>print(doc(<span style="color:#e6db74">&#39;#container .list li&#39;</span>))
+</span></span></code></pre></div><h2 id="查找节点">查找节点</h2>
 <p>🍎 <strong>子节点</strong></p>
 <ul>
 <li><code>find()</code></li>
 <li><code>children()</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
-doc <span style="color:#f92672">=</span> pq(html)
-items <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.list&#39;</span>)
-
-<span style="color:#75715e">#find()</span>
-lis <span style="color:#f92672">=</span> items<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;li&#39;</span>)
-print(lis)
-
-<span style="color:#75715e">#children()</span>
-lis <span style="color:#f92672">=</span> items<span style="color:#f92672">.</span>children()
-print(lis)
-</code></pre></div><p>🍊 <strong>父节点</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+</span></span><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span>items <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.list&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#find()</span>
+</span></span><span style="display:flex;"><span>lis <span style="color:#f92672">=</span> items<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;li&#39;</span>)
+</span></span><span style="display:flex;"><span>print(lis)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#children()</span>
+</span></span><span style="display:flex;"><span>lis <span style="color:#f92672">=</span> items<span style="color:#f92672">.</span>children()
+</span></span><span style="display:flex;"><span>print(lis)
+</span></span></code></pre></div><p>🍊 <strong>父节点</strong></p>
 <ul>
 <li><code>parents()</code></li>
 </ul>
@@ -345,72 +345,72 @@ print(lis)
 </ul>
 <p>ps:以上方法均可传入css选择器</p>
 <p>🐂 <strong>同时根据标签和属性识别</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python3" data-lang="python3">a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">&lt;body&gt;
-</span><span style="color:#e6db74">    &lt;h&gt;标题&lt;/h&gt;
-</span><span style="color:#e6db74">    &lt;p id=&#39;p1&#39;&gt;段落1&lt;/p&gt;
-</span><span style="color:#e6db74">    &lt;p id=&#39;p2&#39;&gt;段落2&lt;/p&gt;
-</span><span style="color:#e6db74">    &lt;p class=&#39;p3&#39;&gt;段落3&lt;/p&gt;
-</span><span style="color:#e6db74">    &lt;p class=&#39;p3&#39; id=&#39;pp&#39;&gt;段落4&lt;/p&gt;
-</span><span style="color:#e6db74">&lt;/body&gt;
-</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
-
-doc <span style="color:#f92672">=</span> pq(a)
-doc(<span style="color:#e6db74">&#39;p#p1&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># &#39;段落1&#39;</span>
-doc(<span style="color:#e6db74">&#39;p.p3[id]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 含有id属性</span>
-doc(<span style="color:#e6db74">&#39;p.p3#pp&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 使用多个属性筛选</span>
-doc(<span style="color:#e6db74">&#39;p[class=p3][id=pp]&#39;</span>)<span style="color:#f92672">.</span>text()
-doc(<span style="color:#e6db74">&#39;p[class=p3], p[id=p1]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 或的关系</span>
-doc(<span style="color:#e6db74">&#39;p[class=p3],[id=p1]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 或者只用,隔开</span>
-doc(<span style="color:#e6db74">&#39;*#p1&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 不指定标签名</span>
-
-<span style="color:#75715e"># 否定</span>
-doc(<span style="color:#e6db74">&#39;p:not([id])&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 不含有id属性</span>
-doc(<span style="color:#e6db74">&#39;body :not(p)&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 选出不是p的子节点  &#39;标题&#39;</span>
-doc(<span style="color:#e6db74">&#39;p:not(.p3)&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 选出class不是p3的</span>
-doc(<span style="color:#e6db74">&#39;p[id][id!=p2]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 也可以用!=，这里选择有id且id不是p2的</span>
-
-<span style="color:#75715e"># 类似正则表达式</span>
-doc(<span style="color:#e6db74">&#39;p[id^=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 首端匹配</span>
-doc(<span style="color:#e6db74">&#39;p[id$=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 尾端匹配</span>
-doc(<span style="color:#e6db74">&#39;p[id*=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 包含</span>
-</code></pre></div><h2 id="遍历">遍历</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python3" data-lang="python3"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;h&gt;标题&lt;/h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;p id=&#39;p1&#39;&gt;段落1&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;p id=&#39;p2&#39;&gt;段落2&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;p class=&#39;p3&#39;&gt;段落3&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;p class=&#39;p3&#39; id=&#39;pp&#39;&gt;段落4&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(a)
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p#p1&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># &#39;段落1&#39;</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p.p3[id]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 含有id属性</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p.p3#pp&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 使用多个属性筛选</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p[class=p3][id=pp]&#39;</span>)<span style="color:#f92672">.</span>text()
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p[class=p3], p[id=p1]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 或的关系</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p[class=p3],[id=p1]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 或者只用,隔开</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;*#p1&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 不指定标签名</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 否定</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p:not([id])&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 不含有id属性</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;body :not(p)&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 选出不是p的子节点  &#39;标题&#39;</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p:not(.p3)&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 选出class不是p3的</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p[id][id!=p2]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 也可以用!=，这里选择有id且id不是p2的</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 类似正则表达式</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p[id^=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 首端匹配</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p[id$=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 尾端匹配</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;p[id*=p]&#39;</span>)<span style="color:#f92672">.</span>text() <span style="color:#75715e"># 包含</span>
+</span></span></code></pre></div><h2 id="遍历">遍历</h2>
 <p>🚴‍♀️ <strong>单个节点</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
-li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.active&#39;</span>)
-print(li)
-</code></pre></div><p>🚴 <strong>多个节点（遍历）</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span>li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;.active&#39;</span>)
+</span></span><span style="display:flex;"><span>print(li)
+</span></span></code></pre></div><p>🚴 <strong>多个节点（遍历）</strong></p>
 <ul>
 <li><code>items()</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
-lis <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&#39;</span>)<span style="color:#f92672">.</span>items()
-<span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> lis:
-    print(li, type(li))
-</code></pre></div><h2 id="获取信息">获取信息</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span>lis <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&#39;</span>)<span style="color:#f92672">.</span>items()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> lis:
+</span></span><span style="display:flex;"><span>    print(li, type(li))
+</span></span></code></pre></div><h2 id="获取信息">获取信息</h2>
 <p>🚗 <strong>属性</strong></p>
 <ul>
 <li><code>attr() </code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
-a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#39;</span>)
-print(a<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;href&#39;</span>))  <span style="color:#75715e">#href属性的值</span>
-<span style="color:#75715e">#或</span>
-print(a<span style="color:#f92672">.</span>attr<span style="color:#f92672">.</span>href) <span style="color:#75715e">#href属性的值</span>
-</code></pre></div><p>🚄 <strong>文本</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;href&#39;</span>))  <span style="color:#75715e">#href属性的值</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#或</span>
+</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">.</span>attr<span style="color:#f92672">.</span>href) <span style="color:#75715e">#href属性的值</span>
+</span></span></code></pre></div><p>🚄 <strong>文本</strong></p>
 <ul>
 <li><code>text()</code> 返回标签内部纯文本内容</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
-a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#39;</span>)
-print(a<span style="color:#f92672">.</span>text())
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">.</span>text())
+</span></span></code></pre></div><ul>
 <li><code>html()</code> 返回标签内部html文本内容</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">doc <span style="color:#f92672">=</span> pq(html)
-li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&#39;</span>)
-print(li<span style="color:#f92672">.</span>html())
-</code></pre></div><h2 id="dom操作">dom操作</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span>li <span style="color:#f92672">=</span> doc(<span style="color:#e6db74">&#39;li&#39;</span>)
+</span></span><span style="display:flex;"><span>print(li<span style="color:#f92672">.</span>html())
+</span></span></code></pre></div><h2 id="dom操作">dom操作</h2>
 <ul>
 <li><a href="https://www.jb51.net/article/182279.htm">https://www.jb51.net/article/182279.htm</a></li>
 <li><code>addClass('class_name')</code></li>
@@ -419,43 +419,43 @@ print(li<span style="color:#f92672">.</span>html())
 <li><code>css()</code></li>
 <li><code>remove()</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">&lt;head&gt;
-</span><span style="color:#e6db74">  &lt;meta charset=&#34;utf-8&#34;/&gt;
-</span><span style="color:#e6db74">  &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;/&gt;
-</span><span style="color:#e6db74">  &lt;title&gt; Notes | 人人都爱小雀斑&#39;s blog &lt;/title&gt;
-</span><span style="color:#e6db74">&lt;/head&gt;
-</span><span style="color:#e6db74">&lt;body class=&#34;max-width mx-auto px3 ltr&#34;&gt;
-</span><span style="color:#e6db74">    &lt;h1&gt;人人都爱小雀斑&#39;s blog&lt;/h1&gt;
-</span><span style="color:#e6db74">&lt;footer id=&#34;footer&#34;&gt;
-</span><span style="color:#e6db74">  &lt;div class=&#34;footer-center&#34;&gt;
-</span><span style="color:#e6db74">    Copyright  
-</span><span style="color:#e6db74">    © 
-</span><span style="color:#e6db74">    2020-2021 
-</span><span style="color:#e6db74">    &lt;span&gt;❤ Billie  &lt;/span&gt;  
-</span><span style="color:#e6db74">    &lt;span&gt;粤ICP备20025795号-1 &lt;/span&gt;&lt;br/&gt;
-</span><span style="color:#e6db74">    &lt;span&gt;Powered By HUGO | &lt;/span&gt;
-</span><span style="color:#e6db74">    &lt;span id=&#34;busuanzi_container_site_uv&#34;&gt;
-</span><span style="color:#e6db74">        访客 &lt;span id=&#34;busuanzi_value_site_uv&#34;/&gt; 
-</span><span style="color:#e6db74">    &lt;/span&gt;
-</span><span style="color:#e6db74">  &lt;/div&gt;
-</span><span style="color:#e6db74">&lt;/footer&gt;
-</span><span style="color:#e6db74">&lt;/body&gt;
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
-<span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
-doc <span style="color:#f92672">=</span> pq(html)
-<span style="color:#75715e"># 添加class</span>
-doc(<span style="color:#e6db74">&#39;footer&#39;</span>)<span style="color:#f92672">.</span>addClass(<span style="color:#e6db74">&#39;footer&#39;</span>)
-<span style="color:#75715e"># 删除class</span>
-doc(<span style="color:#e6db74">&#39;.max-width&#39;</span>)<span style="color:#f92672">.</span>removeClass(<span style="color:#e6db74">&#39;max-width&#39;</span>)
-<span style="color:#75715e"># 修改某个属性的值、添加自定义属性</span>
-doc(<span style="color:#e6db74">&#39;#footer&#39;</span>)<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;id&#39;</span>,<span style="color:#e6db74">&#39;footer_new&#39;</span>)
-doc(<span style="color:#e6db74">&#39;#footer&#39;</span>)<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;tab&#39;</span>,<span style="color:#e6db74">&#39;burn_them_all&#39;</span>)
-<span style="color:#75715e"># 删除某个节点</span>
-doc(<span style="color:#e6db74">&#39;#busuanzi_container_site_uv&#39;</span>)<span style="color:#f92672">.</span>remove()
-print(doc)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>html <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;meta charset=&#34;utf-8&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;title&gt; Notes | 人人都爱小雀斑&#39;s blog &lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;body class=&#34;max-width mx-auto px3 ltr&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;h1&gt;人人都爱小雀斑&#39;s blog&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;footer id=&#34;footer&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;div class=&#34;footer-center&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Copyright  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    © 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    2020-2021 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;span&gt;❤ Billie  &lt;/span&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;span&gt;粤ICP备20025795号-1 &lt;/span&gt;&lt;br/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;span&gt;Powered By HUGO | &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;span id=&#34;busuanzi_container_site_uv&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        访客 &lt;span id=&#34;busuanzi_value_site_uv&#34;/&gt; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/footer&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyquery <span style="color:#f92672">import</span> PyQuery <span style="color:#66d9ef">as</span> pq
+</span></span><span style="display:flex;"><span>doc <span style="color:#f92672">=</span> pq(html)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加class</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;footer&#39;</span>)<span style="color:#f92672">.</span>addClass(<span style="color:#e6db74">&#39;footer&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除class</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;.max-width&#39;</span>)<span style="color:#f92672">.</span>removeClass(<span style="color:#e6db74">&#39;max-width&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改某个属性的值、添加自定义属性</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;#footer&#39;</span>)<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;id&#39;</span>,<span style="color:#e6db74">&#39;footer_new&#39;</span>)
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;#footer&#39;</span>)<span style="color:#f92672">.</span>attr(<span style="color:#e6db74">&#39;tab&#39;</span>,<span style="color:#e6db74">&#39;burn_them_all&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除某个节点</span>
+</span></span><span style="display:flex;"><span>doc(<span style="color:#e6db74">&#39;#busuanzi_container_site_uv&#39;</span>)<span style="color:#f92672">.</span>remove()
+</span></span><span style="display:flex;"><span>print(doc)
+</span></span></code></pre></div>
     </div>
 
 
@@ -649,8 +649,8 @@ print(doc)
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

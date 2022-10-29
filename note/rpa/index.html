@@ -284,78 +284,78 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>导入相关的方法和模块</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> rpa <span style="color:#f92672">import</span> Chrome,ChromeOptions
-<span style="color:#f92672">from</span> rpa <span style="color:#f92672">import</span> ElementClickMethod <span style="color:#75715e"># 元素点击</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> rpa <span style="color:#f92672">import</span> Chrome,ChromeOptions
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> rpa <span style="color:#f92672">import</span> ElementClickMethod <span style="color:#75715e"># 元素点击</span>
+</span></span></code></pre></div></li>
 <li>
 <p>创建浏览器对象</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">options <span style="color:#f92672">=</span> ChromeOptions()
-options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>,{<span style="color:#e6db74">&#34;safebrowsing.enabled&#34;</span>:<span style="color:#66d9ef">True</span>})
-rpa_brower <span style="color:#f92672">=</span> Chrome(options)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>options <span style="color:#f92672">=</span> ChromeOptions()
+</span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;prefs&#34;</span>,{<span style="color:#e6db74">&#34;safebrowsing.enabled&#34;</span>:<span style="color:#66d9ef">True</span>})
+</span></span><span style="display:flex;"><span>rpa_brower <span style="color:#f92672">=</span> Chrome(options)
+</span></span></code></pre></div></li>
 <li>
 <p>浏览器对象的一些操作</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 窗口相关的方法</span>
-rpa_brower<span style="color:#f92672">.</span>max_window() <span style="color:#75715e"># 最大化浏览器</span>
-rpa_brower<span style="color:#f92672">.</span>min_window() <span style="color:#75715e"># 最小化</span>
-rpa_brower<span style="color:#f92672">.</span>set_window_size() <span style="color:#75715e">#</span>
-rpa_brower<span style="color:#f92672">.</span>quit() <span style="color:#75715e"># </span>
-<span style="color:#75715e"># 属性</span>
-rpa_brower<span style="color:#f92672">.</span>window_handles <span style="color:#75715e"># </span>
-rpa_brower<span style="color:#f92672">.</span>urls <span style="color:#75715e">#</span>
-rpa_brower<span style="color:#f92672">.</span>titles <span style="color:#75715e"># </span>
-rpa_brower<span style="color:#f92672">.</span>current_tab_count <span style="color:#75715e"># </span>
-rpa_brower<span style="color:#f92672">.</span>web_driver <span style="color:#75715e"># selenium的driver对象</span>
-<span style="color:#75715e"># 其他方法</span>
-rpa_brower<span style="color:#f92672">.</span>create() <span style="color:#75715e">#</span>
-rpa_brower<span style="color:#f92672">.</span>add_element() <span style="color:#75715e"># </span>
-rpa_brower<span style="color:#f92672">.</span>catch() <span style="color:#75715e"># </span>
-rpa_brower<span style="color:#f92672">.</span>catch_by_title() <span style="color:#75715e"># 捕获窗口</span>
-rpa_brower<span style="color:#f92672">.</span>add_cookies() <span style="color:#75715e">#</span>
-rpa_brower<span style="color:#f92672">.</span>delete_all_cookies() <span style="color:#75715e">#</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 窗口相关的方法</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>max_window() <span style="color:#75715e"># 最大化浏览器</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>min_window() <span style="color:#75715e"># 最小化</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>set_window_size() <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>quit() <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 属性</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>window_handles <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>urls <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>titles <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>current_tab_count <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>web_driver <span style="color:#75715e"># selenium的driver对象</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 其他方法</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>create() <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>add_element() <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>catch() <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>catch_by_title() <span style="color:#75715e"># 捕获窗口</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>add_cookies() <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>rpa_brower<span style="color:#f92672">.</span>delete_all_cookies() <span style="color:#75715e">#</span>
+</span></span></code></pre></div></li>
 <li>
 <p>创建网页对象 - <code>create</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rpa_driver <span style="color:#f92672">=</span> rpa_brower<span style="color:#f92672">.</span>create(url)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rpa_driver <span style="color:#f92672">=</span> rpa_brower<span style="color:#f92672">.</span>create(url)
+</span></span></code></pre></div></li>
 <li>
 <p>切换到selenium对象 - <code>web_driver</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">web_driver <span style="color:#f92672">=</span> rpa_driver<span style="color:#f92672">.</span>web_driver
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>web_driver <span style="color:#f92672">=</span> rpa_driver<span style="color:#f92672">.</span>web_driver
+</span></span></code></pre></div></li>
 <li>
 <p>写入信息 - <code>input</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rpa_driver<span style="color:#f92672">.</span>add_element(<span style="color:#e6db74">&#34;&#34;</span>,id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,css<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,xpath<span style="color:#f92672">=</span>[],frame<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>])
-rpa_driver<span style="color:#f92672">.</span>switch_to_frame_by_path([<span style="color:#ae81ff">0</span>])
-rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6db74">&#34;&#34;</span>,timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)<span style="color:#f92672">.</span>input(<span style="color:#e6db74">&#34;&#34;</span>,simulate<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>add_element(<span style="color:#e6db74">&#34;&#34;</span>,id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,css<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,xpath<span style="color:#f92672">=</span>[],frame<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>switch_to_frame_by_path([<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6db74">&#34;&#34;</span>,timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)<span style="color:#f92672">.</span>input(<span style="color:#e6db74">&#34;&#34;</span>,simulate<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div></li>
 <li>
 <p>鼠标/元素点击 - <code>click</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rpa_driver<span style="color:#f92672">.</span>add_element(<span style="color:#e6db74">&#34;&#34;</span>,id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,css<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,xpath<span style="color:#f92672">=</span>[],frame<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>])
-rpa_driver<span style="color:#f92672">.</span>switch_to_frame_by_path([<span style="color:#ae81ff">0</span>])
-rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6db74">&#34;&#34;</span>,timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)<span style="color:#f92672">.</span>click(method<span style="color:#f92672">=</span>ElementClickMethod<span style="color:#f92672">.</span>MOUSE_CLICK) <span style="color:#75715e"># MOUSE_CLICK/ELEMENT_CLICK</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>add_element(<span style="color:#e6db74">&#34;&#34;</span>,id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,css<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,xpath<span style="color:#f92672">=</span>[],frame<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>switch_to_frame_by_path([<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6db74">&#34;&#34;</span>,timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)<span style="color:#f92672">.</span>click(method<span style="color:#f92672">=</span>ElementClickMethod<span style="color:#f92672">.</span>MOUSE_CLICK) <span style="color:#75715e"># MOUSE_CLICK/ELEMENT_CLICK</span>
+</span></span></code></pre></div></li>
 <li>
 <p>下拉框选择（select标签类型）- <code>option</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rpa_driver<span style="color:#f92672">.</span>add_element(<span style="color:#e6db74">&#34;&#34;</span>,id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,css<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,xpath<span style="color:#f92672">=</span>[],frame<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>])
-rpa_driver<span style="color:#f92672">.</span>switch_to_frame_by_path([<span style="color:#ae81ff">0</span>])
-rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6db74">&#34;&#34;</span>,timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)<span style="color:#f92672">.</span>option(option_name) <span style="color:#75715e"># 按值选择</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>add_element(<span style="color:#e6db74">&#34;&#34;</span>,id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,css<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,xpath<span style="color:#f92672">=</span>[],frame<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>switch_to_frame_by_path([<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6db74">&#34;&#34;</span>,timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)<span style="color:#f92672">.</span>option(option_name) <span style="color:#75715e"># 按值选择</span>
+</span></span></code></pre></div></li>
 </ul>
 <h1 id="桌面应用">桌面应用</h1>
 <h2 id="窗口">窗口</h2>
 <ul>
 <li>
 <p>导入相关的方法和模块</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> rpa.win32._window_action <span style="color:#66d9ef">as</span> window
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> rpa.win32._window_action <span style="color:#66d9ef">as</span> window
+</span></span></code></pre></div></li>
 <li>
 <p><strong>获取窗口句柄</strong> - <code>window._get_hwnd_by_title()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rpa_window <span style="color:#f92672">=</span> window<span style="color:#f92672">.</span>_get_hwnd_by_title(win_title)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rpa_window <span style="color:#f92672">=</span> window<span style="color:#f92672">.</span>_get_hwnd_by_title(win_title)
+</span></span></code></pre></div></li>
 <li>
 <p><strong>等待窗口打开</strong> - <code>window.win_appear()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rpa_window <span style="color:#f92672">=</span> window<span style="color:#f92672">.</span>win_appear(win_title,timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rpa_window <span style="color:#f92672">=</span> window<span style="color:#f92672">.</span>win_appear(win_title,timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div></li>
 <li>
 <p><strong>窗口最大化</strong> - <code>window.win_maximize(win_object/win_title)</code></p>
 </li>
@@ -390,20 +390,20 @@ rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6
 <ul>
 <li>
 <p>导入相关的方法和模块</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> rpa.element <span style="color:#66d9ef">as</span> element
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> rpa.element <span style="color:#66d9ef">as</span> element
+</span></span></code></pre></div></li>
 <li>
 <p>输入元素文本 - <code>element.input_text()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">element<span style="color:#f92672">.</span>input_text(window_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;win32&#34;</span>,parent<span style="color:#f92672">=</span>rpa_window,parent_class_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,child_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,index<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,text<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>element<span style="color:#f92672">.</span>input_text(window_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;win32&#34;</span>,parent<span style="color:#f92672">=</span>rpa_window,parent_class_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,child_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,index<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,count<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,text<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+</span></span></code></pre></div><ul>
 <li>window_type - win32、uia</li>
 <li>child_type - ComboBox、Button</li>
 </ul>
 </li>
 <li>
 <p>按钮点击 - <code>element.button_click()</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">element<span style="color:#f92672">.</span>button_click(window_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uia&#34;</span>,parent<span style="color:#f92672">=</span>rpa_window,parent_class_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,child_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,index<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,count<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>element<span style="color:#f92672">.</span>button_click(window_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;uia&#34;</span>,parent<span style="color:#f92672">=</span>rpa_window,parent_class_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,child_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>,index<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,count<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div></li>
 </ul>
 <h1 id="软件自动化">软件自动化</h1>
 <h2 id="excel">Excel</h2>
@@ -698,8 +698,8 @@ rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6
 </li>
 </ul>
 <h2 id="word">Word</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> rpa.word
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> rpa.word
+</span></span></code></pre></div><ul>
 <li>打开Word文档 - <code>word = rpa.word.open(file='',visible=True,wps=False)</code></li>
 <li>新建Word文档 - <code>word = rpa.word.create(visible=True,wps=False)</code></li>
 <li>保存Word文档 - <code>word.save(file='')</code></li>
@@ -916,8 +916,8 @@ rpa_driver<span style="color:#f92672">.</span>get_element(<span style="color:#e6
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

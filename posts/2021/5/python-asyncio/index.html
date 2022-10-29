@@ -391,18 +391,18 @@ if (!doNotTrack) {
 <p><em>———— 官方文档</em></p>
 </blockquote>
 <h3 id="coroutine-对象">Coroutine 对象</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1. 创建协程函数</span>
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-  <span style="color:#f92672">...</span>
-  
-<span style="color:#75715e"># 2. 创建协程对象</span>
-coroutine <span style="color:#f92672">=</span> main()
-
-<span style="color:#75715e"># 3. 运行协程对象</span>
-<span style="color:#66d9ef">await</span> coroutine  <span style="color:#75715e"># 协程函数内部</span>
-asyncio<span style="color:#f92672">.</span>run(coroutine)  <span style="color:#75715e"># 协程函数外部</span>
-asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(coroutine)  <span style="color:#75715e"># 协程外部</span>
-</code></pre></div><h3 id="task-对象">Task 对象</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 1. 创建协程函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 创建协程对象</span>
+</span></span><span style="display:flex;"><span>coroutine <span style="color:#f92672">=</span> main()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. 运行协程对象</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> coroutine  <span style="color:#75715e"># 协程函数内部</span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run(coroutine)  <span style="color:#75715e"># 协程函数外部</span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f92672">.</span>run_until_complete(coroutine)  <span style="color:#75715e"># 协程外部</span>
+</span></span></code></pre></div><h3 id="task-对象">Task 对象</h3>
 <blockquote>
 <p><em>任务</em> 被用来“并行的”调度协程</p>
 <p>当一个协程通过 <a href="https://docs.python.org/zh-cn/3/library/asyncio-task.html#asyncio.create_task"><code>asyncio.create_task()</code></a> 等函数被封装为一个 <em>任务</em>，该协程会被自动调度执行</p>
@@ -429,22 +429,22 @@ asyncio<span style="color:#f92672">.</span>get_event_loop()<span style="color:#f
 <ul>
 <li>
 <p><code>asyncio.wait( tasks )</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>wait( tasks )  
-<span style="color:#66d9ef">for</span> task <span style="color:#f92672">in</span> done:
-  t_name <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span>get_name() 
-  t_result <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span>result()
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>wait( tasks )  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> task <span style="color:#f92672">in</span> done:
+</span></span><span style="display:flex;"><span>  t_name <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span>get_name() 
+</span></span><span style="display:flex;"><span>  t_result <span style="color:#f92672">=</span> task<span style="color:#f92672">.</span>result()
+</span></span></code></pre></div><ul>
 <li>done - 已完成的协程 <code>Task</code>，set类型</li>
 <li>pending - 超时未完成的协程 <code>Task</code>，set类型</li>
 </ul>
 </li>
 <li>
 <p><code>asyncio.gather( *tasks )</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">res <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>gather(task1, task2)
-<span style="color:#75715e"># 或</span>
-res <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>gather(<span style="color:#f92672">*</span>tasks)
-print(res)  <span style="color:#75715e"># res: list</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>res <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>gather(task1, task2)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或</span>
+</span></span><span style="display:flex;"><span>res <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>gather(<span style="color:#f92672">*</span>tasks)
+</span></span><span style="display:flex;"><span>print(res)  <span style="color:#75715e"># res: list</span>
+</span></span></code></pre></div></li>
 </ul>
 <h4 id="3-执行task">3. 执行task</h4>
 <ul>
@@ -464,36 +464,36 @@ print(res)  <span style="color:#75715e"># res: list</span>
 <ul>
 <li>
 <p>task</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1. 创建task</span>
-task <span style="color:#f92672">=</span> coroutine <span style="color:#75715e"># coroutine:协程对象</span>
-task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>create_task(coroutine) <span style="color:#75715e"># py3.7之后</span>
-task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>ensure_future(coroutine) <span style="color:#75715e"># py3.7之前</span>
-task <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_task(coroutine) <span style="color:#75715e"># loop:事件循环</span>
-
-<span style="color:#75715e"># 2. 运行task</span>
-<span style="color:#75715e"># 2.1（在协程函数内部）</span>
-<span style="color:#66d9ef">await</span> task
-<span style="color:#75715e"># 2.2（在协程函数外部）</span>
-loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
-loop<span style="color:#f92672">.</span>run_until_complete(task)
-<span style="color:#75715e"># 2.3（在协程函数外部）</span>
-asyncio<span style="color:#f92672">.</span>run(task)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 1. 创建task</span>
+</span></span><span style="display:flex;"><span>task <span style="color:#f92672">=</span> coroutine <span style="color:#75715e"># coroutine:协程对象</span>
+</span></span><span style="display:flex;"><span>task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>create_task(coroutine) <span style="color:#75715e"># py3.7之后</span>
+</span></span><span style="display:flex;"><span>task <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>ensure_future(coroutine) <span style="color:#75715e"># py3.7之前</span>
+</span></span><span style="display:flex;"><span>task <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_task(coroutine) <span style="color:#75715e"># loop:事件循环</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 运行task</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2.1（在协程函数内部）</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> task
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2.2（在协程函数外部）</span>
+</span></span><span style="display:flex;"><span>loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+</span></span><span style="display:flex;"><span>loop<span style="color:#f92672">.</span>run_until_complete(task)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2.3（在协程函数外部）</span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run(task)
+</span></span></code></pre></div></li>
 <li>
 <p>tasks</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1. 创建tasks</span>
-tasks <span style="color:#f92672">=</span> [task1, task2]
-
-<span style="color:#75715e"># 2. 运行tasks</span>
-<span style="color:#75715e"># 2.1（在协程函数内部）</span>
-<span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>wait(tasks)
-<span style="color:#75715e"># 2.2（在协程函数外部）</span>
-loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
-loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
-<span style="color:#75715e"># 2.3（在协程函数外部）</span>
-tasks <span style="color:#f92672">=</span> [coroutine1, coroutine2]
-asyncio<span style="color:#f92672">.</span>run( asyncio<span style="color:#f92672">.</span>wait(tasks) )
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 1. 创建tasks</span>
+</span></span><span style="display:flex;"><span>tasks <span style="color:#f92672">=</span> [task1, task2]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 运行tasks</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2.1（在协程函数内部）</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>wait(tasks)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2.2（在协程函数外部）</span>
+</span></span><span style="display:flex;"><span>loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+</span></span><span style="display:flex;"><span>loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2.3（在协程函数外部）</span>
+</span></span><span style="display:flex;"><span>tasks <span style="color:#f92672">=</span> [coroutine1, coroutine2]
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run( asyncio<span style="color:#f92672">.</span>wait(tasks) )
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="future-对象">Future 对象</h3>
 <blockquote>
@@ -504,134 +504,132 @@ asyncio<span style="color:#f92672">.</span>run( asyncio<span style="color:#f9267
 <p><em>———— 官方文档</em></p>
 </blockquote>
 <p>Task继承Future，Task对象内部await结果的处理基于Future对象来的。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-    <span style="color:#75715e"># 获取当前事件循环</span>
-    loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_running_loop()
-
-    <span style="color:#75715e"># 创建一个任务（Future对象），这个任务什么都不干。</span>
-    fut <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_future()
-
-    <span style="color:#75715e"># 等待任务最终结果（Future对象），没有结果则会一直等下去。</span>
-    <span style="color:#66d9ef">await</span> fut
-
-asyncio<span style="color:#f92672">.</span>run( main() )
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_after</span>(fut):
-    <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">2</span>)
-    fut<span style="color:#f92672">.</span>set_result(<span style="color:#e6db74">&#34;666&#34;</span>)
-
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-    <span style="color:#75715e"># 获取当前事件循环</span>
-    loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_running_loop()
-
-    <span style="color:#75715e"># 创建一个任务（Future对象），没绑定任何行为，则这个任务永远不知道什么时候结束。</span>
-    fut <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_future()
-
-    <span style="color:#75715e"># 创建一个任务（Task对象），绑定了set_after函数，函数内部在2s之后，会给fut赋值。</span>
-    <span style="color:#75715e"># 即手动设置future任务的最终结果，那么fut就可以结束了。</span>
-    <span style="color:#66d9ef">await</span> loop<span style="color:#f92672">.</span>create_task(  set_after(fut) )
-
-    <span style="color:#75715e"># 等待 Future对象获取 最终结果，否则一直等下去</span>
-    data <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> fut
-    print(data)
-
-asyncio<span style="color:#f92672">.</span>run( main() )
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1. 创建future</span>
-asyncio<span style="color:#f92672">.</span>get_running_loop()<span style="color:#f92672">.</span>create_future()
-
-</code></pre></div><h2 id="基于线程池和进程池的异步">基于线程池和进程池的异步</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 获取当前事件循环</span>
+</span></span><span style="display:flex;"><span>    loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_running_loop()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 创建一个任务（Future对象），这个任务什么都不干。</span>
+</span></span><span style="display:flex;"><span>    fut <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_future()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 等待任务最终结果（Future对象），没有结果则会一直等下去。</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> fut
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run( main() )
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_after</span>(fut):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    fut<span style="color:#f92672">.</span>set_result(<span style="color:#e6db74">&#34;666&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 获取当前事件循环</span>
+</span></span><span style="display:flex;"><span>    loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_running_loop()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 创建一个任务（Future对象），没绑定任何行为，则这个任务永远不知道什么时候结束。</span>
+</span></span><span style="display:flex;"><span>    fut <span style="color:#f92672">=</span> loop<span style="color:#f92672">.</span>create_future()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 创建一个任务（Task对象），绑定了set_after函数，函数内部在2s之后，会给fut赋值。</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 即手动设置future任务的最终结果，那么fut就可以结束了。</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> loop<span style="color:#f92672">.</span>create_task(  set_after(fut) )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 等待 Future对象获取 最终结果，否则一直等下去</span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> fut
+</span></span><span style="display:flex;"><span>    print(data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run( main() )
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 1. 创建future</span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>get_running_loop()<span style="color:#f92672">.</span>create_future()
+</span></span></code></pre></div><h2 id="基于线程池和进程池的异步">基于线程池和进程池的异步</h2>
 <p>使用场景：</p>
 <ol>
 <li>使用异步编程时，遇到某个第三方模块不支持基于协程的异步。</li>
 <li>在使用协程的基础上，还需要更快的执行效率。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> concurrent.futures <span style="color:#f92672">import</span> Future
-<span style="color:#f92672">from</span> concurrent.futures.thread <span style="color:#f92672">import</span> ThreadPoolExecutor
-<span style="color:#f92672">from</span> concurrent.futures.process <span style="color:#f92672">import</span> ProcessPoolExecutor
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
-  <span style="color:#f92672">...</span>
-  
-<span style="color:#75715e"># 创建线程池</span>
-pool <span style="color:#f92672">=</span> ThreadPoolExecutor(max_workers<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
-<span style="color:#75715e"># 创建进程池</span>
-pool <span style="color:#f92672">=</span> ProcessPoolExecutor(max_workers<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
-
-</code></pre></div><h2 id="异步迭代器">异步迭代器</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> concurrent.futures <span style="color:#f92672">import</span> Future
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> concurrent.futures.thread <span style="color:#f92672">import</span> ThreadPoolExecutor
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> concurrent.futures.process <span style="color:#f92672">import</span> ProcessPoolExecutor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建线程池</span>
+</span></span><span style="display:flex;"><span>pool <span style="color:#f92672">=</span> ThreadPoolExecutor(max_workers<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建进程池</span>
+</span></span><span style="display:flex;"><span>pool <span style="color:#f92672">=</span> ProcessPoolExecutor(max_workers<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span></code></pre></div><h2 id="异步迭代器">异步迭代器</h2>
 <h3 id="什么是异步迭代器">什么是异步迭代器?</h3>
 <p>实现了 <a href="https://docs.python.org/zh-cn/3.8/reference/datamodel.html#object.__aiter__"><code>__aiter__()</code></a> 和 <a href="https://docs.python.org/zh-cn/3.8/reference/datamodel.html#object.__anext__"><code>__anext__()</code></a> 方法的对象。<code>__anext__</code> 必须返回一个 <a href="https://docs.python.org/zh-cn/3.8/glossary.html#term-awaitable">awaitable</a> 对象。<a href="https://docs.python.org/zh-cn/3.8/reference/compound_stmts.html#async-for"><code>async for</code></a> 会处理异步迭代器的 <a href="https://docs.python.org/zh-cn/3.8/reference/datamodel.html#object.__anext__"><code>__anext__()</code></a> 方法所返回的可等待对象，直到其引发一个 <a href="https://docs.python.org/zh-cn/3.8/library/exceptions.html#StopAsyncIteration"><code>StopAsyncIteration</code></a> 异常。由 <a href="https://www.python.org/dev/peps/pep-0492"><strong>PEP 492</strong></a> 引入。</p>
 <h3 id="什么是异步可迭代对象">什么是异步可迭代对象？</h3>
 <p>可在 <a href="https://docs.python.org/zh-cn/3.8/reference/compound_stmts.html#async-for"><code>async for</code></a> 语句中被使用的对象。必须通过它的 <a href="https://docs.python.org/zh-cn/3.8/reference/datamodel.html#object.__aiter__"><code>__aiter__()</code></a> 方法返回一个 <a href="https://docs.python.org/zh-cn/3.8/glossary.html#term-asynchronous-iterator">asynchronous iterator</a>。由 <a href="https://www.python.org/dev/peps/pep-0492"><strong>PEP 492</strong></a> 引入。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AsyncContextManager</span>:
-    <span style="color:#66d9ef">def</span> __init__(self):
-        self<span style="color:#f92672">.</span>conn <span style="color:#f92672">=</span> conn
-  
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> __aenter__(self):
-        <span style="color:#75715e"># 例：异步链接数据库</span>
-        self<span style="color:#f92672">.</span>conn <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-        <span style="color:#66d9ef">return</span> self
-
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> __aexit__(self, exc_type, exc, tb):
-        <span style="color:#75715e"># 例：异步关闭数据库链接</span>
-				<span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
-        
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_something</span>(self):
-        <span style="color:#75715e"># 例：异步操作数据库</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">666</span>
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> AsyncContextManager() <span style="color:#66d9ef">as</span> f:
-        result <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> f<span style="color:#f92672">.</span>do_something()
-        print(result)
-
-asyncio<span style="color:#f92672">.</span>run( func() )
-</code></pre></div><h2 id="异步上下文管理器">异步上下文管理器</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AsyncContextManager</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>conn <span style="color:#f92672">=</span> conn
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> __aenter__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 例：异步链接数据库</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>conn <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> __aexit__(self, exc_type, exc, tb):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 例：异步关闭数据库链接</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_something</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 例：异步操作数据库</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">666</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> AsyncContextManager() <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> f<span style="color:#f92672">.</span>do_something()
+</span></span><span style="display:flex;"><span>        print(result)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run( func() )
+</span></span></code></pre></div><h2 id="异步上下文管理器">异步上下文管理器</h2>
 <p>此种对象通过定义 <a href="https://docs.python.org/zh-cn/3.8/reference/datamodel.html#object.__aenter__"><code>__aenter__()</code></a> 和 <a href="https://docs.python.org/zh-cn/3.8/reference/datamodel.html#object.__aexit__"><code>__aexit__()</code></a> 方法来对 <a href="https://docs.python.org/zh-cn/3.8/reference/compound_stmts.html#async-with"><code>async with</code></a> 语句中的环境进行控制。由 <a href="https://www.python.org/dev/peps/pep-0492"><strong>PEP 492</strong></a> 引入。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Reader</span>(object):
-    <span style="color:#e6db74">&#34;&#34;&#34; 自定义异步迭代器（同时也是异步可迭代对象） &#34;&#34;&#34;</span>
-
-    <span style="color:#66d9ef">def</span> __init__(self):
-        self<span style="color:#f92672">.</span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-        
-    <span style="color:#66d9ef">def</span> __aiter__(self):
-          <span style="color:#66d9ef">return</span> self
-
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> __anext__(self):
-        val <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>readline()
-        <span style="color:#66d9ef">if</span> val <span style="color:#f92672">==</span> <span style="color:#66d9ef">None</span>:
-            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopAsyncIteration</span>
-        <span style="color:#66d9ef">return</span> val
-      
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">readline</span>(self):
-        self<span style="color:#f92672">.</span>count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>count <span style="color:#f92672">==</span> <span style="color:#ae81ff">100</span>:
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>count
-    
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> Reader():
-        print(item)
-        
-asyncio<span style="color:#f92672">.</span>run( func() )
-</code></pre></div><h2 id="uvloop">uvloop</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Reader</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34; 自定义异步迭代器（同时也是异步可迭代对象） &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __aiter__(self):
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> self
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> __anext__(self):
+</span></span><span style="display:flex;"><span>        val <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>readline()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> val <span style="color:#f92672">==</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">StopAsyncIteration</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> val
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">readline</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>count <span style="color:#f92672">==</span> <span style="color:#ae81ff">100</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>count
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> Reader():
+</span></span><span style="display:flex;"><span>        print(item)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run( func() )
+</span></span></code></pre></div><h2 id="uvloop">uvloop</h2>
 <p>uvloop是asyncio的事件循环的替代方案。比默认asyncio的事件循环性能要高许多。</p>
 <pre tabindex="0"><code>pip3 install uvloop
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">import</span> uvloop
-asyncio<span style="color:#f92672">.</span>set_event_loop_policy(uvloop<span style="color:#f92672">.</span>EventLoopPolicy())
-
-<span style="color:#75715e"># 编写asyncio的代码，与之前写的代码一致。	</span>
-
-<span style="color:#75715e"># 内部的事件循环自动化会变为uvloop</span>
-asyncio<span style="color:#f92672">.</span>run(<span style="color:#f92672">...</span>)
-</code></pre></div><p>注：asgi -&gt; <code>uvicorn</code> 内部使用的就是uvloop</p>
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> uvloop
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>set_event_loop_policy(uvloop<span style="color:#f92672">.</span>EventLoopPolicy())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 编写asyncio的代码，与之前写的代码一致。	</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 内部的事件循环自动化会变为uvloop</span>
+</span></span><span style="display:flex;"><span>asyncio<span style="color:#f92672">.</span>run(<span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>注：asgi -&gt; <code>uvicorn</code> 内部使用的就是uvloop</p>
 <h2 id="休眠">休眠</h2>
 <p><em>coroutine</em> <code>asyncio.sleep</code>(<em>delay</em>, <em>result=None</em>, ***, <em>loop=None</em>)</p>
 <ul>
@@ -643,33 +641,33 @@ asyncio<span style="color:#f92672">.</span>run(<span style="color:#f92672">...</
 <ul>
 <li>
 <p>多任务协程</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">import</span> requests
-<span style="color:#f92672">import</span> aiohttp
-<span style="color:#f92672">import</span> time
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(url):
-  session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
-  response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>get(url)
-  <span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text()
-  <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>close()
-  <span style="color:#66d9ef">return</span> response
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
-  url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://baidu.com&#34;</span>
-  r <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> get(url)
-  <span style="color:#66d9ef">return</span> r<span style="color:#f92672">.</span>status_code
-
-start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-
-tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>)] <span style="color:#75715e"># </span>
-loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop() <span style="color:#75715e"># </span>
-loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks)) <span style="color:#75715e">#</span>
-
-end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-<span style="color:#75715e"># https://www.huodongxing.com/events</span>
-print(end<span style="color:#f92672">-</span>start)
-</code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> aiohttp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(url):
+</span></span><span style="display:flex;"><span>  session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
+</span></span><span style="display:flex;"><span>  response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> response
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+</span></span><span style="display:flex;"><span>  url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://baidu.com&#34;</span>
+</span></span><span style="display:flex;"><span>  r <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> get(url)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> r<span style="color:#f92672">.</span>status_code
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>)] <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop() <span style="color:#75715e"># </span>
+</span></span><span style="display:flex;"><span>loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks)) <span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://www.huodongxing.com/events</span>
+</span></span><span style="display:flex;"><span>print(end<span style="color:#f92672">-</span>start)
+</span></span></code></pre></div><ol>
 <li>使用 <code>await</code> 可以将「耗时等待的操作」挂起，让出控制权。当协程执行的时候遇到 <code>await</code>，时间循环就会将本协程<strong>挂起</strong>，转而去执行别的协程，直到其他的协程挂起或执行完毕，再进行下一个协程的执行</li>
 <li><code>asyncio.ensure_future()</code> - 创建任务，并将多个任务列为列表</li>
 <li>将任务列表传递给<code>asyncio.wait()</code>方法（多个任务时才需要这个方法）</li>
@@ -678,80 +676,79 @@ print(end<span style="color:#f92672">-</span>start)
 </li>
 <li>
 <p>测试一下速度</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">import</span> aiohttp
-<span style="color:#f92672">import</span> time
-
-start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(url):
-   session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
-   response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>get(url)
-   <span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text()
-   <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>close()
-   <span style="color:#66d9ef">return</span> response
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
-   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>
-   print(<span style="color:#e6db74">&#39;Waiting for&#39;</span>, url)
-   response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> get(url)
-   print(<span style="color:#e6db74">&#39;Get response from&#39;</span>, url, <span style="color:#e6db74">&#39;response&#39;</span>, response)
-
-tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
-loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
-loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
-
-end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-print(<span style="color:#e6db74">&#39;Cost time:&#39;</span>, end <span style="color:#f92672">-</span> start)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> aiohttp
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get</span>(url):
+</span></span><span style="display:flex;"><span>   session <span style="color:#f92672">=</span> aiohttp<span style="color:#f92672">.</span>ClientSession()
+</span></span><span style="display:flex;"><span>   response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> response<span style="color:#f92672">.</span>text()
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">await</span> session<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> response
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">request</span>():
+</span></span><span style="display:flex;"><span>   url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://static4.scrape.center/&#39;</span>
+</span></span><span style="display:flex;"><span>   print(<span style="color:#e6db74">&#39;Waiting for&#39;</span>, url)
+</span></span><span style="display:flex;"><span>   response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> get(url)
+</span></span><span style="display:flex;"><span>   print(<span style="color:#e6db74">&#39;Get response from&#39;</span>, url, <span style="color:#e6db74">&#39;response&#39;</span>, response)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(request()) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
+</span></span><span style="display:flex;"><span>loop <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+</span></span><span style="display:flex;"><span>loop<span style="color:#f92672">.</span>run_until_complete(asyncio<span style="color:#f92672">.</span>wait(tasks))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;Cost time:&#39;</span>, end <span style="color:#f92672">-</span> start)
+</span></span></code></pre></div></li>
 <li>
 <p>再来一个万能架构（loop版本）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">import</span> aiohttp
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch</span>(session, url) <span style="color:#f92672">-&gt;</span> str:
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url) <span style="color:#66d9ef">as</span> resp:
-       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> resp<span style="color:#f92672">.</span>text()
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</span>(text) <span style="color:#f92672">-&gt;</span> str:
-    <span style="color:#66d9ef">return</span> text
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(session, url):
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> parse(<span style="color:#66d9ef">await</span> fetch(session, url))
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-      <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
-      urls  <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>]
-      tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(process(session, url)) <span style="color:#66d9ef">for</span> url <span style="color:#f92672">in</span> urls]
-      <span style="color:#66d9ef">return</span> asyncio<span style="color:#f92672">.</span>wait(tasks)
-
-loop  <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
-loop<span style="color:#f92672">.</span>run_until_complete(main())
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> aiohttp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch</span>(session, url) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url) <span style="color:#66d9ef">as</span> resp:
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> resp<span style="color:#f92672">.</span>text()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</span>(text) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(session, url):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> parse(<span style="color:#66d9ef">await</span> fetch(session, url))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>  	<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span>    	urls  <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>]
+</span></span><span style="display:flex;"><span>    	tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(process(session, url)) <span style="color:#66d9ef">for</span> url <span style="color:#f92672">in</span> urls]
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">return</span> asyncio<span style="color:#f92672">.</span>wait(tasks)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>loop  <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>get_event_loop()
+</span></span><span style="display:flex;"><span>loop<span style="color:#f92672">.</span>run_until_complete(main())
+</span></span></code></pre></div></li>
 <li>
 <p>再来一个万能架构（asyncio.run()版本）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> asyncio
-<span style="color:#f92672">import</span> aiohttp
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch</span>(url) <span style="color:#f92672">-&gt;</span> str:
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
-        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url) <span style="color:#66d9ef">as</span> resp:
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> resp<span style="color:#f92672">.</span>text()
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</span>(text) <span style="color:#f92672">-&gt;</span> str:
-    <span style="color:#66d9ef">return</span> text
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(url):
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> parse(<span style="color:#66d9ef">await</span> fetch(url))
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-      urls  <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>]
-      tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(spider(url)) <span style="color:#66d9ef">for</span> url <span style="color:#f92672">in</span> urls]
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>wait(tasks)
-
-done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>run(main())  <span style="color:#75715e"># 此方法由 python3.7 提供 </span>
-
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> aiohttp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch</span>(url) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> aiohttp<span style="color:#f92672">.</span>ClientSession() <span style="color:#66d9ef">as</span> session:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">with</span> session<span style="color:#f92672">.</span>get(url) <span style="color:#66d9ef">as</span> resp:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> resp<span style="color:#f92672">.</span>text()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</span>(text) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process</span>(url):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> parse(<span style="color:#66d9ef">await</span> fetch(url))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>		urls  <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>]
+</span></span><span style="display:flex;"><span>		tasks <span style="color:#f92672">=</span> [asyncio<span style="color:#f92672">.</span>ensure_future(spider(url)) <span style="color:#66d9ef">for</span> url <span style="color:#f92672">in</span> urls]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> asyncio<span style="color:#f92672">.</span>wait(tasks)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f92672">.</span>run(main())  <span style="color:#75715e"># 此方法由 python3.7 提供 </span>
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="一起来写协程吧强势提高生产力">一起来写协程吧，强势提高生产力！</h2>
 <ul>
@@ -977,8 +974,8 @@ done, pending <span style="color:#f92672">=</span> asyncio<span style="color:#f9
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

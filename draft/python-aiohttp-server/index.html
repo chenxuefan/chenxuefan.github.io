@@ -288,18 +288,18 @@ if (!doNotTrack) {
 <p>服务端 - <a href="https://docs.aiohttp.org/en/stable/web.html#aiohttp-web">https://docs.aiohttp.org/en/stable/web.html#aiohttp-web</a></p>
 <p>asyncio - <a href="https://billie52707.cn/posts/2021/5/python-asyncio/">https://billie52707.cn/posts/2021/5/python-asyncio/</a></p>
 <h2 id="helloworld">Hello,world!</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> aiohttp <span style="color:#f92672">import</span> web
-
-routes <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>RouteTableDef()
-
-<span style="color:#a6e22e">@routes</span><span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/&#39;</span>)
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>(request):
-    <span style="color:#66d9ef">return</span> web<span style="color:#f92672">.</span>Response(text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello,world!&#34;</span>)
-
-app <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>Application()
-app<span style="color:#f92672">.</span>add_routes(routes)
-web<span style="color:#f92672">.</span>run_app(app)
-</code></pre></div><h2 id="handler">Handler</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> aiohttp <span style="color:#f92672">import</span> web
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>routes <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>RouteTableDef()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@routes</span><span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>(request):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> web<span style="color:#f92672">.</span>Response(text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello,world!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>Application()
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">.</span>add_routes(routes)
+</span></span><span style="display:flex;"><span>web<span style="color:#f92672">.</span>run_app(app)
+</span></span></code></pre></div><h2 id="handler">Handler</h2>
 <blockquote>
 <p>A request handler must be a <a href="https://docs.python.org/3/library/asyncio-task.html#coroutine">coroutine</a> that accepts a <a href="https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Request"><code>Request</code></a> instance as its only argument and returns a <a href="https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.StreamResponse"><code>StreamResponse</code></a> derived (e.g. <a href="https://docs.aiohttp.org/en/stable/web_reference.html#aiohttp.web.Response"><code>Response</code></a>) instance.</p>
 </blockquote>
@@ -307,44 +307,44 @@ web<span style="color:#f92672">.</span>run_app(app)
 <ol>
 <li>
 <p>创建一个request handler</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler</span>(request):
-  <span style="color:#66d9ef">return</span> web<span style="color:#f92672">.</span>Response()
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler</span>(request):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> web<span style="color:#f92672">.</span>Response()
+</span></span></code></pre></div></li>
 <li>
 <p>将 handler 注册到路由之中</p>
 <p>第一种方式：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler1</span>(request):
-  <span style="color:#f92672">...</span>
-
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler2</span>(request):
-  <span style="color:#f92672">...</span>
-
-app <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>Application()
-app<span style="color:#f92672">.</span>add_routes([web<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/get&#39;</span>, handler1),
-                web<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;/post&#39;</span>, handler2)])
-</code></pre></div><p>第二种方式：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">routes <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>RouteTableDef()
-
-<span style="color:#a6e22e">@routes</span><span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/get&#39;</span>)
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler1</span>(request):
-  <span style="color:#f92672">...</span>
-
-<span style="color:#a6e22e">@routes</span><span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;/post&#39;</span>)
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler2</span>(request):
-  <span style="color:#f92672">...</span>
-
-app <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>Application()
-app<span style="color:#f92672">.</span>add_routes(routes)
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler1</span>(request):
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler2</span>(request):
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>Application()
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">.</span>add_routes([web<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/get&#39;</span>, handler1),
+</span></span><span style="display:flex;"><span>                web<span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;/post&#39;</span>, handler2)])
+</span></span></code></pre></div><p>第二种方式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>routes <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>RouteTableDef()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@routes</span><span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/get&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler1</span>(request):
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@routes</span><span style="color:#f92672">.</span>post(<span style="color:#e6db74">&#39;/post&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">handler2</span>(request):
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> web<span style="color:#f92672">.</span>Application()
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">.</span>add_routes(routes)
+</span></span></code></pre></div></li>
 </ol>
 <h2 id="resources-and-routes">Resources and Routes</h2>
 <h3 id="variable-resources">Variable Resources</h3>
 <p>面对变化多端的资源地址时，需要提供通用的方法去捕获到这些地址</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@routes</span><span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/</span><span style="color:#e6db74">{name}</span><span style="color:#e6db74">&#39;</span>)
-<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">variable_handler</span>(request):
-    <span style="color:#66d9ef">return</span> web<span style="color:#f92672">.</span>Response(
-        text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello, </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">!&#34;</span><span style="color:#f92672">.</span>format(request<span style="color:#f92672">.</span>match_info[<span style="color:#e6db74">&#39;name&#39;</span>]))
-</code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210901212432649.png" alt="image-20210901212432649"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@routes</span><span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;/</span><span style="color:#e6db74">{name}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">variable_handler</span>(request):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> web<span style="color:#f92672">.</span>Response(
+</span></span><span style="display:flex;"><span>        text<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hello, </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">!&#34;</span><span style="color:#f92672">.</span>format(request<span style="color:#f92672">.</span>match_info[<span style="color:#e6db74">&#39;name&#39;</span>]))
+</span></span></code></pre></div><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210901212432649.png" alt="image-20210901212432649"></p>
 <p>默认地，路由地址的匹配规则表达式是这样的：<code>[^{}/]+</code></p>
 <p>也可以对路由地址作约束，表达式：<code>[identifier:regex]</code></p>
 <p>例如纯数字： <code>'/{name:\d+}'</code></p>
@@ -549,8 +549,8 @@ app<span style="color:#f92672">.</span>add_routes(routes)
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">

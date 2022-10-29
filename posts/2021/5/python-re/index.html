@@ -341,11 +341,11 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>\b</td>
-<td>匹配一个单词边界，也就是指单词和空格间的位置。例如， &lsquo;er\b&rsquo; 可以匹配&quot;never&quot; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;</td>
+<td>匹配一个单词边界，也就是指单词和空格间的位置。例如， &rsquo;er\b&rsquo; 可以匹配&quot;never&quot; 中的 &rsquo;er&rsquo;，但不能匹配 &ldquo;verb&rdquo; 中的 &rsquo;er'</td>
 </tr>
 <tr>
 <td>\B</td>
-<td>匹配非单词边界。&lsquo;er\B&rsquo; 能匹配 &ldquo;verb&rdquo; 中的 &lsquo;er&rsquo;，但不能匹配 &ldquo;never&rdquo; 中的 &lsquo;er&rsquo;</td>
+<td>匹配非单词边界。&rsquo;er\B&rsquo; 能匹配 &ldquo;verb&rdquo; 中的 &rsquo;er&rsquo;，但不能匹配 &ldquo;never&rdquo; 中的 &rsquo;er'</td>
 </tr>
 <tr>
 <td>\n</td>
@@ -388,7 +388,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>[&hellip;]</td>
-<td>用来表示一组字符,单独列出：[amk] 匹配 &lsquo;a&rsquo;，&rsquo;m&rsquo;或&rsquo;k'</td>
+<td>用来表示一组字符,单独列出：[amk] 匹配 &lsquo;a&rsquo;，&rsquo;m&rsquo;或&rsquo;k&rsquo;</td>
 </tr>
 <tr>
 <td>[^&hellip;]</td>
@@ -545,12 +545,12 @@ result = re.search(pattern, string)
 <li>flags - 匹配模式</li>
 </ul>
 <p>用 <em>pattern</em> 分开 <em>string</em> 。 如果在 <em>pattern</em> 中捕获到括号，那么所有的组里的文字也会包含在列表里。如果 <em>maxsplit</em> 非零， 最多进行 <em>maxsplit</em> 次分隔， 剩下的字符全部返回到列表的最后一个元素。</p>
-<pre tabindex="0"><code>&gt;&gt;&gt; re.split(r'\W', &quot;Chaos isn't a pit,chaos is a ladder.&quot;)
-['Chaos', 'isn', 't', 'a', 'pit', 'chaos', 'is', 'a', 'ladder', '']
-&gt;&gt;&gt; re.split(r'\s|,', &quot;Chaos isn't a pit,chaos is a ladder.&quot;)
-['Chaos', &quot;isn't&quot;, 'a', 'pit', 'chaos', 'is', 'a', 'ladder.']
-&gt;&gt;&gt; re.split(r'\s|,', &quot;Chaos isn't a pit,chaos is a ladder.&quot;,maxsplit=1)
-['Chaos', &quot;isn't a pit,chaos is a ladder.&quot;]
+<pre tabindex="0"><code>&gt;&gt;&gt; re.split(r&#39;\W&#39;, &#34;Chaos isn&#39;t a pit,chaos is a ladder.&#34;)
+[&#39;Chaos&#39;, &#39;isn&#39;, &#39;t&#39;, &#39;a&#39;, &#39;pit&#39;, &#39;chaos&#39;, &#39;is&#39;, &#39;a&#39;, &#39;ladder&#39;, &#39;&#39;]
+&gt;&gt;&gt; re.split(r&#39;\s|,&#39;, &#34;Chaos isn&#39;t a pit,chaos is a ladder.&#34;)
+[&#39;Chaos&#39;, &#34;isn&#39;t&#34;, &#39;a&#39;, &#39;pit&#39;, &#39;chaos&#39;, &#39;is&#39;, &#39;a&#39;, &#39;ladder.&#39;]
+&gt;&gt;&gt; re.split(r&#39;\s|,&#39;, &#34;Chaos isn&#39;t a pit,chaos is a ladder.&#34;,maxsplit=1)
+[&#39;Chaos&#39;, &#34;isn&#39;t a pit,chaos is a ladder.&#34;]
 </code></pre><h3 id="3-resubpattern-repl-string-count0-flags0">3. re.sub(pattern, repl, string, count=0, flags=0)</h3>
 <ul>
 <li>pattern - 正则表达式</li>
@@ -560,11 +560,11 @@ result = re.search(pattern, string)
 <li>flags - 匹配模式</li>
 </ul>
 <p>替换字符串中每一个匹配的子串后返回替换后的字符串</p>
-<pre tabindex="0"><code>&gt;&gt;&gt; re.sub('\d','','12ab34cd')
-'abcd'
+<pre tabindex="0"><code>&gt;&gt;&gt; re.sub(&#39;\d&#39;,&#39;&#39;,&#39;12ab34cd&#39;)
+&#39;abcd&#39;
 </code></pre><p>在替换字符时，如需获取匹配的字符，可以通过<code>\1</code>字符实现</p>
-<pre tabindex="0"><code>&gt;&gt;&gt; re.sub('(\d)',r'\1+1','龙妈一共有3条龙🐲')
-'龙妈一共有3+1条龙🐲'
+<pre tabindex="0"><code>&gt;&gt;&gt; re.sub(&#39;(\d)&#39;,r&#39;\1+1&#39;,&#39;龙妈一共有3条龙🐲&#39;)
+&#39;龙妈一共有3+1条龙🐲&#39;
 </code></pre><h2 id="一些补充方法">一些补充方法</h2>
 <ol>
 <li><code>group()</code> - 获得一个或多个分组匹配的字符串，当要获得整个匹配的子串时，可直接使用 <code>group()</code> 或 <code>group(0)</code></li>
@@ -574,9 +574,9 @@ result = re.search(pattern, string)
 <li><code>end() </code>- 返回一个int类型的终止下标</li>
 </ol>
 <h2 id="来写一些正则吧强势提高生产力">来写一些正则吧，强势提高生产力！</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;\d+.</span><span style="color:#e6db74">{7}</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74">&#39;2380540710@qq.comwohug&#39;</span>)<span style="color:#f92672">.</span>group()
-<span style="color:#e6db74">&#39;2380540710@qq.com&#39;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;\d+.</span><span style="color:#e6db74">{7}</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74">&#39;2380540710@qq.comwohug&#39;</span>)<span style="color:#f92672">.</span>group()
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;2380540710@qq.com&#39;</span>
+</span></span></code></pre></div>
     </div>
 
 
@@ -613,7 +613,7 @@ result = re.search(pattern, string)
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2129 字
+          2167 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -781,8 +781,8 @@ result = re.search(pattern, string)
     Copyright  
     &copy; 
     2020-2022 
-    <span>❤ Billie  </span>  
-    <span>粤ICP备20025795号-1 </span><br>
+    <span>❤ Billy  </span>  
+    <span><a href="https://beian.miit.gov.cn">粤ICP备20025795号-1 </a></span><br>
     <span>Powered By HUGO | </span>
     
     <span id="busuanzi_container_site_uv">
