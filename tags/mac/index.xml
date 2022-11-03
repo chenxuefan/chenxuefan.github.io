@@ -2,54 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on 人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/tags/mac/</link>
+    <link>https://chenxuefan.cn/tags/mac/</link>
     <description>Recent content in Mac on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Wed, 04 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「macOS」学习笔记</title>
-      <link>https://billie52707.cn/note/macos/</link>
+      <link>https://chenxuefan.cn/note/macos/</link>
       <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/macos/</guid>
+      <guid>https://chenxuefan.cn/note/macos/</guid>
       <description>系统设置 三指拖移 系统偏好设置&amp;gt;辅助功能&amp;gt;鼠标与触控板&amp;gt;触控板选项 放大程序坞图标 系统偏好设置&amp;gt;程序坞&amp;gt;放大 触发角</description>
     </item>
     
     <item>
       <title>在macOS使用docker搭建ubuntu环境</title>
-      <link>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</link>
+      <link>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</link>
       <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</guid>
       <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习,安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器</description>
     </item>
     
     <item>
       <title>「docker」学习笔记 | 镜像、容器、仓库</title>
-      <link>https://billie52707.cn/note/docker1/</link>
+      <link>https://chenxuefan.cn/note/docker1/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/note/docker1/</guid>
+      <guid>https://chenxuefan.cn/note/docker1/</guid>
       <description>关于docker 1. why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到</description>
     </item>
     
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
-      <link>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</link>
       <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
     </item>
     
     <item>
       <title>python学习笔记 | macOS Big Sur动态壁纸食用指南</title>
-      <link>https://billie52707.cn/posts/2020/6/python-macos-big-sur/</link>
+      <link>https://chenxuefan.cn/posts/2020/6/python-macos-big-sur/</link>
       <pubDate>Sat, 27 Jun 2020 22:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/6/python-macos-big-sur/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/6/python-macos-big-sur/</guid>
       <description>目录 前言 爬虫篇 壁纸使用篇 后记 前言 北京时间23日凌晨1点，苹果WWDC2020大会开幕。在发布会上，苹果正式发布了新版macOS，并将其命名为</description>
     </item>
     

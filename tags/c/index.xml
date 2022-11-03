@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on 人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/tags/c/</link>
+    <link>https://chenxuefan.cn/tags/c/</link>
     <description>Recent content in C on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「c语言」学习笔记</title>
-      <link>https://billie52707.cn/note/c/</link>
+      <link>https://chenxuefan.cn/note/c/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/c/</guid>
+      <guid>https://chenxuefan.cn/note/c/</guid>
       <description>前言 c语言是万物之源 🤪 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt; int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，</description>
     </item>
     

@@ -2,135 +2,135 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on 人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/note/</link>
+    <link>https://chenxuefan.cn/note/</link>
     <description>Recent content in Notes on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Thu, 23 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「git」学习笔记</title>
-      <link>https://billie52707.cn/note/git/</link>
+      <link>https://chenxuefan.cn/note/git/</link>
       <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/git/</guid>
+      <guid>https://chenxuefan.cn/note/git/</guid>
       <description>https://git-scm.com/book/zh/v2/ 初次运行 Git 前的配置 https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE ssh-keygen -t rsa -C &amp;#34;邮箱&amp;#34; cd ~/.ssh cat id_rsa.pub 用户信息 你可以通过以下命令查看所有的配置以及它们所在的文件： git config --list --show-origin 安装完 Git 之</description>
     </item>
     
     <item>
       <title>「oss」学习笔记</title>
-      <link>https://billie52707.cn/note/oss/</link>
+      <link>https://chenxuefan.cn/note/oss/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/oss/</guid>
+      <guid>https://chenxuefan.cn/note/oss/</guid>
       <description>ossutil命令行管理工具 学习文档 https://help.aliyun.com/document_detail/31882.html?spm=a2c4g.11186623.3.3.41c321b4Dl5AHV 在mac配置ossutil环境 安装 - curl -o ossutilmac64 http://gosspublic.alicdn.com/ossutil/1.7.3/ossutilmac64 赋予权限 - chmod 755 ossutilmac64 改下名 - mv ossutilmac64 ossutil 转移到可执行文件保存路径 - mv</description>
     </item>
     
     <item>
       <title>「docker」学习笔记 | 容器编排之Docker Compose</title>
-      <link>https://billie52707.cn/note/docker3/</link>
+      <link>https://chenxuefan.cn/note/docker3/</link>
       <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/docker3/</guid>
+      <guid>https://chenxuefan.cn/note/docker3/</guid>
       <description>why docker-compose? 为什么需要用到编排工具？ 当我们的业务越来越复杂时，需要多个容器相互配合，甚至需要多个主机组成容器集群才能满足我们的业务需求，这个时候就需</description>
     </item>
     
     <item>
       <title>「nginx」学习笔记</title>
-      <link>https://billie52707.cn/note/nginx/</link>
+      <link>https://chenxuefan.cn/note/nginx/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/nginx/</guid>
+      <guid>https://chenxuefan.cn/note/nginx/</guid>
       <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
     </item>
     
     <item>
       <title>「python」学习笔记</title>
-      <link>https://billie52707.cn/note/python/</link>
+      <link>https://chenxuefan.cn/note/python/</link>
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/python/</guid>
+      <guid>https://chenxuefan.cn/note/python/</guid>
       <description>更多 - https://billie52707.cn/tags/python/ 安装 Linux 安装pip curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量</description>
     </item>
     
     <item>
       <title>「数据结构」学习笔记</title>
-      <link>https://billie52707.cn/note/data-structure/</link>
+      <link>https://chenxuefan.cn/note/data-structure/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/data-structure/</guid>
+      <guid>https://chenxuefan.cn/note/data-structure/</guid>
       <description>模块一：代码效率优化方法论 复杂度是衡量代码运行效率的重要度量因素 复杂度通常包括「时间复杂度」与「空间复杂度」，其中 时间复杂度与「代码的结构设</description>
     </item>
     
     <item>
       <title>「rpa」学习笔记 | 使用手册</title>
-      <link>https://billie52707.cn/note/rpa/</link>
+      <link>https://chenxuefan.cn/note/rpa/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/rpa/</guid>
+      <guid>https://chenxuefan.cn/note/rpa/</guid>
       <description>一些必要的知识点 RPA适用场景的特点（工业制造、医疗、教育、银行、保险、证券、信托、房地产、政府职能部门、公检法司等行业领域） 大量重复 业务流</description>
     </item>
     
     <item>
       <title>「c语言」学习笔记</title>
-      <link>https://billie52707.cn/note/c/</link>
+      <link>https://chenxuefan.cn/note/c/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/c/</guid>
+      <guid>https://chenxuefan.cn/note/c/</guid>
       <description>前言 c语言是万物之源 🤪 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt; int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，</description>
     </item>
     
     <item>
       <title>「macOS」学习笔记</title>
-      <link>https://billie52707.cn/note/macos/</link>
+      <link>https://chenxuefan.cn/note/macos/</link>
       <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/macos/</guid>
+      <guid>https://chenxuefan.cn/note/macos/</guid>
       <description>系统设置 三指拖移 系统偏好设置&amp;gt;辅助功能&amp;gt;鼠标与触控板&amp;gt;触控板选项 放大程序坞图标 系统偏好设置&amp;gt;程序坞&amp;gt;放大 触发角</description>
     </item>
     
     <item>
       <title>「vue.js」学习笔记</title>
-      <link>https://billie52707.cn/note/vue/</link>
+      <link>https://chenxuefan.cn/note/vue/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/vue/</guid>
+      <guid>https://chenxuefan.cn/note/vue/</guid>
       <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
     </item>
     
     <item>
       <title>「docker」学习笔记 | 镜像、容器、仓库</title>
-      <link>https://billie52707.cn/note/docker1/</link>
+      <link>https://chenxuefan.cn/note/docker1/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/note/docker1/</guid>
+      <guid>https://chenxuefan.cn/note/docker1/</guid>
       <description>关于docker 1. why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到</description>
     </item>
     
     <item>
       <title>「机器学习」学习笔记</title>
-      <link>https://billie52707.cn/note/machine-learn/</link>
+      <link>https://chenxuefan.cn/note/machine-learn/</link>
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/machine-learn/</guid>
+      <guid>https://chenxuefan.cn/note/machine-learn/</guid>
       <description>相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1. 数据导入 numpy np.loadtxt() pandas pd.read_csv() 2. 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数</description>
     </item>
     
     <item>
       <title>「Linux」学习笔记</title>
-      <link>https://billie52707.cn/note/linux/</link>
+      <link>https://chenxuefan.cn/note/linux/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/linux/</guid>
+      <guid>https://chenxuefan.cn/note/linux/</guid>
       <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 unzip - https://blog.csdn.net/qq_27870421/article/details/92623897 rm 批量处理文件 - 例：删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户</description>
     </item>
     
     <item>
       <title>「ubuntu」学习笔记</title>
-      <link>https://billie52707.cn/note/ubuntu/</link>
+      <link>https://chenxuefan.cn/note/ubuntu/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/ubuntu/</guid>
+      <guid>https://chenxuefan.cn/note/ubuntu/</guid>
       <description>必要工具/常用软件的安装 vim/net-tools apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev</description>
     </item>
     

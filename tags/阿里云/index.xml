@@ -2,54 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>阿里云 on 人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</link>
+    <link>https://chenxuefan.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</link>
     <description>Recent content in 阿里云 on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「oss」学习笔记</title>
-      <link>https://billie52707.cn/note/oss/</link>
+      <link>https://chenxuefan.cn/note/oss/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/oss/</guid>
+      <guid>https://chenxuefan.cn/note/oss/</guid>
       <description>ossutil命令行管理工具 学习文档 https://help.aliyun.com/document_detail/31882.html?spm=a2c4g.11186623.3.3.41c321b4Dl5AHV 在mac配置ossutil环境 安装 - curl -o ossutilmac64 http://gosspublic.alicdn.com/ossutil/1.7.3/ossutilmac64 赋予权限 - chmod 755 ossutilmac64 改下名 - mv ossutilmac64 ossutil 转移到可执行文件保存路径 - mv</description>
     </item>
     
     <item>
       <title>使用docker容器化部署服务器</title>
-      <link>https://billie52707.cn/draft/aliyun-server-docker/</link>
+      <link>https://chenxuefan.cn/draft/aliyun-server-docker/</link>
       <pubDate>Tue, 27 Apr 2021 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/aliyun-server-docker/</guid>
+      <guid>https://chenxuefan.cn/draft/aliyun-server-docker/</guid>
       <description>新建容器 docker run -itd --name chenxuefan -p 24:22 --privileged centos /usr/sbin/init --privileged 使用该参数，container内的root拥有真正的root权限。 否则，container内的root只是外部</description>
     </item>
     
     <item>
       <title>记一次迁移服务器的经历</title>
-      <link>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/aliyun-server-initialization/</link>
       <pubDate>Sun, 18 Apr 2021 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/aliyun-server-initialization/</guid>
       <description>前言 ​ 故事的起源，要从前几个星期说起，我在阿里云购入的为期一年的云服务器正式到期，本来在几个月之前，如果我选择续费的话，还可以享受优惠，只需</description>
     </item>
     
     <item>
       <title>从http到https</title>
-      <link>https://billie52707.cn/posts/2020/8/http-https/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/http-https/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/http-https/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/http-https/</guid>
       <description>前言 最近博客美化方面做的都差不多了，也没有太多东西好捣鼓了，这个时候我又注意到我的网站标头显示着一个不安全的字样，觉得又好奇又奇怪，因为在这</description>
     </item>
     
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
-      <link>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</link>
       <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
     </item>
     

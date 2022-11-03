@@ -27,7 +27,7 @@ if (!doNotTrack) {
   <meta property="og:title" content="关于跨域问题的思考和解决思路" />
 <meta property="og:description" content="前言 什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://billie52707.cn/posts/2020/11/cross-domain/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://chenxuefan.cn/posts/2020/11/cross-domain/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-11-17T00:00:00+00:00" />
 
@@ -41,7 +41,7 @@ if (!doNotTrack) {
     
   
   
-  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  <link rel="stylesheet" href="https://chenxuefan.cn/css/style-light.css">
   
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -50,7 +50,7 @@ if (!doNotTrack) {
   
 
   
-<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+<link rel="icon" type="image/png" href="https://chenxuefan.cn/images/favicon.ico" />
 
   
   
@@ -108,14 +108,14 @@ if (!doNotTrack) {
       <ul>
         
         <li>
-          <a class="icon" href=" https://billie52707.cn/posts/2020/11/1-x-examination/">
+          <a class="icon" href=" https://chenxuefan.cn/posts/2020/11/1-x-examination/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://billie52707.cn/posts/2020/11/web-media/">
+          <a class="icon" href="https://chenxuefan.cn/posts/2020/11/web-media/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -146,57 +146,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&text=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&text=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&is_video=false&description=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&is_video=false&description=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f">
+    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af&body=Check out this article: https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&name=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af&description=%e5%89%8d%e8%a8%80%20%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%a8%e5%9f%9f%3f%20%e5%bd%93%e4%b8%a4%e4%b8%aa%e5%9f%9f%e5%85%b7%e6%9c%89%e7%9b%b8%e5%90%8c%e7%9a%84%e5%8d%8f%e8%ae%ae%28%e5%a6%82http%29%2c%20%e7%9b%b8%e5%90%8c%e7%9a%84%e7%ab%af%e5%8f%a3%28%e5%a6%8280%29%ef%bc%8c%e7%9b%b8%e5%90%8c%e7%9a%84host%ef%bc%88%e5%a6%82www.google.com%29%ef%bc%8c%e9%82%a3%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e5%8f%af%e4%bb%a5">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&name=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af&description=%e5%89%8d%e8%a8%80%20%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%a8%e5%9f%9f%3f%20%e5%bd%93%e4%b8%a4%e4%b8%aa%e5%9f%9f%e5%85%b7%e6%9c%89%e7%9b%b8%e5%90%8c%e7%9a%84%e5%8d%8f%e8%ae%ae%28%e5%a6%82http%29%2c%20%e7%9b%b8%e5%90%8c%e7%9a%84%e7%ab%af%e5%8f%a3%28%e5%a6%8280%29%ef%bc%8c%e7%9b%b8%e5%90%8c%e7%9a%84host%ef%bc%88%e5%a6%82www.google.com%29%ef%bc%8c%e9%82%a3%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e5%8f%af%e4%bb%a5">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&t=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&t=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -428,57 +428,57 @@ if (!doNotTrack) {
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&text=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&text=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&is_video=false&description=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&is_video=false&description=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f">
+    <a class="icon" href="mailto:?subject=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af&body=Check out this article: https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&title=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&name=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af&description=%e5%89%8d%e8%a8%80%20%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%a8%e5%9f%9f%3f%20%e5%bd%93%e4%b8%a4%e4%b8%aa%e5%9f%9f%e5%85%b7%e6%9c%89%e7%9b%b8%e5%90%8c%e7%9a%84%e5%8d%8f%e8%ae%ae%28%e5%a6%82http%29%2c%20%e7%9b%b8%e5%90%8c%e7%9a%84%e7%ab%af%e5%8f%a3%28%e5%a6%8280%29%ef%bc%8c%e7%9b%b8%e5%90%8c%e7%9a%84host%ef%bc%88%e5%a6%82www.google.com%29%ef%bc%8c%e9%82%a3%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e5%8f%af%e4%bb%a5">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&name=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af&description=%e5%89%8d%e8%a8%80%20%e4%bb%80%e4%b9%88%e6%98%af%e8%b7%a8%e5%9f%9f%3f%20%e5%bd%93%e4%b8%a4%e4%b8%aa%e5%9f%9f%e5%85%b7%e6%9c%89%e7%9b%b8%e5%90%8c%e7%9a%84%e5%8d%8f%e8%ae%ae%28%e5%a6%82http%29%2c%20%e7%9b%b8%e5%90%8c%e7%9a%84%e7%ab%af%e5%8f%a3%28%e5%a6%8280%29%ef%bc%8c%e7%9b%b8%e5%90%8c%e7%9a%84host%ef%bc%88%e5%a6%82www.google.com%29%ef%bc%8c%e9%82%a3%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e5%8f%af%e4%bb%a5">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2fcross-domain%2f&t=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fchenxuefan.cn%2fposts%2f2020%2f11%2fcross-domain%2f&t=%e5%85%b3%e4%ba%8e%e8%b7%a8%e5%9f%9f%e9%97%ae%e9%a2%98%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e8%a7%a3%e5%86%b3%e6%80%9d%e8%b7%af">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

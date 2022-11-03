@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on 人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/tags/mysql/</link>
+    <link>https://chenxuefan.cn/tags/mysql/</link>
     <description>Recent content in MySQL on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1&#43;X | MySQL</title>
-      <link>https://billie52707.cn/posts/2020/11/1-x-mysql/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-mysql/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1-x-mysql/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-mysql/</guid>
       <description>why MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。 基本操作 启动(macOS)</description>
     </item>
     

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php on 人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/tags/php/</link>
+    <link>https://chenxuefan.cn/tags/php/</link>
     <description>Recent content in php on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Sat, 17 Oct 2020 20:54:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Oct 2020 20:54:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1&#43;X | php</title>
-      <link>https://billie52707.cn/posts/2020/10/php-study-note/</link>
+      <link>https://chenxuefan.cn/posts/2020/10/php-study-note/</link>
       <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/10/php-study-note/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/10/php-study-note/</guid>
       <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
     </item>
     

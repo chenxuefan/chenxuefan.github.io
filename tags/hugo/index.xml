@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on 人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/tags/hugo/</link>
+    <link>https://chenxuefan.cn/tags/hugo/</link>
     <description>Recent content in hugo on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Sun, 16 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python&#43;hugo&#43;nginx | 实现博客主页每日一图</title>
-      <link>https://billie52707.cn/posts/2020/8/python-hugo-nginx-daily-picture/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/python-hugo-nginx-daily-picture/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/python-hugo-nginx-daily-picture/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/python-hugo-nginx-daily-picture/</guid>
       <description>前言 在建博客之前，我现在的域名访问的对象，是使用nginx部署在服务器的一个页面，并且由于加入了python脚本，这个页面每天都会更新，每天</description>
     </item>
     
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
-      <link>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</link>
       <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
     </item>
     

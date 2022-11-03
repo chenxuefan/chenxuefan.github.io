@@ -2,522 +2,522 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/</link>
+    <link>https://chenxuefan.cn/</link>
     <description>Recent content on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 Dockerfile 构建项目</title>
-      <link>https://billie52707.cn/posts/2022/10/dockerfile/</link>
+      <link>https://chenxuefan.cn/posts/2022/10/dockerfile/</link>
       <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2022/10/dockerfile/</guid>
+      <guid>https://chenxuefan.cn/posts/2022/10/dockerfile/</guid>
       <description>悄悄更新! 🌹 https://billie52707.cn/note/docker1/#使用-dockerfile-构建项目</description>
     </item>
     
     <item>
       <title>旅行笔记</title>
-      <link>https://billie52707.cn/travel/</link>
+      <link>https://chenxuefan.cn/travel/</link>
       <pubDate>Thu, 22 Sep 2022 15:15:02 +0800</pubDate>
       
-      <guid>https://billie52707.cn/travel/</guid>
+      <guid>https://chenxuefan.cn/travel/</guid>
       <description>Oct. 2022 阳江 /抓拍，没来得及对好焦，意外地赋予了油画的质感。好想也有一条狗子可以遛！/ Oct. 2022 深圳 桔钓沙 /在大鹏看海的最后一站/ Oct. 2022 深圳 杨梅坑天然潭</description>
     </item>
     
     <item>
       <title>KFC疯狂星期四文学</title>
-      <link>https://billie52707.cn/draft/kfc_crazy_thursday_literature/</link>
+      <link>https://chenxuefan.cn/draft/kfc_crazy_thursday_literature/</link>
       <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/kfc_crazy_thursday_literature/</guid>
+      <guid>https://chenxuefan.cn/draft/kfc_crazy_thursday_literature/</guid>
       <description>不攀有钱人，我花不到他的钱，不小瞧穷人，他不靠我生存，不奉承小人，他入不了我的眼。我只相信三种人：陪我同甘共苦的人，落难帮我一把的人，明天疯</description>
     </item>
     
     <item>
       <title>python模块详解 | pandas</title>
-      <link>https://billie52707.cn/draft/python-pandas/</link>
+      <link>https://chenxuefan.cn/draft/python-pandas/</link>
       <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-pandas/</guid>
+      <guid>https://chenxuefan.cn/draft/python-pandas/</guid>
       <description>https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame</description>
     </item>
     
     <item>
       <title>PyQt5开发中的「界面卡顿」问题解决记录</title>
-      <link>https://billie52707.cn/posts/2022/6/pyqt/</link>
+      <link>https://chenxuefan.cn/posts/2022/6/pyqt/</link>
       <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2022/6/pyqt/</guid>
+      <guid>https://chenxuefan.cn/posts/2022/6/pyqt/</guid>
       <description>起 每十秒刷新一下界面上的信息，一开始很顺畅，跑了几十分钟后界面变得卡顿 承 layout中添加tablewidget控件，添加控件的这个过程是在</description>
     </item>
     
     <item>
       <title>生活不易 喵喵叹气</title>
-      <link>https://billie52707.cn/posts/2022/4/miaomiao/</link>
+      <link>https://chenxuefan.cn/posts/2022/4/miaomiao/</link>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2022/4/miaomiao/</guid>
+      <guid>https://chenxuefan.cn/posts/2022/4/miaomiao/</guid>
       <description></description>
     </item>
     
     <item>
       <title>2021年写字总结</title>
-      <link>https://billie52707.cn/draft/2021/</link>
+      <link>https://chenxuefan.cn/draft/2021/</link>
       <pubDate>Fri, 31 Dec 2021 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/2021/</guid>
+      <guid>https://chenxuefan.cn/draft/2021/</guid>
       <description>生活 工作</description>
     </item>
     
     <item>
       <title>python模块详解 | xlrd</title>
-      <link>https://billie52707.cn/draft/python-xlrd/</link>
+      <link>https://chenxuefan.cn/draft/python-xlrd/</link>
       <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-xlrd/</guid>
+      <guid>https://chenxuefan.cn/draft/python-xlrd/</guid>
       <description>基本操作 import xlrd # 打开文件</description>
     </item>
     
     <item>
       <title>「pycharm」学习笔记</title>
-      <link>https://billie52707.cn/draft/pycharm/</link>
+      <link>https://chenxuefan.cn/draft/pycharm/</link>
       <pubDate>Mon, 20 Dec 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/pycharm/</guid>
+      <guid>https://chenxuefan.cn/draft/pycharm/</guid>
       <description>快捷键 import win: Alt + Enter mac: option + Enter pep8 mac：option+command+L</description>
     </item>
     
     <item>
       <title>「git」学习笔记</title>
-      <link>https://billie52707.cn/note/git/</link>
+      <link>https://chenxuefan.cn/note/git/</link>
       <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/git/</guid>
+      <guid>https://chenxuefan.cn/note/git/</guid>
       <description>https://git-scm.com/book/zh/v2/ 初次运行 Git 前的配置 https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE ssh-keygen -t rsa -C &amp;#34;邮箱&amp;#34; cd ~/.ssh cat id_rsa.pub 用户信息 你可以通过以下命令查看所有的配置以及它们所在的文件： git config --list --show-origin 安装完 Git 之</description>
     </item>
     
     <item>
       <title>python模块详解 | aiomysql</title>
-      <link>https://billie52707.cn/draft/python-aiomysql/</link>
+      <link>https://chenxuefan.cn/draft/python-aiomysql/</link>
       <pubDate>Thu, 15 Jul 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-aiomysql/</guid>
+      <guid>https://chenxuefan.cn/draft/python-aiomysql/</guid>
       <description>官方文档 - https://aiomysql.readthedocs.io/en/latest/pool.html</description>
     </item>
     
     <item>
       <title>python模块详解 | tensorflow</title>
-      <link>https://billie52707.cn/draft/python-tensorflow/</link>
+      <link>https://chenxuefan.cn/draft/python-tensorflow/</link>
       <pubDate>Thu, 08 Jul 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-tensorflow/</guid>
+      <guid>https://chenxuefan.cn/draft/python-tensorflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python模块详解 | sqlalchemy</title>
-      <link>https://billie52707.cn/draft/python-sqlalchemy/</link>
+      <link>https://chenxuefan.cn/draft/python-sqlalchemy/</link>
       <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-sqlalchemy/</guid>
+      <guid>https://chenxuefan.cn/draft/python-sqlalchemy/</guid>
       <description>SQLAlchemy 1.4 Documentation 传说中的ORM技术：Object-Relational Mapping，把关系数据库的表结构映射到对象上。 但是由谁来做这个转换呢？所以O</description>
     </item>
     
     <item>
       <title>python模块详解 | xmind</title>
-      <link>https://billie52707.cn/draft/python-xmind/</link>
+      <link>https://chenxuefan.cn/draft/python-xmind/</link>
       <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-xmind/</guid>
+      <guid>https://chenxuefan.cn/draft/python-xmind/</guid>
       <description>官方文档 - https://pypi.org/project/XMind/</description>
     </item>
     
     <item>
       <title>「广州南沙公安分局」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%8D%97%E6%B2%99%E5%85%AC%E5%AE%89%E5%B1%80/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%8D%97%E6%B2%99%E5%85%AC%E5%AE%89%E5%B1%80/</link>
       <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E5%8D%97%E6%B2%99%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%8D%97%E6%B2%99%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
       <description>开发流程 调证 1.1 笔录信息 平台 - 广州市公安局笔录系统、反诈平台 地址 - 68.32.99.74:91/login 功能 根据笔录信息，匹配受害人的账号及银行 登录反诈平台，根据银行卡号，查询归</description>
     </item>
     
     <item>
       <title>python模块详解 | opencv</title>
-      <link>https://billie52707.cn/draft/python-opencv/</link>
+      <link>https://chenxuefan.cn/draft/python-opencv/</link>
       <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-opencv/</guid>
+      <guid>https://chenxuefan.cn/draft/python-opencv/</guid>
       <description>》》》常用函数《《《 图像读取：cv.imread() 图像显示：cv.imshow() 图像叠加：cv.addWeighted() 键盘响应：cv</description>
     </item>
     
     <item>
       <title>python模块详解 | multiprocessing</title>
-      <link>https://billie52707.cn/draft/python-multiprocessing/</link>
+      <link>https://chenxuefan.cn/draft/python-multiprocessing/</link>
       <pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-multiprocessing/</guid>
+      <guid>https://chenxuefan.cn/draft/python-multiprocessing/</guid>
       <description>官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing as mp import time def target(arg): ... if __name__ == &amp;#39;__main__&amp;#39; start = time.time() processes = [] for i in range(5): process = mp.Process(target=target, args=(i,)) process.start() # processes.append(process) for process in processes: process.join() # end = time.time() print(f&amp;#39;共耗时：{en</description>
     </item>
     
     <item>
       <title>线程、进程、协程，该用哪一个比较好？</title>
-      <link>https://billie52707.cn/draft/thread-process-coroutine/</link>
+      <link>https://chenxuefan.cn/draft/thread-process-coroutine/</link>
       <pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/thread-process-coroutine/</guid>
+      <guid>https://chenxuefan.cn/draft/thread-process-coroutine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>浅谈自动化爬虫场景下的数据持久化</title>
-      <link>https://billie52707.cn/posts/2021/6/user-data-dir/</link>
+      <link>https://chenxuefan.cn/posts/2021/6/user-data-dir/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/6/user-data-dir/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/6/user-data-dir/</guid>
       <description>每次我们使用 selenium 或 Pyppeteer 打开的时候都是一个新的空白的浏览器。而且如果遇到了需要登录的网页之后，如果我们这次登录上了，下一次再启动又是空白了，又得登</description>
     </item>
     
     <item>
       <title>python模块详解 | aiomultiprocess</title>
-      <link>https://billie52707.cn/draft/python-aiomultiprocess/</link>
+      <link>https://chenxuefan.cn/draft/python-aiomultiprocess/</link>
       <pubDate>Sun, 20 Jun 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-aiomultiprocess/</guid>
+      <guid>https://chenxuefan.cn/draft/python-aiomultiprocess/</guid>
       <description>About 官方文档 - https://aiomultiprocess.omnilib.dev/en/latest/guide.html</description>
     </item>
     
     <item>
       <title>python模块详解 | pyppeteer</title>
-      <link>https://billie52707.cn/posts/2021/6/python-pyppeteer/</link>
+      <link>https://chenxuefan.cn/posts/2021/6/python-pyppeteer/</link>
       <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/6/python-pyppeteer/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/6/python-pyppeteer/</guid>
       <description>Selenium &amp;amp; Pyppeteer selenium的功能十分强大，但很多时候我们发现他也有其自身的缺点，比如： 需要安装好相关的浏览器，Chrome或Firefox等 需要</description>
     </item>
     
     <item>
       <title>python模块详解 | aiohttp (server)</title>
-      <link>https://billie52707.cn/draft/python-aiohttp-server/</link>
+      <link>https://chenxuefan.cn/draft/python-aiohttp-server/</link>
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-aiohttp-server/</guid>
+      <guid>https://chenxuefan.cn/draft/python-aiohttp-server/</guid>
       <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://billie52707.cn/posts/2021/5/python-asyncio/ Hello,world! from aiohttp import web routes = web.RouteTableDef() @routes.get(&amp;#39;/&amp;#39;) async def hello(request): return web.Response(text=&amp;#34;Hello,world!&amp;#34;) app = web.Application() app.add_routes(routes) web.run_app(app) Handler A request handler must be a coroutine that accepts</description>
     </item>
     
     <item>
       <title>python模块详解 | Django</title>
-      <link>https://billie52707.cn/draft/python-django/</link>
+      <link>https://chenxuefan.cn/draft/python-django/</link>
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-django/</guid>
+      <guid>https://chenxuefan.cn/draft/python-django/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python模块详解 | flask</title>
-      <link>https://billie52707.cn/draft/python-flask/</link>
+      <link>https://chenxuefan.cn/draft/python-flask/</link>
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-flask/</guid>
+      <guid>https://chenxuefan.cn/draft/python-flask/</guid>
       <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&amp;#39;server.py&amp;#39; flask run ps：等号两边无空格</description>
     </item>
     
     <item>
       <title>python模块详解 | hashlib</title>
-      <link>https://billie52707.cn/draft/python-hashlib/</link>
+      <link>https://chenxuefan.cn/draft/python-hashlib/</link>
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-hashlib/</guid>
+      <guid>https://chenxuefan.cn/draft/python-hashlib/</guid>
       <description>什么是hash？ hash是一种算法，该算法通过传值，经过运算得到一串hash值。hash函数有很多种类型，不同之处是其复杂度不同。 hash值</description>
     </item>
     
     <item>
       <title>「rsa」学习笔记</title>
-      <link>https://billie52707.cn/draft/rsa/</link>
+      <link>https://chenxuefan.cn/draft/rsa/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/rsa/</guid>
+      <guid>https://chenxuefan.cn/draft/rsa/</guid>
       <description>图解RSA算法</description>
     </item>
     
     <item>
       <title>网络爬虫学习笔记</title>
-      <link>https://billie52707.cn/draft/spider/</link>
+      <link>https://chenxuefan.cn/draft/spider/</link>
       <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/spider/</guid>
+      <guid>https://chenxuefan.cn/draft/spider/</guid>
       <description>反爬虫笔记 验证码 思路 - 商用API接口、打码平台、自主训练深度学习模型等 伪造headers（请求头） 简介 - 简单的headers可应对反爬很一般</description>
     </item>
     
     <item>
       <title>「招商证券」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/%E6%8B%9B%E5%95%86%E8%AF%81%E5%88%B8/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E6%8B%9B%E5%95%86%E8%AF%81%E5%88%B8/</link>
       <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E6%8B%9B%E5%95%86%E8%AF%81%E5%88%B8/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E6%8B%9B%E5%95%86%E8%AF%81%E5%88%B8/</guid>
       <description>技术难点 登录 密码（rsa） 验证码 获取页面信息 使用selenium登录并获取cookies 使用cookies发送requests请求 页面截图</description>
     </item>
     
     <item>
       <title>python模块详解 | urllib</title>
-      <link>https://billie52707.cn/posts/2021/6/python-urllib/</link>
+      <link>https://chenxuefan.cn/posts/2021/6/python-urllib/</link>
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/6/python-urllib/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/6/python-urllib/</guid>
       <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &amp;#39;https://billie52707.cn&amp;#39; url = urljoin(url, &amp;#39;note&amp;#39;) # &amp;#39;https://billie52707.cn/note&amp;#39; quote from urllib.parse import quote, unquote ch = &amp;#39</description>
     </item>
     
     <item>
       <title>python模块详解 | aiohttp (client)</title>
-      <link>https://billie52707.cn/posts/2021/6/python-aiohttp-client/</link>
+      <link>https://chenxuefan.cn/posts/2021/6/python-aiohttp-client/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/6/python-aiohttp-client/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/6/python-aiohttp-client/</guid>
       <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://billie52707.cn/posts/2021/5/python-asyncio/ 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with</description>
     </item>
     
     <item>
       <title>python模块详解 | asyncio</title>
-      <link>https://billie52707.cn/posts/2021/5/python-asyncio/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/python-asyncio/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/python-asyncio/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/python-asyncio/</guid>
       <description>why async？ 堵塞 阻塞状态指程序未得到所需计算资源时被挂起的状态。程序在等待某个操作完成期间，自身无法继续处理其他的事情，则称该程序在该操作</description>
     </item>
     
     <item>
       <title>钢琴学习笔记</title>
-      <link>https://billie52707.cn/draft/piano/</link>
+      <link>https://chenxuefan.cn/draft/piano/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/piano/</guid>
+      <guid>https://chenxuefan.cn/draft/piano/</guid>
       <description>音阶 调 旋律与和声</description>
     </item>
     
     <item>
       <title>最近的一些小项目</title>
-      <link>https://billie52707.cn/posts/2021/5/recent-projects/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/recent-projects/</link>
       <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/recent-projects/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/recent-projects/</guid>
       <description>unsplash 预览地址 - https://billie52707.cn/photo/ 项目仓库 - https://github.com/chenxuefan/crawler/tree/main/unsplash 功能模块 - 按照topic（类型）爬取图片（每个类型只爬一张）、前端展示页面 技术栈 - requests、re、xpat</description>
     </item>
     
     <item>
       <title>unsplash.com图片欣赏</title>
-      <link>https://billie52707.cn/photo/</link>
+      <link>https://chenxuefan.cn/photo/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/photo/</guid>
+      <guid>https://chenxuefan.cn/photo/</guid>
       <description>图片来源 - unsplash.com 项目地址 - chenxuefan/crawler/unsplash &lt;!DOCTYPE html&gt; wallpapers-unsplash //</description>
     </item>
     
     <item>
       <title>python模块详解 | BeautifulSoup</title>
-      <link>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/python-beautifulsoup/</link>
       <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/python-beautifulsoup/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/python-beautifulsoup/</guid>
       <description>前言 Why BeautifulSoup? Beautiful Soup提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的</description>
     </item>
     
     <item>
       <title>「广东农信社」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
       <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
       <description>任务简介 完成客户提供的两份测试报告 联调测试报告 单元测试报告 出差日志 联系人 - 冼健：17606688412 地址 - 官洲生命科学创新中心。地铁4号线</description>
     </item>
     
     <item>
       <title>「oss」学习笔记</title>
-      <link>https://billie52707.cn/note/oss/</link>
+      <link>https://chenxuefan.cn/note/oss/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/oss/</guid>
+      <guid>https://chenxuefan.cn/note/oss/</guid>
       <description>ossutil命令行管理工具 学习文档 https://help.aliyun.com/document_detail/31882.html?spm=a2c4g.11186623.3.3.41c321b4Dl5AHV 在mac配置ossutil环境 安装 - curl -o ossutilmac64 http://gosspublic.alicdn.com/ossutil/1.7.3/ossutilmac64 赋予权限 - chmod 755 ossutilmac64 改下名 - mv ossutilmac64 ossutil 转移到可执行文件保存路径 - mv</description>
     </item>
     
     <item>
       <title>LeetCode | 670. 最大交换</title>
-      <link>https://billie52707.cn/posts/2021/5/leetcode-670/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/leetcode-670/</link>
       <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/leetcode-670/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/leetcode-670/</guid>
       <description>难度 - 中等 题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟大到小排列列表</description>
     </item>
     
     <item>
       <title>python模块详解 | re</title>
-      <link>https://billie52707.cn/posts/2021/5/python-re/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/python-re/</link>
       <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/python-re/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/python-re/</guid>
       <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
     </item>
     
     <item>
       <title>python学习笔记 | r&#39;&#39;, b&#39;&#39;, u&#39;&#39;, f&#39;&#39;</title>
-      <link>https://billie52707.cn/posts/2021/5/python-rbuf/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/python-rbuf/</link>
       <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/python-rbuf/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/python-rbuf/</guid>
       <description>r&amp;rsquo;&amp;rsquo; - 非转义原生字符串 以r开头的字符，常用于正则表达式，对应着re模块。 r&#39;\n&#39; - 经处理，&amp;rsquo;\n&amp;rsquo;表示的是&amp;rsquo;\&amp;</description>
     </item>
     
     <item>
       <title>python模块详解 | Scrapy</title>
-      <link>https://billie52707.cn/draft/python-scrapy/</link>
+      <link>https://chenxuefan.cn/draft/python-scrapy/</link>
       <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-scrapy/</guid>
+      <guid>https://chenxuefan.cn/draft/python-scrapy/</guid>
       <description>安装 - pip install scrapy 新建项目 - scrapy startproject project_name /项目目录层级关系/ scrapy.cfg: 项目的配置文件 tutorial/: 该项目的python模块。之后您将在此加入代码。 tutorial/items.py: 项目中的item文件. tutorial/pipelines.py:</description>
     </item>
     
     <item>
       <title>WakaTime! 完美统计代码工作量</title>
-      <link>https://billie52707.cn/posts/2021/5/wakatime/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/wakatime/</link>
       <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/wakatime/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/wakatime/</guid>
       <description>前言 这又是一个相见恨晚的神级工具，开发人员统计工作量，统计代码时常，必备神器 上车指南 登录wakatime官网，注册一个账号，可以用GitHu</description>
     </item>
     
     <item>
       <title>「广电计量」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</link>
       <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E5%B7%9E%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F%E6%A3%80%E6%B5%8B%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/</guid>
       <description>需求分析 流水表（分公司/总部） 需求细节：复制整张sheet，至资金表的对应日期sheet页 使用方法：rpa.excel.copy_sheet</description>
     </item>
     
     <item>
       <title>GlidedSky | 爬虫题目2</title>
-      <link>https://billie52707.cn/posts/2021/5/glidedsky-level2/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/glidedsky-level2/</link>
       <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/glidedsky-level2/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/glidedsky-level2/</guid>
       <description>题目地址 - http://glidedsky.com/level/crawler-basic-2 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-2 心得 这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如</description>
     </item>
     
     <item>
       <title>达观工作笔记</title>
-      <link>https://billie52707.cn/draft/data-grand/dddd/2021/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/dddd/2021/</link>
       <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/dddd/2021/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/dddd/2021/</guid>
       <description>工作日志 2021.05.07 第一次在本公司上班 2021.05.20 今日任务 开发博客新功能“Most recent”，记录最新更新的文章 2021.05.28 STAR法则 Situation： 事情是在什</description>
     </item>
     
     <item>
       <title>python模块详解 | requests</title>
-      <link>https://billie52707.cn/posts/2021/5/python-requests/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/python-requests/</link>
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/python-requests/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/python-requests/</guid>
       <description>Requests: 让 HTTP 服务人类 官方文档 - https://docs.python-requests.org/zh_CN/latest/ 快速上手 https://docs.python-requests.org/zh_CN/latest/user/quickstart.html （1）发送请求 request(method, url, **kwargs) get(url, params=None, **kwargs) options(url, **kwargs) head(url, **kwargs) post(url, data=None, json=None, **kwargs) put(url, data=None, **kwargs) patch(url, data=None, **kwargs) delete(url, **kwargs) r = requests.put(&amp;#39;http://httpbin.org/put&amp;#39;, data = {&amp;#39;key&amp;#39;:&amp;#39;value&amp;#39;}) r = requests.delete(&amp;#39;http://httpbin.org/delete&amp;#39;) r = requests.head(&amp;#39;http://httpbin.org/get&amp;#39;) r = requests.options(&amp;#39;http://httpbin.org/get&amp;#39;) （2）请求参数 params</description>
     </item>
     
     <item>
       <title>python模块详解 | threading</title>
-      <link>https://billie52707.cn/draft/python-threading/</link>
+      <link>https://chenxuefan.cn/draft/python-threading/</link>
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-threading/</guid>
+      <guid>https://chenxuefan.cn/draft/python-threading/</guid>
       <description>官方文档 - https://docs.python.org/zh-cn/3/library/threading.html 线程 创建子线程 - threading.Thread() import threading def func(i): print(i) threading.Thread(target = func, args = (1,)) 计算运行时间 import threading, time def target(arg): ... if __name__ == &amp;#39;__main__&amp;#39; start = time.time() threads = [] for i in range(5): thread = threading.Thread(target = target, args = (i,)) thread.start() threads.append(thread) for thread in threads: thread.join() end = time.time()</description>
     </item>
     
     <item>
       <title>我用什么才能留住你</title>
-      <link>https://billie52707.cn/posts/2021/5/how-can-i/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/how-can-i/</link>
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/how-can-i/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/how-can-i/</guid>
       <description>我用什么才能留住你？ 我给你瘦弱的街道、绝望的落日、荒郊的月亮。 我给你一个久久望着孤月的人悲哀。 我给你我书中所蕴含的一切悟力，以及我生活中所能</description>
     </item>
     
     <item>
       <title>GlidedSky | 爬虫题目1</title>
-      <link>https://billie52707.cn/posts/2021/5/glidedsky-level1/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/glidedsky-level1/</link>
       <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/glidedsky-level1/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/glidedsky-level1/</guid>
       <description>题目地址 - http://glidedsky.com/level/crawler-basic-1 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-1 心得 这道题目所需的技能点都很基础，如发送请求、文档解析，很多工具都可以达到目的，重要是要寻找最简短的代码、最优雅的</description>
     </item>
     
     <item>
       <title>python模块详解 | wordcloud</title>
-      <link>https://billie52707.cn/posts/2021/5/python-wordcloud/</link>
+      <link>https://chenxuefan.cn/posts/2021/5/python-wordcloud/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/5/python-wordcloud/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/5/python-wordcloud/</guid>
       <description>今天是五一假期的第一天，学一点有意思的东西！ 数据分析领域经常会用到统计与展示的功能需求，数据的展示方式，传统的有统计图之类，但稍显古板，对于</description>
     </item>
     
     <item>
       <title>python学习笔记 | 异常处理</title>
-      <link>https://billie52707.cn/posts/2021/4/python-error/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/python-error/</link>
       <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-error/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/python-error/</guid>
       <description>什么是异常? 异常就是程序运行时发生错误的信号（在程序出现错误时，则会产生一个异常，若程序没有处理它，则会抛出该异常，程序的运行也随之终止）。</description>
     </item>
     
     <item>
       <title>「docker」学习笔记 | 容器编排之Docker Swarm</title>
-      <link>https://billie52707.cn/draft/docker4/</link>
+      <link>https://chenxuefan.cn/draft/docker4/</link>
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/docker4/</guid>
+      <guid>https://chenxuefan.cn/draft/docker4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>使用docker容器化部署服务器</title>
-      <link>https://billie52707.cn/draft/aliyun-server-docker/</link>
+      <link>https://chenxuefan.cn/draft/aliyun-server-docker/</link>
       <pubDate>Tue, 27 Apr 2021 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/aliyun-server-docker/</guid>
+      <guid>https://chenxuefan.cn/draft/aliyun-server-docker/</guid>
       <description>新建容器 docker run -itd --name chenxuefan -p 24:22 --privileged centos /usr/sbin/init --privileged 使用该参数，container内的root拥有真正的root权限。 否则，container内的root只是外部</description>
     </item>
     
     <item>
       <title>「docker」学习笔记 | 容器编排之Docker Compose</title>
-      <link>https://billie52707.cn/note/docker3/</link>
+      <link>https://chenxuefan.cn/note/docker3/</link>
       <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/docker3/</guid>
+      <guid>https://chenxuefan.cn/note/docker3/</guid>
       <description>why docker-compose? 为什么需要用到编排工具？ 当我们的业务越来越复杂时，需要多个容器相互配合，甚至需要多个主机组成容器集群才能满足我们的业务需求，这个时候就需</description>
     </item>
     
     <item>
       <title>python学习笔记 | 迭代器&amp;生成器</title>
-      <link>https://billie52707.cn/posts/2021/4/python-iterator-generator/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/python-iterator-generator/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-iterator-generator/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/python-iterator-generator/</guid>
       <description>迭代器（iterator） 迭代器是访问集合元素的一种方式。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不</description>
     </item>
     
     <item>
       <title>网络爬虫学习笔记</title>
-      <link>https://billie52707.cn/spider/</link>
+      <link>https://chenxuefan.cn/spider/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/spider/</guid>
+      <guid>https://chenxuefan.cn/spider/</guid>
       <description>就想写个爬虫，我到底要学多少东西啊？ 爬虫基础原理 🕷️ 必知必会，掌握 HTTP 基本原理 夯实根基，Web 网页基础 原理探究，了解爬虫的基本原理 基础探究，S</description>
     </item>
     
     <item>
       <title>My lady,Lyanna Mormont.</title>
-      <link>https://billie52707.cn/posts/2021/4/lyanna-mormont/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/lyanna-mormont/</link>
       <pubDate>Sun, 25 Apr 2021 00:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/lyanna-mormont/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/lyanna-mormont/</guid>
       <description>S05E02 Bear Island knows no king but the king in the North,whose name is Stark.
 S06E07 Welcome to Bear Island.
 I doubt it.My mother wasn&#39;t a great beauty or any other kind of beauty.She was a great warrior,though.She died fighting for your brother Robb.
@@ -526,1252 +526,1261 @@ I think we&#39;ve had enough small talk.Why are you here? I remember what it sai
     
     <item>
       <title>python学习笔记 | xpath</title>
-      <link>https://billie52707.cn/posts/2021/4/python-xpath/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/python-xpath/</link>
       <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-xpath/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/python-xpath/</guid>
       <description>关于lxml ​ lxml是python的一个解析库，支持「HTML」和「XML」的解析，支持xpath解析方式，而且解析效率非常高。 1. 安装 Windows/macOS pip3</description>
     </item>
     
     <item>
       <title>「nginx」学习笔记</title>
-      <link>https://billie52707.cn/note/nginx/</link>
+      <link>https://chenxuefan.cn/note/nginx/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/nginx/</guid>
+      <guid>https://chenxuefan.cn/note/nginx/</guid>
       <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
     </item>
     
     <item>
       <title>记一次迁移服务器的经历</title>
-      <link>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/aliyun-server-initialization/</link>
       <pubDate>Sun, 18 Apr 2021 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/aliyun-server-initialization/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/aliyun-server-initialization/</guid>
       <description>前言 ​ 故事的起源，要从前几个星期说起，我在阿里云购入的为期一年的云服务器正式到期，本来在几个月之前，如果我选择续费的话，还可以享受优惠，只需</description>
     </item>
     
     <item>
       <title>我的博客项目开发文档</title>
-      <link>https://billie52707.cn/draft/billie52707/</link>
+      <link>https://chenxuefan.cn/draft/billie52707/</link>
       <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/billie52707/</guid>
+      <guid>https://chenxuefan.cn/draft/billie52707/</guid>
       <description>功能设计 需求阐述 统计 - 各个文件类型的文件个数和总文件大小（已完成） 将每日统计的数据，以日期为sheet的命名，写入sheet表（已完成） 命名</description>
     </item>
     
     <item>
       <title>python模块详解 | keyboard</title>
-      <link>https://billie52707.cn/draft/python-keyboard/</link>
+      <link>https://chenxuefan.cn/draft/python-keyboard/</link>
       <pubDate>Thu, 15 Apr 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-keyboard/</guid>
+      <guid>https://chenxuefan.cn/draft/python-keyboard/</guid>
       <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
     </item>
     
     <item>
       <title>python模块详解 | logging</title>
-      <link>https://billie52707.cn/posts/2021/4/python-logging/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/python-logging/</link>
       <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-logging/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/python-logging/</guid>
       <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 - logging.basicConfig() 日志基础教程 import logging logging.basicConfig( filename=&amp;#39;document.log&amp;#39;, level=logging.INFO, format=&amp;#34;%(asctime)s %(pathname)s[%(lineno)s]%(levelname)s:%(message)s&amp;#34;, datefmt=&amp;#34;%Y-%m-%d %H:%M:%S %p&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;) 下面结合四个参数展开来聊</description>
     </item>
     
     <item>
       <title>python学习笔记 | 一次使用装饰器时引发的思考</title>
-      <link>https://billie52707.cn/posts/2021/4/python-decorator-return/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/python-decorator-return/</link>
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-decorator-return/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/python-decorator-return/</guid>
       <description>前言 今天使用装饰器时，遇到这样一个错误： 根据报错提示，大意是指不能打包一个空值。而我写的装饰器是这样的： def catch_error(func): def wrapper(*args,**kwargs): try: print(f&amp;#39;正</description>
     </item>
     
     <item>
       <title>python模块详解 | os</title>
-      <link>https://billie52707.cn/posts/2021/4/python-os/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/python-os/</link>
       <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-os/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/python-os/</guid>
       <description>osos.remove(path) 删除文件 os.remove(path) - 删除文件 os.removedirs(path) - 删除空文件夹 os.mkdir(dirname) - 新建文件夹 os.makedirs(path) - 递归新建文件夹 os.rmdir(path) - 删除空文件夹 os.rename(a,b) - 重命名 os.listdir(path) - 返回路径下所有的文件及文件夹 os.system(&amp;quot;ls&amp;quot;) - 运行sh</description>
     </item>
     
     <item>
       <title>python学习笔记 | 装饰器</title>
-      <link>https://billie52707.cn/posts/2021/4/python-decorator/</link>
+      <link>https://chenxuefan.cn/posts/2021/4/python-decorator/</link>
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/4/python-decorator/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/4/python-decorator/</guid>
       <description>前言 1. 如何理解Python装饰器？ 装饰器本质上是一个「Python函数」，它可以让其他函数在不需要做任何代码变动的前提下增加额外的扩展功能，</description>
     </item>
     
     <item>
       <title>python模块详解 | openpyxl</title>
-      <link>https://billie52707.cn/posts/2021/3/python-openpyxl/</link>
+      <link>https://chenxuefan.cn/posts/2021/3/python-openpyxl/</link>
       <pubDate>Sun, 28 Mar 2021 01:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/3/python-openpyxl/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/3/python-openpyxl/</guid>
       <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list wb.remove(sheetname) wb.save(filename) 2. 工作表的使用 ## 创建工作</description>
     </item>
     
     <item>
       <title>「python」学习笔记</title>
-      <link>https://billie52707.cn/note/python/</link>
+      <link>https://chenxuefan.cn/note/python/</link>
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/python/</guid>
+      <guid>https://chenxuefan.cn/note/python/</guid>
       <description>更多 - https://billie52707.cn/tags/python/ 安装 Linux 安装pip curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量</description>
     </item>
     
     <item>
       <title>我给你瘦弱的街道，绝望的黄昏，荒郊的月亮，我给你...</title>
-      <link>https://billie52707.cn/posts/2021/3/march-shoot/</link>
+      <link>https://chenxuefan.cn/posts/2021/3/march-shoot/</link>
       <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/3/march-shoot/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/3/march-shoot/</guid>
       <description>/小家/ /阳台盛开的第一朵月季，奶黄色/ /仙湖植物园/ /傍晚的罗湖商务中心/ /每次去盐田路上都会遇到云雾缭绕的梧桐山/ /每天打开落地窗就能看</description>
     </item>
     
     <item>
       <title>「数据结构」学习笔记</title>
-      <link>https://billie52707.cn/note/data-structure/</link>
+      <link>https://chenxuefan.cn/note/data-structure/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/data-structure/</guid>
+      <guid>https://chenxuefan.cn/note/data-structure/</guid>
       <description>模块一：代码效率优化方法论 复杂度是衡量代码运行效率的重要度量因素 复杂度通常包括「时间复杂度」与「空间复杂度」，其中 时间复杂度与「代码的结构设</description>
     </item>
     
     <item>
       <title>Ajax 的原理和解析</title>
-      <link>https://billie52707.cn/posts/2021/2/ajax/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/ajax/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/ajax/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/ajax/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当我们在用 requests 抓取页面的时候，得到的结果可能会和在浏览器中看到的不一样：在浏览器中正常</description>
     </item>
     
     <item>
       <title>代理的基本原理和用法</title>
-      <link>https://billie52707.cn/posts/2021/2/proxy/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/proxy/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/proxy/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/proxy/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在做爬虫的过程中经常会遇到这样的情况，最初爬虫正常运行，正常抓取数据，一切看起来</description>
     </item>
     
     <item>
       <title>令人抓狂的 JavaScript 混淆技术</title>
-      <link>https://billie52707.cn/posts/2021/2/js/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/js/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/js/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/js/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在爬取网站的时候，经常会遇到各种各样类似加密的情形，比如： 某个网站的 URL 带有一些看</description>
     </item>
     
     <item>
       <title>原理探究，了解爬虫的基本原理</title>
-      <link>https://billie52707.cn/posts/2021/2/principle/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/principle/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/principle/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/principle/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们可以把互联网比作一张大网，而爬虫（即网络爬虫）便是在网上爬行的蜘蛛。如果把网的节</description>
     </item>
     
     <item>
       <title>基础探究，Session 与 Cookies</title>
-      <link>https://billie52707.cn/posts/2021/2/sessioncookies/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/sessioncookies/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/sessioncookies/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/sessioncookies/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在浏览网站的过程中，经常会遇到需要登录的情况，而有些网页只有登录之后才可以访问，</description>
     </item>
     
     <item>
       <title>多路加速，了解多线程基本原理</title>
-      <link>https://billie52707.cn/posts/2021/2/thread/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/thread/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/thread/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/thread/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们知道，在一台计算机中，我们可以同时打开许多软件，比如同时浏览网页、听音乐、打字等</description>
     </item>
     
     <item>
       <title>多路加速，了解多进程基本原理</title>
-      <link>https://billie52707.cn/posts/2021/2/process/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/process/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/process/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/process/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 在上一课时我们了解了多线程的基本概念，同时我们也提到，Python 中的多线程是不能很</description>
     </item>
     
     <item>
       <title>夯实根基，Web 网页基础</title>
-      <link>https://billie52707.cn/posts/2021/2/web/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/web/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/web/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/web/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当我们用浏览器访问网站时，页面各不相同，那么你有没有想过它为何会呈现成这个样子呢？本</description>
     </item>
     
     <item>
       <title>就想写个爬虫，我到底要学多少东西啊？</title>
-      <link>https://billie52707.cn/posts/2021/2/spider/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/spider/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/spider/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/spider/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当今大数据的时代，网络爬虫已经成为了获取数据的一个重要手段。 但要学习好爬虫并没有那么</description>
     </item>
     
     <item>
       <title>异步爬虫的原理和解析</title>
-      <link>https://billie52707.cn/posts/2021/2/async/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/async/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/async/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/async/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们知道爬虫是 IO 密集型任务，比如如果我们使用 requests 库来爬取某个站点的话，发出一个请求之后</description>
     </item>
     
     <item>
       <title>必知必会，掌握 HTTP 基本原理</title>
-      <link>https://billie52707.cn/posts/2021/2/http/</link>
+      <link>https://chenxuefan.cn/posts/2021/2/http/</link>
       <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/2/http/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/2/http/</guid>
       <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 URI 和 URL 首先，我们来了解一下 URI 和 URL，URI 的全称为 Uniform Resource Identifier，即统一</description>
     </item>
     
     <item>
       <title>「rpa」学习笔记 | 使用手册</title>
-      <link>https://billie52707.cn/note/rpa/</link>
+      <link>https://chenxuefan.cn/note/rpa/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/rpa/</guid>
+      <guid>https://chenxuefan.cn/note/rpa/</guid>
       <description>一些必要的知识点 RPA适用场景的特点（工业制造、医疗、教育、银行、保险、证券、信托、房地产、政府职能部门、公检法司等行业领域） 大量重复 业务流</description>
     </item>
     
     <item>
       <title>「马士基」项目开发文档</title>
-      <link>https://billie52707.cn/draft/data-grand/%E9%A9%AC%E5%A3%AB%E5%9F%BA%E8%88%AA%E8%BF%90/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E9%A9%AC%E5%A3%AB%E5%9F%BA%E8%88%AA%E8%BF%90/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E9%A9%AC%E5%A3%AB%E5%9F%BA%E8%88%AA%E8%BF%90/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E9%A9%AC%E5%A3%AB%E5%9F%BA%E8%88%AA%E8%BF%90/</guid>
       <description>收获与感悟 学习总结 python 常用模块 rpa、selenium、openpyxl、os、logging、xpath、requests 其他 装饰器、迭代器</description>
     </item>
     
     <item>
       <title>世界地图 | 国家名称表中英文的映射</title>
-      <link>https://billie52707.cn/posts/2021/1/echarts-country/</link>
+      <link>https://chenxuefan.cn/posts/2021/1/echarts-country/</link>
       <pubDate>Mon, 04 Jan 2021 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2021/1/echarts-country/</guid>
+      <guid>https://chenxuefan.cn/posts/2021/1/echarts-country/</guid>
       <description>nameMap = { &amp;lsquo;Singapore Rep.&amp;rsquo;:&amp;lsquo;新加坡&amp;rsquo;, &amp;lsquo;Dominican Rep.&amp;rsquo;:&amp;lsquo;多米尼加&amp;rsquo;, &amp;lsq</description>
     </item>
     
     <item>
       <title>2020年写字总结</title>
-      <link>https://billie52707.cn/draft/2020/</link>
+      <link>https://chenxuefan.cn/draft/2020/</link>
       <pubDate>Thu, 31 Dec 2020 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/2020/</guid>
+      <guid>https://chenxuefan.cn/draft/2020/</guid>
       <description>2020，注定是不平凡的一年。 ———— 我在去年的「NCP」疫情项目的README文档中这样写🍞 我始终坚信，一个意志足够坚定的人，是不会被外界</description>
     </item>
     
     <item>
       <title>深信息学生信息查询系统</title>
-      <link>https://billie52707.cn/draft/scores-search/</link>
+      <link>https://chenxuefan.cn/draft/scores-search/</link>
       <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/scores-search/</guid>
+      <guid>https://chenxuefan.cn/draft/scores-search/</guid>
       <description>技术栈 🀄️ Django requests rsa nginx 项目简介 ➖ 此项目旨在「方便同学查询学科成绩」，以往查询成绩的方式主要为 登录教务系统，查看成绩，需要连接学校内网，过程较为繁</description>
     </item>
     
     <item>
       <title>python模块详解 | pyqt5</title>
-      <link>https://billie52707.cn/draft/python-pyqt5/</link>
+      <link>https://chenxuefan.cn/draft/python-pyqt5/</link>
       <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-pyqt5/</guid>
+      <guid>https://chenxuefan.cn/draft/python-pyqt5/</guid>
       <description>前言 PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较</description>
     </item>
     
     <item>
       <title>风格迁移 - GUI设计文档</title>
-      <link>https://billie52707.cn/draft/pyqt-style-transform/</link>
+      <link>https://chenxuefan.cn/draft/pyqt-style-transform/</link>
       <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/pyqt-style-transform/</guid>
+      <guid>https://chenxuefan.cn/draft/pyqt-style-transform/</guid>
       <description>布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHBoxLayout、QGri</description>
     </item>
     
     <item>
       <title>使用selenium登录雨课堂并获取课程信息</title>
-      <link>https://billie52707.cn/posts/2020/12/yuketang-login/</link>
+      <link>https://chenxuefan.cn/posts/2020/12/yuketang-login/</link>
       <pubDate>Sat, 05 Dec 2020 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/12/yuketang-login/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/12/yuketang-login/</guid>
       <description>登录 ⌛️ 操作逻辑：运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录 class Yuketang: def __init__(self): self.login_url = &amp;#34;https://sziit.yuketang.cn/pro/portal/home/&amp;#34; self.dataDic = dict() self.bar=ProgressBar(widgets=[Percentage(),Bar(&amp;#39;#&amp;#39;), &amp;#39; &amp;#39;, Timer(), &amp;#39; &amp;#39;, ETA(), &amp;#39; &amp;#39;])#,term_width=12,FileTransferSpeed(), def Explicit_Waits(self,driver,</description>
     </item>
     
     <item>
       <title>HTTP状态码 1xx，2xx，3xx，4xx 啥意思</title>
-      <link>https://billie52707.cn/posts/2020/12/http-statuscode/</link>
+      <link>https://chenxuefan.cn/posts/2020/12/http-statuscode/</link>
       <pubDate>Wed, 02 Dec 2020 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/12/http-statuscode/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/12/http-statuscode/</guid>
       <description>前言： 经常忘记网络请求返回状态码的意思，所以做个记录，以备后需查看，背是不可能背的，只能忘了来看一看这样子。 1xx 100 （继续） 请求者应当继续提出请</description>
     </item>
     
     <item>
       <title>十一月摄影集 | 十一月也很好玩</title>
-      <link>https://billie52707.cn/posts/2020/11/november-shoot/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/november-shoot/</link>
       <pubDate>Mon, 30 Nov 2020 01:54:00 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/november-shoot/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/november-shoot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>NCP | 爬取国家卫健委网站</title>
-      <link>https://billie52707.cn/posts/2020/11/ncp-nhc-readme/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/ncp-nhc-readme/</link>
       <pubDate>Sun, 29 Nov 2020 14:34:18 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/ncp-nhc-readme/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/ncp-nhc-readme/</guid>
       <description>1. 前言 🇨🇳 1.1 目标网站 「http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml」 ​ 做疫情这个项目的时候，</description>
     </item>
     
     <item>
       <title>NCP | 新冠疫情的监测与趋势分析</title>
-      <link>https://billie52707.cn/posts/2020/11/ncp-readme/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/ncp-readme/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/ncp-readme/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/ncp-readme/</guid>
       <description>1. 前言 🇨🇳 1.1 项目阐述 👨🏻‍💻 2020，注定是不平凡的一年，新冠疫情如晴天霹雳将沉浸在2020年春节气氛中的人们骤然推进人人自危的疫情防控中，</description>
     </item>
     
     <item>
       <title>python模块详解 | matplotlib</title>
-      <link>https://billie52707.cn/draft/python-matplotlib/</link>
+      <link>https://chenxuefan.cn/draft/python-matplotlib/</link>
       <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/python-matplotlib/</guid>
+      <guid>https://chenxuefan.cn/draft/python-matplotlib/</guid>
       <description>一、图表的保存 ## 保存图片 直接输入文件路径，新建文件名字 ## dpi图片分辨率 越高越清晰。bbox_inches = &amp;#39;tight&amp;#39;,</description>
     </item>
     
     <item>
       <title>「c语言」学习笔记</title>
-      <link>https://billie52707.cn/note/c/</link>
+      <link>https://chenxuefan.cn/note/c/</link>
       <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/c/</guid>
+      <guid>https://chenxuefan.cn/note/c/</guid>
       <description>前言 c语言是万物之源 🤪 语法篇 程序框架 #include &amp;lt;stdio.h&amp;gt; int main(){ return 0; } 常量与变量 常量 整型常量 - 如1，123，0，-7 实型变量 十进制小数形式 - 由数字和小数点组成，</description>
     </item>
     
     <item>
       <title>使用媒体查询展示及隐藏标签</title>
-      <link>https://billie52707.cn/posts/2020/11/web-media/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/web-media/</link>
       <pubDate>Thu, 19 Nov 2020 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/web-media/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/web-media/</guid>
       <description>目标 当分辨率低了就隐藏，达到某个分辨率后就显示 关键代码 @media (max-height: 600px) { #chart{display: none!important;} } @media (max-width: 300px) { #chart{display: none!important;} } 当max-height，即设备屏幕宽度，小于500px时，</description>
     </item>
     
     <item>
       <title>关于跨域问题的思考和解决思路</title>
-      <link>https://billie52707.cn/posts/2020/11/cross-domain/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/cross-domain/</link>
       <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/cross-domain/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/cross-domain/</guid>
       <description>前言 什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以</description>
     </item>
     
     <item>
       <title>1&#43;X | 考点小结</title>
-      <link>https://billie52707.cn/posts/2020/11/1-x-examination/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-examination/</link>
       <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1-x-examination/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-examination/</guid>
       <description>html、css、js html5新增了离线缓存机制 使用媒体查询时，媒体类型取值为screen代表 - 用于所有设备 range输入类型定义滑块控件</description>
     </item>
     
     <item>
       <title>1&#43;X | BootStrap</title>
-      <link>https://billie52707.cn/posts/2020/11/1-x-boostrap/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-boostrap/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1-x-boostrap/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-boostrap/</guid>
       <description>认识bootstrap框架 bootstrap是一个开源的UI（界面设计）框架，没有UI图且需要做响应式网站开发时，可以使用它。 官网 - https://www.bootcss.com/ 理论 -</description>
     </item>
     
     <item>
       <title>1&#43;X | jQuery</title>
-      <link>https://billie52707.cn/posts/2020/11/1-x-jquery/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-jquery/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1-x-jquery/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-jquery/</guid>
       <description>什么是jquery？ 一个js库，（库就是函数的封装）,API学习网站：jquery.cuishifeng.cn 使用 引入 本地引入 CDN加速器(</description>
     </item>
     
     <item>
       <title>1&#43;X | MySQL</title>
-      <link>https://billie52707.cn/posts/2020/11/1-x-mysql/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-mysql/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1-x-mysql/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-mysql/</guid>
       <description>why MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。 基本操作 启动(macOS)</description>
     </item>
     
     <item>
       <title>1&#43;X | JavaScript</title>
-      <link>https://billie52707.cn/posts/2020/11/1-x-js/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-js/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1-x-js/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-js/</guid>
       <description>前言 网景公司（netscape）开发，是一个操作DOM的语言，在JS中，一切皆对象。 语法基础 标识符 必须以字母、下划线、$开头，后可以跟字母、</description>
     </item>
     
     <item>
       <title>1&#43;X | css</title>
-      <link>https://billie52707.cn/posts/2020/11/1-x-css/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-css/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1-x-css/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-css/</guid>
       <description>注释 只有一种注释：/**/ 选择器 标签选择器 - div {} 类选择器 - .box{} ID选择器 - #container{}值必须是唯一的 后代选择器 - p code{} 子选择器 - p&amp;gt;code{} 伪</description>
     </item>
     
     <item>
       <title>1&#43;X | html</title>
-      <link>https://billie52707.cn/posts/2020/11/1-x-html/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-html/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/1-x-html/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-html/</guid>
       <description>知识点总结 基本结构 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--如果不加，则以怪异模式加载；声明了以下代码将以html5的标准去解析--&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt;&amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; 块级标签</description>
     </item>
     
     <item>
       <title>NCP疫情最新动态</title>
-      <link>https://billie52707.cn/ncp/</link>
+      <link>https://chenxuefan.cn/ncp/</link>
       <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
       
-      <guid>https://billie52707.cn/ncp/</guid>
+      <guid>https://chenxuefan.cn/ncp/</guid>
       <description>确诊 正在获取... 死亡 治愈 LastUpdateTime -</description>
     </item>
     
     <item>
       <title>python学习笔记 | 浅谈python虚拟环境</title>
-      <link>https://billie52707.cn/posts/2020/11/python-venv/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/python-venv/</link>
       <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/python-venv/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/python-venv/</guid>
       <description>前言 python虚拟环境是非常实用且必备的小技能。面对多个项目分别需要不同依赖库环境，或者跨平台部署的场景，都非常实用且优雅。 跨平台部署时，</description>
     </item>
     
     <item>
       <title>Jupyter Notebook学习笔记</title>
-      <link>https://billie52707.cn/posts/2020/11/jupyter-notebook/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/jupyter-notebook/</link>
       <pubDate>Thu, 05 Nov 2020 02:30:10 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/jupyter-notebook/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/jupyter-notebook/</guid>
       <description>Jupyter Notebook 入门 通过 Jupyter 使用实时代码、方程式和可视化及文本创建交互式的共享笔记本。 自从有了纸莎草纸以来，出版人们一直在努力以吸引读者的方式来格式化数据</description>
     </item>
     
     <item>
       <title>「macOS」学习笔记</title>
-      <link>https://billie52707.cn/note/macos/</link>
+      <link>https://chenxuefan.cn/note/macos/</link>
       <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/macos/</guid>
+      <guid>https://chenxuefan.cn/note/macos/</guid>
       <description>系统设置 三指拖移 系统偏好设置&amp;gt;辅助功能&amp;gt;鼠标与触控板&amp;gt;触控板选项 放大程序坞图标 系统偏好设置&amp;gt;程序坞&amp;gt;放大 触发角</description>
     </item>
     
     <item>
       <title>枫枫枫! | 武汉印象</title>
-      <link>https://billie52707.cn/posts/2020/11/wuhan-memory/</link>
+      <link>https://chenxuefan.cn/posts/2020/11/wuhan-memory/</link>
       <pubDate>Sun, 01 Nov 2020 17:32:35 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/11/wuhan-memory/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/11/wuhan-memory/</guid>
       <description>设备 - Sony RX100M3 / iphone7 日期 - 2020-11-01 /酒店阳台夜景 - 来武汉第一天，窗外的大马路灯火通明，隐约还能看到远处的大桥/ /珞珈山脚下 - 建筑陈旧，生活安逸，很有年代</description>
     </item>
     
     <item>
       <title>武汉之行</title>
-      <link>https://billie52707.cn/draft/wuhan/</link>
+      <link>https://chenxuefan.cn/draft/wuhan/</link>
       <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/wuhan/</guid>
+      <guid>https://chenxuefan.cn/draft/wuhan/</guid>
       <description>酒店篇 整体环境 29/日下午五点半到的酒店，共有九层，到前台办理入住之后就上楼了，我们都在六楼，有两人间和大床间可选，我们学生住两人的，两个老</description>
     </item>
     
     <item>
       <title>十月摄影集</title>
-      <link>https://billie52707.cn/posts/2020/10/october-shoot/</link>
+      <link>https://chenxuefan.cn/posts/2020/10/october-shoot/</link>
       <pubDate>Fri, 30 Oct 2020 01:54:00 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/10/october-shoot/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/10/october-shoot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>1&#43;X | php</title>
-      <link>https://billie52707.cn/posts/2020/10/php-study-note/</link>
+      <link>https://chenxuefan.cn/posts/2020/10/php-study-note/</link>
       <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/10/php-study-note/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/10/php-study-note/</guid>
       <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
     </item>
     
     <item>
       <title>九月摄影集</title>
-      <link>https://billie52707.cn/posts/2020/9/september-shoot/</link>
+      <link>https://chenxuefan.cn/posts/2020/9/september-shoot/</link>
       <pubDate>Wed, 30 Sep 2020 01:54:00 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/9/september-shoot/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/9/september-shoot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>大三上学期周记4</title>
-      <link>https://billie52707.cn/diary/2020-09-23/</link>
+      <link>https://chenxuefan.cn/diary/2020-09-23/</link>
       <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-09-23/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-09-23/</guid>
       <description>第四周记 本周计划 python二级考试 比赛 生活小记 周日,夜宵档,潮汕牛肉火锅 周一,晚上跑步 周二,衡量物色了一下午加晚上,下单iPad2018 周</description>
     </item>
     
     <item>
       <title>「vue.js」学习笔记</title>
-      <link>https://billie52707.cn/note/vue/</link>
+      <link>https://chenxuefan.cn/note/vue/</link>
       <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/vue/</guid>
+      <guid>https://chenxuefan.cn/note/vue/</guid>
       <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
     </item>
     
     <item>
       <title>大三上学期周记3</title>
-      <link>https://billie52707.cn/diary/2020-09-13/</link>
+      <link>https://chenxuefan.cn/diary/2020-09-13/</link>
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-09-13/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-09-13/</guid>
       <description>第三周记 本周计划 tensorflow flask vue 英语六级 生活小记 周一实验室第一次见面 周二解除封禁,当晚就荷坳,喝了一点酒没过敏、摇色子、吃湿炒牛河、烧烤,很久没有这么</description>
     </item>
     
     <item>
       <title>在macOS使用docker搭建ubuntu环境</title>
-      <link>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</link>
+      <link>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</link>
       <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/9/macos-docker-ubuntu/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</guid>
       <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习,安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器</description>
     </item>
     
     <item>
       <title>python学习笔记 | 进制转换问题</title>
-      <link>https://billie52707.cn/posts/2020/9/scale-question/</link>
+      <link>https://chenxuefan.cn/posts/2020/9/scale-question/</link>
       <pubDate>Fri, 11 Sep 2020 01:00:00 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/9/scale-question/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/9/scale-question/</guid>
       <description>前言 今天有同学来问我关于二级python计算机考试中进制间的转换问题，才想起来好久没有复习这方面的知识了，大都已经忘却，于是花了两个小时梳理</description>
     </item>
     
     <item>
       <title>大三上学期周记2</title>
-      <link>https://billie52707.cn/diary/2020-09-07/</link>
+      <link>https://chenxuefan.cn/diary/2020-09-07/</link>
       <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-09-07/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-09-07/</guid>
       <description>第二周记 本周计划 flask、机器学习 生活小记 剁手上瘾 买了键盘想买键帽、客制化 买了耳机想买鼠标 买了鼠标想给笔记本换电池 最后买了键盘(雷蛇)、键</description>
     </item>
     
     <item>
       <title>大三上学期周记1</title>
-      <link>https://billie52707.cn/diary/2020-08-31/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-31/</link>
       <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-31/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-31/</guid>
       <description>第一周记 周计划 复习 数据结构 自动化测试 自动化运维 比赛所需环境部署 比赛相关知识的学习 生活小记 周一，下午核酸检测、上晚上的课（前端） 周二，下午上前</description>
     </item>
     
     <item>
       <title>「docker」学习笔记 | 镜像、容器、仓库</title>
-      <link>https://billie52707.cn/note/docker1/</link>
+      <link>https://chenxuefan.cn/note/docker1/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
-      <guid>https://billie52707.cn/note/docker1/</guid>
+      <guid>https://chenxuefan.cn/note/docker1/</guid>
       <description>关于docker 1. why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到</description>
     </item>
     
     <item>
       <title>2020-08-29日结</title>
-      <link>https://billie52707.cn/diary/2020-08-29/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-29/</link>
       <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-29/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-29/</guid>
       <description>2020-08-日结 今日计划 生活小记 六点半吃完早餐 七点坐公交去学校 回学校还挺容易 行李有点重，两个Nike袋子，所有的物品都在了 八点到中午收拾</description>
     </item>
     
     <item>
       <title>2020-08-28日结</title>
-      <link>https://billie52707.cn/diary/2020-08-28/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-28/</link>
       <pubDate>Fri, 28 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-28/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-28/</guid>
       <description>2020-08-28日结 今日计划 好好玩，放松 生活小记 感想收获 明日计划</description>
     </item>
     
     <item>
       <title>2020-08-27日结</title>
-      <link>https://billie52707.cn/diary/2020-08-27/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-27/</link>
       <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-27/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-27/</guid>
       <description>2020-08-27日结 今日计划 答谢会，玩 生活小记 六点睡三点起 去餐厅参加学生兼职答谢会 告别星光餐厅 summer end. 感想收获 明日计划</description>
     </item>
     
     <item>
       <title>2020-08-26日结</title>
-      <link>https://billie52707.cn/diary/2020-08-26/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-26/</link>
       <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-26/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-26/</guid>
       <description>2020-08-26日结 今日计划 去一趟餐厅叙叙旧，告别，买东西，拿快递 看数据结构文章 生活小记 七点睡两点起，去星悦天地 跟同事聊了很多 逛超市，买</description>
     </item>
     
     <item>
       <title>「markdown」学习笔记</title>
-      <link>https://billie52707.cn/draft/markdown/</link>
+      <link>https://chenxuefan.cn/draft/markdown/</link>
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/markdown/</guid>
+      <guid>https://chenxuefan.cn/draft/markdown/</guid>
       <description>代码增删对比效果 - old man + new guy</description>
     </item>
     
     <item>
       <title>「机器学习」学习笔记</title>
-      <link>https://billie52707.cn/note/machine-learn/</link>
+      <link>https://chenxuefan.cn/note/machine-learn/</link>
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/machine-learn/</guid>
+      <guid>https://chenxuefan.cn/note/machine-learn/</guid>
       <description>相关工具 pandas numpy matplotlib flask scikit_learn 数据理解 1. 数据导入 numpy np.loadtxt() pandas pd.read_csv() 2. 数据理解 Viewing data 查看数据：df.head(int)\tail(int) 数据维度：df.shape 数</description>
     </item>
     
     <item>
       <title>2020-08-25日结</title>
-      <link>https://billie52707.cn/diary/2020-08-25/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-25/</link>
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-25/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-25/</guid>
       <description>2020-08-25日结 今日计划 看完数据结构基础 生活小记 七点睡两点起 感想收获 明日计划</description>
     </item>
     
     <item>
       <title>2020-08-24日结</title>
-      <link>https://billie52707.cn/diary/2020-08-24/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-24/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-24/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-24/</guid>
       <description>2020-08-24日结 今日计划 生活小记 七点睡到下午三点 傍晚买菜 炒了豆腐、空心菜 决定接下来都不上班了，梳了个发型 晚上看了长城 学习上没啥的 宵夜</description>
     </item>
     
     <item>
       <title>2020-08-23日结</title>
-      <link>https://billie52707.cn/diary/2020-08-23/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-23/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-23/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-23/</guid>
       <description>2020-08-23日结 今日计划 生活小记 帮店的第二天，周日 六点起，中间看了下博客，又睡了一会到十一点上班，又迟到 休息吃了照烧饭可乐 下班买了两</description>
     </item>
     
     <item>
       <title>2020-08-22日结</title>
-      <link>https://billie52707.cn/diary/2020-08-22/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-22/</link>
       <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-22/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-22/</guid>
       <description>2020-08-22日结 今日计划 生活小记 去大芬帮店，十一点半上到九点半 中午去沃尔玛买了便当吃 下班买了便当和糖水 吃完就睡觉了，第二天早上六点起</description>
     </item>
     
     <item>
       <title>2020-08-21日结</title>
-      <link>https://billie52707.cn/diary/2020-08-21/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-21/</link>
       <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-21/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-21/</guid>
       <description>2020-08-21日结 今日计划 生活小记 上早班，三点下 吃了鸡腿、卷饼、酸奶 很累，无精打采 开学通知 下班去爱联社区剪头发，30快 剪去了长发，彻底</description>
     </item>
     
     <item>
       <title>2020-08-20日结</title>
-      <link>https://billie52707.cn/diary/2020-08-20/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-20/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-20/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-20/</guid>
       <description>2020-08-20日结 今日计划 生活小记 凌晨煮了绿豆汤 九点睡到两点，上晚班 四点休息，吃了牛肉焗饭 晚班事事不顺，打到十一点半 有奥尔良披萨打包回</description>
     </item>
     
     <item>
       <title>2020-08-19日结</title>
-      <link>https://billie52707.cn/diary/2020-08-19/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-19/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-19/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-19/</guid>
       <description>2020-08-19日结 今日计划 睡到自然醒 好好学习 生活小记 一点睡到下午两三点，做了个梦，前半段间谍片，后半段科幻大片 起来写博客，从http到</description>
     </item>
     
     <item>
       <title>从http到https</title>
-      <link>https://billie52707.cn/posts/2020/8/http-https/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/http-https/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/http-https/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/http-https/</guid>
       <description>前言 最近博客美化方面做的都差不多了，也没有太多东西好捣鼓了，这个时候我又注意到我的网站标头显示着一个不安全的字样，觉得又好奇又奇怪，因为在这</description>
     </item>
     
     <item>
       <title>2020-08-18日结</title>
-      <link>https://billie52707.cn/diary/2020-08-18/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-18/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-18/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-18/</guid>
       <description>2020-08-18日结 今日计划 解决nginx ssl 解决 不安全 问题 生活小记 周二，去万象汇帮店 太困，十二点不到就睡了，四点起床 工作，解决nginx</description>
     </item>
     
     <item>
       <title>2020-08-17日结</title>
-      <link>https://billie52707.cn/diary/2020-08-17/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-17/</link>
       <pubDate>Mon, 17 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-17/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-17/</guid>
       <description>2020-08-17日结 今日计划 好好学习 真的要抓紧了 生活小记 七点睡觉下午五点起 凌晨练shuffle dance，很累 晚上十二点睡 感想收获 明日计</description>
     </item>
     
     <item>
       <title>2020-08-16日结</title>
-      <link>https://billie52707.cn/diary/2020-08-16/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-16/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-16/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-16/</guid>
       <description>2020-08-16日结 今日计划 生活小记 九点睡，十一点起来请假，四点起床 凌晨洗澡、洗衣服、点了个外卖（汉堡、炸鸡、鸡肉卷） 感想收获 收获很多，</description>
     </item>
     
     <item>
       <title>python&#43;hugo&#43;nginx | 实现博客主页每日一图</title>
-      <link>https://billie52707.cn/posts/2020/8/python-hugo-nginx-daily-picture/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/python-hugo-nginx-daily-picture/</link>
       <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/python-hugo-nginx-daily-picture/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/python-hugo-nginx-daily-picture/</guid>
       <description>前言 在建博客之前，我现在的域名访问的对象，是使用nginx部署在服务器的一个页面，并且由于加入了python脚本，这个页面每天都会更新，每天</description>
     </item>
     
     <item>
       <title>2020-08-15日结</title>
-      <link>https://billie52707.cn/diary/2020-08-15/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-15/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-15/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-15/</guid>
       <description>2020-08-15日结 今日计划 好好学习 生活小记 凌晨蒸鸡蛋羹、柠檬蜂蜜水，看新说唱 上中班，中午休息两个小时，看数据挖掘 六点半睡，十点半起床做</description>
     </item>
     
     <item>
       <title>2020-08-14日结</title>
-      <link>https://billie52707.cn/diary/2020-08-14/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-14/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-14/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-14/</guid>
       <description>2020-08-14日结 今日计划 好好学习 生活小记 周五，上晚班，六点睡两点起 吃了香辣鸡腿堡，可乐 十一点下班，吃了湿炒牛河、拍黄瓜 感想收获 傻傻的</description>
     </item>
     
     <item>
       <title>nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</title>
-      <link>https://billie52707.cn/posts/2020/8/nginx-record/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/nginx-record/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/nginx-record/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/nginx-record/</guid>
       <description>前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx.</description>
     </item>
     
     <item>
       <title>2020-08-13日结</title>
-      <link>https://billie52707.cn/diary/2020-08-13/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-13/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-13/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-13/</guid>
       <description>2020-08-13日结 今日计划 生活小记 周四，上早班，五点半睡，七点起 中午吃了照烧饭和可乐 晚上回来睡了个吧小时，六点被叫起来参加比赛 晚上雷总</description>
     </item>
     
     <item>
       <title>2020-08-12日结</title>
-      <link>https://billie52707.cn/diary/2020-08-12/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-12/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-12/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-12/</guid>
       <description>2020-08-12日结 今天任务 读完mangodb 两篇数据结构 生活小记 六点睡下午三点起 开始工作 到五点开始做饭、吃饭、看唱游天下、洗澡打扫卫生</description>
     </item>
     
     <item>
       <title>2020-08-11日结</title>
-      <link>https://billie52707.cn/diary/2020-08-11/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-11/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-11/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-11/</guid>
       <description>2020-08-11日结 生活小记 凌晨时分吃火锅，到两点煮糖水 煮完三点，该睡了，三点，一直到很晚没睡着，今日早班 休息吃了糖水、水蒸蛋、面包、香</description>
     </item>
     
     <item>
       <title>2020-08-10日结</title>
-      <link>https://billie52707.cn/diary/2020-08-10/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-10/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-10/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-10/</guid>
       <description>2020-08-10日结 生活小记 周一，休息，六点睡两点起 吃完两包泡面煮茄子五点多出门 坐车一个多小时到大梅沙，天已经黑了 在海边游了不到半小时，</description>
     </item>
     
     <item>
       <title>2020-08-09日结</title>
-      <link>https://billie52707.cn/diary/2020-08-09/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-09/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-09/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-09/</guid>
       <description>2020-08-09日结 生活小记 周日，六点睡一点起，晚班 吃了奥尔良披萨，整个那种 下班买了凉皮，就着雪梨吃 凌晨回来，一直工作到隔日 学习总结 凌晨</description>
     </item>
     
     <item>
       <title>2020-08-08日结</title>
-      <link>https://billie52707.cn/diary/2020-08-08/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-08/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-08/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-08/</guid>
       <description>2020-08-08日结 生活小记 五点睡一点起，晚班 中午做了香豆腐和青菜炒鸡肉 晚班还蛮有趣，自己还是情绪多变 下班吃了煎饼和牛奶，买了十元李子 学</description>
     </item>
     
     <item>
       <title>2020-08-07日结</title>
-      <link>https://billie52707.cn/diary/2020-08-07/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-07/</link>
       <pubDate>Fri, 07 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-07/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-07/</guid>
       <description>2020-08-07日结 生活小记 六点天亮睡十点起，上中班 下班吃花生继续写博客 学习进度 博客已接近完成形态 零点之后着重nginx服务器的使用与部</description>
     </item>
     
     <item>
       <title>2020-08-06日结</title>
-      <link>https://billie52707.cn/diary/2020-08-06/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-06/</link>
       <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-06/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-06/</guid>
       <description>2020-08-06日结 生活小记 周四，九点起床，上晚班 上晚班，吃了龟苓膏、雪糕、花生 早上六点睡 学习计划 继续完善博客 加入标签功能 修改页脚 移植文</description>
     </item>
     
     <item>
       <title>2020-08-05日结</title>
-      <link>https://billie52707.cn/diary/2020-08-05/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-05/</link>
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-05/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-05/</guid>
       <description>2020-08-05 日结 生活小记 周三，还是早班，新的大炒锅用上了，特地点了份照烧饭77，不错，就是早上刚拌好的饭咸了 下班楼下永旺超市买了鸡胸肉，傍晚下雨天 学习</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>https://billie52707.cn/about/</link>
+      <link>https://chenxuefan.cn/about/</link>
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/about/</guid>
+      <guid>https://chenxuefan.cn/about/</guid>
       <description>About blog 博客是怎么做的？ 🍵 博客基于hugo，cactus主题。 更多 ☕️ hugo建站全指南 | 我的第一个博客网站 友链 YuchaoHuang PurePeace 留下你的足迹</description>
     </item>
     
     <item>
       <title>yellow</title>
-      <link>https://billie52707.cn/posts/2020/8/yellow/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/yellow/</link>
       <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/yellow/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/yellow/</guid>
       <description>:-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们为你绽放着 闪烁不息 And everything you do 而你的一颦一举 Yeah&amp;rsquo; they were all Yellow 却满含胆怯和羞意 I came along 我追随着你的气息 I wrote a song</description>
     </item>
     
     <item>
       <title>do not go gentle into that good night</title>
-      <link>https://billie52707.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</link>
       <pubDate>Tue, 04 Aug 2020 19:19:46 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</guid>
       <description>(Dylan Thomas, 1914 - 1953) Do not go gentle into that good night, 不要温和地走进那个良夜， Old age should burn and rave at close of day; 老年应当在日暮时燃烧咆哮； Rage,rage against the dying of the light. 怒斥，怒斥光明的消逝。 Though wise men at</description>
     </item>
     
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
-      <link>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</link>
+      <link>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</link>
       <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/8/hugo-my-first-web/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
     </item>
     
     <item>
       <title>2020-08-04日结</title>
-      <link>https://billie52707.cn/diary/2020-08-04/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-04/</link>
       <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-04/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-04/</guid>
       <description>2020-08-04日结 生活小记 上早班，早上买了麦香包和肉包，中午吃炒粉和牛奶 下班买鞋子Nike zoom 纯白两双 五点电影院看电影：星际穿越，还没上</description>
     </item>
     
     <item>
       <title>2020-08-03日结</title>
-      <link>https://billie52707.cn/diary/2020-08-03/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-03/</link>
       <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-03/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-03/</guid>
       <description>2020-08-03日结 生活小记 作息（4:27～12:58） 做了鸡汤，买的鸡不太好，有些异味，下次不在那儿买了 休息，不上班 下午吃饭时看脱口秀</description>
     </item>
     
     <item>
       <title>2020-08-02日结</title>
-      <link>https://billie52707.cn/diary/2020-08-02/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-02/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-02/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-02/</guid>
       <description>2020-08-02日结 学习任务 hugo的基本设置 生活小记 5:50天亮开始睡觉 10:35起床 中午还是蔬菜汤 3:30上班 休息时没吃东西 12:0</description>
     </item>
     
     <item>
       <title>2020-08-01日结</title>
-      <link>https://billie52707.cn/diary/2020-08-01/</link>
+      <link>https://chenxuefan.cn/diary/2020-08-01/</link>
       <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-08-01/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-08-01/</guid>
       <description>2020-08-01日结 学习任务 hugo的部署 hugo安装 基本使用 部署服务器 mongodb的下载 jdk的下载 生活小记 十一点起床 十二点上班 三点</description>
     </item>
     
     <item>
       <title>python模块详解 | pyquery</title>
-      <link>https://billie52707.cn/posts/2020/7/python-pyquery/</link>
+      <link>https://chenxuefan.cn/posts/2020/7/python-pyquery/</link>
       <pubDate>Fri, 31 Jul 2020 00:46:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/7/python-pyquery/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/7/python-pyquery/</guid>
       <description>简介 pyquery是一个强大的 HTML 解析库，利用它，我们可以直接解析 DOM 节点的结构，并通过 DOM 节点的一些属性快速进行内容提取。 官方文档：http:/</description>
     </item>
     
     <item>
       <title>2020-07-31日结</title>
-      <link>https://billie52707.cn/diary/2020-07-31/</link>
+      <link>https://chenxuefan.cn/diary/2020-07-31/</link>
       <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-07-31/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-07-31/</guid>
       <description>2020-07-31日结 学习任务 Ajax的学习 Xcode 生活小记 煮了蔬菜羊肉汤，还不错， 小青菜 嫩豆腐 油豆腐 萝卜干 羊肉卷 骨汤锅底 看了星际穿越 雨夜游大芬</description>
     </item>
     
     <item>
       <title>2020-07-30日结</title>
-      <link>https://billie52707.cn/diary/2020-07-30/</link>
+      <link>https://chenxuefan.cn/diary/2020-07-30/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/2020-07-30/</guid>
+      <guid>https://chenxuefan.cn/diary/2020-07-30/</guid>
       <description>2020-07-30日结 学习任务 爬虫课（pyquery） swift开发 生活小记 恰逢周四KFC疯狂星期四，买了19.9的十五块热辣香骨鸡，吃撑</description>
     </item>
     
     <item>
       <title>一人行 | 梧桐山印象</title>
-      <link>https://billie52707.cn/posts/2020/7/travel-wutong/</link>
+      <link>https://chenxuefan.cn/posts/2020/7/travel-wutong/</link>
       <pubDate>Wed, 22 Jul 2020 21:28:17 +0800</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/7/travel-wutong/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/7/travel-wutong/</guid>
       <description>设备 - Sony RX100M3 日期 - 2020-07-22 地点 - 梧桐山</description>
     </item>
     
     <item>
       <title>python学习笔记 | 国内常用源镜像地址</title>
-      <link>https://billie52707.cn/posts/2020/7/python-mirrors/</link>
+      <link>https://chenxuefan.cn/posts/2020/7/python-mirrors/</link>
       <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/7/python-mirrors/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/7/python-mirrors/</guid>
       <description>各镜像列表 清华：https://pypi.tuna.tsinghua.edu.cn/simple 阿里云：http://mirrors.ali</description>
     </item>
     
     <item>
       <title>python学习笔记 | macOS Big Sur动态壁纸食用指南</title>
-      <link>https://billie52707.cn/posts/2020/6/python-macos-big-sur/</link>
+      <link>https://chenxuefan.cn/posts/2020/6/python-macos-big-sur/</link>
       <pubDate>Sat, 27 Jun 2020 22:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/6/python-macos-big-sur/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/6/python-macos-big-sur/</guid>
       <description>目录 前言 爬虫篇 壁纸使用篇 后记 前言 北京时间23日凌晨1点，苹果WWDC2020大会开幕。在发布会上，苹果正式发布了新版macOS，并将其命名为</description>
     </item>
     
     <item>
       <title>python模块详解 | unittest（单元测试框架）</title>
-      <link>https://billie52707.cn/posts/2020/6/python-unittest/</link>
+      <link>https://chenxuefan.cn/posts/2020/6/python-unittest/</link>
       <pubDate>Mon, 15 Jun 2020 14:12:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/6/python-unittest/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/6/python-unittest/</guid>
       <description>目录： why unittest？ unittest的四个重要概念 加载测试用例的三个方法 自动加载测试用例 忽略测试和预期失败 生成html测试报告 why unittest ? 简</description>
     </item>
     
     <item>
       <title>python模块详解 | selenium</title>
-      <link>https://billie52707.cn/posts/2020/6/python-selenium/</link>
+      <link>https://chenxuefan.cn/posts/2020/6/python-selenium/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/6/python-selenium/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/6/python-selenium/</guid>
       <description>关于Selenium Selenium是⼀个⽤于测试⽹站的⾃动化测试⼯具，⽀持各种浏览器包括Chrome、Firefox、Safari等主流界</description>
     </item>
     
     <item>
       <title>python模块详解 | filecmp</title>
-      <link>https://billie52707.cn/posts/2020/4/python-filecmp/</link>
+      <link>https://chenxuefan.cn/posts/2020/4/python-filecmp/</link>
       <pubDate>Thu, 30 Apr 2020 14:33:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/4/python-filecmp/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/4/python-filecmp/</guid>
       <description>简介： filecmp是python内置的一个模块，用于比较文件及文件夹的内容，它是一个轻量级的工具，使用非常简单 两个主要的方法： filecmp.cmp(f1, f2[, shallow]) 比较两</description>
     </item>
     
     <item>
       <title>python模块详解 | shutil</title>
-      <link>https://billie52707.cn/posts/2020/4/python-shutil/</link>
+      <link>https://chenxuefan.cn/posts/2020/4/python-shutil/</link>
       <pubDate>Thu, 30 Apr 2020 14:28:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/4/python-shutil/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/4/python-shutil/</guid>
       <description>简介 shutil是python的一个内置模块，提供了许多关于文件和文件集合的高级操作，特别提供文件夹与文件操作、归档操作了支持文件复制和删除</description>
     </item>
     
     <item>
       <title>Linux学习笔记 | nginx</title>
-      <link>https://billie52707.cn/posts/2020/4/nginx/</link>
+      <link>https://chenxuefan.cn/posts/2020/4/nginx/</link>
       <pubDate>Wed, 22 Apr 2020 14:33:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/4/nginx/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/4/nginx/</guid>
       <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
     </item>
     
     <item>
       <title>python学习笔记 | strftime()格式化输出时间</title>
-      <link>https://billie52707.cn/posts/2020/4/python-strftime/</link>
+      <link>https://chenxuefan.cn/posts/2020/4/python-strftime/</link>
       <pubDate>Tue, 07 Apr 2020 11:01:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/4/python-strftime/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/4/python-strftime/</guid>
       <description>示例 # time模块 import time t = time.strftime(&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;) print(t) # datetime模块 import datetime t = datetime.datetime.now().strftime(&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;) print(t) 格式化输出之后，就得到了我们常见的格式了👇 2020-04-07 10:59:36 format参数 格式 描述 %y</description>
     </item>
     
     <item>
       <title>「Linux」学习笔记</title>
-      <link>https://billie52707.cn/note/linux/</link>
+      <link>https://chenxuefan.cn/note/linux/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/linux/</guid>
+      <guid>https://chenxuefan.cn/note/linux/</guid>
       <description>常用工具 vim - https://blog.csdn.net/dylwx_2005/article/details/92765194 unzip - https://blog.csdn.net/qq_27870421/article/details/92623897 rm 批量处理文件 - 例：删除所有查询到文件 sudo rm `find ./ -name 1632bcde-a71e-11eb-aa89-02420a000121.pdf` 删除文件夹 - rm -rf dirname -r - 递归地删除参数表中的目录及其子目录 -f - 不提示用户</description>
     </item>
     
     <item>
       <title>「ubuntu」学习笔记</title>
-      <link>https://billie52707.cn/note/ubuntu/</link>
+      <link>https://chenxuefan.cn/note/ubuntu/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/ubuntu/</guid>
+      <guid>https://chenxuefan.cn/note/ubuntu/</guid>
       <description>必要工具/常用软件的安装 vim/net-tools apt-get install vim net-tools openssl 问题：Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR (missing: OPENSSL_LIBRARIES OPENSSL_INCLUDE_DIR) 解决：apt-get install libssl-dev opencv 安装依赖 apt-get install cma apt-get install build-essential libgtk2.0-dev</description>
     </item>
     
     <item>
       <title>python模块详解 | progressbar</title>
-      <link>https://billie52707.cn/posts/2020/3/python-progressbar/</link>
+      <link>https://chenxuefan.cn/posts/2020/3/python-progressbar/</link>
       <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/3/python-progressbar/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/3/python-progressbar/</guid>
       <description>参考官方文档：https://pypi.org/project/progressbar/#description progressbar 安装 pip install progressbar progressbar.ProgressBar() 可选参数 maxval = None</description>
     </item>
     
     <item>
       <title>python学习笔记 | PyCharm创建文件时自动添加头文件</title>
-      <link>https://billie52707.cn/posts/2020/3/python-pycharm/</link>
+      <link>https://chenxuefan.cn/posts/2020/3/python-pycharm/</link>
       <pubDate>Mon, 16 Mar 2020 20:45:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/3/python-pycharm/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/3/python-pycharm/</guid>
       <description>Windows：File 👉 Settings 👉 Editor 👉 File and Code Templates 👉 Python Script macOS：PyCharm &amp;gt; Preferences &amp;hellip; 然后在右边的框中写入信息就可以啦： # -*- coding: utf-8 -*- &amp;#34;&amp;#34;&amp;#34; @Author ${USER} @Date ${DATE} ${TIME} @Describe &amp;#34;&amp;#34;&amp;#34;</description>
     </item>
     
     <item>
       <title>python模块详解 | time</title>
-      <link>https://billie52707.cn/posts/2020/3/python-time/</link>
+      <link>https://chenxuefan.cn/posts/2020/3/python-time/</link>
       <pubDate>Sun, 15 Mar 2020 20:54:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/3/python-time/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/3/python-time/</guid>
       <description>time 这个模块提供各种与时间相关的函数。 以下是对一些术语和惯例的解释 初始时间因平台而异。对于Unix平台，初始时间是1970,01,01,00:</description>
     </item>
     
     <item>
       <title>python模块详解 | psutil</title>
-      <link>https://billie52707.cn/posts/2020/3/python-psutil/</link>
+      <link>https://chenxuefan.cn/posts/2020/3/python-psutil/</link>
       <pubDate>Sun, 15 Mar 2020 10:17:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/posts/2020/3/python-psutil/</guid>
+      <guid>https://chenxuefan.cn/posts/2020/3/python-psutil/</guid>
       <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/dddd/2022/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/dddd/2022/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/dddd/2022/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/dddd/2022/</guid>
       <description>2022.4.11 今日任务 - 让我看看是谁半年回一次公司？啊是我 南沙 三期项目完工报告、项目流程审批 研祥 技术答疑 广汽 演示机器人 控制中心：http://rpa-v</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/dddd/main/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/dddd/main/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/dddd/main/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/dddd/main/</guid>
       <description>试用期总结 自我评价 试用期期间主要学习了公司的RPA产品和asyncio、selenium、sqlalchemy等库的使用。通过公安局项目，接</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E5%8D%AB%E5%BB%BA%E5%B1%80/main/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E4%B8%AD%E4%BF%A1%E9%93%B6%E8%A1%8C%E4%BF%A1%E7%94%A8%E5%8D%A1%E4%B8%AD%E5%BF%83/main/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E5%8D%AB%E5%BB%BA%E5%B1%80/main/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E4%B8%AD%E4%BF%A1%E9%93%B6%E8%A1%8C%E4%BF%A1%E7%94%A8%E5%8D%A1%E4%B8%AD%E5%BF%83/main/</guid>
+      <description>2022.11.2 样本类型 抽取特征：证件类型、证件号、姓名、有效期 身份证 军官证</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E5%8D%AB%E5%81%A5%E5%B1%80/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E5%8D%AB%E5%81%A5%E5%B1%80/main/</guid>
       <description>2022.9.15 今日任务 佛山卫健局 （已完成）调试开发板，接收短信功能验证 18923132848 2022.9.16 待客户确认的点 服务器资源，开放80、8080、8088端口 流程1：护士职业资格</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</guid>
       <description>2022.4.25 今日任务 （周一） 需求调研：“一般纳税人认定流程”，花一下午，与业务人员了解完所有的需求，交接需求文档与业务录屏 调研结果：发现业务量繁多，流</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%8D%8E%E6%B6%A6%E4%BA%94%E4%B8%B0/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%8D%8E%E6%B6%A6%E4%BA%94%E4%B8%B0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E5%8D%8E%E6%B6%A6%E4%BA%94%E4%B8%B0/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%8D%8E%E6%B6%A6%E4%BA%94%E4%B8%B0/</guid>
       <description>2022.6.28 今日任务 测试可行性 IE关闭“保护模式” Java support插件 .\JavaSupport.exe -E -R -J &amp;quot;C:\...\Java\...\java.exe&amp;quot; 需求评估 （以下的功能列表字段，参考自需求文档） 流程1、联华回单。共计：</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%8E%A6%E9%97%A8%E5%9B%BD%E8%B4%B8/main/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%8E%A6%E9%97%A8%E5%9B%BD%E8%B4%B8/main/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E5%8E%A6%E9%97%A8%E5%9B%BD%E8%B4%B8/main/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%8E%A6%E9%97%A8%E5%9B%BD%E8%B4%B8/main/</guid>
       <description>周报部分 文头部分 1. 周报文头 待确认：模版表（空表） 2. 三项不良与中危值 待确认：模版表（空表） 3. 一体化项目周报 待确认：带有项目信息的模版表（空表）</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</guid>
       <description>2021.12.27 今日计划 出差南宁 熟悉路况交通 游玩广西药用植物园 2021.12.28 今日计划 上午拜访客户现场，调研需求 下午安装环境，进行开发工作 2021.12.29 今日计划 上午被通知由于客户办</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</guid>
       <description>2021.12.29 熟悉现场，了解需求 开发流程，报表处理 2021.12.30 流程开发 2021.12.31 广州南沙项目支援 回深跨年 2022.01.06 今日计划 出差南宁，做本地核酸，明日进场 2022.01.07 开发“同业业务月报流程”</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</guid>
       <description>2022.9.14 问题解决记录 开发平台 开发平台流程发布失败 查看请求界面出现白屏 原因：服务端日志拥堵，内存紧张 控制中心 （已解决）公司的控制中心，无法启动服务 数</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
       <description>44.128.2.79:8000 我的审核，我的处置 2022.5.17 今日任务 演示广东项目，调研需求 开发“嫌疑人账号汇总流程” 2022.5.18 今日任务 开发“嫌疑人账号汇总流程” 2022.5.19 今日任务 开发“人员信息摸</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://billie52707.cn/draft/vim/</link>
+      <link>https://chenxuefan.cn/draft/vim/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/vim/</guid>
+      <guid>https://chenxuefan.cn/draft/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>2020--日结</title>
-      <link>https://billie52707.cn/diary/template/</link>
+      <link>https://chenxuefan.cn/diary/template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/template/</guid>
+      <guid>https://chenxuefan.cn/diary/template/</guid>
       <description>2020-08-日结 今日计划 生活小记 感想收获 明日计划 title: 大三上学期周记2 date: 2020-08-31 type: diary draft: false 第二周记 本周计划 生活小记 感想收获 下周计划</description>
     </item>
     
     <item>
       <title>API</title>
-      <link>https://billie52707.cn/draft/api/</link>
+      <link>https://chenxuefan.cn/draft/api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/api/</guid>
+      <guid>https://chenxuefan.cn/draft/api/</guid>
       <description>2020豆瓣电影最新api 获取正在热映的电影：http://api.douban.com/v2/movie/in_theaters?apik</description>
     </item>
     
     <item>
       <title>bt</title>
-      <link>https://billie52707.cn/draft/bt/</link>
+      <link>https://chenxuefan.cn/draft/bt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/bt/</guid>
+      <guid>https://chenxuefan.cn/draft/bt/</guid>
       <description>启动 sudo /etc/init.d/bt default 重启 sudo bt restart</description>
     </item>
     
     <item>
       <title>css提高</title>
-      <link>https://billie52707.cn/draft/css/</link>
+      <link>https://chenxuefan.cn/draft/css/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/css/</guid>
+      <guid>https://chenxuefan.cn/draft/css/</guid>
       <description>渐变 线性渐变 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一</description>
     </item>
     
     <item>
       <title>docker心路历程</title>
-      <link>https://billie52707.cn/draft/docker/</link>
+      <link>https://chenxuefan.cn/draft/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/docker/</guid>
+      <guid>https://chenxuefan.cn/draft/docker/</guid>
       <description>-bash: docker-machine: command not found（macOS） base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;amp;&amp;amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &amp;gt;/usr/local/bin/docker-machine &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-machine ​</description>
     </item>
     
     <item>
       <title>HTML标签总结</title>
-      <link>https://billie52707.cn/draft/html/</link>
+      <link>https://chenxuefan.cn/draft/html/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/html/</guid>
+      <guid>https://chenxuefan.cn/draft/html/</guid>
       <description>font size color face img src height width title alt 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border cellspacing cellpadding width height</description>
     </item>
     
     <item>
       <title>other</title>
-      <link>https://billie52707.cn/draft/other/</link>
+      <link>https://chenxuefan.cn/draft/other/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/draft/other/</guid>
+      <guid>https://chenxuefan.cn/draft/other/</guid>
       <description>注册香港apple id及充值教程 URI &amp;amp; URL URI 在于I(Identifier)，是统一资源标示符，可以唯一标识一个资源。 URL在于L(Locater</description>
     </item>
     
     <item>
       <title>summer</title>
-      <link>https://billie52707.cn/diary/summer/</link>
+      <link>https://chenxuefan.cn/diary/summer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/diary/summer/</guid>
+      <guid>https://chenxuefan.cn/diary/summer/</guid>
       <description>菊次郎的夏天 请以你的名字呼唤我</description>
     </item>
     

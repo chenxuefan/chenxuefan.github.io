@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on 人人都爱小雀斑&#39;s blog</title>
-    <link>https://billie52707.cn/tags/git/</link>
+    <link>https://chenxuefan.cn/tags/git/</link>
     <description>Recent content in git on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Thu, 23 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://billie52707.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「git」学习笔记</title>
-      <link>https://billie52707.cn/note/git/</link>
+      <link>https://chenxuefan.cn/note/git/</link>
       <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://billie52707.cn/note/git/</guid>
+      <guid>https://chenxuefan.cn/note/git/</guid>
       <description>https://git-scm.com/book/zh/v2/ 初次运行 Git 前的配置 https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE ssh-keygen -t rsa -C &amp;#34;邮箱&amp;#34; cd ~/.ssh cat id_rsa.pub 用户信息 你可以通过以下命令查看所有的配置以及它们所在的文件： git config --list --show-origin 安装完 Git 之</description>
     </item>
     
