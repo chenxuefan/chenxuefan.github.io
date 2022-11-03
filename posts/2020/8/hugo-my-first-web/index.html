@@ -411,7 +411,7 @@ if (!doNotTrack) {
 </table>
 <h2 id="快速部署基本设置">快速部署基本设置</h2>
 <p>博客的基本设置可以通过对应主题的GitHub帮助文档进行一步步设置，也可以走捷径，直接替换<code>博客项目下的config.toml</code>为主题文件中<code>exampleSite下的config.toml</code>文件，接着在config.toml中的对应位置修改自己的设置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://billie52707.cn&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://chenxuefan.cn&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;人人都爱小雀斑&#39;s blogs&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;cactus&#34;</span>
@@ -469,7 +469,7 @@ tags:
 <p>4、设置文章字数和阅读时间，在<code>/cactus/layouts/_default/single.html</code>中添加以下代码</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h5</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wc&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;font-size: 1rem;text-align: center;&#34;</span>&gt;{{ .FuzzyWordCount }} Words|Read in about {{ .ReadingTime }} Min|本文总阅读量&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次&lt;/<span style="color:#f92672">h5</span>&gt;
 </span></span></code></pre></div><h2 id="首页添加每日一图">首页添加每日一图</h2>
-<p><a href="https://billie52707.cn/2020/08/python-hugo-nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/">python+hugo+nginx | 实现博客主页每日一图 </a></p>
+<p><a href="https://chenxuefan.cn/2020/08/python-hugo-nginx-%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%AF%8F%E6%97%A5%E4%B8%80%E5%9B%BE/">python+hugo+nginx | 实现博客主页每日一图 </a></p>
 <h2 id="添加评论系统valine">添加评论系统Valine</h2>
 <blockquote>
 <p>Valine - 一款快速、简洁且高效的无后端评论系统。</p>
@@ -621,7 +621,7 @@ tags:
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>git push -u origin +master
 </span></span></code></pre></div><h2 id="为你的博客添加一个域名githubpages">为你的博客添加一个域名(GithubPages)</h2>
-<p>上传代码到GitHub之后，在GitHub项目下新建一个&rsquo;CNAME&rsquo;文件，打开并编辑，在第一行写入<code>你的域名</code>（所以你要先有一个域名，并备案），比如我的就是<code>billie52707.cn</code>，这一步目的是做一个域名的关联，当你访问你的域名的时候，就会关联到你的博客项目来。</p>
+<p>上传代码到GitHub之后，在GitHub项目下新建一个&rsquo;CNAME&rsquo;文件，打开并编辑，在第一行写入<code>你的域名</code>（所以你要先有一个域名，并备案），比如我的就是<code>chenxuefan.cn</code>，这一步目的是做一个域名的关联，当你访问你的域名的时候，就会关联到你的博客项目来。</p>
 <p>接着，以阿里云为例，在这之前，你的域名已经备案好了，登录阿里云，进入你的域名列表，在域名右侧点击<code>解析</code>，点击添加<code>安全组</code>,<code>新手引导</code>，在<code>记录值</code>输入你的博客项目GitHub pages的IP地址，IP地址可以通过终端输入<code>ping your_github_id.github.io</code>获取。</p>
 <h2 id="添加字数统计">添加字数统计</h2>
 <p>作为一个静态网页生成器，Hugo 为使用者提供了很多与网页相关的<strong>模板变量</strong>，而与文章字数相关的<strong>模板变量</strong>有两个：</p>
@@ -821,12 +821,12 @@ jobs:
 <p>出现这个就代表成功了<img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816084337982.png" alt="image-20200816084337982"></p>
 <p>在后续的使用中，截图粘贴或添加图片到typora中，就会直接上传图片到阿里云oss，yes!</p>
 <h2 id="从http到https">从http到https</h2>
-<p><a href="https://billie52707.cn/posts/2020/8/http-https/">从http到https</a></p>
+<p><a href="https://chenxuefan.cn/posts/2020/8/http-https/">从http到https</a></p>
 <h2 id="让google和百度搜索到你的博客">让Google和百度搜索到你的博客</h2>
 <h3 id="google-search-console">Google Search Console</h3>
 <p>打开<a href="https://www.google.com/webmasters/">Google Search Console</a>，点击 “<a href="https://search.google.com/search-console?hl=zh-CN">SEARCH CONSOLE </a>” 进入，然后添加资源。</p>
 <p>会要求下载一个html文件如<code>google571325××××.html</code>做验证，将这个文件保存到hugo站点根目录下的static子目录，更新站点内容让google search console可以访问到进行验证即可。</p>
-<p>进入资源页面，点”索引”下的”站点地图”，在”添加新的站点地图”处输入当前hugo站点的sitemap，这个文件hugo会默认生成，就在根路径下，如<code>https://billie52707.cn/sitemap.xml</code>。</p>
+<p>进入资源页面，点”索引”下的”站点地图”，在”添加新的站点地图”处输入当前hugo站点的sitemap，这个文件hugo会默认生成，就在根路径下，如<code>https://chenxuefan.cn/sitemap.xml</code>。</p>
 <h3 id="百度搜索资源平台">百度搜索资源平台</h3>
 <p>打开 <a href="https://ziyuan.baidu.com/">百度搜索资源平台</a> ，点击 <a href="https://ziyuan.baidu.com/linksubmit/index">链接提交</a>，然后点”添加站点”。同样可以用文件验证的方式来进行网站验证。</p>
 <p>进入”资源提交”下的”普通收录”，再点“sitemap”，在这里可以提交hugo网站的sitemap文件。</p>
@@ -913,7 +913,7 @@ jobs:
 <p>如下：<img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201106211630640.png" alt="image-20201106211630640"></p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201106211904637.png" alt="image-20201106211904637"></p>
 <h2 id="全新板块ncp新冠疫情实时数据">全新板块：NCP(新冠疫情实时数据)</h2>
-<p><a href="https://billie52707.cn/ncp/">NCP | 新冠疫情的监测与趋势分析</a></p>
+<p><a href="https://chenxuefan.cn/ncp/">NCP | 新冠疫情的监测与趋势分析</a></p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20201207234437761.png" alt="image-20201207234437761"></p>
 <h2 id="文章页添加标签词云">文章页添加标签词云</h2>
 <p>贴一张效果图先</p>
@@ -1046,7 +1046,7 @@ jobs:
 <p><a href="https://jimmysong.io/hugo-handbook/steps/searching-plugin.html?q=">https://jimmysong.io/hugo-handbook/steps/searching-plugin.html?q=</a></p>
 <h2 id="新模块most-recent---记录今日新更新有修改的的文章">新模块&quot;Most recent&quot; - 记录今日新更新、有修改的的文章</h2>
 <ul>
-<li>业务代码 - billie52707.py</li>
+<li>业务代码 - chenxuefan.py</li>
 <li>技术栈 - python、css</li>
 </ul>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20210520162322159.png" alt="image-20210520162322159"></p>
@@ -1124,7 +1124,7 @@ jobs:
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          7537 字
+          7535 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           

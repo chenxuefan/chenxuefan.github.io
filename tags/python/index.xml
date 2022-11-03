@@ -140,7 +140,7 @@
       <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/draft/python-aiohttp-server/</guid>
-      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://billie52707.cn/posts/2021/5/python-asyncio/ Hello,world! from aiohttp import web routes = web.RouteTableDef() @routes.get(&amp;#39;/&amp;#39;) async def hello(request): return web.Response(text=&amp;#34;Hello,world!&amp;#34;) app = web.Application() app.add_routes(routes) web.run_app(app) Handler A request handler must be a coroutine that accepts</description>
+      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://chenxuefan.cn/posts/2021/5/python-asyncio/ Hello,world! from aiohttp import web routes = web.RouteTableDef() @routes.get(&amp;#39;/&amp;#39;) async def hello(request): return web.Response(text=&amp;#34;Hello,world!&amp;#34;) app = web.Application() app.add_routes(routes) web.run_app(app) Handler A request handler must be a coroutine that accepts</description>
     </item>
     
     <item>
@@ -194,7 +194,7 @@
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2021/6/python-urllib/</guid>
-      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &amp;#39;https://billie52707.cn&amp;#39; url = urljoin(url, &amp;#39;note&amp;#39;) # &amp;#39;https://billie52707.cn/note&amp;#39; quote from urllib.parse import quote, unquote ch = &amp;#39</description>
+      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &amp;#39;https://chenxuefan.cn&amp;#39; url = urljoin(url, &amp;#39;note&amp;#39;) # &amp;#39;https://chenxuefan.cn/note&amp;#39; quote from urllib.parse import quote, unquote ch = &amp;#39</description>
     </item>
     
     <item>
@@ -203,7 +203,7 @@
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2021/6/python-aiohttp-client/</guid>
-      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://billie52707.cn/posts/2021/5/python-asyncio/ 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with</description>
+      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://chenxuefan.cn/posts/2021/5/python-asyncio/ 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with</description>
     </item>
     
     <item>
@@ -221,7 +221,7 @@
       <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2021/5/recent-projects/</guid>
-      <description>unsplash 预览地址 - https://billie52707.cn/photo/ 项目仓库 - https://github.com/chenxuefan/crawler/tree/main/unsplash 功能模块 - 按照topic（类型）爬取图片（每个类型只爬一张）、前端展示页面 技术栈 - requests、re、xpat</description>
+      <description>unsplash 预览地址 - https://chenxuefan.cn/photo/ 项目仓库 - https://github.com/chenxuefan/crawler/tree/main/unsplash 功能模块 - 按照topic（类型）爬取图片（每个类型只爬一张）、前端展示页面 技术栈 - requests、re、xpat</description>
     </item>
     
     <item>
@@ -401,7 +401,7 @@
       <pubDate>Fri, 26 Mar 2021 20:54:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/note/python/</guid>
-      <description>更多 - https://billie52707.cn/tags/python/ 安装 Linux 安装pip curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量</description>
+      <description>更多 - https://chenxuefan.cn/tags/python/ 安装 Linux 安装pip curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python3 get-pip.py 基础知识点 变量 namespace（命名空间） 定义： 每一个作用域变量存储的位置，或者解释为 存储作用域中变量</description>
     </item>
     
     <item>

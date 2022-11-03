@@ -383,7 +383,7 @@ if (!doNotTrack) {
 <p><strong>await + 可等待的对象（协程对象、Future对象、Task对象 -&gt; IO等待）</strong></p>
 <p>使用<code>async</code>定义的方法会变成一个无法直接执行的「coroutine对象」，必须将其注册到事件循环中，或使用<code>asyncio.run()</code>，才可以执行。</p>
 <p>要实现异步，需要了解一下 await 的用法，使用 await 可以「<strong>将耗时等待的操作挂起，让出控制权</strong>」。当协程执行的时候遇到 await，时间循环就会将本协程挂起，转而去执行别的协程，直到其他的协程挂起或执行完毕。</p>
-<p>更多参考 - <a href="https://billie52707.cn/posts/2021/2/async/">https://billie52707.cn/posts/2021/2/async/</a></p>
+<p>更多参考 - <a href="https://chenxuefan.cn/posts/2021/2/async/">https://chenxuefan.cn/posts/2021/2/async/</a></p>
 <h2 id="coroutine--task--future">Coroutine / Task / Future</h2>
 <blockquote>
 <p>如果一个对象可以在 <a href="https://docs.python.org/zh-cn/3/reference/expressions.html#await"><code>await</code></a> 语句中使用，那么它就是 <strong>可等待</strong> 对象。许多 asyncio API 都被设计为接受可等待对象。</p>

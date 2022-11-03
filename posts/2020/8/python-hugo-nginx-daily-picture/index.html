@@ -277,7 +277,7 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="前言">前言</h2>
 <p>在建博客之前，我现在的域名访问的对象，是使用nginx部署在服务器的一个页面，并且由于加入了python脚本，这个页面每天都会更新，每天都会显示当天日期和每天都不一样的图片，现在可以通过这个链接访问：</p>
-<p><a href="https://download.billie52707.cn/">https://download.billie52707.cn/</a></p>
+<p><a href="https://download.chenxuefan.cn/">https://download.chenxuefan.cn/</a></p>
 <p>在建了博客之后，我也想把这个功能集成过来，于是就有了这篇文章。</p>
 <h2 id="爬取图片篇">爬取图片篇</h2>
 <p>这里用到的API接口是来自词霸的，每天零点更新</p>
@@ -301,13 +301,13 @@ if (!doNotTrack) {
 <p>上面的配置设置为，使用服务器IP访问，并且是888端口</p>
 <p>配置完成之后，重启nginx：<code>service nginx restart</code></p>
 <p>重启成功之后就可以这样访问到我的图片了：</p>
-<p><a href="https://download.billie52707.cn/pic/main.png">https://download.billie52707.cn/pic/main.png</a></p>
+<p><a href="https://download.chenxuefan.cn/pic/main.png">https://download.chenxuefan.cn/pic/main.png</a></p>
 <p>搞定每日的图片链接之后，就可以在hugo主页里添加图片了</p>
 <h2 id="hugo部署">hugo部署</h2>
 <p>在本地博客项目中，需要修改的文件是：<code>./themes/cactus/layouts/index.html </code></p>
 <p>打开文件<img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20200816191121597.png" alt="image-20200816191121597"></p>
 <p>在第二行的位置添加图片：</p>
-<pre tabindex="0"><code>&lt;img height=&#34;921&#34; width=&#34;706&#34; src=&#34;https://download.billie52707.cn/pic/main.png&#34;&gt;
+<pre tabindex="0"><code>&lt;img height=&#34;921&#34; width=&#34;706&#34; src=&#34;https://download.chenxuefan.cn/pic/main.png&#34;&gt;
 </code></pre><p>保存文件，就可以上传代码部署上线了</p>
 <h2 id="后记">后记</h2>
 <p>updated by 2020-08-24</p>

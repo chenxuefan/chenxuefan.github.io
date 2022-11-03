@@ -365,13 +365,13 @@ if (!doNotTrack) {
 <li>
 <p><em><strong>content</strong></em></p>
 <p>对于非文本请求，你也能以字节的方式访问请求响应体（二进制响应内容），比如图片格式的响应体</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.billie52707.cn/pic/main.png&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.chenxuefan.cn/pic/main.png&#39;</span>)
 </span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>content
 </span></span></code></pre></div></li>
 <li>
 <p><em><strong>json()</strong></em></p>
 <p>如果 JSON 解码失败， <code>r.json()</code> 就会抛出一个异常: <code>ValueError: No JSON object could be decoded</code> 。需要注意的是，成功调用 <code>r.json()</code> 并<strong>不</strong>意味着响应的成功。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.billie52707.cn/pic/main.png&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://download.chenxuefan.cn/pic/main.png&#39;</span>)
 </span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>json() 
 </span></span></code></pre></div></li>
 <li>
@@ -422,7 +422,7 @@ Out[29]: &lt;RequestsCookieJar[]&gt;
 </span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>headers<span style="color:#f92672">.</span>update({<span style="color:#e6db74">&#39;x-test&#39;</span>: <span style="color:#e6db74">&#39;true&#39;</span>})
 </span></span></code></pre></div><p>会话还可以用作前后文管理器：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> requests<span style="color:#f92672">.</span>Session() <span style="color:#66d9ef">as</span> s:
-</span></span><span style="display:flex;"><span>  s<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://billie52707.cn&#39;</span>)
+</span></span><span style="display:flex;"><span>  s<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;https://chenxuefan.cn&#39;</span>)
 </span></span></code></pre></div><p>这样就能确保with区块退出后回话能被关闭，即使发生了异常也一样。</p>
 <h3 id="2ssl证书验证">（2）SSL证书验证</h3>
 <p>Requests 可以为 HTTPS 请求验证 SSL 证书，就像 web 浏览器一样。SSL 验证默认是开启的，如果证书验证失败，Requests 会抛出 SSLError:</p>

@@ -14,7 +14,7 @@
       <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2022/10/dockerfile/</guid>
-      <description>悄悄更新! 🌹 https://billie52707.cn/note/docker1/#使用-dockerfile-构建项目</description>
+      <description>悄悄更新! 🌹 https://chenxuefan.cn/note/docker1/#使用-dockerfile-构建项目</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2021/6/python-urllib/</guid>
-      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &amp;#39;https://billie52707.cn&amp;#39; url = urljoin(url, &amp;#39;note&amp;#39;) # &amp;#39;https://billie52707.cn/note&amp;#39; quote from urllib.parse import quote, unquote ch = &amp;#39</description>
+      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &amp;#39;https://chenxuefan.cn&amp;#39; url = urljoin(url, &amp;#39;note&amp;#39;) # &amp;#39;https://chenxuefan.cn/note&amp;#39; quote from urllib.parse import quote, unquote ch = &amp;#39</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2021/6/python-aiohttp-client/</guid>
-      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://billie52707.cn/posts/2021/5/python-asyncio/ 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with</description>
+      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://chenxuefan.cn/posts/2021/5/python-asyncio/ 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with</description>
     </item>
     
     <item>
@@ -86,7 +86,7 @@
       <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2021/5/recent-projects/</guid>
-      <description>unsplash 预览地址 - https://billie52707.cn/photo/ 项目仓库 - https://github.com/chenxuefan/crawler/tree/main/unsplash 功能模块 - 按照topic（类型）爬取图片（每个类型只爬一张）、前端展示页面 技术栈 - requests、re、xpat</description>
+      <description>unsplash 预览地址 - https://chenxuefan.cn/photo/ 项目仓库 - https://github.com/chenxuefan/crawler/tree/main/unsplash 功能模块 - 按照topic（类型）爬取图片（每个类型只爬一张）、前端展示页面 技术栈 - requests、re、xpat</description>
     </item>
     
     <item>
