@@ -1628,7 +1628,7 @@ I think we&#39;ve had enough small talk.Why are you here? I remember what it sai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/draft/data-grand/%E4%B8%AD%E4%BF%A1%E9%93%B6%E8%A1%8C%E4%BF%A1%E7%94%A8%E5%8D%A1%E4%B8%AD%E5%BF%83/main/</guid>
-      <description>2022.11.2 样本类型 抽取特征：证件类型、证件号、姓名、有效期 身份证 军官证 2022.11.7 今日任务 开发OCR接口 开发自定义控件</description>
+      <description>2022.11.2 样本类型 抽取特征：证件类型、证件号、姓名、有效期 身份证 军官证 2022.11.7 今日任务 开发OCR接口 开发自定义控件 OCR流程（ysocr） 所需抽取的字段（</description>
     </item>
     
     <item>

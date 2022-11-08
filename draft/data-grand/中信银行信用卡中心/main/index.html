@@ -24,7 +24,7 @@ if (!doNotTrack) {
 }
 </script>
   <meta property="og:title" content="" />
-<meta property="og:description" content="2022.11.2 样本类型 抽取特征：证件类型、证件号、姓名、有效期 身份证 军官证 2022.11.7 今日任务 开发OCR接口 开发自定义控件" />
+<meta property="og:description" content="2022.11.2 样本类型 抽取特征：证件类型、证件号、姓名、有效期 身份证 军官证 2022.11.7 今日任务 开发OCR接口 开发自定义控件 OCR流程（ysocr） 所需抽取的字段（" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxuefan.cn/draft/data-grand/%E4%B8%AD%E4%BF%A1%E9%93%B6%E8%A1%8C%E4%BF%A1%E7%94%A8%E5%8D%A1%E4%B8%AD%E5%BF%83/main/" /><meta property="article:section" content="draft" />
 
@@ -33,7 +33,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="2022.11.2 样本类型 抽取特征：证件类型、证件号、姓名、有效期 身份证 军官证 2022.11.7 今日任务 开发OCR接口 开发自定义控件"/>
+<meta name="twitter:description" content="2022.11.2 样本类型 抽取特征：证件类型、证件号、姓名、有效期 身份证 军官证 2022.11.7 今日任务 开发OCR接口 开发自定义控件 OCR流程（ysocr） 所需抽取的字段（"/>
 
   
   
@@ -151,6 +151,29 @@ var _hmt = _hmt || [];
 <ul>
 <li>开发OCR接口</li>
 <li>开发自定义控件</li>
+</ul>
+</li>
+<li>OCR流程（ysocr）
+<ul>
+<li>所需抽取的字段（4个）：样本类型、姓名、证件号码、有效期至</li>
+<li>涉及内置模型（7个）
+<ul>
+<li>通用打印体识别。交付效果：演示识别出的大段文本信息</li>
+<li>通用手写体识别。交付效果：演示识别出的大段文本信息</li>
+<li>身份证识别。</li>
+<li>户口本识别。</li>
+<li>中国护照识别。</li>
+<li>军官证识别。</li>
+<li>港澳台居民往来内地通行证。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>OCR风险点
+<ul>
+<li>内置模型未提供所需抽取的字段，需通过标注</li>
+<li>识别错误，如 2018年 1月03日，识别成 1月03日；</li>
+<li>样本中未提供此项信息</li>
 </ul>
 </li>
 </ul>
