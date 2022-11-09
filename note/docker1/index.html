@@ -929,12 +929,12 @@ systemctl start/stop/restart docker
 </li>
 </ul>
 <p>示例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker commit -a <span style="color:#e6db74">&#34;Billie&#34;</span> -m <span style="color:#e6db74">&#34;first version&#34;</span> chenxuefan chenxuefan:version1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker commit -a <span style="color:#e6db74">&#34;Billie&#34;</span> -m <span style="color:#e6db74">&#34;first version&#34;</span> server_script server_script:v1
 </span></span></code></pre></div><ul>
 <li><code>-a &quot;Billie&quot;</code> - 作者，Billie</li>
 <li><code>-m &quot;first version&quot;</code> - 打包信息</li>
-<li><code>chenxuefan</code> - 容器名</li>
-<li><code>chenxuefan:version1</code> - 镜像名:tag</li>
+<li><code>server_script</code> - 容器名</li>
+<li><code>server_script:v1</code> - 镜像名:tag</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker commit --change <span style="color:#e6db74">&#34;ENV DEBUG=true&#34;</span> c3f279d17e0a  svendowideit/testimage:version3
 </span></span></code></pre></div><h2 id="仓库repository管理">仓库（repository）管理</h2>
