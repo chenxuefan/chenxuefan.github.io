@@ -9,7 +9,7 @@
     <copyright>Billy</copyright>
     <lastBuildDate>Wed, 09 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>docker&#43;nginx&#43;flask&#43;ssl | 实现通过域名访问服务器资源</title>
+      <title>docker&#43;nginx&#43;flask&#43;https | 实现通过域名访问服务器资源</title>
       <link>https://chenxuefan.cn/posts/2022/11/docker-nginx-flask-server_script/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
       
