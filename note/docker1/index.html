@@ -615,7 +615,7 @@ systemctl start/stop/restart docker
 </tr>
 <tr>
 <td>&ndash;volumes-from=[]</td>
-<td>给容器挂载其他容器上的卷，挂载到容器的某个目录</td>
+<td>给容器挂载宿主机或其他容器上的卷，挂载到容器的某个目录或文件。可以绑定文件，也可以绑定文件夹</td>
 </tr>
 <tr>
 <td>&ndash;cap-add=[]</td>
@@ -738,12 +738,34 @@ systemctl start/stop/restart docker
 <p>执行启动命令运行镜像</p>
 </li>
 </ul>
-<p>例：<strong>运行nginx容器</strong>：<code>docker run --name mynginx -p 8080:80 -d nginx</code></p>
+<p>例：<strong>运行nginx容器</strong>：<code>docker run --name mynginx -p 8080:80 -v /home/nginx/logs:/var/log/nginx -d nginx</code></p>
 <ul>
 <li><code>-name</code>：容器名称，自主命名</li>
-<li><code>-p 8080:80</code>：设置端口映射，将本地的8080端口映射发到容器内部的80端口</li>
+<li><code>-p 8080:80</code>：设置端口映射，将宿主机的8080端口映射发到容器内部的80端口</li>
 <li><code>-d</code>：设置容器在后台一直运行</li>
 <li><code>nginx</code>：使用的镜像</li>
+<li><code>-v /home/nginx/logs:/var/log/nginx:rw</code> 🤪
+<ul>
+<li>docker 启动容器时，如果不使用 -v/&ndash;volume 挂载宿主机的文件或文件夹，容器内的配置文件只能进入到容器内才能修改，输入的日志也是在容器里查看；这样不方便修改配置，也不利于日志查看；所以一般都是进行 -v 参数来进行挂载文件或文件夹</li>
+<li>三种模式：rw、ro 和 不指定
+<ol>
+<li>不指定（默认）。即不设置<code>-v</code>指令，容器或宿主机文件修改，双方都互不影响</li>
+<li><code>rw</code> (read-write)
+<ul>
+<li>文件：不管是宿主机还是容器内修改，都会相互同步；但容器内不允许删除，会提示Device or resource busy；宿主机删除文件，容器内的不会被同步</li>
+<li>文件夹：不管是宿主机还是容器内修改、新增、删除文件，都会相互同步</li>
+</ul>
+</li>
+<li><code>ro</code> (read-only)
+<ul>
+<li>文件：容器内不能修改，会提示read-only</li>
+<li>文件夹：容器内不能修改、新增、删除文件夹中的文件，会提示read-only</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
@@ -1033,7 +1055,7 @@ systemctl start/stop/restart docker
 <h3 id="2-写一个dockerfile实例">2. 写一个Dockerfile实例</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.9</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billie_Chan</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billy_Chan</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> ./docker_test</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
@@ -1244,7 +1266,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          9419 字
+          9762 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
