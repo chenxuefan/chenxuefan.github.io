@@ -738,7 +738,7 @@ systemctl start/stop/restart docker
 <p>执行启动命令运行镜像</p>
 </li>
 </ul>
-<p>例：<strong>运行nginx容器</strong>：<code>docker run --name mynginx -p 8080:80 -v /home/nginx/logs:/var/log/nginx -d nginx</code></p>
+<p>例：<strong>运行nginx容器</strong>：<code>docker run --name mynginx -p 8080:80 -v /home/nginx/logs:/var/log/nginx:v1 -d nginx</code></p>
 <ul>
 <li><code>-name</code>：容器名称，自主命名</li>
 <li><code>-p 8080:80</code>：设置端口映射，将宿主机的8080端口映射发到容器内部的80端口</li>
