@@ -9,12 +9,12 @@
     <copyright>Billy</copyright>
     <lastBuildDate>Wed, 09 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>docker&#43;nginx&#43;flask&#43;https | 实现通过域名访问服务器资源</title>
-      <link>https://chenxuefan.cn/posts/2022/11/docker-nginx-flask-server_script/</link>
+      <title>docker&#43;nginx&#43;https | 实现通过域名访问服务器资源</title>
+      <link>https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://chenxuefan.cn/posts/2022/11/docker-nginx-flask-server_script/</guid>
-      <description>前言 先看看效果： https://blog.chenxuefan.cn https://blog.chenxuefan.cn:8800 配置ssl域名证书 这个步骤开始之前，你需要有一个已备案好的域名，并拿到相应的ssl证书。 我采用的方案是使用本站的域名ch</description>
+      <guid>https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/</guid>
+      <description>前言 先看看效果： https://blog.chenxuefan.cn 配置ssl域名证书 这个步骤开始之前，你需要有一个已备案好的域名，并拿到相应的ssl证书。 我采用的方案是使用本站的域名che</description>
     </item>
     
     <item>
@@ -1710,6 +1710,15 @@ I think we&#39;ve had enough small talk.Why are you here? I remember what it sai
       
       <guid>https://chenxuefan.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
       <description>44.128.2.79:8000 我的审核，我的处置 2022.5.17 今日任务 演示广东项目，调研需求 开发“嫌疑人账号汇总流程” 2022.5.18 今日任务 开发“嫌疑人账号汇总流程” 2022.5.19 今日任务 开发“人员信息摸</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/docker-nginx-flask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/docker-nginx-flask/</guid>
+      <description></description>
     </item>
     
     <item>

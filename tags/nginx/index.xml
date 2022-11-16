@@ -9,12 +9,12 @@
     <copyright>Billy</copyright>
     <lastBuildDate>Wed, 09 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>docker&#43;nginx&#43;flask&#43;https | 实现通过域名访问服务器资源</title>
-      <link>https://chenxuefan.cn/posts/2022/11/docker-nginx-flask-server_script/</link>
+      <title>docker&#43;nginx&#43;https | 实现通过域名访问服务器资源</title>
+      <link>https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://chenxuefan.cn/posts/2022/11/docker-nginx-flask-server_script/</guid>
-      <description>前言 先看看效果： https://blog.chenxuefan.cn https://blog.chenxuefan.cn:8800 配置ssl域名证书 这个步骤开始之前，你需要有一个已备案好的域名，并拿到相应的ssl证书。 我采用的方案是使用本站的域名ch</description>
+      <guid>https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/</guid>
+      <description>前言 先看看效果： https://blog.chenxuefan.cn 配置ssl域名证书 这个步骤开始之前，你需要有一个已备案好的域名，并拿到相应的ssl证书。 我采用的方案是使用本站的域名che</description>
     </item>
     
     <item>

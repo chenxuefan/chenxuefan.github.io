@@ -11,7 +11,7 @@
     <loc>https://chenxuefan.cn/tags/docker/</loc>
     <lastmod>2022-11-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chenxuefan.cn/posts/2022/11/docker-nginx-flask-server_script/</loc>
+    <loc>https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/</loc>
     <lastmod>2022-11-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/tags/http/</loc>
@@ -21,9 +21,6 @@
     <lastmod>2022-11-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/posts/</loc>
-    <lastmod>2022-11-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/tags/python/</loc>
     <lastmod>2022-11-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/tags/</loc>
@@ -49,6 +46,9 @@
   </url><url>
     <loc>https://chenxuefan.cn/draft/kfc_crazy_thursday_literature/</loc>
     <lastmod>2022-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/tags/python/</loc>
+    <lastmod>2022-07-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/draft/python-pandas/</loc>
     <lastmod>2022-07-13T00:00:00+00:00</lastmod>
@@ -653,6 +653,8 @@
     <loc>https://chenxuefan.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</loc>
   </url><url>
     <loc>https://chenxuefan.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</loc>
+  </url><url>
+    <loc>https://chenxuefan.cn/draft/docker-nginx-flask/</loc>
   </url><url>
     <loc>https://chenxuefan.cn/draft/vim/</loc>
   </url><url>
