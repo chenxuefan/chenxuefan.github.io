@@ -1055,6 +1055,8 @@ systemctl start/stop/restart docker
 <h3 id="2-写一个dockerfile实例">2. 写一个Dockerfile实例</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.9</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> TZ<span style="color:#f92672">=</span>Asia/Shanghai<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billy_Chan</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> ./docker_test</span><span style="color:#960050;background-color:#1e0010">
@@ -1069,6 +1071,19 @@ systemctl start/stop/restart docker
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;./app.py&#34;</span>]<span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><ul>
+<li>
+<p><code>ENV TZ=Asia/Shanghai</code></p>
+<ul>
+<li>
+<p>增加时区功能。大部分的镜像都是UTC时间。大部分的容器在制作的时候，时间都是UTC时间（又是格林威治标准时间GMT），所以我们在使用的时候，容器内部时间都是和北京时间相差8小时。因此需要设置时区，以满足当前容器运行的时间为北京时间。默认时区为0，即UTC时间；东八区</p>
+</li>
+<li>
+<p><code>Asia/Shanghai</code>是以地区命名的地区标准时，在中国叫CST。这个地区标准时会兼容历史各个时间节点。中国1986-1991年实行夏令时，夏天和冬天差1个小时，<code>Asia/Shanghai</code>会兼容这个时间段。</p>
+<p>GMT-8是东八区，北京时间和东八区一致。</p>
+<p>结论：1992年以后，在中国，<code>GMT-8</code>和<code>Asia/Shanghai</code>是一样的时间，1986-1991之间，夏天会有一小时时差。</p>
+</li>
+</ul>
+</li>
 <li>
 <p><code>ADD . .</code></p>
 <ul>
@@ -1125,8 +1140,11 @@ systemctl start/stop/restart docker
 </li>
 <li>
 <p>创建并运行容器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run -itd -p 1110:1110 -v /Users/billie/Desktop/Docker/docker_test/vvv:/docker_test/images demo:v1
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run -itd -p 1110:1110 -e TZ=Asia/Shanghai -v /Users/billie/Desktop/Docker/docker_test/vvv:/docker_test/images demo:v1
 </span></span></code></pre></div><ul>
+<li>
+<p><code>-e TZ=Asia/Shanghai</code> 将时区信息加入环境变量</p>
+</li>
 <li>
 <p><code>-p 宿主机端口:容器内端口</code>  指定映射的端口</p>
 <ul>
@@ -1266,7 +1284,7 @@ systemctl start/stop/restart docker
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          9762 字
+          10102 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
