@@ -24,16 +24,16 @@ if (!doNotTrack) {
 }
 </script>
   <meta property="og:title" content="" />
-<meta property="og:description" content="2022.9.15 今日任务 佛山卫健局 （已完成）调试开发板，接收短信功能验证 18923132848 2022.9.16 待客户确认的点 服务器资源，开放80、8080、8088端口 流程1：护士职业资格" />
+<meta property="og:description" content="2022.11.30 配置修改（文本类型、啥啥啥id） conf filed_conf.py 配置doctype（文档类型）、filed（字段信息） env_conf &gt; pro_conf.py 配置文档类型多个字段的id信息（doc_f" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenxuefan.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E5%8D%AB%E5%81%A5%E5%B1%80/main/" /><meta property="article:section" content="draft" />
+<meta property="og:url" content="https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E5%8F%91%E8%AF%81%E5%88%B8/main/" /><meta property="article:section" content="draft" />
 
 
 
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="2022.9.15 今日任务 佛山卫健局 （已完成）调试开发板，接收短信功能验证 18923132848 2022.9.16 待客户确认的点 服务器资源，开放80、8080、8088端口 流程1：护士职业资格"/>
+<meta name="twitter:description" content="2022.11.30 配置修改（文本类型、啥啥啥id） conf filed_conf.py 配置doctype（文档类型）、filed（字段信息） env_conf &gt; pro_conf.py 配置文档类型多个字段的id信息（doc_f"/>
 
   
   
@@ -134,96 +134,145 @@ var _hmt = _hmt || [];
 
   <div class="content" itemprop="articleBody">
   
-    <h3 id="2022915">2022.9.15</h3>
+    <h3 id="20221130">2022.11.30</h3>
+<ul>
+<li>
+<p>配置修改（文本类型、啥啥啥id）</p>
+<ul>
+<li>conf
+<ul>
+<li>filed_conf.py 配置doctype（文档类型）、filed（字段信息）</li>
+<li>env_conf &gt; pro_conf.py 配置文档类型多个字段的id信息（doc_filed_map），配id</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>抽取&amp;后处理（文本抽取、表格抽取）</p>
+<ul>
+<li>
+<p>rule_extractions</p>
+<ul>
+<li>
+<p>custom_extractors</p>
+<ul>
+<li>
+<p>自建一个文档类型的文件夹，如extractor_demo</p>
+<ul>
+<li>
+<p>extractor.py</p>
+<ol>
+<li>
+<p>init，初始化</p>
+<ul>
+<li>传入filed_conf.py中的doctype、filed对象</li>
+</ul>
+</li>
+<li>
+<p>extract（抽取）**需编写 **抽取逻辑</p>
+<p>详见extractor_base.py的extract函数</p>
+</li>
+<li>
+<p>post_process（后处理）**需编写 **</p>
+<p>详见extractor_base.py的post_process函数</p>
+</li>
+</ol>
+</li>
+<li>
+<p>re_conf.py，文本抽取、表格抽取需要配的东西都在这里</p>
+<ul>
+<li>文本抽取
+<ol>
+<li>定位段落， before_text_rules。找到抽取的字段具体在哪一个段落。每一个字段都使用id作为键去配置一个键值对。返回一个或多个段落。
+<ol>
+<li>参数1，fun_name，用什么方法，具体用到的方法详见re_config_map.py</li>
+<li>参数2，fun_args，设置接收哪些段落</li>
+</ol>
+</li>
+<li>抽取值，抽取最终的值 ，extract_text_rules。
+<ol>
+<li>参数1，fun_name， 用什么方法，具体用到的方法详见re_config_map.py</li>
+<li>参数2，fun_args
+<ul>
+<li>rules，写正则的地方，参数详细解释见：re_config_map.py</li>
+<li>escape_chars，在抽取的时候，忽略掉所列的字段；抽取结束，变回去</li>
+<li>equal_chars_map，设置替换的字符，如中英文括号之间的替换</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>表格抽取
+<ol>
+<li>定位表格，before_text_rules</li>
+<li>抽取值，extract_table_rules</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>extract_entrance.py，每个文档类型拥有一个entity对象，exend到entity_list，函数extract返回所有的抽取结果</p>
+</li>
+<li>
+<p>extractor_base.py</p>
+<ul>
+<li>
+<p>入口，start、check</p>
+</li>
+<li>
+<p>抽取，extract</p>
+<ol>
+<li>文本抽取 extract_text</li>
+<li>表格抽取 extract_table</li>
+</ol>
+</li>
+<li>
+<p>后处理，post_process</p>
+<p>比如需要对 exch_result.value 进行比如金额大小转换的字段优化</p>
+<p>对字段判断为是 或否的</p>
+</li>
+</ul>
+</li>
+<li>
+<p>re_config_map.py，配置规则</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2022125">2022.12.5</h3>
 <ul>
 <li>
 <p>今日任务</p>
 <ul>
-<li>佛山卫健局
-<ul>
-<li>（已完成）调试开发板，接收短信功能验证</li>
-<li>18923132848</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="2022916">2022.9.16</h3>
-<h4 id="待客户确认的点">待客户确认的点</h4>
+<li>
+<p>字段</p>
 <ul>
 <li>
-<p>服务器资源，开放80、8080、8088端口</p>
-</li>
-<li>
-<p>流程1：护士职业资格证书核发，已开发90%</p>
+<p>管理人名称</p>
 <ul>
-<li>等待正式服务器部署，搭建短信转发服务</li>
-<li>提供多条测试数据（身份证号）</li>
-</ul>
-</li>
-<li>
-<p>流程2：公共场所卫生许可，未开发</p>
-<ul>
-<li>提供系统账号密码</li>
-</ul>
-</li>
-<li>
-<p>周报</p>
-<p>本周工作</p>
-<ul>
-<li>佛山卫健局项目
-<ol>
-<li>流程1：护士职业资格证书核发，已开发90%，已调试好短信收发模块。等待正式服务器部署，搭建短信转发服务，等待客户提供多条测试数据（身份证号）</li>
-<li>流程2：公共场所卫生许可，未开发，等待客户提供好开发所需的平台账号密码</li>
-</ol>
-</li>
-</ul>
-<p>下周计划</p>
-<ul>
-<li>佛山卫健局项目，等待客户提供好所需的信息之后再进场开发</li>
-<li>华润五丰项目，推进验收</li>
+<li>基金管理人声明与承诺(.*?)([\u4e00-\u9fa5]+)作为</li>
 </ul>
 </li>
 </ul>
-<h3 id="2022928">2022.9.28</h3>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2022126">2022.12.6</h3>
+<h3 id="2022127">2022.12.7</h3>
 <ul>
 <li>今日任务
 <ul>
-<li>docker_server_script
-<ul>
-<li>dsapi - 爬取词霸接口，作为博客主页的每日一图</li>
-<li>unsplash - 爬取unsplash网站图片，每种类型一张</li>
-<li>dytt - 监控电影天堂最新更新电影</li>
+<li>确认git是1.0 还是2.0 new字段</li>
+<li>尽量不要全部写好了之后传上去测，会爆很多错</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="20221111">2022.11.11</h3>
-<ul>
-<li>今日任务
-<ul>
-<li>数据库迁移工作
-<ul>
-<li>就把数据库的那一个镜像独立出来，控制中心安装包中已提供好现成的镜像；</li>
-<li>注释掉控制中心里docker-compose.yaml文件里关于数据库镜像的那部分；</li>
-<li>把数据库镜像的那部分配置内容单独写一份docker-compose.yaml，连着数据库镜像一起拿到新环境去启动；</li>
-<li>需要在控制中心的某个地方修改一下配置信息，才可访问到数据库的链接；</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="20221212">2022.12.12</h3>
-<ul>
-<li>
-<p>今日工作</p>
-<p>各位项目组成员，同步一下近日佛山卫健局那边的工作：</p>
-<ol>
-<li>控制中心redis配置密码的修改（已完成）。出于安全考虑，客户需要对服务端进行redis加密。</li>
-<li>控制中心数据库模块的迁移工作（已完成）。客户需要对服务端的控制中心数据库模块，迁移到另一个环境，已提供方案与实际操作的步骤演示。</li>
-<li>短信接收开发板的迁移工作（已完成）。由于业务机器只有一个usb插槽，客户希望把用于短信监控的外置“开发板”，迁移到机房的机器进行监控。需要在插有“开发板”的机器上起一个web服务，已提供远程技术支持与功能使用调试。</li>
-</ol>
 </li>
 </ul>
 

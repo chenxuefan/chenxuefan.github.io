@@ -32,7 +32,7 @@
       <pubDate>Thu, 22 Sep 2022 15:15:02 +0800</pubDate>
       
       <guid>https://chenxuefan.cn/travel/</guid>
-      <description>Nov. 2022 ISO 800 70mm f2.8 Nov. 2022 深圳 阳台山 /⛰️因为选择住在远离闹市的郊外，每天在踏出公寓大门的一刻，都能收获到绝美的山景。见证过眼前这幅画卷的晴天、多云、</description>
+      <description>Nov. 2022 ISO 800 70 mm f2.8 1/40 s Nov. 2022 深圳 阳台山 /⛰️因为选择住在远离闹市的郊外，每天在踏出公寓大门的一刻，都能收获到绝美的山景。见证过眼前这幅画卷的晴天、</description>
     </item>
     
     <item>
@@ -1678,6 +1678,15 @@ I think we&#39;ve had enough small talk.Why are you here? I remember what it sai
     
     <item>
       <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E5%8F%91%E8%AF%81%E5%88%B8/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E5%8F%91%E8%AF%81%E5%88%B8/main/</guid>
+      <description>2022.11.30 配置修改（文本类型、啥啥啥id） conf filed_conf.py 配置doctype（文档类型）、filed（字段信息） env_conf &amp;gt; pro_conf.py 配置文档类型多个字段的id信息（doc_f</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1692,6 +1701,15 @@ I think we&#39;ve had enough small talk.Why are you here? I remember what it sai
       
       <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</guid>
       <description>2021.12.29 熟悉现场，了解需求 开发流程，报表处理 2021.12.30 流程开发 2021.12.31 广州南沙项目支援 回深跨年 2022.01.06 今日计划 出差南宁，做本地核酸，明日进场 2022.01.07 开发“同业业务月报流程”</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E6%B7%B1%E4%BF%A1%E9%99%A2/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E6%B7%B1%E4%BF%A1%E9%99%A2/main/</guid>
+      <description>2022.12.12 切入点 css 类选择器（.）、id选择器（#） xpath 爬虫（requests、beautifulsoup、re）</description>
     </item>
     
     <item>

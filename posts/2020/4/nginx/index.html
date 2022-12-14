@@ -334,9 +334,9 @@ yum install nginx　　　　　　　#centos
 <p>若需要用winscp来操作，则需修改权限，上面文件夹中，为绿色的则是全权限，修改权限的代码如下</p>
 <pre tabindex="0"><code>sudo chmod -R 777 文件名
 </code></pre><h3 id="2-default文件etcnginxsites-availabledefault"><strong>2. default文件：/etc/nginx/sites-available/default</strong></h3>
-<p>打开以下目录，目录下这个‘default’是我们真正要关注的配置文件</p>
+<p>打开以下目录，目录下这个<code>default</code>是我们真正要关注的配置文件</p>
 <p>cd /etc/nginx/sites-available</p>
-<p>&lsquo;default&rsquo;的意思是默认，说明这是一个默认设置</p>
+<p><code>default</code>的意思是默认，说明这是一个默认设置</p>
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/1846139-20200415214841650-1800174895.png" alt="img"></p>
 <p>以防万一，先备份default文件为副本default_bak，代码如下</p>
 <pre tabindex="0"><code>sudo cp default default_bak
@@ -451,7 +451,7 @@ sudo cp -R html html2
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          2279 字
+          2263 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
