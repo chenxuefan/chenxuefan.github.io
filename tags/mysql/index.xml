@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MySQL on 人人都爱小雀斑&#39;s blog</title>
+    <title>mysql on 人人都爱小雀斑&#39;s blog</title>
     <link>https://chenxuefan.cn/tags/mysql/</link>
-    <description>Recent content in MySQL on 人人都爱小雀斑&#39;s blog</description>
+    <description>Recent content in mysql on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「mysql」学习笔记</title>
+      <link>https://chenxuefan.cn/note/mysql/</link>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/note/mysql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>1&#43;X | MySQL</title>
       <link>https://chenxuefan.cn/posts/2020/11/1-x-mysql/</link>

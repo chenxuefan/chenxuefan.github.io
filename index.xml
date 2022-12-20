@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Billy</copyright>
-    <lastBuildDate>Wed, 09 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「mysql」学习笔记</title>
+      <link>https://chenxuefan.cn/note/mysql/</link>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/note/mysql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>docker&#43;nginx&#43;https | 实现通过域名访问服务器资源</title>
       <link>https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/</link>
@@ -437,7 +446,7 @@
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/draft/python-threading/</guid>
-      <description>官方文档 - https://docs.python.org/zh-cn/3/library/threading.html 线程 创建子线程 - threading.Thread() import threading def func(i): print(i) threading.Thread(target = func, args = (1,)) 计算运行时间 import threading, time def target(arg): ... if __name__ == &amp;#39;__main__&amp;#39; start = time.time() threads = [] for i in range(5): thread = threading.Thread(target = target, args = (i,)) thread.start() threads.append(thread) for thread in threads: thread.join() end = time.time()</description>
+      <description>官方文档 - https://docs.python.org/zh-cn/3/library/threading.html 线程 创建子线程 - threading.Thread() qqimport threading def func(i): print(i) threading.Thread(target = func, args = (1,)) 计算运行时间 import threading, time def target(arg): ... if __name__ == &amp;#39;__main__&amp;#39; start = time.time() threads = [] for i in range(5): thread = threading.Thread(target = target, args = (i,)) thread.start() threads.append(thread) for thread in threads: thread.join() end = time.time()</description>
     </item>
     
     <item>
@@ -1709,7 +1718,7 @@ I think we&#39;ve had enough small talk.Why are you here? I remember what it sai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/draft/data-grand/%E6%B7%B1%E4%BF%A1%E9%99%A2/main/</guid>
-      <description>2022.12.12 切入点 css 类选择器（.）、id选择器（#） xpath 爬虫（requests、beautifulsoup、re）</description>
+      <description>2022.12.12 切入点 css 类选择器（.）、id选择器（#） xpath 爬虫（requests、beautifulsoup、re） 2022.12.13 通知 📣 同学们下午好啊，我们还有两天的</description>
     </item>
     
     <item>
@@ -1728,6 +1737,87 @@ I think we&#39;ve had enough small talk.Why are you here? I remember what it sai
       
       <guid>https://chenxuefan.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
       <description>44.128.2.79:8000 我的审核，我的处置 2022.5.17 今日任务 演示广东项目，调研需求 开发“嫌疑人账号汇总流程” 2022.5.18 今日任务 开发“嫌疑人账号汇总流程” 2022.5.19 今日任务 开发“人员信息摸</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E5%AF%BC%E8%AF%BB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E5%AF%BC%E8%AF%BB/</guid>
+      <description>学习目标 1. qq 2. ss https://wiki.datagrand.com/pages/viewpage.action?pageId=14131694</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day1/</guid>
+      <description>一、今日目标 完成rpa、readmine、gitlab帐号的申请 安装并快速试用RPA相关产品（开发平台、机器人） 学会通过readmine登记</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day2/</guid>
+      <description>一、今日目标 学习 达观RPA开发平台 的使用 二、开发平台 线上学习文档请参考：http://rpa-docs.datagrand.com/v12_</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/day5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%89%E5%91%A8/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%B8%89%E5%91%A8/main/</guid>
+      <description>学习目标 学习内容 实战习题</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/main/</guid>
+      <description>学习目标 学习内容 实战习题</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E5%9B%9B%E5%91%A8/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E5%9B%9B%E5%91%A8/main/</guid>
+      <description>学习目标 学习内容 实战习题</description>
     </item>
     
     <item>
