@@ -6,26 +6,8 @@
     <description>Recent content in css on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Billy</copyright>
-    <lastBuildDate>Thu, 19 Nov 2020 02:30:10 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>使用媒体查询展示及隐藏标签</title>
-      <link>https://chenxuefan.cn/posts/2020/11/web-media/</link>
-      <pubDate>Thu, 19 Nov 2020 02:30:10 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/posts/2020/11/web-media/</guid>
-      <description>目标 当分辨率低了就隐藏，达到某个分辨率后就显示 关键代码 @media (max-height: 600px) { #chart{display: none!important;} } @media (max-width: 300px) { #chart{display: none!important;} } 当max-height，即设备屏幕宽度，小于500px时，</description>
-    </item>
-    
-    <item>
-      <title>1&#43;X | css</title>
-      <link>https://chenxuefan.cn/posts/2020/11/1-x-css/</link>
-      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/posts/2020/11/1-x-css/</guid>
-      <description>注释 只有一种注释：/**/ 选择器 标签选择器 - div {} 类选择器 - .box{} ID选择器 - #container{}值必须是唯一的 后代选择器 - p code{} 子选择器 - p&amp;gt;code{} 伪</description>
-    </item>
-    
+    <copyright>粤ICP备20025795号-2</copyright>
+    <lastBuildDate>Tue, 04 Aug 2020 18:42:17 +0800</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
       <link>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</link>
@@ -33,15 +15,6 @@
       
       <guid>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
-    </item>
-    
-    <item>
-      <title>css提高</title>
-      <link>https://chenxuefan.cn/draft/css/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/draft/css/</guid>
-      <description>渐变 线性渐变 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一</description>
     </item>
     
   </channel>

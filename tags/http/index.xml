@@ -6,7 +6,7 @@
     <description>Recent content in http on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Billy</copyright>
+    <copyright>粤ICP备20025795号-2</copyright>
     <lastBuildDate>Wed, 09 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker&#43;nginx&#43;https | 实现通过域名访问服务器资源</title>
@@ -15,24 +15,6 @@
       
       <guid>https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/</guid>
       <description>前言 先看看效果： https://blog.chenxuefan.cn 配置ssl域名证书 这个步骤开始之前，你需要有一个已备案好的域名，并拿到相应的ssl证书。 我采用的方案是使用本站的域名che</description>
-    </item>
-    
-    <item>
-      <title>使用selenium登录雨课堂并获取课程信息</title>
-      <link>https://chenxuefan.cn/posts/2020/12/yuketang-login/</link>
-      <pubDate>Sat, 05 Dec 2020 02:30:10 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/posts/2020/12/yuketang-login/</guid>
-      <description>登录 ⌛️ 操作逻辑：运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录 class Yuketang: def __init__(self): self.login_url = &amp;#34;https://sziit.yuketang.cn/pro/portal/home/&amp;#34; self.dataDic = dict() self.bar=ProgressBar(widgets=[Percentage(),Bar(&amp;#39;#&amp;#39;), &amp;#39; &amp;#39;, Timer(), &amp;#39; &amp;#39;, ETA(), &amp;#39; &amp;#39;])#,term_width=12,FileTransferSpeed(), def Explicit_Waits(self,driver,</description>
-    </item>
-    
-    <item>
-      <title>HTTP状态码 1xx，2xx，3xx，4xx 啥意思</title>
-      <link>https://chenxuefan.cn/posts/2020/12/http-statuscode/</link>
-      <pubDate>Wed, 02 Dec 2020 02:30:10 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/posts/2020/12/http-statuscode/</guid>
-      <description>前言： 经常忘记网络请求返回状态码的意思，所以做个记录，以备后需查看，背是不可能背的，只能忘了来看一看这样子。 1xx 100 （继续） 请求者应当继续提出请</description>
     </item>
     
     <item>

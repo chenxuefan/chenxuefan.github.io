@@ -6,53 +6,8 @@
     <description>Recent content in vue.js on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Billy</copyright>
-    <lastBuildDate>Mon, 24 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>最近的一些小项目</title>
-      <link>https://chenxuefan.cn/posts/2021/5/recent-projects/</link>
-      <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/posts/2021/5/recent-projects/</guid>
-      <description>unsplash 预览地址 - https://chenxuefan.cn/photo/ 项目仓库 - https://github.com/chenxuefan/crawler/tree/main/unsplash 功能模块 - 按照topic（类型）爬取图片（每个类型只爬一张）、前端展示页面 技术栈 - requests、re、xpat</description>
-    </item>
-    
-    <item>
-      <title>unsplash.com图片欣赏</title>
-      <link>https://chenxuefan.cn/photo/</link>
-      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/photo/</guid>
-      <description>图片来源 - unsplash.com 项目地址 - chenxuefan/crawler/unsplash &lt;!DOCTYPE html&gt; wallpapers-unsplash //</description>
-    </item>
-    
-    <item>
-      <title>关于跨域问题的思考和解决思路</title>
-      <link>https://chenxuefan.cn/posts/2020/11/cross-domain/</link>
-      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/posts/2020/11/cross-domain/</guid>
-      <description>前言 什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以</description>
-    </item>
-    
-    <item>
-      <title>NCP疫情最新动态</title>
-      <link>https://chenxuefan.cn/ncp/</link>
-      <pubDate>Sun, 08 Nov 2020 15:15:02 +0800</pubDate>
-      
-      <guid>https://chenxuefan.cn/ncp/</guid>
-      <description>确诊 正在获取... 死亡 治愈 LastUpdateTime -</description>
-    </item>
-    
-    <item>
-      <title>「vue.js」学习笔记</title>
-      <link>https://chenxuefan.cn/note/vue/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/note/vue/</guid>
-      <description>why Vue? 什么是Vue? Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应</description>
-    </item>
-    
+    <copyright>粤ICP备20025795号-2</copyright>
+    <lastBuildDate>Tue, 04 Aug 2020 18:42:17 +0800</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/vue.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
       <link>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</link>

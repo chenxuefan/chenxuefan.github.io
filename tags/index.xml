@@ -6,7 +6,7 @@
     <description>Recent content in Tags on 人人都爱小雀斑&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Billy</copyright>
+    <copyright>粤ICP备20025795号-2</copyright>
     <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mysql</title>
@@ -54,15 +54,6 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://chenxuefan.cn/tags/python/</link>
-      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>git</title>
       <link>https://chenxuefan.cn/tags/git/</link>
       <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
@@ -72,38 +63,11 @@
     </item>
     
     <item>
-      <title>vue.js</title>
-      <link>https://chenxuefan.cn/tags/vue.js/</link>
-      <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/vue.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LeetCode</title>
-      <link>https://chenxuefan.cn/tags/leetcode/</link>
-      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/leetcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>glidedsky</title>
-      <link>https://chenxuefan.cn/tags/glidedsky/</link>
-      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/glidedsky/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>poem</title>
-      <link>https://chenxuefan.cn/tags/poem/</link>
+      <title>python</title>
+      <link>https://chenxuefan.cn/tags/python/</link>
       <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://chenxuefan.cn/tags/poem/</guid>
+      <guid>https://chenxuefan.cn/tags/python/</guid>
       <description></description>
     </item>
     
@@ -117,65 +81,11 @@
     </item>
     
     <item>
-      <title>C</title>
-      <link>https://chenxuefan.cn/tags/c/</link>
-      <pubDate>Mon, 23 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>css</title>
-      <link>https://chenxuefan.cn/tags/css/</link>
-      <pubDate>Thu, 19 Nov 2020 02:30:10 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>1X</title>
       <link>https://chenxuefan.cn/tags/1x/</link>
-      <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/1x/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>BootStrap</title>
-      <link>https://chenxuefan.cn/tags/bootstrap/</link>
-      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/bootstrap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jQuery</title>
-      <link>https://chenxuefan.cn/tags/jquery/</link>
       <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://chenxuefan.cn/tags/jquery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://chenxuefan.cn/tags/javascript/</link>
-      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html</title>
-      <link>https://chenxuefan.cn/tags/html/</link>
-      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://chenxuefan.cn/tags/html/</guid>
+      <guid>https://chenxuefan.cn/tags/1x/</guid>
       <description></description>
     </item>
     
@@ -189,29 +99,38 @@
     </item>
     
     <item>
-      <title>php</title>
-      <link>https://chenxuefan.cn/tags/php/</link>
-      <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
+      <title>css</title>
+      <link>https://chenxuefan.cn/tags/css/</link>
+      <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
-      <guid>https://chenxuefan.cn/tags/php/</guid>
+      <guid>https://chenxuefan.cn/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://chenxuefan.cn/tags/html/</link>
+      <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
       <link>https://chenxuefan.cn/tags/hugo/</link>
-      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
       <guid>https://chenxuefan.cn/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ubuntu</title>
-      <link>https://chenxuefan.cn/tags/ubuntu/</link>
-      <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
+      <title>vue.js</title>
+      <link>https://chenxuefan.cn/tags/vue.js/</link>
+      <pubDate>Tue, 04 Aug 2020 18:42:17 +0800</pubDate>
       
-      <guid>https://chenxuefan.cn/tags/ubuntu/</guid>
+      <guid>https://chenxuefan.cn/tags/vue.js/</guid>
       <description></description>
     </item>
     
