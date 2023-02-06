@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 1&#43;X|css | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  <meta property="og:title" content="1&#43;X|css" />
+<meta property="og:description" content="注释 只有一种注释：/**/ 选择器 类别选择器 div.box{} div .box{} 标签选择器 ID选择器：值必须是唯一的 后代选择器 p code{} 子选择器 p&gt;code{} 伪类选择器 p:first-child{} p:nth-child(2){} 通用选择器（项目开" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://billie52707.cn/posts/2020/11/1&#43;x-css/" />
+<meta property="article:published_time" content="2020-11-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-09T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="1&#43;X|css"/>
+<meta name="twitter:description" content="注释 只有一种注释：/**/ 选择器 类别选择器 div.box{} div .box{} 标签选择器 ID选择器：值必须是唯一的 后代选择器 p code{} 子选择器 p&gt;code{} 伪类选择器 p:first-child{} p:nth-child(2){} 通用选择器（项目开"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://billie52707.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://billie52707.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="/ncp">NCP</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://billie52707.cn/posts/2020/11/1&#43;x-html/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://billie52707.cn/posts/2020/11/1&#43;x-js/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&text=1%2bX%7ccss">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&is_video=false&description=1%2bX%7ccss">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=1%2bX%7ccss&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&name=1%2bX%7ccss&description=%e6%b3%a8%e9%87%8a%20%e5%8f%aa%e6%9c%89%e4%b8%80%e7%a7%8d%e6%b3%a8%e9%87%8a%ef%bc%9a%2f%2a%2a%2f%20%e9%80%89%e6%8b%a9%e5%99%a8%20%e7%b1%bb%e5%88%ab%e9%80%89%e6%8b%a9%e5%99%a8%20div.box%7b%7d%20div%20.box%7b%7d%20%e6%a0%87%e7%ad%be%e9%80%89%e6%8b%a9%e5%99%a8%20ID%e9%80%89%e6%8b%a9%e5%99%a8%ef%bc%9a%e5%80%bc%e5%bf%85%e9%a1%bb%e6%98%af%e5%94%af%e4%b8%80%e7%9a%84%20%e5%90%8e%e4%bb%a3%e9%80%89%e6%8b%a9%e5%99%a8%20p%20code%7b%7d%20%e5%ad%90%e9%80%89%e6%8b%a9%e5%99%a8%20p%26gt%3bcode%7b%7d%20%e4%bc%aa%e7%b1%bb%e9%80%89%e6%8b%a9%e5%99%a8%20p%3afirst-child%7b%7d%20p%3anth-child%282%29%7b%7d%20%e9%80%9a%e7%94%a8%e9%80%89%e6%8b%a9%e5%99%a8%ef%bc%88%e9%a1%b9%e7%9b%ae%e5%bc%80">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&t=1%2bX%7ccss">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#注释">注释</a></li>
+        <li><a href="#选择器">选择器</a></li>
+        <li><a href="#属性">属性</a></li>
+        <li><a href="#a标签的伪类">a标签的伪类</a></li>
+        <li><a href="#布局">布局</a></li>
+        <li><a href="#权重">权重</a></li>
+        <li><a href="#弹性盒子flex教程httpwwwruanyifengcomblog201507flex-grammarhtml">弹性盒子（flex）<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">教程</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#justify-content">justify-content</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        1&#43;X|css
+      </h1>
+      <div class="meta">
+        
+
+        
+
+        <div class="postdate">
+          
+          
+          <time datetime="2020-11-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-09</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/css" rel="tag">css</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h3 id="注释">注释</h3>
+<ul>
+<li>只有一种注释：/**/</li>
+</ul>
+<h3 id="选择器">选择器</h3>
+<ol>
+<li>
+<p>类别选择器</p>
+<p>div.box{}</p>
+<p>div .box{}</p>
+</li>
+<li>
+<p>标签选择器</p>
+</li>
+<li>
+<p>ID选择器：值必须是唯一的</p>
+</li>
+<li>
+<p>后代选择器</p>
+<p>p code{}</p>
+</li>
+<li>
+<p>子选择器</p>
+<p>p&gt;code{}</p>
+</li>
+<li>
+<p>伪类选择器</p>
+<p>p:first-child{}</p>
+<p>p:nth-child(2){}</p>
+</li>
+<li>
+<p>通用选择器（项目开发时，不要使用）</p>
+<p>*{}</p>
+</li>
+<li>
+<p>群组选择器</p>
+<p>.p1,.p2{}</p>
+</li>
+<li>
+<p>相邻同胞选择器</p>
+<p>p+code{}</p>
+</li>
+<li>
+<p>属性选择器</p>
+<p><code>p[title]{}</code></p>
+<p><code>input[type=text][name]</code></p>
+</li>
+</ol>
+<h3 id="属性">属性</h3>
+<ul>
+<li>
+<p>css</p>
+<p>color,background,font,border,margin,padding,width,height,position(relative\absolute\fixed\static),left,top,bottom,right,display&hellip;</p>
+</li>
+<li>
+<p>css3新增</p>
+<p>box-shadow/text-shadow,transform,transition(过渡动画),animation,border-radius,box-sizing,background-position,background-s&hellip;</p>
+</li>
+</ul>
+<h3 id="a标签的伪类">a标签的伪类</h3>
+<ul>
+<li>a:link	未访问的链接</li>
+<li>a:visited    已访问的链接</li>
+<li>a:hover    鼠标悬停</li>
+<li>a:active    被选择的链接</li>
+</ul>
+<h3 id="布局">布局</h3>
+<h3 id="权重">权重</h3>
+<ul>
+<li>!important(10000)&gt;style(1000)&gt;id(100)&gt;class(10)&gt;标签(1)</li>
+</ul>
+<h3 id="弹性盒子flex教程httpwwwruanyifengcomblog201507flex-grammarhtml">弹性盒子（flex）<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">教程</a></h3>
+<ul>
+<li>
+<p><code>display:flex;</code></p>
+</li>
+<li>
+<p>flex-direction</p>
+<ul>
+<li>指定了弹性子元素在父容器中的位置</li>
+<li>语法格式：flex-direction:row|row-reverse}column|column-reverse</li>
+</ul>
+</li>
+<li>
+<p>flex-wrap</p>
+<ul>
+<li>规定flex容器是单行或者多行</li>
+</ul>
+</li>
+<li>
+<p>flex-flow</p>
+<ul>
+<li>是flex-direction和flex-wrap的简写方式</li>
+</ul>
+</li>
+<li>
+<h2 id="justify-content">justify-content</h2>
+</li>
+<li>
+<p>align-items</p>
+</li>
+<li>
+<p>align-content</p>
+</li>
+</ul>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/css" rel="tag">css</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          473 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2020-11-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-11-09</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2020/11/1&#43;x-css/" class="leancloud_visitors" data-flag-title="1&#43;X|css">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yy6dIRdV1qAkgCpp5k4gJci9-gzGzoHsz',
+    appKey: 'przvg3WuOSDAFxAFM6BVE5cJ',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="/ncp">NCP</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#注释">注释</a></li>
+        <li><a href="#选择器">选择器</a></li>
+        <li><a href="#属性">属性</a></li>
+        <li><a href="#a标签的伪类">a标签的伪类</a></li>
+        <li><a href="#布局">布局</a></li>
+        <li><a href="#权重">权重</a></li>
+        <li><a href="#弹性盒子flex教程httpwwwruanyifengcomblog201507flex-grammarhtml">弹性盒子（flex）<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">教程</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#justify-content">justify-content</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&text=1%2bX%7ccss">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&is_video=false&description=1%2bX%7ccss">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=1%2bX%7ccss&body=Check out this article: https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&title=1%2bX%7ccss">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&name=1%2bX%7ccss&description=%e6%b3%a8%e9%87%8a%20%e5%8f%aa%e6%9c%89%e4%b8%80%e7%a7%8d%e6%b3%a8%e9%87%8a%ef%bc%9a%2f%2a%2a%2f%20%e9%80%89%e6%8b%a9%e5%99%a8%20%e7%b1%bb%e5%88%ab%e9%80%89%e6%8b%a9%e5%99%a8%20div.box%7b%7d%20div%20.box%7b%7d%20%e6%a0%87%e7%ad%be%e9%80%89%e6%8b%a9%e5%99%a8%20ID%e9%80%89%e6%8b%a9%e5%99%a8%ef%bc%9a%e5%80%bc%e5%bf%85%e9%a1%bb%e6%98%af%e5%94%af%e4%b8%80%e7%9a%84%20%e5%90%8e%e4%bb%a3%e9%80%89%e6%8b%a9%e5%99%a8%20p%20code%7b%7d%20%e5%ad%90%e9%80%89%e6%8b%a9%e5%99%a8%20p%26gt%3bcode%7b%7d%20%e4%bc%aa%e7%b1%bb%e9%80%89%e6%8b%a9%e5%99%a8%20p%3afirst-child%7b%7d%20p%3anth-child%282%29%7b%7d%20%e9%80%9a%e7%94%a8%e9%80%89%e6%8b%a9%e5%99%a8%ef%bc%88%e9%a1%b9%e7%9b%ae%e5%bc%80">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fbillie52707.cn%2fposts%2f2020%2f11%2f1%2bx-css%2f&t=1%2bX%7ccss">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy; 
+    2020 
+    <span>❤ billie  </span>  
+    <span>粤ICP备20025795号-1 </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

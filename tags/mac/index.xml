@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>在macOS使用docker搭建ubuntu环境</title>
+      <link>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</link>
+      <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</guid>
+      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习,安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器</description>
+    </item>
+    
+    <item>
       <title>「docker」学习笔记 | 镜像、容器、仓库</title>
       <link>https://chenxuefan.cn/note/docker1/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
@@ -33,6 +42,15 @@
       
       <guid>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | macOS Big Sur动态壁纸食用指南</title>
+      <link>https://chenxuefan.cn/posts/2020/6/python-macos-big-sur/</link>
+      <pubDate>Sat, 27 Jun 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/6/python-macos-big-sur/</guid>
+      <description>目录 前言 爬虫篇 壁纸使用篇 后记 前言 北京时间23日凌晨1点，苹果WWDC2020大会开幕。在发布会上，苹果正式发布了新版macOS，并将其命名为</description>
     </item>
     
   </channel>

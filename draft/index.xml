@@ -7,7 +7,88 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>粤ICP备20025795号-2</copyright>
-    <lastBuildDate>Mon, 05 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KFC疯狂星期四文学</title>
+      <link>https://chenxuefan.cn/draft/kfc_crazy_thursday_literature/</link>
+      <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/kfc_crazy_thursday_literature/</guid>
+      <description>不攀有钱人，我花不到他的钱，不小瞧穷人，他不靠我生存，不奉承小人，他入不了我的眼。我只相信三种人：陪我同甘共苦的人，落难帮我一把的人，明天疯</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | pandas</title>
+      <link>https://chenxuefan.cn/draft/python-pandas/</link>
+      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-pandas/</guid>
+      <description>https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame</description>
+    </item>
+    
+    <item>
+      <title>2021年写字总结</title>
+      <link>https://chenxuefan.cn/draft/2021/</link>
+      <pubDate>Fri, 31 Dec 2021 02:30:10 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/2021/</guid>
+      <description>生活 工作</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | xlrd</title>
+      <link>https://chenxuefan.cn/draft/python-xlrd/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-xlrd/</guid>
+      <description>基本操作 import xlrd # 打开文件</description>
+    </item>
+    
+    <item>
+      <title>「pycharm」学习笔记</title>
+      <link>https://chenxuefan.cn/draft/pycharm/</link>
+      <pubDate>Mon, 20 Dec 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/pycharm/</guid>
+      <description>快捷键 import win: Alt + Enter mac: option + Enter pep8 mac：option+command+L</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | aiomysql</title>
+      <link>https://chenxuefan.cn/draft/python-aiomysql/</link>
+      <pubDate>Thu, 15 Jul 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-aiomysql/</guid>
+      <description>官方文档 - https://aiomysql.readthedocs.io/en/latest/pool.html</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | tensorflow</title>
+      <link>https://chenxuefan.cn/draft/python-tensorflow/</link>
+      <pubDate>Thu, 08 Jul 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | sqlalchemy</title>
+      <link>https://chenxuefan.cn/draft/python-sqlalchemy/</link>
+      <pubDate>Thu, 08 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-sqlalchemy/</guid>
+      <description>SQLAlchemy 1.4 Documentation 传说中的ORM技术：Object-Relational Mapping，把关系数据库的表结构映射到对象上。 但是由谁来做这个转换呢？所以O</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | xmind</title>
+      <link>https://chenxuefan.cn/draft/python-xmind/</link>
+      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-xmind/</guid>
+      <description>官方文档 - https://pypi.org/project/XMind/</description>
+    </item>
+    
     <item>
       <title>「广州南沙公安分局」项目开发文档</title>
       <link>https://chenxuefan.cn/draft/data-grand/%E5%8D%97%E6%B2%99%E5%85%AC%E5%AE%89%E5%B1%80/</link>
@@ -15,6 +96,150 @@
       
       <guid>https://chenxuefan.cn/draft/data-grand/%E5%8D%97%E6%B2%99%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
       <description>开发流程 调证 1.1 笔录信息 平台 - 广州市公安局笔录系统、反诈平台 地址 - 68.32.99.74:91/login 功能 根据笔录信息，匹配受害人的账号及银行 登录反诈平台，根据银行卡号，查询归</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | opencv</title>
+      <link>https://chenxuefan.cn/draft/python-opencv/</link>
+      <pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-opencv/</guid>
+      <description>》》》常用函数《《《 图像读取：cv.imread() 图像显示：cv.imshow() 图像叠加：cv.addWeighted() 键盘响应：cv</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | multiprocessing</title>
+      <link>https://chenxuefan.cn/draft/python-multiprocessing/</link>
+      <pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-multiprocessing/</guid>
+      <description>官方文档 - https://docs.python.org/zh-cn/3/library/multiprocessing.html 计算运行时间 import multiprocessing as mp import time def target(arg): ... if __name__ == &amp;#39;__main__&amp;#39; start = time.time() processes = [] for i in range(5): process = mp.Process(target=target, args=(i,)) process.start() # processes.append(process) for process in processes: process.join() # end = time.time() print(f&amp;#39;共耗时：{en</description>
+    </item>
+    
+    <item>
+      <title>线程、进程、协程，该用哪一个比较好？</title>
+      <link>https://chenxuefan.cn/draft/thread-process-coroutine/</link>
+      <pubDate>Fri, 02 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/thread-process-coroutine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | aiomultiprocess</title>
+      <link>https://chenxuefan.cn/draft/python-aiomultiprocess/</link>
+      <pubDate>Sun, 20 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-aiomultiprocess/</guid>
+      <description>About 官方文档 - https://aiomultiprocess.omnilib.dev/en/latest/guide.html</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | aiohttp (server)</title>
+      <link>https://chenxuefan.cn/draft/python-aiohttp-server/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-aiohttp-server/</guid>
+      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://chenxuefan.cn/posts/2021/5/python-asyncio/ Hello,world! from aiohttp import web routes = web.RouteTableDef() @routes.get(&amp;#39;/&amp;#39;) async def hello(request): return web.Response(text=&amp;#34;Hello,world!&amp;#34;) app = web.Application() app.add_routes(routes) web.run_app(app) Handler A request handler must be a coroutine that accepts</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | Django</title>
+      <link>https://chenxuefan.cn/draft/python-django/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | flask</title>
+      <link>https://chenxuefan.cn/draft/python-flask/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-flask/</guid>
+      <description>创建虚拟环境 python3 -m venv venv source ./venv/bin/activate 在终端里导出 FLASK_APP 环境变量，运行应用 export FLASK_APP=&amp;#39;server.py&amp;#39; flask run ps：等号两边无空格</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | hashlib</title>
+      <link>https://chenxuefan.cn/draft/python-hashlib/</link>
+      <pubDate>Tue, 08 Jun 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-hashlib/</guid>
+      <description>什么是hash？ hash是一种算法，该算法通过传值，经过运算得到一串hash值。hash函数有很多种类型，不同之处是其复杂度不同。 hash值</description>
+    </item>
+    
+    <item>
+      <title>「rsa」学习笔记</title>
+      <link>https://chenxuefan.cn/draft/rsa/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/rsa/</guid>
+      <description>图解RSA算法</description>
+    </item>
+    
+    <item>
+      <title>网络爬虫学习笔记</title>
+      <link>https://chenxuefan.cn/draft/spider/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/spider/</guid>
+      <description>反爬虫笔记 验证码 思路 - 商用API接口、打码平台、自主训练深度学习模型等 伪造headers（请求头） 简介 - 简单的headers可应对反爬很一般</description>
+    </item>
+    
+    <item>
+      <title>「招商证券」项目开发文档</title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E6%8B%9B%E5%95%86%E8%AF%81%E5%88%B8/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E6%8B%9B%E5%95%86%E8%AF%81%E5%88%B8/</guid>
+      <description>技术难点 登录 密码（rsa） 验证码 获取页面信息 使用selenium登录并获取cookies 使用cookies发送requests请求 页面截图</description>
+    </item>
+    
+    <item>
+      <title>钢琴学习笔记</title>
+      <link>https://chenxuefan.cn/draft/piano/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/piano/</guid>
+      <description>音阶 调 旋律与和声</description>
+    </item>
+    
+    <item>
+      <title>「广东农信社」项目开发文档</title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E4%B8%9C%E5%86%9C%E4%BF%A1%E7%A4%BE/</guid>
+      <description>任务简介 完成客户提供的两份测试报告 联调测试报告 单元测试报告 出差日志 联系人 - 冼健：17606688412 地址 - 官洲生命科学创新中心。地铁4号线</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | Scrapy</title>
+      <link>https://chenxuefan.cn/draft/python-scrapy/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-scrapy/</guid>
+      <description>安装 - pip install scrapy 新建项目 - scrapy startproject project_name /项目目录层级关系/ scrapy.cfg: 项目的配置文件 tutorial/: 该项目的python模块。之后您将在此加入代码。 tutorial/items.py: 项目中的item文件. tutorial/pipelines.py:</description>
+    </item>
+    
+    <item>
+      <title>「广电计量」项目开发文档</title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E7%94%B5%E8%AE%A1%E9%87%8F/</guid>
+      <description>需求分析 流水表（分公司/总部） 需求细节：复制整张sheet，至资金表的对应日期sheet页 使用方法：rpa.excel.copy_sheet</description>
+    </item>
+    
+    <item>
+      <title>达观工作笔记</title>
+      <link>https://chenxuefan.cn/draft/data-grand/dddd/2021/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/dddd/2021/</guid>
+      <description>工作日志 2021.05.07 第一次在本公司上班 2021.05.20 今日任务 开发博客新功能“Most recent”，记录最新更新的文章 2021.05.28 STAR法则 Situation： 事情是在什</description>
     </item>
     
     <item>
@@ -27,12 +252,111 @@
     </item>
     
     <item>
+      <title>「docker」学习笔记 | 容器编排之Docker Swarm</title>
+      <link>https://chenxuefan.cn/draft/docker4/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/docker4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>使用docker容器化部署服务器</title>
       <link>https://chenxuefan.cn/draft/aliyun-server-docker/</link>
       <pubDate>Tue, 27 Apr 2021 02:30:10 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/draft/aliyun-server-docker/</guid>
       <description>新建容器 docker run -itd --name chenxuefan -p 24:22 --privileged centos /usr/sbin/init --privileged 使用该参数，container内的root拥有真正的root权限。 否则，container内的root只是外部</description>
+    </item>
+    
+    <item>
+      <title>我的博客项目开发文档</title>
+      <link>https://chenxuefan.cn/draft/billie52707/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/billie52707/</guid>
+      <description>功能设计 需求阐述 统计 - 各个文件类型的文件个数和总文件大小（已完成） 将每日统计的数据，以日期为sheet的命名，写入sheet表（已完成） 命名</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | keyboard</title>
+      <link>https://chenxuefan.cn/draft/python-keyboard/</link>
+      <pubDate>Thu, 15 Apr 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-keyboard/</guid>
+      <description>write(text, delay=0, restore_state_after=True, exact=None) send(hotkey, do_press=True, do_release=True) press_and_release() /换汤不换药/ is_pressed() parse_hotkey(hotkey)</description>
+    </item>
+    
+    <item>
+      <title>「马士基」项目开发文档</title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E9%A9%AC%E5%A3%AB%E5%9F%BA%E8%88%AA%E8%BF%90/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E9%A9%AC%E5%A3%AB%E5%9F%BA%E8%88%AA%E8%BF%90/</guid>
+      <description>收获与感悟 学习总结 python 常用模块 rpa、selenium、openpyxl、os、logging、xpath、requests 其他 装饰器、迭代器</description>
+    </item>
+    
+    <item>
+      <title>2020年写字总结</title>
+      <link>https://chenxuefan.cn/draft/2020/</link>
+      <pubDate>Thu, 31 Dec 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/2020/</guid>
+      <description>2020，注定是不平凡的一年。 ———— 我在去年的「NCP」疫情项目的README文档中这样写🍞 我始终坚信，一个意志足够坚定的人，是不会被外界</description>
+    </item>
+    
+    <item>
+      <title>深信息学生信息查询系统</title>
+      <link>https://chenxuefan.cn/draft/scores-search/</link>
+      <pubDate>Tue, 08 Dec 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/scores-search/</guid>
+      <description>技术栈 🀄️ Django requests rsa nginx 项目简介 ➖ 此项目旨在「方便同学查询学科成绩」，以往查询成绩的方式主要为 登录教务系统，查看成绩，需要连接学校内网，过程较为繁</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | pyqt5</title>
+      <link>https://chenxuefan.cn/draft/python-pyqt5/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-pyqt5/</guid>
+      <description>前言 PyQt5简介 PyQt是QT框架的Python语言实现，存在有PyQt3，PyQt4，PyQt5三个版本。PyQt5已经于之前的版本有较</description>
+    </item>
+    
+    <item>
+      <title>风格迁移 - GUI设计文档</title>
+      <link>https://chenxuefan.cn/draft/pyqt-style-transform/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/pyqt-style-transform/</guid>
+      <description>布局篇 简单来一张图看一看 主体使用QGridLayout进行布局，分为三块，三块分别用QGridLayout、QHBoxLayout、QGri</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | matplotlib</title>
+      <link>https://chenxuefan.cn/draft/python-matplotlib/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-matplotlib/</guid>
+      <description>一、图表的保存 ## 保存图片 直接输入文件路径，新建文件名字 ## dpi图片分辨率 越高越清晰。bbox_inches = &amp;#39;tight&amp;#39;,</description>
+    </item>
+    
+    <item>
+      <title>武汉之行</title>
+      <link>https://chenxuefan.cn/draft/wuhan/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/wuhan/</guid>
+      <description>酒店篇 整体环境 29/日下午五点半到的酒店，共有九层，到前台办理入住之后就上楼了，我们都在六楼，有两人间和大床间可选，我们学生住两人的，两个老</description>
+    </item>
+    
+    <item>
+      <title>「markdown」学习笔记</title>
+      <link>https://chenxuefan.cn/draft/markdown/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/markdown/</guid>
+      <description>代码增删对比效果 - old man + new guy</description>
     </item>
     
     <item>
@@ -73,6 +397,15 @@
     
     <item>
       <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E4%BD%9B%E5%B1%B1%E7%A8%8E%E5%8A%A1%E5%B1%80/</guid>
+      <description>2022.4.25 今日任务 （周一） 需求调研：“一般纳税人认定流程”，花一下午，与业务人员了解完所有的需求，交接需求文档与业务录屏 调研结果：发现业务量繁多，流</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://chenxuefan.cn/draft/data-grand/%E5%8D%8E%E6%B6%A6%E4%BA%94%E4%B8%B0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -100,6 +433,24 @@
     
     <item>
       <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%85%AC%E5%AE%89%E5%8E%85/main/</guid>
+      <description>2021.12.27 今日计划 出差南宁 熟悉路况交通 游玩广西药用植物园 2021.12.28 今日计划 上午拜访客户现场，调研需求 下午安装环境，进行开发工作 2021.12.29 今日计划 上午被通知由于客户办</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E5%B9%BF%E8%A5%BF%E5%8C%97%E9%83%A8%E6%B9%BE%E9%93%B6%E8%A1%8C/</guid>
+      <description>2021.12.29 熟悉现场，了解需求 开发流程，报表处理 2021.12.30 流程开发 2021.12.31 广州南沙项目支援 回深跨年 2022.01.06 今日计划 出差南宁，做本地核酸，明日进场 2022.01.07 开发“同业业务月报流程”</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://chenxuefan.cn/draft/data-grand/%E6%B7%B1%E4%BF%A1%E9%99%A2/main/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -109,11 +460,20 @@
     
     <item>
       <title></title>
-      <link>https://chenxuefan.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/main/</link>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://chenxuefan.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/main/</guid>
-      <description>需求解决记录 1. 通用版机器人证书 （已确认，可以）提供通用版的机器人证书*300，作为证书池，不需要根据每台电脑的机器码进行逐一申请证书，方便客</description>
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%81%94%E8%85%BE%E7%A7%91%E6%8A%80/</guid>
+      <description>2022.9.14 问题解决记录 开发平台 开发平台流程发布失败 查看请求界面出现白屏 原因：服务端日志拥堵，内存紧张 控制中心 （已解决）公司的控制中心，无法启动服务 数</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/data-grand/%E8%8E%86%E7%94%B0%E5%85%AC%E5%AE%89%E5%B1%80/</guid>
+      <description>44.128.2.79:8000 我的审核，我的处置 2022.5.17 今日任务 演示广东项目，调研需求 开发“嫌疑人账号汇总流程” 2022.5.18 今日任务 开发“嫌疑人账号汇总流程” 2022.5.19 今日任务 开发“人员信息摸</description>
     </item>
     
     <item>
@@ -315,12 +675,66 @@
     </item>
     
     <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/vim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>https://chenxuefan.cn/draft/api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/api/</guid>
+      <description>2020豆瓣电影最新api 获取正在热映的电影：http://api.douban.com/v2/movie/in_theaters?apik</description>
+    </item>
+    
+    <item>
       <title>bt</title>
       <link>https://chenxuefan.cn/draft/bt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/draft/bt/</guid>
       <description>启动 sudo /etc/init.d/bt default 重启 sudo bt restart woda1bby testpasswd</description>
+    </item>
+    
+    <item>
+      <title>css提高</title>
+      <link>https://chenxuefan.cn/draft/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/css/</guid>
+      <description>渐变 线性渐变 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;style&amp;gt; /* 标准写法 */ section{ width: 300px; height: 300px; background: linear-gradient(to right bottom,red 5%,green 10%,blue) /* linear-gradient(参数) 参数：方向、颜色 1.方向 - 从一个边到另外一</description>
+    </item>
+    
+    <item>
+      <title>docker心路历程</title>
+      <link>https://chenxuefan.cn/draft/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/docker/</guid>
+      <description>-bash: docker-machine: command not found（macOS） base=https://github.com/docker/machine/releases/download/v0.14.0 &amp;amp;&amp;amp; curl -L $base/docker-machine-$(uname -s)-$(uname -m) &amp;gt;/usr/local/bin/docker-machine &amp;amp;&amp;amp; chmod +x /usr/local/bin/docker-machine ​</description>
+    </item>
+    
+    <item>
+      <title>HTML标签总结</title>
+      <link>https://chenxuefan.cn/draft/html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/html/</guid>
+      <description>font size color face img src height width title alt 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border cellspacing cellpadding width height</description>
+    </item>
+    
+    <item>
+      <title>other</title>
+      <link>https://chenxuefan.cn/draft/other/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/other/</guid>
+      <description>注册香港apple id及充值教程 URI &amp;amp; URL URI 在于I(Identifier)，是统一资源标示符，可以唯一标识一个资源。 URL在于L(Locater</description>
     </item>
     
   </channel>

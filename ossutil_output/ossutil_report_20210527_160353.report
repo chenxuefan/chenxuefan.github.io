@@ -1,0 +1,2 @@
+# ossutil cp ./ oss://billie-s-blog/ -rf
+[Error] 2021/05/27 16:05:19 upload .git/objects/2e/75591422387cc8cbff2bb3d70a8cf386514dca to oss://billie-s-blog/.git/objects/2e/75591422387cc8cbff2bb3d70a8cf386514dca error, info: Put http://billie-s-blog.oss-cn-beijing.aliyuncs.com/.git%2Fobjects%2F2e%2F75591422387cc8cbff2bb3d70a8cf386514dca: dial tcp: lookup billie-s-blog.oss-cn-beijing.aliyuncs.com on [::1]:53: read udp [::1]:55282->[::1]:53: read: connection refused, File=.git/objects/2e/75591422387cc8cbff2bb3d70a8cf386514dca

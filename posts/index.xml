@@ -18,12 +18,474 @@
     </item>
     
     <item>
+      <title>使用 Dockerfile 构建项目</title>
+      <link>https://chenxuefan.cn/posts/2022/10/dockerfile/</link>
+      <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2022/10/dockerfile/</guid>
+      <description>悄悄更新! 🌹 https://chenxuefan.cn/note/docker1/#使用-dockerfile-构建项目</description>
+    </item>
+    
+    <item>
+      <title>PyQt5开发中的「界面卡顿」问题解决记录</title>
+      <link>https://chenxuefan.cn/posts/2022/6/pyqt/</link>
+      <pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2022/6/pyqt/</guid>
+      <description>起 每十秒刷新一下界面上的信息，一开始很顺畅，跑了几十分钟后界面变得卡顿 承 layout中添加tablewidget控件，添加控件的这个过程是在</description>
+    </item>
+    
+    <item>
+      <title>生活不易 喵喵叹气</title>
+      <link>https://chenxuefan.cn/posts/2022/4/miaomiao/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2022/4/miaomiao/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>浅谈自动化爬虫场景下的数据持久化</title>
+      <link>https://chenxuefan.cn/posts/2021/6/user-data-dir/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/6/user-data-dir/</guid>
+      <description>每次我们使用 selenium 或 Pyppeteer 打开的时候都是一个新的空白的浏览器。而且如果遇到了需要登录的网页之后，如果我们这次登录上了，下一次再启动又是空白了，又得登</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | pyppeteer</title>
+      <link>https://chenxuefan.cn/posts/2021/6/python-pyppeteer/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/6/python-pyppeteer/</guid>
+      <description>Selenium &amp;amp; Pyppeteer selenium的功能十分强大，但很多时候我们发现他也有其自身的缺点，比如： 需要安装好相关的浏览器，Chrome或Firefox等 需要</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | urllib</title>
+      <link>https://chenxuefan.cn/posts/2021/6/python-urllib/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/6/python-urllib/</guid>
+      <description>官方文档 - https://docs.python.org/3/library/urllib.html urllib is a package that collects several modules for working with URLs: urllib.request for opening and reading URLs urllib.error containing the exceptions raised by urllib.request urllib.parse for parsing URLs urllib.robotparser for parsing robots.txt files urllib.request urllib.request.urlopen(url,data=None,[timeout, ],cafile=None,capath=None,cadefault=False,context=None) urllib.parse urljoin from urllib.parse import urljoin url = &amp;#39;https://chenxuefan.cn&amp;#39; url = urljoin(url, &amp;#39;note&amp;#39;) # &amp;#39;https://chenxuefan.cn/note&amp;#39; quote from urllib.parse import quote, unquote ch = &amp;#39</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | aiohttp (client)</title>
+      <link>https://chenxuefan.cn/posts/2021/6/python-aiohttp-client/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/6/python-aiohttp-client/</guid>
+      <description>About Key Features Supports both Client and HTTP Server. Supports both Server WebSockets and Client WebSockets out-of-the-box without the Callback Hell. Web-server has Middlewares, Signals and plugable routing. 客户端 - https://docs.aiohttp.org/en/stable/client.html#aiohttp-client 服务端 - https://docs.aiohttp.org/en/stable/web.html#aiohttp-web asyncio - https://chenxuefan.cn/posts/2021/5/python-asyncio/ 一个简单的示例 import asyncio, aiohttp, time async def fetch(session,url): async with session.get(url, verify_ssl=False) as response: return await response.text(), response.status async def main(): async with</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | asyncio</title>
+      <link>https://chenxuefan.cn/posts/2021/5/python-asyncio/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/python-asyncio/</guid>
+      <description>why async？ 堵塞 阻塞状态指程序未得到所需计算资源时被挂起的状态。程序在等待某个操作完成期间，自身无法继续处理其他的事情，则称该程序在该操作</description>
+    </item>
+    
+    <item>
+      <title>最近的一些小项目</title>
+      <link>https://chenxuefan.cn/posts/2021/5/recent-projects/</link>
+      <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/recent-projects/</guid>
+      <description>unsplash 预览地址 - https://chenxuefan.cn/photo/ 项目仓库 - https://github.com/chenxuefan/crawler/tree/main/unsplash 功能模块 - 按照topic（类型）爬取图片（每个类型只爬一张）、前端展示页面 技术栈 - requests、re、xpat</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | BeautifulSoup</title>
+      <link>https://chenxuefan.cn/posts/2021/5/python-beautifulsoup/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/python-beautifulsoup/</guid>
+      <description>前言 Why BeautifulSoup? Beautiful Soup提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的</description>
+    </item>
+    
+    <item>
+      <title>LeetCode | 670. 最大交换</title>
+      <link>https://chenxuefan.cn/posts/2021/5/leetcode-670/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/leetcode-670/</guid>
+      <description>难度 - 中等 题目地址 - https://leetcode-cn.com/problems/maximum-swap/ 描述：定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。 思路：找到列表中第一个跟大到小排列列表</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | re</title>
+      <link>https://chenxuefan.cn/posts/2021/5/python-re/</link>
+      <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/python-re/</guid>
+      <description>前言 正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配。 Python 自1.5版本起增加了re 模块，它提供 Perl 风格的正则表达</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | r&#39;&#39;, b&#39;&#39;, u&#39;&#39;, f&#39;&#39;</title>
+      <link>https://chenxuefan.cn/posts/2021/5/python-rbuf/</link>
+      <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/python-rbuf/</guid>
+      <description>r&amp;rsquo;&amp;rsquo; - 非转义原生字符串 以r开头的字符，常用于正则表达式，对应着re模块。 r&#39;\n&#39; - 经处理，&amp;rsquo;\n&amp;rsquo;表示的是&amp;rsquo;\&amp;</description>
+    </item>
+    
+    <item>
+      <title>WakaTime! 完美统计代码工作量</title>
+      <link>https://chenxuefan.cn/posts/2021/5/wakatime/</link>
+      <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/wakatime/</guid>
+      <description>前言 这又是一个相见恨晚的神级工具，开发人员统计工作量，统计代码时常，必备神器 上车指南 登录wakatime官网，注册一个账号，可以用GitHu</description>
+    </item>
+    
+    <item>
+      <title>GlidedSky | 爬虫题目2</title>
+      <link>https://chenxuefan.cn/posts/2021/5/glidedsky-level2/</link>
+      <pubDate>Fri, 07 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/glidedsky-level2/</guid>
+      <description>题目地址 - http://glidedsky.com/level/crawler-basic-2 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-2 心得 这道题新增了分页的机制，对服务端来讲，分页好处是可以反爬。这道题而言，对请求链接进行迭代处理，多次请求即可，如</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | requests</title>
+      <link>https://chenxuefan.cn/posts/2021/5/python-requests/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/python-requests/</guid>
+      <description>Requests: 让 HTTP 服务人类 官方文档 - https://docs.python-requests.org/zh_CN/latest/ 快速上手 https://docs.python-requests.org/zh_CN/latest/user/quickstart.html （1）发送请求 request(method, url, **kwargs) get(url, params=None, **kwargs) options(url, **kwargs) head(url, **kwargs) post(url, data=None, json=None, **kwargs) put(url, data=None, **kwargs) patch(url, data=None, **kwargs) delete(url, **kwargs) r = requests.put(&amp;#39;http://httpbin.org/put&amp;#39;, data = {&amp;#39;key&amp;#39;:&amp;#39;value&amp;#39;}) r = requests.delete(&amp;#39;http://httpbin.org/delete&amp;#39;) r = requests.head(&amp;#39;http://httpbin.org/get&amp;#39;) r = requests.options(&amp;#39;http://httpbin.org/get&amp;#39;) （2）请求参数 params</description>
+    </item>
+    
+    <item>
+      <title>我用什么才能留住你</title>
+      <link>https://chenxuefan.cn/posts/2021/5/how-can-i/</link>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/how-can-i/</guid>
+      <description>我用什么才能留住你？ 我给你瘦弱的街道、绝望的落日、荒郊的月亮。 我给你一个久久望着孤月的人悲哀。 我给你我书中所蕴含的一切悟力，以及我生活中所能</description>
+    </item>
+    
+    <item>
+      <title>GlidedSky | 爬虫题目1</title>
+      <link>https://chenxuefan.cn/posts/2021/5/glidedsky-level1/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/glidedsky-level1/</guid>
+      <description>题目地址 - http://glidedsky.com/level/crawler-basic-1 待爬取网站 - http://glidedsky.com/level/web/crawler-basic-1 心得 这道题目所需的技能点都很基础，如发送请求、文档解析，很多工具都可以达到目的，重要是要寻找最简短的代码、最优雅的</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | wordcloud</title>
+      <link>https://chenxuefan.cn/posts/2021/5/python-wordcloud/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/5/python-wordcloud/</guid>
+      <description>今天是五一假期的第一天，学一点有意思的东西！ 数据分析领域经常会用到统计与展示的功能需求，数据的展示方式，传统的有统计图之类，但稍显古板，对于</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 异常处理</title>
+      <link>https://chenxuefan.cn/posts/2021/4/python-error/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/4/python-error/</guid>
+      <description>什么是异常? 异常就是程序运行时发生错误的信号（在程序出现错误时，则会产生一个异常，若程序没有处理它，则会抛出该异常，程序的运行也随之终止）。</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 迭代器&amp;生成器</title>
+      <link>https://chenxuefan.cn/posts/2021/4/python-iterator-generator/</link>
+      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/4/python-iterator-generator/</guid>
+      <description>迭代器（iterator） 迭代器是访问集合元素的一种方式。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不</description>
+    </item>
+    
+    <item>
+      <title>My lady,Lyanna Mormont.</title>
+      <link>https://chenxuefan.cn/posts/2021/4/lyanna-mormont/</link>
+      <pubDate>Sun, 25 Apr 2021 00:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/4/lyanna-mormont/</guid>
+      <description>S05E02 Bear Island knows no king but the king in the North,whose name is Stark.
+S06E07 Welcome to Bear Island.
+I doubt it.My mother wasn&#39;t a great beauty or any other kind of beauty.She was a great warrior,though.She died fighting for your brother Robb.
+I think we&#39;ve had enough small talk.Why are you here? I remember what it said.Bear Island knows no king but the king in the North whose name is Stark.</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | xpath</title>
+      <link>https://chenxuefan.cn/posts/2021/4/python-xpath/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/4/python-xpath/</guid>
+      <description>关于lxml ​ lxml是python的一个解析库，支持「HTML」和「XML」的解析，支持xpath解析方式，而且解析效率非常高。 1. 安装 Windows/macOS pip3</description>
+    </item>
+    
+    <item>
       <title>记一次迁移服务器的经历</title>
       <link>https://chenxuefan.cn/posts/2021/4/aliyun-server-initialization/</link>
       <pubDate>Sun, 18 Apr 2021 02:30:10 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2021/4/aliyun-server-initialization/</guid>
       <description>前言 ​ 故事的起源，要从前几个星期说起，我在阿里云购入的为期一年的云服务器正式到期，本来在几个月之前，如果我选择续费的话，还可以享受优惠，只需</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | logging</title>
+      <link>https://chenxuefan.cn/posts/2021/4/python-logging/</link>
+      <pubDate>Wed, 14 Apr 2021 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/4/python-logging/</guid>
+      <description>官方文档 - https://docs.python.org/zh-cn/3.8/howto/logging.html#logging-basic-tutorial 基础日志 - logging.basicConfig() 日志基础教程 import logging logging.basicConfig( filename=&amp;#39;document.log&amp;#39;, level=logging.INFO, format=&amp;#34;%(asctime)s %(pathname)s[%(lineno)s]%(levelname)s:%(message)s&amp;#34;, datefmt=&amp;#34;%Y-%m-%d %H:%M:%S %p&amp;#34; ) logging.info(&amp;#39;记录到日志&amp;#39;) 下面结合四个参数展开来聊</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 一次使用装饰器时引发的思考</title>
+      <link>https://chenxuefan.cn/posts/2021/4/python-decorator-return/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/4/python-decorator-return/</guid>
+      <description>前言 今天使用装饰器时，遇到这样一个错误： 根据报错提示，大意是指不能打包一个空值。而我写的装饰器是这样的： def catch_error(func): def wrapper(*args,**kwargs): try: print(f&amp;#39;正</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | os</title>
+      <link>https://chenxuefan.cn/posts/2021/4/python-os/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/4/python-os/</guid>
+      <description>osos.remove(path) 删除文件 os.remove(path) - 删除文件 os.removedirs(path) - 删除空文件夹 os.mkdir(dirname) - 新建文件夹 os.makedirs(path) - 递归新建文件夹 os.rmdir(path) - 删除空文件夹 os.rename(a,b) - 重命名 os.listdir(path) - 返回路径下所有的文件及文件夹 os.system(&amp;quot;ls&amp;quot;) - 运行sh</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 装饰器</title>
+      <link>https://chenxuefan.cn/posts/2021/4/python-decorator/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/4/python-decorator/</guid>
+      <description>前言 1. 如何理解Python装饰器？ 装饰器本质上是一个「Python函数」，它可以让其他函数在不需要做任何代码变动的前提下增加额外的扩展功能，</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | openpyxl</title>
+      <link>https://chenxuefan.cn/posts/2021/3/python-openpyxl/</link>
+      <pubDate>Sun, 28 Mar 2021 01:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/3/python-openpyxl/</guid>
+      <description>前言 官方文档 https://pypi.org/project/openpyxl/ 常规使用 1. 工作簿的使用 wb = openpyxl.Workbook() # 新建 wb = openpyxl.load_workbook(&amp;#39;filename&amp;#39;) # 加载本地的文件 all_sheet = wb.sheetnames # 获取所有的sheet，返回list wb.remove(sheetname) wb.save(filename) 2. 工作表的使用 ## 创建工作</description>
+    </item>
+    
+    <item>
+      <title>我给你瘦弱的街道，绝望的黄昏，荒郊的月亮，我给你...</title>
+      <link>https://chenxuefan.cn/posts/2021/3/march-shoot/</link>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/3/march-shoot/</guid>
+      <description>/小家/ /阳台盛开的第一朵月季，奶黄色/ /仙湖植物园/ /傍晚的罗湖商务中心/ /每次去盐田路上都会遇到云雾缭绕的梧桐山/ /每天打开落地窗就能看</description>
+    </item>
+    
+    <item>
+      <title>Ajax 的原理和解析</title>
+      <link>https://chenxuefan.cn/posts/2021/2/ajax/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/ajax/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当我们在用 requests 抓取页面的时候，得到的结果可能会和在浏览器中看到的不一样：在浏览器中正常</description>
+    </item>
+    
+    <item>
+      <title>代理的基本原理和用法</title>
+      <link>https://chenxuefan.cn/posts/2021/2/proxy/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/proxy/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在做爬虫的过程中经常会遇到这样的情况，最初爬虫正常运行，正常抓取数据，一切看起来</description>
+    </item>
+    
+    <item>
+      <title>令人抓狂的 JavaScript 混淆技术</title>
+      <link>https://chenxuefan.cn/posts/2021/2/js/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/js/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在爬取网站的时候，经常会遇到各种各样类似加密的情形，比如： 某个网站的 URL 带有一些看</description>
+    </item>
+    
+    <item>
+      <title>原理探究，了解爬虫的基本原理</title>
+      <link>https://chenxuefan.cn/posts/2021/2/principle/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/principle/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们可以把互联网比作一张大网，而爬虫（即网络爬虫）便是在网上爬行的蜘蛛。如果把网的节</description>
+    </item>
+    
+    <item>
+      <title>基础探究，Session 与 Cookies</title>
+      <link>https://chenxuefan.cn/posts/2021/2/sessioncookies/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/sessioncookies/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们在浏览网站的过程中，经常会遇到需要登录的情况，而有些网页只有登录之后才可以访问，</description>
+    </item>
+    
+    <item>
+      <title>多路加速，了解多线程基本原理</title>
+      <link>https://chenxuefan.cn/posts/2021/2/thread/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/thread/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们知道，在一台计算机中，我们可以同时打开许多软件，比如同时浏览网页、听音乐、打字等</description>
+    </item>
+    
+    <item>
+      <title>多路加速，了解多进程基本原理</title>
+      <link>https://chenxuefan.cn/posts/2021/2/process/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/process/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 在上一课时我们了解了多线程的基本概念，同时我们也提到，Python 中的多线程是不能很</description>
+    </item>
+    
+    <item>
+      <title>夯实根基，Web 网页基础</title>
+      <link>https://chenxuefan.cn/posts/2021/2/web/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/web/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当我们用浏览器访问网站时，页面各不相同，那么你有没有想过它为何会呈现成这个样子呢？本</description>
+    </item>
+    
+    <item>
+      <title>就想写个爬虫，我到底要学多少东西啊？</title>
+      <link>https://chenxuefan.cn/posts/2021/2/spider/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/spider/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 当今大数据的时代，网络爬虫已经成为了获取数据的一个重要手段。 但要学习好爬虫并没有那么</description>
+    </item>
+    
+    <item>
+      <title>异步爬虫的原理和解析</title>
+      <link>https://chenxuefan.cn/posts/2021/2/async/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/async/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 我们知道爬虫是 IO 密集型任务，比如如果我们使用 requests 库来爬取某个站点的话，发出一个请求之后</description>
+    </item>
+    
+    <item>
+      <title>必知必会，掌握 HTTP 基本原理</title>
+      <link>https://chenxuefan.cn/posts/2021/2/http/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/2/http/</guid>
+      <description>*本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才 URI 和 URL 首先，我们来了解一下 URI 和 URL，URI 的全称为 Uniform Resource Identifier，即统一</description>
+    </item>
+    
+    <item>
+      <title>世界地图 | 国家名称表中英文的映射</title>
+      <link>https://chenxuefan.cn/posts/2021/1/echarts-country/</link>
+      <pubDate>Mon, 04 Jan 2021 02:30:10 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2021/1/echarts-country/</guid>
+      <description>nameMap = { &amp;lsquo;Singapore Rep.&amp;rsquo;:&amp;lsquo;新加坡&amp;rsquo;, &amp;lsquo;Dominican Rep.&amp;rsquo;:&amp;lsquo;多米尼加&amp;rsquo;, &amp;lsq</description>
+    </item>
+    
+    <item>
+      <title>使用selenium登录雨课堂并获取课程信息</title>
+      <link>https://chenxuefan.cn/posts/2020/12/yuketang-login/</link>
+      <pubDate>Sat, 05 Dec 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/12/yuketang-login/</guid>
+      <description>登录 ⌛️ 操作逻辑：运行程序 - 微信扫码登录 - 获取登录cookie，下次运行程序时即可跳过扫码直接登录 class Yuketang: def __init__(self): self.login_url = &amp;#34;https://sziit.yuketang.cn/pro/portal/home/&amp;#34; self.dataDic = dict() self.bar=ProgressBar(widgets=[Percentage(),Bar(&amp;#39;#&amp;#39;), &amp;#39; &amp;#39;, Timer(), &amp;#39; &amp;#39;, ETA(), &amp;#39; &amp;#39;])#,term_width=12,FileTransferSpeed(), def Explicit_Waits(self,driver,</description>
+    </item>
+    
+    <item>
+      <title>HTTP状态码 1xx，2xx，3xx，4xx 啥意思</title>
+      <link>https://chenxuefan.cn/posts/2020/12/http-statuscode/</link>
+      <pubDate>Wed, 02 Dec 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/12/http-statuscode/</guid>
+      <description>前言： 经常忘记网络请求返回状态码的意思，所以做个记录，以备后需查看，背是不可能背的，只能忘了来看一看这样子。 1xx 100 （继续） 请求者应当继续提出请</description>
+    </item>
+    
+    <item>
+      <title>十一月摄影集 | 十一月也很好玩</title>
+      <link>https://chenxuefan.cn/posts/2020/11/november-shoot/</link>
+      <pubDate>Mon, 30 Nov 2020 01:54:00 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/november-shoot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NCP | 爬取国家卫健委网站</title>
+      <link>https://chenxuefan.cn/posts/2020/11/ncp-nhc-readme/</link>
+      <pubDate>Sun, 29 Nov 2020 14:34:18 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/ncp-nhc-readme/</guid>
+      <description>1. 前言 🇨🇳 1.1 目标网站 「http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml」 ​ 做疫情这个项目的时候，</description>
+    </item>
+    
+    <item>
+      <title>NCP | 新冠疫情的监测与趋势分析</title>
+      <link>https://chenxuefan.cn/posts/2020/11/ncp-readme/</link>
+      <pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/ncp-readme/</guid>
+      <description>1. 前言 🇨🇳 1.1 项目阐述 👨🏻‍💻 2020，注定是不平凡的一年，新冠疫情如晴天霹雳将沉浸在2020年春节气氛中的人们骤然推进人人自危的疫情防控中，</description>
+    </item>
+    
+    <item>
+      <title>使用媒体查询展示及隐藏标签</title>
+      <link>https://chenxuefan.cn/posts/2020/11/web-media/</link>
+      <pubDate>Thu, 19 Nov 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/web-media/</guid>
+      <description>目标 当分辨率低了就隐藏，达到某个分辨率后就显示 关键代码 @media (max-height: 600px) { #chart{display: none!important;} } @media (max-width: 300px) { #chart{display: none!important;} } 当max-height，即设备屏幕宽度，小于500px时，</description>
+    </item>
+    
+    <item>
+      <title>关于跨域问题的思考和解决思路</title>
+      <link>https://chenxuefan.cn/posts/2020/11/cross-domain/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/cross-domain/</guid>
+      <description>前言 什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | 考点小结</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-examination/</link>
+      <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-examination/</guid>
+      <description>html、css、js html5新增了离线缓存机制 使用媒体查询时，媒体类型取值为screen代表 - 用于所有设备 range输入类型定义滑块控件</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | BootStrap</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-boostrap/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-boostrap/</guid>
+      <description>认识bootstrap框架 bootstrap是一个开源的UI（界面设计）框架，没有UI图且需要做响应式网站开发时，可以使用它。 官网 - https://www.bootcss.com/ 理论 -</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | jQuery</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-jquery/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-jquery/</guid>
+      <description>什么是jquery？ 一个js库，（库就是函数的封装）,API学习网站：jquery.cuishifeng.cn 使用 引入 本地引入 CDN加速器(</description>
     </item>
     
     <item>
@@ -36,12 +498,147 @@
     </item>
     
     <item>
+      <title>1&#43;X | JavaScript</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-js/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-js/</guid>
+      <description>前言 网景公司（netscape）开发，是一个操作DOM的语言，在JS中，一切皆对象。 语法基础 标识符 必须以字母、下划线、$开头，后可以跟字母、</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | css</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-css/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-css/</guid>
+      <description>注释 只有一种注释：/**/ 选择器 标签选择器 - div {} 类选择器 - .box{} ID选择器 - #container{}值必须是唯一的 后代选择器 - p code{} 子选择器 - p&amp;gt;code{} 伪</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | html</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-html/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-html/</guid>
+      <description>知识点总结 基本结构 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--如果不加，则以怪异模式加载；声明了以下代码将以html5的标准去解析--&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt;&amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; 块级标签</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 浅谈python虚拟环境</title>
+      <link>https://chenxuefan.cn/posts/2020/11/python-venv/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/python-venv/</guid>
+      <description>前言 python虚拟环境是非常实用且必备的小技能。面对多个项目分别需要不同依赖库环境，或者跨平台部署的场景，都非常实用且优雅。 跨平台部署时，</description>
+    </item>
+    
+    <item>
+      <title>Jupyter Notebook学习笔记</title>
+      <link>https://chenxuefan.cn/posts/2020/11/jupyter-notebook/</link>
+      <pubDate>Thu, 05 Nov 2020 02:30:10 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/jupyter-notebook/</guid>
+      <description>Jupyter Notebook 入门 通过 Jupyter 使用实时代码、方程式和可视化及文本创建交互式的共享笔记本。 自从有了纸莎草纸以来，出版人们一直在努力以吸引读者的方式来格式化数据</description>
+    </item>
+    
+    <item>
+      <title>枫枫枫! | 武汉印象</title>
+      <link>https://chenxuefan.cn/posts/2020/11/wuhan-memory/</link>
+      <pubDate>Sun, 01 Nov 2020 17:32:35 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/wuhan-memory/</guid>
+      <description>设备 - Sony RX100M3 / iphone7 日期 - 2020-11-01 /酒店阳台夜景 - 来武汉第一天，窗外的大马路灯火通明，隐约还能看到远处的大桥/ /珞珈山脚下 - 建筑陈旧，生活安逸，很有年代</description>
+    </item>
+    
+    <item>
+      <title>十月摄影集</title>
+      <link>https://chenxuefan.cn/posts/2020/10/october-shoot/</link>
+      <pubDate>Fri, 30 Oct 2020 01:54:00 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/10/october-shoot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | php</title>
+      <link>https://chenxuefan.cn/posts/2020/10/php-study-note/</link>
+      <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/10/php-study-note/</guid>
+      <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
+    </item>
+    
+    <item>
+      <title>九月摄影集</title>
+      <link>https://chenxuefan.cn/posts/2020/9/september-shoot/</link>
+      <pubDate>Wed, 30 Sep 2020 01:54:00 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/9/september-shoot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>在macOS使用docker搭建ubuntu环境</title>
+      <link>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</link>
+      <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</guid>
+      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习,安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 进制转换问题</title>
+      <link>https://chenxuefan.cn/posts/2020/9/scale-question/</link>
+      <pubDate>Fri, 11 Sep 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/9/scale-question/</guid>
+      <description>前言 今天有同学来问我关于二级python计算机考试中进制间的转换问题，才想起来好久没有复习这方面的知识了，大都已经忘却，于是花了两个小时梳理</description>
+    </item>
+    
+    <item>
       <title>从http到https</title>
       <link>https://chenxuefan.cn/posts/2020/8/http-https/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2020/8/http-https/</guid>
       <description>前言 最近博客美化方面做的都差不多了，也没有太多东西好捣鼓了，这个时候我又注意到我的网站标头显示着一个不安全的字样，觉得又好奇又奇怪，因为在这</description>
+    </item>
+    
+    <item>
+      <title>python&#43;hugo&#43;nginx | 实现博客主页每日一图</title>
+      <link>https://chenxuefan.cn/posts/2020/8/python-hugo-nginx-daily-picture/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/8/python-hugo-nginx-daily-picture/</guid>
+      <description>前言 在建博客之前，我现在的域名访问的对象，是使用nginx部署在服务器的一个页面，并且由于加入了python脚本，这个页面每天都会更新，每天</description>
+    </item>
+    
+    <item>
+      <title>nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</title>
+      <link>https://chenxuefan.cn/posts/2020/8/nginx-record/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/8/nginx-record/</guid>
+      <description>前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx.</description>
+    </item>
+    
+    <item>
+      <title>yellow</title>
+      <link>https://chenxuefan.cn/posts/2020/8/yellow/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/8/yellow/</guid>
+      <description>:-) Look at the stars 抬头仰望满天繁星 Look how they shine for you 看它们为你绽放着 闪烁不息 And everything you do 而你的一颦一举 Yeah&amp;rsquo; they were all Yellow 却满含胆怯和羞意 I came along 我追随着你的气息 I wrote a song</description>
+    </item>
+    
+    <item>
+      <title>do not go gentle into that good night</title>
+      <link>https://chenxuefan.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</link>
+      <pubDate>Tue, 04 Aug 2020 19:19:46 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/8/do-not-go-gentle-into-that-good-night-/</guid>
+      <description>(Dylan Thomas, 1914 - 1953) Do not go gentle into that good night, 不要温和地走进那个良夜， Old age should burn and rave at close of day; 老年应当在日暮时燃烧咆哮； Rage,rage against the dying of the light. 怒斥，怒斥光明的消逝。 Though wise men at</description>
     </item>
     
     <item>
@@ -54,12 +651,129 @@
     </item>
     
     <item>
+      <title>python模块详解 | pyquery</title>
+      <link>https://chenxuefan.cn/posts/2020/7/python-pyquery/</link>
+      <pubDate>Fri, 31 Jul 2020 00:46:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/7/python-pyquery/</guid>
+      <description>简介 pyquery是一个强大的 HTML 解析库，利用它，我们可以直接解析 DOM 节点的结构，并通过 DOM 节点的一些属性快速进行内容提取。 官方文档：http:/</description>
+    </item>
+    
+    <item>
+      <title>一人行 | 梧桐山印象</title>
+      <link>https://chenxuefan.cn/posts/2020/7/travel-wutong/</link>
+      <pubDate>Wed, 22 Jul 2020 21:28:17 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/7/travel-wutong/</guid>
+      <description>设备 - Sony RX100M3 日期 - 2020-07-22 地点 - 梧桐山</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | 国内常用源镜像地址</title>
+      <link>https://chenxuefan.cn/posts/2020/7/python-mirrors/</link>
+      <pubDate>Wed, 15 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/7/python-mirrors/</guid>
+      <description>各镜像列表 清华：https://pypi.tuna.tsinghua.edu.cn/simple 阿里云：http://mirrors.ali</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | macOS Big Sur动态壁纸食用指南</title>
+      <link>https://chenxuefan.cn/posts/2020/6/python-macos-big-sur/</link>
+      <pubDate>Sat, 27 Jun 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/6/python-macos-big-sur/</guid>
+      <description>目录 前言 爬虫篇 壁纸使用篇 后记 前言 北京时间23日凌晨1点，苹果WWDC2020大会开幕。在发布会上，苹果正式发布了新版macOS，并将其命名为</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | unittest（单元测试框架）</title>
+      <link>https://chenxuefan.cn/posts/2020/6/python-unittest/</link>
+      <pubDate>Mon, 15 Jun 2020 14:12:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/6/python-unittest/</guid>
+      <description>目录： why unittest？ unittest的四个重要概念 加载测试用例的三个方法 自动加载测试用例 忽略测试和预期失败 生成html测试报告 why unittest ? 简</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | selenium</title>
+      <link>https://chenxuefan.cn/posts/2020/6/python-selenium/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/6/python-selenium/</guid>
+      <description>关于Selenium Selenium是⼀个⽤于测试⽹站的⾃动化测试⼯具，⽀持各种浏览器包括Chrome、Firefox、Safari等主流界</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | filecmp</title>
+      <link>https://chenxuefan.cn/posts/2020/4/python-filecmp/</link>
+      <pubDate>Thu, 30 Apr 2020 14:33:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/4/python-filecmp/</guid>
+      <description>简介： filecmp是python内置的一个模块，用于比较文件及文件夹的内容，它是一个轻量级的工具，使用非常简单 两个主要的方法： filecmp.cmp(f1, f2[, shallow]) 比较两</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | shutil</title>
+      <link>https://chenxuefan.cn/posts/2020/4/python-shutil/</link>
+      <pubDate>Thu, 30 Apr 2020 14:28:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/4/python-shutil/</guid>
+      <description>简介 shutil是python的一个内置模块，提供了许多关于文件和文件集合的高级操作，特别提供文件夹与文件操作、归档操作了支持文件复制和删除</description>
+    </item>
+    
+    <item>
       <title>Linux学习笔记 | nginx</title>
       <link>https://chenxuefan.cn/posts/2020/4/nginx/</link>
       <pubDate>Wed, 22 Apr 2020 14:33:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2020/4/nginx/</guid>
       <description>前言 无论使用何种语言开发，在发布时，域名解析肯定是必须要进行的步骤。同时服务器端需要安装一个WebServer应用软件，有的是基于Apach</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | strftime()格式化输出时间</title>
+      <link>https://chenxuefan.cn/posts/2020/4/python-strftime/</link>
+      <pubDate>Tue, 07 Apr 2020 11:01:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/4/python-strftime/</guid>
+      <description>示例 # time模块 import time t = time.strftime(&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;) print(t) # datetime模块 import datetime t = datetime.datetime.now().strftime(&amp;#34;%Y-%m-%d %H:%M:%S&amp;#34;) print(t) 格式化输出之后，就得到了我们常见的格式了👇 2020-04-07 10:59:36 format参数 格式 描述 %y</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | progressbar</title>
+      <link>https://chenxuefan.cn/posts/2020/3/python-progressbar/</link>
+      <pubDate>Tue, 17 Mar 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/3/python-progressbar/</guid>
+      <description>参考官方文档：https://pypi.org/project/progressbar/#description progressbar 安装 pip install progressbar progressbar.ProgressBar() 可选参数 maxval = None</description>
+    </item>
+    
+    <item>
+      <title>python学习笔记 | PyCharm创建文件时自动添加头文件</title>
+      <link>https://chenxuefan.cn/posts/2020/3/python-pycharm/</link>
+      <pubDate>Mon, 16 Mar 2020 20:45:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/3/python-pycharm/</guid>
+      <description>Windows：File 👉 Settings 👉 Editor 👉 File and Code Templates 👉 Python Script macOS：PyCharm &amp;gt; Preferences &amp;hellip; 然后在右边的框中写入信息就可以啦： # -*- coding: utf-8 -*- &amp;#34;&amp;#34;&amp;#34; @Author ${USER} @Date ${DATE} ${TIME} @Describe &amp;#34;&amp;#34;&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | time</title>
+      <link>https://chenxuefan.cn/posts/2020/3/python-time/</link>
+      <pubDate>Sun, 15 Mar 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/3/python-time/</guid>
+      <description>time 这个模块提供各种与时间相关的函数。 以下是对一些术语和惯例的解释 初始时间因平台而异。对于Unix平台，初始时间是1970,01,01,00:</description>
+    </item>
+    
+    <item>
+      <title>python模块详解 | psutil</title>
+      <link>https://chenxuefan.cn/posts/2020/3/python-psutil/</link>
+      <pubDate>Sun, 15 Mar 2020 10:17:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/3/python-psutil/</guid>
+      <description>psutil简介 psutil是一个开源且跨平台的库，其提供了便利的函数用来获取系统的信息，比如CPU，内存，磁盘，网络等。此外，psutil</description>
     </item>
     
   </channel>

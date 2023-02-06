@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>粤ICP备20025795号-2</copyright>
-    <lastBuildDate>Wed, 11 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/1x/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/1x/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1&#43;X | 考点小结</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-examination/</link>
+      <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-examination/</guid>
+      <description>html、css、js html5新增了离线缓存机制 使用媒体查询时，媒体类型取值为screen代表 - 用于所有设备 range输入类型定义滑块控件</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | BootStrap</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-boostrap/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-boostrap/</guid>
+      <description>认识bootstrap框架 bootstrap是一个开源的UI（界面设计）框架，没有UI图且需要做响应式网站开发时，可以使用它。 官网 - https://www.bootcss.com/ 理论 -</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | jQuery</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-jquery/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-jquery/</guid>
+      <description>什么是jquery？ 一个js库，（库就是函数的封装）,API学习网站：jquery.cuishifeng.cn 使用 引入 本地引入 CDN加速器(</description>
+    </item>
+    
     <item>
       <title>1&#43;X | MySQL</title>
       <link>https://chenxuefan.cn/posts/2020/11/1-x-mysql/</link>
@@ -15,6 +42,42 @@
       
       <guid>https://chenxuefan.cn/posts/2020/11/1-x-mysql/</guid>
       <description>why MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。 基本操作 启动(macOS)</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | JavaScript</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-js/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-js/</guid>
+      <description>前言 网景公司（netscape）开发，是一个操作DOM的语言，在JS中，一切皆对象。 语法基础 标识符 必须以字母、下划线、$开头，后可以跟字母、</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | css</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-css/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-css/</guid>
+      <description>注释 只有一种注释：/**/ 选择器 标签选择器 - div {} 类选择器 - .box{} ID选择器 - #container{}值必须是唯一的 后代选择器 - p code{} 子选择器 - p&amp;gt;code{} 伪</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | html</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-html/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-html/</guid>
+      <description>知识点总结 基本结构 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--如果不加，则以怪异模式加载；声明了以下代码将以html5的标准去解析--&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt;&amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; 块级标签</description>
+    </item>
+    
+    <item>
+      <title>1&#43;X | php</title>
+      <link>https://chenxuefan.cn/posts/2020/10/php-study-note/</link>
+      <pubDate>Sat, 17 Oct 2020 20:54:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/10/php-study-note/</guid>
+      <description>why PHP? 什么是PHP？ PHP是PHP：hypertext preprocessor（超文本预处理器）的缩写，是一种服务端、跨平台、html嵌入式的</description>
     </item>
     
   </channel>

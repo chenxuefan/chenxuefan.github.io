@@ -1,0 +1,4 @@
+# ossutil cp ./spider oss://billie-s-blog/spider -rf
+# ossutil cp ./sitemap.xml oss://billie-s-blog/sitemap.xml -rf
+# ossutil cp ./diary oss://billie-s-blog/diary -rf
+# ossutil cp ./categories oss://billie-s-blog/categories -rf

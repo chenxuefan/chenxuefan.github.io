@@ -27,12 +27,39 @@
     </item>
     
     <item>
+      <title>关于跨域问题的思考和解决思路</title>
+      <link>https://chenxuefan.cn/posts/2020/11/cross-domain/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/cross-domain/</guid>
+      <description>前言 什么是跨域? 当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.google.com)，那么我们就可以</description>
+    </item>
+    
+    <item>
+      <title>在macOS使用docker搭建ubuntu环境</title>
+      <link>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</link>
+      <pubDate>Mon, 14 Sep 2020 01:00:00 +0800</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/9/macos-docker-ubuntu/</guid>
+      <description>ubuntu 虚拟机，一般就是在 mac 中 ssh 连接 ubuntu 虚拟机在终端下进行操作学习,安装一个包含完整GUI的 ubuntu 有点多余，还占用很多资源,所以想到了使用 docker 来创建 ubuntu 容器</description>
+    </item>
+    
+    <item>
       <title>「docker」学习笔记 | 镜像、容器、仓库</title>
       <link>https://chenxuefan.cn/note/docker1/</link>
       <pubDate>Sat, 29 Aug 2020 18:10:42 +0800</pubDate>
       
       <guid>https://chenxuefan.cn/note/docker1/</guid>
       <description>关于docker 1. why docker？ Docker是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到</description>
+    </item>
+    
+    <item>
+      <title>nginx学习笔记 | 一次配置Nginx的踩坑填坑记录</title>
+      <link>https://chenxuefan.cn/posts/2020/8/nginx-record/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/8/nginx-record/</guid>
+      <description>前言 这些天发现自己在服务器上部署的nginx服务常常需要清除浏览器历史记录之后才会刷新信息，搜索一番发现有网友说要把配置文件中的nginx.</description>
     </item>
     
     <item>

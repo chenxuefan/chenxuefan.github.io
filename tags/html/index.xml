@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>粤ICP备20025795号-2</copyright>
-    <lastBuildDate>Tue, 04 Aug 2020 18:42:17 +0800</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1&#43;X | html</title>
+      <link>https://chenxuefan.cn/posts/2020/11/1-x-html/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/posts/2020/11/1-x-html/</guid>
+      <description>知识点总结 基本结构 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;!--如果不加，则以怪异模式加载；声明了以下代码将以html5的标准去解析--&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;style&amp;gt;&amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt; &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt; 块级标签</description>
+    </item>
+    
     <item>
       <title>hugo建站全指南 | 我的第一个博客网站</title>
       <link>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</link>
@@ -15,6 +24,15 @@
       
       <guid>https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/</guid>
       <description>前言 建博客的初衷？ 2020年八月的第一天，我还是像往常一样打开我的域名，本以为还是会像以前一样显示每日一图的界面，结果出现的却是破图，当即开</description>
+    </item>
+    
+    <item>
+      <title>HTML标签总结</title>
+      <link>https://chenxuefan.cn/draft/html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/html/</guid>
+      <description>font size color face img src height width title alt 列表 无序列表 ul 属性： type：circle disc square 例： &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 有序列表 ol 属性： type：1 a A i I 例： &amp;lt;ol&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;ol&amp;gt; table border cellspacing cellpadding width height</description>
     </item>
     
   </channel>
