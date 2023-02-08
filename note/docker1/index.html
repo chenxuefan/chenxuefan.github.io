@@ -1203,7 +1203,7 @@ systemctl start/stop/restart docker
 </tbody>
 </table>
 <h3 id="5-发布镜像至仓库">5. 发布镜像至仓库</h3>
-<p><a href="https://chenxuefan.cn/note/docker1/#2-%E7%A7%81%E6%9C%89%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93">私有镜像仓库</a></p>
+<p>请移步 👉 <a href="https://chenxuefan.cn/note/docker1/#2-%E7%A7%81%E6%9C%89%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93">私有镜像仓库</a></p>
 <h3 id="6-用docker-buildx制作多架构的镜像">6. 用Docker Buildx制作多架构的镜像</h3>
 <p>默认情况下，x86_64平台只能构建x86_64镜像，如果需要在X86_64平台构建多平台镜像（比如ARM64），我们可以用Docker官方提供的Buildx工具来完成多平台镜像构建。ARM 架构与X86相比，ARM 低功耗、移动市场占比高，X86 高性能、服务器市场占比高。 构建时要用到 docker buildx 命令，Docker 版本需要 19.03+</p>
 <p>第一步，需要初始化Docker Buildx的环境</p>
@@ -1217,10 +1217,10 @@ docker buildx use builderx
 docker buildx inspect --bootstrap
 </code></pre><p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20230208164852894.png" alt="image-20230208164852894"></p>
 <p>第二步，开始打包镜像</p>
-<p><strong>模式1（本地模式）</strong>，镜像构建后默认保存在构建缓存中，没有保存在本地，所以将 type 指定为 docker；而且必须分别为不同的 CPU 架构构建不同的镜像，不能合并成一个镜像。</p>
+<p><strong>模式1，本地模式</strong>，镜像构建后默认保存在构建缓存中，没有保存在本地，所以将 type 指定为 docker；而且必须分别为不同的 CPU 架构构建不同的镜像，不能合并成一个镜像。</p>
 <pre tabindex="0"><code>docker buildx build -t chenxuefan/server_script:v3/amd64 --platform linux/amd64 -o type=docker .
 docker buildx build -t chenxuefan/server_script:v3/arm64 --platform linux/arm64 -o type=docker .
-</code></pre><p><strong>模式2（在线模式）</strong>，通过此命令，打包成为一个多平台的镜像，并上传至线上仓库。</p>
+</code></pre><p><strong>模式2，在线模式（推荐）</strong>，通过此命令，打包成为一个多平台的镜像，并上传至线上仓库。</p>
 <pre tabindex="0"><code>docker buildx build -t chenxuefan/server_script:v3 --platform linux/amd64,linux/arm64 . --push
 </code></pre><h2 id="报错解决记录">报错解决记录</h2>
 <ul>
@@ -1295,7 +1295,7 @@ docker buildx build -t chenxuefan/server_script:v3/arm64 --platform linux/arm64 
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          10575 字
+          10581 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
