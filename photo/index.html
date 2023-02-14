@@ -143,7 +143,7 @@ var _hmt = _hmt || [];
 </head>
 <body>
 <div id="unsplash">
-    <p v-for="(key,value) in topic_urls">
+    <p v-for="(value,key) in topic_urls">
         <img :src="value">
         /<em v-text="key"></em>/
     </p>
@@ -161,7 +161,7 @@ var _hmt = _hmt || [];
         
         data:{
         	msg:'获取图片文件链接',
-			host:'https://blog.chenxuefan.cn/unsplash/image',
+			host:'https://blog.chenxuefan.cn/unsplash',
             topic_urls:{}
         },
         
@@ -171,8 +171,8 @@ var _hmt = _hmt || [];
         		console.log(that.host);
         		axios.get(that.host)
         			.then(function(response){
-        				console.log(response);
-        				that.topic_urls = response;
+        				console.log(response.data);
+        				that.topic_urls = response.data;
         			})
         			.catch(function (error) {
 				        console.log(error);
