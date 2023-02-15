@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title> docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目 | 人人都爱小雀斑&#39;s blog </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-176148291-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  <meta property="og:title" content="docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目" />
+<meta property="og:description" content="前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章，用到了以nginx应用为基础来构建的容器" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenxuefan.cn/posts/2023/2/docker-nginx-uwsgi-server-script/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-14T00:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目"/>
+<meta name="twitter:description" content="前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章，用到了以nginx应用为基础来构建的容器"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://chenxuefan.cn/css/style-light.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://chenxuefan.cn/images/favicon.ico" />
+
+  
+  
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+          var int = setInterval(fixCount, 100);
+          var busuanziSiteOffset =  null ;
+          function fixCount() {
+              if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                  clearInterval(int);
+                  $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+              }
+          }
+      });
+  </script>
+
+
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div align="center">
+  
+</div>
+<div id="header-post">
+
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Article</a></li>
+         
+        <li><a href="/note">Note</a></li>
+         
+        <li><a href="/travel">Travel</a></li>
+         
+        <li><a href="/about">About</a></li>
+         
+        <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://chenxuefan.cn/note/mysql/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&text=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&is_video=false&description=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&body=Check out this article: https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%a7%e5%8a%bf%e6%89%80%e8%b6%8b%ef%bc%8c%e5%be%88%e5%a4%9a%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a1%b9%e7%9b%ae%e9%83%bd%e9%87%87%e7%94%a8%e6%ad%a4%e6%8a%80%e6%9c%af%e8%bf%9b%e8%a1%8c%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%9e%84%e5%bb%ba%e5%92%8c%e9%83%a8%e7%bd%b2%e5%b7%a5%e4%bd%9c%20%e6%ad%a4%e5%89%8d%e5%86%99%e7%9a%84%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%e7%94%a8%e5%88%b0%e4%ba%86%e4%bb%a5nginx%e5%ba%94%e7%94%a8%e4%b8%ba%e5%9f%ba%e7%a1%80%e6%9d%a5%e6%9e%84%e5%bb%ba%e7%9a%84%e5%ae%b9%e5%99%a8">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&t=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#flask">flask</a></li>
+    <li><a href="#uwsgi">uwsgi</a></li>
+    <li><a href="#镜像">镜像</a>
+      <ul>
+        <li><a href="#1-server_nginx">1. server_nginx</a></li>
+        <li><a href="#2-server_script">2. server_script</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-compose">docker-compose</a></li>
+    <li><a href="#nginx">nginx</a></li>
+    <li><a href="#后记">后记</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目
+      </h1>
+      <div class="meta">
+
+        
+
+        
+
+
+        <div class="postdate">
+          
+          
+          <time datetime="2023-02-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023-02-14</time>
+          
+          
+        </div>
+        <div class="article-tag">
+            <i class="fa fa-eye"></i> 
+            <span id="busuanzi_container_page_pv">
+              <span id="busuanzi_value_page_pv">0</span>
+            </span>
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/tec">tec</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+             
+            <a class="tag-link" href="/tags/docker" rel="tag">docker</a>
+            
+             
+            <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
+            
+               
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+        </div> 
+        
+        
+
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="前言">前言</h2>
+<p>容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作</p>
+<p>此前写的这篇文章，用到了以nginx应用为基础来构建的容器，并通过实现通过域名访问服务器资源。有了上一篇文章完成的工作，那就可以很好的衔接本篇文章的实现操作啦</p>
+<p>整理一下目前的进度，等于已经拥有了一份完整的nginx项目文件、编写好的<code>nginx.conf</code>配置文件，以及一个以nginx应用为基础构建好的镜像</p>
+<p><a href="https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/">docker+nginx+https | 实现通过域名访问服务器资源</a></p>
+<p>这次就再基于一个简单的flask项目去构建容器，并使用docker-compose进行两个容器的编排工作。</p>
+<h2 id="flask">flask</h2>
+<h2 id="uwsgi">uwsgi</h2>
+<p><code>uwsgi.ini</code>文件编写</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>[uwsgi]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># uwsgi直接作为web服务器时，使用的ip和端口
+</span></span><span style="display:flex;"><span>http = :1110
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># uwsgi与nginx连接时，使用的ip和端口
+</span></span><span style="display:flex;"><span>socket = :1100
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>master = true          // 允许存在主进程
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;vhost = true          // 多站模式
+</span></span><span style="display:flex;"><span>;no-site = true        // 多站模式时不设置入口模块和文件
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#虚拟环境目录
+</span></span><span style="display:flex;"><span>;home = /usr/local/flasky/venv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#指向网站根目录
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">chdir</span> = /server_script/web_flask/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>stats = uwsgi.status
+</span></span><span style="display:flex;"><span>pidfile = uwsgi.pid
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#python启动程序文件
+</span></span><span style="display:flex;"><span>wsgi-file = app.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#python程序内用于启动的application变量名
+</span></span><span style="display:flex;"><span>callable = app
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#处理器数
+</span></span><span style="display:flex;"><span>processes = 8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#线程数
+</span></span><span style="display:flex;"><span>threads = 2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#状态监测地址
+</span></span><span style="display:flex;"><span>;stats = 127.0.0.1:9191
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#设置uwsgi包解析的内部缓存区大小。默认4k
+</span></span><span style="display:flex;"><span>buffer-size = 32768
+</span></span></code></pre></div><h2 id="镜像">镜像</h2>
+<h3 id="1-server_nginx">1. server_nginx</h3>
+<p><code>dockerfile</code>文件编写：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> nginx:1.23.2</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billy_Chan</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm /etc/nginx/conf.d/default.conf<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ./config/nginx.conf /etc/nginx/conf.d/<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 80 443</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h3 id="2-server_script">2. server_script</h3>
+<p><code>dockerfile</code>文件编写：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.10</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> TZ<span style="color:#f92672">=</span>Asia/Shanghai<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billy_Chan</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /server_script</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span> [<span style="color:#e6db74">&#34;/server_script/dsapi/images&#34;</span>, <span style="color:#e6db74">&#34;/server_script/unsplash/images&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 1100 1110</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;uwsgi&#34;</span>, <span style="color:#e6db74">&#34;--ini&#34;</span>, <span style="color:#e6db74">&#34;./web_flask/uwsgi.ini&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>使用<code>docker build</code>打包镜像，打包命令参考：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker build -t chenxuefan/server_script:v3 --platform linux/amd64 .
+</span></span></code></pre></div><p>打包操作的具体教程，以及每个指令的含义解释，请参考：<a href="https://chenxuefan.cn/note/docker1/#3-%E9%80%9A%E8%BF%87dockerfile%E6%89%93%E5%8C%85%E5%B9%B6%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE">通过Dockerfile打包并运行一个项目</a></p>
+<p>发布到私有镜像仓库的具体教程，请参考：<a href="https://chenxuefan.cn/note/docker1/#2-%E7%A7%81%E6%9C%89%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93">私有镜像仓库</a></p>
+<p>因为我使用的是m2芯片的MacBook进行打包，并且后续会在Linux服务器和本机上使用镜像，因此涉及到多架构镜像的构建，这里建议使用buildx打包镜像，相关教程请参考：<a href="https://chenxuefan.cn/note/docker1/#6-%E7%94%A8docker-buildx%E5%88%B6%E4%BD%9C%E5%A4%9A%E6%9E%B6%E6%9E%84%E7%9A%84%E9%95%9C%E5%83%8F">用Docker Buildx制作多架构的镜像</a></p>
+<p>使用<code>docker buildx build</code>打包镜像，打包命令参考：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker buildx build -t chenxuefan/server_script:v3 --platform linux/amd64,linux/arm64 . --push
+</span></span></code></pre></div><h2 id="docker-compose">docker-compose</h2>
+<p>目前经过上一步的操作，我们已经得到了server_nginx、server_script两个镜像，并已上传到私有仓库</p>
+<p>此时有了镜像，就可以着手容器编排的工作了</p>
+<p><code>docker-compose.yaml</code>文件编写：</p>
+<pre tabindex="0"><code>version: &#34;1&#34;
+
+services:
+  server_nginx:
+    image: chenxuefan/server_nginx:v3
+    container_name: server_nginx
+    restart: always
+    volumes:
+      - ./server_nginx/html:/usr/share/nginx/html
+      - ./server_nginx/config/nginx.conf:/etc/nginx/nginx.conf
+      - ./server_nginx/logs:/var/log/nginx
+      - ./server_nginx/ssl:/etc/nginx/ssl
+      - ./server_nginx/conf.d:/etc/nginx/conf.d
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - server_script
+        
+  server_script:
+    image: chenxuefan/server_script:v3
+#    build: ./server_script
+    container_name: server_script
+    restart: always
+    volumes:
+      - ./server_script/dsapi:/server_script/dsapi
+      - ./server_script/dytt:/server_script/dytt
+      - ./server_script/unsplash:/server_script/unsplash
+      - ./server_script/web_flask:/server_script/web_flask
+    ports:
+      - 1100:1100
+      - 1110:1110
+
+networks:
+  server:
+    driver: bridge
+</code></pre><h2 id="nginx">nginx</h2>
+<p><code>nginx.conf</code>文件编写：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">user</span>  <span style="color:#e6db74">nginx</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">worker_processes</span>  <span style="color:#e6db74">auto</span>;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">error_log</span>  <span style="color:#e6db74">/var/log/nginx/error.log</span> <span style="color:#e6db74">notice</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">pid</span>        <span style="color:#e6db74">/var/run/nginx.pid</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">events</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">worker_connections</span>  <span style="color:#ae81ff">1024</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">http</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client_max_body_size</span> <span style="color:#ae81ff">100m</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">include</span> <span style="color:#e6db74">mime.types</span>;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">server</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">server_name</span> <span style="color:#e6db74">blog.chenxuefan.cn</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">rewrite</span> <span style="color:#e6db74">^(.*)</span> <span style="color:#e6db74">https://</span>$server_name$1 <span style="color:#e6db74">permanent</span>;  <span style="color:#75715e"># 强制跳转至https
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 负载均衡
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">upstream</span> <span style="color:#e6db74">blog</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">server</span> <span style="color:#e6db74">server_script:1100</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             server 127.0.0.1:1110;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">server</span> {
+</span></span><span style="display:flex;"><span>		    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span>;  <span style="color:#75715e"># 1.1版本后这样写
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">server_name</span> <span style="color:#e6db74">blog.chenxuefan.cn</span>; <span style="color:#75715e">#填写绑定证书的域名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/etc/nginx/ssl/blog.chenxuefan.cn.pem</span>;  <span style="color:#75715e"># 指定证书的位置，绝对路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        	<span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/etc/nginx/ssl/blog.chenxuefan.cn.key</span>;  <span style="color:#75715e"># 绝对路径，同上
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		
+</span></span><span style="display:flex;"><span>	        <span style="color:#f92672">ssl_session_timeout</span> <span style="color:#ae81ff">5m</span>;
+</span></span><span style="display:flex;"><span>        	<span style="color:#f92672">ssl_protocols</span> <span style="color:#e6db74">TLSv1</span> <span style="color:#e6db74">TLSv1.1</span> <span style="color:#e6db74">TLSv1.2</span>; <span style="color:#75715e">#按照这个协议配置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       	 	<span style="color:#f92672">ssl_ciphers</span> <span style="color:#e6db74">ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span>;<span style="color:#75715e">#按照这个套件配置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        	<span style="color:#f92672">ssl_prefer_server_ciphers</span> <span style="color:#66d9ef">on</span>;
+</span></span><span style="display:flex;"><span>		    <span style="color:#f92672">ssl_session_cache</span> <span style="color:#e6db74">shared:SSL:1m</span>;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        	<span style="color:#f92672">fastcgi_param</span>  <span style="color:#e6db74">HTTPS</span>        <span style="color:#66d9ef">on</span>;
+</span></span><span style="display:flex;"><span>        	<span style="color:#f92672">fastcgi_param</span>  <span style="color:#e6db74">HTTP_SCHEME</span>     <span style="color:#e6db74">https</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 设置请求头信息，防止出现跨域报错
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#f92672">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span> <span style="color:#e6db74">&#34;</span>$http_origin&#34; <span style="color:#e6db74">always</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Credentials&#39;</span> <span style="color:#e6db74">&#39;true&#39;</span> <span style="color:#e6db74">always</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span> <span style="color:#e6db74">&#39;GET,</span> <span style="color:#e6db74">OPTIONS&#39;</span> <span style="color:#e6db74">always</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">add_header</span> <span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span> <span style="color:#e6db74">&#39;Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-</span>  <span style="color:#e6db74">Since,Keep-Alive,Origin,User-Agent,X-Requested-With&#39;</span> <span style="color:#e6db74">always</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">proxy_set_header</span>   <span style="color:#e6db74">Host</span>              $http_host;
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">proxy_set_header</span>   <span style="color:#e6db74">X-Real-IP</span>         $remote_addr;
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">proxy_set_header</span>   <span style="color:#e6db74">X-Real-PORT</span>       $remote_port;
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">proxy_set_header</span>   <span style="color:#e6db74">X-Forwarded-For</span>   $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># 静态文件模式。切换成转发uwsgi的信号时，需注释这两行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#                 root   /usr/share/nginx/html;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#                 try_files $uri $uri/ /index.html;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># uwsgi模式。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#f92672">include</span> <span style="color:#e6db74">uwsgi_params</span>;  <span style="color:#75715e"># 包含uwsgi的请求参数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#f92672">uwsgi_pass</span> <span style="color:#e6db74">blog</span>;  <span style="color:#75715e"># 转交给uwsgi
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">#location ~ ^/facicon\.iso$ {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">location</span> <span style="color:#e6db74">/favicon.ico</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">root</span>  <span style="color:#e6db74">/usr/share/nginx/html</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 引入扩展配置（可以细分服务nginx）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">include</span> <span style="color:#e6db74">/etc/nginx/conf.d/*.conf</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="后记">后记</h2>
+
+    </div>
+
+
+  </article>
+
+
+  <br>
+
+    
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">打赏作者</label>
+
+    <div class="qr-code">
+      <label class="qr-code-image" for="reward">
+          微信
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/wechatpay.gif">
+      </label>
+      <label class="qr-code-image" for="reward">
+        <div class="reward_big">支付宝
+          <img class="image" src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/alipay.gif">
+        </div>
+      </label>
+    </div>
+    
+  </div>
+
+  <p>
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+            
+            
+            <a class="tag-link" href="/tags/docker" rel="tag">docker</a>
+            
+            
+            <a class="tag-link" href="/tags/nginx" rel="tag">nginx</a>
+            
+              
+            <a class="tag-link" href="/tags/python" rel="tag">python</a>
+            
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          1355 字
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          
+          <time datetime="2023-02-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2023-02-14</time>
+          
+
+  </p>
+
+
+  
+
+<span id="/posts/2023/2/docker-nginx-uwsgi-server-script/" class="leancloud_visitors" data-flag-title="docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目">
+
+  
+
+</span>
+<div id="vcomments"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'Wp7TPDOg7lNCunvFTWb4sKBD-gzGzoHsz',
+    appKey: 'TKEzaDWG4P2go4kpqMu2HxEP',
+    notify:  true ,
+    verify:  true ,
+    avatar: 'mm',
+    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+    visitor:  true 
+
+        })
+</script>
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Article</a></li>
+         
+          <li><a href="/note">Note</a></li>
+         
+          <li><a href="/travel">Travel</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="https://github.com/chenxuefan">Github</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#flask">flask</a></li>
+    <li><a href="#uwsgi">uwsgi</a></li>
+    <li><a href="#镜像">镜像</a>
+      <ul>
+        <li><a href="#1-server_nginx">1. server_nginx</a></li>
+        <li><a href="#2-server_script">2. server_script</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-compose">docker-compose</a></li>
+    <li><a href="#nginx">nginx</a></li>
+    <li><a href="#后记">后记</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&text=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&is_video=false&description=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&body=Check out this article: https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&title=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%a7%e5%8a%bf%e6%89%80%e8%b6%8b%ef%bc%8c%e5%be%88%e5%a4%9a%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a1%b9%e7%9b%ae%e9%83%bd%e9%87%87%e7%94%a8%e6%ad%a4%e6%8a%80%e6%9c%af%e8%bf%9b%e8%a1%8c%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%9e%84%e5%bb%ba%e5%92%8c%e9%83%a8%e7%bd%b2%e5%b7%a5%e4%bd%9c%20%e6%ad%a4%e5%89%8d%e5%86%99%e7%9a%84%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%e7%94%a8%e5%88%b0%e4%ba%86%e4%bb%a5nginx%e5%ba%94%e7%94%a8%e4%b8%ba%e5%9f%ba%e7%a1%80%e6%9d%a5%e6%9e%84%e5%bb%ba%e7%9a%84%e5%ae%b9%e5%99%a8">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&t=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-center">
+    Copyright  
+    &copy;
+    2020-2023 
+    <span>❤ Billy</span>
+
+    <span> 粤ICP备20025795号-2  </span><br>
+    <span>Powered By HUGO | </span>
+    
+    <span id="busuanzi_container_site_uv">
+        访客 <span id="busuanzi_value_site_uv"></span> 
+    </span>
+
+  </div>
+
+  
+</footer>
+
+
+
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>
