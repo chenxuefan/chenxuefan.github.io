@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chenxuefan.cn/categories/</loc>
-    <lastmod>2023-02-14T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/draft/</loc>
+    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/tags/python/</loc>
+    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/draft/python-pillow/</loc>
+    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/tags/</loc>
+    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/categories/tec/</loc>
+    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/</loc>
+    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/tags/docker/</loc>
     <lastmod>2023-02-14T00:00:00+00:00</lastmod>
@@ -15,18 +33,6 @@
     <lastmod>2023-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/posts/</loc>
-    <lastmod>2023-02-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/tags/python/</loc>
-    <lastmod>2023-02-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/tags/</loc>
-    <lastmod>2023-02-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/categories/tec/</loc>
-    <lastmod>2023-02-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/</loc>
     <lastmod>2023-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/note/mysql/</loc>
@@ -55,9 +61,6 @@
   </url><url>
     <loc>https://chenxuefan.cn/travel/</loc>
     <lastmod>2022-09-22T15:15:02+08:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/draft/</loc>
-    <lastmod>2022-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/draft/kfc_crazy_thursday_literature/</loc>
     <lastmod>2022-07-21T00:00:00+00:00</lastmod>

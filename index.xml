@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>粤ICP备20025795号-2</copyright>
-    <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>python模块详解 | PIL</title>
+      <link>https://chenxuefan.cn/draft/python-pillow/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/python-pillow/</guid>
+      <description>对于手机、相机等设备拍摄的照片，由于手持方向的不同，拍出来的照片可能是旋转0°、90°、180°和270°。即使在电脑上利用软件将其转正，他</description>
+    </item>
+    
     <item>
       <title>docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目</title>
       <link>https://chenxuefan.cn/posts/2023/2/docker-nginx-uwsgi-server-script/</link>
@@ -50,7 +59,7 @@
       <pubDate>Thu, 22 Sep 2022 15:15:02 +0800</pubDate>
       
       <guid>https://chenxuefan.cn/travel/</guid>
-      <description>Feb. 2023 深圳 南头古城 Feb. 2023 深圳 南头古城 Jan. 2023 丽江古城 Jan. 2023 丽江古城 Jan. 2023 香格里拉 独克宗古城 Jan. 2023 丽江 黑龙潭公园 Jan. 2023 丽江 黑龙潭公园 Jan. 2023 丽江 黑龙潭公园 Jan. 2023 香格</description>
+      <description>Feb. 2023 深圳 南头古城 Feb. 2023 深圳 南头古城 Jan. 2023 丽江古城 Jan. 2023 丽江古城 Jan. 2023 香格里拉 独克宗古城 Jan. 2023 丽江 木府 Jan. 2023 丽江 黑龙潭公园 Jan. 2023 丽江 黑龙潭公园 Jan. 2023 丽江 黑龙潭</description>
     </item>
     
     <item>
