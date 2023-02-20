@@ -25,7 +25,7 @@ if (!doNotTrack) {
 }
 </script>
   <meta property="og:title" content="docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目" />
-<meta property="og:description" content="前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章，用到了以nginx应用为基础来构建的容器" />
+<meta property="og:description" content="前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章， 用到了以nginx应用为基础来构建的容器" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxuefan.cn/posts/2023/2/docker-nginx-uwsgi-server-script/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+00:00" />
@@ -33,7 +33,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目"/>
-<meta name="twitter:description" content="前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章，用到了以nginx应用为基础来构建的容器"/>
+<meta name="twitter:description" content="前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章， 用到了以nginx应用为基础来构建的容器"/>
 
   
   
@@ -190,7 +190,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%a7%e5%8a%bf%e6%89%80%e8%b6%8b%ef%bc%8c%e5%be%88%e5%a4%9a%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a1%b9%e7%9b%ae%e9%83%bd%e9%87%87%e7%94%a8%e6%ad%a4%e6%8a%80%e6%9c%af%e8%bf%9b%e8%a1%8c%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%9e%84%e5%bb%ba%e5%92%8c%e9%83%a8%e7%bd%b2%e5%b7%a5%e4%bd%9c%20%e6%ad%a4%e5%89%8d%e5%86%99%e7%9a%84%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%e7%94%a8%e5%88%b0%e4%ba%86%e4%bb%a5nginx%e5%ba%94%e7%94%a8%e4%b8%ba%e5%9f%ba%e7%a1%80%e6%9d%a5%e6%9e%84%e5%bb%ba%e7%9a%84%e5%ae%b9%e5%99%a8">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%a7%e5%8a%bf%e6%89%80%e8%b6%8b%ef%bc%8c%e5%be%88%e5%a4%9a%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a1%b9%e7%9b%ae%e9%83%bd%e9%87%87%e7%94%a8%e6%ad%a4%e6%8a%80%e6%9c%af%e8%bf%9b%e8%a1%8c%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%9e%84%e5%bb%ba%e5%92%8c%e9%83%a8%e7%bd%b2%e5%b7%a5%e4%bd%9c%20%e6%ad%a4%e5%89%8d%e5%86%99%e7%9a%84%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%20%e7%94%a8%e5%88%b0%e4%ba%86%e4%bb%a5nginx%e5%ba%94%e7%94%a8%e4%b8%ba%e5%9f%ba%e7%a1%80%e6%9d%a5%e6%9e%84%e5%bb%ba%e7%9a%84%e5%ae%b9%e5%99%a8">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -283,7 +283,7 @@ if (!doNotTrack) {
     <div class="content" itemprop="articleBody">
       <h2 id="前言">前言</h2>
 <p>容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作</p>
-<p>此前写的这篇文章，用到了以nginx应用为基础来构建的容器，并通过实现通过域名访问服务器资源。有了上一篇文章完成的工作，那就可以很好的衔接本篇文章的实现操作啦</p>
+<p>此前写的这篇文章， 用到了以nginx应用为基础来构建的容器，并通过实现通过域名访问服务器资源。有了上一篇文章完成的工作，那就可以很好的衔接本篇文章的实现操作啦</p>
 <p>整理一下目前的进度，等于已经拥有了一份完整的nginx项目文件、编写好的<code>nginx.conf</code>配置文件，以及一个以nginx应用为基础构建好的镜像</p>
 <p><a href="https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/">docker+nginx+https | 实现通过域名访问服务器资源</a></p>
 <p>这次就再基于一个简单的flask项目去构建容器，并使用docker-compose进行两个容器的编排工作。</p>
@@ -654,7 +654,7 @@ networks:
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%a7%e5%8a%bf%e6%89%80%e8%b6%8b%ef%bc%8c%e5%be%88%e5%a4%9a%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a1%b9%e7%9b%ae%e9%83%bd%e9%87%87%e7%94%a8%e6%ad%a4%e6%8a%80%e6%9c%af%e8%bf%9b%e8%a1%8c%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%9e%84%e5%bb%ba%e5%92%8c%e9%83%a8%e7%bd%b2%e5%b7%a5%e4%bd%9c%20%e6%ad%a4%e5%89%8d%e5%86%99%e7%9a%84%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%e7%94%a8%e5%88%b0%e4%ba%86%e4%bb%a5nginx%e5%ba%94%e7%94%a8%e4%b8%ba%e5%9f%ba%e7%a1%80%e6%9d%a5%e6%9e%84%e5%bb%ba%e7%9a%84%e5%ae%b9%e5%99%a8">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%a7%e5%8a%bf%e6%89%80%e8%b6%8b%ef%bc%8c%e5%be%88%e5%a4%9a%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a1%b9%e7%9b%ae%e9%83%bd%e9%87%87%e7%94%a8%e6%ad%a4%e6%8a%80%e6%9c%af%e8%bf%9b%e8%a1%8c%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%9e%84%e5%bb%ba%e5%92%8c%e9%83%a8%e7%bd%b2%e5%b7%a5%e4%bd%9c%20%e6%ad%a4%e5%89%8d%e5%86%99%e7%9a%84%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%20%e7%94%a8%e5%88%b0%e4%ba%86%e4%bb%a5nginx%e5%ba%94%e7%94%a8%e4%b8%ba%e5%9f%ba%e7%a1%80%e6%9d%a5%e6%9e%84%e5%bb%ba%e7%9a%84%e5%ae%b9%e5%99%a8">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

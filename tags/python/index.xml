@@ -23,7 +23,7 @@
       <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/posts/2023/2/docker-nginx-uwsgi-server-script/</guid>
-      <description>前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章，用到了以nginx应用为基础来构建的容器</description>
+      <description>前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章， 用到了以nginx应用为基础来构建的容器</description>
     </item>
     
     <item>
