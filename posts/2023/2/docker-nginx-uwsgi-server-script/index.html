@@ -25,7 +25,7 @@ if (!doNotTrack) {
 }
 </script>
   <meta property="og:title" content="docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目" />
-<meta property="og:description" content="前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章， 用到了以nginx应用为基础来构建的容器" />
+<meta property="og:description" content="前言 为什么需要大规模容器编排？ 容器解决了开发人员的生产力问题，使 DevOps 工作流变得异常流畅。开发人员可以创建容器镜像，运行容器并在该容器中开发代码" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxuefan.cn/posts/2023/2/docker-nginx-uwsgi-server-script/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+00:00" />
@@ -33,7 +33,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker-compose&#43;nginx&#43;uwsgi | 使用容器编排技术部署一个flask项目"/>
-<meta name="twitter:description" content="前言 容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作 此前写的这篇文章， 用到了以nginx应用为基础来构建的容器"/>
+<meta name="twitter:description" content="前言 为什么需要大规模容器编排？ 容器解决了开发人员的生产力问题，使 DevOps 工作流变得异常流畅。开发人员可以创建容器镜像，运行容器并在该容器中开发代码"/>
 
   
   
@@ -190,7 +190,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%a7%e5%8a%bf%e6%89%80%e8%b6%8b%ef%bc%8c%e5%be%88%e5%a4%9a%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a1%b9%e7%9b%ae%e9%83%bd%e9%87%87%e7%94%a8%e6%ad%a4%e6%8a%80%e6%9c%af%e8%bf%9b%e8%a1%8c%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%9e%84%e5%bb%ba%e5%92%8c%e9%83%a8%e7%bd%b2%e5%b7%a5%e4%bd%9c%20%e6%ad%a4%e5%89%8d%e5%86%99%e7%9a%84%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%20%e7%94%a8%e5%88%b0%e4%ba%86%e4%bb%a5nginx%e5%ba%94%e7%94%a8%e4%b8%ba%e5%9f%ba%e7%a1%80%e6%9d%a5%e6%9e%84%e5%bb%ba%e7%9a%84%e5%ae%b9%e5%99%a8">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e5%a4%a7%e8%a7%84%e6%a8%a1%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%ef%bc%9f%20%e5%ae%b9%e5%99%a8%e8%a7%a3%e5%86%b3%e4%ba%86%e5%bc%80%e5%8f%91%e4%ba%ba%e5%91%98%e7%9a%84%e7%94%9f%e4%ba%a7%e5%8a%9b%e9%97%ae%e9%a2%98%ef%bc%8c%e4%bd%bf%20DevOps%20%e5%b7%a5%e4%bd%9c%e6%b5%81%e5%8f%98%e5%be%97%e5%bc%82%e5%b8%b8%e6%b5%81%e7%95%85%e3%80%82%e5%bc%80%e5%8f%91%e4%ba%ba%e5%91%98%e5%8f%af%e4%bb%a5%e5%88%9b%e5%bb%ba%e5%ae%b9%e5%99%a8%e9%95%9c%e5%83%8f%ef%bc%8c%e8%bf%90%e8%a1%8c%e5%ae%b9%e5%99%a8%e5%b9%b6%e5%9c%a8%e8%af%a5%e5%ae%b9%e5%99%a8%e4%b8%ad%e5%bc%80%e5%8f%91%e4%bb%a3%e7%a0%81">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -205,9 +205,16 @@ if (!doNotTrack) {
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
+    <li><a href="#前言">前言</a>
+      <ul>
+        <li><a href="#为什么需要大规模容器编排">为什么需要大规模容器编排？</a></li>
+        <li><a href="#容器编排有什么优势">容器编排有什么优势？</a></li>
+        <li><a href="#docker-compose-的介绍">docker compose 的介绍</a></li>
+      </ul>
+    </li>
     <li><a href="#flask">flask</a></li>
     <li><a href="#uwsgi">uwsgi</a></li>
+    <li><a href="#nginx">nginx</a></li>
     <li><a href="#镜像">镜像</a>
       <ul>
         <li><a href="#1-server_nginx">1. server_nginx</a></li>
@@ -215,7 +222,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#docker-compose">docker-compose</a></li>
-    <li><a href="#nginx">nginx</a></li>
+    <li><a href="#部署工作">部署工作</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
@@ -282,13 +289,35 @@ if (!doNotTrack) {
   
     <div class="content" itemprop="articleBody">
       <h2 id="前言">前言</h2>
-<p>容器编排技术是一个大势所趋，很多企业的项目都采用此技术进行项目的构建和部署工作</p>
-<p>此前写的这篇文章， 用到了以nginx应用为基础来构建的容器，并通过实现通过域名访问服务器资源。有了上一篇文章完成的工作，那就可以很好的衔接本篇文章的实现操作啦</p>
-<p>整理一下目前的进度，等于已经拥有了一份完整的nginx项目文件、编写好的<code>nginx.conf</code>配置文件，以及一个以nginx应用为基础构建好的镜像</p>
-<p><a href="https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/">docker+nginx+https | 实现通过域名访问服务器资源</a></p>
-<p>这次就再基于一个简单的flask项目去构建容器，并使用docker-compose进行两个容器的编排工作。</p>
+<h3 id="为什么需要大规模容器编排">为什么需要大规模容器编排？</h3>
+<p><strong>容器解决了开发人员的生产力问题，使 DevOps 工作流变得异常流畅</strong>。开发人员可以创建容器镜像，运行容器并在该容器中开发代码，再将其部署在本地数据中心或公共云环境中。这种开发人员的工作流非常流畅，但无法自动应用于生产环境。</p>
+<p><strong>生产环境通常与开发人员电脑上的本地环境大不相同</strong>。无论是运行大规模的传统三层架构（three-tier）应用程序，还是基于微服务的应用程序，管理大量的容器和节点集群都不是一件容易的事。业务流程是实现规模化的必需组件，想要形成规模我们就必须要实现自动化。</p>
+<h3 id="容器编排有什么优势">容器编排有什么优势？</h3>
+<p>容器为基于微服务的应用程序提供了一个理想的「应用程序部署单元」和「自包含的执行环境」。这使应用可以在同一硬件上，以微服务的形式运行多个独立的模块，对每个模块获得更好的控制和生命周期管理。</p>
+<p>🤔 想象一下，当一个项目包含的前端后端多个应用都需要安装并配置，并且项目，项目执行环境的快捷部署就成了一个亟待解决的问题。而容器及容器编排提供的「隔离机制」和「编排能力」，即可以很好解决这个问题。整套部署方案由项目文件、yaml文件、镜像文件组成，有了这些，即可通过一行命令，启动多个应用环境，并运行项目代码文件，实现整套项目的部署和运行工作。</p>
+<p>简而言之，容器编排的方式，使得我们的部署过程极度地快捷化、简单化了。一次构建，持续受益。</p>
+<h3 id="docker-compose-的介绍">docker compose 的介绍</h3>
+<p>Docker-Compose 项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。</p>
+<p>Docker-Compose 项目由 Python 编写，调用 Docker 服务提供的API来对容器进行管理。因此，只要所操作的平台支持 Docker API，就可以在其上利用Compose 来进行编排管理。</p>
+<p>通过 Docker-Compose ，不需要使用shell脚本来启动容器，而使用 YAML 文件来配置应用程序需要的所有服务，然后使用一个命令，根据 YAML 的文件配置创建并启动所有服务。</p>
+<p>👌🏻 关于docker compose的更多内容，请参考：<a href="https://chenxuefan.cn/note/docker3/">「docker」学习笔记 | 容器编排之Docker Compose</a></p>
+<p>👌🏻 关于docker容器构建的项目部署过程，请参考：<a href="https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/">docker+nginx+https | 实现通过域名访问服务器资源</a></p>
+<p>此前写的这篇文章， 以nginx应用为基础构建容器，并实现了通过域名去访问服务器资源。有了上一篇文章完成的工作，就可以很好的衔接本篇文章的实现操作啦。</p>
+<p>整理一下目前的进度，等于已经拥有了一份完整的nginx项目文件、一份编写好的<code>nginx.conf</code>配置文件，以及一个nginx镜像。</p>
+<p>🪵 本篇的目标，基于一个简单的flask项目去构建容器，并使用docker-compose进行两个容器的编排工作。</p>
 <h2 id="flask">flask</h2>
-<h2 id="uwsgi">uwsgi</h2>
+<p><code>/server/server_script/web_flask/app.py</code></p>
+<p>创建一个最简单的flask程序： <code>app.py</code></p>
+<p>需要注意的是，程序中名为<code>app</code>的变量，以及名为<code>app.py</code>的文件名，分别跟<code>uwsgi.ini</code>文件中的<code>wsgi-file</code>、<code>callable</code>两个变量所对应</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> Flask(__name__)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello_world</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;p&gt;Hello, World!&lt;/p&gt;&#34;</span>
+</span></span></code></pre></div><h2 id="uwsgi">uwsgi</h2>
+<p><code>/server/server_script/web_flask/uwsgi.ini</code></p>
 <p><code>uwsgi.ini</code>文件编写</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>[uwsgi]
 </span></span><span style="display:flex;"><span>
@@ -329,85 +358,8 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>#设置uwsgi包解析的内部缓存区大小。默认4k
 </span></span><span style="display:flex;"><span>buffer-size = 32768
-</span></span></code></pre></div><h2 id="镜像">镜像</h2>
-<h3 id="1-server_nginx">1. server_nginx</h3>
-<p><code>dockerfile</code>文件编写：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> nginx:1.23.2</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billy_Chan</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm /etc/nginx/conf.d/default.conf<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ./config/nginx.conf /etc/nginx/conf.d/<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 80 443</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><h3 id="2-server_script">2. server_script</h3>
-<p><code>dockerfile</code>文件编写：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.10</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> TZ<span style="color:#f92672">=</span>Asia/Shanghai<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billy_Chan</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /server_script</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span> [<span style="color:#e6db74">&#34;/server_script/dsapi/images&#34;</span>, <span style="color:#e6db74">&#34;/server_script/unsplash/images&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 1100 1110</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;uwsgi&#34;</span>, <span style="color:#e6db74">&#34;--ini&#34;</span>, <span style="color:#e6db74">&#34;./web_flask/uwsgi.ini&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>使用<code>docker build</code>打包镜像，打包命令参考：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker build -t chenxuefan/server_script:v3 --platform linux/amd64 .
-</span></span></code></pre></div><p>打包操作的具体教程，以及每个指令的含义解释，请参考：<a href="https://chenxuefan.cn/note/docker1/#3-%E9%80%9A%E8%BF%87dockerfile%E6%89%93%E5%8C%85%E5%B9%B6%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE">通过Dockerfile打包并运行一个项目</a></p>
-<p>发布到私有镜像仓库的具体教程，请参考：<a href="https://chenxuefan.cn/note/docker1/#2-%E7%A7%81%E6%9C%89%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93">私有镜像仓库</a></p>
-<p>因为我使用的是m2芯片的MacBook进行打包，并且后续会在Linux服务器和本机上使用镜像，因此涉及到多架构镜像的构建，这里建议使用buildx打包镜像，相关教程请参考：<a href="https://chenxuefan.cn/note/docker1/#6-%E7%94%A8docker-buildx%E5%88%B6%E4%BD%9C%E5%A4%9A%E6%9E%B6%E6%9E%84%E7%9A%84%E9%95%9C%E5%83%8F">用Docker Buildx制作多架构的镜像</a></p>
-<p>使用<code>docker buildx build</code>打包镜像，打包命令参考：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker buildx build -t chenxuefan/server_script:v3 --platform linux/amd64,linux/arm64 . --push
-</span></span></code></pre></div><h2 id="docker-compose">docker-compose</h2>
-<p>目前经过上一步的操作，我们已经得到了server_nginx、server_script两个镜像，并已上传到私有仓库</p>
-<p>此时有了镜像，就可以着手容器编排的工作了</p>
-<p><code>docker-compose.yaml</code>文件编写：</p>
-<pre tabindex="0"><code>version: &#34;1&#34;
-
-services:
-  server_nginx:
-    image: chenxuefan/server_nginx:v3
-    container_name: server_nginx
-    restart: always
-    volumes:
-      - ./server_nginx/html:/usr/share/nginx/html
-      - ./server_nginx/config/nginx.conf:/etc/nginx/nginx.conf
-      - ./server_nginx/logs:/var/log/nginx
-      - ./server_nginx/ssl:/etc/nginx/ssl
-      - ./server_nginx/conf.d:/etc/nginx/conf.d
-    ports:
-      - 80:80
-      - 443:443
-    depends_on:
-      - server_script
-        
-  server_script:
-    image: chenxuefan/server_script:v3
-#    build: ./server_script
-    container_name: server_script
-    restart: always
-    volumes:
-      - ./server_script/dsapi:/server_script/dsapi
-      - ./server_script/dytt:/server_script/dytt
-      - ./server_script/unsplash:/server_script/unsplash
-      - ./server_script/web_flask:/server_script/web_flask
-    ports:
-      - 1100:1100
-      - 1110:1110
-
-networks:
-  server:
-    driver: bridge
-</code></pre><h2 id="nginx">nginx</h2>
+</span></span></code></pre></div><h2 id="nginx">nginx</h2>
+<p><code>/server/server_nginx/config/nginx.conf</code></p>
 <p><code>nginx.conf</code>文件编写：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">user</span>  <span style="color:#e6db74">nginx</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">worker_processes</span>  <span style="color:#e6db74">auto</span>;
@@ -483,7 +435,123 @@ networks:
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 引入扩展配置（可以细分服务nginx）
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">include</span> <span style="color:#e6db74">/etc/nginx/conf.d/*.conf</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="后记">后记</h2>
+</span></span></code></pre></div><h2 id="镜像">镜像</h2>
+<h3 id="1-server_nginx">1. server_nginx</h3>
+<p><code>/server/server_nginx/Dockerfile</code></p>
+<p>此镜像包含nginx相关配置文件，使用<code>nginx:1.23.2</code>作为基础镜像进行构建。<code>Dockerfile</code>文件编写：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> nginx:1.23.2</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billy_Chen</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> rm /etc/nginx/conf.d/default.conf<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ./config/nginx.conf /etc/nginx/conf.d/<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 80 443</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h3 id="2-server_script">2. server_script</h3>
+<p><code>/server/server_script/Dockerfile</code></p>
+<p>此镜像包含flask项目在内的所有py项目文件，使用<code>python:3.10</code>作为基础镜像进行构建。<code>dockerfile</code>文件编写：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.10</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> TZ<span style="color:#f92672">=</span>Asia/Shanghai<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">MAINTAINER</span><span style="color:#e6db74"> Billy_Chen</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /server_script</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">VOLUME</span> [<span style="color:#e6db74">&#34;/server_script/dsapi/images&#34;</span>, <span style="color:#e6db74">&#34;/server_script/unsplash/images&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 1100 1110</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;uwsgi&#34;</span>, <span style="color:#e6db74">&#34;--ini&#34;</span>, <span style="color:#e6db74">&#34;./web_flask/uwsgi.ini&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>使用<code>docker build</code>打包镜像，打包命令参考：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker build -t chenxuefan/server_script:v3 --platform linux/amd64 .
+</span></span></code></pre></div><p>👌🏻 关于构建操作的具体教程，以及每个指令的含义解释，请参考：<a href="https://chenxuefan.cn/note/docker1/#3-%E9%80%9A%E8%BF%87dockerfile%E6%89%93%E5%8C%85%E5%B9%B6%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE">使用 Dockerfile 构建项目</a></p>
+<p>👌🏻 关于发布到私有镜像仓库的具体教程，请参考：<a href="https://chenxuefan.cn/note/docker1/#2-%E7%A7%81%E6%9C%89%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93">私有镜像仓库</a></p>
+<p>因为我使用的是m2芯片的MacBook进行打包，并且后续会在Linux服务器和本机上使用镜像，因此涉及到多架构镜像的构建，这里建议使用buildx打包镜像，相关教程请参考：<a href="https://chenxuefan.cn/note/docker1/#6-%E7%94%A8docker-buildx%E5%88%B6%E4%BD%9C%E5%A4%9A%E6%9E%B6%E6%9E%84%E7%9A%84%E9%95%9C%E5%83%8F">用Docker Buildx制作多架构的镜像</a></p>
+<p>使用<code>docker buildx build</code>打包镜像，打包命令参考：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker buildx build -t chenxuefan/server_script:v3 --platform linux/amd64,linux/arm64 . --push
+</span></span></code></pre></div><h2 id="docker-compose">docker-compose</h2>
+<p><code>/server/docker-compose.yaml</code></p>
+<p>目前经过上一步的操作，我们已经得到了<code>server_nginx</code>、<code>server_script</code>两个镜像，并已上传到私有仓库</p>
+<p>此时有了镜像，就可以着手容器编排的工作了</p>
+<p><code>docker-compose.yaml</code>文件编写：</p>
+<pre tabindex="0"><code>version: &#34;1&#34;
+
+services:
+  server_nginx:
+    image: chenxuefan/server_nginx:v3
+    container_name: server_nginx
+    restart: always
+    volumes:
+      - ./server_nginx/html:/usr/share/nginx/html
+      - ./server_nginx/config/nginx.conf:/etc/nginx/nginx.conf
+      - ./server_nginx/logs:/var/log/nginx
+      - ./server_nginx/ssl:/etc/nginx/ssl
+      - ./server_nginx/conf.d:/etc/nginx/conf.d
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - server_script
+        
+  server_script:
+    image: chenxuefan/server_script:v3
+#    build: ./server_script
+    container_name: server_script
+    restart: always
+    volumes:
+      - ./server_script/dsapi:/server_script/dsapi
+      - ./server_script/dytt:/server_script/dytt
+      - ./server_script/unsplash:/server_script/unsplash
+      - ./server_script/web_flask:/server_script/web_flask
+    ports:
+      - 1100:1100
+      - 1110:1110
+
+networks:
+  server:
+    driver: bridge
+</code></pre><p>需要注意的是，yaml文件中的很多映射路径需要对应项目文件中的路径，比如<code>./server_script</code>就代表跟yaml文件同级的<code>server_script</code>文件夹。</p>
+<p>👌🏻 关于yaml文件中的各个命令的解释，请参考：<a href="https://chenxuefan.cn/note/docker3/#%E7%BC%96%E5%86%99-docker-compose-%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6">编写-docker-compose-模板文件</a></p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20230221181208003.png" alt="image-20230221181208003"></p>
+<h2 id="部署工作">部署工作</h2>
+<p>👌🏻 关于更多的操作命令，请参考：<a href="https://chenxuefan.cn/note/docker3/#docker-compose-%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4">docker-compose 操作命令</a></p>
+<p>所有的准备工作都做好之后，就来到最后一步的部署工作啦！</p>
+<p>第一步，把上图中的server文件夹（包含docker-compose.yml的项目目录）拷贝至服务器中的目录</p>
+<p>第二步，切入到docker-compose.yml所在的目录，执行代码：<code>docker-compose up -d</code>。部署完成 ✅ 😎</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20230221183935240.png" alt="image-20230221183935240"></p>
+<p>查看此时的启动状态：<code>docker-compose ps</code>，可以看到两个容器都在运行的状态，即表示启动成功</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20230221184911782.png" alt="image-20230221184911782"></p>
+<p>查看此时的端口监听状态</p>
+<p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/image-20230221185406444.png" alt="image-20230221185406444"></p>
+<p>网页端看看此次部署的成果：<a href="https://blog.chenxuefan.cn/">https://blog.chenxuefan.cn/</a> 、<a href="https://blog.chenxuefan.cn/dsapi">https://blog.chenxuefan.cn/dsapi</a></p>
+<p>可以访问到！本次部署圆满成功！🍔</p>
+<h2 id="后记">后记</h2>
+<ul>
+<li>
+<p><a href="https://chenxuefan.cn/note/docker1/">「docker」学习笔记 | 镜像、容器、仓库</a></p>
+</li>
+<li>
+<p><a href="https://chenxuefan.cn/note/docker3/">「docker」学习笔记 | 容器编排之Docker Compose</a></p>
+</li>
+<li>
+<p><a href="https://chenxuefan.cn/draft/aliyun-server-docker/">使用docker容器化部署服务器</a></p>
+</li>
+<li>
+<p><a href="https://chenxuefan.cn/posts/2022/10/dockerfile/">使用 Dockerfile 构建项目</a></p>
+</li>
+<li>
+<p><a href="https://chenxuefan.cn/posts/2022/11/docker-nginx-server-script/">docker+nginx+https | 实现通过域名访问服务器资源</a></p>
+</li>
+<li>
+<p><a href="https://chenxuefan.cn/posts/2023/2/docker-nginx-uwsgi-server-script/">docker-compose+nginx+uwsgi | 使用容器编排技术部署一个flask项目</a></p>
+</li>
+</ul>
 
     </div>
 
@@ -527,7 +595,7 @@ networks:
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          1355 字
+          2902 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -584,9 +652,16 @@ networks:
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
+    <li><a href="#前言">前言</a>
+      <ul>
+        <li><a href="#为什么需要大规模容器编排">为什么需要大规模容器编排？</a></li>
+        <li><a href="#容器编排有什么优势">容器编排有什么优势？</a></li>
+        <li><a href="#docker-compose-的介绍">docker compose 的介绍</a></li>
+      </ul>
+    </li>
     <li><a href="#flask">flask</a></li>
     <li><a href="#uwsgi">uwsgi</a></li>
+    <li><a href="#nginx">nginx</a></li>
     <li><a href="#镜像">镜像</a>
       <ul>
         <li><a href="#1-server_nginx">1. server_nginx</a></li>
@@ -594,7 +669,7 @@ networks:
       </ul>
     </li>
     <li><a href="#docker-compose">docker-compose</a></li>
-    <li><a href="#nginx">nginx</a></li>
+    <li><a href="#部署工作">部署工作</a></li>
     <li><a href="#后记">后记</a></li>
   </ul>
 </nav>
@@ -654,7 +729,7 @@ networks:
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e6%98%af%e4%b8%80%e4%b8%aa%e5%a4%a7%e5%8a%bf%e6%89%80%e8%b6%8b%ef%bc%8c%e5%be%88%e5%a4%9a%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a1%b9%e7%9b%ae%e9%83%bd%e9%87%87%e7%94%a8%e6%ad%a4%e6%8a%80%e6%9c%af%e8%bf%9b%e8%a1%8c%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%9e%84%e5%bb%ba%e5%92%8c%e9%83%a8%e7%bd%b2%e5%b7%a5%e4%bd%9c%20%e6%ad%a4%e5%89%8d%e5%86%99%e7%9a%84%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%ef%bc%8c%20%e7%94%a8%e5%88%b0%e4%ba%86%e4%bb%a5nginx%e5%ba%94%e7%94%a8%e4%b8%ba%e5%9f%ba%e7%a1%80%e6%9d%a5%e6%9e%84%e5%bb%ba%e7%9a%84%e5%ae%b9%e5%99%a8">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fposts%2f2023%2f2%2fdocker-nginx-uwsgi-server-script%2f&name=docker-compose%2bnginx%2buwsgi%20%7c%20%e4%bd%bf%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e6%8a%80%e6%9c%af%e9%83%a8%e7%bd%b2%e4%b8%80%e4%b8%aaflask%e9%a1%b9%e7%9b%ae&description=%e5%89%8d%e8%a8%80%20%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e5%a4%a7%e8%a7%84%e6%a8%a1%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%ef%bc%9f%20%e5%ae%b9%e5%99%a8%e8%a7%a3%e5%86%b3%e4%ba%86%e5%bc%80%e5%8f%91%e4%ba%ba%e5%91%98%e7%9a%84%e7%94%9f%e4%ba%a7%e5%8a%9b%e9%97%ae%e9%a2%98%ef%bc%8c%e4%bd%bf%20DevOps%20%e5%b7%a5%e4%bd%9c%e6%b5%81%e5%8f%98%e5%be%97%e5%bc%82%e5%b8%b8%e6%b5%81%e7%95%85%e3%80%82%e5%bc%80%e5%8f%91%e4%ba%ba%e5%91%98%e5%8f%af%e4%bb%a5%e5%88%9b%e5%bb%ba%e5%ae%b9%e5%99%a8%e9%95%9c%e5%83%8f%ef%bc%8c%e8%bf%90%e8%a1%8c%e5%ae%b9%e5%99%a8%e5%b9%b6%e5%9c%a8%e8%af%a5%e5%ae%b9%e5%99%a8%e4%b8%ad%e5%bc%80%e5%8f%91%e4%bb%a3%e7%a0%81">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
