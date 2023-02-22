@@ -1613,8 +1613,8 @@ code {
 
 .post-reward .reward-button:hover {
 
-    color: #494f5c;
-    background-color: #c6cddb;
+    color: #6fa8dc;
+    background-color: #6fa8dc;
     -webkit-transition: .5s;
     transition: .5s
 }
