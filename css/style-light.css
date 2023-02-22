@@ -1601,16 +1601,18 @@ code {
 }
 
 .post-reward .reward-button {
+    font-size: 2px;
     margin: 15px 0;
     padding: 3px 7px;
     display: inline-block;
-    color: #c6cddb;
-    border: 2px solid #c6cddb;
+    color: #6fa8dc;
+    border: 2px solid #6fa8dc;
     border-radius: 20px;
     cursor: pointer
 }
 
 .post-reward .reward-button:hover {
+
     color: #494f5c;
     background-color: #c6cddb;
     -webkit-transition: .5s;
