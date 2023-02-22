@@ -74,9 +74,9 @@ if (!doNotTrack) {
 
 </head>
 <body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
+<div class="content index py4">
 
-  <div align="center">
+    <div align="center">
   
 </div>
 <div id="header-post">
@@ -220,57 +220,57 @@ if (!doNotTrack) {
 </div>
 
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        Ajax 的原理和解析
-      </h1>
-      <div class="meta">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h1 class="posttitle" itemprop="name headline">
+                Ajax 的原理和解析
+            </h1>
+            <div class="meta">
 
-        
+                
 
-        
+                
 
 
-        <div class="postdate">
-          
-          
-          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
-          
-          
-        </div>
-        <div class="article-tag">
-            <i class="fa fa-eye"></i> 
-            <span id="busuanzi_container_page_pv">
+                <div class="postdate">
+                    
+                    
+                    <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+                    
+                    
+                </div>
+                <div class="article-tag">
+                    <i class="fa fa-eye"></i>
+                    <span id="busuanzi_container_page_pv">
               <span id="busuanzi_value_page_pv">0</span>
             </span>
-        </div>
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/tec">tec</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-             
-            <a class="tag-link" href="/tags/python" rel="tag">python</a>
-            
-        </div> 
-        
-        
+                </div>
+                
+                <div class="article-category">
+                    <i class="fas fa-archive"></i>
+                    
+                    
+                    <a class="category-link" href="/categories/tec">tec</a>
+                    
+                </div>
+                
+                
+                <div class="article-tag">
+                    <i class="fas fa-tag"></i>
+                    
+                     
+                    <a class="tag-link" href="/tags/python" rel="tag">python</a>
+                    
+                </div>
+                
+                
 
-      </div>
-    </header>
+            </div>
+        </header>
 
-  
-    <div class="content" itemprop="articleBody">
-      <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
+        
+        <div class="content" itemprop="articleBody">
+            <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
 <p>当我们在用 requests 抓取页面的时候，得到的结果可能会和在浏览器中看到的不一样：在浏览器中正常显示的页面数据，使用 requests 却没有得到结果。这是因为 requests 获取的都是原始 HTML 文档，而浏览器中的页面则是经过 JavaScript 数据处理后生成的结果。这些数据的来源有多种，可能是通过 Ajax 加载的，可能是包含在 HTML 文档中的，也可能是经过 JavaScript 和特定算法计算后生成的。</p>
 <p>对于第 1 种情况，数据加载是一种异步加载方式，原始页面不会包含某些数据，只有在加载完后，才会向服务器请求某个接口获取数据，然后数据才被处理从而呈现到网页上，这个过程实际上就是向服务器接口发送了一个 Ajax 请求。</p>
 <p>按照 Web 的发展趋势来看，这种形式的页面将会越来越多。网页的原始 HTML 文档不会包含任何数据，数据都是通过 Ajax 统一加载后再呈现出来的，这样在 Web 开发上可以做到前后端分离，并且降低服务器直接渲染页面带来的压力。</p>
@@ -350,15 +350,16 @@ if (!doNotTrack) {
 <p><img src="https://billie-s-album.oss-cn-beijing.aliyuncs.com/img/4641622545466_.pic_hd.jpg" alt="4641622545466_.pic_hd"></p>
 <p>到现在为止，我们已经可以分析出 Ajax 请求的一些详细信息了，接下来只需要用程序模拟这些 Ajax 请求，就可以轻松提取我们所需要的信息了。</p>
 
-    </div>
+        </div>
 
 
-  </article>
+    </article>
 
+    <p id="last updated">
 
-  <br>
+    <br>
 
-    
+          
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
     <label class="reward-button" for="reward"><b>打赏作者</b></label>
@@ -377,7 +378,7 @@ if (!doNotTrack) {
     
   </div>
 
-  <p>
+        <p>
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
@@ -395,7 +396,7 @@ if (!doNotTrack) {
 
   </p>
 
-  
+        
 
 <span id="/posts/2021/2/ajax/" class="leancloud_visitors" data-flag-title="Ajax 的原理和解析">
 
@@ -418,7 +419,7 @@ if (!doNotTrack) {
         })
 </script>
 
-  <div id="footer-post-container">
+        <div id="footer-post-container">
   <div id="footer-post">
 
     <div id="nav-footer" style="display: none">
@@ -536,7 +537,7 @@ if (!doNotTrack) {
 </div>
 
 
-  <footer id="footer">
+        <footer id="footer">
   <div class="footer-center">
     Copyright  
     &copy;
@@ -559,7 +560,7 @@ if (!doNotTrack) {
 
 
 
-  </div>
+</div>
 
 </body>
 
@@ -568,21 +569,21 @@ if (!doNotTrack) {
 <script src="/js/main.js"></script>
 
 
-  
+
 
 
 <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
 </script>
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
 </html>

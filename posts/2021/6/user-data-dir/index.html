@@ -74,9 +74,9 @@ if (!doNotTrack) {
 
 </head>
 <body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
+<div class="content index py4">
 
-  <div align="center">
+    <div align="center">
   
 </div>
 <div id="header-post">
@@ -221,57 +221,57 @@ if (!doNotTrack) {
 </div>
 
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        浅谈自动化爬虫场景下的数据持久化
-      </h1>
-      <div class="meta">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h1 class="posttitle" itemprop="name headline">
+                浅谈自动化爬虫场景下的数据持久化
+            </h1>
+            <div class="meta">
 
-        
+                
 
-        
+                
 
 
-        <div class="postdate">
-          
-          
-          <time datetime="2021-06-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-21</time>
-          
-          
-        </div>
-        <div class="article-tag">
-            <i class="fa fa-eye"></i> 
-            <span id="busuanzi_container_page_pv">
+                <div class="postdate">
+                    
+                    
+                    <time datetime="2021-06-21 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-06-21</time>
+                    
+                    
+                </div>
+                <div class="article-tag">
+                    <i class="fa fa-eye"></i>
+                    <span id="busuanzi_container_page_pv">
               <span id="busuanzi_value_page_pv">0</span>
             </span>
-        </div>
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/tec">tec</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-             
-            <a class="tag-link" href="/tags/python" rel="tag">python</a>
-            
-        </div> 
-        
-        
+                </div>
+                
+                <div class="article-category">
+                    <i class="fas fa-archive"></i>
+                    
+                    
+                    <a class="category-link" href="/categories/tec">tec</a>
+                    
+                </div>
+                
+                
+                <div class="article-tag">
+                    <i class="fas fa-tag"></i>
+                    
+                     
+                    <a class="tag-link" href="/tags/python" rel="tag">python</a>
+                    
+                </div>
+                
+                
 
-      </div>
-    </header>
+            </div>
+        </header>
 
-  
-    <div class="content" itemprop="articleBody">
-      <p>每次我们使用 selenium 或 Pyppeteer 打开的时候都是一个新的空白的浏览器。而且如果遇到了需要登录的网页之后，如果我们这次登录上了，下一次再启动又是空白了，又得登录一次，这的确是一个问题。</p>
+        
+        <div class="content" itemprop="articleBody">
+            <p>每次我们使用 selenium 或 Pyppeteer 打开的时候都是一个新的空白的浏览器。而且如果遇到了需要登录的网页之后，如果我们这次登录上了，下一次再启动又是空白了，又得登录一次，这的确是一个问题。</p>
 <p>比如以淘宝举例，平时我们逛淘宝的时候，在很多情况下关闭了浏览器再打开，淘宝依然还是登录状态。这是因为淘宝的一些关键 Cookies 已经保存到本地了，下次登录的时候可以直接读取并保持登录状态。</p>
 <p>那么这些信息保存在哪里了呢？其实就是保存在用户目录下了，里面不仅包含了浏览器的基本配置信息，还有一些 Cache、Cookies 等各种信息都在里面，如果我们能在浏览器启动的时候读取这些信息，那么启动的时候就可以恢复一些历史记录甚至一些登录状态信息了。</p>
 <p>这也就解决了一个问题：很多时候你在每次启动 Selenium 或 Pyppeteer 的时候总是一个全新的浏览器，那这究其原因就是「没有设置用户目录」，如果设置了它，每次打开就不再是一个全新的浏览器了，它可以恢复之前的历史记录，也可以恢复很多网站的登录信息。</p>
@@ -326,15 +326,16 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>options<span style="color:#f92672">.</span>add_experimental_option(<span style="color:#e6db74">&#34;debuggerAddress&#34;</span>, <span style="color:#e6db74">&#34;127.0.0.1:9222&#34;</span>)
 </span></span><span style="display:flex;"><span>driver <span style="color:#f92672">=</span> webdriver<span style="color:#f92672">.</span>Chrome(options<span style="color:#f92672">=</span>options) <span style="color:#75715e"># 如浏览器不存在，则会在约一分钟等待之后，报错-WebDriverException</span>
 </span></span></code></pre></div>
-    </div>
+        </div>
 
 
-  </article>
+    </article>
 
+    <p id="last updated">
 
-  <br>
+    <br>
 
-    
+          
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
     <label class="reward-button" for="reward"><b>打赏作者</b></label>
@@ -353,7 +354,7 @@ if (!doNotTrack) {
     
   </div>
 
-  <p>
+        <p>
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
@@ -371,7 +372,7 @@ if (!doNotTrack) {
 
   </p>
 
-  
+        
 
 <span id="/posts/2021/6/user-data-dir/" class="leancloud_visitors" data-flag-title="浅谈自动化爬虫场景下的数据持久化">
 
@@ -394,7 +395,7 @@ if (!doNotTrack) {
         })
 </script>
 
-  <div id="footer-post-container">
+        <div id="footer-post-container">
   <div id="footer-post">
 
     <div id="nav-footer" style="display: none">
@@ -513,7 +514,7 @@ if (!doNotTrack) {
 </div>
 
 
-  <footer id="footer">
+        <footer id="footer">
   <div class="footer-center">
     Copyright  
     &copy;
@@ -536,7 +537,7 @@ if (!doNotTrack) {
 
 
 
-  </div>
+</div>
 
 </body>
 
@@ -545,21 +546,21 @@ if (!doNotTrack) {
 <script src="/js/main.js"></script>
 
 
-  
+
 
 
 <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
 </script>
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
 </html>

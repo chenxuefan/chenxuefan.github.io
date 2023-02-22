@@ -1597,11 +1597,11 @@ code {
     margin-top: 20px;
     padding-top: 10px;
     text-align: center;
-    /* border-top: 1px dashed #e6e6e6 */
+     /*border-top: 1px dashed #e6e6e6*/
 }
 
 .post-reward .reward-button {
-    font-size: 2px;
+    /*font-size: 2px;*/
     margin: 15px 0;
     padding: 3px 7px;
     display: inline-block;
@@ -1613,7 +1613,7 @@ code {
 
 .post-reward .reward-button:hover {
 
-    color: #6fa8dc;
+    color: #494f5c;
     background-color: #6fa8dc;
     -webkit-transition: .5s;
     transition: .5s

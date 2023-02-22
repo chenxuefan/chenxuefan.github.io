@@ -74,9 +74,9 @@ if (!doNotTrack) {
 
 </head>
 <body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
+<div class="content index py4">
 
-  <div align="center">
+    <div align="center">
   
 </div>
 <div id="header-post">
@@ -220,57 +220,57 @@ if (!doNotTrack) {
 </div>
 
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        基础探究，Session 与 Cookies
-      </h1>
-      <div class="meta">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h1 class="posttitle" itemprop="name headline">
+                基础探究，Session 与 Cookies
+            </h1>
+            <div class="meta">
 
-        
+                
 
-        
+                
 
 
-        <div class="postdate">
-          
-          
-          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
-          
-          
-        </div>
-        <div class="article-tag">
-            <i class="fa fa-eye"></i> 
-            <span id="busuanzi_container_page_pv">
+                <div class="postdate">
+                    
+                    
+                    <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+                    
+                    
+                </div>
+                <div class="article-tag">
+                    <i class="fa fa-eye"></i>
+                    <span id="busuanzi_container_page_pv">
               <span id="busuanzi_value_page_pv">0</span>
             </span>
-        </div>
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/tec">tec</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-             
-            <a class="tag-link" href="/tags/python" rel="tag">python</a>
-            
-        </div> 
-        
-        
+                </div>
+                
+                <div class="article-category">
+                    <i class="fas fa-archive"></i>
+                    
+                    
+                    <a class="category-link" href="/categories/tec">tec</a>
+                    
+                </div>
+                
+                
+                <div class="article-tag">
+                    <i class="fas fa-tag"></i>
+                    
+                     
+                    <a class="tag-link" href="/tags/python" rel="tag">python</a>
+                    
+                </div>
+                
+                
 
-      </div>
-    </header>
+            </div>
+        </header>
 
-  
-    <div class="content" itemprop="articleBody">
-      <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
+        
+        <div class="content" itemprop="articleBody">
+            <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
 <p>我们在浏览网站的过程中，经常会遇到需要登录的情况，而有些网页只有登录之后才可以访问，而且登录之后可以连续访问很多次网站，但是有时候过一段时间就需要重新登录。</p>
 <p>还有一些网站，在打开浏览器时就自动登录了，而且很长时间都不会失效，这种情况又是为什么？其实这里面涉及 Session 和 Cookies 的相关知识，本节就来揭开它们的神秘面纱。</p>
 <p>静态网页和动态网页
@@ -336,15 +336,16 @@ if (!doNotTrack) {
 <p>但是当我们关闭浏览器时，浏览器不会主动在关闭之前通知服务器它将要关闭，所以服务器根本不会有机会知道浏览器已经关闭。之所以会有这种错觉，是因为大部分网站都使用会话 Cookie 来保存 Session ID 信息，而关闭浏览器后 Cookies 就消失了，再次连接服务器时，也就无法找到原来的 Session 了。如果服务器设置的 Cookies 保存到硬盘上，或者使用某种手段改写浏览器发出的 HTTP 请求头，把原来的 Cookies 发送给服务器，则再次打开浏览器，仍然能够找到原来的 Session ID，依旧还是可以保持登录状态的。</p>
 <p>而且恰恰是由于关闭浏览器不会导致 Session 被删除，这就需要服务器为 Session 设置一个失效时间，当距离客户端上一次使用 Session 的时间超过这个失效时间时，服务器就可以认为客户端已经停止了活动，才会把 Session 删除以节省存储空间。</p>
 
-    </div>
+        </div>
 
 
-  </article>
+    </article>
 
+    <p id="last updated">
 
-  <br>
+    <br>
 
-    
+          
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
     <label class="reward-button" for="reward"><b>打赏作者</b></label>
@@ -363,7 +364,7 @@ if (!doNotTrack) {
     
   </div>
 
-  <p>
+        <p>
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
@@ -381,7 +382,7 @@ if (!doNotTrack) {
 
   </p>
 
-  
+        
 
 <span id="/posts/2021/2/sessioncookies/" class="leancloud_visitors" data-flag-title="基础探究，Session 与 Cookies">
 
@@ -404,7 +405,7 @@ if (!doNotTrack) {
         })
 </script>
 
-  <div id="footer-post-container">
+        <div id="footer-post-container">
   <div id="footer-post">
 
     <div id="nav-footer" style="display: none">
@@ -522,7 +523,7 @@ if (!doNotTrack) {
 </div>
 
 
-  <footer id="footer">
+        <footer id="footer">
   <div class="footer-center">
     Copyright  
     &copy;
@@ -545,7 +546,7 @@ if (!doNotTrack) {
 
 
 
-  </div>
+</div>
 
 </body>
 
@@ -554,21 +555,21 @@ if (!doNotTrack) {
 <script src="/js/main.js"></script>
 
 
-  
+
 
 
 <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
 </script>
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
 </html>

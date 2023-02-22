@@ -74,9 +74,9 @@ if (!doNotTrack) {
 
 </head>
 <body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
+<div class="content index py4">
 
-  <div align="center">
+    <div align="center">
   
 </div>
 <div id="header-post">
@@ -222,57 +222,57 @@ if (!doNotTrack) {
 </div>
 
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        多路加速，了解多线程基本原理
-      </h1>
-      <div class="meta">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h1 class="posttitle" itemprop="name headline">
+                多路加速，了解多线程基本原理
+            </h1>
+            <div class="meta">
 
-        
+                
 
-        
+                
 
 
-        <div class="postdate">
-          
-          
-          <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
-          
-          
-        </div>
-        <div class="article-tag">
-            <i class="fa fa-eye"></i> 
-            <span id="busuanzi_container_page_pv">
+                <div class="postdate">
+                    
+                    
+                    <time datetime="2021-02-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2021-02-27</time>
+                    
+                    
+                </div>
+                <div class="article-tag">
+                    <i class="fa fa-eye"></i>
+                    <span id="busuanzi_container_page_pv">
               <span id="busuanzi_value_page_pv">0</span>
             </span>
-        </div>
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/tec">tec</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-             
-            <a class="tag-link" href="/tags/python" rel="tag">python</a>
-            
-        </div> 
-        
-        
+                </div>
+                
+                <div class="article-category">
+                    <i class="fas fa-archive"></i>
+                    
+                    
+                    <a class="category-link" href="/categories/tec">tec</a>
+                    
+                </div>
+                
+                
+                <div class="article-tag">
+                    <i class="fas fa-tag"></i>
+                    
+                     
+                    <a class="tag-link" href="/tags/python" rel="tag">python</a>
+                    
+                </div>
+                
+                
 
-      </div>
-    </header>
+            </div>
+        </header>
 
-  
-    <div class="content" itemprop="articleBody">
-      <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
+        
+        <div class="content" itemprop="articleBody">
+            <p>*<strong>本篇转自拉勾教育《52讲轻松搞定网络爬虫》作者：崔庆才</strong></p>
 <p>我们知道，在一台计算机中，我们可以同时打开许多软件，比如同时浏览网页、听音乐、打字等等，看似非常正常。但仔细想想，为什么计算机可以做到这么多软件同时运行呢？这就涉及到计算机中的两个重要概念：多进程和多线程了。</p>
 <p>同样，在编写爬虫程序的时候，为了提高爬取效率，我们可能想同时运行多个爬虫任务。这里同样需要涉及多进程和多线程的知识。</p>
 <p>本课时，我们就先来了解一下多线程的基本原理，以及在 Python 中如何实现多线程。</p>
@@ -471,15 +471,16 @@ Threading MainThread is ended
 <p>可见，某个线程想要执行，必须先拿到 GIL，我们可以把 GIL 看作是通行证，并且在一个 Python 进程中，GIL 只有一个。拿不到通行证的线程，就不允许执行。这样就会导致，即使是多核条件下，一个 Python 进程下的多个线程，同一时刻也只能执行一个线程。</p>
 <p>不过对于爬虫这种 IO 密集型任务来说，这个问题影响并不大。而对于计算密集型任务来说，由于 GIL 的存在，多线程总体的运行效率相比可能反而比单线程更低。</p>
 
-    </div>
+        </div>
 
 
-  </article>
+    </article>
 
+    <p id="last updated">
 
-  <br>
+    <br>
 
-    
+          
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
     <label class="reward-button" for="reward"><b>打赏作者</b></label>
@@ -498,7 +499,7 @@ Threading MainThread is ended
     
   </div>
 
-  <p>
+        <p>
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
             
@@ -516,7 +517,7 @@ Threading MainThread is ended
 
   </p>
 
-  
+        
 
 <span id="/posts/2021/2/thread/" class="leancloud_visitors" data-flag-title="多路加速，了解多线程基本原理">
 
@@ -539,7 +540,7 @@ Threading MainThread is ended
         })
 </script>
 
-  <div id="footer-post-container">
+        <div id="footer-post-container">
   <div id="footer-post">
 
     <div id="nav-footer" style="display: none">
@@ -659,7 +660,7 @@ Threading MainThread is ended
 </div>
 
 
-  <footer id="footer">
+        <footer id="footer">
   <div class="footer-center">
     Copyright  
     &copy;
@@ -682,7 +683,7 @@ Threading MainThread is ended
 
 
 
-  </div>
+</div>
 
 </body>
 
@@ -691,21 +692,21 @@ Threading MainThread is ended
 <script src="/js/main.js"></script>
 
 
-  
+
 
 
 <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
 </script>
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
 </html>
