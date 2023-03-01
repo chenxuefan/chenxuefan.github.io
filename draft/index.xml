@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>粤ICP备20025795号-2</copyright>
-    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://chenxuefan.cn/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker-compose&#43;hugo&#43;python| 使用容器编排技术部署一个hugo项目</title>
+      <link>https://chenxuefan.cn/draft/docker-hugo/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/docker-hugo/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>python模块详解 | PIL</title>
       <link>https://chenxuefan.cn/draft/python-pillow/</link>
@@ -266,7 +275,7 @@
       <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://chenxuefan.cn/draft/docker4/</guid>
-      <description></description>
+      <description>Swarm 的前生今世 Swarm 的架构 1. 管理节点 管理节点负责接受用户的请求，用户的请求中包含用户定义的容器运行状态描述，然后 Swarm 负责调度和管理容器，并且努力达到</description>
     </item>
     
     <item>
@@ -676,10 +685,19 @@
     
     <item>
       <title></title>
-      <link>https://chenxuefan.cn/draft/docker-nginx-flask/</link>
+      <link>https://chenxuefan.cn/draft/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://chenxuefan.cn/draft/docker-nginx-flask/</guid>
+      <guid>https://chenxuefan.cn/draft/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://chenxuefan.cn/draft/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenxuefan.cn/draft/kubernetes/</guid>
       <description></description>
     </item>
     

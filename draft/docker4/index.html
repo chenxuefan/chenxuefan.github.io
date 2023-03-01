@@ -25,7 +25,7 @@ if (!doNotTrack) {
 }
 </script>
   <meta property="og:title" content="「docker」学习笔记 | 容器编排之Docker Swarm" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Swarm 的前生今世 Swarm 的架构 1. 管理节点 管理节点负责接受用户的请求，用户的请求中包含用户定义的容器运行状态描述，然后 Swarm 负责调度和管理容器，并且努力达到" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenxuefan.cn/draft/docker4/" /><meta property="article:section" content="draft" />
 <meta property="article:published_time" content="2021-04-28T00:00:00+00:00" />
@@ -33,7 +33,7 @@ if (!doNotTrack) {
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="「docker」学习笔记 | 容器编排之Docker Swarm"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Swarm 的前生今世 Swarm 的架构 1. 管理节点 管理节点负责接受用户的请求，用户的请求中包含用户定义的容器运行状态描述，然后 Swarm 负责调度和管理容器，并且努力达到"/>
 
   
   
@@ -190,7 +190,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fdraft%2fdocker4%2f&name=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b9%8bDocker%20Swarm&description=">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fdraft%2fdocker4%2f&name=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b9%8bDocker%20Swarm&description=Swarm%20%e7%9a%84%e5%89%8d%e7%94%9f%e4%bb%8a%e4%b8%96%20Swarm%20%e7%9a%84%e6%9e%b6%e6%9e%84%201.%20%e7%ae%a1%e7%90%86%e8%8a%82%e7%82%b9%20%e7%ae%a1%e7%90%86%e8%8a%82%e7%82%b9%e8%b4%9f%e8%b4%a3%e6%8e%a5%e5%8f%97%e7%94%a8%e6%88%b7%e7%9a%84%e8%af%b7%e6%b1%82%ef%bc%8c%e7%94%a8%e6%88%b7%e7%9a%84%e8%af%b7%e6%b1%82%e4%b8%ad%e5%8c%85%e5%90%ab%e7%94%a8%e6%88%b7%e5%ae%9a%e4%b9%89%e7%9a%84%e5%ae%b9%e5%99%a8%e8%bf%90%e8%a1%8c%e7%8a%b6%e6%80%81%e6%8f%8f%e8%bf%b0%ef%bc%8c%e7%84%b6%e5%90%8e%20Swarm%20%e8%b4%9f%e8%b4%a3%e8%b0%83%e5%ba%a6%e5%92%8c%e7%ae%a1%e7%90%86%e5%ae%b9%e5%99%a8%ef%bc%8c%e5%b9%b6%e4%b8%94%e5%8a%aa%e5%8a%9b%e8%be%be%e5%88%b0">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -203,7 +203,34 @@ if (!doNotTrack) {
 
     </div>
     <div id="toc">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#swarm-的前生今世">Swarm 的前生今世</a></li>
+    <li><a href="#swarm-的架构">Swarm 的架构</a>
+      <ul>
+        <li><a href="#1-管理节点">1. 管理节点</a></li>
+        <li><a href="#2-工作节点">2. 工作节点</a></li>
+      </ul>
+    </li>
+    <li><a href="#swarm-核心概念">Swarm 核心概念</a>
+      <ul>
+        <li><a href="#1-集群">1. 集群</a></li>
+        <li><a href="#2-节点">2. 节点</a></li>
+        <li><a href="#3-服务">3. 服务</a></li>
+        <li><a href="#4-任务">4. 任务</a></li>
+        <li><a href="#5-服务外部访问">5. 服务外部访问</a></li>
+      </ul>
+    </li>
+    <li><a href="#搭建swarm集群">搭建Swarm集群</a>
+      <ul>
+        <li><a href="#1-通过-docker-service-命令创建服务">1. 通过 docker service 命令创建服务</a></li>
+        <li><a href="#2-通过-docker-stack-命令创建服务">2. 通过 docker stack 命令创建服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用swarm">使用Swarm</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
     </div>
     
   </span>
@@ -260,7 +287,34 @@ if (!doNotTrack) {
 
         
         <div class="content" itemprop="articleBody">
-            
+            <h2 id="swarm-的前生今世">Swarm 的前生今世</h2>
+<h2 id="swarm-的架构">Swarm 的架构</h2>
+<h3 id="1-管理节点">1. 管理节点</h3>
+<p>管理节点负责接受用户的请求，用户的请求中包含用户定义的容器运行状态描述，然后 Swarm 负责调度和管理容器，并且努力达到用户所期望的状态。</p>
+<h3 id="2-工作节点">2. 工作节点</h3>
+<p>工作节点运行执行器（Executor）负责执行具体的容器管理任务（Task），例如容器的启动、停止、删除等操作。</p>
+<p>ps：管理节点和工作节点的角色并不是一成不变的，你可以手动将工作节点转换为管理节点，也可以将管理节点转换为工作节点。</p>
+<h2 id="swarm-核心概念">Swarm 核心概念</h2>
+<h3 id="1-集群">1. 集群</h3>
+<p>Swarm 集群是一组被 Swarm 统一管理和调度的节点，被 Swarm纳管的节点可以是物理机或者虚拟机。其中一部分节点作为管理节点，负责集群状态的管理和协调，另一部分作为工作节点，负责执行具体的任务来管理容器，实现用户服务的启停等功能。</p>
+<h3 id="2-节点">2. 节点</h3>
+<p>Swarm 集群中的每一台物理机或者虚拟机称为节点。节点按照工作职责分为管理节点和工作节点，管理节点由于需要使用 Raft 协议来协商节点状态，生产环境中通常建议将管理节点的数量设置为奇数个，一般为 3 个、5 个或 7 个。</p>
+<h3 id="3-服务">3. 服务</h3>
+<p>服务是为了支持容器编排所提出的概念，它是一系列复杂容器环境互相协作的统称。一个服务的声明通常包含容器的启动方式、启动的副本数、环境变量、存储、配置、网络等一系列配置，用户通过声明一个服务，将它交给 Swarm，Swarm 负责将用户声明的服务实现。</p>
+<p>服务分为全局服务（global services）和副本服务（replicated services）。</p>
+<p>全局服务：每个工作节点上都会运行一个任务，类似于 Kubernetes 中的 Daemonset。</p>
+<p>副本服务：按照指定的副本数在整个集群中调度运行。</p>
+<h3 id="4-任务">4. 任务</h3>
+<p>任务是集群中的最小调度单位，它包含一个真正运行中的 Docker 容器。当管理节点根据服务中声明的副本数将任务调度到节点时，任务则开始在该节点启动和运行，当节点出现异常时，任务会运行失败。此时调度器会把失败的任务重新调度到其他正常的节点上正常运行，以确保运行中的容器副本数满足用户所期望的副本数。</p>
+<h3 id="5-服务外部访问">5. 服务外部访问</h3>
+<p>由于容器的 IP 只能在集群内部访问到，而且容器又是用后马上销毁，这样容器的 IP 也会动态变化，因此容器集群内部的服务想要被集群外部的用户访问到，服务必须要映射到主机上的固定端口。Swarm 使用入口负载均衡（ingress load balancing）的模式将服务暴露在主机上，该模式下，每一个服务会被分配一个公开端口（PublishedPort），你可以指定使用某个未被占用的公开端口，也可以让 Swarm 自动分配一个。</p>
+<p>Swarm 集群的公开端口可以从集群内的任意节点上访问到，当请求达到集群中的一个节点时，如果该节点没有要请求的服务，则会将请求转发到实际运行该服务的节点上，从而响应用户的请求。公有云的云负载均衡器（cloud load balancers）可以利用这一特性将流量导入到集群中的一个或多个节点，从而实现利用公有云的云负载均衡器将流量导入到集群中的服务。</p>
+<h2 id="搭建swarm集群">搭建Swarm集群</h2>
+<h3 id="1-通过-docker-service-命令创建服务">1. 通过 docker service 命令创建服务</h3>
+<h3 id="2-通过-docker-stack-命令创建服务">2. 通过 docker stack 命令创建服务</h3>
+<h2 id="使用swarm">使用Swarm</h2>
+<h2 id="结语">结语</h2>
+
         </div>
 
 
@@ -298,7 +352,7 @@ if (!doNotTrack) {
             
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          0 字
+          1204 字
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           
@@ -352,7 +406,34 @@ if (!doNotTrack) {
     </div>
 
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#swarm-的前生今世">Swarm 的前生今世</a></li>
+    <li><a href="#swarm-的架构">Swarm 的架构</a>
+      <ul>
+        <li><a href="#1-管理节点">1. 管理节点</a></li>
+        <li><a href="#2-工作节点">2. 工作节点</a></li>
+      </ul>
+    </li>
+    <li><a href="#swarm-核心概念">Swarm 核心概念</a>
+      <ul>
+        <li><a href="#1-集群">1. 集群</a></li>
+        <li><a href="#2-节点">2. 节点</a></li>
+        <li><a href="#3-服务">3. 服务</a></li>
+        <li><a href="#4-任务">4. 任务</a></li>
+        <li><a href="#5-服务外部访问">5. 服务外部访问</a></li>
+      </ul>
+    </li>
+    <li><a href="#搭建swarm集群">搭建Swarm集群</a>
+      <ul>
+        <li><a href="#1-通过-docker-service-命令创建服务">1. 通过 docker service 命令创建服务</a></li>
+        <li><a href="#2-通过-docker-stack-命令创建服务">2. 通过 docker stack 命令创建服务</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用swarm">使用Swarm</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -409,7 +490,7 @@ if (!doNotTrack) {
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fdraft%2fdocker4%2f&name=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b9%8bDocker%20Swarm&description=">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fchenxuefan.cn%2fdraft%2fdocker4%2f&name=%e3%80%8cdocker%e3%80%8d%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%20%7c%20%e5%ae%b9%e5%99%a8%e7%bc%96%e6%8e%92%e4%b9%8bDocker%20Swarm&description=Swarm%20%e7%9a%84%e5%89%8d%e7%94%9f%e4%bb%8a%e4%b8%96%20Swarm%20%e7%9a%84%e6%9e%b6%e6%9e%84%201.%20%e7%ae%a1%e7%90%86%e8%8a%82%e7%82%b9%20%e7%ae%a1%e7%90%86%e8%8a%82%e7%82%b9%e8%b4%9f%e8%b4%a3%e6%8e%a5%e5%8f%97%e7%94%a8%e6%88%b7%e7%9a%84%e8%af%b7%e6%b1%82%ef%bc%8c%e7%94%a8%e6%88%b7%e7%9a%84%e8%af%b7%e6%b1%82%e4%b8%ad%e5%8c%85%e5%90%ab%e7%94%a8%e6%88%b7%e5%ae%9a%e4%b9%89%e7%9a%84%e5%ae%b9%e5%99%a8%e8%bf%90%e8%a1%8c%e7%8a%b6%e6%80%81%e6%8f%8f%e8%bf%b0%ef%bc%8c%e7%84%b6%e5%90%8e%20Swarm%20%e8%b4%9f%e8%b4%a3%e8%b0%83%e5%ba%a6%e5%92%8c%e7%ae%a1%e7%90%86%e5%ae%b9%e5%99%a8%ef%bc%8c%e5%b9%b6%e4%b8%94%e5%8a%aa%e5%8a%9b%e8%be%be%e5%88%b0">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

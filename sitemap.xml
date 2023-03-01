@@ -3,28 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chenxuefan.cn/categories/</loc>
-    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/tags/docker/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/draft/docker-hugo/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/draft/</loc>
-    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/tags/hugo/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/tags/python/</loc>
-    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/tags/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/categories/tec/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chenxuefan.cn/</loc>
+    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/draft/python-pillow/</loc>
     <lastmod>2023-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/tags/</loc>
-    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/categories/tec/</loc>
-    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/</loc>
-    <lastmod>2023-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://chenxuefan.cn/tags/docker/</loc>
-    <lastmod>2023-02-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://chenxuefan.cn/posts/2023/2/docker-nginx-uwsgi-server-script/</loc>
     <lastmod>2023-02-14T00:00:00+00:00</lastmod>
@@ -518,9 +524,6 @@
     <loc>https://chenxuefan.cn/diary/2020-08-16/</loc>
     <lastmod>2020-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chenxuefan.cn/tags/hugo/</loc>
-    <lastmod>2020-08-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://chenxuefan.cn/posts/2020/8/python-hugo-nginx-daily-picture/</loc>
     <lastmod>2020-08-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -709,7 +712,9 @@
   </url><url>
     <loc>https://chenxuefan.cn/draft/data-grand/%E8%BE%BE%E8%A7%82rpa%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/%E7%AC%AC%E5%9B%9B%E5%91%A8/day5/</loc>
   </url><url>
-    <loc>https://chenxuefan.cn/draft/docker-nginx-flask/</loc>
+    <loc>https://chenxuefan.cn/draft/go/</loc>
+  </url><url>
+    <loc>https://chenxuefan.cn/draft/kubernetes/</loc>
   </url><url>
     <loc>https://chenxuefan.cn/draft/vim/</loc>
   </url><url>
