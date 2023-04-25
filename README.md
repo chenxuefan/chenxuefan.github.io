@@ -1,5 +1,5 @@
-## 人人都爱小雀斑's blog - [billie52707.cn](https://billie52707.cn)
-## 建站全指南 - [https://billie52707.cn/posts/2020/8/hugo-my-first-web/](https://billie52707.cn/posts/2020/8/hugo-my-first-web/)
+## 人人都爱小雀斑's blog - [chenxuefan.cn](https://chenxuefan.cn)
+## 建站全指南 - [hugo-my-first-web](https://chenxuefan.cn/posts/2020/8/hugo-my-first-web/)
 ## 更新日志
 + 2021-05-20 😍
   + [主页](https://billie52707.cn/)新增"Most recent"模块，记录今日新更新、有修改的的文章
